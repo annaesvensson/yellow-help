@@ -72,8 +72,8 @@ Let me know if you need more information. Thanks for investigating.
 
 ## Related information
 
-* [How to make an extension](https://github.com/datenstrom/yellow-extensions/tree/master/source/publish)
-* [How to make a translation](https://github.com/datenstrom/yellow-extensions/tree/master/source/language)
-* [How to edit the help](https://github.com/datenstrom/yellow-extensions/tree/master/source/help)
+* [How to make an extension](https://github.com/annaesvensson/yellow-publish)
+* [How to make a translation](https://github.com/annaesvensson/yellow-language)
+* [How to edit the help](https://github.com/annaesvensson/yellow-help)
 
 Do you have questions? [Get help](.).

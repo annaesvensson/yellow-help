@@ -1101,8 +1101,8 @@ class YellowExample {
 
 ## Relaterad information
 
-* [Hur man använder kommandoraden](https://github.com/datenstrom/yellow-extensions/blob/master/source/command/README-sv.md)
-* [Hur man gör ett tillägg](https://github.com/datenstrom/yellow-extensions/blob/master/source/publish/README-sv.md)
-* [Hur man gör en översättning](https://github.com/datenstrom/yellow-extensions/blob/master/source/language/README-sv.md)
+* [Hur man använder kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md)
+* [Hur man gör ett tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md)
+* [Hur man gör en översättning](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md)
 
 Har du några frågor? [Få hjälp](.).

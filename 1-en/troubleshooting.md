@@ -202,8 +202,8 @@ When your website doesn't work, then check `server_name` and `root` in the confi
 
 ## Related information
 
-* [How to start the built-in web server](https://github.com/datenstrom/yellow-extensions/tree/master/source/serve)
-* [How to create a user account](https://github.com/datenstrom/yellow-extensions/tree/master/source/edit)
-* [How to update a website](https://github.com/datenstrom/yellow-extensions/tree/master/source/update)
+* [How to start the built-in web server](https://github.com/annaesvensson/yellow-serve)
+* [How to create a user account](https://github.com/annaesvensson/yellow-edit)
+* [How to update a website](https://github.com/annaesvensson/yellow-update)
 
 Do you have questions? [Get help](.).

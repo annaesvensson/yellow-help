@@ -1101,8 +1101,8 @@ class YellowExample {
 
 ## Relevant information
 
-* [How to use the command line](https://github.com/datenstrom/yellow-extensions/blob/master/source/command)
-* [How to make an extension](https://github.com/datenstrom/yellow-extensions/blob/master/source/publish)
-* [How to make a translation](https://github.com/datenstrom/yellow-extensions/blob/master/source/language)
+* [How to use the command line](https://github.com/annaesvensson/yellow-command)
+* [How to make an extension](https://github.com/annaesvensson/yellow-publish)
+* [How to make a translation](https://github.com/annaesvensson/yellow-language)
 
 Do you have questions? [Get help](.).

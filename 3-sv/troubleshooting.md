@@ -201,8 +201,8 @@ När din webbplats inte fungerar, kontrollera `server_name` och `root` i konfigu
 
 ## Relaterad information
 
-* [Hur man startar inbyggda webbservern](https://github.com/datenstrom/yellow-extensions/tree/master/source/serve/README-sv.md)
-* [Hur man skapar ett användarkonto](https://github.com/datenstrom/yellow-extensions/tree/master/source/edit/README-sv.md)
-* [Hur man uppdaterar en webbplats](https://github.com/datenstrom/yellow-extensions/tree/master/source/update/README-sv.md)
+* [Hur man startar inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md)
+* [Hur man skapar ett användarkonto](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md)
+* [Hur man uppdaterar en webbplats](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md)
 
 Har du några frågor? [Få hjälp](.).

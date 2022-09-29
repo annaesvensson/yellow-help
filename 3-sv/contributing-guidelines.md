@@ -72,8 +72,8 @@ Let me know if you need more information. Thanks for investigating.
 
 ## Relaterad information
 
-* [Hur man gör ett tillägg](https://github.com/datenstrom/yellow-extensions/tree/master/source/publish/README-sv.md)
-* [Hur man gör en översättning](https://github.com/datenstrom/yellow-extensions/tree/master/source/language/README-sv.md)
-* [Hur man redigerar hjälpen](https://github.com/datenstrom/yellow-extensions/tree/master/source/help/README-sv.md) 
+* [Hur man gör ett tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md)
+* [Hur man gör en översättning](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md)
+* [Hur man redigerar hjälpen](https://github.com/annaesvensson/yellow-help/tree/main/README-sv.md) 
 
 Har du några frågor? [Få hjälp](.).

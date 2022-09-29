@@ -72,8 +72,8 @@ Let me know if you need more information. Thanks for investigating.
 
 ## Verwandte Informationen
 
-* [Wie man eine Erweiterung erstellt](https://github.com/datenstrom/yellow-extensions/tree/master/source/publish/README-de.md)
-* [Wie man eine Übersetzung erstellt](https://github.com/datenstrom/yellow-extensions/tree/master/source/language/README-de.md)
-* [Wie man die Hilfe bearbeitet](https://github.com/datenstrom/yellow-extensions/tree/master/source/help/README-de.md) 
+* [Wie man eine Erweiterung erstellt](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md)
+* [Wie man eine Übersetzung erstellt](https://github.com/annaesvensson/yellow-language/tree/main/README-de.md)
+* [Wie man die Hilfe bearbeitet](https://github.com/annaesvensson/yellow-help/tree/main/README-de.md) 
 
 Hast du Fragen? [Hilfe finden](.).
