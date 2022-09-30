@@ -26,7 +26,7 @@ Skapa en länk, olika filformat:
 
 ## Bilder
 
-Du kan använda [image-tillägget](https://github.com/datenstrom/yellow-extensions/tree/master/source/image/README-sv.md) för att bädda in bilder. Bildformaten GIF, JPG, PNG och SVG stöds. För att lägga till en bild, kopiera bilden till `media/images` mappen och skapa en `[image]` förkortning. Du kan också ladda upp bilder i en webbläsare, sedan läggs bilden till på önskad plats.
+Du kan använda [image-tillägget](https://github.com/annaesvensson/yellow-image/tree/main/README-sv.md) för att bädda in bilder. Bildformaten GIF, JPG, PNG och SVG stöds. För att lägga till en bild, kopiera bilden till `media/images` mappen och skapa en `[image]` förkortning. Du kan också ladda upp bilder i en webbläsare, sedan läggs bilden till på önskad plats.
 
 Lägga till en bild, olika beskrivningar:
 
@@ -54,7 +54,7 @@ Lägga till en bild, olika storlekar med standardstilen:
 
 ## Bildgallerier
 
-Du kan använda [gallery-tillägget](https://github.com/datenstrom/yellow-extensions/tree/master/source/gallery/README-sv.md) eller [slider-tillägget](https://github.com/datenstrom/yellow-extensions/tree/master/source/slider/README-sv.md) för att bädda in bildgallerier. Bildformaten GIF, JPG, PNG och SVG stöds. För att lägga till ett bildgalleri, kopiera bilder till `media/images` mappen och skapa en `[gallery]` förkortning. Du kan också ladda upp bilder i en webbläsare.
+Du kan använda [gallery-tillägget](https://github.com/annaesvensson/yellow-gallery/tree/main/README-sv.md) eller [slider-tillägget](https://github.com/annaesvensson/yellow-slider/tree/main/README-sv.md) för att bädda in bildgallerier. Bildformaten GIF, JPG, PNG och SVG stöds. För att lägga till ett bildgalleri, kopiera bilder till `media/images` mappen och skapa en `[gallery]` förkortning. Du kan också ladda upp bilder i en webbläsare.
 
 Lägga till ett bildgalleri med popup, olika sorteringar:
 
@@ -82,7 +82,7 @@ Lägga till ett bildgalleri med reglaget, olika storlekar:
 
 ## Videor
 
-Du kan använda [Youtube-tillägget](https://github.com/datenstrom/yellow-extensions/tree/master/source/youtube/README-sv.md) för att bädda in videor: 
+Du kan använda [Youtube-tillägget](https://github.com/annaesvensson/yellow-youtube/tree/main/README-sv.md) för att bädda in videor: 
 
 Bädda in en video, olika videor:
 

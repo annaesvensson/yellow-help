@@ -28,7 +28,7 @@ Den centrala konfigurationsfilen är `system/extensions/yellow-system.ini`. Här
     Parser: markdown
     Status: public
 
-Du kan använda [webbläsaren](https://github.com/datenstrom/yellow-extensions/tree/master/source/edit/README-sv.md) eller din [dator](https://github.com/datenstrom/yellow-extensions/tree/master/source/core/README-sv.md) för att ändra systeminställningar. Systeminställningarna innehåller inställningarna för din webbplats och för alla tillägg. Efter en ny installation var noga med att kontrollera `Sitename`, `Author` och `Email`. Följande inställningar kan konfigureras:
+Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) eller din [dator](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md) för att ändra systeminställningar. Systeminställningarna innehåller inställningarna för din webbplats och för alla tillägg. Efter en ny installation var noga med att kontrollera `Sitename`, `Author` och `Email`. Följande inställningar kan konfigureras:
 
 `Sitename` = webbplatsens namn  
 `Author` = webmasterns namn  
@@ -56,7 +56,7 @@ Användarinställningar lagras i filen `system/extensions/yellow-user.ini`. Här
     Modified: 2000-01-01 13:37:00
     Status: active
 
-Du kan använda [webbläsaren](https://github.com/datenstrom/yellow-extensions/tree/master/source/edit/README-sv.md) eller [kommandoraden](https://github.com/datenstrom/yellow-extensions/tree/master/source/command/README-sv.md) för att skapa nya användarkonton. Ett användarkonto består av `Email` och andra inställningar. Om du inte vill att sidorna ska ändras i en webbläsare begränsar du användarkonton. Öppna konfigurationsfilen, ändra `Access` och `Home`. Användare får redigera sidor på sin hemsida, men inte någon annanstans.
+Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) eller [kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md) för att skapa nya användarkonton. Ett användarkonto består av `Email` och andra inställningar. Om du inte vill att sidorna ska ändras i en webbläsare begränsar du användarkonton. Öppna konfigurationsfilen, ändra `Access` och `Home`. Användare får redigera sidor på sin hemsida, men inte någon annanstans.
 
 ## Språkinställningar
 
@@ -70,7 +70,7 @@ Språkinställningar lagras i filen `system/extensions/yellow-language.ini`. Hä
     ImageDefaultAlt: Bild utan beskrivning
     media/images/photo.jpg: Detta är en exempelbild
 
-Du kan definiera språkinställningarna här. Ett språk består av `Language` och andra inställningar. Du kan kopiera [standardinställningarna från språkfiler](https://github.com/datenstrom/yellow-extensions/blob/master/source/swedish/swedish.txt) och klistra in dem i konfigurationsfilen. Du kan också lägga till dina egna språkinställningar i konfigurationsfilen, till exempel bildtexter.
+Du kan definiera språkinställningarna här. Ett språk består av `Language` och andra inställningar. Du kan kopiera [standardinställningarna från språkfiler](https://github.com/annaesvensson/yellow-language/blob/main/translation/swedish/swedish.txt) och klistra in dem i konfigurationsfilen. Du kan också lägga till dina egna språkinställningar i konfigurationsfilen, till exempel bildtexter.
 
 ## Sidinställningar
 
@@ -102,8 +102,8 @@ Följande inställningar kan konfigureras högst upp på en sida:
 <a id="inställningar-status"></a>Följande sidstatusvärden stöds:
 
 `public` = sidan är en vanlig sida  
-`private` = sidan är inte synlig, användaren måste ange lösenord, [kräver private-tillägg](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/private)  
-`draft` = sidan är inte synlig, användaren måste logga in, [kräver draft-tillägg](https://github.com/datenstrom/yellow-extensions/tree/master/source/draft)  
+`private` = sidan är inte synlig, användaren måste ange lösenord, [kräver private-tillägg](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/main/private)  
+`draft` = sidan är inte synlig, användaren måste logga in, [kräver draft-tillägg](https://github.com/annaesvensson/yellow-draft/tree/main/README-sv.md)  
 `unlisted` = sidan är inte synlig, men kan nås med rätt länk  
 `shared` = sidan är inte synlig, men kan ingå i andra sidor  
 

@@ -73,14 +73,14 @@ Status: shared
 [Erstellt mit Datenstrom Yellow](https://datenstrom.se/de/yellow/).
 ```
 
-## Funktionen, Themen und Sprachen hinzufügen
+## Funktionen, Sprachen und Themen hinzufügen
 
-Es gibt [Erweiterungen für deine Webseite](https://github.com/datenstrom/yellow-extensions/tree/master/README-de.md) und eine [API für Entwickler](api-for-developers).
+Es gibt [Erweiterungen für deine Webseite](https://github.com/datenstrom/yellow-extensions/tree/main/README-de.md) und eine [API für Entwickler](api-for-developers).
 
 ## Verwandte Informationen
 
-* [Wie man eine Webseite im Webbrowser bearbeitet](https://github.com/datenstrom/yellow-extensions/tree/master/source/edit/README-de.md)
-* [Wie man eine Webseite auf dem Computer bearbeitet](https://github.com/datenstrom/yellow-extensions/tree/master/source/core/README-de.md)
-* [Wie man eine statische Webseite erstellt](https://github.com/datenstrom/yellow-extensions/tree/master/source/command/README-de.md)
+* [Wie man eine Webseite im Webbrowser bearbeitet](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md)
+* [Wie man eine Webseite auf dem Computer bearbeitet](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md)
+* [Wie man eine statische Webseite erstellt](https://github.com/annaesvensson/yellow-command/tree/main/README-de.md)
 
 Hast du Fragen? [Hilfe finden](.).

@@ -28,7 +28,7 @@ The main configuration file is `system/extensions/yellow-system.ini`. Here's an 
     Parser: markdown
     Status: public
 
-You can use a [web browser](https://github.com/datenstrom/yellow-extensions/tree/master/source/edit) or your [computer](https://github.com/datenstrom/yellow-extensions/tree/master/source/core) to change the system settings. The system settings contain the settings of your website and of all extensions. After a new installation be sure to check `Sitename`, `Author` and `Email`. The following settings can be configured:
+You can use a [web browser](https://github.com/annaesvensson/yellow-edit) or your [computer](https://github.com/annaesvensson/yellow-core) to change the system settings. The system settings contain the settings of your website and of all extensions. After a new installation be sure to check `Sitename`, `Author` and `Email`. The following settings can be configured:
 
 `Sitename` = name of the website  
 `Author` = name of the webmaster  
@@ -56,7 +56,7 @@ The user settings are stored in file `system/extensions/yellow-user.ini`. Here's
     Modified: 2000-01-01 13:37:00
     Status: active
 
-You can use a [web browser](https://github.com/datenstrom/yellow-extensions/tree/master/source/edit) or the [command line](https://github.com/datenstrom/yellow-extensions/tree/master/source/command) to create new user accounts. A user account consists of `Email` and other settings. If you don't want that pages are modified in a web browser, then restrict user accounts. Open the configuration file, change `Access` and `Home`. Users are allowed to edit pages within their home page, but nowhere else.
+You can use a [web browser](https://github.com/annaesvensson/yellow-edit) or the [command line](https://github.com/annaesvensson/yellow-command) to create new user accounts. A user account consists of `Email` and other settings. If you don't want that pages are modified in a web browser, then restrict user accounts. Open the configuration file, change `Access` and `Home`. Users are allowed to edit pages within their home page, but nowhere else.
 
 ## Language settings
 
@@ -70,7 +70,7 @@ The language settings are stored in file `system/extensions/yellow-language.ini`
     ImageDefaultAlt: Image without description
     media/images/photo.jpg: This is an example image
 
-You can define the language settings here. A language consist of `Language` and other settings. You can copy the [default settings from language files](https://github.com/datenstrom/yellow-extensions/blob/master/source/english/english.txt) and paste them into the configuration file. You can also add your own language settings to the configuration file, for example image captions.
+You can define the language settings here. A language consist of `Language` and other settings. You can copy the [default settings from language files](https://github.com/annaesvensson/yellow-language/blob/main/translation/english/english.txt) and paste them into the configuration file. You can also add your own language settings to the configuration file, for example image captions.
 
 ## Page settings
 
@@ -102,8 +102,8 @@ The following settings can be configured at the top of a page:
 <a id="settings-status"></a>The following page status values are supported:
 
 `public` = page is a normal page  
-`private` = page is not visible, user needs to enter password, [requires private extension](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/private)  
-`draft` = page is not visible, user needs to log in, [requires draft extension](https://github.com/datenstrom/yellow-extensions/tree/master/source/draft)  
+`private` = page is not visible, user needs to enter password, [requires private extension](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/main/private)  
+`draft` = page is not visible, user needs to log in, [requires draft extension](https://github.com/annaesvensson/yellow-draft)  
 `unlisted` = page is not visible, but can be accessed with the correct link  
 `shared` = page is not visible, but can be included in other pages  
 

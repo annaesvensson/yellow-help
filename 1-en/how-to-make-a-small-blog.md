@@ -45,7 +45,7 @@ an important part of life in Sweden that it is both a verb and a noun.
 How often do you fika?
 ```
 
-Now let's add a video with the [Youtube extension](https://github.com/datenstrom/yellow-extensions/tree/master/source/youtube):
+Now let's add a video with the [Youtube extension](https://github.com/annaesvensson/yellow-youtube):
 
 ```
 ---
@@ -105,14 +105,14 @@ Status: shared
 [Made with Datenstrom Yellow](https://datenstrom.se/yellow/).
 ```
 
-## Add features, themes and languages
+## Add features, languages and themes
 
 There are [extensions for your website](https://github.com/datenstrom/yellow-extensions) and an [API for developers](api-for-developers).
 
 ## Related information
 
-* [How to edit a website in a web browser](https://github.com/datenstrom/yellow-extensions/tree/master/source/edit)
-* [How to edit a website on your computer](https://github.com/datenstrom/yellow-extensions/tree/master/source/core)
-* [How to use a blog](https://github.com/datenstrom/yellow-extensions/tree/master/source/blog)
+* [How to edit a website in a web browser](https://github.com/annaesvensson/yellow-edit)
+* [How to edit a website on your computer](https://github.com/annaesvensson/yellow-core)
+* [How to use a blog](https://github.com/annaesvensson/yellow-blog)
 
 Do you have questions? [Get help](.).

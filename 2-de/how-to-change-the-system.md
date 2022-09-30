@@ -28,7 +28,7 @@ Die zentrale Konfigurationsdatei ist `system/extensions/yellow-system.ini`. Hier
     Parser: markdown
     Status: public
 
-Im [Webbrowser](https://github.com/datenstrom/yellow-extensions/tree/master/source/edit/README-de.md) oder auf deinem [Computer](https://github.com/datenstrom/yellow-extensions/tree/master/core/edit/README-de.md) kannst du die Systemeinstellungen ändern. Die Systemeinstellungen enthalten die Einstellungen der Webseite und aller Erweiterungen. Nach einer neuen Installation sollte man unbedingt `Sitename`, `Author` und `Email` überprüfen. Die folgenden Einstellungen können vorgenommen werden:
+Im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) oder auf deinem [Computer](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) kannst du die Systemeinstellungen ändern. Die Systemeinstellungen enthalten die Einstellungen der Webseite und aller Erweiterungen. Nach einer neuen Installation sollte man unbedingt `Sitename`, `Author` und `Email` überprüfen. Die folgenden Einstellungen können vorgenommen werden:
 
 `Sitename` = Name der Webseite  
 `Author` = Name des Webmasters  
@@ -56,7 +56,7 @@ Die Benutzereinstellungen sind in der Datei `system/extensions/yellow-user.ini` 
     Modified: 2000-01-01 13:37:00
     Status: active
 
-Im [Webbrowser](https://github.com/datenstrom/yellow-extensions/tree/master/source/edit/README-de.md) oder der [Befehlszeile](https://github.com/datenstrom/yellow-extensions/tree/master/source/command/README-de.md) kannst du neue Benutzerkonten anlegen. Ein Benutzerkonto besteht aus `Email` und weiteren Einstellungen. Falls du nicht willst dass Seiten im Webbrowser verändert werden, dann beschränke Benutzerkonten. Öffne die Konfigurationsdatei, ändere `Access` und `Home`. Benutzer dürfen Seiten innerhalb ihrer Startseite bearbeiten, aber nirgendwo sonst.
+Im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) oder der [Befehlszeile](https://github.com/annaesvensson/yellow-command/tree/main/README-de.md) kannst du neue Benutzerkonten anlegen. Ein Benutzerkonto besteht aus `Email` und weiteren Einstellungen. Falls du nicht willst dass Seiten im Webbrowser verändert werden, dann beschränke Benutzerkonten. Öffne die Konfigurationsdatei, ändere `Access` und `Home`. Benutzer dürfen Seiten innerhalb ihrer Startseite bearbeiten, aber nirgendwo sonst.
 
 ## Spracheinstellungen
 
@@ -70,7 +70,7 @@ Die Spracheinstellungen sind in der Datei `system/extensions/yellow-language.ini
     ImageDefaultAlt: Bild ohne Beschreibung
     media/images/photo.jpg: Das ist ein Beispielbild
 
-Hier kannst du die Spracheinstellungen festlegen. Eine Sprache besteht aus `Language` und weiteren Einstellungen. Du kannst die [Standardeinstellungen aus Sprachdateien](https://github.com/datenstrom/yellow-extensions/blob/master/source/german/german.txt) kopieren und in die Konfigurationsdatei einfügen. Du kannst auch deine eigenen Spracheinstellungen zur Konfigurationsdatei hinzufügen, beispielsweise Bildunterschriften.
+Hier kannst du die Spracheinstellungen festlegen. Eine Sprache besteht aus `Language` und weiteren Einstellungen. Du kannst die [Standardeinstellungen aus Sprachdateien](https://github.com/annaesvensson/yellow-language/blob/main/translation/german/german.txt) kopieren und in die Konfigurationsdatei einfügen. Du kannst auch deine eigenen Spracheinstellungen zur Konfigurationsdatei hinzufügen, beispielsweise Bildunterschriften.
 
 ## Seiteneinstellungen
 
@@ -102,8 +102,8 @@ Die folgenden Einstellungen können ganz oben auf einer Seite vorgenommen werden
 <a id="einstellungen-status"></a>Die folgenden Seiten-Statuswerte werden unterstützt:
 
 `public` = Seite ist eine normale Seite  
-`private` = Seite ist nicht sichtbar, Benutzer muss das Kennwort eingeben, [erfordert Private-Erweiterung](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/master/private/README-de.md)  
-`draft` = Seite ist nicht sichtbar, Benutzer muss sich einloggen, [erfordert Draft-Erweiterung](https://github.com/datenstrom/yellow-extensions/tree/master/source/draft/README-de.md)  
+`private` = Seite ist nicht sichtbar, Benutzer muss das Kennwort eingeben, [erfordert Private-Erweiterung](https://github.com/schulle4u/yellow-extensions-schulle4u/tree/main/private/README-de.md)  
+`draft` = Seite ist nicht sichtbar, Benutzer muss sich einloggen, [erfordert Draft-Erweiterung](https://github.com/annaesvensson/yellow-draft/tree/main/README-de.md)  
 `unlisted` = Seite ist nicht sichtbar, aber kann mit dem richtigen Link abgerufen werden  
 `shared` = Seite ist nicht sichtbar, aber kann in andere Seiten eingebunden werden  
 

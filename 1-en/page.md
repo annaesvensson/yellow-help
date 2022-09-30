@@ -15,9 +15,9 @@ TitleSlug: help
 ! * [How to change the content](how-to-change-the-content)
 ! * [How to change the media](how-to-change-the-media)
 ! * [How to change the system](how-to-change-the-system)
+! * [How to customise a language](how-to-customise-a-language)
 ! * [How to customise a layout](how-to-customise-a-layout)
 ! * [How to customise a theme](how-to-customise-a-theme)
-! * [How to customise a language](how-to-customise-a-language)
 ! * [API for developers](api-for-developers)
 ! * [Troubleshooting](troubleshooting)
 
