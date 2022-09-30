@@ -19,7 +19,7 @@ Erfahre wie du mit uns zusammenarbeitest und gute Produkte machst.
 
 ## Wie man eine Erweiterung erstellt
 
-* [Beginne mit einer Beispiel-Funktion](https://github.com/schulle4u/yellow-extension-helloworld), einer [Beispiel-Sprache](https://github.com/annaesvensson/yellow-language/tree/main/translation/german) oder einem [Beispiel-Thema](https://github.com/schulle4u/yellow-extension-basic).
+* [Beginne mit einer Beispiel-Funktion](https://github.com/schulle4u/yellow-extension-helloworld) oder einem [Beispiel-Thema](https://github.com/schulle4u/yellow-extension-basic).
 * Denk darüber nach wie man das Leben einfacher macht, konzentriere dich auf Menschen und deren Alltag.
 * Lade deine Erweiterung zu GitHub hoch, füge das Thema `datenstrom-yellow` zu deinem Repository hinzu.
 * Mache eine Ankündigung und zeige was du gemacht hast, wenn deine Erweiterung fertig ist.

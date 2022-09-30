@@ -12,7 +12,7 @@ The help is available on your website as `http://website/help/`. The help gives 
 
 ## How to edit the help
 
-If you want to edit the help in a [web browser](https://github.com/annaesvensson/yellow-edit), you can do this on your website at `http://website/edit/help/`. If you want to edit the help on your [computer](https://github.com/annaesvensson/yellow-core), have a look inside your `content/9-help` folder. Here are some tips. Look at the help from the user's perspective. Check that it is helpful to the user and give practical examples. Upload your changes to GitHub and create a pull request for `datenstrom/yellow-extensions`.
+If you want to edit the help in a [web browser](https://github.com/annaesvensson/yellow-edit), you can do this on your website at `http://website/edit/help/`. If you want to edit the help on your [computer](https://github.com/annaesvensson/yellow-core), have a look inside your `content/9-help` folder. Here are some tips. Look at the help from the user's perspective. Check that it is helpful to the user and give practical examples. Upload your changes to GitHub, let us know if you need help.
 
 ## Installation
 
