@@ -22,9 +22,9 @@ The main configuration file is `system/extensions/yellow-system.ini`. Here's an 
     Sitename: Anna Svensson Design
     Author: Anna Svensson
     Email: anna@svensson.com
+    Language: en
     Layout: default
     Theme: stockholm
-    Language: en
     Parser: markdown
     Status: public
 
@@ -33,9 +33,9 @@ You can use a [web browser](https://github.com/annaesvensson/yellow-edit) or you
 `Sitename` = name of the website  
 `Author` = name of the webmaster  
 `Email` = email of the webmaster  
+`Language` = default language  
 `Layout` = default layout  
 `Theme` = default theme  
-`Language` = default language  
 `Parser` = default page parser  
 `Status` = default page status, [supported status values](#settings-status)  
 
@@ -84,10 +84,10 @@ The following settings can be configured at the top of a page:
 `Description` = page description  
 `Author` = page author(s), comma separated  
 `Email` = email of page author  
+`Language` = page language  
 `Layout` = page layout  
 `LayoutNew` = page layout for creating a new page  
 `Theme` = page theme  
-`Language` = page language  
 `Parser` = page parser  
 `Status` = page status, [supported status values](#settings-status)  
 `Redirect` = redirect to a new page or URL  

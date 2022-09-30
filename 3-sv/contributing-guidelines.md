@@ -43,9 +43,9 @@ Here are my settings in file `system/extensions/yellow-system.ini`:
 Sitename: Datenstrom Yellow
 Author: Datenstrom
 Email: webmaster
+Language: swedish
 Layout: default
 Theme: stockholm
-Language: swedish
 
 Thanks for your help.
 ```

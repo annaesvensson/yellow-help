@@ -75,7 +75,7 @@ YellowCore::sendPage Cache-Control: max-age=60
 YellowCore::sendPage Content-Type: text/html; charset=utf-8
 YellowCore::sendPage Content-Modified: Wed, 06 Feb 2019 13:54:17 GMT
 YellowCore::sendPage Last-Modified: Thu, 07 Feb 2019 09:37:48 GMT
-YellowCore::sendPage layout:wiki-start theme:stockholm language:de parser:markdown
+YellowCore::sendPage language:de layout:wiki-start theme:stockholm parser:markdown
 YellowCore::processRequest file:content/2-de/2-wiki/page.md
 YellowCore::request status:200 time:19 ms
 ```
@@ -99,9 +99,9 @@ YellowSystem::load file:system/extensions/yellow-system.ini
 YellowSystem::load Sitename:Datenstrom Yellow
 YellowSystem::load Author:Datenstrom
 YellowSystem::load Email:webmaster
+YellowSystem::load Language:de
 YellowSystem::load Layout:default
 YellowSystem::load Theme:stockholm
-YellowSystem::load Language:de
 ```
 
 ## Probleme mit Apache

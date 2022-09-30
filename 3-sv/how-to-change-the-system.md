@@ -22,9 +22,9 @@ Den centrala konfigurationsfilen är `system/extensions/yellow-system.ini`. Här
     Sitename: Anna Svensson Design
     Author: Anna Svensson
     Email: anna@svensson.com
+    Language: sv
     Layout: default
     Theme: stockholm
-    Language: sv
     Parser: markdown
     Status: public
 
@@ -33,9 +33,9 @@ Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree
 `Sitename` = webbplatsens namn  
 `Author` = webmasterns namn  
 `Email` = webmasterns email  
+`Language` = standardspråk  
 `Layout` = standardlayout  
 `Theme` = standardtema  
-`Language` = standardspråk  
 `Parser` = standard sidparser  
 `Status` = standard sidstatus, [stödda statusvärden](#inställningar-status)  
 
@@ -84,10 +84,10 @@ Följande inställningar kan konfigureras högst upp på en sida:
 `Description` = sidans beskrivning  
 `Author` = sidans författare, kommaseparerade  
 `Email` = email av sidans författare  
+`Language` = sidans språk  
 `Layout` = sidans layout  
 `LayoutNew` = sidans layout för att skapa en ny sida  
 `Theme` = sidans tema  
-`Language` = sidans språk  
 `Parser` = sidans parser  
 `Status` = sidans status, [stödda statusvärden](#inställningar-status)  
 `Redirect` = omdirigera till en ny sida eller URL  
