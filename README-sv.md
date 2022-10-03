@@ -22,4 +22,4 @@ Tillägget innehåller en [bild](https://unsplash.com/photos/azsk_6IMT3I) av Bru
 
 ## Utvecklare
 
-Datenstrom. [Få hjälp](https://datenstrom.se/sv/yellow/help/).
+Anna Svensson. [Få hjälp](https://datenstrom.se/sv/yellow/help/).

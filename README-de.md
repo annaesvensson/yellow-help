@@ -22,4 +22,4 @@ Diese Erweiterung enthält ein [Bild](https://unsplash.com/photos/azsk_6IMT3I) v
 
 ## Entwickler
 
-Datenstrom. [Hilfe finden](https://datenstrom.se/de/yellow/help/).
+Anna Svensson. [Hilfe finden](https://datenstrom.se/de/yellow/help/).

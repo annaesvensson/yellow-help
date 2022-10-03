@@ -22,4 +22,4 @@ This extension includes a [photo](https://unsplash.com/photos/azsk_6IMT3I) by Br
 
 ## Developer
 
-Datenstrom. [Get help](https://datenstrom.se/yellow/help/).
+Anna Svensson. [Get help](https://datenstrom.se/yellow/help/).
