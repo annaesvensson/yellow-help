@@ -28,6 +28,7 @@ Du kan ändra allt i filhanteraren på din dator. Mappen `content` innehåller w
 `system/extensions/yellow-system.ini` = [fil med systeminställningar](how-to-change-the-system#systeminställningar)  
 `system/extensions/yellow-user.ini` = [fil med användarinställningar](how-to-change-the-system#användarinställningar)  
 `system/extensions/yellow-language.ini` = [fil med språkinställningar](how-to-change-the-system#språkinställningar)  
+`system/extensions/yellow-website.log` = [loggfil för din webbplats](troubleshooting#problem-efter-installationen)  
 
 ## Verktyg
 

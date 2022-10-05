@@ -28,6 +28,7 @@ Du kannst alles im Dateimanager auf deinem Computer ändern. Das `content`-Verze
 `system/extensions/yellow-system.ini` = [Datei mit Systemeinstellungen](how-to-change-the-system#systemeinstellungen)  
 `system/extensions/yellow-user.ini` = [Datei mit Benutzereinstellungen](how-to-change-the-system#benutzereinstellungen)  
 `system/extensions/yellow-language.ini` = [Datei mit Spracheinstellungen](how-to-change-the-system#spracheinstellungen)  
+`system/extensions/yellow-website.log` = [Logdatei für deine Webseite](troubleshooting#probleme-nach-der-installation)  
 
 ## Werkzeuge
 

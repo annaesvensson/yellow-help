@@ -22,7 +22,7 @@ Learn how to work with us and make good products.
 * [Start with a feature](https://github.com/schulle4u/yellow-helloworld), [language](https://github.com/annaesvensson/yellow-language/tree/main/translation/english) or [theme](https://github.com/annaesvensson/yellow-stockholm).
 * Think about how to make life easier, focus on people and their everyday life.
 * Upload your extension to GitHub, add the topic `datenstrom-yellow` to your repository.
-* Make an announcement and show what you have made, when your extension is done.
+* Make an announcement, when your extension is done.
 
 ## How to share your experiences
 

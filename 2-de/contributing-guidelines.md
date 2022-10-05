@@ -22,7 +22,7 @@ Erfahre wie du mit uns zusammenarbeitest und gute Produkte machst.
 * [Beginne mit einer Funktion](https://github.com/schulle4u/yellow-helloworld), [einer Sprache](https://github.com/annaesvensson/yellow-language/tree/main/translation/german) oder [einem Thema](https://github.com/annaesvensson/yellow-stockholm/tree/main/README-de.md).
 * Denk darüber nach wie man das Leben einfacher macht, konzentriere dich auf Menschen und deren Alltag.
 * Lade deine Erweiterung zu GitHub hoch, füge das Thema `datenstrom-yellow` zu deinem Repository hinzu.
-* Mache eine Ankündigung und zeige was du gemacht hast, wenn deine Erweiterung fertig ist.
+* Mache eine Ankündigung, wenn deine Erweiterung fertig ist.
 
 ## Wie man Erfahrungen austauscht
 
