@@ -70,7 +70,7 @@ The language settings are stored in file `system/extensions/yellow-language.ini`
     ImageDefaultAlt: Image without description
     media/images/photo.jpg: This is an example image
 
-You can define the language settings here. A language consist of `Language` and other settings. You can copy the [default settings from language files](https://github.com/annaesvensson/yellow-language/blob/main/translation/english/english.txt) and paste them into the configuration file. You can also add your own language settings to the configuration file, for example image captions.
+You can define the language settings here. A language consist of `Language` and other settings. You can copy the [default settings from language files](https://github.com/annaesvensson/yellow-language/blob/main/translations/english/english.txt) and paste them into the configuration file. You can also add your own language settings to the configuration file, for example image captions.
 
 ## Page settings
 

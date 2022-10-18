@@ -70,7 +70,7 @@ Die Spracheinstellungen sind in der Datei `system/extensions/yellow-language.ini
     ImageDefaultAlt: Bild ohne Beschreibung
     media/images/photo.jpg: Das ist ein Beispielbild
 
-Hier kannst du die Spracheinstellungen festlegen. Eine Sprache besteht aus `Language` und weiteren Einstellungen. Du kannst die [Standardeinstellungen aus Sprachdateien](https://github.com/annaesvensson/yellow-language/blob/main/translation/german/german.txt) kopieren und in die Konfigurationsdatei einfügen. Du kannst auch deine eigenen Spracheinstellungen zur Konfigurationsdatei hinzufügen, beispielsweise Bildunterschriften.
+Hier kannst du die Spracheinstellungen festlegen. Eine Sprache besteht aus `Language` und weiteren Einstellungen. Du kannst die [Standardeinstellungen aus Sprachdateien](https://github.com/annaesvensson/yellow-language/blob/main/translations/german/german.txt) kopieren und in die Konfigurationsdatei einfügen. Du kannst auch deine eigenen Spracheinstellungen zur Konfigurationsdatei hinzufügen, beispielsweise Bildunterschriften.
 
 ## Seiteneinstellungen
 

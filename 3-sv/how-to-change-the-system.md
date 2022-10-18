@@ -70,7 +70,7 @@ Språkinställningar lagras i filen `system/extensions/yellow-language.ini`. Hä
     ImageDefaultAlt: Bild utan beskrivning
     media/images/photo.jpg: Detta är en exempelbild
 
-Du kan definiera språkinställningarna här. Ett språk består av `Language` och andra inställningar. Du kan kopiera [standardinställningarna från språkfiler](https://github.com/annaesvensson/yellow-language/blob/main/translation/swedish/swedish.txt) och klistra in dem i konfigurationsfilen. Du kan också lägga till dina egna språkinställningar i konfigurationsfilen, till exempel bildtexter.
+Du kan definiera språkinställningarna här. Ett språk består av `Language` och andra inställningar. Du kan kopiera [standardinställningarna från språkfiler](https://github.com/annaesvensson/yellow-language/blob/main/translations/swedish/swedish.txt) och klistra in dem i konfigurationsfilen. Du kan också lägga till dina egna språkinställningar i konfigurationsfilen, till exempel bildtexter.
 
 ## Sidinställningar
 
