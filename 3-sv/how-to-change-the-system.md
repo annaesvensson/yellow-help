@@ -28,7 +28,7 @@ Den centrala konfigurationsfilen är `system/extensions/yellow-system.ini`. Här
     Parser: markdown
     Status: public
 
-Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) eller din [dator](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md) för att ändra systeminställningar. Systeminställningarna innehåller inställningarna för din webbplats och för alla tillägg. Efter en ny installation var noga med att kontrollera `Sitename`, `Author` och `Email`. Följande inställningar kan konfigureras:
+Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) eller din [dator](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md) för att ändra systeminställningar. Systeminställningarna innehåller inställningarna för din webbplats och för alla installerade tillägg. Följande inställningar kan konfigureras:
 
 `Sitename` = webbplatsens namn  
 `Author` = webmasterns namn  
@@ -38,6 +38,24 @@ Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree
 `Theme` = standardtema  
 `Parser` = standard sidparser  
 `Status` = standard sidstatus, [stödda statusvärden](#inställningar-status)  
+
+## Språkinställningar
+
+Språkinställningar lagras i filen `system/extensions/yellow-language.ini`. Här är ett exempel:
+
+    Language: sv
+    CoreDescription: Webbplatsens kärnfunktion.
+    CorePaginationPrevious: ← Tidigare
+    CorePaginationNext: Nästa →
+    CoreTimeFormatShort: H:i
+    CoreTimeFormatMedium: H:i:s
+    CoreTimeFormatLong: H:i:s T
+    CoreDateFormatShort: F Y
+    CoreDateFormatMedium: Y-m-d
+    CoreDateFormatLong: Y-m-d H:i
+    media/images/photo.jpg: Detta är en exempelbild
+
+Du kan definiera språkinställningarna här. Ett språk består av `Language` och andra inställningar. Språkinställningarna innehåller inställningarna för alla installerade tillägg. Du kan också lägga till dina egna språkinställningar i konfigurationsfilen, till exempel bildtexter.
 
 ## Användarinställningar
 
@@ -57,20 +75,6 @@ Användarinställningar lagras i filen `system/extensions/yellow-user.ini`. Här
     Status: active
 
 Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) eller [kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md) för att skapa nya användarkonton. Ett användarkonto består av `Email` och andra inställningar. Om du inte vill att sidorna ska ändras i en webbläsare begränsar du användarkonton. Öppna konfigurationsfilen, ändra `Access` och `Home`. Användare får redigera sidor på sin hemsida, men inte någon annanstans.
-
-## Språkinställningar
-
-Språkinställningar lagras i filen `system/extensions/yellow-language.ini`. Här är ett exempel:
-
-    Language: sv
-    CoreDateFormatShort: F Y
-    CoreDateFormatMedium: Y-m-d
-    CoreDateFormatLong: Y-m-d H:i
-    EditMailFooter: @sitename
-    ImageDefaultAlt: Bild utan beskrivning
-    media/images/photo.jpg: Detta är en exempelbild
-
-Du kan definiera språkinställningarna här. Ett språk består av `Language` och andra inställningar. Du kan kopiera [standardinställningarna från språkfiler](https://github.com/annaesvensson/yellow-language/blob/main/translations/swedish/swedish.txt) och klistra in dem i konfigurationsfilen. Du kan också lägga till dina egna språkinställningar i konfigurationsfilen, till exempel bildtexter.
 
 ## Sidinställningar
 

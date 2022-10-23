@@ -26,8 +26,8 @@ Vi <3 människor som kodar.
 Du kan ändra allt i filhanteraren på din dator. Mappen `content` innehåller webbplatsens innehållsfilerna. Du kan redigera din webbplats här. Mappen `media` innehåller webbplatsens mediefiler. Du kan lagra dina bilder och filer här. Mappen `system` innehåller webbplatsens systemfilerna. Du kan anpassa installerade tillägg och konfigurationsfilar här.
 
 `system/extensions/yellow-system.ini` = [fil med systeminställningar](how-to-change-the-system#systeminställningar)  
-`system/extensions/yellow-user.ini` = [fil med användarinställningar](how-to-change-the-system#användarinställningar)  
 `system/extensions/yellow-language.ini` = [fil med språkinställningar](how-to-change-the-system#språkinställningar)  
+`system/extensions/yellow-user.ini` = [fil med användarinställningar](how-to-change-the-system#användarinställningar)  
 `system/extensions/yellow-website.log` = [loggfil för din webbplats](troubleshooting#problem-efter-installationen)  
 
 ## Verktyg
@@ -52,8 +52,8 @@ Följande objekt är tillgängliga:
 `$this->yellow->content` = [tillgång till innehållsfiler](#yellow-content)  
 `$this->yellow->media` = [tillgång till mediefiler](#yellow-media)  
 `$this->yellow->system` = [tillgång till systeminställningar](#yellow-system)  
-`$this->yellow->user` = [tillgång till användarinställningar](#yellow-user)  
 `$this->yellow->language` = [tillgång till språkinställningar](#yellow-language)  
+`$this->yellow->user` = [tillgång till användarinställningar](#yellow-user)  
 `$this->yellow->extension` = [tillgång till tillägg](#yellow-extension)  
 `$this->yellow->toolbox` = [tillgång till verktygslådan med hjälpfunktioner](#yellow-toolbox)  
 
@@ -504,11 +504,11 @@ Returnera [systeminställning](how-to-change-the-system#systeminställningar)
 **system->getHtml($key)**  
 Returnera [systeminställning](how-to-change-the-system#systeminställningar), HTML-kodad
 
+**system->getAvailable($key)**  
+Returnera tillgängliga värden för en [systeminställning](how-to-change-the-system#systeminställningar)
+
 **system->getSettings($filterStart = "", $filterEnd = "")**  
 Returnera [systeminställningar](how-to-change-the-system#systeminställningar)
-
-**system->getValues($key)**  
-Returnera stödda värden för en [systeminställning](how-to-change-the-system#systeminställningar), tom om det inte är känt
 
 **system->getModified($httpFormat = false)**  
 Returnera ändringsdatum for [systeminställningar](how-to-change-the-system#systeminställningar), Unix-tid eller HTTP-format
@@ -558,6 +558,75 @@ Här är en exempellayout för att visa core-inställningar:
 <p>
 <?php foreach ($this->yellow->system->getSettings("core") as $key=>$value): ?>
 <?php echo htmlspecialchars("$key: $value") ?><br />
+<?php endforeach ?>
+</p>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+### Yellow language
+
+Yellow language ger tillgång till språkinställningar:
+
+**language->getText($key, $language = "")**  
+Returnera [språkinställning](how-to-change-the-system#språkinställningar)
+
+**language->getTextHtml($key, $language = "")**  
+Returnera [språkinställning](how-to-change-the-system#språkinställningar), HTML-kodad
+
+**language->getSettings($filterStart = "", $filterEnd = "", $language = "")**  
+Returnera [språkinställningar](how-to-change-the-system#språkinställningar)
+
+**language->getModified($httpFormat = false)**  
+Returnera ändringsdatum för [språkinställningar](how-to-change-the-system#språkinställningar), Unix-tid eller HTTP-format
+
+**language->isText($key, $language = "")**  
+Kontrollera om [språkinställning](how-to-change-the-system#språkinställningar) finns
+
+**language->isExisting($language)**  
+Kontrollera om språket finns
+
+Här är en exempellayout för att visa en språkinställning:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<p><?php echo $this->yellow->language->getTextHtml("wikiModified") ?> 
+<?php echo $this->yellow->page->getDateHtml("modified") ?></p>
+<?php echo $this->yellow->page->getContent() ?>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Här är en exempellayout för att kontrollera om ett specifikt språk finns:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php $found = $this->yellow->language->isExisting("sv") ?>
+<p>Swedish language <?php echo htmlspecialchars($found? "" : "not") ?> installed.</p>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Här är en exempellayout för att visa språk och översättare:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<p>
+<?php foreach ($this->yellow->system->getAvailable("language") as $language): ?>
+<?php echo $this->yellow->language->getTextHtml("languageDescription", $language) ?> - 
+<?php echo $this->yellow->language->getTextHtml("languageTranslator", $language) ?><br />
 <?php endforeach ?>
 </p>
 </div>
@@ -625,78 +694,9 @@ Här är en exempellayout för att visa användare och deras status:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php foreach ($this->yellow->system->getValues("email") as $email): ?>
+<?php foreach ($this->yellow->system->getAvailable("email") as $email): ?>
 <?php echo $this->yellow->user->getUserHtml("name", $email) ?> - 
 <?php echo $this->yellow->user->getUserHtml("status", $email) ?><br />
-<?php endforeach ?>
-</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-### Yellow language
-
-Yellow language ger tillgång till språkinställningar:
-
-**language->getText($key, $language = "")**  
-Returnera [språkinställning](how-to-change-the-system#språkinställningar)
-
-**language->getTextHtml($key, $language = "")**  
-Returnera [språkinställning](how-to-change-the-system#språkinställningar), HTML-kodad
-
-**language->getSettings($filterStart = "", $filterEnd = "", $language = "")**  
-Returnera [språkinställningar](how-to-change-the-system#språkinställningar)
-
-**language->getModified($httpFormat = false)**  
-Returnera ändringsdatum för [språkinställningar](how-to-change-the-system#språkinställningar), Unix-tid eller HTTP-format
-
-**language->isText($key, $language = "")**  
-Kontrollera om [språkinställning](how-to-change-the-system#språkinställningar) finns
-
-**language->isExisting($language)**  
-Kontrollera om språket finns
-
-Här är en exempellayout för att visa en språkinställning:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p><?php echo $this->yellow->language->getTextHtml("wikiModified") ?> 
-<?php echo $this->yellow->page->getDateHtml("modified") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Här är en exempellayout för att kontrollera om ett specifikt språk finns:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $found = $this->yellow->language->isExisting("sv") ?>
-<p>Swedish language <?php echo htmlspecialchars($found? "" : "not") ?> installed.</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Här är en exempellayout för att visa språk och översättare:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p>
-<?php foreach ($this->yellow->system->getValues("language") as $language): ?>
-<?php echo $this->yellow->language->getTextHtml("languageDescription", $language) ?> - 
-<?php echo $this->yellow->language->getTextHtml("languageTranslator", $language) ?><br />
 <?php endforeach ?>
 </p>
 </div>

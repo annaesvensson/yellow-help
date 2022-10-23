@@ -84,12 +84,12 @@ Få filsystem information genom att öka debug-level till `CoreDebugMode: 2`.
 
 ```
 YellowSystem::load file:system/extensions/yellow-system.ini
-YellowUser::load file:system/extensions/yellow-user.ini
-YellowLanguage::load file:system/extensions/english.txt
-YellowLanguage::load file:system/extensions/german.txt
-YellowLanguage::load file:system/extensions/swedish.txt
 YellowLanguage::load file:system/extensions/yellow-language.ini
+YellowUser::load file:system/extensions/yellow-user.ini
 YellowLookup::findFileFromContentLocation /sv/wiki/ -> content/3-sv/2-wiki/page.md
+YellowContent::scanLocation location:/sv/shared/
+YellowLookup::findContentLocationFromFile /sv/shared/page-new-default <- content/3-sv/shared/page-new-default.md
+YellowLookup::findContentLocationFromFile /sv/shared/page-new-wiki <- content/3-sv/shared/page-new-wiki.md
 ```
 
 Få maximal information genom att öka debug-level till `CoreDebugMode: 3`.

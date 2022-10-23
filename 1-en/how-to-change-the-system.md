@@ -28,7 +28,7 @@ The main configuration file is `system/extensions/yellow-system.ini`. Here's an 
     Parser: markdown
     Status: public
 
-You can use a [web browser](https://github.com/annaesvensson/yellow-edit) or your [computer](https://github.com/annaesvensson/yellow-core) to change the system settings. The system settings contain the settings of your website and of all extensions. After a new installation be sure to check `Sitename`, `Author` and `Email`. The following settings can be configured:
+You can use a [web browser](https://github.com/annaesvensson/yellow-edit) or your [computer](https://github.com/annaesvensson/yellow-core) to change the system settings. The system settings contain the settings of your website and of all installed extensions. The following settings can be configured:
 
 `Sitename` = name of the website  
 `Author` = name of the webmaster  
@@ -38,6 +38,24 @@ You can use a [web browser](https://github.com/annaesvensson/yellow-edit) or you
 `Theme` = default theme  
 `Parser` = default page parser  
 `Status` = default page status, [supported status values](#settings-status)  
+
+## Language settings
+
+The language settings are stored in file `system/extensions/yellow-language.ini`. Here's an example:
+
+    Language: en
+    CoreDescription: Core functionality of the website.
+    CorePaginationPrevious: ← Previous
+    CorePaginationNext: Next →
+    CoreTimeFormatShort: H:i
+    CoreTimeFormatMedium: H:i:s
+    CoreTimeFormatLong: H:i:s T
+    CoreDateFormatShort: F Y
+    CoreDateFormatMedium: Y-m-d
+    CoreDateFormatLong: Y-m-d H:i
+    media/images/photo.jpg: This is an example image
+
+You can define the language settings here. A language consist of `Language` and other settings. The language settings contain the settings of all installed extensions. You can also add your own language settings to the configuration file, for example image captions.
 
 ## User settings
 
@@ -57,20 +75,6 @@ The user settings are stored in file `system/extensions/yellow-user.ini`. Here's
     Status: active
 
 You can use a [web browser](https://github.com/annaesvensson/yellow-edit) or the [command line](https://github.com/annaesvensson/yellow-command) to create new user accounts. A user account consists of `Email` and other settings. If you don't want that pages are modified in a web browser, then restrict user accounts. Open the configuration file, change `Access` and `Home`. Users are allowed to edit pages within their home page, but nowhere else.
-
-## Language settings
-
-The language settings are stored in file `system/extensions/yellow-language.ini`. Here's an example:
-
-    Language: en
-    CoreDateFormatShort: F Y
-    CoreDateFormatMedium: Y-m-d
-    CoreDateFormatLong: Y-m-d H:i
-    EditMailFooter: @sitename
-    ImageDefaultAlt: Image without description
-    media/images/photo.jpg: This is an example image
-
-You can define the language settings here. A language consist of `Language` and other settings. You can copy the [default settings from language files](https://github.com/annaesvensson/yellow-language/blob/main/translations/english/english.txt) and paste them into the configuration file. You can also add your own language settings to the configuration file, for example image captions.
 
 ## Page settings
 

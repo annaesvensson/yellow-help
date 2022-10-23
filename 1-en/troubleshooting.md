@@ -85,12 +85,12 @@ Get file system information by increasing debug level to `CoreDebugMode: 2`.
 
 ```
 YellowSystem::load file:system/extensions/yellow-system.ini
-YellowUser::load file:system/extensions/yellow-user.ini
-YellowLanguage::load file:system/extensions/english.txt
-YellowLanguage::load file:system/extensions/german.txt
-YellowLanguage::load file:system/extensions/swedish.txt
 YellowLanguage::load file:system/extensions/yellow-language.ini
+YellowUser::load file:system/extensions/yellow-user.ini
 YellowLookup::findFileFromContentLocation /wiki/ -> content/1-en/2-wiki/page.md
+YellowContent::scanLocation location:/shared/
+YellowLookup::findContentLocationFromFile /shared/page-new-default <- content/1-en/shared/page-new-default.md
+YellowLookup::findContentLocationFromFile /shared/page-new-wiki <- content/1-en/shared/page-new-wiki.md
 ```
 
 Get maximum information by increasing debug level to `CoreDebugMode: 3`.

@@ -28,7 +28,7 @@ Die zentrale Konfigurationsdatei ist `system/extensions/yellow-system.ini`. Hier
     Parser: markdown
     Status: public
 
-Im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) oder auf deinem [Computer](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) kannst du die Systemeinstellungen ändern. Die Systemeinstellungen enthalten die Einstellungen der Webseite und aller Erweiterungen. Nach einer neuen Installation sollte man unbedingt `Sitename`, `Author` und `Email` überprüfen. Die folgenden Einstellungen können vorgenommen werden:
+Im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) oder auf deinem [Computer](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) kannst du die Systemeinstellungen ändern. Die Systemeinstellungen enthalten die Einstellungen der Webseite und aller installierten Erweiterungen. Die folgenden Einstellungen können vorgenommen werden:
 
 `Sitename` = Name der Webseite  
 `Author` = Name des Webmasters  
@@ -38,6 +38,24 @@ Im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de
 `Theme` = Standard-Thema  
 `Parser` = Standard-Seitenparser  
 `Status` = Standard-Seitenstatus, [unterstützte Statuswerte](#einstellungen-status)  
+
+## Spracheinstellungen
+
+Die Spracheinstellungen sind in der Datei `system/extensions/yellow-language.ini` gespeichert. Hier ist ein Beispiel:
+
+    Language: de
+    CoreDescription: Kernfunktionalität der Webseite.
+    CorePaginationPrevious: ← Zurück
+    CorePaginationNext: Weiter →
+    CoreTimeFormatShort: H:i
+    CoreTimeFormatMedium: H:i:s
+    CoreTimeFormatLong: H:i:s T
+    CoreDateFormatShort: F Y
+    CoreDateFormatMedium: d.m.Y
+    CoreDateFormatLong: d.m.Y H:i
+    media/images/photo.jpg: Das ist ein Beispielbild
+
+Hier kannst du die Spracheinstellungen festlegen. Eine Sprache besteht aus `Language` und weiteren Einstellungen. Die Spracheinstellungen enthalten die Einstellungen aller installierten Erweiterungen. Du kannst auch deine eigenen Spracheinstellungen zur Konfigurationsdatei hinzufügen, beispielsweise Bildunterschriften.
 
 ## Benutzereinstellungen
 
@@ -57,20 +75,6 @@ Die Benutzereinstellungen sind in der Datei `system/extensions/yellow-user.ini` 
     Status: active
 
 Im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) oder der [Befehlszeile](https://github.com/annaesvensson/yellow-command/tree/main/README-de.md) kannst du neue Benutzerkonten anlegen. Ein Benutzerkonto besteht aus `Email` und weiteren Einstellungen. Falls du nicht willst dass Seiten im Webbrowser verändert werden, dann beschränke Benutzerkonten. Öffne die Konfigurationsdatei, ändere `Access` und `Home`. Benutzer dürfen Seiten innerhalb ihrer Startseite bearbeiten, aber nirgendwo sonst.
-
-## Spracheinstellungen
-
-Die Spracheinstellungen sind in der Datei `system/extensions/yellow-language.ini` gespeichert. Hier ist ein Beispiel:
-
-    Language: de
-    CoreDateFormatShort: F Y
-    CoreDateFormatMedium: d.m.Y
-    CoreDateFormatLong: d.m.Y H:i
-    EditMailFooter: @sitename
-    ImageDefaultAlt: Bild ohne Beschreibung
-    media/images/photo.jpg: Das ist ein Beispielbild
-
-Hier kannst du die Spracheinstellungen festlegen. Eine Sprache besteht aus `Language` und weiteren Einstellungen. Du kannst die [Standardeinstellungen aus Sprachdateien](https://github.com/annaesvensson/yellow-language/blob/main/translations/german/german.txt) kopieren und in die Konfigurationsdatei einfügen. Du kannst auch deine eigenen Spracheinstellungen zur Konfigurationsdatei hinzufügen, beispielsweise Bildunterschriften.
 
 ## Seiteneinstellungen
 

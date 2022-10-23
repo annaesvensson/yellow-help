@@ -26,8 +26,8 @@ We <3 people who code.
 You can change everything in the file manager on your computer. The `content` folder contains the content files of the website. You can edit your website here. The `media` folder contains the media files of the website. You can store your images and files here. The `system` folder contains the system files of the website. You can customise installed extensions and configuration files here.
 
 `system/extensions/yellow-system.ini` = [file with system settings](how-to-change-the-system#system-settings)  
-`system/extensions/yellow-user.ini` = [file with user settings](how-to-change-the-system#user-settings)  
 `system/extensions/yellow-language.ini` = [file with language settings](how-to-change-the-system#language-settings)  
+`system/extensions/yellow-user.ini` = [file with user settings](how-to-change-the-system#user-settings)  
 `system/extensions/yellow-website.log` = [log file for your website](troubleshooting#problems-after-installation)  
 
 ## Tools
@@ -52,8 +52,8 @@ The following objects are available:
 `$this->yellow->content` = [access to content files](#yellow-content)  
 `$this->yellow->media` = [access to media files](#yellow-media)  
 `$this->yellow->system` = [access to system settings](#yellow-system)  
-`$this->yellow->user` = [access to user settings](#yellow-user)  
 `$this->yellow->language` = [access to language settings](#yellow-language)  
+`$this->yellow->user` = [access to user settings](#yellow-user)  
 `$this->yellow->extension` = [access to extensions](#yellow-extension)  
 `$this->yellow->toolbox` = [access to toolbox with helper functions](#yellow-toolbox)  
 
@@ -504,11 +504,11 @@ Return [system setting](how-to-change-the-system#system-settings)
 **system->getHtml($key)**  
 Return [system setting](how-to-change-the-system#system-settings), HTML encoded
 
+**system->getAvailable($key)**  
+Return available values for [system setting](how-to-change-the-system#system-settings)
+
 **system->getSettings($filterStart = "", $filterEnd = "")**  
 Return [system settings](how-to-change-the-system#system-settings)
-
-**system->getValues($key)**  
-Return supported values for [system setting](how-to-change-the-system#system-settings), empty if not known
 
 **system->getModified($httpFormat = false)**  
 Return [system settings](how-to-change-the-system#system-settings) modification date, Unix time or HTTP format
@@ -558,6 +558,75 @@ Here's an example layout for showing core settings:
 <p>
 <?php foreach ($this->yellow->system->getSettings("core") as $key=>$value): ?>
 <?php echo htmlspecialchars("$key: $value") ?><br />
+<?php endforeach ?>
+</p>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+### Yellow language
+
+Yellow language gives access to language settings:
+
+**language->getText($key, $language = "")**  
+Return [language setting](how-to-change-the-system#language-settings)
+
+**language->getTextHtml($key, $language = "")**  
+Return [language setting](how-to-change-the-system#language-settings), HTML encoded
+
+**language->getSettings($filterStart = "", $filterEnd = "", $language = "")**  
+Return [language settings](how-to-change-the-system#language-settings)
+
+**language->getModified($httpFormat = false)**  
+Return [language settings](how-to-change-the-system#language-settings) modification date, Unix time or HTTP format
+
+**language->isText($key, $language = "")**  
+Check if [language setting](how-to-change-the-system#language-settings) exists
+
+**language->isExisting($language)**  
+Check if language exists
+
+Here's an example layout for showing a language setting:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<p><?php echo $this->yellow->language->getTextHtml("wikiModified") ?> 
+<?php echo $this->yellow->page->getDateHtml("modified") ?></p>
+<?php echo $this->yellow->page->getContent() ?>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Here's an example layout for checking if a specific language exists:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php $found = $this->yellow->language->isExisting("sv") ?>
+<p>Swedish language <?php echo htmlspecialchars($found? "" : "not") ?> installed.</p>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Here's an example layout for showing languages and translators:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<p>
+<?php foreach ($this->yellow->system->getAvailable("language") as $language): ?>
+<?php echo $this->yellow->language->getTextHtml("languageDescription", $language) ?> - 
+<?php echo $this->yellow->language->getTextHtml("languageTranslator", $language) ?><br />
 <?php endforeach ?>
 </p>
 </div>
@@ -625,78 +694,9 @@ Here's an example layout for showing users and their status:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php foreach ($this->yellow->system->getValues("email") as $email): ?>
+<?php foreach ($this->yellow->system->getAvailable("email") as $email): ?>
 <?php echo $this->yellow->user->getUserHtml("name", $email) ?> - 
 <?php echo $this->yellow->user->getUserHtml("status", $email) ?><br />
-<?php endforeach ?>
-</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-### Yellow language
-
-Yellow language gives access to language settings:
-
-**language->getText($key, $language = "")**  
-Return [language setting](how-to-change-the-system#language-settings)
-
-**language->getTextHtml($key, $language = "")**  
-Return [language setting](how-to-change-the-system#language-settings), HTML encoded
-
-**language->getSettings($filterStart = "", $filterEnd = "", $language = "")**  
-Return [language settings](how-to-change-the-system#language-settings)
-
-**language->getModified($httpFormat = false)**  
-Return [language settings](how-to-change-the-system#language-settings) modification date, Unix time or HTTP format
-
-**language->isText($key, $language = "")**  
-Check if [language setting](how-to-change-the-system#language-settings) exists
-
-**language->isExisting($language)**  
-Check if language exists
-
-Here's an example layout for showing a language setting:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p><?php echo $this->yellow->language->getTextHtml("wikiModified") ?> 
-<?php echo $this->yellow->page->getDateHtml("modified") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Here's an example layout for checking if a specific language exists:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $found = $this->yellow->language->isExisting("sv") ?>
-<p>Swedish language <?php echo htmlspecialchars($found? "" : "not") ?> installed.</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Here's an example layout for showing languages and translators:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p>
-<?php foreach ($this->yellow->system->getValues("language") as $language): ?>
-<?php echo $this->yellow->language->getTextHtml("languageDescription", $language) ?> - 
-<?php echo $this->yellow->language->getTextHtml("languageTranslator", $language) ?><br />
 <?php endforeach ?>
 </p>
 </div>
