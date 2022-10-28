@@ -58,6 +58,9 @@ Check the log file. Activate the debug mode for more information.
 
 ```
 2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 7.1.33, Apache 2.4.33, Mac
+2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
+2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
+2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
 2020-10-28 14:13:07 info Install extension 'English 0.8.27'
 2020-10-28 14:13:07 info Install extension 'German 0.8.27'
 2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'

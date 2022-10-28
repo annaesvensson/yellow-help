@@ -20,7 +20,7 @@ Learn how to work with us and make good products.
 ##  How to make an extension
 
 * [Start with a feature](https://github.com/schulle4u/yellow-helloworld), [language](https://github.com/annaesvensson/yellow-language/tree/main/translations/english) or [theme](https://github.com/annaesvensson/yellow-stockholm).
-* Think about how to make life easier, focus on people and their everyday life.
+* Imagine what the user wants to do and think about how to make his/her life easier.
 * Upload your extension to GitHub, add the topic `datenstrom-yellow` to your repository.
 * Make an announcement, when your extension is done.
 
@@ -61,6 +61,9 @@ in a new installation, select small website, install the fika extension.
 Here's my log file `system/extensions/yellow-website.log`:
 
 2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 7.1.33, Apache 2.4.33, Mac
+2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
+2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
+2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
 2020-10-28 14:13:07 info Install extension 'English 0.8.27'
 2020-10-28 14:13:07 info Install extension 'German 0.8.27'
 2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'

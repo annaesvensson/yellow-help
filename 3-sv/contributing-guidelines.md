@@ -20,7 +20,7 @@ Läs hur du jobbar med oss och skapar bra produkter.
 ## Hur man gör ett tillägg
 
 * [Börja med en funktion](https://github.com/schulle4u/yellow-extension-helloworld), [ett språk](https://github.com/annaesvensson/yellow-language/tree/main/translations/swedish) eller [ett tema](https://github.com/annaesvensson/yellow-stockholm/tree/main/README-sv.md).
-* Tänk på hur man gör livet enklare, fokusera på människor och deras vardag.
+* Föreställ dig vad användaren vill göra och tänk på hur man kan göra hans/hennes liv enklare.
 * Ladda upp ditt tillägg till GitHub, lägg till ämnet `datenstrom-yellow` till ditt repository.
 * Gör ett tillkännagivande när ditt tillägg är klart.
 
@@ -61,6 +61,9 @@ in a new installation, select small website, install the fika extension.
 Here's my log file `system/extensions/yellow-website.log`:
 
 2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 7.1.33, Apache 2.4.33, Mac
+2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
+2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
+2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
 2020-10-28 14:13:07 info Install extension 'English 0.8.27'
 2020-10-28 14:13:07 info Install extension 'German 0.8.27'
 2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
