@@ -1095,7 +1095,7 @@ class YellowExample {
 
     // Handle command help
     public function onCommandHelp() {
-        return "example\n";
+        return "example";
     }
 }
 ```

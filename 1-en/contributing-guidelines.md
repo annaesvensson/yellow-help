@@ -20,7 +20,7 @@ Learn how to work with us and make good products.
 ##  How to make an extension
 
 * [Start with a feature](https://github.com/schulle4u/yellow-helloworld), [language](https://github.com/annaesvensson/yellow-language/tree/main/translations/english) or [theme](https://github.com/annaesvensson/yellow-stockholm).
-* Imagine what the user wants to do and think about how to make his/her life easier.
+* Imagine what the user wants to do and think about how to make their life easier.
 * Upload your extension to GitHub, add the topic `datenstrom-yellow` to your repository.
 * Make an announcement, when your extension is done.
 

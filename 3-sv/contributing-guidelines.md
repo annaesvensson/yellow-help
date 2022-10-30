@@ -20,7 +20,7 @@ Läs hur du jobbar med oss och skapar bra produkter.
 ## Hur man gör ett tillägg
 
 * [Börja med en funktion](https://github.com/schulle4u/yellow-extension-helloworld), [ett språk](https://github.com/annaesvensson/yellow-language/tree/main/translations/swedish) eller [ett tema](https://github.com/annaesvensson/yellow-stockholm/tree/main/README-sv.md).
-* Föreställ dig vad användaren vill göra och tänk på hur man kan göra hans/hennes liv enklare.
+* Föreställ dig vad användaren vill göra och tänk på hur man kan göra hens liv enklare.
 * Ladda upp ditt tillägg till GitHub, lägg till ämnet `datenstrom-yellow` till ditt repository.
 * Gör ett tillkännagivande när ditt tillägg är klart.
 
