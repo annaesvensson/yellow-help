@@ -16,7 +16,7 @@ Om du vill redigera hjälpen i en [webbläsare](https://github.com/annaesvensson
 
 ## Installation
 
-[Ladda ner tillägg](https://github.com/annaesvensson/yellow-help/archive/main.zip) och kopiera zip-fil till din `system/extensions` mapp. Högerklicka om du använder Safari.
+[Ladda ner tillägg](https://github.com/annaesvensson/yellow-help/archive/main.zip) och kopiera ZIP-fil till din `system/extensions` mapp. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
 
 Tillägget innehåller en [bild](https://unsplash.com/photos/azsk_6IMT3I) av Bruno Cervera.
 

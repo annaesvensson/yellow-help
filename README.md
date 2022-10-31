@@ -16,7 +16,7 @@ If you want to edit the help in a [web browser](https://github.com/annaesvensson
 
 ## Installation
 
-[Download extension](https://github.com/annaesvensson/yellow-help/archive/main.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
+[Download extension](https://github.com/annaesvensson/yellow-help/archive/main.zip) and copy ZIP file into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
 
 This extension includes a [photo](https://unsplash.com/photos/azsk_6IMT3I) by Bruno Cervera.
 
