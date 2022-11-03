@@ -33,10 +33,10 @@ You can use a [web browser](https://github.com/annaesvensson/yellow-edit) or you
 `Sitename` = name of the website  
 `Author` = name of the webmaster  
 `Email` = email of the webmaster  
-`Language` = default language  
+`Language` = default language, e.g. `en`  
 `Layout` = default layout  
 `Theme` = default theme  
-`Parser` = default page parser  
+`Parser` = default content parser  
 `Status` = default page status, [supported status values](#settings-status)  
 
 ## Language settings
@@ -88,11 +88,11 @@ The following settings can be configured at the top of a page:
 `Description` = page description  
 `Author` = page author(s), comma separated  
 `Email` = email of page author  
-`Language` = page language  
+`Language` = page language, e.g. `en`  
 `Layout` = page layout  
 `LayoutNew` = page layout for creating a new page  
 `Theme` = page theme  
-`Parser` = page parser  
+`Parser` = page content parser  
 `Status` = page status, [supported status values](#settings-status)  
 `Redirect` = redirect to a new page or URL  
 `Image` = page image  

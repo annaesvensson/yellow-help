@@ -7,6 +7,8 @@ We <3 people who code.
 
 ## Folder structure
 
+You can change everything in the file manager on your computer. The `content` folder contains the content files of the website. You can edit your website here. The `media` folder contains the media files of the website. You can store your images and files here. The `system` folder contains the system files of the website. You can customise installed extensions and configuration files here.
+
 ``` box-drawing {aria-hidden=true}
 ├── content               = content files
 │   ├── 1-home            = home page
@@ -23,7 +25,7 @@ We <3 people who code.
     └── trash             = deleted files
 ```
 
-You can change everything in the file manager on your computer. The `content` folder contains the content files of the website. You can edit your website here. The `media` folder contains the media files of the website. You can store your images and files here. The `system` folder contains the system files of the website. You can customise installed extensions and configuration files here.
+The following configuration files and log files are available:
 
 `system/extensions/yellow-system.ini` = [file with system settings](how-to-change-the-system#system-settings)  
 `system/extensions/yellow-language.ini` = [file with language settings](how-to-change-the-system#language-settings)  
@@ -32,19 +34,21 @@ You can change everything in the file manager on your computer. The `content` fo
 
 ## Tools
 
-### Built-in web server
-
-You can start the built-in web server at the command line. The built-in web server is convenient for developers and designers. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown.
-
 ### Built-in web editor
 
 You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The built-in web editor allows you to edit content files, upload media files and change system settings. It is a great way to update your website.
 
+### Built-in web server
+
+You can start the built-in web server at the command line. The built-in web server is convenient for developers and designers. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown.
+
 ### Static site generator
 
-The biggest difference between a static website and a normal website is that a static site generator builds everything in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php build`, you can optionally add a folder and a location. This will build a static website in the `public` folder. Upload the static website to your web server and build a new one when needed.
+You can build a static website at the command line. The static site generator builds the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php build`, you can optionally add a folder and a location. This will build a static website in the `public` folder. Upload the static website to your web server and build a new one when needed.
 
 ## Objects
+
+With the help of `$this->yellow` you can access the website. The API is divided into several objects and basically reflects the file system. In the toolbox you can find helper functions and file operations for your own extensions. The source code of the entire API can be found in file `system/extensions/core.php`. Check out the source code if you're looking for more details or are curious about how Datenstrom Yellow works.
 
 The following objects are available:
 
@@ -57,124 +61,126 @@ The following objects are available:
 `$this->yellow->extension` = [access to extensions](#yellow-extension)  
 `$this->yellow->toolbox` = [access to toolbox with helper functions](#yellow-toolbox)  
 
-With the help of `$this->yellow` you can access the website. The API is divided into several objects and basically reflects the file system. In the toolbox you can find helper functions and file operations for your own extensions. The source code of the entire API can be found in file `system/extensions/core.php`.
-
 ### Yellow page
 
-Yellow page gives access to current page:
+Yellow page gives access to current page. The following methods are available:
 
-**page->get($key)**  
+`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `status`
+
+`page->get($key)`  
 Return [page setting](how-to-change-the-system#page-settings) 
 
-**page->getHtml($key)**  
+`page->getHtml($key)`  
 Return [page setting](how-to-change-the-system#page-settings), HTML encoded  
 
-**page->getDate($key, $format = "")**  
+`page->getDate($key, $format = "")`  
 Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings)  
 
-**page->getDateHtml($key, $format = "")**  
+`page->getDateHtml($key, $format = "")`  
 Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings), HTML encoded  
 
-**page->getDateRelative($key, $format = "", $daysLimit = 30)**  
+`page->getDateRelative($key, $format = "", $daysLimit = 30)`  
 Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings), relative to today
 
-**page->getDateRelativeHtml($key, $format = "", $daysLimit = 30)**  
+`page->getDateRelativeHtml($key, $format = "", $daysLimit = 30)`  
 Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings), relative to today, HTML encoded
 
-**page->getDateFormatted($key, $format)**  
+`page->getDateFormatted($key, $format)`  
 Return [page setting](how-to-change-the-system#page-settings) as [date](https://www.php.net/manual/en/function.date.php)  
 
-**page->getDateFormattedHtml($key, $format)**  
+`page->getDateFormattedHtml($key, $format)`  
 Return [page setting](how-to-change-the-system#page-settings) as [date](https://www.php.net/manual/en/function.date.php), HTML encoded  
 
-**page->getContent($rawFormat = false)**  
+`page->getContent($rawFormat = false)`  
 Return page content, HTML encoded or raw format
 
-**page->getParent()**  
+`page->getParent()`  
 Return parent page, null if none
 
-**page->getParentTop($homeFallback = false)**  
+`page->getParentTop($homeFallback = false)`  
 Return top-level parent page, null if none
 
-**page->getSiblings($showInvisible = false)**  
+`page->getSiblings($showInvisible = false)`  
 Return [page collection](#yellow-page-collection) with pages on the same level
 
-**page->getChildren($showInvisible = false)**  
+`page->getChildren($showInvisible = false)`  
 Return [page collection](#yellow-page-collection) with child pages
 
-**page->getChildrenRecursive($showInvisible = false, $levelMax = 0)**  
+`page->getChildrenRecursive($showInvisible = false, $levelMax = 0)`  
 Return [page collection](#yellow-page-collection) with child pages recursively
 
-**page->getPages($key)**  
+`page->getPages($key)`  
 Return [page collection](#yellow-page-collection) with additional pages
 
-**page->getPage($key)**  
+`page->getPage($key)`  
 Return shared page
 
-**page->getUrl()**  
+`page->getUrl()`  
 Return page URL
 
-**page->getBase($multiLanguage = false)**  
+`page->getBase($multiLanguage = false)`  
 Return page base
 
-**page->getLocation($absoluteLocation = false)**  
+`page->getLocation($absoluteLocation = false)`  
 Return page location
 
-**page->getRequest($key)**  
+`page->getRequest($key)`  
 Return page request argument
 
-**page->getRequestHtml($key)**  
+`page->getRequestHtml($key)`  
 Return page request argument, HTML encoded
 
-**page->getHeader($key)**  
+`page->getHeader($key)`  
 Return page response header
 
-**page->getExtra($name)**  
+`page->getExtra($name)`  
 Return page extra data
 
-**page->getModified($httpFormat = false)**  
+`page->getModified($httpFormat = false)`  
 Return page modification date, Unix time or HTTP format
 
-**page->getLastModified($httpFormat = false)**  
+`page->getLastModified($httpFormat = false)`  
 Return last modification date, Unix time or HTTP format
 
-**page->getStatusCode($httpFormat = false)**  
+`page->getStatusCode($httpFormat = false)`  
 Return page status code, number or HTTP format
 
-**page->status($statusCode, $location = "")**  
+`page->status($statusCode, $location = "")`  
 Respond with status code, no page content
 
-**page->error($statusCode, $errorMessage = "")**  
+`page->error($statusCode, $errorMessage = "")`  
 Respond with error page
 
-**page->isAvailable()**  
+`page->isAvailable()`  
 Check if page is available
 
-**page->isVisible()**  
+`page->isVisible()`  
 Check if page is visible
 
-**page->isActive()**  
+`page->isActive()`  
 Check if page is within current HTTP request
 
-**page->isCacheable()**  
+`page->isCacheable()`  
 Check if page is cacheable
 
-**page->isError()**  
+`page->isError()`  
 Check if page with error
 
-**page->isExisting($key)**  
+`page->isExisting($key)`  
 Check if [page setting](how-to-change-the-system#page-settings) exists  
 
-**page->isRequest($key)**  
+`page->isRequest($key)`  
 Check if request argument exists
 
-**page->isHeader($key)**  
+`page->isHeader($key)`  
 Check if response header exists
 
-**page->isPage($key)**  
+`page->isPage($key)`  
 Check if shared page exists  
 
-Here's an example layout for showing page content:
+#### Yellow page examples
+
+Layout file for showing page content:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -187,7 +193,7 @@ Here's an example layout for showing page content:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example layout for showing page content and author:
+Layout file for showing page content and author:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -201,7 +207,7 @@ Here's an example layout for showing page content and author:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example layout for showing page content and modification date:
+Layout file for showing page content and modification date:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -217,78 +223,85 @@ Here's an example layout for showing page content and modification date:
 
 ### Yellow page collection
 
-Yellow page collection gives access to multiple pages:
+Yellow page collection gives access to multiple pages. The following methods are available:
 
-**pages->append($page)**  
+`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
+
+`pages->append($page)`  
 Append to end of page collection
 
-**pages->prepend($page)**  
+`pages->prepend($page)`  
 Prepend to start of page collection
 
-**pages->filter($key, $value, $exactMatch = true)**  
+`pages->filter($key, $value, $exactMatch = true)`  
 Filter page collection by [page setting](how-to-change-the-system#page-settings)
 
-**pages->match($regex = "/.*/", $filterByLocation = true)**  
+`pages->match($regex = "/.*/", $filterByLocation = true)`  
 Filter page collection by location or file
 
-**pages->sort($key, $ascendingOrder = true)**  
+`pages->sort($key, $ascendingOrder = true)`  
 Sort page collection by [page setting](how-to-change-the-system#page-settings)
 
-**pages->similar($page, $ascendingOrder = false)**  
+`pages->similar($page, $ascendingOrder = false)`  
 Sort page collection by settings similarity
 
-**pages->merge($input)**  
+`pages->merge($input)`  
 Calculate union, merge page collection
 
-**pages->intersect($input)**  
+`pages->intersect($input)`  
 Calculate intersection, remove pages that are not present in another page collection
 
-**pages->diff($input)**  
+`pages->diff($input)`  
 Calculate difference, remove pages that are present in another page collection
 
-**pages->limit($pagesMax)**  
+`pages->limit($pagesMax)`  
 Limit the number of pages in page collection
 
-**pages->reverse()**  
+`pages->reverse()`  
 Reverse page collection
 
-**pages->shuffle()**  
+`pages->shuffle()`  
 Randomize page collection
 
-**pages->paginate($limit)**  
+`pages->paginate($limit)`  
 Paginate page collection
 
-**pages->getPaginationNumber()**  
+`pages->getPaginationNumber()`  
 Return current page number in pagination
 
-**pages->getPaginationCount()**  
+`pages->getPaginationCount()`  
 Return highest page number in pagination
 
-**pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1)**  
+`pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1)`  
 Return location for a page in pagination
 
-**pages->getPaginationPrevious($absoluteLocation = true)**  
+`pages->getPaginationPrevious($absoluteLocation = true)`  
 Return location for previous page in pagination
 
-**pages->getPaginationNext($absoluteLocation = true)**  
+`pages->getPaginationNext($absoluteLocation = true)`  
 Return location for next page in pagination
 
-**pages->getPagePrevious($page)**  
+`pages->getPagePrevious($page)`  
 Return previous page in collection, null if none
 
-**pages->getPageNext($page)**  
+`pages->getPageNext($page)`  
 Return next page in collection, null if none
 
-**pages->getFilter()**  
+`pages->getFilter()`  
 Return current page filter
 
-**pages->getModified($httpFormat = false)**  
+`pages->getModified($httpFormat = false)`  
 Return page collection modification date, Unix time or HTTP format
 
-**pages->isPagination()**  
+`pages->isPagination()`  
 Check if there is a pagination
 
-Here's an example layout for showing three random pages:
+`page->isEmpty()`  
+Check if page collection is empty
+
+#### Yellow page collection examples
+
+Layout file for showing three random pages:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -307,7 +320,7 @@ Here's an example layout for showing three random pages:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example layout for showing latest pages:
+Layout file for showing latest pages:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -326,7 +339,7 @@ Here's an example layout for showing latest pages:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example layout for showing draft pages:
+Layout file for showing draft pages:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -347,27 +360,31 @@ Here's an example layout for showing draft pages:
 
 ### Yellow content
 
-Yellow content gives access to content files:
+Yellow content gives access to content files. The following methods are available:
 
-**content->find($location, $absoluteLocation = false)**  
+`clean` `find` `index` `multi` `path` `top`
+
+`content->find($location, $absoluteLocation = false)`  
 Return [page](#yellow-page), null if not found
 
-**content->index($showInvisible = false, $multiLanguage = false, $levelMax = 0)**  
+`content->index($showInvisible = false, $multiLanguage = false, $levelMax = 0)`  
 Return [page collection](#yellow-page-collection) with all pages
 
-**content->top($showInvisible = false, $showOnePager = true)**  
+`content->top($showInvisible = false, $showOnePager = true)`  
 Return [page collection](#yellow-page-collection) with top-level navigation
 
-**content->path($location, $absoluteLocation = false)**  
+`content->path($location, $absoluteLocation = false)`  
 Return [page collection](#yellow-page-collection) with path ancestry
 
-**content->multi($location, $absoluteLocation = false, $showInvisible = false)**  
+`content->multi($location, $absoluteLocation = false, $showInvisible = false)`  
 Return [page collection](#yellow-page-collection) with multiple languages in multi language mode
 
-**content->clean()**  
+`content->clean()`  
 Return [page collection](#yellow-page-collection) that is empty
 
-Here's an example layout for showing all pages:
+#### Yellow content examples
+
+Layout file for showing all pages:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -386,7 +403,7 @@ Here's an example layout for showing all pages:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example layout for showing pages below a specific location:
+Layout file for showing pages below a specific location:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -405,7 +422,7 @@ Here's an example layout for showing pages below a specific location:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example layout for showing top-level navigation pages:
+Layout file for showing top-level navigation pages:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -426,18 +443,22 @@ Here's an example layout for showing top-level navigation pages:
 
 ### Yellow media
 
-Yellow media gives access to media files:
+Yellow media gives access to media files. The following methods are available:
 
-**media->find($location, $absoluteLocation = false)**  
+`clean` `index` `find`
+
+`media->find($location, $absoluteLocation = false)`  
 Return [page](#yellow-page) with media file information, null if not found
 
-**media->index($showInvisible = false, $multiPass = false, $levelMax = 0)**  
+`media->index($showInvisible = false, $multiPass = false, $levelMax = 0)`  
 Return [page collection](#yellow-page-collection) with all media files
 
-**media->clean()**  
+`media->clean()`  
 Return [page collection](#yellow-page-collection) that is empty
 
-Here's an example layout for showing all media files:
+#### Yellow media examples
+
+Layout file for showing all media files:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -456,7 +477,7 @@ Here's an example layout for showing all media files:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example layout for showing latest media files:
+Layout file for showing latest media files:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -475,7 +496,7 @@ Here's an example layout for showing latest media files:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example layout for showing media files of a specific type:
+Layout file for showing media files of a specific type:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -496,27 +517,34 @@ Here's an example layout for showing media files of a specific type:
 
 ### Yellow system
 
-Yellow system gives access to system settings:
+Yellow system gives access to system settings. The following methods are available:
 
-**system->get($key)**  
+`get` `getAvailable` `getDifferent` `getHtml` `getModified` `getSettings` `isExisting`
+
+`system->get($key)`  
 Return [system setting](how-to-change-the-system#system-settings)
 
-**system->getHtml($key)**  
+`system->getHtml($key)`  
 Return [system setting](how-to-change-the-system#system-settings), HTML encoded
 
-**system->getAvailable($key)**  
+`system->getDifferent($key)`  
+Return different value for [system setting](how-to-change-the-system#system-settings)
+
+`system->getAvailable($key)`  
 Return available values for [system setting](how-to-change-the-system#system-settings)
 
-**system->getSettings($filterStart = "", $filterEnd = "")**  
+`system->getSettings($filterStart = "", $filterEnd = "")`  
 Return [system settings](how-to-change-the-system#system-settings)
 
-**system->getModified($httpFormat = false)**  
+`system->getModified($httpFormat = false)`  
 Return [system settings](how-to-change-the-system#system-settings) modification date, Unix time or HTTP format
 
-**system->isExisting($key)**  
+`system->isExisting($key)`  
 Check if [system setting](how-to-change-the-system#system-settings) exists
 
-Here's an example layout for showing webmaster:
+#### Yellow system examples
+
+Layout file for showing webmaster:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -532,7 +560,7 @@ Here's an example layout for showing webmaster:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example layout for checking if a specific setting is activated:
+Layout file for checking if a specific setting is activated:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -548,7 +576,7 @@ Multi language mode is <?php echo htmlspecialchars($multiLanguageMode ? "on" : "
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example layout for showing core settings:
+Layout file for showing core settings:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -567,27 +595,31 @@ Here's an example layout for showing core settings:
 
 ### Yellow language
 
-Yellow language gives access to language settings:
+Yellow language gives access to language settings. The following methods are available:
 
-**language->getText($key, $language = "")**  
+`getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText`
+
+`language->getText($key, $language = "")`  
 Return [language setting](how-to-change-the-system#language-settings)
 
-**language->getTextHtml($key, $language = "")**  
+`language->getTextHtml($key, $language = "")`  
 Return [language setting](how-to-change-the-system#language-settings), HTML encoded
 
-**language->getSettings($filterStart = "", $filterEnd = "", $language = "")**  
+`language->getSettings($filterStart = "", $filterEnd = "", $language = "")`  
 Return [language settings](how-to-change-the-system#language-settings)
 
-**language->getModified($httpFormat = false)**  
+`language->getModified($httpFormat = false)`  
 Return [language settings](how-to-change-the-system#language-settings) modification date, Unix time or HTTP format
 
-**language->isText($key, $language = "")**  
+`language->isText($key, $language = "")`  
 Check if [language setting](how-to-change-the-system#language-settings) exists
 
-**language->isExisting($language)**  
+`language->isExisting($language)`  
 Check if language exists
 
-Here's an example layout for showing a language setting:
+#### Yellow language examples
+
+Layout file for showing a language setting:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -602,7 +634,7 @@ Here's an example layout for showing a language setting:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example layout for checking if a specific language exists:
+Layout file for checking if a specific language exists:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -616,7 +648,7 @@ Here's an example layout for checking if a specific language exists:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example layout for showing languages and translators:
+Layout file for showing languages and translators:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -636,27 +668,31 @@ Here's an example layout for showing languages and translators:
 
 ### Yellow user
 
-Yellow user gives access to user settings:
+Yellow user gives access to user settings. The following methods are available:
 
-**user->getUser($key, $email = "")**  
+`getModified` `getSettings` `getUser` `getUserHtml` `isExisting` `isUser`
+
+`user->getUser($key, $email = "")`  
 Return [user setting](how-to-change-the-system#user-settings)
 
-**user->getUserHtml($key, $email = "")**  
+`user->getUserHtml($key, $email = "")`  
 Return [user setting](how-to-change-the-system#user-settings), HTML encoded
 
-**user->getSettings($email = "")**  
+`user->getSettings($email = "")`  
 Return [user settings](how-to-change-the-system#user-settings)
 
-**user->getModified($httpFormat = false)**  
+`user->getModified($httpFormat = false)`  
 Return [user settings](how-to-change-the-system#user-settings) modification date, Unix time or HTTP format
 
-**user->isUser($key, $email = "")**  
+`user->isUser($key, $email = "")`  
 Check if [user setting](how-to-change-the-system#user-settings) exists
 
-**user->isExisting($email)**  
+`user->isExisting($email)`  
 Check if user exists
 
-Here's an example layout for showing current user:
+#### Yellow user examples
+
+Layout file for showing current user:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -672,7 +708,7 @@ Here's an example layout for showing current user:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example layout for checking if a user is logged in:
+Layout file for checking if a user is logged in:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -686,7 +722,7 @@ Here's an example layout for checking if a user is logged in:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example layout for showing users and their status:
+Layout file for showing users and their status:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -706,18 +742,22 @@ Here's an example layout for showing users and their status:
 
 ### Yellow extension
 
-Yellow extension gives access to extensions:
+Yellow extension gives access to extensions. The following methods are available:
 
-**extension->get($key)**  
+`get` `getModified` `isExisting`
+
+`extension->get($key)`  
 Return extension
 
-**extension->getModified($httpFormat = false)**  
+`extension->getModified($httpFormat = false)`  
 Return extensions modification date, Unix time or HTTP format
 
-**extension->isExisting($key)**  
+`extension->isExisting($key)`  
 Check if extension exists
 
-Here's an example layout for showing extensions:
+#### Yellow extension examples
+
+Layout file for showing extensions:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -734,7 +774,7 @@ Here's an example layout for showing extensions:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example layout for checking if a specific extension exists:
+Layout file for checking if a specific extension exists:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -748,7 +788,7 @@ Here's an example layout for checking if a specific extension exists:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Here's an example code for calling a function from another extension:
+Code for calling a function from another extension:
 
 ``` php
 if ($this->yellow->extension->isExisting("image")) {
@@ -762,76 +802,80 @@ if ($this->yellow->extension->isExisting("image")) {
 
 Yellow toolbox gives access to toolbox with helper functions:
 
-**toolbox->getCookie($key)**  
+`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `modifyFile` `normaliseArguments` `normaliseData` `normalisePath` `readFile` `renameDirectory` `renameFile`
+
+`toolbox->getCookie($key)`  
 Return browser cookie from from current HTTP request  
 
-**toolbox->getServer($key)**  
+`toolbox->getServer($key)`  
 Return server argument from current HTTP request
 
-**toolbox->getLocationArguments()**  
+`toolbox->getLocationArguments()`  
 Return location arguments from current HTTP request
 
-**toolbox->getDirectoryEntries($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true)**  
+`toolbox->getDirectoryEntries($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true)`  
 Return files and directories
 
-**toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0)**  
+`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0)`  
 Return files and directories recursively
 
-**toolbox->readFile($fileName, $sizeMax = 0)**  
+`toolbox->readFile($fileName, $sizeMax = 0)`  
 Read file, empty string if not found  
 
-**toolbox->createFile($fileName, $fileData, $mkdir = false)**  
+`toolbox->createFile($fileName, $fileData, $mkdir = false)`  
 Create file  
 
-**toolbox->appendFile($fileName, $fileData, $mkdir = false)**  
+`toolbox->appendFile($fileName, $fileData, $mkdir = false)`  
 Append file  
 
-**toolbox->copyFile($fileNameSource, $fileNameDestination, $mkdir = false)**  
+`toolbox->copyFile($fileNameSource, $fileNameDestination, $mkdir = false)`  
 Copy file  
 
-**toolbox->renameFile($fileNameSource, $fileNameDestination, $mkdir = false)**  
+`toolbox->renameFile($fileNameSource, $fileNameDestination, $mkdir = false)`  
 Rename file  
 
-**toolbox->renameDirectory($pathSource, $pathDestination, $mkdir = false)**  
+`toolbox->renameDirectory($pathSource, $pathDestination, $mkdir = false)`  
 Rename directory  
 
-**toolbox->deleteFile($fileName, $pathTrash = "")**  
+`toolbox->deleteFile($fileName, $pathTrash = "")`  
 Delete file  
 
-**toolbox->deleteDirectory($path, $pathTrash = "")**  
+`toolbox->deleteDirectory($path, $pathTrash = "")`  
 Delete directory  
 
-**toolbox->modifyFile($fileName, $modified)**  
+`toolbox->modifyFile($fileName, $modified)`  
 Set file/directory modification date, Unix time  
 
-**toolbox->getFileModified($fileName)**  
+`toolbox->getFileModified($fileName)`  
 Return file/directory modification date, Unix time  
 
-**toolbox->getFileType($fileName)**  
+`toolbox->getFileType($fileName)`  
 Return file type
 
-**toolbox->getTextLines($text)**  
+`toolbox->getTextLines($text)`  
 Return lines from text, including newline  
 
-**toolbox->getTextList($text, $separator, $size)**  
+`toolbox->getTextList($text, $separator, $size)`  
 Return array of specific size from text  
 
-**toolbox->getTextArguments($text, $optional = "-", $sizeMin = 9)**  
+`toolbox->getTextArguments($text, $optional = "-", $sizeMin = 9)`  
 Return array of variable size from text, space separated  
 
-**toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = "")**  
+`toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = "")`  
 Create text description, with or without HTML
 
-**toolbox->normaliseArguments($text, $appendSlash = true, $filterStrict = true)**  
+`toolbox->normaliseArguments($text, $appendSlash = true, $filterStrict = true)`  
 Normalise location arguments
 
-**toolbox->normaliseData($text, $type = "html", $filterStrict = true)**  
+`toolbox->normaliseData($text, $type = "html", $filterStrict = true)`  
 Normalise elements and attributes in HTML/SVG data
 
-**toolbox->normalisePath($text)**  
+`toolbox->normalisePath($text)`  
 Normalise relative path tokens
 
-Here's an example code for reading text lines from file:
+#### Yellow toolbox examples
+
+Code for reading text lines from file:
 
 ``` php
 $fileName = $this->yellow->system->get("coreExtensionDirectory").$this->yellow->system->get("coreSystemFile");
@@ -841,7 +885,7 @@ foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
 }
 ```
 
-Here's an example code for showing files in a folder:
+Code for showing files in a folder:
 
 ``` php
 $path = $this->yellow->system->get("coreExtensionDirectory");
@@ -850,7 +894,7 @@ foreach ($this->yellow->toolbox->getDirectoryEntries($path, "/.*/", true, false)
 }
 ```
 
-Here's an example code for changing text in multiple files:
+Code for changing text in multiple files:
 
 ``` php
 $path = $this->yellow->system->get("coreContentDirectory");
@@ -865,47 +909,62 @@ foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/
 
 ### Yellow string
 
-The following functions extend PHP string functions:
+The following functions extend PHP string functions and variable functions:
 
-**strtoloweru($string)**  
+`is_array_empty` `is_string_empty` `strlenu` `strposu` `strrposu` `strtoloweru` `strtoupperu` `substru`
+
+`strtoloweru($string)`  
 Make string lowercase, UTF-8 compatible
 
-**strtoupperu($string)**  
+`strtoupperu($string)`  
 Make string uppercase, UTF-8 compatible
 
-**strlenu($string)** + **strlenb($string)**  
+`strlenu($string)` + `strlenb($string)`  
 Return string length, UTF-8 characters or bytes
 
-**strposu($string, $search)** + **strposb($string, $search)**  
+`strposu($string, $search)` + `strposb($string, $search)`  
 Return string position of first match, UTF-8 characters or bytes
 
-**strrposu($string, $search)** + **strrposb($string, $search)**  
+`strrposu($string, $search)` + `strrposb($string, $search)`  
 Return string position of last match, UTF-8 characters or bytes
 
-**substru($string, $start, $length)** + **substrb($string, $start, $length)**  
+`substru($string, $start, $length)` + `substrb($string, $start, $length)`  
 Return part of a string, UTF-8 characters or bytes
 
-**strempty($string)**  
+`is_string_empty($string)`  
 Check if string is empty
 
-Here's an example code for using various string functions:
+`is_array_empty($array)`  
+Check if array is empty
 
-```php
+#### Yellow string examples
+
+Code for converting strings:
+
+``` php
 $string = "Datenstrom Yellow is for people who make small websites";
 echo strtoloweru($string);    // datenstrom yellow is for people who make small websites
 echo strtoupperu($string);    // DATENSTROM YELLOW IS FOR PEOPLE WHO MAKE SMALL WEBSITES
-
 $string = "Text with UTF-8 characters åäö";
 echo strlenu($string);        // 30
 echo strposu($string, "UTF"); // 10
 echo substru($string, -3, 3); // åäö
+```
 
-var_dump(strempty("text"));   // bool(false)
-var_dump(strempty("0"));      // bool(false)
-var_dump(strempty(""));       // bool(true)
+Code for checking if variables are empty:
+
+``` php
+var_dump(is_string_empty(""));               // bool(true)
+var_dump(is_string_empty("text"));           // bool(false)
+var_dump(is_string_empty("0"));              // bool(false)
+var_dump(is_array_empty(array()));           // bool(true)
+var_dump(is_array_empty(new ArrayObject())); // bool(true)
+var_dump(is_array_empty(array("entry")));    // bool(false)
 ```
 
 ## Events
+
+First extensions are loaded and `onLoad` will be called. As soon as all extensions are loaded `onStartup` will be called. The page can be handled with various events. In most cases the page content will be generated. If an error has occurred, an error page will be generated. Finally the page is output and `onShutdown` will be called.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐
@@ -918,43 +977,58 @@ onLoad ───────▶ onStartup ────────────�
                 onParseContentRaw        onEditMediaFile         onCommandHelp
                 onParseContentShortcut   onEditSystemFile            │
                 onParseContentHtml       onEditUserAccount           │
-                onParsePageLayout            │                       ▼
-                onParsePageExtra             │                   onUpdate
-                onParsePageOutput            │                   onLog
+                onParsePageLayout            │                       │
+onUpdate        onParsePageExtra             │                       │
+onLog           onParsePageOutput            │                       │
                     │                        │                       │
                     ▼                        │                       │
                 onShutDown ◀─────────────────┴───────────────────────┘
 ```
 
-When a page is displayed, the extensions are loaded and `onLoad` will be called. As soon as all extensions are loaded `onStartup` will be called. The page can be handled with various [parse events](#yellow-parse-events). Then the page content will be generated. If an error has occurred, an error page will be generated. Finally the page is output and `onShutdown` will be called.
+The following events are available:
 
-When a page is edited, the extensions are loaded and `onLoad` will be called. As soon as all extensions are loaded `onStartup` will be called. Changes at the page can be handled with various [edit events](#yellow-edit-events). Then the page will be saved. Finally a status code is output to reload the page and `onShutdown` will be called.
-
-When a command is executed, the extensions are loaded and `onLoad` will be called. As soon as all extensions are loaded `onStartup` will be called. The command can be handled with various [command events](#yellow-command-events). If no command has been entered, the available commands will be shown. Finally a return code is output and `onShutdown` will be called.
+`onCommand` `onCommandHelp` `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount` `onLoad` `onLog` `onParseContentHtml` `onParseContentRaw` `onParseContentShortcut` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput` `onRequest` `onShutdown` `onStartup` `onUpdate`
 
 ### Yellow core events
 
 Yellow core events notify when a state has changed:
 
-**public function onLoad($yellow)**  
+`public function onLoad($yellow)`  
 Handle initialisation
 
-**public function onStartup()**  
+`public function onStartup()`  
 Handle startup
 
-**public function onRequest($scheme, $address, $base, $location, $fileName)**  
+`public function onRequest($scheme, $address, $base, $location, $fileName)`  
 Handle request
 
-**public function onUpdate($action)**  
+`public function onUpdate($action)`  
 Handle update
 
-**public function onLog($action, $message)**  
+`public function onLog($action, $message)`  
 Handle logging
 
-**public function onShutdown()**  
+`public function onShutdown()`  
 Handle shutdown
 
-Here's an example extension for handling an event:
+#### Yellow core events examples
+
+Extension for handling initialisation:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.0";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+}
+```
+
+Extension for handling daily update event:
 
 ``` php
 <?php
@@ -966,6 +1040,13 @@ class YellowExample {
     public function onLoad($yellow) {
         $this->yellow = $yellow;
     }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="daily") {
+            $this->yellow->log("info", "Handle daily update event");
+        }
+    }
 }
 ```
 
@@ -973,28 +1054,30 @@ class YellowExample {
 
 Yellow parse events notify when a page is displayed:
 
-**public function onParseMetaData($page)**  
+`public function onParseMetaData($page)`  
 Handle page meta data
 
-**public function onParseContentRaw($page, $text)**  
+`public function onParseContentRaw($page, $text)`  
 Handle page content in raw format
 
-**public function onParseContentShortcut($page, $name, $text, $type)**  
+`public function onParseContentShortcut($page, $name, $text, $type)`  
 Handle page content of shortcut
 
-**public function onParseContentHtml($page, $text)**  
+`public function onParseContentHtml($page, $text)`  
 Handle page content in HTML format
 
-**public function onParsePageLayout($page, $name)**  
+`public function onParsePageLayout($page, $name)`  
 Handle page layout
 
-**public function onParsePageExtra($page, $name)**  
+`public function onParsePageExtra($page, $name)`  
 Handle page extra data
 
-**public function onParsePageOutput($page, $text)**  
+`public function onParsePageOutput($page, $text)`  
 Handle page output data
 
-Here's an example extension for handling a shortcut:
+#### Yellow parse events examples
+
+Extension for custom shortcut:
 
 ``` php
 <?php
@@ -1020,23 +1103,7 @@ class YellowExample {
 }
 ```
 
-### Yellow edit events
-
-Yellow edit events notify when a page is edited:
-
-**public function onEditContentFile($page, $action, $email)**  
-Handle content file changes
-
-**public function onEditMediaFile($file, $action, $email)**  
-Handle media file changes
-
-**public function onEditSystemFile($file, $action, $email)**  
-Handle system file changes
-
-**public function onEditUserAccount($action, $email, $password)**  
-Handle user account changes
-
-Here's an example extension for handling a file:
+Extension for custom header:
 
 ``` php
 <?php
@@ -1049,12 +1116,81 @@ class YellowExample {
         $this->yellow = $yellow;
     }
     
+    // Handle page extra data
+    public function onParsePageExtra($page, $name) {
+        $output = null;
+        if ($name=="header") {
+            $extensionLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreExtensionLocation");
+            $output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$extensionLocation}example.css\" />\n";
+            $output .= "<script type=\"text/javascript\" defer=\"defer\" src=\"{$extensionLocation}example.js\"></script>\n";
+        }
+        return $output;
+    }
+}
+```
+
+### Yellow edit events
+
+Yellow edit events notify when a page is edited:
+
+`public function onEditContentFile($page, $action, $email)`  
+Handle content file changes
+
+`public function onEditMediaFile($file, $action, $email)`  
+Handle media file changes
+
+`public function onEditSystemFile($file, $action, $email)`  
+Handle system file changes
+
+`public function onEditUserAccount($action, $email, $password)`  
+Handle user account changes
+
+#### Yellow edit events examples
+
+Extension for page edit:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.4";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+    
+    // Handle media file changes
+    public function onEditContentFile($page, $action, $email) {
+        if ($action=="edit") {
+            $title = $page->get("title");
+            $name = $this->yellow->user->getUser("name", $email);
+            $this->yellow->log("info", "Edit page by user '".strtok($name, " ")."'");
+        }
+    }
+}
+```
+
+Extension for file upload:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.5";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+    
     // Handle media file changes
     public function onEditMediaFile($file, $action, $email) {
         if ($action=="upload") {
             $fileName = $file->fileName;
             $fileType = $this->yellow->toolbox->getFileType($file->get("fileNameShort"));
-            // Add more code here
+            $name = $this->yellow->user->getUser("name", $email);
+            $this->yellow->log("info", "Upload file by user '".strtok($name, " ")."'");
         }
     }
 }
@@ -1064,18 +1200,20 @@ class YellowExample {
 
 Yellow command events notify when a command is executed:
 
-**public function onCommand($command, $text)**  
+`public function onCommand($command, $text)`  
 Handle command
 
-**public function onCommandHelp()**  
+`public function onCommandHelp()`  
 Handle command help
 
-Here's an example extension for handling a command:
+#### Yellow command events examples
+
+Extension for custom command:
 
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.4";
+    const VERSION = "0.1.6";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1096,6 +1234,50 @@ class YellowExample {
     // Handle command help
     public function onCommandHelp() {
         return "example";
+    }
+}
+```
+
+Extension for multiple custom commands:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.7";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+    
+     // Handle command
+    public function onCommand($command, $text) {
+        switch ($command) {
+            case "hello":   $statusCode = $this->processCommandHello($command, $text); break;
+            case "goodbye": $statusCode = $this->processCommandGoodbye($command, $text); break;
+            default:        $statusCode = 0;
+        }
+        return $statusCode;
+    }
+
+    // Handle command help
+    public function onCommandHelp() {
+        return array("hello [name]", "goodbye [name]");
+    }
+    
+    // Handle command for hello
+    public function processCommandHello($command, $text) {
+        $name = is_string_empty($text) ? "World" : $text;
+        echo "Hello $name\n";
+        return 200;
+    }
+    
+    // Handle command for goodbye
+    public function processCommandGoodbye($command, $text) {
+        $name = is_string_empty($text) ? "World" : $text;
+        echo "Goodbye $name\n";
+        return 200;
     }
 }
 ```

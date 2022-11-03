@@ -148,12 +148,8 @@ Using HTML:
 
 Using shortcuts:
 
-    [image photo.jpg]     = adding an image
-    [gallery photo.*jpg]  = adding an image gallery with popup
-    [slider photo.*jpg]   = adding an image gallery with slider
-    [youtube fhs55HEl-Gc] = embedding a video
-    [toc]                 = making a table of contents
-
-    Shortcuts require additional extensions to work.
+    [image photo.jpg]    = adding an image
+    [gallery photo.*jpg] = adding an image gallery with popup
+    [slider photo.*jpg]  = adding an image gallery with slider
 
 Do you have questions? [Get help](.).

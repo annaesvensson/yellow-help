@@ -33,10 +33,10 @@ Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree
 `Sitename` = webbplatsens namn  
 `Author` = webmasterns namn  
 `Email` = webmasterns email  
-`Language` = standardspråk  
+`Language` = standardspråk, t.ex. `sv`  
 `Layout` = standardlayout  
 `Theme` = standardtema  
-`Parser` = standard sidparser  
+`Parser` = standard innehållsparser  
 `Status` = standard sidstatus, [stödda statusvärden](#inställningar-status)  
 
 ## Språkinställningar
@@ -88,11 +88,11 @@ Följande inställningar kan konfigureras högst upp på en sida:
 `Description` = sidans beskrivning  
 `Author` = sidans författare, kommaseparerade  
 `Email` = email av sidans författare  
-`Language` = sidans språk  
+`Language` = sidans språk, t.ex. `sv`  
 `Layout` = sidans layout  
 `LayoutNew` = sidans layout för att skapa en ny sida  
 `Theme` = sidans tema  
-`Parser` = sidans parser  
+`Parser` = sidans innehållsparser  
 `Status` = sidans status, [stödda statusvärden](#inställningar-status)  
 `Redirect` = omdirigera till en ny sida eller URL  
 `Image` = sidans bild  

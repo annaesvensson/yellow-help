@@ -33,10 +33,10 @@ Im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de
 `Sitename` = Name der Webseite  
 `Author` = Name des Webmasters  
 `Email` = E-Mail des Webmasters  
-`Language` = Standard-Sprache  
+`Language` = Standard-Sprache, z.B. `de`  
 `Layout` = Standard-Layout  
 `Theme` = Standard-Thema  
-`Parser` = Standard-Seitenparser  
+`Parser` = Standard-Inhaltsparser  
 `Status` = Standard-Seitenstatus, [unterstützte Statuswerte](#einstellungen-status)  
 
 ## Spracheinstellungen
@@ -88,11 +88,11 @@ Die folgenden Einstellungen können ganz oben auf einer Seite vorgenommen werden
 `Description` = Beschreibung der Seite  
 `Author` = Autoren der Seite, durch Komma getrennt  
 `Email` = E-Mail des Seitenautors  
-`Language` = Sprache der Seite  
+`Language` = Sprache der Seite, z.B. `de`  
 `Layout` = Layout der Seite  
 `LayoutNew` = Layout um eine neue Seite zu erzeugen  
 `Theme` = Thema der Seite  
-`Parser` = Parser der Seite  
+`Parser` = Inhaltsparser der Seite  
 `Status` = Status der Seite, [unterstützte Statuswerte](#einstellungen-status)  
 `Redirect` = Umleitung zu einer neuen Seite oder URL  
 `Image` = Bild der Seite  
