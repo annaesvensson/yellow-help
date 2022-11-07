@@ -8,7 +8,7 @@ Hjälp för din webbplats.
 
 ## Hur man använder hjälpen
 
-Hjälpen finns på din webbplats som `http://website/help/`. Hjälpen ger dig mer information om hur man skapar små webbsidor, wikier och bloggar. Här hittar du instruktioner om hur man anpassa allt. Utvecklare och designers hittar beskrivningar av övergripande koncept och vad som kan göras med API:et. Det rekommenderas att du också installerar [highlight-tillägget](https://github.com/annaesvensson/yellow-highlight/tree/main/README-sv.md), [search-tillägget](https://github.com/annaesvensson/yellow-search/tree/main/README-sv.md) och [toc-tillägget](https://github.com/annaesvensson/yellow-toc/tree/main/README-sv.md). Då kommer du att ha samma paketet som hjälpen på officiella webbplatsen. 
+Hjälpen finns på din webbplats som `http://website/help/`. Hjälpen ger dig mer information om hur man skapar små webbsidor, wikier och bloggar. Här hittar du instruktioner om hur man anpassa allt. Utvecklare och designers hittar beskrivningar av övergripande koncept och vad som kan göras med API:et. Det rekommenderas att du installerar help-tillägget, [highlight-tillägget](https://github.com/annaesvensson/yellow-highlight/tree/main/README-sv.md), [search-tillägget](https://github.com/annaesvensson/yellow-search/tree/main/README-sv.md) och [toc-tillägget](https://github.com/annaesvensson/yellow-toc/tree/main/README-sv.md). Då kommer du att ha samma paketet som [hjälpen på officiella webbplatsen](https://datenstrom.se/sv/yellow/help/). 
 
 ## Hur man redigerar hjälpen
 

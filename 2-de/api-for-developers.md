@@ -382,6 +382,8 @@ Hole eine [Seitenkollektion](#yellow-page-collection) mit mehreren Sprachen im M
 `content->clean()`  
 Hole eine [Seitenkollektion](#yellow-page-collection) die leer ist
 
+#### Yellow-Content-Beispiele
+
 Layoutdatei um alle Seiten anzuzeigen:
 
 ``` html
@@ -400,8 +402,6 @@ Layoutdatei um alle Seiten anzuzeigen:
 </div>
 <?php $this->yellow->layout("footer") ?>
 ```
-
-#### Yellow-Content-Beispiele
 
 Layoutdatei um Seiten unterhalb eines bestimmten Orts anzuzeigen:
 
