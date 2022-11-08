@@ -7,7 +7,7 @@ We <3 people who code.
 
 ## Folder structure
 
-You can change everything in the file manager on your computer. The `content` folder contains the content files of the website. You can edit your website here. The `media` folder contains the media files of the website. You can store your images and files here. The `system` folder contains the system files of the website. You can customise installed extensions and configuration files here.
+You can change everything in the file manager on your computer. The `content` folder contains the content files of the website. You can edit your website here. The `media` folder contains the media files of the website. You can store your images and files here. The `system` folder contains the system files of the website. You can find installed extensions and configuration files here.
 
 ``` box-drawing {aria-hidden=true}
 ├── content               = content files
@@ -40,7 +40,7 @@ You can edit your website in a web browser. The login page is available on your 
 
 ### Built-in web server
 
-You can start the built-in web server at the command line. The built-in web server is convenient for developers and designers. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown.
+You can start the built-in web server at the command line. The built-in web server is convenient for developers and designers. This allows you to make small web sites on your computer and upload them to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown.
 
 ### Static site generator
 
@@ -48,139 +48,64 @@ You can build a static website at the command line. The static site generator bu
 
 ## Objects
 
-With the help of `$this->yellow` you can access the website. The API is divided into several objects and basically reflects the file system. In the toolbox you can find helper functions and file operations for your own extensions. The source code of the entire API can be found in file `system/extensions/core.php`. Check out the source code if you're looking for more details or are curious about how Datenstrom Yellow works.
+With the help of `$this->yellow` you can access the website. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the entire API can be found in file `system/extensions/core.php`.
+
+``` box-drawing {aria-hidden=true}
+┌──────────────┐                    ┌──────────────┐
+│ Web server   │                    │ Command line │
+└──────────────┘                    └──────────────┘
+       │                                   │
+       ▼                                   ▼
+┌──────────────────────────────────────────────────┐    ┌───────────────┐
+│ Core                                             │◀──▶│ Extensions    |
+│                                                  │    └───────────────┘
+│ $this->yellow           $this->yellow->user      │    ┌───────────────┐
+│ $this->yellow->content  $this->yellow->extension │◀──▶│ Layouts       │
+│ $this->yellow->media    $this->yellow->page      │    └───────────────┘
+│ $this->yellow->system   $this->yellow->lookup    │    ┌───────────────┐
+│ $this->yellow->language $this->yellow->toolbox   │◀──▶│ Themes        │
+└──────────────────────────────────────────────────┘    └───────────────┘
+```
 
 The following objects are available:
 
-`$this->yellow->page` = [access to current page](#yellow-page)  
+`$this->yellow` = [access to API](#yellow)  
 `$this->yellow->content` = [access to content files](#yellow-content)  
 `$this->yellow->media` = [access to media files](#yellow-media)  
 `$this->yellow->system` = [access to system settings](#yellow-system)  
 `$this->yellow->language` = [access to language settings](#yellow-language)  
 `$this->yellow->user` = [access to user settings](#yellow-user)  
 `$this->yellow->extension` = [access to extensions](#yellow-extension)  
+`$this->yellow->page` = [access to current page](#yellow-page)  
 `$this->yellow->toolbox` = [access to toolbox with helper functions](#yellow-toolbox)  
 
-### Yellow page
+### Yellow
 
-Yellow page gives access to current page. The following methods are available:
+Yellow gives access to the API. The following methods are available:
 
-`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `status`
+`command` `getLayoutArguments` `layout` `load` `log` `request`
 
-`page->get($key)`  
-Return [page setting](how-to-change-the-system#page-settings) 
+`yellow->load()`  
+Handle initialisation
 
-`page->getHtml($key)`  
-Return [page setting](how-to-change-the-system#page-settings), HTML encoded  
+`yellow->request()`  
+Handle request
 
-`page->getDate($key, $format = "")`  
-Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings)  
+`yellow->command($line = "")`  
+Handle command
 
-`page->getDateHtml($key, $format = "")`  
-Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings), HTML encoded  
+`yellow->log($action, $message)`  
+Handle logging
 
-`page->getDateRelative($key, $format = "", $daysLimit = 30)`  
-Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings), relative to today
+`yellow->layout($name, $arguments = null)`  
+Include layout
 
-`page->getDateRelativeHtml($key, $format = "", $daysLimit = 30)`  
-Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings), relative to today, HTML encoded
+`yellow->getLayoutArguments($sizeMin = 9)`  
+Return layout arguments
 
-`page->getDateFormatted($key, $format)`  
-Return [page setting](how-to-change-the-system#page-settings) as [date](https://www.php.net/manual/en/function.date.php)  
+#### Yellow examples
 
-`page->getDateFormattedHtml($key, $format)`  
-Return [page setting](how-to-change-the-system#page-settings) as [date](https://www.php.net/manual/en/function.date.php), HTML encoded  
-
-`page->getContent($rawFormat = false)`  
-Return page content, HTML encoded or raw format
-
-`page->getParent()`  
-Return parent page, null if none
-
-`page->getParentTop($homeFallback = false)`  
-Return top-level parent page, null if none
-
-`page->getSiblings($showInvisible = false)`  
-Return [page collection](#yellow-page-collection) with pages on the same level
-
-`page->getChildren($showInvisible = false)`  
-Return [page collection](#yellow-page-collection) with child pages
-
-`page->getChildrenRecursive($showInvisible = false, $levelMax = 0)`  
-Return [page collection](#yellow-page-collection) with child pages recursively
-
-`page->getPages($key)`  
-Return [page collection](#yellow-page-collection) with additional pages
-
-`page->getPage($key)`  
-Return shared page
-
-`page->getUrl()`  
-Return page URL
-
-`page->getBase($multiLanguage = false)`  
-Return page base
-
-`page->getLocation($absoluteLocation = false)`  
-Return page location
-
-`page->getRequest($key)`  
-Return page request argument
-
-`page->getRequestHtml($key)`  
-Return page request argument, HTML encoded
-
-`page->getHeader($key)`  
-Return page response header
-
-`page->getExtra($name)`  
-Return page extra data
-
-`page->getModified($httpFormat = false)`  
-Return page modification date, Unix time or HTTP format
-
-`page->getLastModified($httpFormat = false)`  
-Return last modification date, Unix time or HTTP format
-
-`page->getStatusCode($httpFormat = false)`  
-Return page status code, number or HTTP format
-
-`page->status($statusCode, $location = "")`  
-Respond with status code, no page content
-
-`page->error($statusCode, $errorMessage = "")`  
-Respond with error page
-
-`page->isAvailable()`  
-Check if page is available
-
-`page->isVisible()`  
-Check if page is visible
-
-`page->isActive()`  
-Check if page is within current HTTP request
-
-`page->isCacheable()`  
-Check if page is cacheable
-
-`page->isError()`  
-Check if page with error
-
-`page->isExisting($key)`  
-Check if [page setting](how-to-change-the-system#page-settings) exists  
-
-`page->isRequest($key)`  
-Check if request argument exists
-
-`page->isHeader($key)`  
-Check if response header exists
-
-`page->isPage($key)`  
-Check if shared page exists  
-
-#### Yellow page examples
-
-Layout file for showing page content:
+Layout file with header and footer:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -193,169 +118,25 @@ Layout file for showing page content:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layout file for showing page content and author:
+Layout file passing an argument:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p><?php echo $this->yellow->page->getHtml("author") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
+<?php $this->yellow->layout("hello", "World") ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layout file for showing page content and modification date:
+Layout file receiving an argument:
+
 
 ``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p><?php echo $this->yellow->page->getDateHtml("modified") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-### Yellow page collection
-
-Yellow page collection gives access to multiple pages. The following methods are available:
-
-`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
-
-`pages->append($page)`  
-Append to end of page collection
-
-`pages->prepend($page)`  
-Prepend to start of page collection
-
-`pages->filter($key, $value, $exactMatch = true)`  
-Filter page collection by [page setting](how-to-change-the-system#page-settings)
-
-`pages->match($regex = "/.*/", $filterByLocation = true)`  
-Filter page collection by location or file
-
-`pages->sort($key, $ascendingOrder = true)`  
-Sort page collection by [page setting](how-to-change-the-system#page-settings)
-
-`pages->similar($page, $ascendingOrder = false)`  
-Sort page collection by settings similarity
-
-`pages->merge($input)`  
-Calculate union, merge page collection
-
-`pages->intersect($input)`  
-Calculate intersection, remove pages that are not present in another page collection
-
-`pages->diff($input)`  
-Calculate difference, remove pages that are present in another page collection
-
-`pages->limit($pagesMax)`  
-Limit the number of pages in page collection
-
-`pages->reverse()`  
-Reverse page collection
-
-`pages->shuffle()`  
-Randomize page collection
-
-`pages->paginate($limit)`  
-Paginate page collection
-
-`pages->getPaginationNumber()`  
-Return current page number in pagination
-
-`pages->getPaginationCount()`  
-Return highest page number in pagination
-
-`pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1)`  
-Return location for a page in pagination
-
-`pages->getPaginationPrevious($absoluteLocation = true)`  
-Return location for previous page in pagination
-
-`pages->getPaginationNext($absoluteLocation = true)`  
-Return location for next page in pagination
-
-`pages->getPagePrevious($page)`  
-Return previous page in collection, null if none
-
-`pages->getPageNext($page)`  
-Return next page in collection, null if none
-
-`pages->getFilter()`  
-Return current page filter
-
-`pages->getModified($httpFormat = false)`  
-Return page collection modification date, Unix time or HTTP format
-
-`pages->isPagination()`  
-Check if there is a pagination
-
-`page->isEmpty()`  
-Check if page collection is empty
-
-#### Yellow page collection examples
-
-Layout file for showing three random pages:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index()->shuffle()->limit(3) ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layout file for showing latest pages:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index()->sort("modified", false) ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layout file for showing draft pages:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index(true, true)->filter("status", "draft") ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
+<?php list($name, $text) = $this->yellow->getLayoutArguments() ?>
+<?php echo "Hello $text" ?>
 ```
 
 ### Yellow content
@@ -798,6 +579,303 @@ if ($this->yellow->extension->isExisting("image")) {
 }
 ```
 
+### Yellow page
+
+Yellow page gives access to current page. The following methods are available:
+
+`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `status`
+
+`page->get($key)`  
+Return [page setting](how-to-change-the-system#page-settings) 
+
+`page->getHtml($key)`  
+Return [page setting](how-to-change-the-system#page-settings), HTML encoded  
+
+`page->getDate($key, $format = "")`  
+Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings)  
+
+`page->getDateHtml($key, $format = "")`  
+Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings), HTML encoded  
+
+`page->getDateRelative($key, $format = "", $daysLimit = 30)`  
+Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings), relative to today
+
+`page->getDateRelativeHtml($key, $format = "", $daysLimit = 30)`  
+Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings), relative to today, HTML encoded
+
+`page->getDateFormatted($key, $format)`  
+Return [page setting](how-to-change-the-system#page-settings) as [date](https://www.php.net/manual/en/function.date.php)  
+
+`page->getDateFormattedHtml($key, $format)`  
+Return [page setting](how-to-change-the-system#page-settings) as [date](https://www.php.net/manual/en/function.date.php), HTML encoded  
+
+`page->getContent($rawFormat = false)`  
+Return page content, HTML encoded or raw format
+
+`page->getParent()`  
+Return parent page, null if none
+
+`page->getParentTop($homeFallback = false)`  
+Return top-level parent page, null if none
+
+`page->getSiblings($showInvisible = false)`  
+Return [page collection](#yellow-page-collection) with pages on the same level
+
+`page->getChildren($showInvisible = false)`  
+Return [page collection](#yellow-page-collection) with child pages
+
+`page->getChildrenRecursive($showInvisible = false, $levelMax = 0)`  
+Return [page collection](#yellow-page-collection) with child pages recursively
+
+`page->getPages($key)`  
+Return [page collection](#yellow-page-collection) with additional pages
+
+`page->getPage($key)`  
+Return shared page
+
+`page->getUrl()`  
+Return page URL
+
+`page->getBase($multiLanguage = false)`  
+Return page base
+
+`page->getLocation($absoluteLocation = false)`  
+Return page location
+
+`page->getRequest($key)`  
+Return page request argument
+
+`page->getRequestHtml($key)`  
+Return page request argument, HTML encoded
+
+`page->getHeader($key)`  
+Return page response header
+
+`page->getExtra($name)`  
+Return page extra data
+
+`page->getModified($httpFormat = false)`  
+Return page modification date, Unix time or HTTP format
+
+`page->getLastModified($httpFormat = false)`  
+Return last modification date, Unix time or HTTP format
+
+`page->getStatusCode($httpFormat = false)`  
+Return page status code, number or HTTP format
+
+`page->status($statusCode, $location = "")`  
+Respond with status code, no page content
+
+`page->error($statusCode, $errorMessage = "")`  
+Respond with error page
+
+`page->isAvailable()`  
+Check if page is available
+
+`page->isVisible()`  
+Check if page is visible
+
+`page->isActive()`  
+Check if page is within current HTTP request
+
+`page->isCacheable()`  
+Check if page is cacheable
+
+`page->isError()`  
+Check if page with error
+
+`page->isExisting($key)`  
+Check if [page setting](how-to-change-the-system#page-settings) exists  
+
+`page->isRequest($key)`  
+Check if request argument exists
+
+`page->isHeader($key)`  
+Check if response header exists
+
+`page->isPage($key)`  
+Check if shared page exists  
+
+#### Yellow page examples
+
+Layout file for showing page content:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php echo $this->yellow->page->getContent() ?>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Layout file for showing page content and author:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<p><?php echo $this->yellow->page->getHtml("author") ?></p>
+<?php echo $this->yellow->page->getContent() ?>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Layout file for showing page content and modification date:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<p><?php echo $this->yellow->page->getDateHtml("modified") ?></p>
+<?php echo $this->yellow->page->getContent() ?>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+### Yellow page collection
+
+Yellow page collection gives access to multiple pages. The following methods are available:
+
+`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
+
+`pages->append($page)`  
+Append to end of page collection
+
+`pages->prepend($page)`  
+Prepend to start of page collection
+
+`pages->filter($key, $value, $exactMatch = true)`  
+Filter page collection by [page setting](how-to-change-the-system#page-settings)
+
+`pages->match($regex = "/.*/", $filterByLocation = true)`  
+Filter page collection by location or file
+
+`pages->sort($key, $ascendingOrder = true)`  
+Sort page collection by [page setting](how-to-change-the-system#page-settings)
+
+`pages->similar($page, $ascendingOrder = false)`  
+Sort page collection by settings similarity
+
+`pages->merge($input)`  
+Calculate union, merge page collection
+
+`pages->intersect($input)`  
+Calculate intersection, remove pages that are not present in another page collection
+
+`pages->diff($input)`  
+Calculate difference, remove pages that are present in another page collection
+
+`pages->limit($pagesMax)`  
+Limit the number of pages in page collection
+
+`pages->reverse()`  
+Reverse page collection
+
+`pages->shuffle()`  
+Randomize page collection
+
+`pages->paginate($limit)`  
+Paginate page collection
+
+`pages->getPaginationNumber()`  
+Return current page number in pagination
+
+`pages->getPaginationCount()`  
+Return highest page number in pagination
+
+`pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1)`  
+Return location for a page in pagination
+
+`pages->getPaginationPrevious($absoluteLocation = true)`  
+Return location for previous page in pagination
+
+`pages->getPaginationNext($absoluteLocation = true)`  
+Return location for next page in pagination
+
+`pages->getPagePrevious($page)`  
+Return previous page in collection, null if none
+
+`pages->getPageNext($page)`  
+Return next page in collection, null if none
+
+`pages->getFilter()`  
+Return current page filter
+
+`pages->getModified($httpFormat = false)`  
+Return page collection modification date, Unix time or HTTP format
+
+`pages->isPagination()`  
+Check if there is a pagination
+
+`page->isEmpty()`  
+Check if page collection is empty
+
+#### Yellow page collection examples
+
+Layout file for showing three random pages:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php $pages = $this->yellow->content->index()->shuffle()->limit(3) ?>
+<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
+<ul>
+<?php foreach ($pages as $page): ?>
+<li><?php echo $page->getHtml("title") ?></li>
+<?php endforeach ?>
+</ul>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Layout file for showing latest pages:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php $pages = $this->yellow->content->index()->sort("modified", false) ?>
+<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
+<ul>
+<?php foreach ($pages as $page): ?>
+<li><?php echo $page->getHtml("title") ?></li>
+<?php endforeach ?>
+</ul>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Layout file for showing draft pages:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php $pages = $this->yellow->content->index(true, true)->filter("status", "draft") ?>
+<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
+<ul>
+<?php foreach ($pages as $page): ?>
+<li><?php echo $page->getHtml("title") ?></li>
+<?php endforeach ?>
+</ul>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
 ### Yellow toolbox
 
 Yellow toolbox gives access to toolbox with helper functions:
@@ -964,7 +1042,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Events
 
-First extensions are loaded and `onLoad` will be called. As soon as all extensions are loaded `onStartup` will be called. The page can be handled with various events. In most cases the page content will be generated. If an error has occurred, an error page will be generated. Finally the page is output and `onShutdown` will be called.
+With help of events the website can inform when something happens. First extensions are loaded and `onLoad` will be called. As soon as all extensions are loaded `onStartup` will be called. A page can be handled with various events. In most cases the page content will be generated. If an error has occurred, an error page will be generated. Finally the page is output and `onShutdown` will be called.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐
@@ -1147,7 +1225,7 @@ Handle user account changes
 
 #### Yellow edit events examples
 
-Extension for page edit:
+Extension for handling page edit:
 
 ``` php
 <?php
@@ -1171,7 +1249,7 @@ class YellowExample {
 }
 ```
 
-Extension for file upload:
+Extension for handling file upload:
 
 ``` php
 <?php
@@ -1268,15 +1346,15 @@ class YellowExample {
     
     // Handle command for hello
     public function processCommandHello($command, $text) {
-        $name = is_string_empty($text) ? "World" : $text;
-        echo "Hello $name\n";
+        if (is_string_empty($text)) $text = "World";
+        echo "Hello $text\n";
         return 200;
     }
     
     // Handle command for goodbye
     public function processCommandGoodbye($command, $text) {
-        $name = is_string_empty($text) ? "World" : $text;
-        echo "Goodbye $name\n";
+        if (is_string_empty($text)) $text = "World";
+        echo "Goodbye $text\n";
         return 200;
     }
 }

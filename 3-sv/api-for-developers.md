@@ -7,7 +7,7 @@ Vi <3 människor som kodar.
 
 ## Mappstruktur
 
-Du kan ändra allt i filhanteraren på din dator. Mappen `content` innehåller webbplatsens innehållsfilerna. Du kan redigera din webbplats här. Mappen `media` innehåller webbplatsens mediefiler. Du kan lagra dina bilder och filer här. Mappen `system` innehåller webbplatsens systemfilerna. Du kan anpassa installerade tillägg och konfigurationsfilar här.
+Du kan ändra allt i filhanteraren på din dator. Mappen `content` innehåller webbplatsens innehållsfilerna. Du kan redigera din webbplats här. Mappen `media` innehåller webbplatsens mediefiler. Du kan lagra dina bilder och filer här. Mappen `system` innehåller webbplatsens systemfilerna. Du kan hitta installerade tillägg och konfigurationsfilar här.
 
 ``` box-drawing {aria-hidden=true}
 ├── content               = innehållsfiler
@@ -40,7 +40,7 @@ Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgängli
 
 ### Inbyggd webbserver
 
-Du kan starta inbyggda webbservern på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare och formgivare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas.
+Du kan starta inbyggda webbservern på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare och formgivare. Detta gör att du kan skapa små webbsidor på din dator och ladda upp dem till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas.
 
 ### Static-site-generator
 
@@ -48,139 +48,64 @@ Du kan bygga en statisk webbplats på kommandoraden. Den static-site-generator b
 
 ## Objekt
 
-Med hjälp av `$this->yellow` kan man komma åt webbplatsen. API:et är uppdelat i flera objekt och speglar i princip filsystemet. I verktygslådan hittar man hjälpfunktioner och filåtgärder för egna tillägg. Källkoden för hela API finns i filen `system/extensions/core.php`. Kolla in källkoden om du letar efter fler detaljer eller är nyfiken på hur Datenstrom Yellow fungerar.
+Med hjälp av `$this->yellow` kan du komma åt webbplatsen. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för hela API finns i filen `system/extensions/core.php`.
+
+``` box-drawing {aria-hidden=true}
+┌──────────────┐                    ┌──────────────┐
+│ Webbserver   │                    │ Kommandorad  │
+└──────────────┘                    └──────────────┘
+       │                                   │
+       ▼                                   ▼
+┌──────────────────────────────────────────────────┐    ┌───────────────┐
+│ Core                                             │◀──▶│ Tillägg       |
+│                                                  │    └───────────────┘
+│ $this->yellow           $this->yellow->user      │    ┌───────────────┐
+│ $this->yellow->content  $this->yellow->extension │◀──▶│ Layouter      │
+│ $this->yellow->media    $this->yellow->page      │    └───────────────┘
+│ $this->yellow->system   $this->yellow->lookup    │    ┌───────────────┐
+│ $this->yellow->language $this->yellow->toolbox   │◀──▶│ Theman        │
+└──────────────────────────────────────────────────┘    └───────────────┘
+```
 
 Följande objekt är tillgängliga:
 
-`$this->yellow->page` = [tillgång till aktuella sidan](#yellow-page)  
+`$this->yellow` = [tillgång till API:et](#yellow)  
 `$this->yellow->content` = [tillgång till innehållsfiler](#yellow-content)  
 `$this->yellow->media` = [tillgång till mediefiler](#yellow-media)  
 `$this->yellow->system` = [tillgång till systeminställningar](#yellow-system)  
 `$this->yellow->language` = [tillgång till språkinställningar](#yellow-language)  
 `$this->yellow->user` = [tillgång till användarinställningar](#yellow-user)  
 `$this->yellow->extension` = [tillgång till tillägg](#yellow-extension)  
+`$this->yellow->page` = [tillgång till aktuella sidan](#yellow-page)  
 `$this->yellow->toolbox` = [tillgång till verktygslådan med hjälpfunktioner](#yellow-toolbox)  
 
-### Yellow page
+### Yellow
 
-Yellow page ger tillgång till aktuella sidan. Följande metoder är tillgängliga:
+Yellow ger tillgång till API:et. Följande metoder är tillgängliga:
 
-`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `status`
+`command` `getLayoutArguments` `layout` `load` `log` `request`
 
-`page->get($key)`  
-Returnera [sidinställning](how-to-change-the-system#sidinställningar) 
+`yellow->load()`  
+Hantera initialisering
 
-`page->getHtml($key)`  
-Returnera [sidinställning](how-to-change-the-system#sidinställningar), HTML-kodad  
+`yellow->request()`  
+Hantera begäran
 
-`page->getDate($key, $format = "")`  
-Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [språkspecifikt datum](how-to-change-the-system#språkinställningar)  
+`yellow->command($line = "")`  
+Hantera kommandon
 
-`page->getDateHtml($key, $format = "")`  
-Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [språkspecifikt datum](how-to-change-the-system#språkinställningar), HTML-kodad  
+`yellow->log($action, $message)`  
+Hantera loggning
 
-`page->getDateRelative($key, $format = "", $daysLimit = 30)`  
-Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [språkspecifikt datum](how-to-change-the-system#språkinställningar), i förhållande till idag 
+`yellow->layout($name, $arguments = null)`  
+Inkludera layouten
 
-`page->getDateRelativeHtml($key, $format = "", $daysLimit = 30)`  
-Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [språkspecifikt datum](how-to-change-the-system#språkinställningar), i förhållande till idag, HTML-kodad
+`yellow->getLayoutArguments($sizeMin = 9)`  
+Returnera layoutargument
 
-`page->getDateFormatted($key, $format)`  
-Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [datum](https://www.php.net/manual/en/function.date.php)  
+#### Yellow exempel
 
-`page->getDateFormattedHtml($key, $format)`  
-Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [datum](https://www.php.net/manual/en/function.date.php), HTML-kodad  
-
-`page->getContent($rawFormat = false)`  
-Returnera sidinnehåll, HTML-kodat eller råformat
-
-`page->getParent()`  
-Returnera överordnad sida, null om ingen
-
-`page->getParentTop($homeFallback = false)`  
-Returnera överordnad sida på toppnivå, null om ingen 
-
-`page->getSiblings($showInvisible = false)`  
-Returnera [page collection](#yellow-page-collection) med sidor på samma nivå 
-
-`page->getChildren($showInvisible = false)`  
-Returnera [page collection](#yellow-page-collection) med barnsidor
-
-`page->getChildrenRecursive($showInvisible = false, $levelMax = 0)`  
-Returnera [page collection](#yellow-page-collection) med barnsidor rekursivt
-
-`page->getPages($key)`  
-Returnera [page collection](#yellow-page-collection) med ytterligare sidor
-
-`page->getPage($key)`  
-Returnera delad sida
-
-`page->getUrl()`  
-Returnera sidans URL
-
-`page->getBase($multiLanguage = false)`  
-Returnera sidans bas
-
-`page->getLocation($absoluteLocation = false)`  
-Returnera sidans plats
-
-`page->getRequest($key)`  
-Returnera requestargument av sidan
-
-`page->getRequestHtml($key)`  
-Returnera requestargument av sidan, HTML-kodad
-
-`page->getHeader($key)`  
-Returnera responseheader av sidan
-
-`page->getExtra($name)`  
-Returnera extra data för sidan
-
-`page->getModified($httpFormat = false)`  
-Returnera sidans ändringsdatum, Unix-tid eller HTTP-format
-
-`page->getLastModified($httpFormat = false)`  
-Returnera sidans senaste ändringsdatum, Unix-tid eller HTTP-format
-
-`page->getStatusCode($httpFormat = false)`  
-Returnera sidans statuskod, nummer eller HTTP-format
-
-`page->status($statusCode, $location = "")`  
-Svara med statuskod, inget sidinnehåll
-
-`page->error($statusCode, $errorMessage = "")`  
-Svara med felsidan
-
-`page->isAvailable()`  
-Kontrollera om sidan är tillgänglig
-
-`page->isVisible()`  
-Kontrollera om sidan är synlig
-
-`page->isActive()`  
-Kontrollera om sidan ligger inom aktuella HTTP-begäran
-
-`page->isCacheable()`  
-Kontrollera om sidan kan cachelagras
-
-`page->isError()`  
-Kontrollera om sidan med fel
-
-`page->isExisting($key)`  
-Kontrollera om [sidinställning](how-to-change-the-system#sidinställningar) finns  
-
-`page->isRequest($key)`  
-Kontrollera om requestargument finns 
-
-`page->isHeader($key)`  
-Kontrollera om responseheader finns
-
-`page->isPage($key)`  
-Kontrollera om delad sida finns
-
-#### Yellow page exempel
-
-Layoutfil för att visa sidinnehåll:
+Layoutfil med header och footer:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -193,169 +118,25 @@ Layoutfil för att visa sidinnehåll:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layoutfil för att visa sidinnehåll och författare:
+Layoutfil som skickar ett argument:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p><?php echo $this->yellow->page->getHtml("author") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
+<?php $this->yellow->layout("hello", "World") ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layoutfil för att visa sidinnehåll och modifieringsdatum:
+Layoutfil som tar emot ett argument:
+
 
 ``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p><?php echo $this->yellow->page->getDateHtml("modified") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-### Yellow page collection
-
-Yellow page collection ger tillgång till flera sidor. Följande metoder är tillgängliga:
-
-`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
-
-`pages->append($page)`  
-Lägg till slutet av page collection
-
-`pages->prepend($page)`  
-Placera i början av page collection
-
-`pages->filter($key, $value, $exactMatch = true)`  
-Filtrera page collection efter [sidinställning](how-to-change-the-system#sidinställningar)
-
-`pages->match($regex = "/.*/", $filterByLocation = true)`  
-Filtrera page collection efter plats eller fil
-
-`pages->sort($key, $ascendingOrder = true)`  
-Sortera page collection efter [sidinställning](how-to-change-the-system#sidinställningar)
-
-`pages->similar($page, $ascendingOrder = false)`  
-Sortera page collection efter inställningslikhet
-
-`pages->merge($input)`  
-Beräkna union, lägg till en page collection
-
-`pages->intersect($input)`  
-Beräkna korsningen, ta bort sidor som inte finns i en annan page collection
-
-`pages->diff($input)`  
-Beräkna skillnaden, ta bort sidor som finns i en annan page collection
-
-`pages->limit($pagesMax)`  
-Begränsa antalet sidor i page collection
-
-`pages->reverse()`  
-Omvänd page collection
-
-`pages->shuffle()`  
-Gör page collection slumpmässig
-
-`pages->paginate($limit)`  
-Skapa en paginering för page collection
-
-`pages->getPaginationNumber()`  
-Returnera aktuellt sidnummer i paginering
-
-`pages->getPaginationCount()`  
-Returnera högsta sidnummer i paginering
-
-`pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1)`  
-Returnera plats för en sida i paginering 
-
-`pages->getPaginationPrevious($absoluteLocation = true)`  
-Returnera plats för föregående sida i paginering
-
-`pages->getPaginationNext($absoluteLocation = true)`  
-Returnera plats för nästa sida i paginering
-
-`pages->getPagePrevious($page)`  
-Returnera föregående sida i page collection, null om ingen 
-
-`pages->getPageNext($page)`  
-Returnera nästa sida i page collection, null om ingen 
-
-`pages->getFilter()`  
-Returnera nuvarande sidfilter 
-
-`pages->getModified($httpFormat = false)`  
-Returnera ändringsdatum för page collection, Unix-tid eller HTTP-format  
-
-`pages->isPagination()`  
-Kontrollera om det finns en paginering
-
-`page->isEmpty()`  
-Kontrollera om page collection är tom
-
-#### Yellow page collection exempel
-
-Layoutfil för att visa tre slumpmässiga sidor:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index()->shuffle()->limit(3) ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil för att visa senaste sidor:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index()->sort("modified", false) ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil för att visa draftsidor:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index(true, true)->filter("status", "draft") ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
+<?php list($name, $text) = $this->yellow->getLayoutArguments() ?>
+<?php echo "Hello $text" ?>
 ```
 
 ### Yellow content
@@ -798,6 +579,303 @@ if ($this->yellow->extension->isExisting("image")) {
 }
 ```
 
+### Yellow page
+
+Yellow page ger tillgång till aktuella sidan. Följande metoder är tillgängliga:
+
+`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `status`
+
+`page->get($key)`  
+Returnera [sidinställning](how-to-change-the-system#sidinställningar) 
+
+`page->getHtml($key)`  
+Returnera [sidinställning](how-to-change-the-system#sidinställningar), HTML-kodad  
+
+`page->getDate($key, $format = "")`  
+Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [språkspecifikt datum](how-to-change-the-system#språkinställningar)  
+
+`page->getDateHtml($key, $format = "")`  
+Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [språkspecifikt datum](how-to-change-the-system#språkinställningar), HTML-kodad  
+
+`page->getDateRelative($key, $format = "", $daysLimit = 30)`  
+Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [språkspecifikt datum](how-to-change-the-system#språkinställningar), i förhållande till idag 
+
+`page->getDateRelativeHtml($key, $format = "", $daysLimit = 30)`  
+Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [språkspecifikt datum](how-to-change-the-system#språkinställningar), i förhållande till idag, HTML-kodad
+
+`page->getDateFormatted($key, $format)`  
+Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [datum](https://www.php.net/manual/en/function.date.php)  
+
+`page->getDateFormattedHtml($key, $format)`  
+Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [datum](https://www.php.net/manual/en/function.date.php), HTML-kodad  
+
+`page->getContent($rawFormat = false)`  
+Returnera sidinnehåll, HTML-kodat eller råformat
+
+`page->getParent()`  
+Returnera överordnad sida, null om ingen
+
+`page->getParentTop($homeFallback = false)`  
+Returnera överordnad sida på toppnivå, null om ingen 
+
+`page->getSiblings($showInvisible = false)`  
+Returnera [page collection](#yellow-page-collection) med sidor på samma nivå 
+
+`page->getChildren($showInvisible = false)`  
+Returnera [page collection](#yellow-page-collection) med barnsidor
+
+`page->getChildrenRecursive($showInvisible = false, $levelMax = 0)`  
+Returnera [page collection](#yellow-page-collection) med barnsidor rekursivt
+
+`page->getPages($key)`  
+Returnera [page collection](#yellow-page-collection) med ytterligare sidor
+
+`page->getPage($key)`  
+Returnera delad sida
+
+`page->getUrl()`  
+Returnera sidans URL
+
+`page->getBase($multiLanguage = false)`  
+Returnera sidans bas
+
+`page->getLocation($absoluteLocation = false)`  
+Returnera sidans plats
+
+`page->getRequest($key)`  
+Returnera requestargument av sidan
+
+`page->getRequestHtml($key)`  
+Returnera requestargument av sidan, HTML-kodad
+
+`page->getHeader($key)`  
+Returnera responseheader av sidan
+
+`page->getExtra($name)`  
+Returnera extra data för sidan
+
+`page->getModified($httpFormat = false)`  
+Returnera sidans ändringsdatum, Unix-tid eller HTTP-format
+
+`page->getLastModified($httpFormat = false)`  
+Returnera sidans senaste ändringsdatum, Unix-tid eller HTTP-format
+
+`page->getStatusCode($httpFormat = false)`  
+Returnera sidans statuskod, nummer eller HTTP-format
+
+`page->status($statusCode, $location = "")`  
+Svara med statuskod, inget sidinnehåll
+
+`page->error($statusCode, $errorMessage = "")`  
+Svara med felsidan
+
+`page->isAvailable()`  
+Kontrollera om sidan är tillgänglig
+
+`page->isVisible()`  
+Kontrollera om sidan är synlig
+
+`page->isActive()`  
+Kontrollera om sidan ligger inom aktuella HTTP-begäran
+
+`page->isCacheable()`  
+Kontrollera om sidan kan cachelagras
+
+`page->isError()`  
+Kontrollera om sidan med fel
+
+`page->isExisting($key)`  
+Kontrollera om [sidinställning](how-to-change-the-system#sidinställningar) finns  
+
+`page->isRequest($key)`  
+Kontrollera om requestargument finns 
+
+`page->isHeader($key)`  
+Kontrollera om responseheader finns
+
+`page->isPage($key)`  
+Kontrollera om delad sida finns
+
+#### Yellow page exempel
+
+Layoutfil för att visa sidinnehåll:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php echo $this->yellow->page->getContent() ?>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Layoutfil för att visa sidinnehåll och författare:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<p><?php echo $this->yellow->page->getHtml("author") ?></p>
+<?php echo $this->yellow->page->getContent() ?>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Layoutfil för att visa sidinnehåll och modifieringsdatum:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<p><?php echo $this->yellow->page->getDateHtml("modified") ?></p>
+<?php echo $this->yellow->page->getContent() ?>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+### Yellow page collection
+
+Yellow page collection ger tillgång till flera sidor. Följande metoder är tillgängliga:
+
+`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
+
+`pages->append($page)`  
+Lägg till slutet av page collection
+
+`pages->prepend($page)`  
+Placera i början av page collection
+
+`pages->filter($key, $value, $exactMatch = true)`  
+Filtrera page collection efter [sidinställning](how-to-change-the-system#sidinställningar)
+
+`pages->match($regex = "/.*/", $filterByLocation = true)`  
+Filtrera page collection efter plats eller fil
+
+`pages->sort($key, $ascendingOrder = true)`  
+Sortera page collection efter [sidinställning](how-to-change-the-system#sidinställningar)
+
+`pages->similar($page, $ascendingOrder = false)`  
+Sortera page collection efter inställningslikhet
+
+`pages->merge($input)`  
+Beräkna union, lägg till en page collection
+
+`pages->intersect($input)`  
+Beräkna korsningen, ta bort sidor som inte finns i en annan page collection
+
+`pages->diff($input)`  
+Beräkna skillnaden, ta bort sidor som finns i en annan page collection
+
+`pages->limit($pagesMax)`  
+Begränsa antalet sidor i page collection
+
+`pages->reverse()`  
+Omvänd page collection
+
+`pages->shuffle()`  
+Gör page collection slumpmässig
+
+`pages->paginate($limit)`  
+Skapa en paginering för page collection
+
+`pages->getPaginationNumber()`  
+Returnera aktuellt sidnummer i paginering
+
+`pages->getPaginationCount()`  
+Returnera högsta sidnummer i paginering
+
+`pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1)`  
+Returnera plats för en sida i paginering 
+
+`pages->getPaginationPrevious($absoluteLocation = true)`  
+Returnera plats för föregående sida i paginering
+
+`pages->getPaginationNext($absoluteLocation = true)`  
+Returnera plats för nästa sida i paginering
+
+`pages->getPagePrevious($page)`  
+Returnera föregående sida i page collection, null om ingen 
+
+`pages->getPageNext($page)`  
+Returnera nästa sida i page collection, null om ingen 
+
+`pages->getFilter()`  
+Returnera nuvarande sidfilter 
+
+`pages->getModified($httpFormat = false)`  
+Returnera ändringsdatum för page collection, Unix-tid eller HTTP-format  
+
+`pages->isPagination()`  
+Kontrollera om det finns en paginering
+
+`page->isEmpty()`  
+Kontrollera om page collection är tom
+
+#### Yellow page collection exempel
+
+Layoutfil för att visa tre slumpmässiga sidor:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php $pages = $this->yellow->content->index()->shuffle()->limit(3) ?>
+<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
+<ul>
+<?php foreach ($pages as $page): ?>
+<li><?php echo $page->getHtml("title") ?></li>
+<?php endforeach ?>
+</ul>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Layoutfil för att visa senaste sidor:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php $pages = $this->yellow->content->index()->sort("modified", false) ?>
+<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
+<ul>
+<?php foreach ($pages as $page): ?>
+<li><?php echo $page->getHtml("title") ?></li>
+<?php endforeach ?>
+</ul>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Layoutfil för att visa draftsidor:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php $pages = $this->yellow->content->index(true, true)->filter("status", "draft") ?>
+<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
+<ul>
+<?php foreach ($pages as $page): ?>
+<li><?php echo $page->getHtml("title") ?></li>
+<?php endforeach ?>
+</ul>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
 ### Yellow toolbox
 
 Yellow toolbox ger tillgång till verktygslådan med hjälpfunktioner:
@@ -964,7 +1042,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Händelser
 
-Först laddas tilläggen och `onLoad` anropas. Så snart alla tillägg har laddats kallas `onStartup`. Sidan kan hanteras med olika händelser. I de flesta fall  genereras sidinnehållet. Om ett fel har inträffat genereras en felsida. Slutligen matas sidan ut och `onShutdown` anropas.
+Med hjälp av händelser kan hemsidan informera när något händer. Först laddas tilläggen och `onLoad` anropas. Så snart alla tillägg har laddats kallas `onStartup`. En sida kan hanteras med olika händelser. I de flesta fall genereras sidinnehållet. Om ett fel har inträffat genereras en felsida. Slutligen matas sidan ut och `onShutdown` anropas.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐
@@ -1147,7 +1225,7 @@ Hantera ändringar av användarkonton
 
 #### Yellow edit händelser exempel
 
-Tillägg för sidredigering:
+Tillägg för hantering av sidredigering:
 
 ``` php
 <?php
@@ -1171,7 +1249,7 @@ class YellowExample {
 }
 ```
 
-Tillägg för filuppladdning:
+Tillägg för hantering av filuppladdning:
 
 ``` php
 <?php
@@ -1268,15 +1346,15 @@ class YellowExample {
     
     // Handle command for hello
     public function processCommandHello($command, $text) {
-        $name = is_string_empty($text) ? "World" : $text;
-        echo "Hello $name\n";
+        if (is_string_empty($text)) $text = "World";
+        echo "Hello $text\n";
         return 200;
     }
     
     // Handle command for goodbye
     public function processCommandGoodbye($command, $text) {
-        $name = is_string_empty($text) ? "World" : $text;
-        echo "Goodbye $name\n";
+        if (is_string_empty($text)) $text = "World";
+        echo "Goodbye $text\n";
         return 200;
     }
 }

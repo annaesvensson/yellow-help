@@ -7,7 +7,7 @@ Wir <3 Menschen die programmieren.
 
 ## Verzeichnisstruktur
 
-Du kannst alles im Dateimanager auf deinem Computer ändern. Das `content`-Verzeichnis enthält die Inhaltsdateien der Webseite. Hier bearbeitet man seine Webseite. Das `media`-Verzeichnis enthält die Mediendateien der Webseite. Hier speichert man seine Bilder und Dateien. Das `system`-Verzeichnis enthält die Systemdateien der Webseite. Hier passt man installierte Erweiterungen und Konfigurationsdateien an.
+Du kannst alles im Dateimanager auf deinem Computer ändern. Das `content`-Verzeichnis enthält die Inhaltsdateien der Webseite. Hier bearbeitet man seine Webseite. Das `media`-Verzeichnis enthält die Mediendateien der Webseite. Hier speichert man seine Bilder und Dateien. Das `system`-Verzeichnis enthält die Systemdateien der Webseite. Hier findet man installierte Erweiterungen und Konfigurationsdateien.
 
 ``` box-drawing {aria-hidden=true}
 ├── content               = Inhaltsdateien
@@ -40,7 +40,7 @@ Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf dein
 
 ### Eingebauter Webserver
 
-Du kannst den eingebauten Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler und Designer. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL.
+Du kannst den eingebauten Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler und Designer. Das erlaubt es dir kleine Webseiten auf deinem Computer zu erstellen und später auf deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL.
 
 ### Static-Site-Generator
 
@@ -48,139 +48,64 @@ Du kannst eine statische Webseite in der Befehlszeile erstellen. Der Static-Site
 
 ## Objekte
 
-Mit Hilfe von `$this->yellow` kann man auf die Webseite zugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. In der Werkzeugkiste findet man Hilfsfunktionen und Dateioperationen für eigene Erweiterungen. Den Quellcode der gesamten API findet man in der Datei `system/extensions/core.php`. Schau dir den Quellcode an falls du weitere Details suchst oder neugierig bist wie Datenstrom Yellow funktioniert.
+Mit Hilfe von `$this->yellow` kannst du auf die Webseite zugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der gesamten API findet man in der Datei `system/extensions/core.php`.
+
+``` box-drawing {aria-hidden=true}
+┌──────────────┐                    ┌──────────────┐
+│ Webserver    │                    │ Befehlszeile │
+└──────────────┘                    └──────────────┘
+       │                                   │
+       ▼                                   ▼
+┌──────────────────────────────────────────────────┐    ┌───────────────┐
+│ Core                                             │◀──▶│ Erweiterungen |
+│                                                  │    └───────────────┘
+│ $this->yellow           $this->yellow->user      │    ┌───────────────┐
+│ $this->yellow->content  $this->yellow->extension │◀──▶│ Layouts       │
+│ $this->yellow->media    $this->yellow->page      │    └───────────────┘
+│ $this->yellow->system   $this->yellow->lookup    │    ┌───────────────┐
+│ $this->yellow->language $this->yellow->toolbox   │◀──▶│ Themen        │
+└──────────────────────────────────────────────────┘    └───────────────┘
+```
 
 Die folgenden Objekte sind verfügbar:
 
-`$this->yellow->page` = [Zugang zur aktuellen Seite](#yellow-page)  
+`$this->yellow` = [Zugang zur API](#yellow)  
 `$this->yellow->content` = [Zugang zu Inhaltsdateien](#yellow-content)  
 `$this->yellow->media` = [Zugang zu Mediendateien](#yellow-media)  
 `$this->yellow->system` = [Zugang zu Systemeinstellungen](#yellow-system)  
 `$this->yellow->language` = [Zugang zu Spracheinstellungen](#yellow-language)  
 `$this->yellow->user` = [Zugang zu Benutzereinstellungen](#yellow-user)  
 `$this->yellow->extension` = [Zugang zu Erweiterungen](#yellow-extension)  
+`$this->yellow->page` = [Zugang zur aktuellen Seite](#yellow-page)  
 `$this->yellow->toolbox` = [Zugang zur Werkzeugkiste mit Hilfsfunktionen](#yellow-toolbox)  
 
-### Yellow-Page
+### Yellow
 
-Yellow-Page gibt Zugang zur aktuellen Seite. Die folgenden Methoden sind verfügbar:
+Yellow gibt Zugang zur API. Die folgenden Methoden sind verfügbar:
 
-`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `status`
+`command` `getLayoutArguments` `layout` `load` `log` `request`
 
-`page->get($key)`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen)
+`yellow->load()`  
+Verarbeite die Initialisierung
 
-`page->getHtml($key)`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen), HTML-kodiert  
+`yellow->request()`  
+Verarbeite die Anfrage
 
-`page->getDate($key, $format = "")`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen)
+`yellow->command($line = "")`  
+Verarbeite den Befehl
 
-`page->getDateHtml($key, $format = "")`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), HTML-kodiert
+`yellow->log($action, $message)`  
+Verarbeite das Logging
 
-`page->getDateRelative($key, $format = "", $daysLimit = 30)`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), relativ zu heute
+`yellow->layout($name, $arguments = null)`  
+Beziehe das Layout ein
 
-`page->getDateRelativeHtml($key, $format = "", $daysLimit = 30)`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), relativ zu heute, HTML-kodiert
+`yellow->getLayoutArguments($sizeMin = 9)`  
+Hole die Layout-Argumente
 
-`page->getDateFormatted($key, $format)`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [Datum](https://www.php.net/manual/de/function.date.php)
+#### Yellow-Beispiele
 
-`page->getDateFormattedHtml($key, $format)`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [Datum](https://www.php.net/manual/de/function.date.php), HTML-kodiert
-
-`page->getContent($rawFormat = false)`  
-Hole den Seiteninhalt, HTML-kodiert oder Rohformat
-
-`page->getParent()`  
-Hole die übergeordnete Seite, null falls nicht vorhanden
-
-`page->getParentTop($homeFallback = false)`  
-Hole die oberste übergeordnete Seite, null falls nicht vorhanden
-
-`page->getSiblings($showInvisible = false)`  
-Hole eine [Seitenkollektion](#yellow-page-collection) mit Seiten auf dem selben Level
-
-`page->getChildren($showInvisible = false)`  
-Hole eine [Seitenkollektion](#yellow-page-collection) mit untergeordneten Seiten
-
-`page->getChildrenRecursive($showInvisible = false, $levelMax = 0)`  
-Hole eine [Seitenkollektion](#yellow-page-collection) mit untergeordneten Seiten rekursiv
-
-`page->getPages($key)`  
-Hole eine [Seitenkollektion](#yellow-page-collection) mit zusätzlichen Seiten
-
-`page->getPage($key)`  
-Hole eine geteilte Seite
-
-`page->getUrl()`  
-Hole die URL der Seite 
-
-`page->getBase($multiLanguage = false)`  
-Hole die Basis der Seite
-
-`page->getLocation($absoluteLocation = false)`  
-Hole den Ort der Seite
-
-`page->getRequest($key)`  
-Hole das angefragte Argument der Seite
-
-`page->getRequestHtml($key)`  
-Hole das angefragte Argument der Seite, HTML-kodiert
-
-`page->getHeader($key)`  
-Hole den Antwort-Header der Seite
-
-`page->getExtra($name)`  
-Hole Extradaten der Seite
-
-`page->getModified($httpFormat = false)`  
-Hole das Änderungsdatum der Seite, Unix-Zeit oder HTTP-Format
-
-`page->getLastModified($httpFormat = false)`  
-Hole das letzte Änderungsdatum der Seite, Unix-Zeit oder HTTP-Format
-
-`page->getStatusCode($httpFormat = false)`  
-Hole den Statuscode der Seite, Zahl oder HTTP-Format
-
-`page->status($statusCode, $location = "")`  
-Antworte mit Statuscode, ohne Seiteninhalt
-
-`page->error($statusCode, $errorMessage = "")`  
-Antworte mit Fehlerseite
-
-`page->isAvailable()`  
-Überprüfe ob die Seite vorhanden ist
-
-`page->isVisible()`  
-Überprüfe ob die Seite sichtbar ist
-
-`page->isActive()`  
-Überprüfe ob die Seite innerhalb der aktuellen HTTP-Anfrage ist
-
-`page->isCacheable()`  
-Überprüfe ob die Seite zwischengespeichert werden kann
-
-`page->isError()`  
-Überprüfe ob die Seite einen Fehler hat
-
-`page->isExisting($key)`  
-Überprüfe ob die [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) existiert  
-
-`page->isRequest($key)`  
-Überprüfe ob das Anfrage-Argument existiert
-
-`page->isHeader($key)`  
-Überprüfe ob der Antwort-Header existiert
-
-`page->isPage($key)`  
-Überprüfe ob die geteilte Seite existiert
-
-#### Yellow-Page-Beispiele
-
-Layoutdatei um den Seiteninhalt anzuzeigen:
+Layoutdatei mit Header und Footer:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -193,169 +118,25 @@ Layoutdatei um den Seiteninhalt anzuzeigen:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layoutdatei um den Seiteninhalt und den Autor anzuzeigen:
+Layoutdatei die ein Argument übergibt:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p><?php echo $this->yellow->page->getHtml("author") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
+<?php $this->yellow->layout("hello", "World") ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layoutdatei um den Seiteninhalt und das Änderungsdatum anzuzeigen:
+Layoutdatei die ein Argument empfängt:
+
 
 ``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p><?php echo $this->yellow->page->getDateHtml("modified") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-### Yellow-Page-Collection
-
-Yellow-Page-Collection gibt Zugang zu mehreren Seiten. Die folgenden Methoden sind verfügbar:
-
-`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
-
-`pages->append($page)`  
-Hänge an das Ende der Seitenkollektion
-
-`pages->prepend($page)`  
-Stelle an den Anfang der Seitenkollektion
-
-`pages->filter($key, $value, $exactMatch = true)`  
-Filtere eine Seitenkollektion nach [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen)
-
-`pages->match($regex = "/.*/", $filterByLocation = true)`  
-Filtere eine Seitenkollektion nach Ort oder Datei
-
-`pages->sort($key, $ascendingOrder = true)`  
-Sortiere eine Seitenkollektion nach [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen)
-
-`pages->similar($page, $ascendingOrder = false)`  
-Sortiere eine Seitenkollektion nach Einstellungsähnlichkeit
-
-`pages->merge($input)`  
-Berechne Vereinigungsmenge, füge eine Seitenkollektion hinzu
-
-`pages->intersect($input)`  
-Berechne Schnittmenge, entferne Seiten die nicht in einer anderen Seitenkollektion sind
-
-`pages->diff($input)`  
-Berechne Restmenge, entferne Seiten die in einer anderen Seitenkollektion sind
-
-`pages->limit($pagesMax)`  
-Begrenze die Anzahl der Seiten in der Seitenkollektion
-
-`pages->reverse()`  
-Drehe die Seitenkollektion um
-
-`pages->shuffle()`  
-Mach die Seitenkollektion zufällig
-
-`pages->paginate($limit)`  
-Erstelle eine Nummerierung für die Seitenkollektion
-
-`pages->getPaginationNumber()`  
-Hole die aktuelle Seitennummer
-
-`pages->getPaginationCount()`  
-Hole die höchste Seitennummer
-
-`pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1)`  
-Hole den Ort einer Seite in der Nummerierung
-
-`pages->getPaginationPrevious($absoluteLocation = true)`  
-Hole den Ort der vorherigen Seite in der Nummerierung
-
-`pages->getPaginationNext($absoluteLocation = true)`  
-Hole den Ort der nächsten Seite in der Nummerierung
-
-`pages->getPagePrevious($page)`  
-Hole die vorherige Seite in der Seitenkollektion, null falls nicht vorhanden
-
-`pages->getPageNext($page)`  
-Hole die nächste Seite in der Seitenkollektion, null falls nicht vorhanden
-
-`pages->getFilter()`  
-Hole den aktuellen Seitenfilter
-
-`pages->getModified($httpFormat = false)`  
-Hole das Änderungsdatum der Seitenkollektion, Unix-Zeit oder HTTP-Format
-
-`pages->isPagination()`  
-Überprüfe ob eine Nummerierung vorhanden ist
-
-`page->isEmpty()`  
-Überprüfe ob Seitenkollektion leer ist
-
-#### Yellow-Page-Collection-Beispiele
-
-Layoutdatei um drei zufällige Seiten anzuzeigen:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index()->shuffle()->limit(3) ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei um die neusten Seiten anzuzeigen:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index()->sort("modified", false) ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei um Entwurfseiten anzuzeigen:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index(true, true)->filter("status", "draft") ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
+<?php list($name, $text) = $this->yellow->getLayoutArguments() ?>
+<?php echo "Hello $text" ?>
 ```
 
 ### Yellow-Content
@@ -798,6 +579,303 @@ if ($this->yellow->extension->isExisting("image")) {
 }
 ```
 
+### Yellow-Page
+
+Yellow-Page gibt Zugang zur aktuellen Seite. Die folgenden Methoden sind verfügbar:
+
+`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `status`
+
+`page->get($key)`  
+Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen)
+
+`page->getHtml($key)`  
+Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen), HTML-kodiert  
+
+`page->getDate($key, $format = "")`  
+Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen)
+
+`page->getDateHtml($key, $format = "")`  
+Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), HTML-kodiert
+
+`page->getDateRelative($key, $format = "", $daysLimit = 30)`  
+Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), relativ zu heute
+
+`page->getDateRelativeHtml($key, $format = "", $daysLimit = 30)`  
+Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), relativ zu heute, HTML-kodiert
+
+`page->getDateFormatted($key, $format)`  
+Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [Datum](https://www.php.net/manual/de/function.date.php)
+
+`page->getDateFormattedHtml($key, $format)`  
+Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [Datum](https://www.php.net/manual/de/function.date.php), HTML-kodiert
+
+`page->getContent($rawFormat = false)`  
+Hole den Seiteninhalt, HTML-kodiert oder Rohformat
+
+`page->getParent()`  
+Hole die übergeordnete Seite, null falls nicht vorhanden
+
+`page->getParentTop($homeFallback = false)`  
+Hole die oberste übergeordnete Seite, null falls nicht vorhanden
+
+`page->getSiblings($showInvisible = false)`  
+Hole eine [Seitenkollektion](#yellow-page-collection) mit Seiten auf dem selben Level
+
+`page->getChildren($showInvisible = false)`  
+Hole eine [Seitenkollektion](#yellow-page-collection) mit untergeordneten Seiten
+
+`page->getChildrenRecursive($showInvisible = false, $levelMax = 0)`  
+Hole eine [Seitenkollektion](#yellow-page-collection) mit untergeordneten Seiten rekursiv
+
+`page->getPages($key)`  
+Hole eine [Seitenkollektion](#yellow-page-collection) mit zusätzlichen Seiten
+
+`page->getPage($key)`  
+Hole eine geteilte Seite
+
+`page->getUrl()`  
+Hole die URL der Seite 
+
+`page->getBase($multiLanguage = false)`  
+Hole die Basis der Seite
+
+`page->getLocation($absoluteLocation = false)`  
+Hole den Ort der Seite
+
+`page->getRequest($key)`  
+Hole das angefragte Argument der Seite
+
+`page->getRequestHtml($key)`  
+Hole das angefragte Argument der Seite, HTML-kodiert
+
+`page->getHeader($key)`  
+Hole den Antwort-Header der Seite
+
+`page->getExtra($name)`  
+Hole Extradaten der Seite
+
+`page->getModified($httpFormat = false)`  
+Hole das Änderungsdatum der Seite, Unix-Zeit oder HTTP-Format
+
+`page->getLastModified($httpFormat = false)`  
+Hole das letzte Änderungsdatum der Seite, Unix-Zeit oder HTTP-Format
+
+`page->getStatusCode($httpFormat = false)`  
+Hole den Statuscode der Seite, Zahl oder HTTP-Format
+
+`page->status($statusCode, $location = "")`  
+Antworte mit Statuscode, ohne Seiteninhalt
+
+`page->error($statusCode, $errorMessage = "")`  
+Antworte mit Fehlerseite
+
+`page->isAvailable()`  
+Überprüfe ob die Seite vorhanden ist
+
+`page->isVisible()`  
+Überprüfe ob die Seite sichtbar ist
+
+`page->isActive()`  
+Überprüfe ob die Seite innerhalb der aktuellen HTTP-Anfrage ist
+
+`page->isCacheable()`  
+Überprüfe ob die Seite zwischengespeichert werden kann
+
+`page->isError()`  
+Überprüfe ob die Seite einen Fehler hat
+
+`page->isExisting($key)`  
+Überprüfe ob die [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) existiert  
+
+`page->isRequest($key)`  
+Überprüfe ob das Anfrage-Argument existiert
+
+`page->isHeader($key)`  
+Überprüfe ob der Antwort-Header existiert
+
+`page->isPage($key)`  
+Überprüfe ob die geteilte Seite existiert
+
+#### Yellow-Page-Beispiele
+
+Layoutdatei um den Seiteninhalt anzuzeigen:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php echo $this->yellow->page->getContent() ?>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Layoutdatei um den Seiteninhalt und den Autor anzuzeigen:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<p><?php echo $this->yellow->page->getHtml("author") ?></p>
+<?php echo $this->yellow->page->getContent() ?>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Layoutdatei um den Seiteninhalt und das Änderungsdatum anzuzeigen:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<p><?php echo $this->yellow->page->getDateHtml("modified") ?></p>
+<?php echo $this->yellow->page->getContent() ?>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+### Yellow-Page-Collection
+
+Yellow-Page-Collection gibt Zugang zu mehreren Seiten. Die folgenden Methoden sind verfügbar:
+
+`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
+
+`pages->append($page)`  
+Hänge an das Ende der Seitenkollektion
+
+`pages->prepend($page)`  
+Stelle an den Anfang der Seitenkollektion
+
+`pages->filter($key, $value, $exactMatch = true)`  
+Filtere eine Seitenkollektion nach [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen)
+
+`pages->match($regex = "/.*/", $filterByLocation = true)`  
+Filtere eine Seitenkollektion nach Ort oder Datei
+
+`pages->sort($key, $ascendingOrder = true)`  
+Sortiere eine Seitenkollektion nach [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen)
+
+`pages->similar($page, $ascendingOrder = false)`  
+Sortiere eine Seitenkollektion nach Einstellungsähnlichkeit
+
+`pages->merge($input)`  
+Berechne Vereinigungsmenge, füge eine Seitenkollektion hinzu
+
+`pages->intersect($input)`  
+Berechne Schnittmenge, entferne Seiten die nicht in einer anderen Seitenkollektion sind
+
+`pages->diff($input)`  
+Berechne Restmenge, entferne Seiten die in einer anderen Seitenkollektion sind
+
+`pages->limit($pagesMax)`  
+Begrenze die Anzahl der Seiten in der Seitenkollektion
+
+`pages->reverse()`  
+Drehe die Seitenkollektion um
+
+`pages->shuffle()`  
+Mach die Seitenkollektion zufällig
+
+`pages->paginate($limit)`  
+Erstelle eine Nummerierung für die Seitenkollektion
+
+`pages->getPaginationNumber()`  
+Hole die aktuelle Seitennummer
+
+`pages->getPaginationCount()`  
+Hole die höchste Seitennummer
+
+`pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1)`  
+Hole den Ort einer Seite in der Nummerierung
+
+`pages->getPaginationPrevious($absoluteLocation = true)`  
+Hole den Ort der vorherigen Seite in der Nummerierung
+
+`pages->getPaginationNext($absoluteLocation = true)`  
+Hole den Ort der nächsten Seite in der Nummerierung
+
+`pages->getPagePrevious($page)`  
+Hole die vorherige Seite in der Seitenkollektion, null falls nicht vorhanden
+
+`pages->getPageNext($page)`  
+Hole die nächste Seite in der Seitenkollektion, null falls nicht vorhanden
+
+`pages->getFilter()`  
+Hole den aktuellen Seitenfilter
+
+`pages->getModified($httpFormat = false)`  
+Hole das Änderungsdatum der Seitenkollektion, Unix-Zeit oder HTTP-Format
+
+`pages->isPagination()`  
+Überprüfe ob eine Nummerierung vorhanden ist
+
+`page->isEmpty()`  
+Überprüfe ob Seitenkollektion leer ist
+
+#### Yellow-Page-Collection-Beispiele
+
+Layoutdatei um drei zufällige Seiten anzuzeigen:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php $pages = $this->yellow->content->index()->shuffle()->limit(3) ?>
+<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
+<ul>
+<?php foreach ($pages as $page): ?>
+<li><?php echo $page->getHtml("title") ?></li>
+<?php endforeach ?>
+</ul>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Layoutdatei um die neusten Seiten anzuzeigen:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php $pages = $this->yellow->content->index()->sort("modified", false) ?>
+<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
+<ul>
+<?php foreach ($pages as $page): ?>
+<li><?php echo $page->getHtml("title") ?></li>
+<?php endforeach ?>
+</ul>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Layoutdatei um Entwurfseiten anzuzeigen:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php $pages = $this->yellow->content->index(true, true)->filter("status", "draft") ?>
+<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
+<ul>
+<?php foreach ($pages as $page): ?>
+<li><?php echo $page->getHtml("title") ?></li>
+<?php endforeach ?>
+</ul>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
 ### Yellow-Toolbox
 
 Yellow-Toolbox gibt Zugang zur Werkzeugkiste mit Hilfsfunktionen:
@@ -964,7 +1042,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Ereignisse
 
-Zuerst werden Erweiterungen geladen und es wird `onLoad` aufgerufen. Sobald alle Erweiterungen geladen sind wird `onStartup` aufgerufen. Die Seite kann mit verschiedenen Ereignissen verarbeitet werden. In den meisten Fällen wird der Inhalt der Seite erzeugt. Sollte ein Fehler aufgetreten sein, wird eine Fehlerseite erzeugt. Zum Schluss wird die Seite ausgegeben und es wird `onShutdown` aufgerufen.
+Mit Hilfe von Ereignissen kann dich die Webseiten informieren wenn etwas passiert. Zuerst werden die Erweiterungen geladen und es wird `onLoad` aufgerufen. Sobald alle Erweiterungen geladen sind wird `onStartup` aufgerufen. Eine Seite kann mit verschiedenen Ereignissen verarbeitet werden. In den meisten Fällen wird der Inhalt der Seite erzeugt. Sollte ein Fehler aufgetreten sein, wird eine Fehlerseite erzeugt. Zum Schluss wird die Seite ausgegeben und es wird `onShutdown` aufgerufen.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐
@@ -1013,7 +1091,7 @@ Verarbeite das Runterfahren
 
 #### Yellow-Core-Ereignisse-Beispiele
 
-Erweiterung zur Handhabung der Initialisierung:
+Erweiterung zur Behandlung der Initialisierung:
 
 ``` php
 <?php
@@ -1147,7 +1225,7 @@ Verarbeite Änderungen am Benutzerkonto
 
 #### Yellow-Edit-Ereignisse-Beispiele
 
-Erweiterung zur Seitenbearbeitung:
+Erweiterung zur Behandlung einer Seitenbearbeitung:
 
 ``` php
 <?php
@@ -1171,7 +1249,7 @@ class YellowExample {
 }
 ```
 
-Erweiterung zum Dateihochladen:
+Erweiterung zur Behandlung einer Dateihochladung:
 
 ``` php
 <?php
@@ -1268,15 +1346,15 @@ class YellowExample {
     
     // Handle command for hello
     public function processCommandHello($command, $text) {
-        $name = is_string_empty($text) ? "World" : $text;
-        echo "Hello $name\n";
+        if (is_string_empty($text)) $text = "World";
+        echo "Hello $text\n";
         return 200;
     }
     
     // Handle command for goodbye
     public function processCommandGoodbye($command, $text) {
-        $name = is_string_empty($text) ? "World" : $text;
-        echo "Goodbye $name\n";
+        if (is_string_empty($text)) $text = "World";
+        echo "Goodbye $text\n";
         return 200;
     }
 }
