@@ -51,20 +51,25 @@ You can build a static website at the command line. The static site generator bu
 With the help of `$this->yellow` you can access the website. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the entire API can be found in file `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌──────────────┐                    ┌──────────────┐
-│ Web server   │                    │ Command line │
-└──────────────┘                    └──────────────┘
-       │                                   │
-       ▼                                   ▼
-┌──────────────────────────────────────────────────┐    ┌───────────────┐
-│ Core                                             │◀──▶│ Extensions    |
-│                                                  │    └───────────────┘
-│ $this->yellow           $this->yellow->user      │    ┌───────────────┐
-│ $this->yellow->content  $this->yellow->extension │◀──▶│ Layouts       │
-│ $this->yellow->media    $this->yellow->page      │    └───────────────┘
-│ $this->yellow->system   $this->yellow->lookup    │    ┌───────────────┐
-│ $this->yellow->language $this->yellow->toolbox   │◀──▶│ Themes        │
-└──────────────────────────────────────────────────┘    └───────────────┘
+┌───────────────┐                    ┌───────────────┐
+│ Web server    │                    │ Command line  │
+└───────────────┘                    └───────────────┘
+        │                                    │
+        ▼                                    ▼
+┌────────────────────────────────────────────────────┐
+│ Core                                               │
+│                                                    │
+│ $this->yellow             $this->yellow->user      │
+│ $this->yellow->content    $this->yellow->extension │
+│ $this->yellow->media      $this->yellow->page      │
+│ $this->yellow->system     $this->yellow->lookup    │
+│ $this->yellow->language   $this->yellow->toolbox   │
+└────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌────────────────────────────────────────────────────┐
+│ File system                                        │
+└────────────────────────────────────────────────────┘
 ```
 
 The following objects are available:
@@ -85,22 +90,22 @@ Yellow gives access to the API. The following methods are available:
 
 `command` `getLayoutArguments` `layout` `load` `log` `request`
 
-`yellow->load()`  
+`yellow->load(): void`  
 Handle initialisation
 
-`yellow->request()`  
+`yellow->request(): int`  
 Handle request
 
-`yellow->command($line = "")`  
+`yellow->command($line = ""): int`  
 Handle command
 
-`yellow->log($action, $message)`  
+`yellow->log($action, $message): void`  
 Handle logging
 
-`yellow->layout($name, $arguments = null)`  
+`yellow->layout($name, $arguments = null): void`  
 Include layout
 
-`yellow->getLayoutArguments($sizeMin = 9)`  
+`yellow->getLayoutArguments($sizeMin = 9): array`  
 Return layout arguments
 
 #### Yellow examples
@@ -136,7 +141,9 @@ Layout file receiving an argument:
 
 ``` html
 <?php list($name, $text) = $this->yellow->getLayoutArguments() ?>
+<p>
 <?php echo "Hello $text" ?>
+</p>
 ```
 
 ### Yellow content
@@ -145,22 +152,22 @@ Yellow content gives access to content files. The following methods are availabl
 
 `clean` `find` `index` `multi` `path` `top`
 
-`content->find($location, $absoluteLocation = false)`  
+`content->find($location, $absoluteLocation = false): YellowPage|null`  
 Return [page](#yellow-page), null if not found
 
-`content->index($showInvisible = false, $multiLanguage = false, $levelMax = 0)`  
+`content->index($showInvisible = false, $multiLanguage = false, $levelMax = 0): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) with all pages
 
-`content->top($showInvisible = false, $showOnePager = true)`  
+`content->top($showInvisible = false, $showOnePager = true): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) with top-level navigation
 
-`content->path($location, $absoluteLocation = false)`  
+`content->path($location, $absoluteLocation = false): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) with path ancestry
 
-`content->multi($location, $absoluteLocation = false, $showInvisible = false)`  
+`content->multi($location, $absoluteLocation = false, $showInvisible = false): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) with multiple languages in multi language mode
 
-`content->clean()`  
+`content->clean(): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) that is empty
 
 #### Yellow content examples
@@ -228,13 +235,13 @@ Yellow media gives access to media files. The following methods are available:
 
 `clean` `index` `find`
 
-`media->find($location, $absoluteLocation = false)`  
+`media->find($location, $absoluteLocation = false): YellowPage|null`  
 Return [page](#yellow-page) with media file information, null if not found
 
-`media->index($showInvisible = false, $multiPass = false, $levelMax = 0)`  
+`media->index($showInvisible = false, $multiPass = false, $levelMax = 0): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) with all media files
 
-`media->clean()`  
+`media->clean(): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) that is empty
 
 #### Yellow media examples
@@ -302,25 +309,25 @@ Yellow system gives access to system settings. The following methods are availab
 
 `get` `getAvailable` `getDifferent` `getHtml` `getModified` `getSettings` `isExisting`
 
-`system->get($key)`  
+`system->get($key): string`  
 Return [system setting](how-to-change-the-system#system-settings)
 
-`system->getHtml($key)`  
+`system->getHtml($key): string`  
 Return [system setting](how-to-change-the-system#system-settings), HTML encoded
 
-`system->getDifferent($key)`  
+`system->getDifferent($key): string`  
 Return different value for [system setting](how-to-change-the-system#system-settings)
 
-`system->getAvailable($key)`  
+`system->getAvailable($key): array`  
 Return available values for [system setting](how-to-change-the-system#system-settings)
 
-`system->getSettings($filterStart = "", $filterEnd = "")`  
+`system->getSettings($filterStart = "", $filterEnd = ""): array`  
 Return [system settings](how-to-change-the-system#system-settings)
 
-`system->getModified($httpFormat = false)`  
+`system->getModified($httpFormat = false): int|string`  
 Return [system settings](how-to-change-the-system#system-settings) modification date, Unix time or HTTP format
 
-`system->isExisting($key)`  
+`system->isExisting($key): bool`  
 Check if [system setting](how-to-change-the-system#system-settings) exists
 
 #### Yellow system examples
@@ -349,8 +356,8 @@ Layout file for checking if a specific setting is activated:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php $multiLanguageMode = $this->yellow->system->get("coreMultiLanguageMode") ?>
-Multi language mode is <?php echo htmlspecialchars($multiLanguageMode ? "on" : "off") ?>.
+<?php $debugMode = $this->yellow->system->get("coreDebugMode") ?>
+Debug mode is <?php echo htmlspecialchars($debugMode ? "on" : "off") ?>.
 </p>
 </div>
 </div>
@@ -380,22 +387,22 @@ Yellow language gives access to language settings. The following methods are ava
 
 `getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText`
 
-`language->getText($key, $language = "")`  
+`language->getText($key, $language = ""): string`  
 Return [language setting](how-to-change-the-system#language-settings)
 
-`language->getTextHtml($key, $language = "")`  
+`language->getTextHtml($key, $language = ""): string`  
 Return [language setting](how-to-change-the-system#language-settings), HTML encoded
 
-`language->getSettings($filterStart = "", $filterEnd = "", $language = "")`  
+`language->getSettings($filterStart = "", $filterEnd = "", $language = ""): array`  
 Return [language settings](how-to-change-the-system#language-settings)
 
-`language->getModified($httpFormat = false)`  
+`language->getModified($httpFormat = false): int|string`  
 Return [language settings](how-to-change-the-system#language-settings) modification date, Unix time or HTTP format
 
-`language->isText($key, $language = "")`  
+`language->isText($key, $language = ""): bool`  
 Check if [language setting](how-to-change-the-system#language-settings) exists
 
-`language->isExisting($language)`  
+`language->isExisting($language): bool`  
 Check if language exists
 
 #### Yellow language examples
@@ -453,22 +460,22 @@ Yellow user gives access to user settings. The following methods are available:
 
 `getModified` `getSettings` `getUser` `getUserHtml` `isExisting` `isUser`
 
-`user->getUser($key, $email = "")`  
+`user->getUser($key, $email = ""): string`  
 Return [user setting](how-to-change-the-system#user-settings)
 
-`user->getUserHtml($key, $email = "")`  
+`user->getUserHtml($key, $email = ""): string`  
 Return [user setting](how-to-change-the-system#user-settings), HTML encoded
 
-`user->getSettings($email = "")`  
+`user->getSettings($email = ""): array`  
 Return [user settings](how-to-change-the-system#user-settings)
 
-`user->getModified($httpFormat = false)`  
+`user->getModified($httpFormat = false): int|string`  
 Return [user settings](how-to-change-the-system#user-settings) modification date, Unix time or HTTP format
 
-`user->isUser($key, $email = "")`  
+`user->isUser($key, $email = ""): bool`  
 Check if [user setting](how-to-change-the-system#user-settings) exists
 
-`user->isExisting($email)`  
+`user->isExisting($email): bool`  
 Check if user exists
 
 #### Yellow user examples
@@ -527,13 +534,13 @@ Yellow extension gives access to extensions. The following methods are available
 
 `get` `getModified` `isExisting`
 
-`extension->get($key)`  
+`extension->get($key): object`  
 Return extension
 
-`extension->getModified($httpFormat = false)`  
+`extension->getModified($httpFormat = false): int|string`  
 Return extensions modification date, Unix time or HTTP format
 
-`extension->isExisting($key)`  
+`extension->isExisting($key): bool`  
 Check if extension exists
 
 #### Yellow extension examples
@@ -585,115 +592,115 @@ Yellow page gives access to current page. The following methods are available:
 
 `error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `status`
 
-`page->get($key)`  
+`page->get($key): string`  
 Return [page setting](how-to-change-the-system#page-settings) 
 
-`page->getHtml($key)`  
+`page->getHtml($key): string`  
 Return [page setting](how-to-change-the-system#page-settings), HTML encoded  
 
-`page->getDate($key, $format = "")`  
+`page->getDate($key, $format = ""): string`  
 Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings)  
 
-`page->getDateHtml($key, $format = "")`  
+`page->getDateHtml($key, $format = ""): string`  
 Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings), HTML encoded  
 
-`page->getDateRelative($key, $format = "", $daysLimit = 30)`  
+`page->getDateRelative($key, $format = "", $daysLimit = 30): string`  
 Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings), relative to today
 
-`page->getDateRelativeHtml($key, $format = "", $daysLimit = 30)`  
+`page->getDateRelativeHtml($key, $format = "", $daysLimit = 30): string`  
 Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings), relative to today, HTML encoded
 
-`page->getDateFormatted($key, $format)`  
+`page->getDateFormatted($key, $format): string`  
 Return [page setting](how-to-change-the-system#page-settings) as [date](https://www.php.net/manual/en/function.date.php)  
 
-`page->getDateFormattedHtml($key, $format)`  
+`page->getDateFormattedHtml($key, $format): string`  
 Return [page setting](how-to-change-the-system#page-settings) as [date](https://www.php.net/manual/en/function.date.php), HTML encoded  
 
-`page->getContent($rawFormat = false)`  
+`page->getContent($rawFormat = false): string`  
 Return page content, HTML encoded or raw format
 
-`page->getParent()`  
+`page->getParent(): YellowPage|null`  
 Return parent page, null if none
 
-`page->getParentTop($homeFallback = false)`  
+`page->getParentTop($homeFallback = false): YellowPage|null`  
 Return top-level parent page, null if none
 
-`page->getSiblings($showInvisible = false)`  
+`page->getSiblings($showInvisible = false): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) with pages on the same level
 
-`page->getChildren($showInvisible = false)`  
+`page->getChildren($showInvisible = false): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) with child pages
 
-`page->getChildrenRecursive($showInvisible = false, $levelMax = 0)`  
+`page->getChildrenRecursive($showInvisible = false, $levelMax = 0): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) with child pages recursively
 
-`page->getPages($key)`  
+`page->getPages($key): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) with additional pages
 
-`page->getPage($key)`  
+`page->getPage($key): YellowPage`  
 Return shared page
 
-`page->getUrl()`  
+`page->getUrl(): string`  
 Return page URL
 
-`page->getBase($multiLanguage = false)`  
+`page->getBase($multiLanguage = false): string`  
 Return page base
 
-`page->getLocation($absoluteLocation = false)`  
+`page->getLocation($absoluteLocation = false): string`  
 Return page location
 
-`page->getRequest($key)`  
+`page->getRequest($key): string`  
 Return page request argument
 
-`page->getRequestHtml($key)`  
+`page->getRequestHtml($key): string`  
 Return page request argument, HTML encoded
 
-`page->getHeader($key)`  
+`page->getHeader($key): string`  
 Return page response header
 
-`page->getExtra($name)`  
+`page->getExtra($name): string`  
 Return page extra data
 
-`page->getModified($httpFormat = false)`  
+`page->getModified($httpFormat = false): int|string`  
 Return page modification date, Unix time or HTTP format
 
-`page->getLastModified($httpFormat = false)`  
+`page->getLastModified($httpFormat = false): int|string`  
 Return last modification date, Unix time or HTTP format
 
-`page->getStatusCode($httpFormat = false)`  
+`page->getStatusCode($httpFormat = false): int|string`  
 Return page status code, number or HTTP format
 
-`page->status($statusCode, $location = "")`  
+`page->status($statusCode, $location = ""): void`  
 Respond with status code, no page content
 
-`page->error($statusCode, $errorMessage = "")`  
+`page->error($statusCode, $errorMessage = ""): void`  
 Respond with error page
 
-`page->isAvailable()`  
+`page->isAvailable(): bool`  
 Check if page is available
 
-`page->isVisible()`  
+`page->isVisible(): bool`  
 Check if page is visible
 
-`page->isActive()`  
+`page->isActive(): bool`  
 Check if page is within current HTTP request
 
-`page->isCacheable()`  
+`page->isCacheable(): bool`  
 Check if page is cacheable
 
-`page->isError()`  
+`page->isError(): bool`  
 Check if page with error
 
-`page->isExisting($key)`  
+`page->isExisting($key): bool`  
 Check if [page setting](how-to-change-the-system#page-settings) exists  
 
-`page->isRequest($key)`  
+`page->isRequest($key): bool`  
 Check if request argument exists
 
-`page->isHeader($key)`  
+`page->isHeader($key): bool`  
 Check if response header exists
 
-`page->isPage($key)`  
+`page->isPage($key): bool`  
 Check if shared page exists  
 
 #### Yellow page examples
@@ -745,76 +752,76 @@ Yellow page collection gives access to multiple pages. The following methods are
 
 `append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
 
-`pages->append($page)`  
+`pages->append($page): void`  
 Append to end of page collection
 
-`pages->prepend($page)`  
+`pages->prepend($page): void`  
 Prepend to start of page collection
 
-`pages->filter($key, $value, $exactMatch = true)`  
+`pages->filter($key, $value, $exactMatch = true): YellowPageCollection`  
 Filter page collection by [page setting](how-to-change-the-system#page-settings)
 
-`pages->match($regex = "/.*/", $filterByLocation = true)`  
+`pages->match($regex = "/.*/", $filterByLocation = true): YellowPageCollection`  
 Filter page collection by location or file
 
-`pages->sort($key, $ascendingOrder = true)`  
+`pages->sort($key, $ascendingOrder = true): YellowPageCollection`  
 Sort page collection by [page setting](how-to-change-the-system#page-settings)
 
-`pages->similar($page, $ascendingOrder = false)`  
+`pages->similar($page, $ascendingOrder = false): YellowPageCollection`  
 Sort page collection by settings similarity
 
-`pages->merge($input)`  
+`pages->merge($input): YellowPageCollection`  
 Calculate union, merge page collection
 
-`pages->intersect($input)`  
+`pages->intersect($input): YellowPageCollection`  
 Calculate intersection, remove pages that are not present in another page collection
 
-`pages->diff($input)`  
+`pages->diff($input): YellowPageCollection`  
 Calculate difference, remove pages that are present in another page collection
 
-`pages->limit($pagesMax)`  
+`pages->limit($pagesMax): YellowPageCollection`  
 Limit the number of pages in page collection
 
-`pages->reverse()`  
+`pages->reverse(): YellowPageCollection`  
 Reverse page collection
 
-`pages->shuffle()`  
+`pages->shuffle(): YellowPageCollection`  
 Randomize page collection
 
-`pages->paginate($limit)`  
+`pages->paginate($limit): YellowPageCollection`  
 Paginate page collection
 
-`pages->getPaginationNumber()`  
+`pages->getPaginationNumber(): int`  
 Return current page number in pagination
 
-`pages->getPaginationCount()`  
+`pages->getPaginationCount(): int`  
 Return highest page number in pagination
 
-`pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1)`  
+`pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1): string`  
 Return location for a page in pagination
 
-`pages->getPaginationPrevious($absoluteLocation = true)`  
+`pages->getPaginationPrevious($absoluteLocation = true): string`  
 Return location for previous page in pagination
 
-`pages->getPaginationNext($absoluteLocation = true)`  
+`pages->getPaginationNext($absoluteLocation = true): string`  
 Return location for next page in pagination
 
-`pages->getPagePrevious($page)`  
+`pages->getPagePrevious($page): YellowPage|null`  
 Return previous page in collection, null if none
 
-`pages->getPageNext($page)`  
+`pages->getPageNext($page): YellowPage|null`  
 Return next page in collection, null if none
 
-`pages->getFilter()`  
+`pages->getFilter(): string`  
 Return current page filter
 
-`pages->getModified($httpFormat = false)`  
+`pages->getModified($httpFormat = false): int|string`  
 Return page collection modification date, Unix time or HTTP format
 
-`pages->isPagination()`  
+`pages->isPagination(): bool`  
 Check if there is a pagination
 
-`page->isEmpty()`  
+`page->isEmpty(): bool`  
 Check if page collection is empty
 
 #### Yellow page collection examples
@@ -882,73 +889,73 @@ Yellow toolbox gives access to toolbox with helper functions:
 
 `appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `modifyFile` `normaliseArguments` `normaliseData` `normalisePath` `readFile` `renameDirectory` `renameFile`
 
-`toolbox->getCookie($key)`  
+`toolbox->getCookie($key): string`  
 Return browser cookie from from current HTTP request  
 
-`toolbox->getServer($key)`  
+`toolbox->getServer($key): string`  
 Return server argument from current HTTP request
 
-`toolbox->getLocationArguments()`  
+`toolbox->getLocationArguments(): string`  
 Return location arguments from current HTTP request
 
-`toolbox->getDirectoryEntries($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true)`  
+`toolbox->getDirectoryEntries($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true): array`  
 Return files and directories
 
-`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0)`  
+`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0): array`  
 Return files and directories recursively
 
-`toolbox->readFile($fileName, $sizeMax = 0)`  
+`toolbox->readFile($fileName, $sizeMax = 0): string`  
 Read file, empty string if not found  
 
-`toolbox->createFile($fileName, $fileData, $mkdir = false)`  
+`toolbox->createFile($fileName, $fileData, $mkdir = false): bool`  
 Create file  
 
-`toolbox->appendFile($fileName, $fileData, $mkdir = false)`  
+`toolbox->appendFile($fileName, $fileData, $mkdir = false): bool`  
 Append file  
 
-`toolbox->copyFile($fileNameSource, $fileNameDestination, $mkdir = false)`  
+`toolbox->copyFile($fileNameSource, $fileNameDestination, $mkdir = false): bool`  
 Copy file  
 
-`toolbox->renameFile($fileNameSource, $fileNameDestination, $mkdir = false)`  
+`toolbox->renameFile($fileNameSource, $fileNameDestination, $mkdir = false): bool`  
 Rename file  
 
-`toolbox->renameDirectory($pathSource, $pathDestination, $mkdir = false)`  
+`toolbox->renameDirectory($pathSource, $pathDestination, $mkdir = false): bool`  
 Rename directory  
 
-`toolbox->deleteFile($fileName, $pathTrash = "")`  
+`toolbox->deleteFile($fileName, $pathTrash = ""): bool`  
 Delete file  
 
-`toolbox->deleteDirectory($path, $pathTrash = "")`  
+`toolbox->deleteDirectory($path, $pathTrash = ""): bool`  
 Delete directory  
 
-`toolbox->modifyFile($fileName, $modified)`  
+`toolbox->modifyFile($fileName, $modified): bool`  
 Set file/directory modification date, Unix time  
 
-`toolbox->getFileModified($fileName)`  
+`toolbox->getFileModified($fileName): int`  
 Return file/directory modification date, Unix time  
 
-`toolbox->getFileType($fileName)`  
+`toolbox->getFileType($fileName): string`  
 Return file type
 
-`toolbox->getTextLines($text)`  
+`toolbox->getTextLines($text): array`  
 Return lines from text, including newline  
 
-`toolbox->getTextList($text, $separator, $size)`  
+`toolbox->getTextList($text, $separator, $size): array`  
 Return array of specific size from text  
 
-`toolbox->getTextArguments($text, $optional = "-", $sizeMin = 9)`  
+`toolbox->getTextArguments($text, $optional = "-", $sizeMin = 9): array`  
 Return array of variable size from text, space separated  
 
-`toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = "")`  
+`toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
 Create text description, with or without HTML
 
-`toolbox->normaliseArguments($text, $appendSlash = true, $filterStrict = true)`  
+`toolbox->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
 Normalise location arguments
 
-`toolbox->normaliseData($text, $type = "html", $filterStrict = true)`  
+`toolbox->normaliseData($text, $type = "html", $filterStrict = true): string`  
 Normalise elements and attributes in HTML/SVG data
 
-`toolbox->normalisePath($text)`  
+`toolbox->normalisePath($text): string`  
 Normalise relative path tokens
 
 #### Yellow toolbox examples
@@ -991,28 +998,28 @@ The following functions extend PHP string functions and variable functions:
 
 `is_array_empty` `is_string_empty` `strlenu` `strposu` `strrposu` `strtoloweru` `strtoupperu` `substru`
 
-`strtoloweru($string)`  
+`strtoloweru($string): string`  
 Make string lowercase, UTF-8 compatible
 
-`strtoupperu($string)`  
+`strtoupperu($string): string`  
 Make string uppercase, UTF-8 compatible
 
-`strlenu($string)` + `strlenb($string)`  
+`strlenu($string): int` + `strlenb($string): int`  
 Return string length, UTF-8 characters or bytes
 
-`strposu($string, $search)` + `strposb($string, $search)`  
+`strposu($string, $search): int|false` + `strposb($string, $search): int|false`  
 Return string position of first match, UTF-8 characters or bytes
 
-`strrposu($string, $search)` + `strrposb($string, $search)`  
+`strrposu($string, $search): int|false` + `strrposb($string, $search): int|false`  
 Return string position of last match, UTF-8 characters or bytes
 
-`substru($string, $start, $length)` + `substrb($string, $start, $length)`  
+`substru($string, $start, $length): string` + `substrb($string, $start, $length): string`  
 Return part of a string, UTF-8 characters or bytes
 
-`is_string_empty($string)`  
+`is_string_empty($string): bool`  
 Check if string is empty
 
-`is_array_empty($array)`  
+`is_array_empty($array): bool`  
 Check if array is empty
 
 #### Yellow string examples

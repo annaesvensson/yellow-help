@@ -51,20 +51,25 @@ Du kan bygga en statisk webbplats på kommandoraden. Den static-site-generator b
 Med hjälp av `$this->yellow` kan du komma åt webbplatsen. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för hela API finns i filen `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌──────────────┐                    ┌──────────────┐
-│ Webbserver   │                    │ Kommandorad  │
-└──────────────┘                    └──────────────┘
-       │                                   │
-       ▼                                   ▼
-┌──────────────────────────────────────────────────┐    ┌───────────────┐
-│ Core                                             │◀──▶│ Tillägg       |
-│                                                  │    └───────────────┘
-│ $this->yellow           $this->yellow->user      │    ┌───────────────┐
-│ $this->yellow->content  $this->yellow->extension │◀──▶│ Layouter      │
-│ $this->yellow->media    $this->yellow->page      │    └───────────────┘
-│ $this->yellow->system   $this->yellow->lookup    │    ┌───────────────┐
-│ $this->yellow->language $this->yellow->toolbox   │◀──▶│ Theman        │
-└──────────────────────────────────────────────────┘    └───────────────┘
+┌───────────────┐                    ┌───────────────┐
+│ Webbserver    │                    │ Kommandorad   │
+└───────────────┘                    └───────────────┘
+        │                                    │
+        ▼                                    ▼
+┌────────────────────────────────────────────────────┐
+│ Core                                               │
+│                                                    │
+│ $this->yellow             $this->yellow->user      │
+│ $this->yellow->content    $this->yellow->extension │
+│ $this->yellow->media      $this->yellow->page      │
+│ $this->yellow->system     $this->yellow->lookup    │
+│ $this->yellow->language   $this->yellow->toolbox   │
+└────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌────────────────────────────────────────────────────┐
+│ Filsystem                                          │
+└────────────────────────────────────────────────────┘
 ```
 
 Följande objekt är tillgängliga:
@@ -85,22 +90,22 @@ Yellow ger tillgång till API:et. Följande metoder är tillgängliga:
 
 `command` `getLayoutArguments` `layout` `load` `log` `request`
 
-`yellow->load()`  
+`yellow->load(): void`  
 Hantera initialisering
 
-`yellow->request()`  
+`yellow->request(): int`  
 Hantera begäran
 
-`yellow->command($line = "")`  
+`yellow->command($line = ""): int`  
 Hantera kommandon
 
-`yellow->log($action, $message)`  
+`yellow->log($action, $message): void`  
 Hantera loggning
 
-`yellow->layout($name, $arguments = null)`  
+`yellow->layout($name, $arguments = null): void`  
 Inkludera layouten
 
-`yellow->getLayoutArguments($sizeMin = 9)`  
+`yellow->getLayoutArguments($sizeMin = 9): array`  
 Returnera layoutargument
 
 #### Yellow exempel
@@ -136,7 +141,9 @@ Layoutfil som tar emot ett argument:
 
 ``` html
 <?php list($name, $text) = $this->yellow->getLayoutArguments() ?>
+<p>
 <?php echo "Hello $text" ?>
+</p>
 ```
 
 ### Yellow content
@@ -145,25 +152,28 @@ Yellow content ger tillgång till innehållsfiler. Följande metoder är tillgä
 
 `clean` `find` `index` `multi` `path` `top`
 
-`content->find($location, $absoluteLocation = false)`  
+`content->find($location, $absoluteLocation = false): YellowPage|null`  
 Returnera [page](#yellow-page), null om det inte finns
 
-`content->index($showInvisible = false, $multiLanguage = false, $levelMax = 0)`  
+`content->index($showInvisible = false, $multiLanguage = false, $levelMax = 0): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) med alla sidor
 
-`content->top($showInvisible = false, $showOnePager = true)`  
+`content->top($showInvisible = false, $showOnePager = true): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) med navigering på toppnivå
 
-`content->path($location, $absoluteLocation = false)`  
+`content->path($location, $absoluteLocation = false): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) med sökväg i navigering
 
-`content->multi($location, $absoluteLocation = false, $showInvisible = false)`  
+`content->multi($location, $absoluteLocation = false, $showInvisible = false): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) med flera språk i flerspråkigt läge
 
-`content->clean()`  
+`content->clean(): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) som är tom
 
+#### Yellow content exempel
+
 Layoutfil för att visa alla sidor:
+
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -181,8 +191,6 @@ Layoutfil för att visa alla sidor:
 </div>
 <?php $this->yellow->layout("footer") ?>
 ```
-
-#### Yellow content exempel
 
 Layoutfil för att visa sidor under en viss plats:
 
@@ -228,13 +236,13 @@ Yellow media ger tillgång till mediefiler. Följande metoder är tillgängliga:
 
 `clean` `index` `find`
 
-`media->find($location, $absoluteLocation = false)`  
+`media->find($location, $absoluteLocation = false): YellowPage|null`  
 Returnera [page](#yellow-page) med information om mediefilen, null om det inte finns
 
-`media->index($showInvisible = false, $multiPass = false, $levelMax = 0)`  
+`media->index($showInvisible = false, $multiPass = false, $levelMax = 0): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) med alla mediefiler
 
-`media->clean()`  
+`media->clean(): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) som är tom
 
 #### Yellow media exempel
@@ -302,25 +310,25 @@ Yellow system ger tillgång till systeminställningar. Följande metoder är til
 
 `get` `getAvailable` `getDifferent` `getHtml` `getModified` `getSettings` `isExisting`
 
-`system->get($key)`  
+`system->get($key): string`  
 Returnera [systeminställning](how-to-change-the-system#systeminställningar)
 
-`system->getHtml($key)`  
+`system->getHtml($key): string`  
 Returnera [systeminställning](how-to-change-the-system#systeminställningar), HTML-kodad
 
-`system->getDifferent($key)`  
+`system->getDifferent($key): string`  
 Returnera ett annat värde för en [systeminställning](how-to-change-the-system#systeminställningar)
 
-`system->getAvailable($key)`  
+`system->getAvailable($key): array`  
 Returnera tillgängliga värden för en [systeminställning](how-to-change-the-system#systeminställningar)
 
-`system->getSettings($filterStart = "", $filterEnd = "")`  
+`system->getSettings($filterStart = "", $filterEnd = ""): array`  
 Returnera [systeminställningar](how-to-change-the-system#systeminställningar)
 
-`system->getModified($httpFormat = false)`  
+`system->getModified($httpFormat = false): int|string`  
 Returnera ändringsdatum for [systeminställningar](how-to-change-the-system#systeminställningar), Unix-tid eller HTTP-format
 
-`system->isExisting($key)`  
+`system->isExisting($key): bool`  
 Kontrollera om [systeminställning](how-to-change-the-system#systeminställningar) finns
 
 #### Yellow system exempel
@@ -349,8 +357,8 @@ Layoutfil för att kontrollera om en specifik inställning är aktiverad:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php $multiLanguageMode = $this->yellow->system->get("coreMultiLanguageMode") ?>
-Multi language mode is <?php echo htmlspecialchars($multiLanguageMode ? "on" : "off") ?>.
+<?php $debugMode = $this->yellow->system->get("coreDebugMode") ?>
+Debug mode is <?php echo htmlspecialchars($debugMode ? "on" : "off") ?>.
 </p>
 </div>
 </div>
@@ -380,22 +388,22 @@ Yellow language ger tillgång till språkinställningar. Följande metoder är t
 
 `getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText`
 
-`language->getText($key, $language = "")`  
+`language->getText($key, $language = ""): string`  
 Returnera [språkinställning](how-to-change-the-system#språkinställningar)
 
-`language->getTextHtml($key, $language = "")`  
+`language->getTextHtml($key, $language = ""): string`  
 Returnera [språkinställning](how-to-change-the-system#språkinställningar), HTML-kodad
 
-`language->getSettings($filterStart = "", $filterEnd = "", $language = "")`  
+`language->getSettings($filterStart = "", $filterEnd = "", $language = ""): array`  
 Returnera [språkinställningar](how-to-change-the-system#språkinställningar)
 
-`language->getModified($httpFormat = false)`  
+`language->getModified($httpFormat = false): int|string`  
 Returnera ändringsdatum för [språkinställningar](how-to-change-the-system#språkinställningar), Unix-tid eller HTTP-format
 
-`language->isText($key, $language = "")`  
+`language->isText($key, $language = ""): bool`  
 Kontrollera om [språkinställning](how-to-change-the-system#språkinställningar) finns
 
-`language->isExisting($language)`  
+`language->isExisting($language): bool`  
 Kontrollera om språket finns
 
 #### Yellow language exempel
@@ -453,22 +461,22 @@ Yellow user ger tillgång till användarinställningar. Följande metoder är ti
 
 `getModified` `getSettings` `getUser` `getUserHtml` `isExisting` `isUser`
 
-`user->getUser($key, $email = "")`  
+`user->getUser($key, $email = ""): string`  
 Returnera [användarinställning](how-to-change-the-system#användarinställningar)
 
-`user->getUserHtml($key, $email = "")`  
+`user->getUserHtml($key, $email = ""): string`  
 Returnera [användarinställning](how-to-change-the-system#användarinställningar), HTML encoded
 
-`user->getSettings($email = "")`  
+`user->getSettings($email = ""): array`  
 Returnera [användarinställningar](how-to-change-the-system#användarinställningar)
 
-`user->getModified($httpFormat = false)`  
+`user->getModified($httpFormat = false): int|string`  
 Returnera ändringsdatum för [användarinställningar](how-to-change-the-system#användarinställningar), Unix-tid eller HTTP-format
 
-`user->isUser($key, $email = "")`  
+`user->isUser($key, $email = ""): bool`  
 Kontrollera om [användarinställning](how-to-change-the-system#användarinställningar) finns
 
-`user->isExisting($email)`  
+`user->isExisting($email): bool`  
 Kontrollera om användaren finns
 
 #### Yellow user exempel
@@ -527,13 +535,13 @@ Yellow extension ger tillgång till tillägg. Följande metoder är tillgänglig
 
 `get` `getModified` `isExisting`
 
-`extension->get($key)`  
+`extension->get($key): object`  
 Returnera tillägg
 
-`extension->getModified($httpFormat = false)`  
+`extension->getModified($httpFormat = false): int|string`  
 Returnera ändringsdatum för tilläg, Unix-tid eller HTTP-format
 
-`extension->isExisting($key)`  
+`extension->isExisting($key): bool`  
 Kontrollera om tilläget finns
 
 #### Yellow extension exempel
@@ -585,115 +593,115 @@ Yellow page ger tillgång till aktuella sidan. Följande metoder är tillgängli
 
 `error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `status`
 
-`page->get($key)`  
+`page->get($key): string`  
 Returnera [sidinställning](how-to-change-the-system#sidinställningar) 
 
-`page->getHtml($key)`  
+`page->getHtml($key): string`  
 Returnera [sidinställning](how-to-change-the-system#sidinställningar), HTML-kodad  
 
-`page->getDate($key, $format = "")`  
+`page->getDate($key, $format = ""): string`  
 Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [språkspecifikt datum](how-to-change-the-system#språkinställningar)  
 
-`page->getDateHtml($key, $format = "")`  
+`page->getDateHtml($key, $format = ""): string`  
 Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [språkspecifikt datum](how-to-change-the-system#språkinställningar), HTML-kodad  
 
-`page->getDateRelative($key, $format = "", $daysLimit = 30)`  
+`page->getDateRelative($key, $format = "", $daysLimit = 30): string`  
 Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [språkspecifikt datum](how-to-change-the-system#språkinställningar), i förhållande till idag 
 
-`page->getDateRelativeHtml($key, $format = "", $daysLimit = 30)`  
+`page->getDateRelativeHtml($key, $format = "", $daysLimit = 30): string`  
 Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [språkspecifikt datum](how-to-change-the-system#språkinställningar), i förhållande till idag, HTML-kodad
 
-`page->getDateFormatted($key, $format)`  
+`page->getDateFormatted($key, $format): string`  
 Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [datum](https://www.php.net/manual/en/function.date.php)  
 
-`page->getDateFormattedHtml($key, $format)`  
+`page->getDateFormattedHtml($key, $format): string`  
 Returnera [sidinställning](how-to-change-the-system#sidinställningar) som [datum](https://www.php.net/manual/en/function.date.php), HTML-kodad  
 
-`page->getContent($rawFormat = false)`  
+`page->getContent($rawFormat = false): string`  
 Returnera sidinnehåll, HTML-kodat eller råformat
 
-`page->getParent()`  
+`page->getParent(): YellowPage|null`  
 Returnera överordnad sida, null om ingen
 
-`page->getParentTop($homeFallback = false)`  
+`page->getParentTop($homeFallback = false): YellowPage|null`  
 Returnera överordnad sida på toppnivå, null om ingen 
 
-`page->getSiblings($showInvisible = false)`  
+`page->getSiblings($showInvisible = false): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) med sidor på samma nivå 
 
-`page->getChildren($showInvisible = false)`  
+`page->getChildren($showInvisible = false): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) med barnsidor
 
-`page->getChildrenRecursive($showInvisible = false, $levelMax = 0)`  
+`page->getChildrenRecursive($showInvisible = false, $levelMax = 0): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) med barnsidor rekursivt
 
-`page->getPages($key)`  
+`page->getPages($key): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) med ytterligare sidor
 
-`page->getPage($key)`  
+`page->getPage($key): YellowPage`  
 Returnera delad sida
 
-`page->getUrl()`  
+`page->getUrl(): string`  
 Returnera sidans URL
 
-`page->getBase($multiLanguage = false)`  
+`page->getBase($multiLanguage = false): string`  
 Returnera sidans bas
 
-`page->getLocation($absoluteLocation = false)`  
+`page->getLocation($absoluteLocation = false): string`  
 Returnera sidans plats
 
-`page->getRequest($key)`  
+`page->getRequest($key): string`  
 Returnera requestargument av sidan
 
-`page->getRequestHtml($key)`  
+`page->getRequestHtml($key): string`  
 Returnera requestargument av sidan, HTML-kodad
 
-`page->getHeader($key)`  
+`page->getHeader($key): string`  
 Returnera responseheader av sidan
 
-`page->getExtra($name)`  
+`page->getExtra($name): string`  
 Returnera extra data för sidan
 
-`page->getModified($httpFormat = false)`  
+`page->getModified($httpFormat = false): int|string`  
 Returnera sidans ändringsdatum, Unix-tid eller HTTP-format
 
-`page->getLastModified($httpFormat = false)`  
+`page->getLastModified($httpFormat = false): int|string`  
 Returnera sidans senaste ändringsdatum, Unix-tid eller HTTP-format
 
-`page->getStatusCode($httpFormat = false)`  
+`page->getStatusCode($httpFormat = false): int|string`  
 Returnera sidans statuskod, nummer eller HTTP-format
 
-`page->status($statusCode, $location = "")`  
+`page->status($statusCode, $location = ""): void`  
 Svara med statuskod, inget sidinnehåll
 
-`page->error($statusCode, $errorMessage = "")`  
+`page->error($statusCode, $errorMessage = ""): void`  
 Svara med felsidan
 
-`page->isAvailable()`  
+`page->isAvailable(): bool`  
 Kontrollera om sidan är tillgänglig
 
-`page->isVisible()`  
+`page->isVisible(): bool`  
 Kontrollera om sidan är synlig
 
-`page->isActive()`  
+`page->isActive(): bool`  
 Kontrollera om sidan ligger inom aktuella HTTP-begäran
 
-`page->isCacheable()`  
+`page->isCacheable(): bool`  
 Kontrollera om sidan kan cachelagras
 
-`page->isError()`  
+`page->isError(): bool`  
 Kontrollera om sidan med fel
 
-`page->isExisting($key)`  
+`page->isExisting($key): bool`  
 Kontrollera om [sidinställning](how-to-change-the-system#sidinställningar) finns  
 
-`page->isRequest($key)`  
+`page->isRequest($key): bool`  
 Kontrollera om requestargument finns 
 
-`page->isHeader($key)`  
+`page->isHeader($key): bool`  
 Kontrollera om responseheader finns
 
-`page->isPage($key)`  
+`page->isPage($key): bool`  
 Kontrollera om delad sida finns
 
 #### Yellow page exempel
@@ -745,76 +753,76 @@ Yellow page collection ger tillgång till flera sidor. Följande metoder är til
 
 `append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
 
-`pages->append($page)`  
+`pages->append($page): void`  
 Lägg till slutet av page collection
 
-`pages->prepend($page)`  
+`pages->prepend($page): void`  
 Placera i början av page collection
 
-`pages->filter($key, $value, $exactMatch = true)`  
+`pages->filter($key, $value, $exactMatch = true): YellowPageCollection`  
 Filtrera page collection efter [sidinställning](how-to-change-the-system#sidinställningar)
 
-`pages->match($regex = "/.*/", $filterByLocation = true)`  
+`pages->match($regex = "/.*/", $filterByLocation = true): YellowPageCollection`  
 Filtrera page collection efter plats eller fil
 
-`pages->sort($key, $ascendingOrder = true)`  
+`pages->sort($key, $ascendingOrder = true): YellowPageCollection`  
 Sortera page collection efter [sidinställning](how-to-change-the-system#sidinställningar)
 
-`pages->similar($page, $ascendingOrder = false)`  
+`pages->similar($page, $ascendingOrder = false): YellowPageCollection`  
 Sortera page collection efter inställningslikhet
 
-`pages->merge($input)`  
+`pages->merge($input): YellowPageCollection`  
 Beräkna union, lägg till en page collection
 
-`pages->intersect($input)`  
+`pages->intersect($input): YellowPageCollection`  
 Beräkna korsningen, ta bort sidor som inte finns i en annan page collection
 
-`pages->diff($input)`  
+`pages->diff($input): YellowPageCollection`  
 Beräkna skillnaden, ta bort sidor som finns i en annan page collection
 
-`pages->limit($pagesMax)`  
+`pages->limit($pagesMax): YellowPageCollection`  
 Begränsa antalet sidor i page collection
 
-`pages->reverse()`  
+`pages->reverse(): YellowPageCollection`  
 Omvänd page collection
 
-`pages->shuffle()`  
+`pages->shuffle(): YellowPageCollection`  
 Gör page collection slumpmässig
 
-`pages->paginate($limit)`  
+`pages->paginate($limit): YellowPageCollection`  
 Skapa en paginering för page collection
 
-`pages->getPaginationNumber()`  
+`pages->getPaginationNumber(): int`  
 Returnera aktuellt sidnummer i paginering
 
-`pages->getPaginationCount()`  
+`pages->getPaginationCount(): int`  
 Returnera högsta sidnummer i paginering
 
-`pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1)`  
+`pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1): string`  
 Returnera plats för en sida i paginering 
 
-`pages->getPaginationPrevious($absoluteLocation = true)`  
+`pages->getPaginationPrevious($absoluteLocation = true): string`  
 Returnera plats för föregående sida i paginering
 
-`pages->getPaginationNext($absoluteLocation = true)`  
+`pages->getPaginationNext($absoluteLocation = true): string`  
 Returnera plats för nästa sida i paginering
 
-`pages->getPagePrevious($page)`  
+`pages->getPagePrevious($page): YellowPage|null`  
 Returnera föregående sida i page collection, null om ingen 
 
-`pages->getPageNext($page)`  
+`pages->getPageNext($page): YellowPage|null`  
 Returnera nästa sida i page collection, null om ingen 
 
-`pages->getFilter()`  
+`pages->getFilter(): string`  
 Returnera nuvarande sidfilter 
 
-`pages->getModified($httpFormat = false)`  
+`pages->getModified($httpFormat = false): int|string`  
 Returnera ändringsdatum för page collection, Unix-tid eller HTTP-format  
 
-`pages->isPagination()`  
+`pages->isPagination(): bool`  
 Kontrollera om det finns en paginering
 
-`page->isEmpty()`  
+`page->isEmpty(): bool`  
 Kontrollera om page collection är tom
 
 #### Yellow page collection exempel
@@ -882,73 +890,73 @@ Yellow toolbox ger tillgång till verktygslådan med hjälpfunktioner:
 
 `appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `modifyFile` `normaliseArguments` `normaliseData` `normalisePath` `readFile` `renameDirectory` `renameFile`
 
-`toolbox->getCookie($key)`  
+`toolbox->getCookie($key): string`  
 Returnera webbläsarkakan för aktuella HTTP-begäran
 
-`toolbox->getServer($key)`  
+`toolbox->getServer($key): string`  
 Returnera serverargument för aktuella HTTP-begäran
 
-`toolbox->getLocationArguments()`  
+`toolbox->getLocationArguments(): string`  
 Returnera platsargument för aktuella HTTP-begäran
 
-`toolbox->getDirectoryEntries($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true)`  
+`toolbox->getDirectoryEntries($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true): array`  
 Returnera filer och kataloger
 
-`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0)`  
+`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0): array`  
 Returnera filer och kataloger rekursivt
 
-`toolbox->readFile($fileName, $sizeMax = 0)`  
+`toolbox->readFile($fileName, $sizeMax = 0): string`  
 Läs fil, tom sträng om den inte hittas
 
-`toolbox->createFile($fileName, $fileData, $mkdir = false)`  
+`toolbox->createFile($fileName, $fileData, $mkdir = false): bool`  
 Skapa fil  
 
-`toolbox->appendFile($fileName, $fileData, $mkdir = false)`  
+`toolbox->appendFile($fileName, $fileData, $mkdir = false): bool`  
 Lägg till fil
 
-`toolbox->copyFile($fileNameSource, $fileNameDestination, $mkdir = false)`  
+`toolbox->copyFile($fileNameSource, $fileNameDestination, $mkdir = false): bool`  
 Kopiera fil
 
-`toolbox->renameFile($fileNameSource, $fileNameDestination, $mkdir = false)`  
+`toolbox->renameFile($fileNameSource, $fileNameDestination, $mkdir = false): bool`  
 Byt namn på en fil
 
-`toolbox->renameDirectory($pathSource, $pathDestination, $mkdir = false)`  
+`toolbox->renameDirectory($pathSource, $pathDestination, $mkdir = false): bool`  
 Byt namn på en mapp
 
-`toolbox->deleteFile($fileName, $pathTrash = "")`  
+`toolbox->deleteFile($fileName, $pathTrash = ""): bool`  
 Radera fil  
 
-`toolbox->deleteDirectory($path, $pathTrash = "")`  
+`toolbox->deleteDirectory($path, $pathTrash = ""): bool`  
 Radera mapp  
 
-`toolbox->modifyFile($fileName, $modified)`  
+`toolbox->modifyFile($fileName, $modified): bool`  
 Ställ in ändringsdatum för fil/mapp, Unix-tid 
 
-`toolbox->getFileModified($fileName)`  
+`toolbox->getFileModified($fileName): int`  
 Returnera ändringsdatum för fil/mapp, Unix-tid 
 
-`toolbox->getFileType($fileName)`  
+`toolbox->getFileType($fileName): string`  
 Returnera filtyp
 
-`toolbox->getTextLines($text)`  
+`toolbox->getTextLines($text): array`  
 Returnera rader från text, inklusive radbrytningar
 
-`toolbox->getTextList($text, $separator, $size)`  
+`toolbox->getTextList($text, $separator, $size): array`  
 Returnera array med specifik storlek från text 
 
-`toolbox->getTextArguments($text, $optional = "-", $sizeMin = 9)`  
+`toolbox->getTextArguments($text, $optional = "-", $sizeMin = 9): array`  
 Returnera array med variabel storlek från text, separerade av mellanslag
 
-`toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = "")`  
+`toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
 Skapa textbeskrivning, med eller utan HTML
 
-`toolbox->normaliseArguments($text, $appendSlash = true, $filterStrict = true)`  
+`toolbox->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
 Normalisera platsargument
 
-`toolbox->normaliseData($text, $type = "html", $filterStrict = true)`  
+`toolbox->normaliseData($text, $type = "html", $filterStrict = true): string`  
 Normalisera element och attribut i HTML/SVG-data 
 
-`toolbox->normalisePath($text)`  
+`toolbox->normalisePath($text): string`  
 Normalisera relativa sökvägsandelar 
 
 #### Yellow toolbox exempel
@@ -991,28 +999,28 @@ Följande funktioner utökar PHP-strängfunktioner och variabelfunktioner:
 
 `is_array_empty` `is_string_empty` `strlenu` `strposu` `strrposu` `strtoloweru` `strtoupperu` `substru`
 
-`strtoloweru($string)`  
+`strtoloweru($string): string`  
 Konvertera sträng till gemener, UTF-8-kompatibel
 
-`strtoupperu($string)`  
+`strtoupperu($string): string`  
 Konvertera sträng till versaler, UTF-8-kompatibel
 
-`strlenu($string)` + `strlenb($string)`  
+`strlenu($string): int` + `strlenb($string): int`  
 Returnera stränglängd, UTF-8 tecken eller byte
 
-`strposu($string, $search)` + `strposb($string, $search)`  
+`strposu($string, $search): int|false` + `strposb($string, $search): int|false`  
 Returnera strängposition för första träffen, UTF-8 tecken eller byte
 
-`strrposu($string, $search)` + `strrposb($string, $search)`  
+`strrposu($string, $search): int|false` + `strrposb($string, $search): int|false`  
 Returnera strängposition för senaste träffen, UTF-8 tecken eller byte
 
-`substru($string, $start, $length)` + `substrb($string, $start, $length)`  
+`substru($string, $start, $length): string` + `substrb($string, $start, $length): string`  
 Returnera en del av en sträng, UTF-8-tecken eller byte
 
-`is_string_empty($string)`  
+`is_string_empty($string): bool`  
 Kontrollera om strängen är tom
 
-`is_array_empty($array)`  
+`is_array_empty($array): bool`  
 Kontrollera om arrayen är tom
 
 #### Yellow string exempel

@@ -51,20 +51,25 @@ Du kannst eine statische Webseite in der Befehlszeile erstellen. Der Static-Site
 Mit Hilfe von `$this->yellow` kannst du auf die Webseite zugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der gesamten API findet man in der Datei `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌──────────────┐                    ┌──────────────┐
-│ Webserver    │                    │ Befehlszeile │
-└──────────────┘                    └──────────────┘
-       │                                   │
-       ▼                                   ▼
-┌──────────────────────────────────────────────────┐    ┌───────────────┐
-│ Core                                             │◀──▶│ Erweiterungen |
-│                                                  │    └───────────────┘
-│ $this->yellow           $this->yellow->user      │    ┌───────────────┐
-│ $this->yellow->content  $this->yellow->extension │◀──▶│ Layouts       │
-│ $this->yellow->media    $this->yellow->page      │    └───────────────┘
-│ $this->yellow->system   $this->yellow->lookup    │    ┌───────────────┐
-│ $this->yellow->language $this->yellow->toolbox   │◀──▶│ Themen        │
-└──────────────────────────────────────────────────┘    └───────────────┘
+┌───────────────┐                    ┌───────────────┐
+│ Webserver     │                    │ Befehlszeile  │
+└───────────────┘                    └───────────────┘
+        │                                    │
+        ▼                                    ▼
+┌────────────────────────────────────────────────────┐
+│ Core                                               │
+│                                                    │
+│ $this->yellow             $this->yellow->user      │
+│ $this->yellow->content    $this->yellow->extension │
+│ $this->yellow->media      $this->yellow->page      │
+│ $this->yellow->system     $this->yellow->lookup    │
+│ $this->yellow->language   $this->yellow->toolbox   │
+└────────────────────────────────────────────────────┘
+                          │
+                          ▼
+┌────────────────────────────────────────────────────┐
+│ Dateisystem                                        │
+└────────────────────────────────────────────────────┘
 ```
 
 Die folgenden Objekte sind verfügbar:
@@ -85,22 +90,22 @@ Yellow gibt Zugang zur API. Die folgenden Methoden sind verfügbar:
 
 `command` `getLayoutArguments` `layout` `load` `log` `request`
 
-`yellow->load()`  
+`yellow->load(): void`  
 Verarbeite die Initialisierung
 
-`yellow->request()`  
+`yellow->request(): int`  
 Verarbeite die Anfrage
 
-`yellow->command($line = "")`  
+`yellow->command($line = ""): int`  
 Verarbeite den Befehl
 
-`yellow->log($action, $message)`  
+`yellow->log($action, $message): void`  
 Verarbeite das Logging
 
-`yellow->layout($name, $arguments = null)`  
+`yellow->layout($name, $arguments = null): void`  
 Beziehe das Layout ein
 
-`yellow->getLayoutArguments($sizeMin = 9)`  
+`yellow->getLayoutArguments($sizeMin = 9): array`  
 Hole die Layout-Argumente
 
 #### Yellow-Beispiele
@@ -136,7 +141,9 @@ Layoutdatei die ein Argument empfängt:
 
 ``` html
 <?php list($name, $text) = $this->yellow->getLayoutArguments() ?>
+<p>
 <?php echo "Hello $text" ?>
+</p>
 ```
 
 ### Yellow-Content
@@ -145,22 +152,22 @@ Yellow-Content gibt Zugang zu Inhaltsdateien. Die folgenden Methoden sind verfü
 
 `clean` `find` `index` `multi` `path` `top`
 
-`content->find($location, $absoluteLocation = false)`  
+`content->find($location, $absoluteLocation = false): YellowPage|null`  
 Hole eine [Seite](#yellow-page), null falls nicht vorhanden
 
-`content->index($showInvisible = false, $multiLanguage = false, $levelMax = 0)`  
+`content->index($showInvisible = false, $multiLanguage = false, $levelMax = 0): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) mit allen Seiten
 
-`content->top($showInvisible = false, $showOnePager = true)`  
+`content->top($showInvisible = false, $showOnePager = true): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) mit Hauptseiten der Navigation
 
-`content->path($location, $absoluteLocation = false)`  
+`content->path($location, $absoluteLocation = false): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) mit Pfad in der Navigation
 
-`content->multi($location, $absoluteLocation = false, $showInvisible = false)`  
+`content->multi($location, $absoluteLocation = false, $showInvisible = false): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) mit mehreren Sprachen im Mehrsprachen-Modus
 
-`content->clean()`  
+`content->clean(): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) die leer ist
 
 #### Yellow-Content-Beispiele
@@ -228,13 +235,13 @@ Yellow-Media gibt Zugang zu Mediendateien. Die folgenden Methoden sind verfügba
 
 `clean` `index` `find`
 
-`media->find($location, $absoluteLocation = false)`  
+`media->find($location, $absoluteLocation = false): YellowPage|null`  
 Hole eine [Seite](#yellow-page) mit Informationen über Mediendatei, null falls nicht vorhanden
 
-`media->index($showInvisible = false, $multiPass = false, $levelMax = 0)`  
+`media->index($showInvisible = false, $multiPass = false, $levelMax = 0): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) mit allen Mediendateien
 
-`media->clean()`  
+`media->clean(): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) die leer ist
 
 #### Yellow-Media-Beispiele
@@ -302,25 +309,25 @@ Yellow-System gibt Zugang zu Systemeinstellungen. Die folgenden Methoden sind ve
 
 `get` `getAvailable` `getDifferent` `getHtml` `getModified` `getSettings` `isExisting`
 
-`system->get($key)`  
+`system->get($key): string`  
 Hole eine [Systemeinstellung](how-to-change-the-system#systemeinstellungen)
 
-`system->getHtml($key)`  
+`system->getHtml($key): string`  
 Hole eine [Systemeinstellung](how-to-change-the-system#systemeinstellungen), HTML-kodiert
 
-`system->getDifferent($key)`  
+`system->getDifferent($key): string`  
 Hole einen anderen Wert für eine [Systemeinstellung](how-to-change-the-system#systemeinstellungen)
 
-`system->getAvailable($key)`  
+`system->getAvailable($key): array`  
 Hole die vorhandenen Werte einer [Systemeinstellung](how-to-change-the-system#systemeinstellungen)
 
-`system->getSettings($filterStart = "", $filterEnd = "")`  
+`system->getSettings($filterStart = "", $filterEnd = ""): array`  
 Hole [Systemeinstellungen](how-to-change-the-system#systemeinstellungen)
 
-`system->getModified($httpFormat = false)`  
+`system->getModified($httpFormat = false): int|string`  
 Hole das Änderungsdatum von [Systemeinstellungen](how-to-change-the-system#systemeinstellungen), Unix-Zeit oder HTTP-Format
 
-`system->isExisting($key)`  
+`system->isExisting($key): bool`  
 Überprüfe ob die [Systemeinstellung](how-to-change-the-system#systemeinstellungen) existiert
 
 #### Yellow-System-Beispiele
@@ -349,8 +356,8 @@ Layoutdatei um zu überprüfen ob eine bestimmte Einstellung aktiviert ist:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php $multiLanguageMode = $this->yellow->system->get("coreMultiLanguageMode") ?>
-Multi language mode is <?php echo htmlspecialchars($multiLanguageMode ? "on" : "off") ?>.
+<?php $debugMode = $this->yellow->system->get("coreDebugMode") ?>
+Debug mode is <?php echo htmlspecialchars($debugMode ? "on" : "off") ?>.
 </p>
 </div>
 </div>
@@ -380,22 +387,22 @@ Yellow-Language gibt Zugang zu Spracheinstellungen. Die folgenden Methoden sind 
 
 `getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText`
 
-`language->getText($key, $language = "")`  
+`language->getText($key, $language = ""): string`  
 Hole eine [Spracheinstellung](how-to-change-the-system#spracheinstellungen)
 
-`language->getTextHtml($key, $language = "")`  
+`language->getTextHtml($key, $language = ""): string`  
 Hole eine [Spracheinstellung](how-to-change-the-system#spracheinstellungen), HTML encoded
 
-`language->getSettings($filterStart = "", $filterEnd = "", $language = "")`  
+`language->getSettings($filterStart = "", $filterEnd = "", $language = ""): array`  
 Hole [Spracheinstellungen](how-to-change-the-system#spracheinstellungen)
 
-`language->getModified($httpFormat = false)`  
+`language->getModified($httpFormat = false): int|string`  
 Hole das Änderungsdatum von [Spracheinstellungen](how-to-change-the-system#spracheinstellungen), Unix-Zeit oder HTTP-Format
 
-`language->isText($key, $language = "")`  
+`language->isText($key, $language = ""): bool`  
 Überprüfe ob die [Spracheinstellung](how-to-change-the-system#spracheinstellungen) existiert
 
-`language->isExisting($language)`  
+`language->isExisting($language): bool`  
 Überprüfe ob die Sprache existiert
 
 #### Yellow-Language-Beispiele
@@ -453,22 +460,22 @@ Yellow-User gibt Zugang zu Benutzereinstellungen. Die folgenden Methoden sind ve
 
 `getModified` `getSettings` `getUser` `getUserHtml` `isExisting` `isUser`
 
-`user->getUser($key, $email = "")`  
+`user->getUser($key, $email = ""): string`  
 Hole eine [Benutzereinstellung](how-to-change-the-system#benutzereinstellungen)
 
-`user->getUserHtml($key, $email = "")`  
+`user->getUserHtml($key, $email = ""): string`  
 Hole eine [Benutzereinstellung](how-to-change-the-system#benutzereinstellungen), HTML-kodiert
 
-`user->getSettings($email = "")`  
+`user->getSettings($email = ""): array`  
 Hole [Benutzereinstellungen](how-to-change-the-system#benutzereinstellungen)
 
-`user->getModified($httpFormat = false)`  
+`user->getModified($httpFormat = false): int|string`  
 Hole das Änderungsdatum von [Benutzereinstellungen](how-to-change-the-system#benutzereinstellungen), Unix-Zeit oder HTTP-Format
 
-`user->isUser($key, $email = "")`  
+`user->isUser($key, $email = ""): bool`  
 Überprüfe ob die [Benutzereinstellung](how-to-change-the-system#benutzereinstellungen) existiert
 
-`user->isExisting($email)`  
+`user->isExisting($email): bool`  
 Überprüfe ob der Benutzer existiert
 
 #### Yellow-User-Beispiele
@@ -527,13 +534,13 @@ Yellow-Extension gibt Zugang zu Erweiterungen. Die folgenden Methoden sind verf�
 
 `get` `getModified` `isExisting`
 
-`extension->get($key)`  
+`extension->get($key): object`  
 Hole eine Erweiterung
 
-`extension->getModified($httpFormat = false)`  
+`extension->getModified($httpFormat = false): int|string`  
 Hole das Änderungsdatum von Erweiterungen, Unix-Zeit oder HTTP-Format
 
-`extension->isExisting($key)`  
+`extension->isExisting($key): bool`  
 Überprüfe ob die Erweiterung existiert
 
 #### Yellow-Extension-Beispiele
@@ -585,115 +592,115 @@ Yellow-Page gibt Zugang zur aktuellen Seite. Die folgenden Methoden sind verfüg
 
 `error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `status`
 
-`page->get($key)`  
+`page->get($key): string`  
 Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen)
 
-`page->getHtml($key)`  
+`page->getHtml($key): string`  
 Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen), HTML-kodiert  
 
-`page->getDate($key, $format = "")`  
+`page->getDate($key, $format = ""): string`  
 Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen)
 
-`page->getDateHtml($key, $format = "")`  
+`page->getDateHtml($key, $format = ""): string`  
 Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), HTML-kodiert
 
-`page->getDateRelative($key, $format = "", $daysLimit = 30)`  
+`page->getDateRelative($key, $format = "", $daysLimit = 30): string`  
 Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), relativ zu heute
 
-`page->getDateRelativeHtml($key, $format = "", $daysLimit = 30)`  
+`page->getDateRelativeHtml($key, $format = "", $daysLimit = 30): string`  
 Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), relativ zu heute, HTML-kodiert
 
-`page->getDateFormatted($key, $format)`  
+`page->getDateFormatted($key, $format): string`  
 Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [Datum](https://www.php.net/manual/de/function.date.php)
 
-`page->getDateFormattedHtml($key, $format)`  
+`page->getDateFormattedHtml($key, $format): string`  
 Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [Datum](https://www.php.net/manual/de/function.date.php), HTML-kodiert
 
-`page->getContent($rawFormat = false)`  
+`page->getContent($rawFormat = false): string`  
 Hole den Seiteninhalt, HTML-kodiert oder Rohformat
 
-`page->getParent()`  
+`page->getParent(): YellowPage|null`  
 Hole die übergeordnete Seite, null falls nicht vorhanden
 
-`page->getParentTop($homeFallback = false)`  
+`page->getParentTop($homeFallback = false): YellowPage|null`  
 Hole die oberste übergeordnete Seite, null falls nicht vorhanden
 
-`page->getSiblings($showInvisible = false)`  
+`page->getSiblings($showInvisible = false): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) mit Seiten auf dem selben Level
 
-`page->getChildren($showInvisible = false)`  
+`page->getChildren($showInvisible = false): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) mit untergeordneten Seiten
 
-`page->getChildrenRecursive($showInvisible = false, $levelMax = 0)`  
+`page->getChildrenRecursive($showInvisible = false, $levelMax = 0): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) mit untergeordneten Seiten rekursiv
 
-`page->getPages($key)`  
+`page->getPages($key): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) mit zusätzlichen Seiten
 
-`page->getPage($key)`  
+`page->getPage($key): YellowPage`  
 Hole eine geteilte Seite
 
-`page->getUrl()`  
+`page->getUrl(): string`  
 Hole die URL der Seite 
 
-`page->getBase($multiLanguage = false)`  
+`page->getBase($multiLanguage = false): string`  
 Hole die Basis der Seite
 
-`page->getLocation($absoluteLocation = false)`  
+`page->getLocation($absoluteLocation = false): string`  
 Hole den Ort der Seite
 
-`page->getRequest($key)`  
+`page->getRequest($key): string`  
 Hole das angefragte Argument der Seite
 
-`page->getRequestHtml($key)`  
+`page->getRequestHtml($key): string`  
 Hole das angefragte Argument der Seite, HTML-kodiert
 
-`page->getHeader($key)`  
+`page->getHeader($key): string`  
 Hole den Antwort-Header der Seite
 
-`page->getExtra($name)`  
+`page->getExtra($name): string`  
 Hole Extradaten der Seite
 
-`page->getModified($httpFormat = false)`  
+`page->getModified($httpFormat = false): int|string`  
 Hole das Änderungsdatum der Seite, Unix-Zeit oder HTTP-Format
 
-`page->getLastModified($httpFormat = false)`  
+`page->getLastModified($httpFormat = false): int|string`  
 Hole das letzte Änderungsdatum der Seite, Unix-Zeit oder HTTP-Format
 
-`page->getStatusCode($httpFormat = false)`  
+`page->getStatusCode($httpFormat = false): int|string`  
 Hole den Statuscode der Seite, Zahl oder HTTP-Format
 
-`page->status($statusCode, $location = "")`  
+`page->status($statusCode, $location = ""): void`  
 Antworte mit Statuscode, ohne Seiteninhalt
 
-`page->error($statusCode, $errorMessage = "")`  
+`page->error($statusCode, $errorMessage = ""): void`  
 Antworte mit Fehlerseite
 
-`page->isAvailable()`  
+`page->isAvailable(): bool`  
 Überprüfe ob die Seite vorhanden ist
 
-`page->isVisible()`  
+`page->isVisible(): bool`  
 Überprüfe ob die Seite sichtbar ist
 
-`page->isActive()`  
+`page->isActive(): bool`  
 Überprüfe ob die Seite innerhalb der aktuellen HTTP-Anfrage ist
 
-`page->isCacheable()`  
+`page->isCacheable(): bool`  
 Überprüfe ob die Seite zwischengespeichert werden kann
 
-`page->isError()`  
+`page->isError(): bool`  
 Überprüfe ob die Seite einen Fehler hat
 
-`page->isExisting($key)`  
+`page->isExisting($key): bool`  
 Überprüfe ob die [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) existiert  
 
-`page->isRequest($key)`  
+`page->isRequest($key): bool`  
 Überprüfe ob das Anfrage-Argument existiert
 
-`page->isHeader($key)`  
+`page->isHeader($key): bool`  
 Überprüfe ob der Antwort-Header existiert
 
-`page->isPage($key)`  
+`page->isPage($key): bool`  
 Überprüfe ob die geteilte Seite existiert
 
 #### Yellow-Page-Beispiele
@@ -745,76 +752,76 @@ Yellow-Page-Collection gibt Zugang zu mehreren Seiten. Die folgenden Methoden si
 
 `append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
 
-`pages->append($page)`  
+`pages->append($page): void`  
 Hänge an das Ende der Seitenkollektion
 
-`pages->prepend($page)`  
+`pages->prepend($page): void`  
 Stelle an den Anfang der Seitenkollektion
 
-`pages->filter($key, $value, $exactMatch = true)`  
+`pages->filter($key, $value, $exactMatch = true): YellowPageCollection`  
 Filtere eine Seitenkollektion nach [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen)
 
-`pages->match($regex = "/.*/", $filterByLocation = true)`  
+`pages->match($regex = "/.*/", $filterByLocation = true): YellowPageCollection`  
 Filtere eine Seitenkollektion nach Ort oder Datei
 
-`pages->sort($key, $ascendingOrder = true)`  
+`pages->sort($key, $ascendingOrder = true): YellowPageCollection`  
 Sortiere eine Seitenkollektion nach [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen)
 
-`pages->similar($page, $ascendingOrder = false)`  
+`pages->similar($page, $ascendingOrder = false): YellowPageCollection`  
 Sortiere eine Seitenkollektion nach Einstellungsähnlichkeit
 
-`pages->merge($input)`  
+`pages->merge($input): YellowPageCollection`  
 Berechne Vereinigungsmenge, füge eine Seitenkollektion hinzu
 
-`pages->intersect($input)`  
+`pages->intersect($input): YellowPageCollection`  
 Berechne Schnittmenge, entferne Seiten die nicht in einer anderen Seitenkollektion sind
 
-`pages->diff($input)`  
+`pages->diff($input): YellowPageCollection`  
 Berechne Restmenge, entferne Seiten die in einer anderen Seitenkollektion sind
 
-`pages->limit($pagesMax)`  
+`pages->limit($pagesMax): YellowPageCollection`  
 Begrenze die Anzahl der Seiten in der Seitenkollektion
 
-`pages->reverse()`  
+`pages->reverse(): YellowPageCollection`  
 Drehe die Seitenkollektion um
 
-`pages->shuffle()`  
+`pages->shuffle(): YellowPageCollection`  
 Mach die Seitenkollektion zufällig
 
-`pages->paginate($limit)`  
+`pages->paginate($limit): YellowPageCollection`  
 Erstelle eine Nummerierung für die Seitenkollektion
 
-`pages->getPaginationNumber()`  
+`pages->getPaginationNumber(): int`  
 Hole die aktuelle Seitennummer
 
-`pages->getPaginationCount()`  
+`pages->getPaginationCount(): int`  
 Hole die höchste Seitennummer
 
-`pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1)`  
+`pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1): string`  
 Hole den Ort einer Seite in der Nummerierung
 
-`pages->getPaginationPrevious($absoluteLocation = true)`  
+`pages->getPaginationPrevious($absoluteLocation = true): string`  
 Hole den Ort der vorherigen Seite in der Nummerierung
 
-`pages->getPaginationNext($absoluteLocation = true)`  
+`pages->getPaginationNext($absoluteLocation = true): string`  
 Hole den Ort der nächsten Seite in der Nummerierung
 
-`pages->getPagePrevious($page)`  
+`pages->getPagePrevious($page): YellowPage|null`  
 Hole die vorherige Seite in der Seitenkollektion, null falls nicht vorhanden
 
-`pages->getPageNext($page)`  
+`pages->getPageNext($page): YellowPage|null`  
 Hole die nächste Seite in der Seitenkollektion, null falls nicht vorhanden
 
-`pages->getFilter()`  
+`pages->getFilter(): string`  
 Hole den aktuellen Seitenfilter
 
-`pages->getModified($httpFormat = false)`  
+`pages->getModified($httpFormat = false): int|string`  
 Hole das Änderungsdatum der Seitenkollektion, Unix-Zeit oder HTTP-Format
 
-`pages->isPagination()`  
+`pages->isPagination(): bool`  
 Überprüfe ob eine Nummerierung vorhanden ist
 
-`page->isEmpty()`  
+`page->isEmpty(): bool`  
 Überprüfe ob Seitenkollektion leer ist
 
 #### Yellow-Page-Collection-Beispiele
@@ -882,73 +889,73 @@ Yellow-Toolbox gibt Zugang zur Werkzeugkiste mit Hilfsfunktionen:
 
 `appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `modifyFile` `normaliseArguments` `normaliseData` `normalisePath` `readFile` `renameDirectory` `renameFile`
 
-`toolbox->getCookie($key)`   
+`toolbox->getCookie($key): string`   
 Hole das Browsercookie der aktuellen HTTP-Anfrage
 
-`toolbox->getServer($key)`   
+`toolbox->getServer($key): string`   
 Hole das Serverargument der aktuellen HTTP-Anfrage
 
-`toolbox->getLocationArguments()`  
+`toolbox->getLocationArguments(): string`  
 Hole die Ortargumente der aktuellen HTTP-Anfrage
 
-`toolbox->getDirectoryEntries($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true)`  
+`toolbox->getDirectoryEntries($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true): array`  
 Hole Dateien und Verzeichnisse
 
-`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0)`  
+`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0): array`  
 Hole Dateien und Verzeichnisse rekursiv
 
-`toolbox->readFile($fileName, $sizeMax = 0)`  
+`toolbox->readFile($fileName, $sizeMax = 0): string`  
 Lese eine Datei, leerer String falls nicht vorhanden
 
-`toolbox->createFile($fileName, $fileData, $mkdir = false)`  
+`toolbox->createFile($fileName, $fileData, $mkdir = false): bool`  
 Erstelle eine Datei
 
-`toolbox->appendFile($fileName, $fileData, $mkdir = false)`  
+`toolbox->appendFile($fileName, $fileData, $mkdir = false): bool`  
 Hänge an eine Datei an
 
-`toolbox->copyFile($fileNameSource, $fileNameDestination, $mkdir = false)`  
+`toolbox->copyFile($fileNameSource, $fileNameDestination, $mkdir = false): bool`  
 Kopiere eine Datei  
 
-`toolbox->renameFile($fileNameSource, $fileNameDestination, $mkdir = false)`  
+`toolbox->renameFile($fileNameSource, $fileNameDestination, $mkdir = false): bool`  
 Benenne eine Datei um
 
-`toolbox->renameDirectory($pathSource, $pathDestination, $mkdir = false)`  
+`toolbox->renameDirectory($pathSource, $pathDestination, $mkdir = false): bool`  
 Benenne ein Verzeichnis um  
 
-`toolbox->deleteFile($fileName, $pathTrash = "")`  
+`toolbox->deleteFile($fileName, $pathTrash = ""): bool`  
 Lösche eine Datei
 
-`toolbox->deleteDirectory($path, $pathTrash = "")`  
+`toolbox->deleteDirectory($path, $pathTrash = ""): bool`  
 Lösche ein Verzeichnis  
 
-`toolbox->modifyFile($fileName, $modified)`  
+`toolbox->modifyFile($fileName, $modified): bool`  
 Setze das Änderungsdatum von Datei/Verzeichnis, Unix-Zeit
 
-`toolbox->getFileModified($fileName)`  
+`toolbox->getFileModified($fileName): int`  
 Hole das Änderungsdatum von Datei/Verzeichnis, Unix-Zeit
 
-`toolbox->getFileType($fileName)`  
+`toolbox->getFileType($fileName): string`  
 Hole den Typ der Datei
 
-`toolbox->getTextLines($text)`  
+`toolbox->getTextLines($text): array`  
 Hole die Zeilen eines Texts, einschließlich Zeilenumbruch  
 
-`toolbox->getTextList($text, $separator, $size)`  
+`toolbox->getTextList($text, $separator, $size): array`  
 Hole ein Array mit bestimmter Grösse aus dem Text  
 
-`toolbox->getTextArguments($text, $optional = "-", $sizeMin = 9)`  
+`toolbox->getTextArguments($text, $optional = "-", $sizeMin = 9): array`  
 Hole ein Array mit variabler Grösse aus dem Text, durch Leerzeichen getrennt  
 
-`toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = "")`  
+`toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
 Erstelle eine Textbeschreibung, mit oder ohne HTML
 
-`toolbox->normaliseArguments($text, $appendSlash = true, $filterStrict = true)`  
+`toolbox->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
 Normalisiere Ortargumente
 
-`toolbox->normaliseData($text, $type = "html", $filterStrict = true)`  
+`toolbox->normaliseData($text, $type = "html", $filterStrict = true): string`  
 Normalisiere Elemente und Attribute in HTML/SVG-Daten
 
-`toolbox->normalisePath($text)`  
+`toolbox->normalisePath($text): string`  
 Normalisiere relative Pfadanteile
 
 #### Yellow-Toolbox-Beispiele
@@ -991,28 +998,28 @@ Die folgenden Funktionen erweitern PHP-Stringfunktionen und Variablenfunktionen:
 
 `is_array_empty` `is_string_empty` `strlenu` `strposu` `strrposu` `strtoloweru` `strtoupperu` `substru`
 
-`strtoloweru($string)`  
+`strtoloweru($string): string`  
 Wandle String in Kleinschrift um, UTF-8 kompatibel
 
-`strtoupperu($string)`  
+`strtoupperu($string): string`  
 Wandle String in Großschrift um, UTF-8 kompatibel
 
-`strlenu($string)` + `strlenb($string)`  
+`strlenu($string): int` + `strlenb($string): int`  
 Hole Stringlänge, UTF-8-Zeichen oder Bytes
 
-`strposu($string, $search)` + `strposb($string, $search)`  
+`strposu($string, $search): int|false` + `strposb($string, $search): int|false`  
 Hole Stringposition des ersten Treffers, UTF-8-Zeichen oder Bytes
 
-`strrposu($string, $search)` + `strrposb($string, $search)`  
+`strrposu($string, $search): int|false` + `strrposb($string, $search): int|false`  
 Hole Stringposition des letzten Treffers, UTF-8-Zeichen oder Bytes
 
-`substru($string, $start, $length)` + `substrb($string, $start, $length)`  
+`substru($string, $start, $length): string` + `substrb($string, $start, $length): string`  
 Hole Teilstring, UTF-8-Zeichen oder Bytes
 
-`is_string_empty($string)`  
+`is_string_empty($string): bool`  
 Überprüfe ob der String leer ist
 
-`is_array_empty($array)`  
+`is_array_empty($array): bool`  
 Überprüfe ob das Array leer ist
 
 #### Yellow-String-Beispiele
