@@ -51,25 +51,20 @@ You can build a static website at the command line. The static site generator bu
 With the help of `$this->yellow` you can access the website. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the entire API can be found in file `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌───────────────┐                    ┌───────────────┐
-│ Web server    │                    │ Command line  │
-└───────────────┘                    └───────────────┘
-        │                                    │
-        ▼                                    ▼
-┌────────────────────────────────────────────────────┐
-│ Core                                               │
-│                                                    │
-│ $this->yellow             $this->yellow->user      │
-│ $this->yellow->content    $this->yellow->extension │
-│ $this->yellow->media      $this->yellow->page      │
-│ $this->yellow->system     $this->yellow->lookup    │
-│ $this->yellow->language   $this->yellow->toolbox   │
-└────────────────────────────────────────────────────┘
-                          │
-                          ▼
-┌────────────────────────────────────────────────────┐
-│ File system                                        │
-└────────────────────────────────────────────────────┘
+┌───────────────┐   ┌───────────────┐   ┌───────────────┐
+│ Web server    │   │ Command line  │   │ File system   │
+└───────────────┘   └───────────────┘   └───────────────┘
+        ▲                   ▲                  ▲
+        │                   │                  │
+        ▼                   ▼                  ▼
+┌────────────────────────────────────────────────────────────────────────────┐
+│ Core                                                                       │
+│                                                                            │
+│ $this->yellow                                                              │
+│ $this->yellow->content   $this->yellow->language    $this->yellow->lookup  │
+│ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
+│ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
+└────────────────────────────────────────────────────────────────────────────┘
 ```
 
 The following objects are available:
@@ -81,12 +76,13 @@ The following objects are available:
 `$this->yellow->language` = [access to language settings](#yellow-language)  
 `$this->yellow->user` = [access to user settings](#yellow-user)  
 `$this->yellow->extension` = [access to extensions](#yellow-extension)  
-`$this->yellow->page` = [access to current page](#yellow-page)  
+`$this->yellow->lookup` = [access to lookup and normalisation](#yellow-lookup)  
 `$this->yellow->toolbox` = [access to toolbox with helper functions](#yellow-toolbox)  
+`$this->yellow->page` = [access to current page](#yellow-page)  
 
 ### Yellow
 
-Yellow gives access to the API. The following methods are available:
+The class `Yellow` gives access to the API. The following methods are available:
 
 `command` `getLayoutArguments` `layout` `load` `log` `request`
 
@@ -94,13 +90,13 @@ Yellow gives access to the API. The following methods are available:
 Handle initialisation
 
 `yellow->request(): int`  
-Handle request
+Handle request from web server
 
 `yellow->command($line = ""): int`  
-Handle command
+Handle command from command line
 
 `yellow->log($action, $message): void`  
-Handle logging
+Write information to log file
 
 `yellow->layout($name, $arguments = null): void`  
 Include layout
@@ -148,7 +144,7 @@ Layout file receiving an argument:
 
 ### Yellow content
 
-Yellow content gives access to content files. The following methods are available:
+The class `YellowContent` gives access to content files. The following methods are available:
 
 `clean` `find` `index` `multi` `path` `top`
 
@@ -231,7 +227,7 @@ Layout file for showing top-level navigation pages:
 
 ### Yellow media
 
-Yellow media gives access to media files. The following methods are available:
+The class `YellowMedia` gives access to media files. The following methods are available:
 
 `clean` `index` `find`
 
@@ -305,30 +301,39 @@ Layout file for showing media files of a specific type:
 
 ### Yellow system
 
-Yellow system gives access to system settings. The following methods are available:
+The class `YellowSystem` gives access to [system settings](how-to-change-the-system#system-settings). The following methods are available:
 
-`get` `getAvailable` `getDifferent` `getHtml` `getModified` `getSettings` `isExisting`
+`get` `getAvailable` `getDifferent` `getHtml` `getModified` `getSettings` `isExisting` `save` `set` `setDefault`
+
+`system->save($fileName, $settings): bool`  
+Save system settings to file
+
+`system->setDefault($key, $value): void`  
+Set default system setting
+
+`system->set($key, $value): void`  
+Set system setting
 
 `system->get($key): string`  
-Return [system setting](how-to-change-the-system#system-settings)
+Return system setting
 
 `system->getHtml($key): string`  
-Return [system setting](how-to-change-the-system#system-settings), HTML encoded
+Return system setting, HTML encoded
 
 `system->getDifferent($key): string`  
-Return different value for [system setting](how-to-change-the-system#system-settings)
+Return different value for system setting
 
 `system->getAvailable($key): array`  
-Return available values for [system setting](how-to-change-the-system#system-settings)
+Return available values for system setting
 
 `system->getSettings($filterStart = "", $filterEnd = ""): array`  
-Return [system settings](how-to-change-the-system#system-settings)
+Return system settings
 
 `system->getModified($httpFormat = false): int|string`  
-Return [system settings](how-to-change-the-system#system-settings) modification date, Unix time or HTTP format
+Return system settings modification date, Unix time or HTTP format
 
 `system->isExisting($key): bool`  
-Check if [system setting](how-to-change-the-system#system-settings) exists
+Check if system setting exists
 
 #### Yellow system examples
 
@@ -383,24 +388,30 @@ Layout file for showing core settings:
 
 ### Yellow language
 
-Yellow language gives access to language settings. The following methods are available:
+The class `YellowLanguage` gives access to [language settings](how-to-change-the-system#language-settings). The following methods are available:
 
-`getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText`
+`getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText` `setDefaults` `setText`
+
+`language->setDefaults($lines): void`  
+Set default language settings
+
+`language->setText($key, $value, $language): void`  
+Set language setting
 
 `language->getText($key, $language = ""): string`  
-Return [language setting](how-to-change-the-system#language-settings)
+Return language setting
 
 `language->getTextHtml($key, $language = ""): string`  
-Return [language setting](how-to-change-the-system#language-settings), HTML encoded
+Return language setting, HTML encoded
 
 `language->getSettings($filterStart = "", $filterEnd = "", $language = ""): array`  
-Return [language settings](how-to-change-the-system#language-settings)
+Return language settings
 
 `language->getModified($httpFormat = false): int|string`  
-Return [language settings](how-to-change-the-system#language-settings) modification date, Unix time or HTTP format
+Return language settings modification date, Unix time or HTTP format
 
 `language->isText($key, $language = ""): bool`  
-Check if [language setting](how-to-change-the-system#language-settings) exists
+Check if language setting exists
 
 `language->isExisting($language): bool`  
 Check if language exists
@@ -456,24 +467,33 @@ Layout file for showing languages and translators:
 
 ### Yellow user
 
-Yellow user gives access to user settings. The following methods are available:
+The class `YellowUser` gives access to [user settings](how-to-change-the-system#user-settings). The following methods are available:
 
-`getModified` `getSettings` `getUser` `getUserHtml` `isExisting` `isUser`
+`getModified` `getSettings` `getUser` `getUserHtml` `isExisting` `isUser` `remove` `save` `setUser`
+
+`user->save($fileName, $email, $settings): bool`  
+Save user settings to file
+
+`user->remove($fileName, $email): bool`  
+Remove user settings from file
+
+`user->setUser($key, $value, $email): void`  
+Set user setting
 
 `user->getUser($key, $email = ""): string`  
-Return [user setting](how-to-change-the-system#user-settings)
+Return user setting
 
 `user->getUserHtml($key, $email = ""): string`  
-Return [user setting](how-to-change-the-system#user-settings), HTML encoded
+Return user setting, HTML encoded
 
 `user->getSettings($email = ""): array`  
-Return [user settings](how-to-change-the-system#user-settings)
+Return user settings
 
 `user->getModified($httpFormat = false): int|string`  
-Return [user settings](how-to-change-the-system#user-settings) modification date, Unix time or HTTP format
+Return user settings modification date, Unix time or HTTP format
 
 `user->isUser($key, $email = ""): bool`  
-Check if [user setting](how-to-change-the-system#user-settings) exists
+Check if user setting exists
 
 `user->isExisting($email): bool`  
 Check if user exists
@@ -530,7 +550,7 @@ Layout file for showing users and their status:
 
 ### Yellow extension
 
-Yellow extension gives access to extensions. The following methods are available:
+The class `YellowExtension` gives access to extensions. The following methods are available:
 
 `get` `getModified` `isExisting`
 
@@ -586,35 +606,242 @@ if ($this->yellow->extension->isExisting("image")) {
 }
 ```
 
+### Yellow lookup
+
+The class `YellowLookup` gives access to lookup and normalisation functions. The following methods are available:
+
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+
+`lookup->findContentLocationFromFile($fileName): string`  
+Return content location from file path
+
+`lookup->findFileFromContentLocation($location, $directory = false): string`  
+Return file path from content location
+
+`lookup->findMediaLocationFromFile($fileName): string`  
+Return media location from file path
+
+`lookup->findFileFromMediaLocation($location): string`  
+Return file path from media location
+
+`lookup->findMediaDirectory($key): string`  
+Return media directory from a system setting
+
+`lookup->normaliseName($text, $removePrefix = false, $removeExtension = false, $filterStrict = false): string`  
+Normalise name
+
+`toolbox->normaliseData($text, $type = "html", $filterStrict = true): string`  
+Normalise elements and attributes in HTML/SVG data
+
+`lookup->normaliseArray($input): array`  
+Normalise array, make keys with same upper/lower case
+
+`toolbox->normalisePath($text): string`  
+Normalise relative path tokens
+
+`lookup->normaliseLocation($location, $pageLocation, $filterStrict = true): string`  
+Normalise location, make absolute location
+
+`toolbox->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
+Normalise location arguments
+
+`lookup->normaliseUrl($scheme, $address, $base, $location, $filterStrict = true): string`  
+Normalise URL, make absolute URL
+
+`lookup->getUrlInformation($url): string`  
+Return URL information
+
+`lookup->isFileLocation($location): bool`  
+Check if location is specifying file or directory
+
+`lookup->isValidFile($fileName): bool`  
+Check if file is valid
+
+`lookup->isContentFile($fileName): bool`  
+Check if content file
+
+`lookup->isMediaFile($fileName): bool`  
+Check if media file
+
+`lookup->isSystemFile($fileName): bool`  
+Check if system file
+
+#### Yellow lookup examples
+
+Layout file for showing image paths:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<p>
+<?php $pathInstall = $this->system->get("coreServerInstallDirectory") ?>
+<?php $pathImages = $this->yellow->lookup->findMediaDirectory("coreImageLocation") ?>
+<?php $pathThumbs = $this->yellow->lookup->findMediaDirectory("coreThumbnailLocation") ?>
+<?php echo "Image files: ".htmlspecialchars($pathInstall.$pathImages)."<br />" ?>
+<?php echo "Image thumbnails: ".htmlspecialchars($pathInstall.$pathThumbs)."<br />" ?>
+</p>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Layout file for showing page type:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php $fileLocation = $this->yellow->lookup->isFileLocation($this->yellow->page->location) ?>
+<p>Page is <?php echo htmlspecialchars($fileLocation? "file" : "directory") ?>.</p>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Code for breaking up a URL:
+
+``` php
+if (!is_empty_string($url)) {
+    list($scheme, $address, $base) = $this->yellow->lookup->getUrlInformation($staticUrl);
+    echo "Found scheme:$scheme address:$address base:$base\n";
+}
+```
+
+### Yellow toolbox
+
+The class `YellowToolbox` gives access to toolbox with helper functions. The following methods are available:
+
+`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `modifyFile` `readFile` `renameDirectory` `renameFile`
+
+`toolbox->getCookie($key): string`  
+Return browser cookie from from current HTTP request  
+
+`toolbox->getServer($key): string`  
+Return server argument from current HTTP request
+
+`toolbox->getLocationArguments(): string`  
+Return location arguments from current HTTP request
+
+`toolbox->getDirectoryEntries($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true): array`  
+Return files and directories
+
+`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0): array`  
+Return files and directories recursively
+
+`toolbox->readFile($fileName, $sizeMax = 0): string`  
+Read file, empty string if not found  
+
+`toolbox->createFile($fileName, $fileData, $mkdir = false): bool`  
+Create file  
+
+`toolbox->appendFile($fileName, $fileData, $mkdir = false): bool`  
+Append file  
+
+`toolbox->copyFile($fileNameSource, $fileNameDestination, $mkdir = false): bool`  
+Copy file  
+
+`toolbox->renameFile($fileNameSource, $fileNameDestination, $mkdir = false): bool`  
+Rename file  
+
+`toolbox->renameDirectory($pathSource, $pathDestination, $mkdir = false): bool`  
+Rename directory  
+
+`toolbox->deleteFile($fileName, $pathTrash = ""): bool`  
+Delete file  
+
+`toolbox->deleteDirectory($path, $pathTrash = ""): bool`  
+Delete directory  
+
+`toolbox->modifyFile($fileName, $modified): bool`  
+Set file/directory modification date, Unix time  
+
+`toolbox->getFileModified($fileName): int`  
+Return file/directory modification date, Unix time  
+
+`toolbox->getFileType($fileName): string`  
+Return file type
+
+`toolbox->getTextLines($text): array`  
+Return lines from text, including newline  
+
+`toolbox->getTextList($text, $separator, $size): array`  
+Return array of specific size from text  
+
+`toolbox->getTextArguments($text, $optional = "-", $sizeMin = 9): array`  
+Return array of variable size from text, space separated  
+
+`toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
+Create text description, with or without HTML
+
+#### Yellow toolbox examples
+
+Code for reading text lines from file:
+
+``` php
+$fileName = $this->yellow->system->get("coreExtensionDirectory").$this->yellow->system->get("coreSystemFile");
+$fileData = $this->yellow->toolbox->readFile($fileName);
+foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
+    echo $line;
+}
+```
+
+Code for showing files in a folder:
+
+``` php
+$path = $this->yellow->system->get("coreExtensionDirectory");
+foreach ($this->yellow->toolbox->getDirectoryEntries($path, "/.*/", true, false) as $entry) {
+    echo "Found file $entry\n";
+}
+```
+
+Code for changing text in multiple files:
+
+``` php
+$path = $this->yellow->system->get("coreContentDirectory");
+foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/", true, false) as $entry) {
+    $fileData = $fileDataNew = $this->yellow->toolbox->readFile($entry);
+    $fileDataNew = str_replace("I drink a lot of water", "I drink a lot of coffee", $fileDataNew);
+    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($entry, $fileDataNew)) {
+        $this->yellow->log("error", "Can't write file '$entry'!");
+    }
+}
+```
+
 ### Yellow page
 
-Yellow page gives access to current page. The following methods are available:
+The class `YellowPage` gives access to a page and its [page settings](how-to-change-the-system#page-settings). The following methods are available:
 
-`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `status`
+`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
+
+`page->set($key, $value): void`  
+Set page setting
 
 `page->get($key): string`  
-Return [page setting](how-to-change-the-system#page-settings) 
+Return page setting 
 
 `page->getHtml($key): string`  
-Return [page setting](how-to-change-the-system#page-settings), HTML encoded  
+Return page setting, HTML encoded  
 
 `page->getDate($key, $format = ""): string`  
-Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings)  
+Return page setting as [language specific date](how-to-change-the-system#language-settings)  
 
 `page->getDateHtml($key, $format = ""): string`  
-Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings), HTML encoded  
+Return page setting as [language specific date](how-to-change-the-system#language-settings), HTML encoded  
 
 `page->getDateRelative($key, $format = "", $daysLimit = 30): string`  
-Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings), relative to today
+Return page setting as [language specific date](how-to-change-the-system#language-settings), relative to today
 
 `page->getDateRelativeHtml($key, $format = "", $daysLimit = 30): string`  
-Return [page setting](how-to-change-the-system#page-settings) as [language specific date](how-to-change-the-system#language-settings), relative to today, HTML encoded
+Return page setting as [language specific date](how-to-change-the-system#language-settings), relative to today, HTML encoded
 
 `page->getDateFormatted($key, $format): string`  
-Return [page setting](how-to-change-the-system#page-settings) as [date](https://www.php.net/manual/en/function.date.php)  
+Return page setting as [date](https://www.php.net/manual/en/function.date.php)  
 
 `page->getDateFormattedHtml($key, $format): string`  
-Return [page setting](how-to-change-the-system#page-settings) as [date](https://www.php.net/manual/en/function.date.php), HTML encoded  
+Return page setting as [date](https://www.php.net/manual/en/function.date.php), HTML encoded  
 
 `page->getContent($rawFormat = false): string`  
 Return page content, HTML encoded or raw format
@@ -692,7 +919,7 @@ Check if page is cacheable
 Check if page with error
 
 `page->isExisting($key): bool`  
-Check if [page setting](how-to-change-the-system#page-settings) exists  
+Check if page setting exists  
 
 `page->isRequest($key): bool`  
 Check if request argument exists
@@ -748,7 +975,7 @@ Layout file for showing page content and modification date:
 
 ### Yellow page collection
 
-Yellow page collection gives access to multiple pages. The following methods are available:
+The class `YellowPageCollection` gives access to multiple pages. The following methods are available:
 
 `append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
 
@@ -759,13 +986,13 @@ Append to end of page collection
 Prepend to start of page collection
 
 `pages->filter($key, $value, $exactMatch = true): YellowPageCollection`  
-Filter page collection by [page setting](how-to-change-the-system#page-settings)
+Filter page collection by page setting
 
 `pages->match($regex = "/.*/", $filterByLocation = true): YellowPageCollection`  
 Filter page collection by location or file
 
 `pages->sort($key, $ascendingOrder = true): YellowPageCollection`  
-Sort page collection by [page setting](how-to-change-the-system#page-settings)
+Sort page collection by page setting
 
 `pages->similar($page, $ascendingOrder = false): YellowPageCollection`  
 Sort page collection by settings similarity
@@ -881,115 +1108,6 @@ Layout file for showing draft pages:
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
-```
-
-### Yellow toolbox
-
-Yellow toolbox gives access to toolbox with helper functions:
-
-`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `modifyFile` `normaliseArguments` `normaliseData` `normalisePath` `readFile` `renameDirectory` `renameFile`
-
-`toolbox->getCookie($key): string`  
-Return browser cookie from from current HTTP request  
-
-`toolbox->getServer($key): string`  
-Return server argument from current HTTP request
-
-`toolbox->getLocationArguments(): string`  
-Return location arguments from current HTTP request
-
-`toolbox->getDirectoryEntries($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true): array`  
-Return files and directories
-
-`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0): array`  
-Return files and directories recursively
-
-`toolbox->readFile($fileName, $sizeMax = 0): string`  
-Read file, empty string if not found  
-
-`toolbox->createFile($fileName, $fileData, $mkdir = false): bool`  
-Create file  
-
-`toolbox->appendFile($fileName, $fileData, $mkdir = false): bool`  
-Append file  
-
-`toolbox->copyFile($fileNameSource, $fileNameDestination, $mkdir = false): bool`  
-Copy file  
-
-`toolbox->renameFile($fileNameSource, $fileNameDestination, $mkdir = false): bool`  
-Rename file  
-
-`toolbox->renameDirectory($pathSource, $pathDestination, $mkdir = false): bool`  
-Rename directory  
-
-`toolbox->deleteFile($fileName, $pathTrash = ""): bool`  
-Delete file  
-
-`toolbox->deleteDirectory($path, $pathTrash = ""): bool`  
-Delete directory  
-
-`toolbox->modifyFile($fileName, $modified): bool`  
-Set file/directory modification date, Unix time  
-
-`toolbox->getFileModified($fileName): int`  
-Return file/directory modification date, Unix time  
-
-`toolbox->getFileType($fileName): string`  
-Return file type
-
-`toolbox->getTextLines($text): array`  
-Return lines from text, including newline  
-
-`toolbox->getTextList($text, $separator, $size): array`  
-Return array of specific size from text  
-
-`toolbox->getTextArguments($text, $optional = "-", $sizeMin = 9): array`  
-Return array of variable size from text, space separated  
-
-`toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
-Create text description, with or without HTML
-
-`toolbox->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
-Normalise location arguments
-
-`toolbox->normaliseData($text, $type = "html", $filterStrict = true): string`  
-Normalise elements and attributes in HTML/SVG data
-
-`toolbox->normalisePath($text): string`  
-Normalise relative path tokens
-
-#### Yellow toolbox examples
-
-Code for reading text lines from file:
-
-``` php
-$fileName = $this->yellow->system->get("coreExtensionDirectory").$this->yellow->system->get("coreSystemFile");
-$fileData = $this->yellow->toolbox->readFile($fileName);
-foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
-    echo $line;
-}
-```
-
-Code for showing files in a folder:
-
-``` php
-$path = $this->yellow->system->get("coreExtensionDirectory");
-foreach ($this->yellow->toolbox->getDirectoryEntries($path, "/.*/", true, false) as $entry) {
-    echo "Found file $entry\n";
-}
-```
-
-Code for changing text in multiple files:
-
-``` php
-$path = $this->yellow->system->get("coreContentDirectory");
-foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/", true, false) as $entry) {
-    $fileData = $fileDataNew = $this->yellow->toolbox->readFile($entry);
-    $fileDataNew = str_replace("I drink a lot of water", "I drink a lot of coffee", $fileDataNew);
-    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($entry, $fileDataNew)) {
-        $this->yellow->log("error", "Can't write file '$entry'!");
-    }
-}
 ```
 
 ### Yellow string
@@ -1369,7 +1487,7 @@ class YellowExample {
 
 ## Relevant information
 
-* [How to use the command line](https://github.com/annaesvensson/yellow-command)
+* [How to edit a website on your computer](https://github.com/annaesvensson/yellow-core)
 * [How to make an extension](https://github.com/annaesvensson/yellow-publish)
 * [How to make a translation](https://github.com/annaesvensson/yellow-language)
 

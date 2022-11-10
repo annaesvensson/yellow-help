@@ -51,25 +51,20 @@ Du kannst eine statische Webseite in der Befehlszeile erstellen. Der Static-Site
 Mit Hilfe von `$this->yellow` kannst du auf die Webseite zugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der gesamten API findet man in der Datei `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌───────────────┐                    ┌───────────────┐
-│ Webserver     │                    │ Befehlszeile  │
-└───────────────┘                    └───────────────┘
-        │                                    │
-        ▼                                    ▼
-┌────────────────────────────────────────────────────┐
-│ Core                                               │
-│                                                    │
-│ $this->yellow             $this->yellow->user      │
-│ $this->yellow->content    $this->yellow->extension │
-│ $this->yellow->media      $this->yellow->page      │
-│ $this->yellow->system     $this->yellow->lookup    │
-│ $this->yellow->language   $this->yellow->toolbox   │
-└────────────────────────────────────────────────────┘
-                          │
-                          ▼
-┌────────────────────────────────────────────────────┐
-│ Dateisystem                                        │
-└────────────────────────────────────────────────────┘
+┌───────────────┐   ┌───────────────┐   ┌───────────────┐
+│ Webserver     │   │ Befehlszeile  │   │ Dateisystem   │
+└───────────────┘   └───────────────┘   └───────────────┘
+        ▲                   ▲                  ▲
+        │                   │                  │
+        ▼                   ▼                  ▼
+┌────────────────────────────────────────────────────────────────────────────┐
+│ Core                                                                       │
+│                                                                            │
+│ $this->yellow                                                              │
+│ $this->yellow->content   $this->yellow->language    $this->yellow->lookup  │
+│ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
+│ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
+└────────────────────────────────────────────────────────────────────────────┘
 ```
 
 Die folgenden Objekte sind verfügbar:
@@ -81,12 +76,13 @@ Die folgenden Objekte sind verfügbar:
 `$this->yellow->language` = [Zugang zu Spracheinstellungen](#yellow-language)  
 `$this->yellow->user` = [Zugang zu Benutzereinstellungen](#yellow-user)  
 `$this->yellow->extension` = [Zugang zu Erweiterungen](#yellow-extension)  
-`$this->yellow->page` = [Zugang zur aktuellen Seite](#yellow-page)  
+`$this->yellow->lookup` = [Zugang zu Nachschlagen und Normalisierung](#yellow-lookup)  
 `$this->yellow->toolbox` = [Zugang zur Werkzeugkiste mit Hilfsfunktionen](#yellow-toolbox)  
+`$this->yellow->page` = [Zugang zur aktuellen Seite](#yellow-page)  
 
 ### Yellow
 
-Yellow gibt Zugang zur API. Die folgenden Methoden sind verfügbar:
+Die Klasse `Yellow` gibt Zugang zur API. Die folgenden Methoden sind verfügbar:
 
 `command` `getLayoutArguments` `layout` `load` `log` `request`
 
@@ -94,16 +90,16 @@ Yellow gibt Zugang zur API. Die folgenden Methoden sind verfügbar:
 Verarbeite die Initialisierung
 
 `yellow->request(): int`  
-Verarbeite die Anfrage
+Verarbeite eine Anfrage vom Webserver
 
 `yellow->command($line = ""): int`  
-Verarbeite den Befehl
+Verarbeite einen Befehl von der Befehlszeile
 
 `yellow->log($action, $message): void`  
-Verarbeite das Logging
+Schreibe Informationen in die Logdatei
 
 `yellow->layout($name, $arguments = null): void`  
-Beziehe das Layout ein
+Binde ein Layout ein
 
 `yellow->getLayoutArguments($sizeMin = 9): array`  
 Hole die Layout-Argumente
@@ -148,7 +144,7 @@ Layoutdatei die ein Argument empfängt:
 
 ### Yellow-Content
 
-Yellow-Content gibt Zugang zu Inhaltsdateien. Die folgenden Methoden sind verfügbar:
+Die Klasse `YellowContent` gibt Zugang zu Inhaltsdateien. Die folgenden Methoden sind verfügbar:
 
 `clean` `find` `index` `multi` `path` `top`
 
@@ -231,7 +227,7 @@ Layoutdatei um die Hauptseiten der Navigation anzuzeigen:
 
 ### Yellow-Media
 
-Yellow-Media gibt Zugang zu Mediendateien. Die folgenden Methoden sind verfügbar:
+Die Klasse `YellowMedia` gibt Zugang zu Mediendateien. Die folgenden Methoden sind verfügbar:
 
 `clean` `index` `find`
 
@@ -305,30 +301,39 @@ Layoutdatei um Mediendateien eines bestimmten Typen anzuzeigen:
 
 ### Yellow-System
 
-Yellow-System gibt Zugang zu Systemeinstellungen. Die folgenden Methoden sind verfügbar:
+Die Klasse `YellowSystem` gibt Zugang zu [Systemeinstellungen](how-to-change-the-system#systemeinstellungen). Die folgenden Methoden sind verfügbar:
 
-`get` `getAvailable` `getDifferent` `getHtml` `getModified` `getSettings` `isExisting`
+`get` `getAvailable` `getDifferent` `getHtml` `getModified` `getSettings` `isExisting` `save` `set` `setDefault`
+
+`system->save($fileName, $settings): bool`  
+Speichere Systemeinstellungen in Datei
+
+`system->setDefault($key, $value): void`  
+Setze Standard-Systemeinstellung
+
+`system->set($key, $value): void`  
+Setze eine Systemeinstellung
 
 `system->get($key): string`  
-Hole eine [Systemeinstellung](how-to-change-the-system#systemeinstellungen)
+Hole eine Systemeinstellung
 
 `system->getHtml($key): string`  
-Hole eine [Systemeinstellung](how-to-change-the-system#systemeinstellungen), HTML-kodiert
+Hole eine Systemeinstellung, HTML-kodiert
 
 `system->getDifferent($key): string`  
-Hole einen anderen Wert für eine [Systemeinstellung](how-to-change-the-system#systemeinstellungen)
+Hole einen anderen Wert für eine Systemeinstellung
 
 `system->getAvailable($key): array`  
-Hole die vorhandenen Werte einer [Systemeinstellung](how-to-change-the-system#systemeinstellungen)
+Hole die vorhandenen Werte einer Systemeinstellung
 
 `system->getSettings($filterStart = "", $filterEnd = ""): array`  
-Hole [Systemeinstellungen](how-to-change-the-system#systemeinstellungen)
+Hole Systemeinstellungen
 
 `system->getModified($httpFormat = false): int|string`  
-Hole das Änderungsdatum von [Systemeinstellungen](how-to-change-the-system#systemeinstellungen), Unix-Zeit oder HTTP-Format
+Hole das Änderungsdatum von Systemeinstellungen, Unix-Zeit oder HTTP-Format
 
 `system->isExisting($key): bool`  
-Überprüfe ob die [Systemeinstellung](how-to-change-the-system#systemeinstellungen) existiert
+Überprüfe ob die Systemeinstellung existiert
 
 #### Yellow-System-Beispiele
 
@@ -383,24 +388,30 @@ Layoutdatei um die Core-Einstellungen anzuzeigen:
 
 ### Yellow-Language
 
-Yellow-Language gibt Zugang zu Spracheinstellungen. Die folgenden Methoden sind verfügbar:
+Die Klasse `YellowLanguage` gibt Zugang zu [Spracheinstellungen](how-to-change-the-system#spracheinstellungen). Die folgenden Methoden sind verfügbar:
 
-`getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText`
+`getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText` `setDefaults` `setText`
+
+`language->setDefaults($lines): void`  
+Setze Standard-Spracheinstellungen
+
+`language->setText($key, $value, $language): void`  
+Setze eine Spracheinstellung
 
 `language->getText($key, $language = ""): string`  
-Hole eine [Spracheinstellung](how-to-change-the-system#spracheinstellungen)
+Hole eine Spracheinstellung
 
 `language->getTextHtml($key, $language = ""): string`  
-Hole eine [Spracheinstellung](how-to-change-the-system#spracheinstellungen), HTML encoded
+Hole eine Spracheinstellung, HTML encoded
 
 `language->getSettings($filterStart = "", $filterEnd = "", $language = ""): array`  
-Hole [Spracheinstellungen](how-to-change-the-system#spracheinstellungen)
+Hole Spracheinstellungen
 
 `language->getModified($httpFormat = false): int|string`  
-Hole das Änderungsdatum von [Spracheinstellungen](how-to-change-the-system#spracheinstellungen), Unix-Zeit oder HTTP-Format
+Hole das Änderungsdatum von Spracheinstellungen, Unix-Zeit oder HTTP-Format
 
 `language->isText($key, $language = ""): bool`  
-Überprüfe ob die [Spracheinstellung](how-to-change-the-system#spracheinstellungen) existiert
+Überprüfe ob die Spracheinstellung existiert
 
 `language->isExisting($language): bool`  
 Überprüfe ob die Sprache existiert
@@ -456,24 +467,33 @@ Layoutdatei um Sprachen und Übersetzer anzuzeigen:
 
 ### Yellow-User
 
-Yellow-User gibt Zugang zu Benutzereinstellungen. Die folgenden Methoden sind verfügbar:
+Die Klasse `YellowUser` gibt Zugang zu [Benutzereinstellungen](how-to-change-the-system#benutzereinstellungen). Die folgenden Methoden sind verfügbar:
 
-`getModified` `getSettings` `getUser` `getUserHtml` `isExisting` `isUser`
+`getModified` `getSettings` `getUser` `getUserHtml` `isExisting` `isUser` `remove` `save` `setUser`
+
+`user->save($fileName, $email, $settings): bool`  
+Speichere Benutzereinstellungen in Datei
+
+`user->remove($fileName, $email): bool`  
+Entferne Benutzereinstellungen von Datei
+
+`user->setUser($key, $value, $email): void`  
+Setze eine Benutzereinstellung
 
 `user->getUser($key, $email = ""): string`  
-Hole eine [Benutzereinstellung](how-to-change-the-system#benutzereinstellungen)
+Hole eine Benutzereinstellung
 
 `user->getUserHtml($key, $email = ""): string`  
-Hole eine [Benutzereinstellung](how-to-change-the-system#benutzereinstellungen), HTML-kodiert
+Hole eine Benutzereinstellung, HTML-kodiert
 
 `user->getSettings($email = ""): array`  
-Hole [Benutzereinstellungen](how-to-change-the-system#benutzereinstellungen)
+Hole Benutzereinstellungen
 
 `user->getModified($httpFormat = false): int|string`  
-Hole das Änderungsdatum von [Benutzereinstellungen](how-to-change-the-system#benutzereinstellungen), Unix-Zeit oder HTTP-Format
+Hole das Änderungsdatum von Benutzereinstellungen, Unix-Zeit oder HTTP-Format
 
 `user->isUser($key, $email = ""): bool`  
-Überprüfe ob die [Benutzereinstellung](how-to-change-the-system#benutzereinstellungen) existiert
+Überprüfe ob die Benutzereinstellung existiert
 
 `user->isExisting($email): bool`  
 Überprüfe ob der Benutzer existiert
@@ -530,7 +550,7 @@ Layoutdatei um Benutzer und ihren Status anzuzeigen:
 
 ### Yellow-Extension
 
-Yellow-Extension gibt Zugang zu Erweiterungen. Die folgenden Methoden sind verfügbar:
+Die Klasse `YellowExtension` gibt Zugang zu Erweiterungen. Die folgenden Methoden sind verfügbar:
 
 `get` `getModified` `isExisting`
 
@@ -586,35 +606,242 @@ if ($this->yellow->extension->isExisting("image")) {
 }
 ```
 
+### Yellow-Lookup
+
+Die Klasse `YellowLookup` gibt Zugang zu Nachschlagen und Normalisierung. Die folgenden Methoden sind verfügbar:
+
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+
+`lookup->findContentLocationFromFile($fileName): string`  
+Hole Inhaltsort aus dem Dateipfad
+
+`lookup->findFileFromContentLocation($location, $directory = false): string`  
+Hole Dateipfad aus dem Inhaltsort
+
+`lookup->findMediaLocationFromFile($fileName): string`  
+Hole Medienort aus dem Dateipfad
+
+`lookup->findFileFromMediaLocation($location): string`  
+Hole Dateipfad aus dem Medienort
+
+`lookup->findMediaDirectory($key): string`  
+Hole Medienpfad für eine Systemeinstellung
+
+`lookup->normaliseName($text, $removePrefix = false, $removeExtension = false, $filterStrict = false): string`  
+Normalisiere einen Namen
+
+`toolbox->normaliseData($text, $type = "html", $filterStrict = true): string`  
+Normalisiere Elemente und Attribute in HTML/SVG-Daten
+
+`lookup->normaliseArray($input): array`  
+Normalisiere ein Array, mache Schlüssel mit gleicher Groß-/Kleinschreibung
+
+`toolbox->normalisePath($text): string`  
+Normalisiere relative Pfadanteile
+
+`lookup->normaliseLocation($location, $pageLocation, $filterStrict = true): string`  
+Normalisiere einen Ort, mache absoluten Ort
+
+`toolbox->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
+Normalisiere Ortargumente
+
+`lookup->normaliseUrl($scheme, $address, $base, $location, $filterStrict = true): string`  
+Normalisiere eine URL, mache absolute URL
+
+`lookup->getUrlInformation($url): string`  
+Hole URL-Informationen
+
+`lookup->isFileLocation($location): bool`  
+Überprüfe ob der Ort eine Datei oder ein Verzeichnis angibt
+
+`lookup->isValidFile($fileName): bool`  
+Überprüfe ob die Datei gültig ist
+
+`lookup->isContentFile($fileName): bool`  
+Überprüfe ob Inhaltsdatei
+
+`lookup->isMediaFile($fileName): bool`  
+Überprüfe ob Mediendatei
+
+`lookup->isSystemFile($fileName): bool`  
+Überprüfe ob Systemdatei
+
+#### Yellow-Lookup-Beispiele
+
+Layoutdatei um Bildpfade anzuzeigen:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<p>
+<?php $pathInstall = $this->system->get("coreServerInstallDirectory") ?>
+<?php $pathImages = $this->yellow->lookup->findMediaDirectory("coreImageLocation") ?>
+<?php $pathThumbs = $this->yellow->lookup->findMediaDirectory("coreThumbnailLocation") ?>
+<?php echo "Image files: ".htmlspecialchars($pathInstall.$pathImages)."<br />" ?>
+<?php echo "Image thumbnails: ".htmlspecialchars($pathInstall.$pathThumbs)."<br />" ?>
+</p>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Layoutdatei um den Seitentyp anzuzeigen:
+
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<?php $fileLocation = $this->yellow->lookup->isFileLocation($this->yellow->page->location) ?>
+<p>Page is <?php echo htmlspecialchars($fileLocation? "file" : "directory") ?>.</p>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
+Code um eine URL in Bestandteile zu zerlegen:
+
+``` php
+if (!is_empty_string($url)) {
+    list($scheme, $address, $base) = $this->yellow->lookup->getUrlInformation($staticUrl);
+    echo "Found scheme:$scheme address:$address base:$base\n";
+}
+```
+
+### Yellow-Toolbox
+
+Die Klasse `YellowToolbox` gibt Zugang zur Werkzeugkiste mit Hilfsfunktionen. Die folgenden Methoden sind verfügbar:
+
+`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `modifyFile` `readFile` `renameDirectory` `renameFile`
+
+`toolbox->getCookie($key): string`   
+Hole das Browsercookie der aktuellen HTTP-Anfrage
+
+`toolbox->getServer($key): string`   
+Hole das Serverargument der aktuellen HTTP-Anfrage
+
+`toolbox->getLocationArguments(): string`  
+Hole die Ortargumente der aktuellen HTTP-Anfrage
+
+`toolbox->getDirectoryEntries($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true): array`  
+Hole Dateien und Verzeichnisse
+
+`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0): array`  
+Hole Dateien und Verzeichnisse rekursiv
+
+`toolbox->readFile($fileName, $sizeMax = 0): string`  
+Lese eine Datei, leerer String falls nicht vorhanden
+
+`toolbox->createFile($fileName, $fileData, $mkdir = false): bool`  
+Erstelle eine Datei
+
+`toolbox->appendFile($fileName, $fileData, $mkdir = false): bool`  
+Hänge an eine Datei an
+
+`toolbox->copyFile($fileNameSource, $fileNameDestination, $mkdir = false): bool`  
+Kopiere eine Datei  
+
+`toolbox->renameFile($fileNameSource, $fileNameDestination, $mkdir = false): bool`  
+Benenne eine Datei um
+
+`toolbox->renameDirectory($pathSource, $pathDestination, $mkdir = false): bool`  
+Benenne ein Verzeichnis um  
+
+`toolbox->deleteFile($fileName, $pathTrash = ""): bool`  
+Lösche eine Datei
+
+`toolbox->deleteDirectory($path, $pathTrash = ""): bool`  
+Lösche ein Verzeichnis  
+
+`toolbox->modifyFile($fileName, $modified): bool`  
+Setze das Änderungsdatum von Datei/Verzeichnis, Unix-Zeit
+
+`toolbox->getFileModified($fileName): int`  
+Hole das Änderungsdatum von Datei/Verzeichnis, Unix-Zeit
+
+`toolbox->getFileType($fileName): string`  
+Hole den Typ der Datei
+
+`toolbox->getTextLines($text): array`  
+Hole die Zeilen eines Texts, einschließlich Zeilenumbruch  
+
+`toolbox->getTextList($text, $separator, $size): array`  
+Hole ein Array mit bestimmter Grösse aus dem Text  
+
+`toolbox->getTextArguments($text, $optional = "-", $sizeMin = 9): array`  
+Hole ein Array mit variabler Grösse aus dem Text, durch Leerzeichen getrennt  
+
+`toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
+Erstelle eine Textbeschreibung, mit oder ohne HTML
+
+#### Yellow-Toolbox-Beispiele
+
+Code um Textzeilen von einer Datei zu lesen:
+
+``` php
+$fileName = $this->yellow->system->get("coreExtensionDirectory").$this->yellow->system->get("coreSystemFile");
+$fileData = $this->yellow->toolbox->readFile($fileName);
+foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
+    echo $line;
+}
+```
+
+Code um Dateien in einem Verzeichnis anzuzeigen:
+
+``` php
+$path = $this->yellow->system->get("coreExtensionDirectory");
+foreach ($this->yellow->toolbox->getDirectoryEntries($path, "/.*/", true, false) as $entry) {
+    echo "Found file $entry\n";
+}
+```
+
+Code um Text in mehreren Dateien zu ändern:
+
+``` php
+$path = $this->yellow->system->get("coreContentDirectory");
+foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/", true, false) as $entry) {
+    $fileData = $fileDataNew = $this->yellow->toolbox->readFile($entry);
+    $fileDataNew = str_replace("I drink a lot of water", "I drink a lot of coffee", $fileDataNew);
+    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($entry, $fileDataNew)) {
+        $this->yellow->log("error", "Can't write file '$entry'!");
+    }
+}
+```
+
 ### Yellow-Page
 
-Yellow-Page gibt Zugang zur aktuellen Seite. Die folgenden Methoden sind verfügbar:
+Die Klasse `YellowPage` gibt Zugang zur einer Seite und ihren [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen). Die folgenden Methoden sind verfügbar:
 
-`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `status`
+`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
+
+`page->set($key, $value): void`  
+Setze eine Seiteneinstellung
 
 `page->get($key): string`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen)
+Hole eine Seiteneinstellung
 
 `page->getHtml($key): string`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen), HTML-kodiert  
+Hole eine Seiteneinstellung, HTML-kodiert  
 
 `page->getDate($key, $format = ""): string`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen)
+Hole eine Seiteneinstellung als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen)
 
 `page->getDateHtml($key, $format = ""): string`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), HTML-kodiert
+Hole eine Seiteneinstellung als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), HTML-kodiert
 
 `page->getDateRelative($key, $format = "", $daysLimit = 30): string`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), relativ zu heute
+Hole eine Seiteneinstellung als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), relativ zu heute
 
 `page->getDateRelativeHtml($key, $format = "", $daysLimit = 30): string`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), relativ zu heute, HTML-kodiert
+Hole eine Seiteneinstellung als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), relativ zu heute, HTML-kodiert
 
 `page->getDateFormatted($key, $format): string`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [Datum](https://www.php.net/manual/de/function.date.php)
+Hole eine Seiteneinstellung als [Datum](https://www.php.net/manual/de/function.date.php)
 
 `page->getDateFormattedHtml($key, $format): string`  
-Hole eine [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) als [Datum](https://www.php.net/manual/de/function.date.php), HTML-kodiert
+Hole eine Seiteneinstellung als [Datum](https://www.php.net/manual/de/function.date.php), HTML-kodiert
 
 `page->getContent($rawFormat = false): string`  
 Hole den Seiteninhalt, HTML-kodiert oder Rohformat
@@ -692,7 +919,7 @@ Antworte mit Fehlerseite
 Überprüfe ob die Seite einen Fehler hat
 
 `page->isExisting($key): bool`  
-Überprüfe ob die [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen) existiert  
+Überprüfe ob die Seiteneinstellung existiert  
 
 `page->isRequest($key): bool`  
 Überprüfe ob das Anfrage-Argument existiert
@@ -748,7 +975,7 @@ Layoutdatei um den Seiteninhalt und das Änderungsdatum anzuzeigen:
 
 ### Yellow-Page-Collection
 
-Yellow-Page-Collection gibt Zugang zu mehreren Seiten. Die folgenden Methoden sind verfügbar:
+Die Klasse `YellowPageCollection` gibt Zugang zu mehreren Seiten. Die folgenden Methoden sind verfügbar:
 
 `append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
 
@@ -759,13 +986,13 @@ Hänge an das Ende der Seitenkollektion
 Stelle an den Anfang der Seitenkollektion
 
 `pages->filter($key, $value, $exactMatch = true): YellowPageCollection`  
-Filtere eine Seitenkollektion nach [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen)
+Filtere eine Seitenkollektion nach Seiteneinstellung
 
 `pages->match($regex = "/.*/", $filterByLocation = true): YellowPageCollection`  
 Filtere eine Seitenkollektion nach Ort oder Datei
 
 `pages->sort($key, $ascendingOrder = true): YellowPageCollection`  
-Sortiere eine Seitenkollektion nach [Seiteneinstellung](how-to-change-the-system#seiteneinstellungen)
+Sortiere eine Seitenkollektion nach Seiteneinstellung
 
 `pages->similar($page, $ascendingOrder = false): YellowPageCollection`  
 Sortiere eine Seitenkollektion nach Einstellungsähnlichkeit
@@ -881,115 +1108,6 @@ Layoutdatei um Entwurfseiten anzuzeigen:
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
-```
-
-### Yellow-Toolbox
-
-Yellow-Toolbox gibt Zugang zur Werkzeugkiste mit Hilfsfunktionen:
-
-`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `modifyFile` `normaliseArguments` `normaliseData` `normalisePath` `readFile` `renameDirectory` `renameFile`
-
-`toolbox->getCookie($key): string`   
-Hole das Browsercookie der aktuellen HTTP-Anfrage
-
-`toolbox->getServer($key): string`   
-Hole das Serverargument der aktuellen HTTP-Anfrage
-
-`toolbox->getLocationArguments(): string`  
-Hole die Ortargumente der aktuellen HTTP-Anfrage
-
-`toolbox->getDirectoryEntries($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true): array`  
-Hole Dateien und Verzeichnisse
-
-`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0): array`  
-Hole Dateien und Verzeichnisse rekursiv
-
-`toolbox->readFile($fileName, $sizeMax = 0): string`  
-Lese eine Datei, leerer String falls nicht vorhanden
-
-`toolbox->createFile($fileName, $fileData, $mkdir = false): bool`  
-Erstelle eine Datei
-
-`toolbox->appendFile($fileName, $fileData, $mkdir = false): bool`  
-Hänge an eine Datei an
-
-`toolbox->copyFile($fileNameSource, $fileNameDestination, $mkdir = false): bool`  
-Kopiere eine Datei  
-
-`toolbox->renameFile($fileNameSource, $fileNameDestination, $mkdir = false): bool`  
-Benenne eine Datei um
-
-`toolbox->renameDirectory($pathSource, $pathDestination, $mkdir = false): bool`  
-Benenne ein Verzeichnis um  
-
-`toolbox->deleteFile($fileName, $pathTrash = ""): bool`  
-Lösche eine Datei
-
-`toolbox->deleteDirectory($path, $pathTrash = ""): bool`  
-Lösche ein Verzeichnis  
-
-`toolbox->modifyFile($fileName, $modified): bool`  
-Setze das Änderungsdatum von Datei/Verzeichnis, Unix-Zeit
-
-`toolbox->getFileModified($fileName): int`  
-Hole das Änderungsdatum von Datei/Verzeichnis, Unix-Zeit
-
-`toolbox->getFileType($fileName): string`  
-Hole den Typ der Datei
-
-`toolbox->getTextLines($text): array`  
-Hole die Zeilen eines Texts, einschließlich Zeilenumbruch  
-
-`toolbox->getTextList($text, $separator, $size): array`  
-Hole ein Array mit bestimmter Grösse aus dem Text  
-
-`toolbox->getTextArguments($text, $optional = "-", $sizeMin = 9): array`  
-Hole ein Array mit variabler Grösse aus dem Text, durch Leerzeichen getrennt  
-
-`toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
-Erstelle eine Textbeschreibung, mit oder ohne HTML
-
-`toolbox->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
-Normalisiere Ortargumente
-
-`toolbox->normaliseData($text, $type = "html", $filterStrict = true): string`  
-Normalisiere Elemente und Attribute in HTML/SVG-Daten
-
-`toolbox->normalisePath($text): string`  
-Normalisiere relative Pfadanteile
-
-#### Yellow-Toolbox-Beispiele
-
-Code um Textzeilen von einer Datei zu lesen:
-
-``` php
-$fileName = $this->yellow->system->get("coreExtensionDirectory").$this->yellow->system->get("coreSystemFile");
-$fileData = $this->yellow->toolbox->readFile($fileName);
-foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
-    echo $line;
-}
-```
-
-Code um Dateien in einem Verzeichnis anzuzeigen:
-
-``` php
-$path = $this->yellow->system->get("coreExtensionDirectory");
-foreach ($this->yellow->toolbox->getDirectoryEntries($path, "/.*/", true, false) as $entry) {
-    echo "Found file $entry\n";
-}
-```
-
-Code um Text in mehreren Dateien zu ändern:
-
-``` php
-$path = $this->yellow->system->get("coreContentDirectory");
-foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/", true, false) as $entry) {
-    $fileData = $fileDataNew = $this->yellow->toolbox->readFile($entry);
-    $fileDataNew = str_replace("I drink a lot of water", "I drink a lot of coffee", $fileDataNew);
-    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($entry, $fileDataNew)) {
-        $this->yellow->log("error", "Can't write file '$entry'!");
-    }
-}
 ```
 
 ### Yellow-String
@@ -1369,7 +1487,7 @@ class YellowExample {
 
 ## Verwandte Informationen
 
-* [Wie man die Befehlszeile benutzt](https://github.com/annaesvensson/yellow-command/tree/main/README-de.md)
+* [Wie man eine Webseite auf dem Computer bearbeitet](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md)
 * [Wie man eine Erweiterung erstellt](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md)
 * [Wie man eine Übersetzung erstellt](https://github.com/annaesvensson/yellow-language/tree/main/README-de.md)
 
