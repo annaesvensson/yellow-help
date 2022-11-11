@@ -59,6 +59,6 @@ Hier ist ein Beispiel-Layout um Seiteninhalt und zusätzliche Blogseiten anzuzei
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Themen können ihre eigenen Layoutdateien haben, um das vorhandene Layout zu überschreiben. Zum Beispiel wird die Datei `system/layouts/default.html` bei allen Themen verwendet, die Datei `system/layouts/stockholm-default.html` jedoch nur beim `Theme: stockholm`.
+Themes können ihre eigenen Layoutdateien haben, um das vorhandene Layout zu überschreiben. Zum Beispiel wird die Datei `system/layouts/default.html` bei allen Themes verwendet, die Datei `system/layouts/stockholm-default.html` jedoch nur beim `Theme: stockholm`.
 
 Hast du Fragen? [Hilfe finden](.).

@@ -13,7 +13,7 @@ Alle Systemdateien befinden sich im `system`-Verzeichnis. Hier passt man seine W
     └── trash
 ```
 
-Das `system/extensions`-Verzeichnis enthält installierte Erweiterungen und Konfigurationsdateien. Man kann das Aussehen seiner Webseite im `system/layouts`-Verzeichnis und `system/themes`-Verzeichnis anpassen. Man kann Layouts und Themen so ändern wie man will, Kenntnisse in HTML, CSS und JavaScript sind erforderlich. Das `system/trash`-Verzeichnis enthält gelöschte Dateien.
+Das `system/extensions`-Verzeichnis enthält installierte Erweiterungen und Konfigurationsdateien. Man kann das Aussehen seiner Webseite im `system/layouts`-Verzeichnis und `system/themes`-Verzeichnis anpassen. Man kann Layouts und Themes so ändern wie man will, Kenntnisse in HTML, CSS und JavaScript sind erforderlich. Das `system/trash`-Verzeichnis enthält gelöschte Dateien.
 
 ## Systemeinstellungen
 
@@ -35,7 +35,7 @@ Im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de
 `Email` = E-Mail des Webmasters  
 `Language` = Standard-Sprache, z.B. `de`  
 `Layout` = Standard-Layout  
-`Theme` = Standard-Thema  
+`Theme` = Standard-Theme  
 `Parser` = Standard-Inhaltsparser  
 `Status` = Standard-Seitenstatus, [unterstützte Statuswerte](#einstellungen-status)  
 
@@ -91,7 +91,7 @@ Die folgenden Einstellungen können ganz oben auf einer Seite vorgenommen werden
 `Language` = Sprache der Seite, z.B. `de`  
 `Layout` = Layout der Seite  
 `LayoutNew` = Layout um eine neue Seite zu erzeugen  
-`Theme` = Thema der Seite  
+`Theme` = Theme der Seite  
 `Parser` = Inhaltsparser der Seite  
 `Status` = Status der Seite, [unterstützte Statuswerte](#einstellungen-status)  
 `Redirect` = Umleitung zu einer neuen Seite oder URL  

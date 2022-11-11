@@ -21,7 +21,7 @@ Du kannst alles im Dateimanager auf deinem Computer ändern. Das `content`-Verze
 └── system                = Systemdateien
     ├── extensions        = installierte Erweiterungen und Konfigurationsdateien
     ├── layouts           = konfigurierbare Layoutdateien
-    ├── themes            = konfigurierbare Themendateien
+    ├── themes            = konfigurierbare Themedateien
     └── trash             = gelöschte Dateien
 ```
 

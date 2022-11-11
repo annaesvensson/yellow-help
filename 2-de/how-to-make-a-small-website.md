@@ -73,7 +73,7 @@ Status: shared
 [Erstellt mit Datenstrom Yellow](https://datenstrom.se/de/yellow/).
 ```
 
-## Funktionen, Sprachen und Themen hinzufügen
+## Funktionen, Sprachen und Themes hinzufügen
 
 Es gibt [Erweiterungen für deine Webseite](https://github.com/datenstrom/yellow-extensions/tree/main/README-de.md) und eine [API für Entwickler](api-for-developers).
 
