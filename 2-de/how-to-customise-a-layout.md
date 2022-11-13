@@ -5,7 +5,7 @@ Wie man ein Layout seiner Webseite anpasst.
 
 ## HTML anpassen
 
-Um den [HTML](https://www.w3schools.com/html/)-Code deiner Webseite anzupassen, ändere das Layout. Das Standardlayout wird in den [Systemeinstellungen](how-to-change-the-system#systemeinstellungen) festgelegt. Ein anderes Layout lässt sich in den [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen) ganz oben auf jeder Seite festlegen, zum Beispiel `Layout: default`.
+Um den [HTML](https://www.w3schools.com/html/)-Code deiner Webseite anzupassen, ändere das Layout. Das Standard-layout wird in den [Systemeinstellungen](how-to-change-the-system#systemeinstellungen) festgelegt. Ein anderes Layout lässt sich in den [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen) ganz oben auf jeder Seite festlegen, zum Beispiel `Layout: default`.
 
 Hier ist eine Beispiel-Datei `system/layouts/default.html`:
 
