@@ -16,7 +16,7 @@ If you want to edit the help in a [web browser](https://github.com/annaesvensson
 
 ## Acknowledgements
 
-This extension includes a [photo](https://unsplash.com/photos/azsk_6IMT3I) by Bruno Cervera. Thanks for the beautiful photo.
+This extension includes a [photo](https://unsplash.com/photos/azsk_6IMT3I) by Bruno Cervera. Thank you for the beautiful photo.
 
 ## Installation
 
