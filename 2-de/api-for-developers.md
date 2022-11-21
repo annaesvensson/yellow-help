@@ -34,29 +34,35 @@ Die folgenden Konfigurationsdateien und Logdateien sind verfügbar:
 
 ## Werkzeuge
 
-### Eingebauter Webeditor
+### Eingebaute Befehlszeile
 
-Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der eingebauten Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten, Mediendateien hochzuladen und Systemeinstellungen zu ändern. Es ist eine großartige Art Webseiten zu aktualisieren.
+Du kannst deine Webseite in der Befehlszeile kontrollieren. Das gibt dir die Möglichkeit Erweiterungen zu installieren,  Benutzerkonten zu erstellen und eine statische Webseite zu erstellen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php`, um die verfügbaren Befehle anzuzeigen. Die verfügbaren Befehle hängen von den installierten Erweiterungen ab. Gib ein `php yellow.php about`, um die installierten Erweiterungen und Versionsnummern anzuzeigen. [Weitere Informationen zur Befehlszeile](https://github.com/annaesvensson/yellow-command/tree/main/README-de.md).
 
 ### Eingebauter Webserver
 
-Du kannst den eingebauten Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler und Designer. Das erlaubt es dir kleine Webseiten auf deinem Computer zu erstellen und später auf deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL.
+Du kannst den eingebauten Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit Webseiten auf deinem Computer zu bearbeiten und sie später auf deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
 
-### Static-Site-Generator
+### Eingebauter Webeditor
 
-Du kannst eine statische Webseite in der Befehlszeile erstellen. Der Static-Site-Generator erstellt die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php build`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das erstellt eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und erstelle bei Bedarf eine neue.
+Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der eingebauten Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten, Mediendateien hochzuladen und Einstellungen zu ändern. Es ist eine großartige Art Webseiten zu aktualisieren. Um einen Bearbeitungslink auf deiner Webseite anzuzeigen, benutze eine `[edit]`-Abkürzung. [Weitere Informationen zum Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
 
 ## Objekte
 
-Mit Hilfe von `$this->yellow` kannst du auf die Webseite zugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der gesamten API findet man in der Datei `system/extensions/core.php`.
+Mit Hilfe von `$this->yellow` kannst du als Entwickler auf die Webseite zugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der API findet man in der Datei `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌───────────────┐   ┌───────────────┐   ┌───────────────┐
-│ Webserver     │   │ Befehlszeile  │   │ Dateisystem   │
-└───────────────┘   └───────────────┘   └───────────────┘
-        ▲                   ▲                  ▲
-        │                   │                  │
-        ▼                   ▼                  ▼
+┌───────────────┐
+│ Entwickler    │
+└───────────────┘
+        │                   
+        ├────────────────────┬───────────────────┐
+        │                    │                   │
+        ▼                    ▼                   ▼
+┌───────────────┐    ┌───────────────┐    ┌───────────────┐
+│ Dateisystem   │    │ Webserver     │    │ Befehlszeile  │
+└───────────────┘    └───────────────┘    └───────────────┘
+        │                    │                   │
+        ▼                    ▼                   ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ Core                                                                       │
 │                                                                            │

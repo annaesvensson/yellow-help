@@ -34,29 +34,35 @@ The following configuration files and log files are available:
 
 ## Tools
 
-### Built-in web editor
+### Built-in command line
 
-You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The built-in web editor allows you to edit content files, upload media files and change system settings. It is a great way to update your website.
+You can control your website at the command line. This allows you to install extensions, create user accounts and build a static website. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php` to show available commands. The available commands depend on extensions installed. Type `php yellow.php about` to show the installed extensions and version numbers. [Learn more about the command line](https://github.com/annaesvensson/yellow-command).
 
 ### Built-in web server
 
-You can start the built-in web server at the command line. The built-in web server is convenient for developers and designers. This allows you to make small web sites on your computer and upload them to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown.
+You can start the built-in web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to edit web pages on your computer and upload them to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the web server](https://github.com/annaesvensson/yellow-serve).
 
-### Static site generator
+### Built-in web editor
 
-You can build a static website at the command line. The static site generator builds the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php build`, you can optionally add a folder and a location. This will build a static website in the `public` folder. Upload the static website to your web server and build a new one when needed.
+You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The built-in web editor allows you to edit content files, upload media files and change settings. It is a great way to update your website. To show an edit link on your website use an `[edit]` shortcut. [Learn more about the web editor](https://github.com/annaesvensson/yellow-edit).
 
 ## Objects
 
-With the help of `$this->yellow` you can access the website. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the entire API can be found in file `system/extensions/core.php`.
+With the help of `$this->yellow` you can access the website as a developer. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the API can be found in file `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌───────────────┐   ┌───────────────┐   ┌───────────────┐
-│ Web server    │   │ Command line  │   │ File system   │
-└───────────────┘   └───────────────┘   └───────────────┘
-        ▲                   ▲                  ▲
-        │                   │                  │
-        ▼                   ▼                  ▼
+┌───────────────┐
+│ Developer     │
+└───────────────┘
+        │                   
+        ├────────────────────┬───────────────────┐
+        │                    │                   │
+        ▼                    ▼                   ▼
+┌───────────────┐    ┌───────────────┐    ┌───────────────┐
+│ File system   │    │ Web server    │    │ Command line  │
+└───────────────┘    └───────────────┘    └───────────────┘
+        │                    │                   │
+        ▼                    ▼                   ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ Core                                                                       │
 │                                                                            │

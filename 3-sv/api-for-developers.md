@@ -34,29 +34,35 @@ Följande konfigurationsfiler och loggfiler är tillgängliga:
 
 ## Verktyg
 
-### Inbyggd webbredigerare
+### Inbyggd kommandorad
 
-Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Inbyggda webbredigeraren låter dig redigera innehållsfiler, ladda upp mediefiler och ändra systeminställningar. Det är ett utmärkt sätt att uppdatera webbsidor.
+Du kan styra din webbplats på kommandoraden. Detta ger dig möjlighet att installera tilläg, skapa användarkonton och bygga en statisk webbplats. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php` för att visa tillgängliga kommandona. De tillgängliga kommandona beror på installerade tillägg. Skriv `php yellow.php about` för att visa installerade tilläggen och versionsnumren. [Läs mer om kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md).
 
 ### Inbyggd webbserver
 
-Du kan starta inbyggda webbservern på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare och formgivare. Detta gör att du kan skapa små webbsidor på din dator och ladda upp dem till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas.
+Du kan starta inbyggda webbservern på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att redigera webbsidor på din dator och ladda upp dem till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md).
 
-### Static-site-generator
+### Inbyggd webbredigerare
 
-Du kan bygga en statisk webbplats på kommandoraden. Den static-site-generator bygger hella webbsidan i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php build`, du kan valfritt ange en mapp och en plats. Detta kommer att bygga en statisk webbplats i `public` mappen. Ladda upp den statiska webbplatsen till din webbserver och bygg en ny när det behövs
+Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Inbyggda webbredigeraren ger dig möjlighet att redigera innehållsfiler, ladda upp mediefiler och ändra inställningar. Det är ett utmärkt sätt att uppdatera webbsidor. [Läs mer om webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
 
 ## Objekt
 
-Med hjälp av `$this->yellow` kan du komma åt webbplatsen. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för hela API finns i filen `system/extensions/core.php`.
+Med hjälp av `$this->yellow` kan du som utvecklare komma åt webbplatsen. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för API:et finns i filen `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌───────────────┐   ┌───────────────┐   ┌───────────────┐
-│ Webbserver    │   │ Kommandorad   │   │ Filsystem     │
-└───────────────┘   └───────────────┘   └───────────────┘
-        ▲                   ▲                  ▲
-        │                   │                  │
-        ▼                   ▼                  ▼
+┌───────────────┐
+│ Utvecklare    │
+└───────────────┘
+        │                   
+        ├────────────────────┬───────────────────┐
+        │                    │                   │
+        ▼                    ▼                   ▼
+┌───────────────┐    ┌───────────────┐    ┌───────────────┐
+│ Filsystem     │    │ Webbserver    │    │ Kommandorad   │
+└───────────────┘    └───────────────┘    └───────────────┘
+        │                    │                   │
+        ▼                    ▼                   ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ Core                                                                       │
 │                                                                            │
