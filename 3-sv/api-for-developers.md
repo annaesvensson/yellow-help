@@ -53,14 +53,14 @@ Med hjälp av `$this->yellow` kan du som utvecklare komma åt webbplatsen. API:e
 ``` box-drawing {aria-hidden=true}
 ┌───────────────┐
 │ Utvecklare    │
-└───────────────┘
+└───────┬───────┘
         │                   
         ├────────────────────┬───────────────────┐
         │                    │                   │
         ▼                    ▼                   ▼
 ┌───────────────┐    ┌───────────────┐    ┌───────────────┐
-│ Filsystem     │    │ Webbserver    │    │ Kommandorad   │
-└───────────────┘    └───────────────┘    └───────────────┘
+│ Filsystem     │    │ Webbläsare    │    │ Kommandorad   │
+└───────┬───────┘    └───────┬───────┘    └──────┬────────┘
         │                    │                   │
         ▼                    ▼                   ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -96,7 +96,7 @@ Klassen `Yellow` ger tillgång till API:et. Följande metoder är tillgängliga:
 Hantera initialisering
 
 `yellow->request(): int`  
-Hantera begäran från webbservern
+Hantera begäran från webbläsaren
 
 `yellow->command($line = ""): int`  
 Hantera kommandon från kommandoraden

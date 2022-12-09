@@ -53,14 +53,14 @@ Mit Hilfe von `$this->yellow` kannst du als Entwickler auf die Webseite zugreife
 ``` box-drawing {aria-hidden=true}
 ┌───────────────┐
 │ Entwickler    │
-└───────────────┘
+└───────┬───────┘
         │                   
         ├────────────────────┬───────────────────┐
         │                    │                   │
         ▼                    ▼                   ▼
 ┌───────────────┐    ┌───────────────┐    ┌───────────────┐
-│ Dateisystem   │    │ Webserver     │    │ Befehlszeile  │
-└───────────────┘    └───────────────┘    └───────────────┘
+│ Dateisystem   │    │ Webbrowser    │    │ Befehlszeile  │
+└───────┬───────┘    └───────┬───────┘    └──────┬────────┘
         │                    │                   │
         ▼                    ▼                   ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -96,7 +96,7 @@ Die Klasse `Yellow` gibt Zugang zur API. Die folgenden Methoden sind verfügbar:
 Verarbeite die Initialisierung
 
 `yellow->request(): int`  
-Verarbeite eine Anfrage vom Webserver
+Verarbeite eine Anfrage vom Webbrowser
 
 `yellow->command($line = ""): int`  
 Verarbeite einen Befehl von der Befehlszeile

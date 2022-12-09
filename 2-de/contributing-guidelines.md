@@ -1,7 +1,7 @@
 ---
 Title: Richtlinien zum Zusammenarbeiten
 ---
-Erfahre wie du mit uns zusammenarbeitest und gute Produkte machst.
+Erfahre wie du mit uns arbeiten und Probleme lösen kannst.
 
 ## Wie man eine Frage stellt
 
@@ -17,16 +17,16 @@ Erfahre wie du mit uns zusammenarbeitest und gute Produkte machst.
 * Füge viele Details hinzu, vor allem die Logdatei `system/extensions/yellow-website.log`.
 * Wähle eine Antwort aus, wenn der Fehler behoben wurde.
 
-## Wie man eine Erweiterung erstellt
+## Wie man mit uns arbeitet
 
-* [Beginne mit einer Funktion](https://github.com/schulle4u/yellow-helloworld), [einer Sprache](https://github.com/annaesvensson/yellow-language/tree/main/translations/german) oder [einem Theme](https://github.com/annaesvensson/yellow-stockholm/tree/main/README-de.md).
-* Stell dir vor was der Benutzer machen möchte und überlege wie man sein/ihr Leben einfacher machen kann.
-* Lade deine Erweiterung zu GitHub hoch, füge das Thema `datenstrom-yellow` zu deinem Repository hinzu.
-* Mache eine Ankündigung, wenn deine Erweiterung fertig ist.
+* [Erstelle eine neue Erweiterung](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md) oder [verbessere eine veröffentlichte Erweiterung](https://github.com/datenstrom/yellow-extensions/tree/main/README-de.md).
+* Stell dir vor was der Benutzer machen möchte und was das Leben einfacher machen würde.
+* Strebe die kleinstmögliche Lösung an, erst funktionieren lassen dann besser machen.
+* Frage dich selbst, brauche ich das, will ich das, kann ich das besser machen?
 
 ## Wie man Erfahrungen austauscht
 
-Stelle Fragen, melde Fehler und tausche Erfahrungen aus. Es interessiert uns was du machen möchtest und welche Probleme du hast. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Erzwinge nichts. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Du findest uns auf [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom), [Twitter](https://twitter.com/datenstromnews) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
+Stelle Fragen, melde Fehler, arbeite mit uns und tausche Erfahrungen aus. Es interessiert uns was du machen möchtest und welche Probleme du hast. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Erzwinge nichts. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Du findest uns auf [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
 
 ## Beispiele
 

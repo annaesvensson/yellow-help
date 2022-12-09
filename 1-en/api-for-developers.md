@@ -53,14 +53,14 @@ With the help of `$this->yellow` you can access the website as a developer. The 
 ``` box-drawing {aria-hidden=true}
 ┌───────────────┐
 │ Developer     │
-└───────────────┘
+└───────┬───────┘
         │                   
         ├────────────────────┬───────────────────┐
         │                    │                   │
         ▼                    ▼                   ▼
 ┌───────────────┐    ┌───────────────┐    ┌───────────────┐
-│ File system   │    │ Web server    │    │ Command line  │
-└───────────────┘    └───────────────┘    └───────────────┘
+│ File system   │    │ Web browser   │    │ Command line  │
+└───────┬───────┘    └───────┬───────┘    └──────┬────────┘
         │                    │                   │
         ▼                    ▼                   ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -96,7 +96,7 @@ The class `Yellow` gives access to the API. The following methods are available:
 Handle initialisation
 
 `yellow->request(): int`  
-Handle request from web server
+Handle request from web browser
 
 `yellow->command($line = ""): int`  
 Handle command from command line

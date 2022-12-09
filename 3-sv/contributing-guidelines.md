@@ -1,7 +1,7 @@
 ---
 Title: Riktlinjer för samarbete
 ---
-Läs hur du jobbar med oss och skapar bra produkter.
+Läs hur du jobbar med oss och löser problem.
 
 ## Hur man ställer en fråga
 
@@ -17,16 +17,17 @@ Läs hur du jobbar med oss och skapar bra produkter.
 * Lägg till många detaljer, särskilt loggfilen `system/extensions/yellow-website.log`.
 * Välj ett svar när felet har åtgärdats.
 
-## Hur man gör ett tillägg
 
-* [Börja med en funktion](https://github.com/schulle4u/yellow-extension-helloworld), [ett språk](https://github.com/annaesvensson/yellow-language/tree/main/translations/swedish) eller [ett tema](https://github.com/annaesvensson/yellow-stockholm/tree/main/README-sv.md).
-* Föreställ dig vad användaren vill göra och tänk på hur man kan göra hens liv enklare.
-* Ladda upp ditt tillägg till GitHub, lägg till ämnet `datenstrom-yellow` till ditt repository.
-* Gör ett tillkännagivande när ditt tillägg är klart.
+## Hur man jobbar med oss
+
+* [Gör ett nytt tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md) eller [förbättra ett publicerat tillägg](https://github.com/datenstrom/yellow-extensions/blob/main/README-sv.md).
+* Föreställ dig vad användaren vill göra och vad som skulle göra livet enklare.
+* Sikta på minsta möjliga lösning, först få det att fungera och sedan gör det bättre.
+* Fråga dig själv, behöver jag det här, vill jag det här, kan jag göra det här bättre?
 
 ## Hur man utbyter erfarenheter
 
-Ställ frågor, rapportera fel och utbyt erfarenheter. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Tvinga ingenting. Fokusera på människor som visa intresse och vill jobba med dig. Du hittar oss på [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom), [Twitter](https://twitter.com/datenstromnews) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
+Ställ frågor, rapportera fel, jobba med oss och utbyt erfarenheter. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Tvinga ingenting. Fokusera på människor som visa intresse och vill jobba med dig. Du hittar oss på [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
 
 ## Exempel
 
