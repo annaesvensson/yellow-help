@@ -3,6 +3,13 @@ Title: Contributing guidelines
 ---
 Learn how to work with us and solve problems.
 
+## How to work with us
+
+* [Make a new extension](https://github.com/annaesvensson/yellow-publish) or [improve a published extension](https://github.com/datenstrom/yellow-extensions).
+* Imagine what the user wants to do and what would make life easier.
+* Aim for the smallest possible solution, first make it work then make it better.
+* Ask yourself, do I need this, do I want this, can I make this better?
+
 ## How to ask a question
 
 * [Start a new discussion for each question](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
@@ -17,16 +24,9 @@ Learn how to work with us and solve problems.
 * Add many details, especially the log file `system/extensions/yellow-website.log`.
 * Select an answer, when the bug has been fixed.
 
-## How to work with us
-
-* [Make a new extension](https://github.com/annaesvensson/yellow-publish) or [improve a published extension](https://github.com/datenstrom/yellow-extensions).
-* Imagine what the user wants to do and what would make life easier.
-* Aim for the smallest possible solution, first make it work then make it better.
-* Ask yourself, do I need this, do I want this, can I make this better?
-
 ## How to share your experiences
 
-Ask questions, report bugs, work with us and share your experiences. We are interested in what you want to do and which problems you have. The more we know the better we can help. Our community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Don't force anything. Focus on the people who show interest and want to work with you. You can find us on [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) or [contact a human](https://datenstrom.se/contact/).
+Work with us, ask questions, report bugs and share your experiences. We are interested in what you want to do and which problems you have. The more we know the better we can help. Our community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Don't force anything. Focus on the people who show interest and want to work with you. You can find us on [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) or [contact a human](https://datenstrom.se/contact/).
 
 ## Examples
 

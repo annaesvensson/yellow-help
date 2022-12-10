@@ -6,6 +6,10 @@ Hilfe für deine Webseite.
 
 <p align="center"><img src="help-screenshot.png?raw=true" alt="Bildschirmfoto"></p>
 
+## Wie man die Hilfe installiert
+
+[ZIP-Datei herunterladen](https://github.com/annaesvensson/yellow-help/archive/main.zip) und in dein `system/extensions`-Verzeichnis kopieren. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
+
 ## Wie man die Hilfe benutzt
 
 Die Hilfe ist auf deiner Webseite vorhanden als `http://website/help/`. Die Hilfe zeigt dir wie man kleine Webseiten, Wikis und Blogs erstellt. Hier findest du Anleitungen wie man alles anpasst. Entwickler und Designer finden Beschreibungen von übergreifenden Konzepten und was man mit der API machen kann. Es wird empfohlen die [Highlight-Erweiterung](https://github.com/annaesvensson/yellow-highlight/tree/main/README-de.md), [Search-Erweiterung](https://github.com/annaesvensson/yellow-search/tree/main/README-de.md), [Toc-Erweiterung](https://github.com/annaesvensson/yellow-toc/tree/main/README-de.md) zusammen mit der Hilfe-Erweiterung zu installieren. Dann hast du das selbe Paket wie die [Hilfe auf der offiziellen Webseite](https://datenstrom.se/de/yellow/help/).
@@ -17,10 +21,6 @@ Falls du die Hilfe im [Webbrowser](https://github.com/annaesvensson/yellow-edit/
 ## Danksagung
 
 Diese Erweiterung enthält ein [Foto](https://unsplash.com/photos/azsk_6IMT3I) von Bruno Cervera. Danke für das schöne Foto.
-
-## Installation
-
-[Erweiterung herunterladen](https://github.com/annaesvensson/yellow-help/archive/main.zip) und die ZIP-Datei in dein `system/extensions`-Verzeichnis kopieren. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
 
 ## Entwickler
 

@@ -6,6 +6,10 @@ Hjälp för din webbplats.
 
 <p align="center"><img src="help-screenshot.png?raw=true" alt="Skärmdump"></p>
 
+## Hur man installerar hjälpen
+
+[Ladda ner ZIP-filen](https://github.com/annaesvensson/yellow-help/archive/main.zip) och kopiera den till din `system/extensions` mapp. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
+
 ## Hur man använder hjälpen
 
 Hjälpen finns på din webbplats som `http://website/help/`. Hjälpen ger dig mer information om hur man skapar små webbsidor, wikier och bloggar. Här hittar du instruktioner om hur man anpassa allt. Utvecklare och designers hittar beskrivningar av övergripande koncept och vad som kan göras med API:et. Det rekommenderas att du installerar [highlight-tillägget](https://github.com/annaesvensson/yellow-highlight/tree/main/README-sv.md), [search-tillägget](https://github.com/annaesvensson/yellow-search/tree/main/README-sv.md), [toc-tillägget](https://github.com/annaesvensson/yellow-toc/tree/main/README-sv.md) tillsammans med help-tillägget. Då kommer du att ha samma paketet som [hjälpen på officiella webbplatsen](https://datenstrom.se/sv/yellow/help/). 
@@ -17,10 +21,6 @@ Om du vill redigera hjälpen i en [webbläsare](https://github.com/annaesvensson
 ## Tack
 
 Tillägget innehåller ett [foto](https://unsplash.com/photos/azsk_6IMT3I) av Bruno Cervera. Tack för det vackra fotot.
-
-## Installation
-
-[Ladda ner tillägg](https://github.com/annaesvensson/yellow-help/archive/main.zip) och kopiera ZIP-fil till din `system/extensions` mapp. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
 
 ## Utvecklare
 
