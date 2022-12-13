@@ -36,7 +36,7 @@ The following configuration files and log files are available:
 
 ### Built-in command line
 
-You can control your website at the command line. This allows you to install extensions, create user accounts and build a static website. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php` to show available commands. The available commands depend on extensions installed. Type `php yellow.php about` to show the installed extensions and version numbers. [Learn more about the command line](https://github.com/annaesvensson/yellow-command).
+You can execute commands at the command line. This allows you to build a static website and do other things. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php` to show available commands. The available commands depend on extensions installed. [Learn more about the command line](https://github.com/annaesvensson/yellow-command).
 
 ### Built-in web server
 

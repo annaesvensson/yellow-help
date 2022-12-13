@@ -11,16 +11,16 @@ Erfahre wie du Probleme finden und beheben kannst.
 Die folgenden Fehlermeldungen können auftreten:
 
 ```
-Datenstrom Yellow requires write access!
-```
-
-Führe den Befehl `chmod -R a+rw *` im Installations-Verzeichnis aus. Du kannst auch deine FTP-Software verwenden, um allen Dateien Schreibrechte zu geben. Es wird empfohlen allen Dateien und Verzeichnissen im Installations-Verzeichnis Schreibrechte zu geben. Sobald die Webseite ausreichende Schreibrechte im `system`-Verzeichnis hat, sollte das Problem behoben sein.
-
-```
 Datenstrom Yellow requires complete upload!
 ```
 
 Kopiere nochmal alle mitgelieferten Dateien ins Installations-Verzeichnis. Überprüfe ob deine FTP-Software beim Hochladen eine Fehlermeldung anzeigt. Es passiert manchmal dass die Datenübertragung beim Hochladen unterbrochen wurde. Nachdem die fehlenden Dateien ins Installations-Verzeichnis kopiert wurden, sollte das Problem behoben sein.
+
+```
+Datenstrom Yellow requires write access!
+```
+
+Führe den Befehl `chmod -R a+rw *` im Installations-Verzeichnis aus. Du kannst auch deine FTP-Software verwenden, um allen Dateien Schreibrechte zu geben. Es wird empfohlen allen Dateien und Verzeichnissen im Installations-Verzeichnis Schreibrechte zu geben. Sobald die Webseite ausreichende Schreibrechte im `system`-Verzeichnis hat, sollte das Problem behoben sein.
 
 ```
 Datenstrom Yellow requires configuration file!
@@ -204,7 +204,7 @@ Wenn deine Webseite nicht funktioniert, dann überprüfe `server_name` und `root
 
 ## Verwandte Informationen
 
-* [Wie man den eingebauten Webserver startet](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md)
+* [Wie man einen Webserver startet](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md)
 * [Wie man ein Benutzerkonto erstellt](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md)
 * [Wie man eine Webseite aktualisiert](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md)
 

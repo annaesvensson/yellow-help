@@ -11,16 +11,16 @@ Learn how to find and fix problems.
 The following error messages can happen:
 
 ```
-Datenstrom Yellow requires write access!
-```
-
-Run the command `chmod -R a+rw *` in the installation folder. You can also use your FTP software to give write permissions to all files. It's recommended to give write permissions to all files and folders in the installation folder. As soon as the website has sufficient write access in the `system` folder, the problem should be resolved.
-
-```
 Datenstrom Yellow requires complete upload!
 ```
 
 Copy again all of the supplied files into the installation folder. Check if your FTP software shows an error message during upload. It sometimes happens that the data transfer was interrupted during upload. After the missing files have been copied into the installation folder, the problem should be resolved.
+
+```
+Datenstrom Yellow requires write access!
+```
+
+Execute the command `chmod -R a+rw *` in the installation folder. You can also use your FTP software to give write permissions to all files. It's recommended to give write permissions to all files and folders in the installation folder. As soon as the website has sufficient write access in the `system` folder, the problem should be resolved.
 
 ```
 Datenstrom Yellow requires configuration file!
@@ -205,7 +205,7 @@ When your website doesn't work, then check `server_name` and `root` in the confi
 
 ## Related information
 
-* [How to start the built-in web server](https://github.com/annaesvensson/yellow-serve)
+* [How to start a web server](https://github.com/annaesvensson/yellow-serve)
 * [How to create a user account](https://github.com/annaesvensson/yellow-edit)
 * [How to update a website](https://github.com/annaesvensson/yellow-update)
 

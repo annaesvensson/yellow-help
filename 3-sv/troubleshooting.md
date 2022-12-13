@@ -11,16 +11,16 @@ Läs hur du hittar och åtgärdar problem.
 Följande felmeddelanden kan uppstå:
 
 ```
-Datenstrom Yellow requires write access!
-```
-
-Kör kommandot `chmod -R a+rw *` i installationsmappen. Du kan också använda din FTP-programvara för att ge skrivbehörighet till alla filer. Det rekommenderas att ge skrivbehörighet till alla filer och mappar i installationsmappen. Så snart webbplatsen har tillräcklig skrivåtkomst i `system`-mappen bör problemet lösas.
-
-```
 Datenstrom Yellow requires complete upload!
 ```
 
 Kopiera igen alla medföljande filer till installationsmappen. Kontrollera om din FTP-programvara visar ett felmeddelande under uppladdningen. Ibland händer det att dataöverföringen avbröts under uppladdningen. Efter att saknade filer har kopierats till installationsmappen bör problemet lösas.
+
+```
+Datenstrom Yellow requires write access!
+```
+
+Kör kommandot `chmod -R a+rw *` i installationsmappen. Du kan också använda din FTP-programvara för att ge skrivbehörighet till alla filer. Det rekommenderas att ge skrivbehörighet till alla filer och mappar i installationsmappen. Så snart webbplatsen har tillräcklig skrivåtkomst i `system`-mappen bör problemet lösas.
 
 ```
 Datenstrom Yellow requires configuration file!
@@ -204,7 +204,7 @@ När din webbplats inte fungerar, kontrollera `server_name` och `root` i konfigu
 
 ## Relaterad information
 
-* [Hur man startar inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md)
+* [Hur man startar en webbserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md)
 * [Hur man skapar ett användarkonto](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md)
 * [Hur man uppdaterar en webbplats](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md)
 

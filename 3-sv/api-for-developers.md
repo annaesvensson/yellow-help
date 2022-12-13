@@ -36,7 +36,7 @@ Följande konfigurationsfiler och loggfiler är tillgängliga:
 
 ### Inbyggd kommandorad
 
-Du kan styra din webbplats på kommandoraden. Detta ger dig möjlighet att installera tilläg, skapa användarkonton och bygga en statisk webbplats. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php` för att visa tillgängliga kommandona. De tillgängliga kommandona beror på installerade tillägg. Skriv `php yellow.php about` för att visa installerade tilläggen och versionsnumren. [Läs mer om kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md).
+Du kan köra kommandon från kommandoraden. Detta ger dig möjlighet att bygga en statisk webbplats och göra andra saker. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php` för att visa tillgängliga kommandona. De tillgängliga kommandona beror på installerade tillägg. [Läs mer om kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md).
 
 ### Inbyggd webbserver
 
