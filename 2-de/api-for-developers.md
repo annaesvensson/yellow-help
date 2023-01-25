@@ -710,7 +710,7 @@ Layoutdatei um den Seitentyp anzuzeigen:
 Code um eine URL in Bestandteile zu zerlegen:
 
 ``` php
-if (!is_empty_string($url)) {
+if (!is_string_empty($url)) {
     list($scheme, $address, $base) = $this->yellow->lookup->getUrlInformation($staticUrl);
     echo "Found scheme:$scheme address:$address base:$base\n";
 }
