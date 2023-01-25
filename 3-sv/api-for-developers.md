@@ -711,7 +711,7 @@ Layoutfil för att visa sidtyp:
 Kod för att dela upp en URL:
 
 ``` php
-if (!is_empty_string($url)) {
+if (!is_string_empty($url)) {
     list($scheme, $address, $base) = $this->yellow->lookup->getUrlInformation($staticUrl);
     echo "Found scheme:$scheme address:$address base:$base\n";
 }
