@@ -20,7 +20,7 @@ Om du vill redigera hjälpen i en [webbläsare](https://github.com/annaesvensson
 
 ## Tack
 
-Tillägget innehåller ett [foto](https://unsplash.com/photos/azsk_6IMT3I) av Bruno Cervera. Tack för det vackra fotot.
+Detta tillägg innehåller ett [foto](https://unsplash.com/photos/azsk_6IMT3I) av Bruno Cervera. Tack för det vackra fotot.
 
 ## Utvecklare
 
