@@ -51,16 +51,10 @@ Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgängli
 Med hjälp av `$this->yellow` kan du som utvecklare komma åt webbplatsen. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för API:et finns i filen `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌───────────────┐
-│ Utvecklare    │
-└───────┬───────┘
-        │                   
-        ├────────────────────┬───────────────────┐
-        │                    │                   │
-        ▼                    ▼                   ▼
 ┌───────────────┐    ┌───────────────┐    ┌───────────────┐
-│ Filsystem     │    │ Webbläsare    │    │ Kommandorad   │
+│ Webbläsare    │    │ Texteditor    │    │ Kommandorad   │
 └───────┬───────┘    └───────┬───────┘    └──────┬────────┘
+        │                    │                   │
         │                    │                   │
         ▼                    ▼                   ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -92,6 +86,10 @@ Klassen `Yellow` ger tillgång till API:et. Följande metoder är tillgängliga:
 
 `command` `getLayoutArguments` `layout` `load` `log` `request`
 
+---
+
+Beskrivning av metoder och argument:
+
 `yellow->load(): void`  
 Hantera initialisering
 
@@ -110,7 +108,7 @@ Inkludera layouten
 `yellow->getLayoutArguments($sizeMin = 9): array`  
 Returnera layoutargument
 
-#### Yellow exempel
+---
 
 Layoutfil med header och footer:
 
@@ -154,6 +152,10 @@ Klassen `YellowContent` ger tillgång till innehållsfiler. Följande metoder ä
 
 `clean` `find` `index` `multi` `path` `top`
 
+---
+
+Beskrivning av metoder och argument:
+
 `content->find($location, $absoluteLocation = false): YellowPage|null`  
 Returnera [page](#yellow-page), null om det inte finns
 
@@ -172,7 +174,7 @@ Returnera [page collection](#yellow-page-collection) med flera språk i flerspr�
 `content->clean(): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) som är tom
 
-#### Yellow content exempel
+---
 
 Layoutfil för att visa alla sidor:
 
@@ -238,6 +240,10 @@ Klassen `YellowMedia` ger tillgång till mediefiler. Följande metoder är tillg
 
 `clean` `index` `find`
 
+---
+
+Beskrivning av metoder och argument:
+
 `media->find($location, $absoluteLocation = false): YellowPage|null`  
 Returnera [page](#yellow-page) med information om mediefilen, null om det inte finns
 
@@ -247,7 +253,7 @@ Returnera [page collection](#yellow-page-collection) med alla mediefiler
 `media->clean(): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) som är tom
 
-#### Yellow media exempel
+---
 
 Layoutfil för att visa alla mediefiler:
 
@@ -312,6 +318,10 @@ Klassen `YellowSystem` ger tillgång till [systeminställningar](how-to-change-t
 
 `get` `getAvailable` `getDifferent` `getHtml` `getModified` `getSettings` `isExisting` `save` `set` `setDefault`
 
+---
+
+Beskrivning av metoder och argument:
+
 `system->save($fileName, $settings): bool`  
 Spara systeminställningarna i filen
 
@@ -342,7 +352,7 @@ Returnera ändringsdatum for systeminställningar, Unix-tid eller HTTP-format
 `system->isExisting($key): bool`  
 Kontrollera om systeminställning finns
 
-#### Yellow system exempel
+---
 
 Layoutfil för att visa webbansvarig:
 
@@ -399,6 +409,10 @@ Klassen `YellowLanguage` ger tillgång till [språkinställningar](how-to-change
 
 `getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText` `setDefaults` `setText`
 
+---
+
+Beskrivning av metoder och argument:
+
 `language->setDefaults($lines): void`  
 Ställ in standard språkinställningar
 
@@ -423,7 +437,7 @@ Kontrollera om språkinställning finns
 `language->isExisting($language): bool`  
 Kontrollera om språket finns
 
-#### Yellow language exempel
+---
 
 Layoutfil för att visa en språkinställning:
 
@@ -478,6 +492,10 @@ Klassen `YellowUser` ger tillgång till [användarinställningar](how-to-change-
 
 `getModified` `getSettings` `getUser` `getUserHtml` `isExisting` `isUser` `remove` `save` `setUser`
 
+---
+
+Beskrivning av metoder och argument:
+
 `user->save($fileName, $email, $settings): bool`  
 Spara användarinställningar i filen
 
@@ -505,7 +523,7 @@ Kontrollera om användarinställning finns
 `user->isExisting($email): bool`  
 Kontrollera om användaren finns
 
-#### Yellow user exempel
+---
 
 Layoutfil för att visa den aktuella användaren:
 
@@ -561,6 +579,10 @@ Klassen `YellowExtension` ger tillgång till tillägg. Följande metoder är til
 
 `get` `getModified` `isExisting`
 
+---
+
+Beskrivning av metoder och argument:
+
 `extension->get($key): object`  
 Returnera tillägg
 
@@ -570,7 +592,7 @@ Returnera ändringsdatum för tilläg, Unix-tid eller HTTP-format
 `extension->isExisting($key): bool`  
 Kontrollera om tilläget finns
 
-#### Yellow extension exempel
+---
 
 Layoutfil för att visa tillägg:
 
@@ -618,6 +640,10 @@ if ($this->yellow->extension->isExisting("image")) {
 Klassen `YellowLookup` ger tillgång till uppslag och normalisering. Följande metoder är tillgängliga:
 
 `findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+
+---
+
+Beskrivning av metoder och argument:
 
 `lookup->findContentLocationFromFile($fileName): string`  
 Returnera innehållsplats från filsökvägen
@@ -673,7 +699,7 @@ Kontrollera om mediefil
 `lookup->isSystemFile($fileName): bool`  
 Kontrollera om systemfil
 
-#### Yellow lookup exempel
+---
 
 Layoutfil för att visa bildsökvägar:
 
@@ -722,6 +748,10 @@ if (!is_string_empty($url)) {
 Klassen `YellowToolbox` ger tillgång till verktygslådan med hjälpfunktioner. Följande metoder är tillgängliga:
 
 `appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `modifyFile` `readFile` `renameDirectory` `renameFile`
+
+---
+
+Beskrivning av metoder och argument:
 
 `toolbox->getCookie($key): string`  
 Returnera webbläsarkakan för aktuella HTTP-begäran
@@ -783,7 +813,7 @@ Returnera array med variabel storlek från text, separerade av mellanslag
 `toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
 Skapa textbeskrivning, med eller utan HTML
 
-#### Yellow toolbox exempel
+---
 
 Kod för att läsa textrader från filen:
 
@@ -822,6 +852,10 @@ foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/
 Klassen `YellowPage` ger tillgång till en sidan och dess [sidinställningar](how-to-change-the-system#sidinställningar). Följande metoder är tillgängliga:
 
 `error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
+
+---
+
+Beskrivning av metoder och argument:
 
 `page->set($key, $value): void`  
 Ställ in sidinställning
@@ -937,7 +971,7 @@ Kontrollera om responseheader finns
 `page->isPage($key): bool`  
 Kontrollera om delad sida finns
 
-#### Yellow page exempel
+---
 
 Layoutfil för att visa sidinnehåll:
 
@@ -985,6 +1019,10 @@ Layoutfil för att visa sidinnehåll och modifieringsdatum:
 Klassen `YellowPageCollection` ger tillgång till flera sidor. Följande metoder är tillgängliga:
 
 `append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
+
+---
+
+Beskrivning av metoder och argument:
 
 `pages->append($page): void`  
 Lägg till slutet av page collection
@@ -1058,7 +1096,7 @@ Kontrollera om det finns en paginering
 `page->isEmpty(): bool`  
 Kontrollera om page collection är tom
 
-#### Yellow page collection exempel
+---
 
 Layoutfil för att visa tre slumpmässiga sidor:
 
@@ -1123,6 +1161,10 @@ Följande funktioner utökar PHP-strängfunktioner och variabelfunktioner:
 
 `is_array_empty` `is_string_empty` `strlenu` `strposu` `strrposu` `strtoloweru` `strtoupperu` `substru`
 
+---
+
+Beskrivning av funktioner och argument:
+
 `strtoloweru($string): string`  
 Konvertera sträng till gemener, UTF-8-kompatibel
 
@@ -1147,7 +1189,7 @@ Kontrollera om strängen är tom
 `is_array_empty($array): bool`  
 Kontrollera om arrayen är tom
 
-#### Yellow string exempel
+---
 
 Kod för att konvertera strängar:
 
@@ -1221,7 +1263,7 @@ Hantera loggning
 `public function onShutdown()`  
 Hantera avstängningen
 
-#### Yellow core händelser exempel
+---
 
 Tillägg för hantering av initiering:
 
@@ -1285,7 +1327,7 @@ Hantera extra data för sidan
 `public function onParsePageOutput($page, $text)`  
 Hantera output data för sidan
 
-#### Yellow parse händelser exempel
+---
 
 Tillägg för egen förkortning:
 
@@ -1355,7 +1397,7 @@ Hantera systemfiländringar
 `public function onEditUserAccount($action, $email, $password)`  
 Hantera ändringar av användarkonton
 
-#### Yellow edit händelser exempel
+---
 
 Tillägg för hantering av sidredigering:
 
@@ -1416,7 +1458,7 @@ Hantera kommandon
 `public function onCommandHelp()`  
 Hantera hjälp för kommandon
 
-#### Yellow command händelser exempel
+---
 
 Tillägg för eget kommando:
 

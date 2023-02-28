@@ -51,16 +51,10 @@ Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf dein
 Mit Hilfe von `$this->yellow` kannst du als Entwickler auf die Webseite zugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der API findet man in der Datei `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌───────────────┐
-│ Entwickler    │
-└───────┬───────┘
-        │                   
-        ├────────────────────┬───────────────────┐
-        │                    │                   │
-        ▼                    ▼                   ▼
 ┌───────────────┐    ┌───────────────┐    ┌───────────────┐
-│ Dateisystem   │    │ Webbrowser    │    │ Befehlszeile  │
+│ Webbrowser    │    │ Texteditor    │    │ Befehlszeile  │
 └───────┬───────┘    └───────┬───────┘    └──────┬────────┘
+        │                    │                   │
         │                    │                   │
         ▼                    ▼                   ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -92,6 +86,10 @@ Die Klasse `Yellow` gibt Zugang zur API. Die folgenden Methoden sind verfügbar:
 
 `command` `getLayoutArguments` `layout` `load` `log` `request`
 
+---
+
+Beschreibung der Methoden und Argumente:
+
 `yellow->load(): void`  
 Verarbeite die Initialisierung
 
@@ -110,7 +108,7 @@ Binde ein Layout ein
 `yellow->getLayoutArguments($sizeMin = 9): array`  
 Hole die Layout-Argumente
 
-#### Yellow-Beispiele
+---
 
 Layoutdatei mit Header und Footer:
 
@@ -154,6 +152,10 @@ Die Klasse `YellowContent` gibt Zugang zu Inhaltsdateien. Die folgenden Methoden
 
 `clean` `find` `index` `multi` `path` `top`
 
+---
+
+Beschreibung der Methoden und Argumente:
+
 `content->find($location, $absoluteLocation = false): YellowPage|null`  
 Hole eine [Seite](#yellow-page), null falls nicht vorhanden
 
@@ -172,7 +174,7 @@ Hole eine [Seitenkollektion](#yellow-page-collection) mit mehreren Sprachen im M
 `content->clean(): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) die leer ist
 
-#### Yellow-Content-Beispiele
+---
 
 Layoutdatei um alle Seiten anzuzeigen:
 
@@ -237,6 +239,10 @@ Die Klasse `YellowMedia` gibt Zugang zu Mediendateien. Die folgenden Methoden si
 
 `clean` `index` `find`
 
+---
+
+Beschreibung der Methoden und Argumente:
+
 `media->find($location, $absoluteLocation = false): YellowPage|null`  
 Hole eine [Seite](#yellow-page) mit Informationen über Mediendatei, null falls nicht vorhanden
 
@@ -246,7 +252,7 @@ Hole eine [Seitenkollektion](#yellow-page-collection) mit allen Mediendateien
 `media->clean(): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) die leer ist
 
-#### Yellow-Media-Beispiele
+---
 
 Layoutdatei um alle Mediendateien anzuzeigen:
 
@@ -311,6 +317,10 @@ Die Klasse `YellowSystem` gibt Zugang zu [Systemeinstellungen](how-to-change-the
 
 `get` `getAvailable` `getDifferent` `getHtml` `getModified` `getSettings` `isExisting` `save` `set` `setDefault`
 
+---
+
+Beschreibung der Methoden und Argumente:
+
 `system->save($fileName, $settings): bool`  
 Speichere Systemeinstellungen in Datei
 
@@ -341,7 +351,7 @@ Hole das Änderungsdatum von Systemeinstellungen, Unix-Zeit oder HTTP-Format
 `system->isExisting($key): bool`  
 Überprüfe ob die Systemeinstellung existiert
 
-#### Yellow-System-Beispiele
+---
 
 Layoutdatei um den Webmaster anzuzeigen:
 
@@ -398,6 +408,10 @@ Die Klasse `YellowLanguage` gibt Zugang zu [Spracheinstellungen](how-to-change-t
 
 `getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText` `setDefaults` `setText`
 
+---
+
+Beschreibung der Methoden und Argumente:
+
 `language->setDefaults($lines): void`  
 Setze Standard-Spracheinstellungen
 
@@ -422,7 +436,7 @@ Hole das Änderungsdatum von Spracheinstellungen, Unix-Zeit oder HTTP-Format
 `language->isExisting($language): bool`  
 Überprüfe ob die Sprache existiert
 
-#### Yellow-Language-Beispiele
+---
 
 Layoutdatei um eine Spracheinstellung anzuzeigen:
 
@@ -477,6 +491,10 @@ Die Klasse `YellowUser` gibt Zugang zu [Benutzereinstellungen](how-to-change-the
 
 `getModified` `getSettings` `getUser` `getUserHtml` `isExisting` `isUser` `remove` `save` `setUser`
 
+---
+
+Beschreibung der Methoden und Argumente:
+
 `user->save($fileName, $email, $settings): bool`  
 Speichere Benutzereinstellungen in Datei
 
@@ -504,7 +522,7 @@ Hole das Änderungsdatum von Benutzereinstellungen, Unix-Zeit oder HTTP-Format
 `user->isExisting($email): bool`  
 Überprüfe ob der Benutzer existiert
 
-#### Yellow-User-Beispiele
+---
 
 Layoutdatei um den aktuellen Benutzer anzuzeigen:
 
@@ -560,6 +578,10 @@ Die Klasse `YellowExtension` gibt Zugang zu Erweiterungen. Die folgenden Methode
 
 `get` `getModified` `isExisting`
 
+---
+
+Beschreibung der Methoden und Argumente:
+
 `extension->get($key): object`  
 Hole eine Erweiterung
 
@@ -569,7 +591,7 @@ Hole das Änderungsdatum von Erweiterungen, Unix-Zeit oder HTTP-Format
 `extension->isExisting($key): bool`  
 Überprüfe ob die Erweiterung existiert
 
-#### Yellow-Extension-Beispiele
+---
 
 Layoutdatei um Erweiterungen anzuzeigen:
 
@@ -617,6 +639,10 @@ if ($this->yellow->extension->isExisting("image")) {
 Die Klasse `YellowLookup` gibt Zugang zu Nachschlagen und Normalisierung. Die folgenden Methoden sind verfügbar:
 
 `findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+
+---
+
+Beschreibung der Methoden und Argumente:
 
 `lookup->findContentLocationFromFile($fileName): string`  
 Hole Inhaltsort aus dem Dateipfad
@@ -672,7 +698,7 @@ Hole URL-Informationen
 `lookup->isSystemFile($fileName): bool`  
 Überprüfe ob Systemdatei
 
-#### Yellow-Lookup-Beispiele
+---
 
 Layoutdatei um Bildpfade anzuzeigen:
 
@@ -721,6 +747,10 @@ if (!is_string_empty($url)) {
 Die Klasse `YellowToolbox` gibt Zugang zur Werkzeugkiste mit Hilfsfunktionen. Die folgenden Methoden sind verfügbar:
 
 `appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `modifyFile` `readFile` `renameDirectory` `renameFile`
+
+---
+
+Beschreibung der Methoden und Argumente:
 
 `toolbox->getCookie($key): string`   
 Hole das Browsercookie der aktuellen HTTP-Anfrage
@@ -782,7 +812,7 @@ Hole ein Array mit variabler Grösse aus dem Text, durch Leerzeichen getrennt
 `toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
 Erstelle eine Textbeschreibung, mit oder ohne HTML
 
-#### Yellow-Toolbox-Beispiele
+---
 
 Code um Textzeilen von einer Datei zu lesen:
 
@@ -821,6 +851,10 @@ foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/
 Die Klasse `YellowPage` gibt Zugang zur einer Seite und ihren [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen). Die folgenden Methoden sind verfügbar:
 
 `error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
+
+---
+
+Beschreibung der Methoden und Argumente:
 
 `page->set($key, $value): void`  
 Setze eine Seiteneinstellung
@@ -936,7 +970,7 @@ Antworte mit Fehlerseite
 `page->isPage($key): bool`  
 Überprüfe ob die geteilte Seite existiert
 
-#### Yellow-Page-Beispiele
+---
 
 Layoutdatei um den Seiteninhalt anzuzeigen:
 
@@ -984,6 +1018,10 @@ Layoutdatei um den Seiteninhalt und das Änderungsdatum anzuzeigen:
 Die Klasse `YellowPageCollection` gibt Zugang zu mehreren Seiten. Die folgenden Methoden sind verfügbar:
 
 `append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
+
+---
+
+Beschreibung der Methoden und Argumente:
 
 `pages->append($page): void`  
 Hänge an das Ende der Seitenkollektion
@@ -1057,7 +1095,7 @@ Hole das Änderungsdatum der Seitenkollektion, Unix-Zeit oder HTTP-Format
 `page->isEmpty(): bool`  
 Überprüfe ob Seitenkollektion leer ist
 
-#### Yellow-Page-Collection-Beispiele
+---
 
 Layoutdatei um drei zufällige Seiten anzuzeigen:
 
@@ -1122,6 +1160,10 @@ Die folgenden Funktionen erweitern PHP-Stringfunktionen und Variablenfunktionen:
 
 `is_array_empty` `is_string_empty` `strlenu` `strposu` `strrposu` `strtoloweru` `strtoupperu` `substru`
 
+---
+
+Beschreibung der Funktionen und Argumente:
+
 `strtoloweru($string): string`  
 Wandle String in Kleinschrift um, UTF-8 kompatibel
 
@@ -1146,7 +1188,7 @@ Hole Teilstring, UTF-8-Zeichen oder Bytes
 `is_array_empty($array): bool`  
 Überprüfe ob das Array leer ist
 
-#### Yellow-String-Beispiele
+---
 
 Code um Strings zu konvertieren:
 
@@ -1220,7 +1262,7 @@ Verarbeite das Logging
 `public function onShutdown()`  
 Verarbeite das Runterfahren
 
-#### Yellow-Core-Ereignisse-Beispiele
+---
 
 Erweiterung zur Behandlung der Initialisierung:
 
@@ -1284,7 +1326,7 @@ Verarbeite die Extradaten einer Seite
 `public function onParsePageOutput($page, $text)`  
 Verarbeite die Ausgabedaten einer Seite
 
-#### Yellow-Parse-Ereignisse-Beispiele
+---
 
 Erweiterung für eigene Abkürzung:
 
@@ -1354,7 +1396,7 @@ Verarbeite Änderungen an Systemdatei
 `public function onEditUserAccount($action, $email, $password)`  
 Verarbeite Änderungen am Benutzerkonto
 
-#### Yellow-Edit-Ereignisse-Beispiele
+---
 
 Erweiterung zur Behandlung einer Seitenbearbeitung:
 
@@ -1415,7 +1457,7 @@ Verarbeite Befehle
 `public function onCommandHelp()`  
 Verarbeite Hilfe für Befehle
 
-#### Yellow-Command-Ereignisse-Beispiele
+---
 
 Erweiterung für eigenen Befehl:
 

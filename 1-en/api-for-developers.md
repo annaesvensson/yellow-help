@@ -51,16 +51,10 @@ You can edit your website in a web browser. The login page is available on your 
 With the help of `$this->yellow` you can access the website as a developer. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the API can be found in file `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌───────────────┐
-│ Developer     │
-└───────┬───────┘
-        │                   
-        ├────────────────────┬───────────────────┐
-        │                    │                   │
-        ▼                    ▼                   ▼
 ┌───────────────┐    ┌───────────────┐    ┌───────────────┐
-│ File system   │    │ Web browser   │    │ Command line  │
+│ Web browser   │    │ Text editor   │    │ Command line  │
 └───────┬───────┘    └───────┬───────┘    └──────┬────────┘
+        │                    │                   │
         │                    │                   │
         ▼                    ▼                   ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -92,6 +86,10 @@ The class `Yellow` gives access to the API. The following methods are available:
 
 `command` `getLayoutArguments` `layout` `load` `log` `request`
 
+---
+
+Description of methods and arguments:
+
 `yellow->load(): void`  
 Handle initialisation
 
@@ -110,7 +108,7 @@ Include layout
 `yellow->getLayoutArguments($sizeMin = 9): array`  
 Return layout arguments
 
-#### Yellow examples
+---
 
 Layout file with header and footer:
 
@@ -154,6 +152,10 @@ The class `YellowContent` gives access to content files. The following methods a
 
 `clean` `find` `index` `multi` `path` `top`
 
+---
+
+Description of methods and arguments:
+
 `content->find($location, $absoluteLocation = false): YellowPage|null`  
 Return [page](#yellow-page), null if not found
 
@@ -172,7 +174,7 @@ Return [page collection](#yellow-page-collection) with multiple languages in mul
 `content->clean(): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) that is empty
 
-#### Yellow content examples
+---
 
 Layout file for showing all pages:
 
@@ -237,6 +239,10 @@ The class `YellowMedia` gives access to media files. The following methods are a
 
 `clean` `index` `find`
 
+---
+
+Description of methods and arguments:
+
 `media->find($location, $absoluteLocation = false): YellowPage|null`  
 Return [page](#yellow-page) with media file information, null if not found
 
@@ -246,7 +252,7 @@ Return [page collection](#yellow-page-collection) with all media files
 `media->clean(): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) that is empty
 
-#### Yellow media examples
+---
 
 Layout file for showing all media files:
 
@@ -311,6 +317,10 @@ The class `YellowSystem` gives access to [system settings](how-to-change-the-sys
 
 `get` `getAvailable` `getDifferent` `getHtml` `getModified` `getSettings` `isExisting` `save` `set` `setDefault`
 
+---
+
+Description of methods and arguments:
+
 `system->save($fileName, $settings): bool`  
 Save system settings to file
 
@@ -341,7 +351,7 @@ Return system settings modification date, Unix time or HTTP format
 `system->isExisting($key): bool`  
 Check if system setting exists
 
-#### Yellow system examples
+---
 
 Layout file for showing webmaster:
 
@@ -398,6 +408,10 @@ The class `YellowLanguage` gives access to [language settings](how-to-change-the
 
 `getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText` `setDefaults` `setText`
 
+---
+
+Description of methods and arguments:
+
 `language->setDefaults($lines): void`  
 Set default language settings
 
@@ -422,7 +436,7 @@ Check if language setting exists
 `language->isExisting($language): bool`  
 Check if language exists
 
-#### Yellow language examples
+---
 
 Layout file for showing a language setting:
 
@@ -477,6 +491,10 @@ The class `YellowUser` gives access to [user settings](how-to-change-the-system#
 
 `getModified` `getSettings` `getUser` `getUserHtml` `isExisting` `isUser` `remove` `save` `setUser`
 
+---
+
+Description of methods and arguments:
+
 `user->save($fileName, $email, $settings): bool`  
 Save user settings to file
 
@@ -504,7 +522,7 @@ Check if user setting exists
 `user->isExisting($email): bool`  
 Check if user exists
 
-#### Yellow user examples
+---
 
 Layout file for showing current user:
 
@@ -560,6 +578,10 @@ The class `YellowExtension` gives access to extensions. The following methods ar
 
 `get` `getModified` `isExisting`
 
+---
+
+Description of methods and arguments:
+
 `extension->get($key): object`  
 Return extension
 
@@ -569,7 +591,7 @@ Return extensions modification date, Unix time or HTTP format
 `extension->isExisting($key): bool`  
 Check if extension exists
 
-#### Yellow extension examples
+---
 
 Layout file for showing extensions:
 
@@ -617,6 +639,10 @@ if ($this->yellow->extension->isExisting("image")) {
 The class `YellowLookup` gives access to lookup and normalisation functions. The following methods are available:
 
 `findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+
+---
+
+Description of methods and arguments:
 
 `lookup->findContentLocationFromFile($fileName): string`  
 Return content location from file path
@@ -672,7 +698,7 @@ Check if media file
 `lookup->isSystemFile($fileName): bool`  
 Check if system file
 
-#### Yellow lookup examples
+---
 
 Layout file for showing image paths:
 
@@ -721,6 +747,10 @@ if (!is_string_empty($url)) {
 The class `YellowToolbox` gives access to toolbox with helper functions. The following methods are available:
 
 `appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `modifyFile` `readFile` `renameDirectory` `renameFile`
+
+---
+
+Description of methods and arguments:
 
 `toolbox->getCookie($key): string`  
 Return browser cookie from from current HTTP request  
@@ -782,7 +812,7 @@ Return array of variable size from text, space separated
 `toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
 Create text description, with or without HTML
 
-#### Yellow toolbox examples
+---
 
 Code for reading text lines from file:
 
@@ -821,6 +851,10 @@ foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/
 The class `YellowPage` gives access to a page and its [page settings](how-to-change-the-system#page-settings). The following methods are available:
 
 `error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
+
+---
+
+Description of methods and arguments:
 
 `page->set($key, $value): void`  
 Set page setting
@@ -936,7 +970,7 @@ Check if response header exists
 `page->isPage($key): bool`  
 Check if shared page exists  
 
-#### Yellow page examples
+---
 
 Layout file for showing page content:
 
@@ -984,6 +1018,10 @@ Layout file for showing page content and modification date:
 The class `YellowPageCollection` gives access to multiple pages. The following methods are available:
 
 `append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
+
+---
+
+Description of methods and arguments:
 
 `pages->append($page): void`  
 Append to end of page collection
@@ -1057,7 +1095,7 @@ Check if there is a pagination
 `page->isEmpty(): bool`  
 Check if page collection is empty
 
-#### Yellow page collection examples
+---
 
 Layout file for showing three random pages:
 
@@ -1122,6 +1160,10 @@ The following functions extend PHP string functions and variable functions:
 
 `is_array_empty` `is_string_empty` `strlenu` `strposu` `strrposu` `strtoloweru` `strtoupperu` `substru`
 
+---
+
+Description of functions and arguments:
+
 `strtoloweru($string): string`  
 Make string lowercase, UTF-8 compatible
 
@@ -1146,7 +1188,7 @@ Check if string is empty
 `is_array_empty($array): bool`  
 Check if array is empty
 
-#### Yellow string examples
+---
 
 Code for converting strings:
 
@@ -1154,6 +1196,11 @@ Code for converting strings:
 $string = "Datenstrom Yellow is for people who make small websites";
 echo strtoloweru($string);    // datenstrom yellow is for people who make small websites
 echo strtoupperu($string);    // DATENSTROM YELLOW IS FOR PEOPLE WHO MAKE SMALL WEBSITES
+```
+
+Code for accessing strings:
+
+```
 $string = "Text with UTF-8 characters åäö";
 echo strlenu($string);        // 30
 echo strposu($string, "UTF"); // 10
@@ -1220,7 +1267,7 @@ Handle logging
 `public function onShutdown()`  
 Handle shutdown
 
-#### Yellow core events examples
+---
 
 Extension for handling initialisation:
 
@@ -1284,7 +1331,7 @@ Handle page extra data
 `public function onParsePageOutput($page, $text)`  
 Handle page output data
 
-#### Yellow parse events examples
+---
 
 Extension for custom shortcut:
 
@@ -1354,7 +1401,7 @@ Handle system file changes
 `public function onEditUserAccount($action, $email, $password)`  
 Handle user account changes
 
-#### Yellow edit events examples
+---
 
 Extension for handling page edit:
 
@@ -1415,7 +1462,7 @@ Handle command
 `public function onCommandHelp()`  
 Handle command help
 
-#### Yellow command events examples
+---
 
 Extension for custom command:
 
