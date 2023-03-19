@@ -1017,17 +1017,20 @@ Layoutdatei um den Seiteninhalt und das Änderungsdatum anzuzeigen:
 
 Die Klasse `YellowPageCollection` gibt Zugang zu mehreren Seiten. Die folgenden Methoden sind verfügbar:
 
-`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
+`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `remove` `reverse` `shuffle` `similar` `sort`
 
 ---
 
 Beschreibung der Methoden und Argumente:
 
 `pages->append($page): void`  
-Hänge an das Ende der Seitenkollektion
+Hänge Seite an das Ende der Seitenkollektion
 
 `pages->prepend($page): void`  
-Stelle an den Anfang der Seitenkollektion
+Stelle Seite an den Anfang der Seitenkollektion
+
+`pages->remove($page): YellowPageCollection`  
+Entferne Seite aus der Seitenkollektion
 
 `pages->filter($key, $value, $exactMatch = true): YellowPageCollection`  
 Filtere eine Seitenkollektion nach Seiteneinstellung

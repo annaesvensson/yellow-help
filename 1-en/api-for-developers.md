@@ -1017,17 +1017,20 @@ Layout file for showing page content and modification date:
 
 The class `YellowPageCollection` gives access to multiple pages. The following methods are available:
 
-`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
+`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `remove` `reverse` `shuffle` `similar` `sort`
 
 ---
 
 Description of methods and arguments:
 
 `pages->append($page): void`  
-Append to end of page collection
+Append page to end of page collection
 
 `pages->prepend($page): void`  
-Prepend to start of page collection
+Prepend page to start of page collection
+
+`pages->remove($page): YellowPageCollection`  
+Remove page from page collection
 
 `pages->filter($key, $value, $exactMatch = true): YellowPageCollection`  
 Filter page collection by page setting

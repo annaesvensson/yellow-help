@@ -22,7 +22,7 @@ Your website is automatically created from your `content` folder:
 2. Files can have a numerical prefix for sorting, e.g. `2020-04-07-blog-example.md`
 3. Files and folders without a prefix have no special meaning, e.g. `wiki-example.md`
 
-Prefix and suffix are removed from the location, so that it looks better. For example the folder `content/1-home` is available on your website as `http://website/`. The folder `content/9-about` is available on your website as `http://website/about/`. The file `content/2-wiki/wiki-example.md` is available on your website as `http://website/wiki/wiki-example`. 
+Prefix and suffix are removed from the address, so that it looks better. For example the folder `content/1-home` is available on your website as `http://website/`. The folder `content/9-about` is available on your website as `http://website/about/`. The file `content/2-wiki/wiki-example.md` is available on your website as `http://website/wiki/wiki-example`. 
 
 While most folders are available on your website, there are two exception. The `content/1-home` folder must not contain subfolders. The `content/shared` folder may only be included in other folders, it's not directly available on your website. 
 

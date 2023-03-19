@@ -1018,17 +1018,20 @@ Layoutfil för att visa sidinnehåll och modifieringsdatum:
 
 Klassen `YellowPageCollection` ger tillgång till flera sidor. Följande metoder är tillgängliga:
 
-`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `reverse` `shuffle` `similar` `sort`
+`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `remove` `reverse` `shuffle` `similar` `sort`
 
 ---
 
 Beskrivning av metoder och argument:
 
 `pages->append($page): void`  
-Lägg till slutet av page collection
+Lägg till sidan till slutet av page collection
 
 `pages->prepend($page): void`  
-Placera i början av page collection
+Placera sidan i början av page collection
+
+`pages->remove($page): YellowPageCollection`  
+Ta bort sidan från page collection
 
 `pages->filter($key, $value, $exactMatch = true): YellowPageCollection`  
 Filtrera page collection efter sidinställning
