@@ -709,7 +709,7 @@ Layoutfil för att visa bildsökvägar:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php $pathInstall = $this->system->get("coreServerInstallDirectory") ?>
+<?php $pathInstall = $this->yellow->system->get("coreServerInstallDirectory") ?>
 <?php $pathImages = $this->yellow->lookup->findMediaDirectory("coreImageLocation") ?>
 <?php $pathThumbs = $this->yellow->lookup->findMediaDirectory("coreThumbnailLocation") ?>
 <?php echo "Image files: ".htmlspecialchars($pathInstall.$pathImages)."<br />" ?>
