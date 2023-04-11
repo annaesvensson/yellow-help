@@ -33,7 +33,7 @@ Du kan redigera din webbplats i en webbläsare eller textredigerare. Högst upp 
     ---
     Title: Exempelsida
     ---
-    Detta är ett exempelsida.
+    Detta är en exempelsida.
 
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
     tempor incididunt ut labore et dolore magna pizza. Ut enim ad minim veniam, 
