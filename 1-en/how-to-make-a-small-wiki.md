@@ -15,11 +15,11 @@ If you want to edit wiki pages in a web browser, you can do this on your website
 
 ```
 ---
-Title: Wiki example
+Title: Wiki example page
 Layout: wiki
 Tag: Example
 ---
-This is an example wiki page. 
+This is an example page.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
 tempor incididunt ut labore et dolore magna pizza. Ut enim ad minim veniam, 

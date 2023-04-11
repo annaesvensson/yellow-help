@@ -15,13 +15,13 @@ If you want to edit blog pages in a web browser, you can do this on your website
 
 ```
 ---
-Title: Blog example
+Title: Blog example page
 Published: 2020-04-07
 Author: Datenstrom
 Layout: blog
 Tag: Example
 ---
-This is an example blog page. 
+This is an example page.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
 tempor incididunt ut labore et dolore magna pizza. Ut enim ad minim veniam, 

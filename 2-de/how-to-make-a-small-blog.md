@@ -15,13 +15,13 @@ Falls du Blogseiten im Webbrowser bearbeiten möchtest, kannst du das auf deiner
 
 ```
 ---
-Title: Blog-Beispiel
+Title: Blog-Beispielseite
 Published: 2020-04-07
 Author: Datenstrom
 Layout: blog
 Tag: Beispiel
 ---
-Das ist eine Beispielseite fürs Blog.
+Das ist eine Beispielseite.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
 tempor incididunt ut labore et dolore magna pizza. Ut enim ad minim veniam, 
