@@ -74,7 +74,7 @@ The user settings are stored in file `system/extensions/yellow-user.ini`. Here's
     Modified: 2000-01-01 13:37:00
     Status: active
 
-You can use a [web browser](https://github.com/annaesvensson/yellow-edit) or the [command line](https://github.com/annaesvensson/yellow-command) to create new user accounts. A user account consists of `Email` and other settings. If you don't want that pages are modified in a web browser, then restrict user accounts. Open the configuration file, change `Access` and `Home`. Users are allowed to edit pages within their home page, but nowhere else.
+You can use a [web browser](https://github.com/annaesvensson/yellow-edit) or the [command line](https://github.com/annaesvensson/yellow-core) to create new user accounts. A user account consists of `Email` and other settings. If you don't want that pages are modified in a web browser, then restrict user accounts. Open the configuration file, change `Access` and `Home`. Users are allowed to edit pages within their home page, but nowhere else.
 
 ## Page settings
 

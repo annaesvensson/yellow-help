@@ -74,7 +74,7 @@ Användarinställningar lagras i filen `system/extensions/yellow-user.ini`. Här
     Modified: 2000-01-01 13:37:00
     Status: active
 
-Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) eller [kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md) för att skapa nya användarkonton. Ett användarkonto består av `Email` och andra inställningar. Om du inte vill att sidorna ska ändras i en webbläsare begränsar du användarkonton. Öppna konfigurationsfilen, ändra `Access` och `Home`. Användare får redigera sidor på sin hemsida, men inte någon annanstans.
+Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) eller [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md) för att skapa nya användarkonton. Ett användarkonto består av `Email` och andra inställningar. Om du inte vill att sidorna ska ändras i en webbläsare begränsar du användarkonton. Öppna konfigurationsfilen, ändra `Access` och `Home`. Användare får redigera sidor på sin hemsida, men inte någon annanstans.
 
 ## Sidinställningar
 

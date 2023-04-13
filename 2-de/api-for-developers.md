@@ -36,7 +36,7 @@ Die folgenden Konfigurationsdateien und Logdateien sind verfügbar:
 
 ### Eingebaute Befehlszeile
 
-Du kannst Befehle in der Befehlszeile ausführen. Das gibt dir die Möglichkeit eine statische Webseite zu erstellen und andere Dinge zu erledigen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php`, um die verfügbaren Befehle anzuzeigen. Die verfügbaren Befehle hängen von den installierten Erweiterungen ab. [Weitere Informationen zur Befehlszeile](https://github.com/annaesvensson/yellow-command/tree/main/README-de.md).
+Du kannst Befehle in der Befehlszeile ausführen. Das gibt dir die Möglichkeit eine statische Webseite zu erstellen und andere Dinge zu erledigen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php`, um die verfügbaren Befehle anzuzeigen. Die verfügbaren Befehle hängen von den installierten Erweiterungen ab. [Weitere Informationen zur Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md).
 
 ### Eingebauter Webserver
 
@@ -737,7 +737,7 @@ Code um eine URL in Bestandteile zu zerlegen:
 
 ``` php
 if (!is_string_empty($url)) {
-    list($scheme, $address, $base) = $this->yellow->lookup->getUrlInformation($staticUrl);
+    list($scheme, $address, $base) = $this->yellow->lookup->getUrlInformation($url);
     echo "Found scheme:$scheme address:$address base:$base\n";
 }
 ```
@@ -1538,8 +1538,8 @@ class YellowExample {
 
 ## Verwandte Informationen
 
-* [Wie man eine Webseite auf dem Computer bearbeitet](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md)
 * [Wie man eine Erweiterung erstellt](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md)
 * [Wie man eine Übersetzung erstellt](https://github.com/annaesvensson/yellow-language/tree/main/README-de.md)
+* [Wie man eine statische Webseite erstellt](https://github.com/annaesvensson/yellow-static/tree/main/README-de.md)
 
 Hast du Fragen? [Hilfe finden](.).

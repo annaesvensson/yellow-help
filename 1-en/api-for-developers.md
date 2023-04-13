@@ -36,7 +36,7 @@ The following configuration files and log files are available:
 
 ### Built-in command line
 
-You can execute commands at the command line. This allows you to build a static website and do other things. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php` to show available commands. The available commands depend on extensions installed. [Learn more about the command line](https://github.com/annaesvensson/yellow-command).
+You can execute commands at the command line. This allows you to build a static website and do other things. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php` to show available commands. The available commands depend on extensions installed. [Learn more about the command line](https://github.com/annaesvensson/yellow-core).
 
 ### Built-in web server
 
@@ -737,7 +737,7 @@ Code for breaking up a URL:
 
 ``` php
 if (!is_string_empty($url)) {
-    list($scheme, $address, $base) = $this->yellow->lookup->getUrlInformation($staticUrl);
+    list($scheme, $address, $base) = $this->yellow->lookup->getUrlInformation($url);
     echo "Found scheme:$scheme address:$address base:$base\n";
 }
 ```
@@ -1543,8 +1543,8 @@ class YellowExample {
 
 ## Relevant information
 
-* [How to edit a website on your computer](https://github.com/annaesvensson/yellow-core)
 * [How to make an extension](https://github.com/annaesvensson/yellow-publish)
 * [How to make a translation](https://github.com/annaesvensson/yellow-language)
+* [How to build a static website](https://github.com/annaesvensson/yellow-static)
 
 Do you have questions? [Get help](.).

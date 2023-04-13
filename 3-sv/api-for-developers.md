@@ -36,7 +36,7 @@ Följande konfigurationsfiler och loggfiler är tillgängliga:
 
 ### Inbyggd kommandorad
 
-Du kan köra kommandon från kommandoraden. Detta ger dig möjlighet att bygga en statisk webbplats och göra andra saker. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php` för att visa tillgängliga kommandona. De tillgängliga kommandona beror på installerade tillägg. [Läs mer om kommandoraden](https://github.com/annaesvensson/yellow-command/tree/main/README-sv.md).
+Du kan köra kommandon från kommandoraden. Detta ger dig möjlighet att bygga en statisk webbplats och göra andra saker. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php` för att visa tillgängliga kommandona. De tillgängliga kommandona beror på installerade tillägg. [Läs mer om kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md).
 
 ### Inbyggd webbserver
 
@@ -738,7 +738,7 @@ Kod för att dela upp en URL:
 
 ``` php
 if (!is_string_empty($url)) {
-    list($scheme, $address, $base) = $this->yellow->lookup->getUrlInformation($staticUrl);
+    list($scheme, $address, $base) = $this->yellow->lookup->getUrlInformation($url);
     echo "Found scheme:$scheme address:$address base:$base\n";
 }
 ```
@@ -1539,8 +1539,8 @@ class YellowExample {
 
 ## Relaterad information
 
-* [Hur man redigerar en webbplats på datorn](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md)
 * [Hur man gör ett tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md)
 * [Hur man gör en översättning](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md)
+* [Hur man bygger en statisk webbplats](https://github.com/annaesvensson/yellow-static/tree/main/README-sv.md) 
 
 Har du några frågor? [Få hjälp](.).

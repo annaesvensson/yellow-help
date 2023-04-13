@@ -74,7 +74,7 @@ Die Benutzereinstellungen sind in der Datei `system/extensions/yellow-user.ini` 
     Modified: 2000-01-01 13:37:00
     Status: active
 
-Im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) oder der [Befehlszeile](https://github.com/annaesvensson/yellow-command/tree/main/README-de.md) kannst du neue Benutzerkonten anlegen. Ein Benutzerkonto besteht aus `Email` und weiteren Einstellungen. Falls du nicht willst dass Seiten im Webbrowser verändert werden, dann beschränke Benutzerkonten. Öffne die Konfigurationsdatei, ändere `Access` und `Home`. Benutzer dürfen Seiten innerhalb ihrer Startseite bearbeiten, aber nirgendwo sonst.
+Im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) oder der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) kannst du neue Benutzerkonten anlegen. Ein Benutzerkonto besteht aus `Email` und weiteren Einstellungen. Falls du nicht willst dass Seiten im Webbrowser verändert werden, dann beschränke Benutzerkonten. Öffne die Konfigurationsdatei, ändere `Access` und `Home`. Benutzer dürfen Seiten innerhalb ihrer Startseite bearbeiten, aber nirgendwo sonst.
 
 ## Seiteneinstellungen
 
