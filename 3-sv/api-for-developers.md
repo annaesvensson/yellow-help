@@ -88,7 +88,7 @@ Följande objekt är tillgängliga:
 
 Klassen `Yellow` ger tillgång till API:et. Följande metoder är tillgängliga:
 
-`command` `getLayoutArguments` `isCommandLine` `layout` `load` `log` `request`
+`command` `getLayoutArguments` `isCommandLine` `layout` `load` `request`
 
 ---
 
@@ -102,9 +102,6 @@ Hantera begäran från webbläsaren
 
 `yellow->command($line = ""): int`  
 Hantera kommandon från kommandoraden
-
-`yellow->log($action, $message): void`  
-Skriv information till loggfilen
 
 `yellow->layout($name, $arguments = null): void`  
 Inkludera layouten
@@ -754,7 +751,7 @@ if (!is_string_empty($url)) {
 
 Klassen `YellowToolbox` ger tillgång till verktygslådan med hjälpfunktioner. Följande metoder är tillgängliga:
 
-`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `modifyFile` `readFile` `renameDirectory` `renameFile`
+`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `modifyFile` `readFile` `renameDirectory` `renameFile`
 
 ---
 
@@ -820,6 +817,9 @@ Returnera array med variabel storlek från text, separerade av mellanslag
 `toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
 Skapa textbeskrivning, med eller utan HTML
 
+`toolbox->log($action, $message): void`  
+Skriv information till loggfilen
+
 ---
 
 Kod för att läsa textrader från filen:
@@ -849,7 +849,7 @@ foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/
     $fileData = $fileDataNew = $this->yellow->toolbox->readFile($entry);
     $fileDataNew = str_replace("I drink a lot of water", "I drink a lot of coffee", $fileDataNew);
     if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($entry, $fileDataNew)) {
-        $this->yellow->log("error", "Can't write file '$entry'!");
+        $this->yellow->toolbox->log("error", "Can't write file '$entry'!");
     }
 }
 ```
@@ -1312,7 +1312,7 @@ class YellowExample {
     // Handle update
     public function onUpdate($action) {
         if ($action=="daily") {
-            $this->yellow->log("info", "Handle daily update event");
+            $this->yellow->toolbox->log("info", "Handle daily update event");
         }
     }
 }
@@ -1433,7 +1433,7 @@ class YellowExample {
         if ($action=="edit") {
             $title = $page->get("title");
             $name = $this->yellow->user->getUser("name", $email);
-            $this->yellow->log("info", "Edit page by user '".strtok($name, " ")."'");
+            $this->yellow->toolbox->log("info", "Edit page by user '".strtok($name, " ")."'");
         }
     }
 }
@@ -1458,7 +1458,7 @@ class YellowExample {
             $fileName = $file->fileName;
             $fileType = $this->yellow->toolbox->getFileType($file->get("fileNameShort"));
             $name = $this->yellow->user->getUser("name", $email);
-            $this->yellow->log("info", "Upload file by user '".strtok($name, " ")."'");
+            $this->yellow->toolbox->log("info", "Upload file by user '".strtok($name, " ")."'");
         }
     }
 }
