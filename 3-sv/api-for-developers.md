@@ -34,29 +34,28 @@ Följande konfigurationsfiler och loggfiler är tillgängliga:
 
 ## Verktyg
 
-### Inbyggd kommandorad
+### Inbyggd webbredigerare
 
-Du kan köra kommandon från kommandoraden. Detta ger dig möjlighet att bygga en statisk webbplats och göra andra saker. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php` för att visa tillgängliga kommandona. De tillgängliga kommandona beror på installerade tillägg. [Läs mer om kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md).
+Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Inbyggda webbredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. [Läs mer om webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
 
 ### Inbyggd webbserver
 
 Du kan starta inbyggda webbservern på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att redigera webbsidor på din dator och ladda upp dem till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md).
 
-### Inbyggd webbredigerare
+### Inbyggd static-site-generator
 
-Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Inbyggda webbredigeraren ger dig möjlighet att redigera innehållsfiler, ladda upp mediefiler och ändra inställningar. Det är ett utmärkt sätt att uppdatera webbsidor. [Läs mer om webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
+Du kan bygga en statisk webbplats på kommandoraden. Den static-site-generatorn bygger hella webbsidan i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv php `yellow.php build`, du kan valfritt ange en mapp och en plats. Detta kommer att bygga en statisk webbplats i `public` mappen. Ladda upp den statiska webbplatsen till din webbserver och bygg en ny när det behövs. [Läs mer om static-site-generatorn](https://github.com/annaesvensson/yellow-static/tree/main/README-sv.md).
 
 ## Objekt
 
 Med hjälp av `$this->yellow` kan du som utvecklare komma åt webbplatsen. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för API:et finns i filen `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌───────────────┐    ┌───────────────┐    ┌───────────────┐
-│ Webbläsare    │    │ Texteditor    │    │ Kommandorad   │
-└───────┬───────┘    └───────┬───────┘    └──────┬────────┘
-        │                    │                   │
-        │                    │                   │
-        ▼                    ▼                   ▼
+┌───────────────┐   ┌───────────────┐   ┌───────────────┐    ┌───────────────┐
+│ Webbläsare    │   │ Kommandorad   │   │ Tillägg       │    │ Layout        │
+└───────────────┘   └───────────────┘   └───────────────┘    └───────────────┘
+        │                   │                  │                  │
+        ▼                   ▼                  ▼                  ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ Core                                                                       │
 │                                                                            │
@@ -64,6 +63,11 @@ Med hjälp av `$this->yellow` kan du som utvecklare komma åt webbplatsen. API:e
 │ $this->yellow->content   $this->yellow->language    $this->yellow->lookup  │
 │ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
 │ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
+└────────────────────────────────────────────────────────────────────────────┘
+        │
+        ▼ 
+┌────────────────────────────────────────────────────────────────────────────┐
+│ Filsystem                                                                  │
 └────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -84,7 +88,7 @@ Följande objekt är tillgängliga:
 
 Klassen `Yellow` ger tillgång till API:et. Följande metoder är tillgängliga:
 
-`command` `getLayoutArguments` `layout` `load` `log` `request`
+`command` `getLayoutArguments` `isCommandLine` `layout` `load` `log` `request`
 
 ---
 
@@ -107,6 +111,9 @@ Inkludera layouten
 
 `yellow->getLayoutArguments($sizeMin = 9): array`  
 Returnera layoutargument
+
+`yellow->isCommandLine(): bool`  
+Kontrollera om kommandoraden körs
 
 ---
 
@@ -1139,20 +1146,21 @@ Layoutfil för att visa senaste sidor:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layoutfil för att visa draftsidor:
+Layoutfil för att visa senaste sidor med paginering:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index(true, true)->filter("status", "draft") ?>
+<?php $pages = $this->yellow->content->index()->sort("modified", false)->paginate(10) ?>
 <?php $this->yellow->page->setLastModified($pages->getModified()) ?>
 <ul>
 <?php foreach ($pages as $page): ?>
 <li><?php echo $page->getHtml("title") ?></li>
 <?php endforeach ?>
 </ul>
+<?php $this->yellow->layout("pagination", $pages) ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -1197,13 +1205,18 @@ Kontrollera om arrayen är tom
 Kod för att konvertera strängar:
 
 ``` php
-$string = "Datenstrom Yellow är för människor som skapar små webbsidor";
-echo strtoloweru($string);    // datenstrom yellow är för människor som skapar små webbsidor
-echo strtoupperu($string);    // DATENSTROM YELLOW ÄR FÖR MÄNNISKOR SOM SKAPAR SMÅ WEBBSIDOR
+$string = "För människor och maskiner";
+echo strtoloweru($string);                   // för människor och maskiner
+echo strtoupperu($string);                   // FÖR MÄNNISKOR OCH MASKINER
+```
+
+Kod för att komma åt strängar:
+
+``` php
 $string = "Text med UTF-8 tecken åäö";
-echo strlenu($string);        // 25
-echo strposu($string, "UTF"); // 9
-echo substru($string, -3, 3); // åäö
+echo strlenu($string);                       // 25
+echo strposu($string, "UTF");                // 9
+echo substru($string, -3, 3);                // åäö
 ```
 
 Kod för att kontrollera om variabler är tomma:
@@ -1541,6 +1554,6 @@ class YellowExample {
 
 * [Hur man gör ett tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md)
 * [Hur man gör en översättning](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md)
-* [Hur man bygger en statisk webbplats](https://github.com/annaesvensson/yellow-static/tree/main/README-sv.md) 
+* [Hur man redigerar hjälpen](https://github.com/annaesvensson/yellow-help/tree/main/README-sv.md)
 
 Har du några frågor? [Få hjälp](.).

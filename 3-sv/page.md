@@ -27,4 +27,4 @@ TitleSlug: help
 
 ## Vill du ha support?
 
-Letar du efter någon som hjälper dig? Har du fastnat? Kontakta först personen som skapade din webbplats. Vanligtvis får du hjälp där. Om inte, kontakta kommersiella supporten för Datenstrom Yellow. Vår kommersiella support är här för att hjälpa dig. Prata med en konsult via email, chatt eller telefon. Vi lyssnar och tar hand om problem. [Läs mer om kommersiella supporten](https://mayberg.se/support/).
+Letar du efter någon som hjälper dig? Har du fastnat? Kontakta först personen som installerade din webbplats. Vanligtvis får du hjälp där. Om inte, kontakta kommersiella supporten för Datenstrom Yellow. Vår kommersiella support är här för att hjälpa dig. Prata med en konsult via email, chatt eller telefon. Vi lyssnar och tar hand om problem. [Läs mer om kommersiella supporten](https://mayberg.se/support/).

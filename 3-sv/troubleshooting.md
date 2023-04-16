@@ -11,10 +11,15 @@ Läs hur du hittar och åtgärdar problem.
 Följande felmeddelanden kan uppstå:
 
 ```
-Datenstrom Yellow requires complete upload!
+Datenstrom Yellow requires PHP 7.0 or higher!
 ```
 
-Kopiera igen alla medföljande filer till installationsmappen. Kontrollera om din FTP-programvara visar ett felmeddelande under uppladdningen. Ibland händer det att dataöverföringen avbröts under uppladdningen. Efter att saknade filer har kopierats till installationsmappen bör problemet lösas.
+Installera senaste PHP-versionen på din webbserver.
+```
+Datenstrom Yellow requires PHP extension!
+```
+
+Installera saknade PHP-tillägget på din webbserver. Du behöver `curl gd mbstring zip`.
 
 ```
 Datenstrom Yellow requires write access!
@@ -35,38 +40,17 @@ Datenstrom Yellow requires rewrite support!
 Kontrollera webbserverns konfigurationsfil, se [problem med Apache](#problem-med-apache) och [problem med Nginx](#problem-med-nginx). Du måste antingen ändra konfigurationsfilen för din webbserver eller så använder du en annan webbserver. Så snart webbservern vidarebefordrar HTTP-förfrågningar till `yellow.php`, bör problemet lösas.
 
 ```
-Datenstrom Yellow requires PHP extension!
+Datenstrom Yellow requires complete upload!
 ```
 
-Installera saknade PHP-tillägget på din webbserver. Du behöver `curl gd mbstring zip`.
-
-```
-Datenstrom Yellow requires PHP 7.0 or higher!
-```
-
-Installera senaste PHP-versionen på din webbserver.
+Kopiera igen alla medföljande filer till installationsmappen. Kontrollera om din FTP-programvara visar ett felmeddelande under uppladdningen. Ibland händer det att dataöverföringen avbröts under uppladdningen. Efter att saknade filer har kopierats till installationsmappen bör problemet lösas.
 
 ## Problem efter installationen
 
 Följande felmeddelande kan uppstå:
 
 ```
-Check the log file. Activate the debug mode for more information.
-```
-
-Kontrollera loggfilen `system/extensions/yellow-website.log`. Om det finns skrivfel, ge skrivbehörighet till de drabbade filerna. Om det finns andra fel, ersätt de drabbade filerna eller [rapportera ett fel](contributing-guidelines). Loggfilen ger dig i alla fall en snabb översikt över vad som händer på din webbplats. Här är ett exempel: 
-
-```
-2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 7.1.33, Apache 2.4.33, Mac
-2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
-2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
-2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
-2020-10-28 14:13:07 info Install extension 'English 0.8.27'
-2020-10-28 14:13:07 info Install extension 'German 0.8.27'
-2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
-2020-10-28 14:13:17 info Add user 'Anna'
-2020-12-18 21:02:42 info Update extension 'Core 0.8.42'
-2020-12-18 21:02:42 error Can't write file 'system/extensions/yellow-system.ini'!
+Datenstrom Yellow stopped with fatal error. Activate the debug mode for more information.
 ```
 
 Du kan använda felsökningsläget för att undersöka orsaken till ett problem mer i detalj, för att visa stackspåret av ett program eller om du är nyfiken på hur Datenstrom Yellow fungerar. Beroende på debug-level visas mer eller mindre information på skärmen. Så här aktiverar du felsökningsläget på din webbplats:
@@ -105,6 +89,20 @@ YellowSystem::load Email:webmaster
 YellowSystem::load Language:sv
 YellowSystem::load Layout:default
 YellowSystem::load Theme:stockholm
+```
+
+Du kan hitta viktig information i loggfilen. Öppna filen `system/extensions/yellow-website.log` och sök efter `error`. Om du inte är säker på hur man åtgärdar ett problem, [rapportera ett fel](contributing-guidelines). Loggfilen ger dig i alla fall en snabb översikt över vad som händer på din webbplats. Här är ett exempel: 
+
+```
+2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 7.1.33, Apache 2.4.33, Mac
+2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
+2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
+2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
+2020-10-28 14:13:07 info Install extension 'English 0.8.27'
+2020-10-28 14:13:07 info Install extension 'German 0.8.27'
+2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
+2020-10-28 14:18:11 info Install extension 'Fika 0.8.15'
+2020-10-28 14:18:11 error Can't parse file 'system/extensions/fika.php'!
 ```
 
 ## Problem med Apache

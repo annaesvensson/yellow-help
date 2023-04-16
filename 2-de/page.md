@@ -27,4 +27,4 @@ Funktioniert etwas nicht wie erwartet? Fehlt etwas in der Dokumentation? Es best
 
 ## Möchtest du Support haben?
 
-Suchst du jemanden der dir hilft? Steckst du fest? Wende dich zuerst an denjenigen der deine Webseite erstellt hat. Normalerweise kann dir dort geholfen werden. Falls nicht, wende dich an den kommerziellen Support für Datenstrom Yellow. Rede mit einem Berater via Email, Chat oder Telefon. Wir hören zu und kümmern uns um Probleme. [Weitere Informationen zum kommerziellen Support](https://mayberg.se/support/).
+Suchst du jemanden der dir hilft? Steckst du fest? Wende dich zuerst an denjenigen der deine Webseite installiert hat. Normalerweise kann dir dort geholfen werden. Falls nicht, wende dich an den kommerziellen Support für Datenstrom Yellow. Rede mit einem Berater via Email, Chat oder Telefon. Wir hören zu und kümmern uns um Probleme. [Weitere Informationen zum kommerziellen Support](https://mayberg.se/support/).

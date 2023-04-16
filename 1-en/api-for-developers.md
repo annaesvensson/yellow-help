@@ -34,29 +34,28 @@ The following configuration files and log files are available:
 
 ## Tools
 
-### Built-in command line
+### Built-in web editor
 
-You can execute commands at the command line. This allows you to build a static website and do other things. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php` to show available commands. The available commands depend on extensions installed. [Learn more about the command line](https://github.com/annaesvensson/yellow-core).
+You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The built-in web editor allows you to edit content files and upload media files. It is a great way to update your website. To show an edit link on your website use an `[edit]` shortcut. [Learn more about the web editor](https://github.com/annaesvensson/yellow-edit).
 
 ### Built-in web server
 
 You can start the built-in web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to edit web pages on your computer and upload them to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the web server](https://github.com/annaesvensson/yellow-serve).
 
-### Built-in web editor
+### Built-in static site generator
 
-You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The built-in web editor allows you to edit content files, upload media files and change settings. It is a great way to update your website. To show an edit link on your website use an `[edit]` shortcut. [Learn more about the web editor](https://github.com/annaesvensson/yellow-edit).
+You can build a static website at the command line. The static site generator builds the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php build`, you can optionally add a folder and a location. This will build a static website in the `public` folder. Upload the static website to your web server and build a new one when needed. [Learn more about the static site generator](https://github.com/annaesvensson/yellow-static).
 
 ## Objects
 
 With the help of `$this->yellow` you can access the website as a developer. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the API can be found in file `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌───────────────┐    ┌───────────────┐    ┌───────────────┐
-│ Web browser   │    │ Text editor   │    │ Command line  │
-└───────┬───────┘    └───────┬───────┘    └──────┬────────┘
-        │                    │                   │
-        │                    │                   │
-        ▼                    ▼                   ▼
+┌───────────────┐   ┌───────────────┐   ┌───────────────┐    ┌───────────────┐
+│ Web browser   │   │ Command line  │   │ Extension     │    │ Layout        │
+└───────────────┘   └───────────────┘   └───────────────┘    └───────────────┘
+        │                   │                  │                  │
+        ▼                   ▼                  ▼                  ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ Core                                                                       │
 │                                                                            │
@@ -64,6 +63,11 @@ With the help of `$this->yellow` you can access the website as a developer. The 
 │ $this->yellow->content   $this->yellow->language    $this->yellow->lookup  │
 │ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
 │ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
+└────────────────────────────────────────────────────────────────────────────┘
+        │
+        ▼ 
+┌────────────────────────────────────────────────────────────────────────────┐
+│ File system                                                                │
 └────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -84,7 +88,7 @@ The following objects are available:
 
 The class `Yellow` gives access to the API. The following methods are available:
 
-`command` `getLayoutArguments` `layout` `load` `log` `request`
+`command` `getLayoutArguments` `isCommandLine` `layout` `load` `log` `request`
 
 ---
 
@@ -107,6 +111,9 @@ Include layout
 
 `yellow->getLayoutArguments($sizeMin = 9): array`  
 Return layout arguments
+
+`yellow->isCommandLine(): bool`  
+Check if running at command line
 
 ---
 
@@ -1138,20 +1145,21 @@ Layout file for showing latest pages:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layout file for showing draft pages:
+Layout file for showing latest pages with pagination:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index(true, true)->filter("status", "draft") ?>
+<?php $pages = $this->yellow->content->index()->sort("modified", false)->paginate(10) ?>
 <?php $this->yellow->page->setLastModified($pages->getModified()) ?>
 <ul>
 <?php foreach ($pages as $page): ?>
 <li><?php echo $page->getHtml("title") ?></li>
 <?php endforeach ?>
 </ul>
+<?php $this->yellow->layout("pagination", $pages) ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -1196,18 +1204,18 @@ Check if array is empty
 Code for converting strings:
 
 ``` php
-$string = "Datenstrom Yellow is for people who make small websites";
-echo strtoloweru($string);    // datenstrom yellow is for people who make small websites
-echo strtoupperu($string);    // DATENSTROM YELLOW IS FOR PEOPLE WHO MAKE SMALL WEBSITES
+$string = "For people and machines";
+echo strtoloweru($string);                   // for people and machines
+echo strtoupperu($string);                   // FOR PEOPLE AND MACHINES
 ```
 
 Code for accessing strings:
 
-```
+``` php
 $string = "Text with UTF-8 characters åäö";
-echo strlenu($string);        // 30
-echo strposu($string, "UTF"); // 10
-echo substru($string, -3, 3); // åäö
+echo strlenu($string);                       // 30
+echo strposu($string, "UTF");                // 10
+echo substru($string, -3, 3);                // åäö
 ```
 
 Code for checking if variables are empty:
@@ -1545,6 +1553,6 @@ class YellowExample {
 
 * [How to make an extension](https://github.com/annaesvensson/yellow-publish)
 * [How to make a translation](https://github.com/annaesvensson/yellow-language)
-* [How to build a static website](https://github.com/annaesvensson/yellow-static)
+* [How to edit the help](https://github.com/annaesvensson/yellow-help)
 
 Do you have questions? [Get help](.).

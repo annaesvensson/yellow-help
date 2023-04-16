@@ -27,4 +27,4 @@ Something doesn't work as expected? Something missing in the documentation? Ther
 
 ## Want to have support?
 
-Looking for someone that helps you? Are you stuck? First contact the person who made your website. Usually you can get help there. If not, contact the commercial support for Datenstrom Yellow. Our commercial support is here to help you. Talk to a consultant via email, chat or phone. We're happy to listen and take care of problems. [Learn more about commercial support](https://mayberg.se/support/).
+Looking for someone that helps you? Are you stuck? First contact the person who installed your website. Usually you can get help there. If not, contact the commercial support for Datenstrom Yellow. Our commercial support is here to help you. Talk to a consultant via email, chat or phone. We're happy to listen and take care of problems. [Learn more about commercial support](https://mayberg.se/support/).

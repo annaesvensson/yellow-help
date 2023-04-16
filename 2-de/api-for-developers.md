@@ -34,29 +34,28 @@ Die folgenden Konfigurationsdateien und Logdateien sind verfügbar:
 
 ## Werkzeuge
 
-### Eingebaute Befehlszeile
+### Eingebauter Webeditor
 
-Du kannst Befehle in der Befehlszeile ausführen. Das gibt dir die Möglichkeit eine statische Webseite zu erstellen und andere Dinge zu erledigen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php`, um die verfügbaren Befehle anzuzeigen. Die verfügbaren Befehle hängen von den installierten Erweiterungen ab. [Weitere Informationen zur Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md).
+Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der eingebauten Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Um einen Bearbeitungslink auf deiner Webseite anzuzeigen, benutze eine `[edit]`-Abkürzung. [Weitere Informationen zum Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
 
 ### Eingebauter Webserver
 
 Du kannst den eingebauten Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit Webseiten auf deinem Computer zu bearbeiten und sie später auf deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
 
-### Eingebauter Webeditor
+### Eingebauter Static-Site-Generator
 
-Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der eingebauten Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten, Mediendateien hochzuladen und Einstellungen zu ändern. Es ist eine großartige Art Webseiten zu aktualisieren. Um einen Bearbeitungslink auf deiner Webseite anzuzeigen, benutze eine `[edit]`-Abkürzung. [Weitere Informationen zum Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
+Du kannst eine statische Webseite in der Befehlszeile erstellen. Der Static-Site-Generator erstellt die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php build`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das erstellt eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und erstelle bei Bedarf eine neue. [Weitere Informationen zum Static-Site-Generator](https://github.com/annaesvensson/yellow-static/tree/main/README-de.md).
 
 ## Objekte
 
 Mit Hilfe von `$this->yellow` kannst du als Entwickler auf die Webseite zugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der API findet man in der Datei `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌───────────────┐    ┌───────────────┐    ┌───────────────┐
-│ Webbrowser    │    │ Texteditor    │    │ Befehlszeile  │
-└───────┬───────┘    └───────┬───────┘    └──────┬────────┘
-        │                    │                   │
-        │                    │                   │
-        ▼                    ▼                   ▼
+┌───────────────┐   ┌───────────────┐   ┌───────────────┐    ┌───────────────┐
+│ Webbrowser    │   │ Befehlszeile  │   │ Erweiterung   │    │ Layout        │
+└───────────────┘   └───────────────┘   └───────────────┘    └───────────────┘
+        │                   │                  │                  │
+        ▼                   ▼                  ▼                  ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ Core                                                                       │
 │                                                                            │
@@ -64,6 +63,11 @@ Mit Hilfe von `$this->yellow` kannst du als Entwickler auf die Webseite zugreife
 │ $this->yellow->content   $this->yellow->language    $this->yellow->lookup  │
 │ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
 │ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
+└────────────────────────────────────────────────────────────────────────────┘
+        │
+        ▼ 
+┌────────────────────────────────────────────────────────────────────────────┐
+│ Dateisystem                                                                │
 └────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -84,7 +88,7 @@ Die folgenden Objekte sind verfügbar:
 
 Die Klasse `Yellow` gibt Zugang zur API. Die folgenden Methoden sind verfügbar:
 
-`command` `getLayoutArguments` `layout` `load` `log` `request`
+`command` `getLayoutArguments` `isCommandLine` `layout` `load` `log` `request`
 
 ---
 
@@ -107,6 +111,9 @@ Binde ein Layout ein
 
 `yellow->getLayoutArguments($sizeMin = 9): array`  
 Hole die Layout-Argumente
+
+`yellow->isCommandLine(): bool`  
+Überprüfe ob Befehlszeile ausgeführt wird
 
 ---
 
@@ -1063,7 +1070,7 @@ Drehe die Seitenkollektion um
 Mach die Seitenkollektion zufällig
 
 `pages->paginate($limit): YellowPageCollection`  
-Erstelle eine Nummerierung für die Seitenkollektion
+Erstelle eine Paginierung für die Seitenkollektion
 
 `pages->getPaginationNumber(): int`  
 Hole die aktuelle Seitennummer
@@ -1072,13 +1079,13 @@ Hole die aktuelle Seitennummer
 Hole die höchste Seitennummer
 
 `pages->getPaginationLocation($absoluteLocation = true, $pageNumber = 1): string`  
-Hole den Ort einer Seite in der Nummerierung
+Hole den Ort einer Seite in der Paginierung
 
 `pages->getPaginationPrevious($absoluteLocation = true): string`  
-Hole den Ort der vorherigen Seite in der Nummerierung
+Hole den Ort der vorherigen Seite in der Paginierung
 
 `pages->getPaginationNext($absoluteLocation = true): string`  
-Hole den Ort der nächsten Seite in der Nummerierung
+Hole den Ort der nächsten Seite in der Paginierung
 
 `pages->getPagePrevious($page): YellowPage|null`  
 Hole die vorherige Seite in der Seitenkollektion, null falls nicht vorhanden
@@ -1093,7 +1100,7 @@ Hole den aktuellen Seitenfilter
 Hole das Änderungsdatum der Seitenkollektion, Unix-Zeit oder HTTP-Format
 
 `pages->isPagination(): bool`  
-Überprüfe ob eine Nummerierung vorhanden ist
+Überprüfe ob eine Paginierung vorhanden ist
 
 `page->isEmpty(): bool`  
 Überprüfe ob Seitenkollektion leer ist
@@ -1138,20 +1145,21 @@ Layoutdatei um die neusten Seiten anzuzeigen:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layoutdatei um Entwurfseiten anzuzeigen:
+Layoutdatei um die neusten Seiten mit Paginierung anzuzeigen:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index(true, true)->filter("status", "draft") ?>
+<?php $pages = $this->yellow->content->index()->sort("modified", false)->paginate(10) ?>
 <?php $this->yellow->page->setLastModified($pages->getModified()) ?>
 <ul>
 <?php foreach ($pages as $page): ?>
 <li><?php echo $page->getHtml("title") ?></li>
 <?php endforeach ?>
 </ul>
+<?php $this->yellow->layout("pagination", $pages) ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -1196,13 +1204,18 @@ Hole Teilstring, UTF-8-Zeichen oder Bytes
 Code um Strings zu konvertieren:
 
 ``` php
-$string = "Datenstrom Yellow ist für Menschen die kleine Webseiten machen";
-echo strtoloweru($string);    // datenstrom yellow ist für menschen die kleine webseiten machen
-echo strtoupperu($string);    // DATENSTROM YELLOW IST FÜR MENSCHEN DIE KLEINE WEBSEITEN MACHEN
+$string = "Für Menschen und Maschinen";
+echo strtoloweru($string);                   // für menschen und maschinen
+echo strtoupperu($string);                   // FÜR MENSCHEN UND MASCHINEN
+```
+
+Code um auf Strings zuzugerifen:
+
+``` php
 $string = "Text mit UTF-8-Zeichen åäö";
-echo strlenu($string);        // 26
-echo strposu($string, "UTF"); // 9
-echo substru($string, -3, 3); // åäö
+echo strlenu($string);                       // 26
+echo strposu($string, "UTF");                // 9
+echo substru($string, -3, 3);                // åäö
 ```
 
 Code um zu überprüfen ob Variablen leer sind:
@@ -1218,7 +1231,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Ereignisse
 
-Mit Hilfe von Ereignissen kann dich die Webseiten informieren wenn etwas passiert. Zuerst werden die Erweiterungen geladen und es wird `onLoad` aufgerufen. Sobald alle Erweiterungen geladen sind wird `onStartup` aufgerufen. Eine Seite kann mit verschiedenen Ereignissen verarbeitet werden. In den meisten Fällen wird der Inhalt der Seite erzeugt. Sollte ein Fehler aufgetreten sein, wird eine Fehlerseite erzeugt. Zum Schluss wird die Seite ausgegeben und es wird `onShutdown` aufgerufen.
+Mit Hilfe von Ereignissen kann die Webseite informieren wenn etwas passiert. Zuerst werden die Erweiterungen geladen und es wird `onLoad` aufgerufen. Sobald alle Erweiterungen geladen sind wird `onStartup` aufgerufen. Eine Seite kann mit verschiedenen Ereignissen verarbeitet werden. In den meisten Fällen wird der Inhalt der Seite erzeugt. Sollte ein Fehler aufgetreten sein, wird eine Fehlerseite erzeugt. Zum Schluss wird die Seite ausgegeben und es wird `onShutdown` aufgerufen.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐
@@ -1540,6 +1553,6 @@ class YellowExample {
 
 * [Wie man eine Erweiterung erstellt](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md)
 * [Wie man eine Übersetzung erstellt](https://github.com/annaesvensson/yellow-language/tree/main/README-de.md)
-* [Wie man eine statische Webseite erstellt](https://github.com/annaesvensson/yellow-static/tree/main/README-de.md)
+* [Wie man die Hilfe bearbeitet](https://github.com/annaesvensson/yellow-help/tree/main/README-de.md)
 
 Hast du Fragen? [Hilfe finden](.).

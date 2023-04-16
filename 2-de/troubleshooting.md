@@ -11,10 +11,16 @@ Erfahre wie du Probleme finden und beheben kannst.
 Die folgenden Fehlermeldungen können auftreten:
 
 ```
-Datenstrom Yellow requires complete upload!
+Datenstrom Yellow requires PHP 7.0 or higher!
 ```
 
-Kopiere nochmal alle mitgelieferten Dateien ins Installations-Verzeichnis. Überprüfe ob deine FTP-Software beim Hochladen eine Fehlermeldung anzeigt. Es passiert manchmal dass die Datenübertragung beim Hochladen unterbrochen wurde. Nachdem die fehlenden Dateien ins Installations-Verzeichnis kopiert wurden, sollte das Problem behoben sein.
+Installiere die neuste PHP-Version auf deinem Webserver.
+
+```
+Datenstrom Yellow requires PHP extension!
+```
+
+Installiere die fehlende PHP-Erweiterung auf deinem Webserver. Du benötigst `curl gd mbstring zip`.
 
 ```
 Datenstrom Yellow requires write access!
@@ -35,38 +41,17 @@ Datenstrom Yellow requires rewrite support!
 Überprüfe die Konfigurationsdatei des Webservers, siehe [Probleme mit Apache](#probleme-mit-apache) und [Probleme mit Nginx](#probleme-mit-nginx). Du musst entweder die Konfigurationsdatei deines Webservers ändern oder du verwendest einen anderen Webserver. Sobald der Webserver HTTP-Anfragen an die `yellow.php` weiterleitet, sollte das Problem behoben sein.
 
 ```
-Datenstrom Yellow requires PHP extension!
+Datenstrom Yellow requires complete upload!
 ```
 
-Installiere die fehlende PHP-Erweiterung auf deinem Webserver. Du benötigst `curl gd mbstring zip`.
-
-```
-Datenstrom Yellow requires PHP 7.0 or higher!
-```
-
-Installiere die neuste PHP-Version auf deinem Webserver.
+Kopiere nochmal alle mitgelieferten Dateien ins Installations-Verzeichnis. Überprüfe ob deine FTP-Software beim Hochladen eine Fehlermeldung anzeigt. Es passiert manchmal dass die Datenübertragung beim Hochladen unterbrochen wurde. Nachdem die fehlenden Dateien ins Installations-Verzeichnis kopiert wurden, sollte das Problem behoben sein.
 
 ## Probleme nach der Installation
 
 Die folgende Fehlermeldung kann auftreten: 
 
 ```
-Check the log file. Activate the debug mode for more information.
-```
-
-Überprüfe die Logdatei `system/extensions/yellow-website.log`. Falls Schreibfehler auftreten, dann gebe den betroffenen Dateien Schreibrechte. Falls andere Fehler auftreten, dann ersetze die betreffenden Dateien oder [melde einen Fehler](contributing-guidelines). Die Logdatei gibt dir in jedem Fall einen schnellen Überblick, was auf deiner Website passiert. Hier ist ein Beispiel:
-
-```
-2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 7.1.33, Apache 2.4.33, Mac
-2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
-2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
-2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
-2020-10-28 14:13:07 info Install extension 'English 0.8.27'
-2020-10-28 14:13:07 info Install extension 'German 0.8.27'
-2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
-2020-10-28 14:13:17 info Add user 'Anna'
-2020-12-18 21:02:42 info Update extension 'Core 0.8.42'
-2020-12-18 21:02:42 error Can't write file 'system/extensions/yellow-system.ini'!
+Datenstrom Yellow stopped with fatal error. Activate the debug mode for more information.
 ```
 
 Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen, den Stack-Trace eines Programms anzuzeigen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Abhängig vom Debug-Level werden mehr oder weniger Informationen auf dem Bildschirm angezeigt. So aktivierst du den Debug-Modus auf deiner Website:
@@ -105,6 +90,20 @@ YellowSystem::load Email:webmaster
 YellowSystem::load Language:de
 YellowSystem::load Layout:default
 YellowSystem::load Theme:stockholm
+```
+
+Du kannst wichtige Informationen in der Logdatei finden. Öffne die Datei `system/extensions/yellow-website.log` und suche nach `error`. Falls du nicht sicher bist wie man ein Problem beheben soll, dann [melde einen Fehler](contributing-guidelines). Die Logdatei gibt dir in jedem Fall einen schnellen Überblick, was auf deiner Website passiert. Hier ist ein Beispiel:
+
+```
+2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 7.1.33, Apache 2.4.33, Mac
+2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
+2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
+2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
+2020-10-28 14:13:07 info Install extension 'English 0.8.27'
+2020-10-28 14:13:07 info Install extension 'German 0.8.27'
+2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
+2020-10-28 14:18:11 info Install extension 'Fika 0.8.15'
+2020-10-28 14:18:11 error Can't parse file 'system/extensions/fika.php'!
 ```
 
 ## Probleme mit Apache
