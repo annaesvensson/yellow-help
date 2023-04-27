@@ -23,10 +23,10 @@ Om du vill läsa mer om mappstrukturen, [se API för utvecklare](api-for-develop
 
 ## Installationstjänst
 
-1. [Boka en installation](https://datenstrom.se/sv/contact/) så bör du få en tid inom 14 dagar.
-2. Fråga ditt webbhotell om inloggningsinformationen för SFTP.
-3. Kontrollera ditt webbhotell, se till att din webbplats är helt tom.
-4. Bekräfta via email att Datenstrom Yellow ska installeras.
+1. [Boka installtion](https://datenstrom.se/sv/contact/), så bör du få en tid inom 14 dagar.
+2. Fråga ditt webbhotell om inloggningsinformationen för SSH/SFTP.
+3. Se till att din webbplats är tom och tillgänglig över internet.
+4. Bekräfta din beställning, så att allt blir som du vill ha det.
 
 Om du vill veta mer om installationskraven, [se felsökning](troubleshooting).
 

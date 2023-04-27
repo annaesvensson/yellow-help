@@ -24,9 +24,9 @@ If you want to learn more about the folder structure, [see API for developers](a
 ## Installation service
 
 1. [Book an installation](https://datenstrom.se/contact/), you should receive an appointment within 14 days.
-2. Ask your web hosting provider for the SFTP login information.
-3. Check your web hosting, please make sure that your website is completely empty.
-4. Confirm via email that Datenstrom Yellow should be installed.
+2. Ask your web hosting provider for the SSH/SFTP login information.
+3. Make sure that your website is empty and accessible via the Internet.
+4. Confirm your order, so that everything is the way you want it.
 
 If you want to know more about the installation requirements, [see troubleshooting](troubleshooting).
 

@@ -25,13 +25,13 @@ Installera saknade PHP-tillägget på din webbserver. Du behöver `curl gd mbstr
 Datenstrom Yellow requires write access!
 ```
 
-Kör kommandot `chmod -R a+rw *` i installationsmappen. Du kan också använda din FTP-programvara för att ge skrivbehörighet till alla filer. Det rekommenderas att ge skrivbehörighet till alla filer och mappar i installationsmappen. Så snart webbplatsen har tillräcklig skrivåtkomst i `system`-mappen bör problemet lösas.
+Kör kommandot `chmod -R a+rw *` i installationsmappen. Du kan också använda din SFTP-programvara för att ge skrivbehörighet till alla filer. Det rekommenderas att ge skrivbehörighet till alla filer och mappar i installationsmappen. Så snart webbplatsen har tillräcklig skrivåtkomst i `system`-mappen bör problemet lösas.
 
 ```
 Datenstrom Yellow requires configuration file!
 ```
 
-Kopiera medföljande `.htaccess`-filen till installationsmappen. Kontrollera om din FTP-programvara har en inställning för att visa alla filer. Ibland händer det att filen `.htaccess` förbises under installationen. Efter att saknade konfigurationsfilen har kopierats till installationsmappen bör problemet lösas.
+Kopiera medföljande `.htaccess`-filen till installationsmappen. Kontrollera om din SFTP-programvara har en inställning för att visa alla filer. Ibland händer det att filen `.htaccess` förbises under installationen. Efter att saknade konfigurationsfilen har kopierats till installationsmappen bör problemet lösas.
 
 ```
 Datenstrom Yellow requires rewrite support!
@@ -43,7 +43,7 @@ Kontrollera webbserverns konfigurationsfil, se [problem med Apache](#problem-med
 Datenstrom Yellow requires complete upload!
 ```
 
-Kopiera igen alla medföljande filer till installationsmappen. Kontrollera om din FTP-programvara visar ett felmeddelande under uppladdningen. Ibland händer det att dataöverföringen avbröts under uppladdningen. Efter att saknade filer har kopierats till installationsmappen bör problemet lösas.
+Kopiera igen alla medföljande filer till installationsmappen. Kontrollera om din SFTP-programvara visar ett felmeddelande under uppladdningen. Ibland händer det att dataöverföringen avbröts under uppladdningen. Efter att saknade filer har kopierats till installationsmappen bör problemet lösas.
 
 ## Problem efter installationen
 
@@ -91,7 +91,7 @@ YellowSystem::load Layout:default
 YellowSystem::load Theme:stockholm
 ```
 
-Du kan hitta viktig information i loggfilen. Öppna filen `system/extensions/yellow-website.log` och sök efter `error`. Om du inte är säker på hur man åtgärdar ett problem, [rapportera ett fel](contributing-guidelines). Loggfilen ger dig i alla fall en snabb översikt över vad som händer på din webbplats. Här är ett exempel: 
+Du kan hitta viktig information i loggfilen. Öppna filen `system/extensions/yellow-website.log` och sök efter `error`. Om du inte är säker på hur man åtgärdar ett problem, [rapportera ett fel](contributing-guidelines) tillsammans med loggfilen. Loggfilen ger dig i alla fall en snabb översikt över vad som händer på din webbplats. Här är ett exempel: 
 
 ```
 2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 7.1.33, Apache 2.4.33, Mac

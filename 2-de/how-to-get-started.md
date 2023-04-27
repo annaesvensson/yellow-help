@@ -23,10 +23,10 @@ Falls du mehr über die Verzeichnisstruktur erfahren möchtest, [siehe API für 
 
 ## Installationsservice
 
-1. [Buche eine Installation](https://datenstrom.se/de/contact/), du solltest innerhalb von 14 Tagen einen Termin bekommen.
-2. Frage bei deinem Webhosting-Anbieter nach den Anmeldeinformationen für SFTP.
-3. Überprüfe dein Webhosting, stelle sicher dass deine Webseite vollständig leer ist.
-4. Bestätige via Email dass Datenstrom Yellow installiert werden soll.
+1. [Installation buchen](https://datenstrom.se/de/contact/), du solltest innerhalb von 14 Tagen einen Termin bekommen.
+2. Frage deinen Webhosting-Anbieter nach den Anmeldeinformationen für SSH/SFTP.
+3. Stelle sicher dass deine Webseite leer ist und über das Internet zu erreichen ist.
+4. Bestätige deine Bestellung, damit alles so wird wie du möchtest.
 
 Falls du mehr über die Installationsanforderungen erfahren möchtest, [siehe Fehlerbehebung](troubleshooting).
 

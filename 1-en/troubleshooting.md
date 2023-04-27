@@ -26,13 +26,13 @@ Install the missing PHP extension on your web server. You need `curl gd mbstring
 Datenstrom Yellow requires write access!
 ```
 
-Execute the command `chmod -R a+rw *` in the installation folder. You can also use your FTP software to give write permissions to all files. It's recommended to give write permissions to all files and folders in the installation folder. As soon as the website has sufficient write access in the `system` folder, the problem should be resolved.
+Execute the command `chmod -R a+rw *` in the installation folder. You can also use your SFTP software to give write permissions to all files. It's recommended to give write permissions to all files and folders in the installation folder. As soon as the website has sufficient write access in the `system` folder, the problem should be resolved.
 
 ```
 Datenstrom Yellow requires configuration file!
 ```
 
-Copy the supplied `.htaccess` file into the installation folder. Check if your FTP software has a setting to show all files. It sometimes happens that the `.htaccess` file was overlooked during installation. After the missing configuration file has been copied into the installation folder, the problem should be resolved.
+Copy the supplied `.htaccess` file into the installation folder. Check if your SFTP software has a setting to show all files. It sometimes happens that the `.htaccess` file was overlooked during installation. After the missing configuration file has been copied into the installation folder, the problem should be resolved.
 
 ```
 Datenstrom Yellow requires rewrite support!
@@ -44,7 +44,7 @@ Check the configuration file of the web server, see [problems with Apache](#prob
 Datenstrom Yellow requires complete upload!
 ```
 
-Copy again all of the supplied files into the installation folder. Check if your FTP software shows an error message during upload. It sometimes happens that the data transfer was interrupted during upload. After the missing files have been copied into the installation folder, the problem should be resolved.
+Copy again all of the supplied files into the installation folder. Check if your SFTP software shows an error message during upload. It sometimes happens that the data transfer was interrupted during upload. After the missing files have been copied into the installation folder, the problem should be resolved.
 
 ## Problems after installation
 
@@ -92,7 +92,7 @@ YellowSystem::load Layout:default
 YellowSystem::load Theme:stockholm
 ```
 
-You can find important information in the log file. Open file `system/extensions/yellow-website.log` and search for `error`. If you are not sure how to fix a problem, then [report a bug](contributing-guidelines). The log file gives you in any case a quick overview of what happens on your website. Here's an example:
+You can find important information in the log file. Open file `system/extensions/yellow-website.log` and search for `error`. If you are not sure how to fix a problem, then [report a bug](contributing-guidelines) along with the log file. The log file gives you in any case a quick overview of what happens on your website. Here's an example:
 
 ```
 2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 7.1.33, Apache 2.4.33, Mac
