@@ -2,7 +2,7 @@
 Title: Fehlerbehebung
 ShowLanguageSelection: 1
 ---
-Erfahre wie du Probleme finden und beheben kannst.
+Erfahre wie du Probleme finden und lösen kannst.
 
 [toc]
 
@@ -17,10 +17,10 @@ Datenstrom Yellow requires PHP 7.0 or higher!
 Installiere die neuste PHP-Version auf deinem Webserver.
 
 ```
-Datenstrom Yellow requires PHP extension!
+Datenstrom Yellow requires PHP xxx extension!
 ```
 
-Installiere die fehlende PHP-Erweiterung auf deinem Webserver. Du benötigst `curl gd mbstring zip`.
+Installiere die fehlende PHP-Erweiterung auf deinem Webserver. Du benötigst `curl gd mbstring zip`. Denke daran dass der Webserver und die Befehlszeile möglicherweise unterschiedliche PHP-Versionen verwenden. Es wird empfohlen dass beide die gleiche PHP-Version verwenden. Sobald die Website die notwendigen PHP-Erweiterungen findet, sollte das Problem behoben sein.
 
 ```
 Datenstrom Yellow requires write access!
@@ -92,10 +92,10 @@ YellowSystem::load Layout:default
 YellowSystem::load Theme:stockholm
 ```
 
-Du kannst wichtige Informationen in der Logdatei finden. Öffne die Datei `system/extensions/yellow-website.log` und suche nach `error`. Falls du nicht sicher bist wie man ein Problem beheben soll, dann [melde einen Fehler](contributing-guidelines) zusammen mit der Logdatei. Die Logdatei gibt dir in jedem Fall einen schnellen Überblick, was auf deiner Website passiert. Hier ist ein Beispiel:
+Du kannst wichtige Informationen in der Datei `system/extensions/yellow-website.log` finden. Falls du die Ursache eines Problems nicht selbst beheben kannst, dann [melde einen Fehler zusammen mit der Logdatei](contributing-guidelines). Die Logdatei gibt einen schnellen Überblick was auf deiner Website passiert und wann sie zuletzt aktualisiert wurde. Hier ist ein Beispiel:
 
 ```
-2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 7.1.33, Apache 2.4.33, Mac
+2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
 2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
 2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
 2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
@@ -149,7 +149,7 @@ RewriteRule ^ yellow.php [L]
 </IfModule>
 ```
 
-Wenn deine Webseite nicht funktioniert, dann musst du das [Rewrite-Modul aktivieren](https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2) und die [AllowOverride-Konfiguration ändern](https://stackoverflow.com/questions/18740419/how-to-set-allowoverride-all). Nachdem die Konfiguration verändert wurde, musst du möglicherweise den Apache-Webserver neustarten.
+Wenn deine Webseite nicht funktioniert, dann musst du das [Rewrite-Modul aktivieren](https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2) und die [AllowOverride-Konfiguration ändern](https://stackoverflow.com/questions/18740419/how-to-set-allowoverride-all). Auf manchen Webservern muss du die AllowOverride-Konfiguration ändern von `AllowOverride None` zu `AllowOverride All`. Nachdem die Konfiguration verändert wurde, musst du möglicherweise den Apache-Webserver neustarten.
 
 ## Probleme mit Nginx
 
@@ -199,7 +199,7 @@ server {
 }
 ```
 
-Wenn deine Webseite nicht funktioniert, dann überprüfe `server_name` und `root` in der Konfigurationsdatei. Nachdem die Konfiguration verändert wurde, musst du möglicherweise den [Nginx-Webserver neustarten](https://stackoverflow.com/questions/21292533/reload-nginx-configuration).
+Wenn deine Webseite nicht funktioniert, dann überprüfe `server_name` und `root` in der Konfigurationsdatei. Auf manchen Webservern musst du die FastCGI-Konfiguration ändern zu `fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;` abhängig von der PHP-Version. Nachdem die Konfiguration verändert wurde, musst du möglicherweise den [Nginx-Webserver neustarten](https://stackoverflow.com/questions/21292533/reload-nginx-configuration).
 
 ## Verwandte Informationen
 

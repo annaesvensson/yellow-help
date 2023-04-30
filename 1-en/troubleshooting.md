@@ -2,7 +2,7 @@
 Title: Troubleshooting
 ShowLanguageSelection: 1
 ---
-Learn how to find and fix problems.
+Learn how to find and solve problems.
 
 [toc]
 
@@ -17,10 +17,10 @@ Datenstrom Yellow requires PHP 7.0 or higher!
 Install the latest PHP version on your web server.
 
 ```
-Datenstrom Yellow requires PHP extension!
+Datenstrom Yellow requires PHP xxx extension!
 ```
 
-Install the missing PHP extension on your web server. You need `curl gd mbstring zip`.
+Install the missing PHP extension on your web server. You need `curl gd mbstring zip`. Please keep in mind that the web server and the command line may use different PHP versions. It's recommended that both use the same PHP version. As soon as the website finds the required PHP extensions, the problem should be resolved.
 
 ```
 Datenstrom Yellow requires write access!
@@ -92,10 +92,10 @@ YellowSystem::load Layout:default
 YellowSystem::load Theme:stockholm
 ```
 
-You can find important information in the log file. Open file `system/extensions/yellow-website.log` and search for `error`. If you are not sure how to fix a problem, then [report a bug](contributing-guidelines) along with the log file. The log file gives you in any case a quick overview of what happens on your website. Here's an example:
+You can find important information in file `system/extensions/yellow-website.log`. If you can't fix the cause of a problem yourself, then [report a bug along with the log file](contributing-guidelines). The log file gives a quick overview of what happens on your website and when it was last updated. Here's an example:
 
 ```
-2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 7.1.33, Apache 2.4.33, Mac
+2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
 2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
 2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
 2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
@@ -149,7 +149,7 @@ RewriteRule ^ yellow.php [L]
 </IfModule>
 ```
 
-When your website doesn't work, then you have to [enable the rewrite module](https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2) and [change the AllowOverride configuration](https://stackoverflow.com/questions/18740419/how-to-set-allowoverride-all). After the configuration has been changed, you may have to restart the Apache web server.
+When your website doesn't work, then you have to [enable the rewrite module](https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2) and [change the AllowOverride configuration](https://stackoverflow.com/questions/18740419/how-to-set-allowoverride-all). On some web servers you have to change the AllowOverride configuration from `AllowOverride None` to `AllowOverride All`. After the configuration has been changed, you may have to restart the Apache web server.
 
 ## Problems with Nginx
 
@@ -199,7 +199,7 @@ server {
 }
 ```
 
-When your website doesn't work, then check `server_name` and `root` in the configuration file. After the configuration has been changed, you may have to [restart the Nginx web server](https://stackoverflow.com/questions/21292533/reload-nginx-configuration).
+When your website doesn't work, then check `server_name` and `root` in the configuration file. On some web servers you have to change the FastCGI configuration to `fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;` depending on the PHP version. After the configuration has been changed, you may have to [restart the Nginx web server](https://stackoverflow.com/questions/21292533/reload-nginx-configuration).
 
 ## Related information
 

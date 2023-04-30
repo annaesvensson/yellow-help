@@ -2,7 +2,7 @@
 Title: Felsökning
 ShowLanguageSelection: 1
 ---
-Läs hur du hittar och åtgärdar problem.
+Läs hur du hittar och lösa problem.
 
 [toc]
 
@@ -16,10 +16,10 @@ Datenstrom Yellow requires PHP 7.0 or higher!
 
 Installera senaste PHP-versionen på din webbserver.
 ```
-Datenstrom Yellow requires PHP extension!
+Datenstrom Yellow requires PHP xxx extension!
 ```
 
-Installera saknade PHP-tillägget på din webbserver. Du behöver `curl gd mbstring zip`.
+Installera saknade PHP-tillägget på din webbserver. Du behöver `curl gd mbstring zip`. Tänk på att webbservern och kommandoraden kan använda olika PHP-versioner. Det rekommenderas att båda använda samma PHP-versionen. Så snart webbplatsen hittar de nödvändiga PHP-tilläggen bör problemet lösas.
 
 ```
 Datenstrom Yellow requires write access!
@@ -91,10 +91,10 @@ YellowSystem::load Layout:default
 YellowSystem::load Theme:stockholm
 ```
 
-Du kan hitta viktig information i loggfilen. Öppna filen `system/extensions/yellow-website.log` och sök efter `error`. Om du inte är säker på hur man åtgärdar ett problem, [rapportera ett fel](contributing-guidelines) tillsammans med loggfilen. Loggfilen ger dig i alla fall en snabb översikt över vad som händer på din webbplats. Här är ett exempel: 
+Du kan hitta viktig information i filen `system/extensions/yellow-website.log`. Om du inte kan åtgärda orsaken till ett problem själv, [rapportera ett fel tillsammans med loggfilen](contributing-guidelines). Loggfilen ger en snabb översikt över vad som händer på din webbplats och när den senast uppdaterades. Här är ett exempel:
 
 ```
-2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 7.1.33, Apache 2.4.33, Mac
+2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
 2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
 2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
 2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
@@ -148,7 +148,7 @@ RewriteRule ^ yellow.php [L]
 </IfModule>
 ```
 
-När din webbplats inte fungerar måste du [aktivera rewrite-modulen](https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2) och [ändra AllowOverride-konfigurationen](https://stackoverflow.com/questions/18740419/how-to-set-allowoverride-all). Efter att konfigurationen har ändrats kan du behöva starta om Apache-webbservern.
+När din webbplats inte fungerar måste du [aktivera rewrite-modulen](https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2) och [ändra AllowOverride-konfigurationen](https://stackoverflow.com/questions/18740419/how-to-set-allowoverride-all). På vissa webbservrar måste du ändra AllowOverride-konfigurationen från `AllowOverride None` till `AllowOverride All`. Efter att konfigurationen har ändrats kan du behöva starta om Apache-webbservern.
 
 ## Problem med Nginx
 
@@ -198,7 +198,7 @@ server {
 }
 ```
 
-När din webbplats inte fungerar, kontrollera `server_name` och `root` i konfigurationsfilen. Efter att konfigurationen har ändrats kan du behöva [starta om Nginx-webbservern](https://stackoverflow.com/questions/21292533/reload-nginx-configuration).
+När din webbplats inte fungerar, kontrollera `server_name` och `root` i konfigurationsfilen. På vissa webbservrar måste du ändra FastCGI-konfigurationen till `fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;` beroende på PHP-versionen. Efter att konfigurationen har ändrats kan du behöva [starta om Nginx-webbservern](https://stackoverflow.com/questions/21292533/reload-nginx-configuration).
 
 ## Relaterad information
 
