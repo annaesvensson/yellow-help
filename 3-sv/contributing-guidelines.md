@@ -14,7 +14,7 @@ Läs hur du jobbar med oss och löser problem.
 
 * [Starta en ny diskussion för varje fråga](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
 * Skriv frågan i rubriken, det är det första alla kommer att se.
-* Beskriv i detalj vad du vill göra och vilka problem du har.
+* Beskriv så exakt som möjligt vad du vill göra och vilka problem du har.
 * Välj ett svar när din fråga har besvarats.
 
 ## Hur man rapporterar ett fel
@@ -24,16 +24,16 @@ Läs hur du jobbar med oss och löser problem.
 * Lägg till många detaljer, särskilt loggfilen `system/extensions/yellow-website.log`.
 * Välj ett svar när felet har åtgärdats.
 
-## Hur man utbyter erfarenheter
+## Bra att veta
 
-Jobba med oss, ställ frågor, rapportera fel och utbyt erfarenheter. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Tvinga ingenting. Fokusera på människor som visa intresse och vill jobba med dig. Du hittar oss på [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
+Vi fokuserar oss på människor. Jobba med oss, ställ frågor och rapportera fel. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Tvinga ingenting. Fokusera på människor som visa intresse och vill jobba med dig. Du hittar oss på [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
 
 ## Exempel
 
 Ställa en fråga på engelska:
 
 ```
-How do I change the language of my website?
+Title: How do I change the language of my website?
 
 Hello, during installation I selected the wrong language. Now I want to 
 change the language of my website to swedish. When I change the settings 
@@ -47,13 +47,13 @@ Language: swedish
 Layout: default
 Theme: stockholm
 
-Thanks for your help.
+Let me know if you need more information. Thanks for your help.
 ```
 
 Rapportera ett fel på engelska:
 
 ```
-Call to undefined function detectTimezone()
+Title: Call to undefined function detectTimezone()
 
 Hello, I get the error message: Call to undefined function detectTimezone() 
 in /var/www/website/system/extensions/fika.php. You can reproduce the bug 
