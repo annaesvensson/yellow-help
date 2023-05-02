@@ -14,7 +14,7 @@ Erfahre wie du mit uns arbeiten und Probleme lösen kannst.
 
 * [Beginne eine neue Diskussion für jede Frage](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
 * Schreibe die Frage in den Titel, es ist das Erste was alle sehen.
-* Beschreibe ausführlich was du machen möchtest und welche Probleme du hast.
+* Beschreibe möglichst genau was du machen möchtest und welche Probleme du hast.
 * Wähle eine Antwort aus, wenn deine Frage beantwortet wurde.
 
 ## Wie man einen Fehler meldet
@@ -24,16 +24,16 @@ Erfahre wie du mit uns arbeiten und Probleme lösen kannst.
 * Füge viele Details hinzu, vor allem die Logdatei `system/extensions/yellow-website.log`.
 * Wähle eine Antwort aus, wenn der Fehler behoben wurde.
 
-## Wie man Erfahrungen austauscht
+## Gut zu wissen
 
-Arbeite mit uns, stelle Fragen, melde Fehler und tausche Erfahrungen aus. Es interessiert uns was du machen möchtest und welche Probleme du hast. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Erzwinge nichts. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Du findest uns auf [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
+Wir stellen Menschen in den Mittelpunkt. Arbeite mit uns, stelle Fragen und melde Fehler. Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser können wir dir helfen. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Erzwinge nichts. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Du findest uns auf [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
 
 ## Beispiele
 
 Eine Frage auf Englisch stellen:
 
 ```
-How do I change the language of my website?
+Title: How do I change the language of my website?
 
 Hello, during installation I selected the wrong language. Now I want to 
 change the language of my website to german. When I change the settings 
@@ -47,13 +47,13 @@ Language: german
 Layout: default
 Theme: stockholm
 
-Thanks for your help.
+Let me know if you need more information. Thanks for your help.
 ```
 
 Einen Fehler auf Englisch melden:
 
 ```
-Call to undefined function detectTimezone()
+Title: Call to undefined function detectTimezone()
 
 Hello, I get the error message: Call to undefined function detectTimezone() 
 in /var/www/website/system/extensions/fika.php. You can reproduce the bug 
