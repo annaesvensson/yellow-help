@@ -14,7 +14,7 @@ Learn how to work with us and solve problems.
 
 * [Start a new discussion for each question](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
 * Write the question in the title, it's the first thing everyone will see.
-* Describe in detail what you want to do and which problems you have.
+* Describe as precisely as possible what you want to do and which problems you have.
 * Select an answer, when your question has been answered.
 
 ## How to report a bug
@@ -24,16 +24,16 @@ Learn how to work with us and solve problems.
 * Add many details, especially the log file `system/extensions/yellow-website.log`.
 * Select an answer, when the bug has been fixed.
 
-## How to share your experiences
+## Good to know
 
-Work with us, ask questions, report bugs and share your experiences. We are interested in what you want to do and which problems you have. The more we know the better we can help. Our community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Don't force anything. Focus on the people who show interest and want to work with you. You can find us on [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) or [contact a human](https://datenstrom.se/contact/).
+We focus on people. Work with us, ask questions and report bugs. We are interested in what you want to do and which problems you have. The more we know the better we can help. Our community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Don't force anything. Focus on the people who show interest and want to work with you. You can find us on [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) or [contact a human](https://datenstrom.se/contact/).
 
 ## Examples
 
 Asking a question:
 
 ```
-How do I change the language of my website?
+Title: How do I change the language of my website?
 
 Hello, during installation I selected the wrong language. Now I want to 
 change the language of my website to english. When I change the settings 
@@ -47,13 +47,13 @@ Language: english
 Layout: default
 Theme: stockholm
 
-Thanks for your help.
+Let me know if you need more information. Thanks for your help.
 ```
 
 Reporting a bug:
 
 ```
-Call to undefined function detectTimezone()
+Title: Call to undefined function detectTimezone()
 
 Hello, I get the error message: Call to undefined function detectTimezone() 
 in /var/www/website/system/extensions/fika.php. You can reproduce the bug 
