@@ -1554,6 +1554,6 @@ class YellowExample {
 
 * [Hur man gör ett tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md)
 * [Hur man gör en översättning](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md)
-* [Hur man redigerar hjälpen](https://github.com/annaesvensson/yellow-help/tree/main/README-sv.md)
+* [Hur man förbättrar hjälpen](https://github.com/annaesvensson/yellow-help/tree/main/README-sv.md)
 
 Har du några frågor? [Få hjälp](.).

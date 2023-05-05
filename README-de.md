@@ -14,7 +14,7 @@ Hilfe für deine Webseite.
 
 Die Hilfe ist auf deiner Webseite vorhanden als `http://website/help/`. Die Hilfe zeigt dir wie man kleine Webseiten, Wikis und Blogs erstellt. Hier findest du Anleitungen wie man alles anpasst. Entwickler und Designer finden Beschreibungen von übergreifenden Konzepten und was man mit der API machen kann. Es wird empfohlen die [Highlight-Erweiterung](https://github.com/annaesvensson/yellow-highlight/tree/main/README-de.md), [Search-Erweiterung](https://github.com/annaesvensson/yellow-search/tree/main/README-de.md), [Toc-Erweiterung](https://github.com/annaesvensson/yellow-toc/tree/main/README-de.md) zusammen mit der Hilfe-Erweiterung zu installieren. Dann hast du das selbe Paket wie die [Hilfe auf der offiziellen Webseite](https://datenstrom.se/de/yellow/help/).
 
-## Wie man die Hilfe bearbeitet
+## Wie man die Hilfe verbessert
 
 Falls du die Hilfe im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) bearbeiten möchtest, kannst du das auf deiner Webseite machen unter `http://website/edit/help/`. Falls du die Hilfe auf deinem [Computer](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) bearbeiten möchtest, schau dir das `content/9-help`-Verzeichnis an. Hier sind ein paar Tipps. Schau dir die Hilfe aus der Perspektive des Benutzers an. Überprüfe ob es für den Benutzer hilfreich ist und gebe praktische Beispiele. Lade deine Änderungen zu GitHub hoch, lass uns wissen falls du Hilfe brauchst.
 

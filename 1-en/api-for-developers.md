@@ -1549,10 +1549,10 @@ class YellowExample {
 }
 ```
 
-## Relevant information
+## Related information
 
 * [How to make an extension](https://github.com/annaesvensson/yellow-publish)
 * [How to make a translation](https://github.com/annaesvensson/yellow-language)
-* [How to edit the help](https://github.com/annaesvensson/yellow-help)
+* [How to improve the help](https://github.com/annaesvensson/yellow-help)
 
 Do you have questions? [Get help](.).

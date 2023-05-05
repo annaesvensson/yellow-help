@@ -14,13 +14,13 @@ Die folgenden Fehlermeldungen können auftreten:
 Datenstrom Yellow requires PHP 7.0 or higher!
 ```
 
-Installiere die neuste PHP-Version auf deinem Webserver.
+Installiere die aktuelle PHP-Version auf deinem Webserver. Du benötigst `PHP 7.0` oder höher. Unter Linux benutzt man am besten die Paketverwaltung der Linux-Distribution, für Mac gibt es MAMP, für Windows gibt es XAMPP. Es wird empfohlen die neuste PHP-Version zu verwenden. Sobald die Website die notwendige PHP-Version findet, sollte das Problem behoben sein.
 
 ```
 Datenstrom Yellow requires PHP xxx extension!
 ```
 
-Installiere die fehlende PHP-Erweiterung auf deinem Webserver. Du benötigst `curl gd mbstring zip`. Denke daran dass der Webserver und die Befehlszeile möglicherweise unterschiedliche PHP-Versionen verwenden. Es wird empfohlen dass beide die gleiche PHP-Version verwenden. Sobald die Website die notwendigen PHP-Erweiterungen findet, sollte das Problem behoben sein.
+Installiere die fehlende PHP-Erweiterung auf deinem Webserver. Du benötigst `curl gd mbstring zip`. Denke daran dass der Webserver und die Befehlszeile möglicherweise unterschiedliche PHP-Versionen verwenden. Es wird empfohlen die gleiche PHP-Version zu verwenden. Sobald die Website die notwendigen PHP-Erweiterungen findet, sollte das Problem behoben sein.
 
 ```
 Datenstrom Yellow requires write access!
@@ -204,7 +204,7 @@ Wenn deine Webseite nicht funktioniert, dann überprüfe `server_name` und `root
 ## Verwandte Informationen
 
 * [Wie man einen Webserver startet](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md)
-* [Wie man ein Benutzerkonto erstellt](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md)
+* [Wie man ein Benutzerkonto ändert](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md)
 * [Wie man eine Webseite aktualisiert](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md)
 
 Hast du Fragen? [Hilfe finden](.).

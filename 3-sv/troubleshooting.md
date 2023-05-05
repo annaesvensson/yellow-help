@@ -2,7 +2,7 @@
 Title: Felsökning
 ShowLanguageSelection: 1
 ---
-Läs hur du hittar och lösa problem.
+Läs hur du hittar och löser problem.
 
 [toc]
 
@@ -14,12 +14,13 @@ Följande felmeddelanden kan uppstå:
 Datenstrom Yellow requires PHP 7.0 or higher!
 ```
 
-Installera senaste PHP-versionen på din webbserver.
+Installera den aktuella PHP-versionen på din webbserver. Du behöver `PHP 7.0` eller högre. På Linux är det bäst att använda pakethanteringen av Linux-distributionen, för Mac finns det MAMP, för Windows finns det XAMPP. Det rekommenderas att använda den senaste PHP-versionen. Så snart webbplatsen hittar den nödvändiga PHP-versionen bör problemet lösas.
+
 ```
 Datenstrom Yellow requires PHP xxx extension!
 ```
 
-Installera saknade PHP-tillägget på din webbserver. Du behöver `curl gd mbstring zip`. Tänk på att webbservern och kommandoraden kan använda olika PHP-versioner. Det rekommenderas att båda använda samma PHP-versionen. Så snart webbplatsen hittar de nödvändiga PHP-tilläggen bör problemet lösas.
+Installera saknade PHP-tillägget på din webbserver. Du behöver `curl gd mbstring zip`. Tänk på att webbservern och kommandoraden kan använda olika PHP-versioner. Det rekommenderas att använda samma PHP-versionen. Så snart webbplatsen hittar de nödvändiga PHP-tilläggen bör problemet lösas.
 
 ```
 Datenstrom Yellow requires write access!
@@ -203,7 +204,7 @@ När din webbplats inte fungerar, kontrollera `server_name` och `root` i konfigu
 ## Relaterad information
 
 * [Hur man startar en webbserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md)
-* [Hur man skapar ett användarkonto](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md)
+* [Hur man ändrar ett användarkonto](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md)
 * [Hur man uppdaterar en webbplats](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md)
 
 Har du några frågor? [Få hjälp](.).

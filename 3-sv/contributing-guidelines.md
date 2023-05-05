@@ -5,7 +5,7 @@ Läs hur du jobbar med oss och löser problem.
 
 ## Hur man jobbar med oss
 
-* [Gör ett nytt tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md) eller [förbättra ett publicerat tillägg](https://github.com/datenstrom/yellow-extensions/blob/main/README-sv.md).
+* [Förbättra funktioner, språk, teman](https://github.com/datenstrom/yellow-extensions/tree/main/README-sv.md) eller [gör ditt eget tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md).
 * Föreställ dig vad användaren vill göra och vad som skulle göra livet enklare.
 * Sikta på minsta möjliga lösning, först få det att fungera och sedan gör det bättre.
 * Fråga dig själv, behöver jag det här, vill jag det här, kan jag göra det här bättre?
@@ -26,57 +26,80 @@ Läs hur du jobbar med oss och löser problem.
 
 ## Bra att veta
 
-Vi fokuserar oss på människor. Jobba med oss, ställ frågor och rapportera fel. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Tvinga ingenting. Fokusera på människor som visa intresse och vill jobba med dig. Du hittar oss på [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
+Vi gör saker för människor. Jobba med oss, ställ frågor och rapportera fel. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Tvinga ingenting. Fokusera på människor som visa intresse och vill jobba med dig. Du hittar oss på [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
 
 ## Exempel
 
-Ställa en fråga på engelska:
+Ställa en fråga om inställningar, på engelska:
 
-```
-Title: How do I change the language of my website?
+    Title: How do I change the language of my website?
+    
+    Hello, during installation I selected the wrong language. Now I want to 
+    change the language of my website to english. When I change the settings 
+    it doesn't work. I checked that the english extension is installed. 
+    Here are my settings in file `system/extensions/yellow-system.ini`:
+    
+    ```
+    Sitename: Datenstrom Yellow
+    Author: Datenstrom
+    Email: webmaster
+    Language: english
+    Layout: default
+    Theme: stockholm
+    ```
+    
+    Let me know if you need more information. Thanks for your help.
 
-Hello, during installation I selected the wrong language. Now I want to 
-change the language of my website to swedish. When I change the settings 
-it doesn't work. I checked that the swedish extension is installed. 
-Here are my settings in file `system/extensions/yellow-system.ini`:
+Ställa en fråga om layoutfiler, på engelska:
 
-Sitename: Datenstrom Yellow
-Author: Datenstrom
-Email: webmaster
-Language: swedish
-Layout: default
-Theme: stockholm
+    Title: How do I show the correct date in layout files?
+    
+    Hello, I want to show the date a page was last updated, similar to what 
+    is shown on wiki pages. I am currently having some problems with the API, 
+    the generated HTML code always shows the date 1970-01-01.
+    Here is my layout file `system/layouts/default.html`:
+    
+    ```
+    <?php $this->yellow->layout("header") ?>
+    <div class="content">
+    <div class="main" role="main">
+    <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+    <p>Last updated on <?php echo $this->yellow->page->getDateHtml("updated") ?></p>
+    <?php echo $this->yellow->page->getContent() ?>
+    </div>
+    </div>
+    <?php $this->yellow->layout("footer") ?>
+    ```
+    
+    Let me know if you need more information. Thanks for your help.
 
-Let me know if you need more information. Thanks for your help.
-```
+Rapportera ett fel tillsammans med loggfilen, på engelska:
 
-Rapportera ett fel på engelska:
-
-```
-Title: Call to undefined function detectTimezone()
-
-Hello, I get the error message: Call to undefined function detectTimezone() 
-in /var/www/website/system/extensions/fika.php. You can reproduce the bug 
-in a new installation, select small website, install the fika extension. 
-Here's my log file `system/extensions/yellow-website.log`:
-
-2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
-2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
-2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
-2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
-2020-10-28 14:13:07 info Install extension 'English 0.8.27'
-2020-10-28 14:13:07 info Install extension 'German 0.8.27'
-2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
-2020-10-28 14:18:11 info Install extension 'Fika 0.8.15'
-2020-10-28 14:18:11 error Can't parse file 'system/extensions/fika.php'!
-
-Let me know if you need more information. Thanks for investigating.
-```
+    Title: Call to undefined function detectCoffee()
+    
+    Hello, I get the error message: Call to undefined function detectCoffee() 
+    in /var/www/website/system/extensions/fika.php. You can reproduce the bug 
+    in a new installation, select small website, install the fika extension. 
+    Here is my log file `system/extensions/yellow-website.log`:
+    
+    ```
+    2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
+    2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
+    2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
+    2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
+    2020-10-28 14:13:07 info Install extension 'English 0.8.27'
+    2020-10-28 14:13:07 info Install extension 'German 0.8.27'
+    2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
+    2020-10-28 14:18:11 info Install extension 'Fika 0.8.15'
+    2020-10-28 14:18:11 error Can't parse file 'system/extensions/fika.php'!
+    ```
+    
+    Let me know if you need more information. Thanks for investigating.
 
 ## Relaterad information
 
 * [Hur man gör ett tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md)
 * [Hur man gör en översättning](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md)
-* [Hur man redigerar hjälpen](https://github.com/annaesvensson/yellow-help/tree/main/README-sv.md) 
+* [Hur man förbättrar hjälpen](https://github.com/annaesvensson/yellow-help/tree/main/README-sv.md) 
 
 Har du några frågor? [Få hjälp](.).

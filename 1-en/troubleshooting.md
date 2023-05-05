@@ -14,13 +14,13 @@ The following error messages can happen:
 Datenstrom Yellow requires PHP 7.0 or higher!
 ```
 
-Install the latest PHP version on your web server.
+Install the current PHP version on your web server. You need `PHP 7.0` or higher. On Linux it's best to use the package management of your Linux distribution, for Mac there is MAMP, for Windows there is XAMPP. It's recommended to use the latest PHP version. As soon as the website finds the required PHP version, the problem should be resolved.
 
 ```
 Datenstrom Yellow requires PHP xxx extension!
 ```
 
-Install the missing PHP extension on your web server. You need `curl gd mbstring zip`. Please keep in mind that the web server and the command line may use different PHP versions. It's recommended that both use the same PHP version. As soon as the website finds the required PHP extensions, the problem should be resolved.
+Install the missing PHP extension on your web server. You need `curl gd mbstring zip`. Please keep in mind that the web server and the command line may use different PHP versions. It's recommended to use the same PHP version. As soon as the website finds the required PHP extensions, the problem should be resolved.
 
 ```
 Datenstrom Yellow requires write access!
@@ -204,7 +204,7 @@ When your website doesn't work, then check `server_name` and `root` in the confi
 ## Related information
 
 * [How to start a web server](https://github.com/annaesvensson/yellow-serve)
-* [How to create a user account](https://github.com/annaesvensson/yellow-edit)
+* [How to change a user account](https://github.com/annaesvensson/yellow-edit)
 * [How to update a website](https://github.com/annaesvensson/yellow-update)
 
 Do you have questions? [Get help](.).

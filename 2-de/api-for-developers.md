@@ -1553,6 +1553,6 @@ class YellowExample {
 
 * [Wie man eine Erweiterung erstellt](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md)
 * [Wie man eine Übersetzung erstellt](https://github.com/annaesvensson/yellow-language/tree/main/README-de.md)
-* [Wie man die Hilfe bearbeitet](https://github.com/annaesvensson/yellow-help/tree/main/README-de.md)
+* [Wie man die Hilfe verbessert](https://github.com/annaesvensson/yellow-help/tree/main/README-de.md)
 
 Hast du Fragen? [Hilfe finden](.).
