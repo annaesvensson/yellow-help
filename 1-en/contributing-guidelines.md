@@ -5,8 +5,8 @@ Learn how to work with us and solve problems.
 
 ## How to work with us
 
-* [Improve features, languages, themes](https://github.com/datenstrom/yellow-extensions) or [make your own extension](https://github.com/annaesvensson/yellow-publish).
-* Imagine what the user wants to do and what would make life easier.
+* [Improve features, languages, themes](https://github.com/datenstrom/yellow-extensions) and [make your own extension](https://github.com/annaesvensson/yellow-publish).
+* Imagine what would make life easier and what the user wants to do.
 * Aim for the smallest possible solution, first make it work then make it better.
 * Ask yourself, do I need this, do I want this, can I make this better?
 

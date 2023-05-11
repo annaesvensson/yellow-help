@@ -642,7 +642,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 The class `YellowLookup` gives access to lookup and normalisation functions. The following methods are available:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -668,6 +668,9 @@ Normalise name
 
 `toolbox->normaliseData($text, $type = "html", $filterStrict = true): string`  
 Normalise elements and attributes in HTML/SVG data
+
+`toolbox->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
+Normalise fields in MIME headers
 
 `lookup->normaliseArray($input): array`  
 Normalise array, make keys with same upper/lower case
@@ -750,7 +753,7 @@ if (!is_string_empty($url)) {
 
 The class `YellowToolbox` gives access to toolbox with helper functions. The following methods are available:
 
-`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `modifyFile` `readFile` `renameDirectory` `renameFile`
+`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile`
 
 ---
 
@@ -815,6 +818,9 @@ Return array of variable size from text, space separated
 
 `toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
 Create text description, with or without HTML
+
+`toolbox->mail($action, $headers, $message): bool`  
+Send email message
 
 `toolbox->log($action, $message): void`  
 Write information to log file
@@ -1240,13 +1246,13 @@ onLoad ───────▶ onStartup ────────────�
                 onRequest ───────────────────┐                       │
                     │                        │                       │
                     ▼                        ▼                       ▼
-                onParseMetaData          onEditContentFile       onCommand  
-                onParseContentRaw        onEditMediaFile         onCommandHelp
-                onParseContentShortcut   onEditSystemFile            │
+onUpdate        onParseMetaData          onEditContentFile       onCommand  
+onMail          onParseContentRaw        onEditMediaFile         onCommandHelp
+onLog           onParseContentShortcut   onEditSystemFile            │
                 onParseContentHtml       onEditUserAccount           │
                 onParsePageLayout            │                       │
-onUpdate        onParsePageExtra             │                       │
-onLog           onParsePageOutput            │                       │
+                onParsePageExtra             │                       │
+                onParsePageOutput            │                       │
                     │                        │                       │
                     ▼                        │                       │
                 onShutDown ◀─────────────────┴───────────────────────┘
@@ -1254,7 +1260,7 @@ onLog           onParsePageOutput            │                       │
 
 The following events are available:
 
-`onCommand` `onCommandHelp` `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount` `onLoad` `onLog` `onParseContentHtml` `onParseContentRaw` `onParseContentShortcut` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput` `onRequest` `onShutdown` `onStartup` `onUpdate`
+`onCommand` `onCommandHelp` `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount` `onLoad` `onLog` `onMail` `onParseContentHtml` `onParseContentRaw` `onParseContentShortcut` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput` `onRequest` `onShutdown` `onStartup` `onUpdate`
 
 ### Yellow core events
 
@@ -1271,6 +1277,9 @@ Handle request
 
 `public function onUpdate($action)`  
 Handle update
+
+`public function onMail($action, $headers, $message)`  
+Handle email
 
 `public function onLog($action, $message)`  
 Handle logging

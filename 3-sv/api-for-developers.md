@@ -643,7 +643,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 Klassen `YellowLookup` ger tillgång till uppslag och normalisering. Följande metoder är tillgängliga:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -669,6 +669,9 @@ Normalisera namn
 
 `toolbox->normaliseData($text, $type = "html", $filterStrict = true): string`  
 Normalisera element och attribut i HTML/SVG-data 
+
+`toolbox->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
+Normalisera fält i MIME-headers
 
 `lookup->normaliseArray($input): array`  
 Normalisera array, gör nycklar till samma skiftläge
@@ -751,7 +754,7 @@ if (!is_string_empty($url)) {
 
 Klassen `YellowToolbox` ger tillgång till verktygslådan med hjälpfunktioner. Följande metoder är tillgängliga:
 
-`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `modifyFile` `readFile` `renameDirectory` `renameFile`
+`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile`
 
 ---
 
@@ -816,6 +819,9 @@ Returnera array med variabel storlek från text, separerade av mellanslag
 
 `toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
 Skapa textbeskrivning, med eller utan HTML
+
+`toolbox->mail($action, $headers, $message): bool`  
+Skicka emailmeddelande
 
 `toolbox->log($action, $message): void`  
 Skriv information till loggfilen
@@ -1241,13 +1247,13 @@ onLoad ───────▶ onStartup ────────────�
                 onRequest ───────────────────┐                       │
                     │                        │                       │
                     ▼                        ▼                       ▼
-                onParseMetaData          onEditContentFile       onCommand  
-                onParseContentRaw        onEditMediaFile         onCommandHelp
-                onParseContentShortcut   onEditSystemFile            │
+onUpdate        onParseMetaData          onEditContentFile       onCommand  
+onMail          onParseContentRaw        onEditMediaFile         onCommandHelp
+onLog           onParseContentShortcut   onEditSystemFile            │
                 onParseContentHtml       onEditUserAccount           │
                 onParsePageLayout            │                       │
-onUpdate        onParsePageExtra             │                       │
-onLog           onParsePageOutput            │                       │
+                onParsePageExtra             │                       │
+                onParsePageOutput            │                       │
                     │                        │                       │
                     ▼                        │                       │
                 onShutDown ◀─────────────────┴───────────────────────┘
@@ -1255,7 +1261,7 @@ onLog           onParsePageOutput            │                       │
 
 Följande händelser är tillgängliga:
 
-`onCommand` `onCommandHelp` `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount` `onLoad` `onLog` `onParseContentHtml` `onParseContentRaw` `onParseContentShortcut` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput` `onRequest` `onShutdown` `onStartup` `onUpdate`
+`onCommand` `onCommandHelp` `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount` `onLoad` `onLog` `onMail` `onParseContentHtml` `onParseContentRaw` `onParseContentShortcut` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput` `onRequest` `onShutdown` `onStartup` `onUpdate`
 
 ### Yellow core händelser
 
@@ -1272,6 +1278,9 @@ Hantera begäran
 
 `public function onUpdate($action)`  
 Hantera uppdatering
+
+`public function onMail($action, $headers, $message)`  
+Hantera email
 
 `public function onLog($action, $message)`  
 Hantera loggning

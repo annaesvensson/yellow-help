@@ -5,8 +5,8 @@ Läs hur du jobbar med oss och löser problem.
 
 ## Hur man jobbar med oss
 
-* [Förbättra funktioner, språk, teman](https://github.com/datenstrom/yellow-extensions/tree/main/README-sv.md) eller [gör ditt eget tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md).
-* Föreställ dig vad användaren vill göra och vad som skulle göra livet enklare.
+* [Förbättra funktioner, språk, teman](https://github.com/datenstrom/yellow-extensions/tree/main/README-sv.md) och [gör ditt eget tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md).
+* Föreställ dig vad som skulle göra livet enklare och vad användaren vill göra.
 * Sikta på minsta möjliga lösning, först få det att fungera och sedan gör det bättre.
 * Fråga dig själv, behöver jag det här, vill jag det här, kan jag göra det här bättre?
 
