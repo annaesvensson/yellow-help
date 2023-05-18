@@ -26,7 +26,7 @@ Läs hur du jobbar med oss och löser problem.
 
 ## Bra att veta
 
-Vi gör saker för människor. Jobba med oss, ställ frågor och rapportera fel. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Tvinga ingenting. Fokusera på människor som visa intresse och vill jobba med dig. Du hittar oss på [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
+Vi gör saker för människor. Jobba med oss, ställ frågor och rapportera fel. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Tvinga ingenting. Du kan lämna diskussioner när som helst om dialogen inte är konstruktiv. Fokusera på människor som visa intresse och vill jobba med dig. Tacka människor som pekar dig i rätt riktning och ger dem en tumme upp. Du hittar oss på [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
 
 ## Exempel
 
@@ -55,8 +55,8 @@ Ställa en fråga om layoutfiler, på engelska:
     Title: How do I show the correct date in layout files?
     
     Hello, I want to show the date a page was last updated, similar to what 
-    is shown on wiki pages. I am currently having some problems with the API, 
-    the generated HTML code always shows the date 1970-01-01.
+    is shown on wiki pages. I am having some problems with the API, no matter 
+    what I do, the generated HTML code always shows the date 1970-01-01.
     Here is my layout file `system/layouts/default.html`:
     
     ```

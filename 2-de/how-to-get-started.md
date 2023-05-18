@@ -21,9 +21,9 @@ Falls du mehr über deine Webseite erfahren möchtest, [siehe Hilfe für deine W
 
 Falls du mehr über die Verzeichnisstruktur erfahren möchtest, [siehe API für Entwickler](api-for-developers).
 
-## Installationsservice
+## Installation durch einen anderen Menschen
 
-1. [Installation buchen](https://datenstrom.se/de/contact/), du solltest innerhalb von 14 Tagen einen Termin bekommen.
+1. [Eine Installation buchen](https://datenstrom.se/de/contact/), falls bei dir Probleme während der Installation auftreten.
 2. Frage deinen Webhosting-Anbieter nach den Anmeldeinformationen für SSH/SFTP.
 3. Stelle sicher dass deine Webseite leer ist und über das Internet zu erreichen ist.
 4. Bestätige deine Bestellung, damit alles so wird wie du möchtest.

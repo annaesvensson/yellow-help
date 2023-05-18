@@ -26,7 +26,7 @@ Erfahre wie du mit uns arbeiten und Probleme lösen kannst.
 
 ## Gut zu wissen
 
-Wir machen Dingen für Menschen. Arbeite mit uns, stelle Fragen und melde Fehler. Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser können wir dir helfen. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Erzwinge nichts. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Du findest uns auf [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
+Wir machen Dingen für Menschen. Arbeite mit uns, stelle Fragen und melde Fehler. Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser können wir dir helfen. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei den Menschen, die dir den richtigen Weg zeigen und gebe ihnen einen Daumen nach oben. Du findest uns auf [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
 
 ## Beispiele
 
@@ -55,8 +55,8 @@ Eine Frage über Layoutdateien stellen, auf Englisch:
     Title: How do I show the correct date in layout files?
     
     Hello, I want to show the date a page was last updated, similar to what 
-    is shown on wiki pages. I am currently having some problems with the API, 
-    the generated HTML code always shows the date 1970-01-01.
+    is shown on wiki pages. I am having some problems with the API, no matter 
+    what I do, the generated HTML code always shows the date 1970-01-01.
     Here is my layout file `system/layouts/default.html`:
     
     ```

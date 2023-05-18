@@ -21,11 +21,11 @@ Om du vill läsa mer om din webbplats, [se hjälp för din webbplats](.).
 
 Om du vill läsa mer om mappstrukturen, [se API för utvecklare](api-for-developers).
 
-## Installationstjänst
+## Installation av en annan människa
 
-1. [Boka installtion](https://datenstrom.se/sv/contact/), så bör du få en tid inom 14 dagar.
+1. [Boka en installation](https://datenstrom.se/sv/contact/), om du stöter på problem under installationen.
 2. Fråga ditt webbhotell om inloggningsinformationen för SSH/SFTP.
-3. Se till att din webbplats är tom och tillgänglig över internet.
+3. Se till att din webbplats är tom och tillgänglig via Internet.
 4. Bekräfta din beställning, så att allt blir som du vill ha det.
 
 Om du vill veta mer om installationskraven, [se felsökning](troubleshooting).

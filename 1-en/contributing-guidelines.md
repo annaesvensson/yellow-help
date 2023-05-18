@@ -26,7 +26,7 @@ Learn how to work with us and solve problems.
 
 ## Good to know
 
-We make things for people. Work with us, ask questions and report bugs. We are interested in what you want to do and which problems you have. The more we know the better we can help. Our community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Don't force anything. Focus on the people who show interest and want to work with you. You can find us on [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) or [contact a human](https://datenstrom.se/contact/).
+We make things for people. Work with us, ask questions and report bugs. We are interested in what you want to do and which problems you have. The more we know the better we can help. Our community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Don't force anything. You can step out of discussions at any time if the dialog is not constructive. Focus on the people who show interest and want to work with you. Thank people who point you in the right direction and give them a thumbs up. You can find us on [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) or [contact a human](https://datenstrom.se/contact/).
 
 ## Examples
 
@@ -52,12 +52,11 @@ Asking a question about settings:
 
 Asking a question about layout files:
 
-
     Title: How do I show the correct date in layout files?
     
     Hello, I want to show the date a page was last updated, similar to what 
-    is shown on wiki pages. I am currently having some problems with the API, 
-    the generated HTML code always shows the date 1970-01-01.
+    is shown on wiki pages. I am having some problems with the API, no matter 
+    what I do, the generated HTML code always shows the date 1970-01-01.
     Here is my layout file `system/layouts/default.html`:
     
     ```

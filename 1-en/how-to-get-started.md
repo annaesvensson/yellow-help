@@ -21,9 +21,9 @@ If you want to learn more about your website, [see help for your website](.).
 
 If you want to learn more about the folder structure, [see API for developers](api-for-developers).
 
-## Installation service
+## Installation by another human
 
-1. [Book an installation](https://datenstrom.se/contact/), you should receive an appointment within 14 days.
+1. [Book an installation](https://datenstrom.se/contact/), if you encounter problems during the installation.
 2. Ask your web hosting provider for the SSH/SFTP login information.
 3. Make sure that your website is empty and accessible via the Internet.
 4. Confirm your order, so that everything is the way you want it.

@@ -54,9 +54,9 @@ Följande felmeddelande kan uppstå:
 Datenstrom Yellow stopped with fatal error. Activate the debug mode for more information.
 ```
 
-Du kan använda felsökningsläget för att undersöka orsaken till ett problem mer i detalj, för att visa stackspåret av ett program eller om du är nyfiken på hur Datenstrom Yellow fungerar. Beroende på debug-level visas mer eller mindre information på skärmen. Så här aktiverar du felsökningsläget på din webbplats:
+Du kan använda felsökningsläget för att undersöka orsaken till ett problem mer i detalj eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget på din webbplats, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Beroende på felsökningsläget visas mer eller mindre information på skärmen.
 
-Öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`.
+Grundläggande information med inställningen `CoreDebugMode: 1`:
 
 ```
 YellowCore::sendPage Cache-Control: max-age=60
@@ -68,7 +68,7 @@ YellowCore::processRequest file:content/3-sv/2-wiki/page.md
 YellowCore::request status:200 time:19 ms
 ```
 
-Få filsystem information genom att öka debug-level till `CoreDebugMode: 2`.
+Filsystem information med inställningen `CoreDebugMode: 2`:
 
 ```
 YellowSystem::load file:system/extensions/yellow-system.ini
@@ -80,7 +80,7 @@ YellowLookup::findContentLocationFromFile /sv/shared/page-new-default <- content
 YellowLookup::findContentLocationFromFile /sv/shared/page-new-wiki <- content/3-sv/shared/page-new-wiki.md
 ```
 
-Få maximal information genom att öka debug-level till `CoreDebugMode: 3`.
+Maximal information med inställningen `CoreDebugMode: 3`:
 
 ```
 YellowSystem::load file:system/extensions/yellow-system.ini
@@ -92,7 +92,7 @@ YellowSystem::load Layout:default
 YellowSystem::load Theme:stockholm
 ```
 
-Du kan hitta viktig information i filen `system/extensions/yellow-website.log`. Om du inte kan åtgärda orsaken till ett problem själv, [rapportera ett fel tillsammans med loggfilen](contributing-guidelines). Loggfilen ger en snabb översikt över vad som händer på din webbplats och när den senast uppdaterades. Här är ett exempel:
+Viktig information skrivs också till filen `system/extensions/yellow-website.log`. Om du inte kan åtgärda orsaken till ett problem själv, [rapportera ett fel tillsammans med loggfilen](contributing-guidelines). Loggfilen ger en snabb översikt över vad som händer på din webbplats, när den installerades och vilka fel som uppstod. Här är ett exempel:
 
 ```
 2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
@@ -149,7 +149,7 @@ RewriteRule ^ yellow.php [L]
 </IfModule>
 ```
 
-När din webbplats inte fungerar måste du [aktivera rewrite-modulen](https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2) och [ändra AllowOverride-konfigurationen](https://stackoverflow.com/questions/18740419/how-to-set-allowoverride-all). På vissa webbservrar måste du ändra AllowOverride-konfigurationen från `AllowOverride None` till `AllowOverride All`. Efter att konfigurationen har ändrats kan du behöva starta om Apache-webbservern.
+När din webbplats inte fungerar, [aktivera rewrite-modulen](https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2) och [kontrollera AllowOverride-konfigurationen](https://stackoverflow.com/questions/18740419/how-to-set-allowoverride-all). På vissa webbservrar måste du ändra AllowOverride-konfigurationen från `AllowOverride None` till `AllowOverride All`. Efter att konfigurationen har ändrats kan du behöva starta om Apache-webbservern.
 
 ## Problem med Nginx
 

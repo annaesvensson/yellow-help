@@ -54,9 +54,9 @@ The following error message can happen:
 Datenstrom Yellow stopped with fatal error. Activate the debug mode for more information.
 ```
 
-You can use the debug mode to investigate the cause of a problem in more detail, to show the stack trace of a program or if you are curious about how Datenstrom Yellow works. Depending on the debug level, more or less information are shown on screen. Here is how to activate the debug mode on your website:
+You can use the debug mode to investigate the cause of a problem in more detail or if you are curious about how Datenstrom Yellow works. To activate the debug mode on your website open file `system/extensions/yellow-system.ini` and change `CoreDebugMode: 1`. Depending on the debug mode, more or less information are shown on screen.
 
-Open file `system/extensions/yellow-system.ini` and change `CoreDebugMode: 1`.
+Basic information with the setting `CoreDebugMode: 1`:
 
 ```
 YellowCore::sendPage Cache-Control: max-age=60
@@ -68,7 +68,7 @@ YellowCore::processRequest file:content/1-en/2-wiki/page.md
 YellowCore::request status:200 time:19 ms
 ```
 
-Get file system information by increasing debug level to `CoreDebugMode: 2`.
+File system information with the setting `CoreDebugMode: 2`:
 
 ```
 YellowSystem::load file:system/extensions/yellow-system.ini
@@ -80,7 +80,7 @@ YellowLookup::findContentLocationFromFile /shared/page-new-default <- content/1-
 YellowLookup::findContentLocationFromFile /shared/page-new-wiki <- content/1-en/shared/page-new-wiki.md
 ```
 
-Get maximum information by increasing debug level to `CoreDebugMode: 3`.
+Maximum information with the setting `CoreDebugMode: 3`:
 
 ```
 YellowSystem::load file:system/extensions/yellow-system.ini
@@ -92,7 +92,7 @@ YellowSystem::load Layout:default
 YellowSystem::load Theme:stockholm
 ```
 
-You can find important information in file `system/extensions/yellow-website.log`. If you can't fix the cause of a problem yourself, then [report a bug along with the log file](contributing-guidelines). The log file gives a quick overview of what happens on your website and when it was last updated. Here's an example:
+Important information in also written to file `system/extensions/yellow-website.log`. If you can't fix the cause of a problem yourself, then [report a bug along with the log file](contributing-guidelines). The log file gives a quick overview of what happens on your website, when it was installed and which errors occurred. Here's an example:
 
 ```
 2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
@@ -149,7 +149,7 @@ RewriteRule ^ yellow.php [L]
 </IfModule>
 ```
 
-When your website doesn't work, then you have to [enable the rewrite module](https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2) and [change the AllowOverride configuration](https://stackoverflow.com/questions/18740419/how-to-set-allowoverride-all). On some web servers you have to change the AllowOverride configuration from `AllowOverride None` to `AllowOverride All`. After the configuration has been changed, you may have to restart the Apache web server.
+When your website doesn't work, then [enable the rewrite module](https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2) and [check the AllowOverride configuration](https://stackoverflow.com/questions/18740419/how-to-set-allowoverride-all). On some web servers you have to change the AllowOverride configuration from `AllowOverride None` to `AllowOverride All`. After the configuration has been changed, you may have to restart the Apache web server.
 
 ## Problems with Nginx
 

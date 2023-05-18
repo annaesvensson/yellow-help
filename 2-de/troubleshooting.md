@@ -54,9 +54,9 @@ Die folgende Fehlermeldung kann auftreten:
 Datenstrom Yellow stopped with fatal error. Activate the debug mode for more information.
 ```
 
-Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen, den Stack-Trace eines Programms anzuzeigen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Abhängig vom Debug-Level werden mehr oder weniger Informationen auf dem Bildschirm angezeigt. So aktivierst du den Debug-Modus auf deiner Website:
+Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei  `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Abhängig vom Debug-Modus werden mehr oder weniger Informationen auf dem Bildschirm angezeigt.
 
-Öffne die Datei `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`.
+Grundlegende Informationen mit der Einstellung `CoreDebugMode: 1`:
 
 ```
 YellowCore::sendPage Cache-Control: max-age=60
@@ -68,7 +68,7 @@ YellowCore::processRequest file:content/2-de/2-wiki/page.md
 YellowCore::request status:200 time:19 ms
 ```
 
-Dateisysteminformationen durch Erhöhen des Debug-Levels zu `CoreDebugMode: 2`.
+Dateisysteminformationen mit der Einstellung `CoreDebugMode: 2`:
 
 ```
 YellowSystem::load file:system/extensions/yellow-system.ini
@@ -80,7 +80,7 @@ YellowLookup::findContentLocationFromFile /de/shared/page-new-default <- content
 YellowLookup::findContentLocationFromFile /de/shared/page-new-wiki <- content/2-de/shared/page-new-wiki.md
 ```
 
-Maximum Informationen durch Erhöhen des Debug-Levels zu `CoreDebugMode: 3`.
+Maximum Informationen mit der Einstellung `CoreDebugMode: 3`:
 
 ```
 YellowSystem::load file:system/extensions/yellow-system.ini
@@ -92,7 +92,7 @@ YellowSystem::load Layout:default
 YellowSystem::load Theme:stockholm
 ```
 
-Du kannst wichtige Informationen in der Datei `system/extensions/yellow-website.log` finden. Falls du die Ursache eines Problems nicht selbst beheben kannst, dann [melde einen Fehler zusammen mit der Logdatei](contributing-guidelines). Die Logdatei gibt einen schnellen Überblick was auf deiner Website passiert und wann sie zuletzt aktualisiert wurde. Hier ist ein Beispiel:
+Wichtige Informationen werden außerdem in die Datei `system/extensions/yellow-website.log` geschrieben. Falls du die Ursache eines Problems nicht selbst beheben kannst, dann [melde einen Fehler zusammen mit der Logdatei](contributing-guidelines). Die Logdatei gibt einen schnellen Überblick was auf deiner Website passiert, wann sie installiert wurde und welche Fehler aufgetreten sind. Hier ist ein Beispiel:
 
 ```
 2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
@@ -149,7 +149,7 @@ RewriteRule ^ yellow.php [L]
 </IfModule>
 ```
 
-Wenn deine Webseite nicht funktioniert, dann musst du das [Rewrite-Modul aktivieren](https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2) und die [AllowOverride-Konfiguration ändern](https://stackoverflow.com/questions/18740419/how-to-set-allowoverride-all). Auf manchen Webservern muss du die AllowOverride-Konfiguration ändern von `AllowOverride None` zu `AllowOverride All`. Nachdem die Konfiguration verändert wurde, musst du möglicherweise den Apache-Webserver neustarten.
+Wenn deine Webseite nicht funktioniert, dann [aktiviere das Rewrite-Modul](https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2) und [überprüfe die AllowOverride-Konfiguration](https://stackoverflow.com/questions/18740419/how-to-set-allowoverride-all). Auf manchen Webservern muss du die AllowOverride-Konfiguration ändern von `AllowOverride None` zu `AllowOverride All`. Nachdem die Konfiguration verändert wurde, musst du möglicherweise den Apache-Webserver neustarten.
 
 ## Probleme mit Nginx
 

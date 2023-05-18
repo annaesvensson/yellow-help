@@ -1,6 +1,8 @@
 ---
 Title: API for developers
 ---
+[image help-yellow.png "Datenstrom Yellow is for people who make small websites" rounded]
+
 We <3 people who code.
 
 [toc]
@@ -46,13 +48,17 @@ You can start the built-in web server at the command line. The built-in web serv
 
 You can build a static website at the command line. The static site generator builds the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php build`, you can optionally add a folder and a location. This will build a static website in the `public` folder. Upload the static website to your web server and build a new one when needed. [Learn more about the static site generator](https://github.com/annaesvensson/yellow-static).
 
+### Built-in HTML layout engine
+
+You can customise the look of your website in a text editor. The layout files are stored in folder `system/extensions/layouts`. The HTML layout engine does not really care what's in layout files. It will leave HTML code unchanged. There are output methods like `getHtml()` and `getContent()`, which allow you to design the current page as you like. It's possible to use loops and create control structures. You don't have to learn a special template language, but can use PHP. [Learn more about layouts](how-to-customise-a-layout).
+
 ## Objects
 
-With the help of `$this->yellow` you can access the website as a developer. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the API can be found in file `system/extensions/core.php`.
+With the help of the API you can access the website. A frequently used object is `$this->yellow->page` to access to the current page. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the entire API can be found in file `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌───────────────┐   ┌───────────────┐   ┌───────────────┐    ┌───────────────┐
-│ Web browser   │   │ Command line  │   │ Extension     │    │ Layout        │
+│ Web browser   │   │ Command line  │   │ HTML layouts  │    │ Extensions    │
 └───────────────┘   └───────────────┘   └───────────────┘    └───────────────┘
         │                   │                  │                  │
         ▼                   ▼                  ▼                  ▼
@@ -64,11 +70,15 @@ With the help of `$this->yellow` you can access the website as a developer. The 
 │ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
 │ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
 └────────────────────────────────────────────────────────────────────────────┘
-        │
-        ▼ 
-┌────────────────────────────────────────────────────────────────────────────┐
-│ File system                                                                │
-└────────────────────────────────────────────────────────────────────────────┘
+        │                   │ 
+        ▼                   ▼ 
+┌────────────────────┐   ┌───────────────────────────────────────────────────┐
+│ File system        │   │ Settings                                          │
+│                    │   │                                                   │
+│ ├── content        │   │ System settings         Extension settings        │
+│ ├── media          │   │ Language settings       Page settings             │
+│ └── system         │   │ User settings           and more...               │
+└────────────────────┘   └───────────────────────────────────────────────────┘
 ```
 
 The following objects are available:
@@ -88,7 +98,7 @@ The following objects are available:
 
 The class `Yellow` gives access to the API. The following methods are available:
 
-`command` `getLayoutArguments` `isCommandLine` `layout` `load` `request`
+`command` `getLayoutArguments` `layout` `load` `request`
 
 ---
 
@@ -108,9 +118,6 @@ Include layout
 
 `yellow->getLayoutArguments($sizeMin = 9): array`  
 Return layout arguments
-
-`yellow->isCommandLine(): bool`  
-Check if running at command line
 
 ---
 
@@ -134,7 +141,7 @@ Layout file passing an argument:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $this->yellow->layout("hello", "World") ?>
+<?php $this->yellow->layout("hello", "Anna") ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -642,7 +649,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 The class `YellowLookup` gives access to lookup and normalisation functions. The following methods are available:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -704,6 +711,9 @@ Check if media file
 
 `lookup->isSystemFile($fileName): bool`  
 Check if system file
+
+`yellow->isCommandLine(): bool`  
+Check if running at command line
 
 ---
 
@@ -897,7 +907,10 @@ Return page setting as [date](https://www.php.net/manual/en/function.date.php)
 Return page setting as [date](https://www.php.net/manual/en/function.date.php), HTML encoded  
 
 `page->getContent($rawFormat = false): string`  
-Return page content, HTML encoded or raw format
+Return page content data, HTML encoded or raw format
+
+`page->getExtra($name): string`  
+Return page extra data, HTML encoded
 
 `page->getParent(): YellowPage|null`  
 Return parent page, null if none
@@ -937,9 +950,6 @@ Return page request argument, HTML encoded
 
 `page->getHeader($key): string`  
 Return page response header
-
-`page->getExtra($name): string`  
-Return page extra data
 
 `page->getModified($httpFormat = false): int|string`  
 Return page modification date, Unix time or HTTP format

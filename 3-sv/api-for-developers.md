@@ -1,6 +1,8 @@
 ---
 Title: API för utvecklare
 ---
+[image help-yellow.png "Datenstrom Yellow är för människor som skapar små webbsidor" rounded]
+
 Vi <3 människor som kodar. 
 
 [toc]
@@ -46,13 +48,17 @@ Du kan starta inbyggda webbservern på kommandoraden. Den inbyggda webbservern �
 
 Du kan bygga en statisk webbplats på kommandoraden. Den static-site-generatorn bygger hella webbsidan i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv php `yellow.php build`, du kan valfritt ange en mapp och en plats. Detta kommer att bygga en statisk webbplats i `public` mappen. Ladda upp den statiska webbplatsen till din webbserver och bygg en ny när det behövs. [Läs mer om static-site-generatorn](https://github.com/annaesvensson/yellow-static/tree/main/README-sv.md).
 
+### Inbyggd HTML-layout-motor
+
+Du kan anpassa utseendet på din webbplats i en textredigerare. Layoutfilerna lagras i `system/extensions/layouts` mappen. HTML-layout-motorn bryr sig inte riktigt vad som finns i layoutfiler. Det kommer att lämna HTML-koden oförändrad. Det finns utdatametoder som `getHtml()` och `getContent()`, som låter dig designa den aktuella sidan som du vill. Det är möjligt att använda loopar och skapa kontrollstrukturer. Du behöver inte lära dig ett speciellt template-språk, men kan använda PHP. [Läs mer om layouter](how-to-customise-a-layout).
+
 ## Objekt
 
-Med hjälp av `$this->yellow` kan du som utvecklare komma åt webbplatsen. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för API:et finns i filen `system/extensions/core.php`.
+Med hjälp av API:et kan man komma åt webbplatsen. Ett ofta använt objekt är `$this->yellow->page` för att komma åt aktuella sidan. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för hela API:et finns i filen `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌───────────────┐   ┌───────────────┐   ┌───────────────┐    ┌───────────────┐
-│ Webbläsare    │   │ Kommandorad   │   │ Tillägg       │    │ Layout        │
+│ Webbläsare    │   │ Kommandorad   │   │ HTML-layouter │    │ Tillägg       │
 └───────────────┘   └───────────────┘   └───────────────┘    └───────────────┘
         │                   │                  │                  │
         ▼                   ▼                  ▼                  ▼
@@ -64,11 +70,15 @@ Med hjälp av `$this->yellow` kan du som utvecklare komma åt webbplatsen. API:e
 │ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
 │ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
 └────────────────────────────────────────────────────────────────────────────┘
-        │
-        ▼ 
-┌────────────────────────────────────────────────────────────────────────────┐
-│ Filsystem                                                                  │
-└────────────────────────────────────────────────────────────────────────────┘
+        │                   │ 
+        ▼                   ▼ 
+┌────────────────────┐   ┌───────────────────────────────────────────────────┐
+│ Filsystem          │   │ Inställningar                                     │
+│                    │   │                                                   │
+│ ├── content        │   │ Systeminställningar     Tillägginställningar      │
+│ ├── media          │   │ Språkinställningar      Sidinställningar          │
+│ └── system         │   │ Användarinställningar   och fler...               │
+└────────────────────┘   └───────────────────────────────────────────────────┘
 ```
 
 Följande objekt är tillgängliga:
@@ -88,7 +98,7 @@ Följande objekt är tillgängliga:
 
 Klassen `Yellow` ger tillgång till API:et. Följande metoder är tillgängliga:
 
-`command` `getLayoutArguments` `isCommandLine` `layout` `load` `request`
+`command` `getLayoutArguments` `layout` `load` `request`
 
 ---
 
@@ -108,9 +118,6 @@ Inkludera layouten
 
 `yellow->getLayoutArguments($sizeMin = 9): array`  
 Returnera layoutargument
-
-`yellow->isCommandLine(): bool`  
-Kontrollera om kommandoraden körs
 
 ---
 
@@ -134,7 +141,7 @@ Layoutfil som skickar ett argument:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $this->yellow->layout("hello", "World") ?>
+<?php $this->yellow->layout("hello", "Anna") ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -643,7 +650,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 Klassen `YellowLookup` ger tillgång till uppslag och normalisering. Följande metoder är tillgängliga:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -705,6 +712,9 @@ Kontrollera om mediefil
 
 `lookup->isSystemFile($fileName): bool`  
 Kontrollera om systemfil
+
+`yellow->isCommandLine(): bool`  
+Kontrollera om kommandoraden körs
 
 ---
 
@@ -898,7 +908,10 @@ Returnera sidinställning som [datum](https://www.php.net/manual/en/function.dat
 Returnera sidinställning som [datum](https://www.php.net/manual/en/function.date.php), HTML-kodad  
 
 `page->getContent($rawFormat = false): string`  
-Returnera sidinnehåll, HTML-kodat eller råformat
+Returnera sidinnehållsdata, HTML-kodat eller råformat
+
+`page->getExtra($name): string`  
+Returnera sidextradata, HTML-kodat
 
 `page->getParent(): YellowPage|null`  
 Returnera överordnad sida, null om ingen
@@ -938,9 +951,6 @@ Returnera requestargument av sidan, HTML-kodad
 
 `page->getHeader($key): string`  
 Returnera responseheader av sidan
-
-`page->getExtra($name): string`  
-Returnera extra data för sidan
 
 `page->getModified($httpFormat = false): int|string`  
 Returnera sidans ändringsdatum, Unix-tid eller HTTP-format

@@ -1,6 +1,8 @@
 ---
 Title: API für Entwickler
 ---
+[image help-yellow.png "Datenstrom Yellow ist für Menschen die kleine Webseiten machen" rounded]
+
 Wir <3 Menschen die programmieren.
 
 [toc]
@@ -46,13 +48,17 @@ Du kannst den eingebauten Webserver in der Befehlszeile starten. Der eingebaute 
 
 Du kannst eine statische Webseite in der Befehlszeile erstellen. Der Static-Site-Generator erstellt die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php build`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das erstellt eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und erstelle bei Bedarf eine neue. [Weitere Informationen zum Static-Site-Generator](https://github.com/annaesvensson/yellow-static/tree/main/README-de.md).
 
+### Eingebautes HTML-Layout-Engine
+
+Du kannst das Aussehen deine Webseite im Texteditor anpassen. Die Layoutdateien werden im `system/extensions/layouts`-Verzeichnis gespeichert. Dem HTML-Layout-Engine ist es ziemlich egal was in den Layoutdateien steht. Der HTML-Code bleibt unverändert. Es gibt Ausgabemethoden wie `getHtml()` und `getContent()`, mit denen man die aktuelle Seite so gestalten kann wie man will. Es ist möglich Schleifen zu verwenden und Kontrollstrukturen zu erstellen. Dazu muss man keine besondere Template-Sprache lernen, sondern kann PHP verwenden. [Weitere Informationen zu Layouts](how-to-customise-a-layout).
+
 ## Objekte
 
-Mit Hilfe von `$this->yellow` kannst du als Entwickler auf die Webseite zugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der API findet man in der Datei `system/extensions/core.php`.
+Mit Hilfe der API kann man auf die Webseite zugreifen. Ein häufig benutztes Objekt ist `$this->yellow->page` um auf die aktuelle Seite zuzugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der gesamten API findet man in der Datei `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌───────────────┐   ┌───────────────┐   ┌───────────────┐    ┌───────────────┐
-│ Webbrowser    │   │ Befehlszeile  │   │ Erweiterung   │    │ Layout        │
+│ Webbrowser    │   │ Befehlszeile  │   │ HTML-Layouts  │    │ Erweiterungen │
 └───────────────┘   └───────────────┘   └───────────────┘    └───────────────┘
         │                   │                  │                  │
         ▼                   ▼                  ▼                  ▼
@@ -64,11 +70,15 @@ Mit Hilfe von `$this->yellow` kannst du als Entwickler auf die Webseite zugreife
 │ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
 │ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
 └────────────────────────────────────────────────────────────────────────────┘
-        │
-        ▼ 
-┌────────────────────────────────────────────────────────────────────────────┐
-│ Dateisystem                                                                │
-└────────────────────────────────────────────────────────────────────────────┘
+        │                   │ 
+        ▼                   ▼ 
+┌────────────────────┐   ┌───────────────────────────────────────────────────┐
+│ Dateisystem        │   │ Einstellungen                                     │
+│                    │   │                                                   │
+│ ├── content        │   │ Systemeinstellungen     Erweiterungseinstellungen │
+│ ├── media          │   │ Spracheinstellungen     Seiteneinstellungen       │
+│ └── system         │   │ Benutzereinstellungen   und mehr...               │
+└────────────────────┘   └───────────────────────────────────────────────────┘
 ```
 
 Die folgenden Objekte sind verfügbar:
@@ -88,7 +98,7 @@ Die folgenden Objekte sind verfügbar:
 
 Die Klasse `Yellow` gibt Zugang zur API. Die folgenden Methoden sind verfügbar:
 
-`command` `getLayoutArguments` `isCommandLine` `layout` `load` `request`
+`command` `getLayoutArguments` `layout` `load` `request`
 
 ---
 
@@ -108,9 +118,6 @@ Binde ein Layout ein
 
 `yellow->getLayoutArguments($sizeMin = 9): array`  
 Hole die Layout-Argumente
-
-`yellow->isCommandLine(): bool`  
-Überprüfe ob Befehlszeile ausgeführt wird
 
 ---
 
@@ -134,7 +141,7 @@ Layoutdatei die ein Argument übergibt:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $this->yellow->layout("hello", "World") ?>
+<?php $this->yellow->layout("hello", "Anna") ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -642,7 +649,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 Die Klasse `YellowLookup` gibt Zugang zu Nachschlagen und Normalisierung. Die folgenden Methoden sind verfügbar:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -704,6 +711,9 @@ Hole URL-Informationen
 
 `lookup->isSystemFile($fileName): bool`  
 Überprüfe ob Systemdatei
+
+`yellow->isCommandLine(): bool`  
+Überprüfe ob Befehlszeile ausgeführt wird
 
 ---
 
@@ -897,7 +907,10 @@ Hole eine Seiteneinstellung als [Datum](https://www.php.net/manual/de/function.d
 Hole eine Seiteneinstellung als [Datum](https://www.php.net/manual/de/function.date.php), HTML-kodiert
 
 `page->getContent($rawFormat = false): string`  
-Hole den Seiteninhalt, HTML-kodiert oder Rohformat
+Hole Seiteninhaltsdaten, HTML-kodiert oder Rohformat
+
+`page->getExtra($name): string`  
+Hole Seitenextradaten, HTML-kodiert
 
 `page->getParent(): YellowPage|null`  
 Hole die übergeordnete Seite, null falls nicht vorhanden
@@ -937,9 +950,6 @@ Hole das angefragte Argument der Seite, HTML-kodiert
 
 `page->getHeader($key): string`  
 Hole den Antwort-Header der Seite
-
-`page->getExtra($name): string`  
-Hole Extradaten der Seite
 
 `page->getModified($httpFormat = false): int|string`  
 Hole das Änderungsdatum der Seite, Unix-Zeit oder HTTP-Format
