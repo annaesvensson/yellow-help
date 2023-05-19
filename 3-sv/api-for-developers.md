@@ -27,34 +27,41 @@ Du kan ändra allt i filhanteraren på din dator. Mappen `content` innehåller w
     └── trash             = raderade filer
 ```
 
-Följande konfigurationsfiler och loggfiler är tillgängliga:
+Följande systemmappar är tillgängliga:
+
+`system/extensions` = [innehåller installerade tillägg och konfigurationsfilar](how-to-change-the-system)  
+`system/layouts` = [innehåller konfigurerbara layoutfiler, till exempel HTML](how-to-customise-a-layout)  
+`system/themes` = [innehåller konfigurerbara temafiler, till exempel CSS och JavaScript](how-to-customise-a-theme)  
+`system/trash` = [innehåller raderade filer, vanligtvis upp till 90 dagar](how-to-change-the-system)  
+
+Följande systemfiler är tillgängliga:
 
 `system/extensions/yellow-system.ini` = [fil med systeminställningar](how-to-change-the-system#systeminställningar)  
 `system/extensions/yellow-language.ini` = [fil med språkinställningar](how-to-change-the-system#språkinställningar)  
 `system/extensions/yellow-user.ini` = [fil med användarinställningar](how-to-change-the-system#användarinställningar)  
-`system/extensions/yellow-website.log` = [loggfil för din webbplats](troubleshooting#problem-efter-installationen)  
+`system/extensions/yellow-website.log` = [loggfilen för webbplatsen](troubleshooting#problem-efter-installationen)  
 
 ## Verktyg
 
 ### Inbyggd webbredigerare
 
-Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Inbyggda webbredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. [Läs mer om webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
+Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Inbyggda webbredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. För att visa en redigeringslänk, använd en `[edit]` förkortning. [Läs mer om webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
 
 ### Inbyggd webbserver
 
 Du kan starta inbyggda webbservern på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att redigera webbsidor på din dator och ladda upp dem till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md).
 
-### Inbyggd static-site-generator
+### Static-site-generator
 
 Du kan bygga en statisk webbplats på kommandoraden. Den static-site-generatorn bygger hella webbsidan i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv php `yellow.php build`, du kan valfritt ange en mapp och en plats. Detta kommer att bygga en statisk webbplats i `public` mappen. Ladda upp den statiska webbplatsen till din webbserver och bygg en ny när det behövs. [Läs mer om static-site-generatorn](https://github.com/annaesvensson/yellow-static/tree/main/README-sv.md).
 
-### Inbyggd HTML-layout-motor
+### HTML-layout-motor
 
-Du kan anpassa utseendet på din webbplats i en textredigerare. Layoutfilerna lagras i `system/extensions/layouts` mappen. HTML-layout-motorn bryr sig inte riktigt vad som finns i layoutfiler. Det kommer att lämna HTML-koden oförändrad. Det finns utdatametoder som `getHtml()` och `getContent()`, som låter dig designa den aktuella sidan som du vill. Det är möjligt att använda loopar och skapa kontrollstrukturer. Du behöver inte lära dig ett speciellt template-språk, men kan använda PHP. [Läs mer om layouter](how-to-customise-a-layout).
+Du kan anpassa utseendet på din webbplats i en textredigerare. Layoutfilerna lagras i `system/extensions/layouts` mappen. HTML-layout-motorn bryr sig inte riktigt vad som finns i layoutfiler. Det kommer att lämna HTML-koden oförändrad. Det finns utdatametoder som `getHtml()` och `getContentHtml()`, som låter dig visa den aktuella sidan som du vill. Det är möjligt att använda loopar och skapa kontrollstrukturer. Du behöver inte lära dig ett speciellt template-språk, men kan använda vanlig PHP. [Läs mer om layouter](how-to-customise-a-layout).
 
 ## Objekt
 
-Med hjälp av API:et kan man komma åt webbplatsen. Ett ofta använt objekt är `$this->yellow->page` för att komma åt aktuella sidan. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för hela API:et finns i filen `system/extensions/core.php`.
+Med hjälp av API:et kan man komma åt filer, inställningar och mer. Ett grundläggande objekt är `$this->yellow->page` för att komma åt aktuella sidan. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för hela API:et finns i filen `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌───────────────┐   ┌───────────────┐   ┌───────────────┐    ┌───────────────┐
@@ -63,7 +70,7 @@ Med hjälp av API:et kan man komma åt webbplatsen. Ett ofta använt objekt är 
         │                   │                  │                  │
         ▼                   ▼                  ▼                  ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
-│ Core                                                                       │
+│ API                                                                        │
 │                                                                            │
 │ $this->yellow                                                              │
 │ $this->yellow->content   $this->yellow->language    $this->yellow->lookup  │
@@ -77,7 +84,7 @@ Med hjälp av API:et kan man komma åt webbplatsen. Ett ofta använt objekt är 
 │                    │   │                                                   │
 │ ├── content        │   │ Systeminställningar     Tillägginställningar      │
 │ ├── media          │   │ Språkinställningar      Sidinställningar          │
-│ └── system         │   │ Användarinställningar   och fler...               │
+│ └── system         │   │ Användarinställningar   och mer...                │
 └────────────────────┘   └───────────────────────────────────────────────────┘
 ```
 
@@ -128,7 +135,7 @@ Layoutfil med header och footer:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -141,7 +148,7 @@ Layoutfil som skickar ett argument:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $this->yellow->layout("hello", "Anna") ?>
+<?php $this->yellow->layout("hello", "Anna Svensson") ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -153,13 +160,13 @@ Layoutfil som tar emot ett argument:
 ``` html
 <?php list($name, $text) = $this->yellow->getLayoutArguments() ?>
 <p>
-<?php echo "Hello $text" ?>
+<?php echo htmlspecialchars("Hello $text") ?>
 </p>
 ```
 
 ### Yellow content
 
-Klassen `YellowContent` ger tillgång till innehållsfiler. Följande metoder är tillgängliga:
+Klassen `YellowContent` ger tillgång till [innehållsfiler](how-to-change-the-content). Följande metoder är tillgängliga:
 
 `clean` `find` `index` `multi` `path` `top`
 
@@ -247,7 +254,7 @@ Layoutfil för att visa navigationssidor på toppnivå:
 
 ### Yellow media
 
-Klassen `YellowMedia` ger tillgång till mediefiler. Följande metoder är tillgängliga:
+Klassen `YellowMedia` ger tillgång till [mediefiler](how-to-change-the-media). Följande metoder är tillgängliga:
 
 `clean` `index` `find`
 
@@ -459,7 +466,7 @@ Layoutfil för att visa en språkinställning:
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p><?php echo $this->yellow->language->getTextHtml("wikiModified") ?> 
 <?php echo $this->yellow->page->getDateHtml("modified") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -674,22 +681,22 @@ Returnera mediakatalog från en systeminställning
 `lookup->normaliseName($text, $removePrefix = false, $removeExtension = false, $filterStrict = false): string`  
 Normalisera namn
 
-`toolbox->normaliseData($text, $type = "html", $filterStrict = true): string`  
+`lookup->normaliseData($text, $type = "html", $filterStrict = true): string`  
 Normalisera element och attribut i HTML/SVG-data 
 
-`toolbox->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
+`lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
 Normalisera fält i MIME-headers
 
 `lookup->normaliseArray($input): array`  
 Normalisera array, gör nycklar till samma skiftläge
 
-`toolbox->normalisePath($text): string`  
+`lookup->normalisePath($text): string`  
 Normalisera relativa sökvägsandelar 
 
 `lookup->normaliseLocation($location, $pageLocation, $filterStrict = true): string`  
 Normalisera plats, gör absolut plats
 
-`toolbox->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
+`lookup->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
 Normalisera platsargument
 
 `lookup->normaliseUrl($scheme, $address, $base, $location, $filterStrict = true): string`  
@@ -713,7 +720,7 @@ Kontrollera om mediefil
 `lookup->isSystemFile($fileName): bool`  
 Kontrollera om systemfil
 
-`yellow->isCommandLine(): bool`  
+`lookup->isCommandLine(): bool`  
 Kontrollera om kommandoraden körs
 
 ---
@@ -874,7 +881,7 @@ foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/
 
 Klassen `YellowPage` ger tillgång till en sidan och dess [sidinställningar](how-to-change-the-system#sidinställningar). Följande metoder är tillgängliga:
 
-`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
+`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContentHtml` `getContentRaw` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtraHtml` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
 
 ---
 
@@ -907,10 +914,13 @@ Returnera sidinställning som [datum](https://www.php.net/manual/en/function.dat
 `page->getDateFormattedHtml($key, $format): string`  
 Returnera sidinställning som [datum](https://www.php.net/manual/en/function.date.php), HTML-kodad  
 
-`page->getContent($rawFormat = false): string`  
-Returnera sidinnehållsdata, HTML-kodat eller råformat
+`page->getContentRaw(): string`  
+Returnera sidinnehållsdata, råformat
 
-`page->getExtra($name): string`  
+`page->getContentHtml(): string`  
+Returnera sidinnehållsdata, HTML-kodat
+
+`page->getExtraHtml($name): string`  
 Returnera sidextradata, HTML-kodat
 
 `page->getParent(): YellowPage|null`  
@@ -1003,7 +1013,7 @@ Layoutfil för att visa sidinnehåll:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -1017,7 +1027,7 @@ Layoutfil för att visa sidinnehåll och författare:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p><?php echo $this->yellow->page->getHtml("author") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -1031,7 +1041,7 @@ Layoutfil för att visa sidinnehåll och modifieringsdatum:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p><?php echo $this->yellow->page->getDateHtml("modified") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -1119,7 +1129,7 @@ Returnera ändringsdatum för page collection, Unix-tid eller HTTP-format
 `pages->isPagination(): bool`  
 Kontrollera om det finns en paginering
 
-`page->isEmpty(): bool`  
+`pages->isEmpty(): bool`  
 Kontrollera om page collection är tom
 
 ---
@@ -1248,7 +1258,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Händelser
 
-Med hjälp av händelser kan hemsidan informera när något händer. Först laddas tilläggen och `onLoad` anropas. Så snart alla tillägg har laddats kallas `onStartup`. En sida kan hanteras med olika händelser. I de flesta fall genereras sidinnehållet. Om ett fel har inträffat genereras en felsida. Slutligen matas sidan ut och `onShutdown` anropas.
+Med hjälp av händelser informerar hemsidan när något händer. Först laddas tilläggen och `onLoad` anropas. Så snart alla tillägg har laddats kallas `onStartup`. En begäran från webbläsaren kan hanteras med olika händelser. I de flesta fall genereras innehållet av en sida. Om ett fel har inträffat genereras en felsida. Slutligen matas sidan ut och `onShutdown` anropas.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐

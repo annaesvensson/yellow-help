@@ -27,34 +27,41 @@ Du kannst alles im Dateimanager auf deinem Computer ändern. Das `content`-Verze
     └── trash             = gelöschte Dateien
 ```
 
-Die folgenden Konfigurationsdateien und Logdateien sind verfügbar:
+Die folgenden Systemverzeichnisse sind verfügbar:
+
+`system/extensions` = [enthält installierte Erweiterungen und Konfigurationsdateien](how-to-change-the-system)  
+`system/layouts` = [enthält konfigurierbare Layoutdateien, beispielsweise HTML](how-to-customise-a-layout)  
+`system/themes` = [enthält konfigurierbare Themedateien, beispielsweise CSS und JavaScript](how-to-customise-a-theme)  
+`system/trash` = [enthält gelöschte Dateien, normalerweise bis zu 90 Tagen](how-to-change-the-system)  
+
+Die folgenden Systemdateien sind verfügbar:
 
 `system/extensions/yellow-system.ini` = [Datei mit Systemeinstellungen](how-to-change-the-system#systemeinstellungen)  
 `system/extensions/yellow-language.ini` = [Datei mit Spracheinstellungen](how-to-change-the-system#spracheinstellungen)  
 `system/extensions/yellow-user.ini` = [Datei mit Benutzereinstellungen](how-to-change-the-system#benutzereinstellungen)  
-`system/extensions/yellow-website.log` = [Logdatei für deine Webseite](troubleshooting#probleme-nach-der-installation)  
+`system/extensions/yellow-website.log` = [Logdatei der Webseite](troubleshooting#probleme-nach-der-installation)  
 
 ## Werkzeuge
 
 ### Eingebauter Webeditor
 
-Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der eingebauten Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Um einen Bearbeitungslink auf deiner Webseite anzuzeigen, benutze eine `[edit]`-Abkürzung. [Weitere Informationen zum Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
+Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der eingebauten Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Textformatierung mit Markdown wird unterstützt. Um einen Bearbeitungslink anzuzeigen, benutze eine `[edit]`-Abkürzung. [Weitere Informationen zum Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
 
 ### Eingebauter Webserver
 
 Du kannst den eingebauten Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit Webseiten auf deinem Computer zu bearbeiten und sie später auf deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
 
-### Eingebauter Static-Site-Generator
+### Static-Site-Generator
 
 Du kannst eine statische Webseite in der Befehlszeile erstellen. Der Static-Site-Generator erstellt die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php build`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das erstellt eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und erstelle bei Bedarf eine neue. [Weitere Informationen zum Static-Site-Generator](https://github.com/annaesvensson/yellow-static/tree/main/README-de.md).
 
-### Eingebautes HTML-Layout-Engine
+### HTML-Layout-Engine
 
-Du kannst das Aussehen deine Webseite im Texteditor anpassen. Die Layoutdateien werden im `system/extensions/layouts`-Verzeichnis gespeichert. Dem HTML-Layout-Engine ist es ziemlich egal was in den Layoutdateien steht. Der HTML-Code bleibt unverändert. Es gibt Ausgabemethoden wie `getHtml()` und `getContent()`, mit denen man die aktuelle Seite so gestalten kann wie man will. Es ist möglich Schleifen zu verwenden und Kontrollstrukturen zu erstellen. Dazu muss man keine besondere Template-Sprache lernen, sondern kann PHP verwenden. [Weitere Informationen zu Layouts](how-to-customise-a-layout).
+Du kannst das Aussehen deiner Webseite im Texteditor anpassen. Die Layoutdateien werden im `system/extensions/layouts`-Verzeichnis gespeichert. Dem HTML-Layout-Engine ist es ziemlich egal was in den Layoutdateien steht. Der HTML-Code bleibt unverändert. Es gibt Ausgabemethoden wie `getHtml()` und `getContentHtml()`, mit denen man die aktuelle Seite so anzeigen kann wie man will. Es ist möglich Schleifen zu verwenden und Kontrollstrukturen zu erstellen. Dazu musst du keine besondere Template-Sprache lernen, sondern kannst normales PHP verwenden. [Weitere Informationen zu Layouts](how-to-customise-a-layout).
 
 ## Objekte
 
-Mit Hilfe der API kann man auf die Webseite zugreifen. Ein häufig benutztes Objekt ist `$this->yellow->page` um auf die aktuelle Seite zuzugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der gesamten API findet man in der Datei `system/extensions/core.php`.
+Mit Hilfe der API kann man auf Dateien, Einstellungen und mehr zugreifen. Ein grundlegendes Objekt ist `$this->yellow->page` um auf die aktuelle Seite zuzugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der gesamten API findet man in der Datei `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌───────────────┐   ┌───────────────┐   ┌───────────────┐    ┌───────────────┐
@@ -63,7 +70,7 @@ Mit Hilfe der API kann man auf die Webseite zugreifen. Ein häufig benutztes Obj
         │                   │                  │                  │
         ▼                   ▼                  ▼                  ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
-│ Core                                                                       │
+│ API                                                                        │
 │                                                                            │
 │ $this->yellow                                                              │
 │ $this->yellow->content   $this->yellow->language    $this->yellow->lookup  │
@@ -128,7 +135,7 @@ Layoutdatei mit Header und Footer:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -141,7 +148,7 @@ Layoutdatei die ein Argument übergibt:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $this->yellow->layout("hello", "Anna") ?>
+<?php $this->yellow->layout("hello", "Anna Svensson") ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -153,13 +160,13 @@ Layoutdatei die ein Argument empfängt:
 ``` html
 <?php list($name, $text) = $this->yellow->getLayoutArguments() ?>
 <p>
-<?php echo "Hello $text" ?>
+<?php echo htmlspecialchars("Hello $text") ?>
 </p>
 ```
 
 ### Yellow-Content
 
-Die Klasse `YellowContent` gibt Zugang zu Inhaltsdateien. Die folgenden Methoden sind verfügbar:
+Die Klasse `YellowContent` gibt Zugang zu [Inhaltsdateien](how-to-change-the-content). Die folgenden Methoden sind verfügbar:
 
 `clean` `find` `index` `multi` `path` `top`
 
@@ -246,7 +253,7 @@ Layoutdatei um die Hauptseiten der Navigation anzuzeigen:
 
 ### Yellow-Media
 
-Die Klasse `YellowMedia` gibt Zugang zu Mediendateien. Die folgenden Methoden sind verfügbar:
+Die Klasse `YellowMedia` gibt Zugang zu [Mediendateien](how-to-change-the-media). Die folgenden Methoden sind verfügbar:
 
 `clean` `index` `find`
 
@@ -458,7 +465,7 @@ Layoutdatei um eine Spracheinstellung anzuzeigen:
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p><?php echo $this->yellow->language->getTextHtml("wikiModified") ?> 
 <?php echo $this->yellow->page->getDateHtml("modified") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -673,22 +680,22 @@ Hole Medienpfad für eine Systemeinstellung
 `lookup->normaliseName($text, $removePrefix = false, $removeExtension = false, $filterStrict = false): string`  
 Normalisiere einen Namen
 
-`toolbox->normaliseData($text, $type = "html", $filterStrict = true): string`  
+`lookup->normaliseData($text, $type = "html", $filterStrict = true): string`  
 Normalisiere Elemente und Attribute in HTML/SVG-Daten
 
-`toolbox->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
+`lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
 Normalisiere Felder in MIME-Headers
 
 `lookup->normaliseArray($input): array`  
 Normalisiere ein Array, mache Schlüssel mit gleicher Groß-/Kleinschreibung
 
-`toolbox->normalisePath($text): string`  
+`lookup->normalisePath($text): string`  
 Normalisiere relative Pfadanteile
 
 `lookup->normaliseLocation($location, $pageLocation, $filterStrict = true): string`  
 Normalisiere einen Ort, mache absoluten Ort
 
-`toolbox->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
+`lookup->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
 Normalisiere Ortargumente
 
 `lookup->normaliseUrl($scheme, $address, $base, $location, $filterStrict = true): string`  
@@ -712,7 +719,7 @@ Hole URL-Informationen
 `lookup->isSystemFile($fileName): bool`  
 Überprüfe ob Systemdatei
 
-`yellow->isCommandLine(): bool`  
+`lookup->isCommandLine(): bool`  
 Überprüfe ob Befehlszeile ausgeführt wird
 
 ---
@@ -873,7 +880,7 @@ foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/
 
 Die Klasse `YellowPage` gibt Zugang zur einer Seite und ihren [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen). Die folgenden Methoden sind verfügbar:
 
-`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
+`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContentHtml` `getContentRaw` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtraHtml` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
 
 ---
 
@@ -906,10 +913,13 @@ Hole eine Seiteneinstellung als [Datum](https://www.php.net/manual/de/function.d
 `page->getDateFormattedHtml($key, $format): string`  
 Hole eine Seiteneinstellung als [Datum](https://www.php.net/manual/de/function.date.php), HTML-kodiert
 
-`page->getContent($rawFormat = false): string`  
-Hole Seiteninhaltsdaten, HTML-kodiert oder Rohformat
+`page->getContentRaw(): string`  
+Hole Seiteninhaltsdaten, Rohformat
 
-`page->getExtra($name): string`  
+`page->getContentHtml(): string`  
+Hole Seiteninhaltsdaten, HTML-kodiert
+
+`page->getExtraHtml($name): string`  
 Hole Seitenextradaten, HTML-kodiert
 
 `page->getParent(): YellowPage|null`  
@@ -1002,7 +1012,7 @@ Layoutdatei um den Seiteninhalt anzuzeigen:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -1016,7 +1026,7 @@ Layoutdatei um den Seiteninhalt und den Autor anzuzeigen:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p><?php echo $this->yellow->page->getHtml("author") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -1030,7 +1040,7 @@ Layoutdatei um den Seiteninhalt und das Änderungsdatum anzuzeigen:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p><?php echo $this->yellow->page->getDateHtml("modified") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -1118,7 +1128,7 @@ Hole das Änderungsdatum der Seitenkollektion, Unix-Zeit oder HTTP-Format
 `pages->isPagination(): bool`  
 Überprüfe ob eine Paginierung vorhanden ist
 
-`page->isEmpty(): bool`  
+`pages->isEmpty(): bool`  
 Überprüfe ob Seitenkollektion leer ist
 
 ---
@@ -1247,7 +1257,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Ereignisse
 
-Mit Hilfe von Ereignissen kann die Webseite informieren wenn etwas passiert. Zuerst werden die Erweiterungen geladen und es wird `onLoad` aufgerufen. Sobald alle Erweiterungen geladen sind wird `onStartup` aufgerufen. Eine Seite kann mit verschiedenen Ereignissen verarbeitet werden. In den meisten Fällen wird der Inhalt der Seite erzeugt. Sollte ein Fehler aufgetreten sein, wird eine Fehlerseite erzeugt. Zum Schluss wird die Seite ausgegeben und es wird `onShutdown` aufgerufen.
+Mit Hilfe von Ereignissen informiert die Webseite wenn etwas passiert. Zuerst werden die Erweiterungen geladen und es wird `onLoad` aufgerufen. Sobald alle Erweiterungen geladen sind wird `onStartup` aufgerufen. Eine Anfrage vom Webbrowser kann mit verschiedenen Ereignissen verarbeitet werden. In den meisten Fällen wird der Inhalt einer Seite erzeugt. Sollte ein Fehler aufgetreten sein, wird eine Fehlerseite erzeugt. Zum Schluss wird die Seite ausgegeben und es wird `onShutdown` aufgerufen.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐

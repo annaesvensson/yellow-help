@@ -27,34 +27,41 @@ You can change everything in the file manager on your computer. The `content` fo
     └── trash             = deleted files
 ```
 
-The following configuration files and log files are available:
+The following system folders are available:
+
+`system/extensions` = [contains installed extensions and configuration files](how-to-change-the-system)  
+`system/layouts` = [contains configurable layout files, for example HTML](how-to-customise-a-layout)  
+`system/themes` = [contains configurable theme files, for example CSS and JavaScript](how-to-customise-a-theme)  
+`system/trash` = [contains deletes files, usually up to 90 days](how-to-change-the-system)  
+
+The following system files are available:
 
 `system/extensions/yellow-system.ini` = [file with system settings](how-to-change-the-system#system-settings)  
 `system/extensions/yellow-language.ini` = [file with language settings](how-to-change-the-system#language-settings)  
 `system/extensions/yellow-user.ini` = [file with user settings](how-to-change-the-system#user-settings)  
-`system/extensions/yellow-website.log` = [log file for your website](troubleshooting#problems-after-installation)  
+`system/extensions/yellow-website.log` = [log file of the website](troubleshooting#problems-after-installation)  
 
 ## Tools
 
 ### Built-in web editor
 
-You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The built-in web editor allows you to edit content files and upload media files. It is a great way to update your website. To show an edit link on your website use an `[edit]` shortcut. [Learn more about the web editor](https://github.com/annaesvensson/yellow-edit).
+You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The built-in web editor allows you to edit content files and upload media files. It is a great way to update your website. Text formatting with Markdown is supported. To show an edit link use an `[edit]` shortcut. [Learn more about the web editor](https://github.com/annaesvensson/yellow-edit).
 
 ### Built-in web server
 
 You can start the built-in web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to edit web pages on your computer and upload them to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the web server](https://github.com/annaesvensson/yellow-serve).
 
-### Built-in static site generator
+### Static site generator
 
 You can build a static website at the command line. The static site generator builds the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php build`, you can optionally add a folder and a location. This will build a static website in the `public` folder. Upload the static website to your web server and build a new one when needed. [Learn more about the static site generator](https://github.com/annaesvensson/yellow-static).
 
-### Built-in HTML layout engine
+### HTML layout engine
 
-You can customise the look of your website in a text editor. The layout files are stored in folder `system/extensions/layouts`. The HTML layout engine does not really care what's in layout files. It will leave HTML code unchanged. There are output methods like `getHtml()` and `getContent()`, which allow you to design the current page as you like. It's possible to use loops and create control structures. You don't have to learn a special template language, but can use PHP. [Learn more about layouts](how-to-customise-a-layout).
+You can customise the look of your website in a text editor. The layout files are stored in folder `system/extensions/layouts`. The HTML layout engine does not really care what's in layout files. It will leave HTML code unchanged. There are output methods like `getHtml()` and `getContentHtml()`, which allow you to display the current page as you like. It's possible to use loops and create control structures. You don't have to learn a special template language, but can use normal PHP. [Learn more about layouts](how-to-customise-a-layout).
 
 ## Objects
 
-With the help of the API you can access the website. A frequently used object is `$this->yellow->page` to access to the current page. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the entire API can be found in file `system/extensions/core.php`.
+With the help of the API you can access files, settings and more. A fundamental object is `$this->yellow->page` to access the current page. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the entire API can be found in file `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌───────────────┐   ┌───────────────┐   ┌───────────────┐    ┌───────────────┐
@@ -63,7 +70,7 @@ With the help of the API you can access the website. A frequently used object is
         │                   │                  │                  │
         ▼                   ▼                  ▼                  ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
-│ Core                                                                       │
+│ API                                                                        │
 │                                                                            │
 │ $this->yellow                                                              │
 │ $this->yellow->content   $this->yellow->language    $this->yellow->lookup  │
@@ -128,7 +135,7 @@ Layout file with header and footer:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -141,7 +148,7 @@ Layout file passing an argument:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $this->yellow->layout("hello", "Anna") ?>
+<?php $this->yellow->layout("hello", "Anna Svensson") ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -153,13 +160,13 @@ Layout file receiving an argument:
 ``` html
 <?php list($name, $text) = $this->yellow->getLayoutArguments() ?>
 <p>
-<?php echo "Hello $text" ?>
+<?php echo htmlspecialchars("Hello $text") ?>
 </p>
 ```
 
 ### Yellow content
 
-The class `YellowContent` gives access to content files. The following methods are available:
+The class `YellowContent` gives access to [content files](how-to-change-the-content). The following methods are available:
 
 `clean` `find` `index` `multi` `path` `top`
 
@@ -246,7 +253,7 @@ Layout file for showing top-level navigation pages:
 
 ### Yellow media
 
-The class `YellowMedia` gives access to media files. The following methods are available:
+The class `YellowMedia` gives access to [media files](how-to-change-the-media). The following methods are available:
 
 `clean` `index` `find`
 
@@ -458,7 +465,7 @@ Layout file for showing a language setting:
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p><?php echo $this->yellow->language->getTextHtml("wikiModified") ?> 
 <?php echo $this->yellow->page->getDateHtml("modified") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -673,22 +680,22 @@ Return media directory from a system setting
 `lookup->normaliseName($text, $removePrefix = false, $removeExtension = false, $filterStrict = false): string`  
 Normalise name
 
-`toolbox->normaliseData($text, $type = "html", $filterStrict = true): string`  
+`lookup->normaliseData($text, $type = "html", $filterStrict = true): string`  
 Normalise elements and attributes in HTML/SVG data
 
-`toolbox->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
+`lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
 Normalise fields in MIME headers
 
 `lookup->normaliseArray($input): array`  
 Normalise array, make keys with same upper/lower case
 
-`toolbox->normalisePath($text): string`  
+`lookup->normalisePath($text): string`  
 Normalise relative path tokens
 
 `lookup->normaliseLocation($location, $pageLocation, $filterStrict = true): string`  
 Normalise location, make absolute location
 
-`toolbox->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
+`lookup->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
 Normalise location arguments
 
 `lookup->normaliseUrl($scheme, $address, $base, $location, $filterStrict = true): string`  
@@ -712,7 +719,7 @@ Check if media file
 `lookup->isSystemFile($fileName): bool`  
 Check if system file
 
-`yellow->isCommandLine(): bool`  
+`lookup->isCommandLine(): bool`  
 Check if running at command line
 
 ---
@@ -873,7 +880,7 @@ foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/
 
 The class `YellowPage` gives access to a page and its [page settings](how-to-change-the-system#page-settings). The following methods are available:
 
-`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContent` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtra` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
+`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContentHtml` `getContentRaw` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtraHtml` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
 
 ---
 
@@ -906,10 +913,13 @@ Return page setting as [date](https://www.php.net/manual/en/function.date.php)
 `page->getDateFormattedHtml($key, $format): string`  
 Return page setting as [date](https://www.php.net/manual/en/function.date.php), HTML encoded  
 
-`page->getContent($rawFormat = false): string`  
-Return page content data, HTML encoded or raw format
+`page->getContentRaw(): string`  
+Return page content data, raw format
 
-`page->getExtra($name): string`  
+`page->getContentHtml(): string`  
+Return page content data, HTML encoded
+
+`page->getExtraHtml($name): string`  
 Return page extra data, HTML encoded
 
 `page->getParent(): YellowPage|null`  
@@ -1002,7 +1012,7 @@ Layout file for showing page content:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -1016,7 +1026,7 @@ Layout file for showing page content and author:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p><?php echo $this->yellow->page->getHtml("author") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -1030,7 +1040,7 @@ Layout file for showing page content and modification date:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p><?php echo $this->yellow->page->getDateHtml("modified") ?></p>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -1118,7 +1128,7 @@ Return page collection modification date, Unix time or HTTP format
 `pages->isPagination(): bool`  
 Check if there is a pagination
 
-`page->isEmpty(): bool`  
+`pages->isEmpty(): bool`  
 Check if page collection is empty
 
 ---
@@ -1247,7 +1257,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Events
 
-With help of events the website can inform when something happens. First extensions are loaded and `onLoad` will be called. As soon as all extensions are loaded `onStartup` will be called. A page can be handled with various events. In most cases the page content will be generated. If an error has occurred, an error page will be generated. Finally the page is output and `onShutdown` will be called.
+With help of events the website informs when something happens. First extensions are loaded and `onLoad` will be called. As soon as all extensions are loaded `onStartup` will be called. A request from the web browser can be handled with various events. In most cases the page content will be generated. If an error has occurred, an error page will be generated. Finally the page is output and `onShutdown` will be called.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐

@@ -14,7 +14,7 @@ Here's an example file `system/layouts/default.html`:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -27,7 +27,7 @@ Here's an example layout for showing page content and additional HTML code:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 <p>Hello world</p>
 </div>
 </div>
@@ -41,7 +41,7 @@ Here's an example layout for showing page content and additional blog pages:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php echo $this->yellow->page->getContent() ?>
+<?php echo $this->yellow->page->getContentHtml() ?>
 <?php $pages = $this->yellow->content->index()->filter("layout", "blog")->sort("published", false)->limit(5) ?>
 <?php $this->yellow->page->setLastModified($pages->getModified()) ?>
 <?php $this->yellow->page->setHeader("Cache-Control", "max-age=60") ?>

@@ -65,7 +65,7 @@ Eine Frage über Layoutdateien stellen, auf Englisch:
     <div class="main" role="main">
     <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
     <p>Last updated on <?php echo $this->yellow->page->getDateHtml("updated") ?></p>
-    <?php echo $this->yellow->page->getContent() ?>
+    <?php echo $this->yellow->page->getContentHtml() ?>
     </div>
     </div>
     <?php $this->yellow->layout("footer") ?>
