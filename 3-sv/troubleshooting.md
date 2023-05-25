@@ -32,19 +32,19 @@ Kör kommandot `chmod -R a+rw *` i installationsmappen. Du kan också använda d
 Datenstrom Yellow requires configuration file!
 ```
 
-Kopiera medföljande `.htaccess`-filen till installationsmappen. Kontrollera om din SFTP-programvara har en inställning för att visa alla filer. Ibland händer det att filen `.htaccess` förbises under installationen. Efter att saknade konfigurationsfilen har kopierats till installationsmappen bör problemet lösas.
+Kopiera medföljande `.htaccess`-filen till installationsmappen. Kontrollera om din SFTP-programvara har en inställning för att visa alla filer. Ibland händer det att filen `.htaccess` förbises under installationen. Så snart saknade konfigurationsfilen har kopierats till installationsmappen bör problemet lösas.
 
 ```
 Datenstrom Yellow requires rewrite support!
 ```
 
-Kontrollera webbserverns konfigurationsfil, se [problem med Apache](#problem-med-apache) och [problem med Nginx](#problem-med-nginx). Du måste antingen ändra konfigurationsfilen för din webbserver eller så använder du en annan webbserver. Så snart webbservern vidarebefordrar HTTP-förfrågningar till `yellow.php`, bör problemet lösas.
+Kontrollera webbserverns konfigurationsfil, se [problem med Apache](#problem-med-apache) och [problem med Nginx](#problem-med-nginx). Du måste antingen ändra konfigurationsfilen för din webbserver eller så använder du en annan webbserver. Så snart webbservern vidarebefordrar HTTP-förfrågningar till `yellow.php` bör problemet lösas.
 
 ```
 Datenstrom Yellow requires complete upload!
 ```
 
-Kopiera igen alla medföljande filer till installationsmappen. Kontrollera om din SFTP-programvara visar ett felmeddelande under uppladdningen. Ibland händer det att dataöverföringen avbröts under uppladdningen. Efter att saknade filer har kopierats till installationsmappen bör problemet lösas.
+Kopiera igen alla medföljande filer till installationsmappen. Kontrollera om din SFTP-programvara visar ett felmeddelande under uppladdningen. Ibland händer det att dataöverföringen avbröts under uppladdningen. Efter att alla filer har kopierats till installationsmappen bör problemet lösas.
 
 ## Problem efter installationen
 

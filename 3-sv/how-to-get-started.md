@@ -23,7 +23,7 @@ Om du vill läsa mer om mappstrukturen, [se API för utvecklare](api-for-develop
 
 ## Installation av en annan människa
 
-1. [Boka en installation](https://datenstrom.se/sv/contact/), om du stöter på problem under installationen.
+1. [Beställa en installation](https://datenstrom.se/sv/contact/), om du stöter på problem under installationen.
 2. Fråga ditt webbhotell om inloggningsinformationen för SSH/SFTP.
 3. Se till att din webbplats är tom och tillgänglig via Internet.
 4. Bekräfta din beställning, så att allt blir som du vill ha det.

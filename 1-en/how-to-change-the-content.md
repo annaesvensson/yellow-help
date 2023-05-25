@@ -28,7 +28,7 @@ While most folders are available on your website, there are two exception. The `
 
 ## Text
 
-You can edit your website in a web browser or text editor. At the top of a page you can change `Title` and other [page settings](how-to-change-the-system#page-settings). Below you can change text and images. Text formatting with [Markdown](https://github.com/annaesvensson/yellow-markdown) is supported. You can also use HTML and shortcuts. Here are some examples:
+You can edit your website in a web browser or text editor. At the top of a page you can change `Title` and other [page settings](how-to-change-the-system#page-settings). Below you can change text and images. Text formatting with [Markdown](https://github.com/annaesvensson/yellow-markdown) is supported. HTML and shortcuts are also supported. Here are some examples:
 
     ---
     Title: Example page

@@ -1,7 +1,7 @@
 ---
 Title: API for developers
 ---
-[image help-yellow.png "Datenstrom Yellow is for people who make small websites" rounded]
+[image help-yellow.jpg "Datenstrom Yellow is for people who make small websites" rounded]
 
 We <3 people who code.
 
@@ -9,7 +9,7 @@ We <3 people who code.
 
 ## Folder structure
 
-You can change everything in the file manager on your computer. The `content` folder contains the content files of the website. You can edit your website here. The `media` folder contains the media files of the website. You can store your images and files here. The `system` folder contains the system files of the website. You can find installed extensions and configuration files here.
+You can change everything in the file manager on your computer. The `content` folder contains the [content files](how-to-change-the-content) of the website. You can edit your website here. The `media` folder contains the [media files](how-to-change-the-media) of the website. You can store your images and files here. The `system` folder contains the [system files](how-to-change-the-system) of the website. You can find installed extensions, configuration files and the log file here.
 
 ``` box-drawing {aria-hidden=true}
 ├── content               = content files
@@ -21,54 +21,46 @@ You can change everything in the file manager on your computer. The `content` fo
 │   ├── images            = image files for content
 │   └── thumbnails        = image thumbnails for content
 └── system                = system files
-    ├── extensions        = installed extensions and configuration files
-    ├── layouts           = configurable layout files
-    ├── themes            = configurable theme files
-    └── trash             = deleted files
+    ├── extensions        = installed extensions
+    ├── layouts           = configurable layout files, for example HTML and PHP
+    ├── themes            = configurable theme files, for example CSS and JavaScript
+    └── trash             = deleted files, usually up to 90 days
 ```
 
-The following system folders are available:
-
-`system/extensions` = [contains installed extensions and configuration files](how-to-change-the-system)  
-`system/layouts` = [contains configurable layout files, for example HTML](how-to-customise-a-layout)  
-`system/themes` = [contains configurable theme files, for example CSS and JavaScript](how-to-customise-a-theme)  
-`system/trash` = [contains deletes files, usually up to 90 days](how-to-change-the-system)  
-
-The following system files are available:
+The following configuration files and system files are available:
 
 `system/extensions/yellow-system.ini` = [file with system settings](how-to-change-the-system#system-settings)  
 `system/extensions/yellow-language.ini` = [file with language settings](how-to-change-the-system#language-settings)  
 `system/extensions/yellow-user.ini` = [file with user settings](how-to-change-the-system#user-settings)  
-`system/extensions/yellow-website.log` = [log file of the website](troubleshooting#problems-after-installation)  
+`system/extensions/yellow-website.log` = [log file of the website](how-to-change-the-system#log-file)  
 
 ## Tools
 
-### Built-in web editor
+### Web editor
 
-You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The built-in web editor allows you to edit content files and upload media files. It is a great way to update your website. Text formatting with Markdown is supported. To show an edit link use an `[edit]` shortcut. [Learn more about the web editor](https://github.com/annaesvensson/yellow-edit).
+You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The built-in web editor allows you to edit content files and upload media files. It is a great way to update your website. Text formatting with Markdown is supported. HTML and shortcuts are also supported. [Learn more about the web editor](https://github.com/annaesvensson/yellow-edit).
 
-### Built-in web server
+### Web server
 
-You can start the built-in web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to edit web pages on your computer and upload them to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the web server](https://github.com/annaesvensson/yellow-serve).
+You can start a web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to display web pages on your computer, check them and upload them to the external web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the web server](https://github.com/annaesvensson/yellow-serve).
 
-### Static site generator
+### Web generator
 
-You can build a static website at the command line. The static site generator builds the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php build`, you can optionally add a folder and a location. This will build a static website in the `public` folder. Upload the static website to your web server and build a new one when needed. [Learn more about the static site generator](https://github.com/annaesvensson/yellow-static).
+You can build a static website at the command line. The static site generator builds the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php build`, you can optionally add a folder and a location. This will build a static website in the `public` folder. Upload the static website to your web server and build a new one when needed. [Learn more about the web generator](https://github.com/annaesvensson/yellow-static).
 
-### HTML layout engine
+### Extensions
 
-You can customise the look of your website in a text editor. The layout files are stored in folder `system/extensions/layouts`. The HTML layout engine does not really care what's in layout files. It will leave HTML code unchanged. There are output methods like `getHtml()` and `getContentHtml()`, which allow you to display the current page as you like. It's possible to use loops and create control structures. You don't have to learn a special template language, but can use normal PHP. [Learn more about layouts](how-to-customise-a-layout).
+You can customise the features of your website. There is a core and everything else is an extension. The installed extensions are stored in your `system/extensions` folder. The idea is that the standard installation only includes the most important things to make small websites. There are methods like `onLoad()` and `onParseContentShortcut()`, which allow you to handle events. With this system you have the complete control. Install some extensions and see how they are working. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
+
+### Layouts
+
+You can customise the look of your website. The layout files are stored in your `system/layouts` folder. The layout system does not really care what's in layout files. It will leave HTML code unchanged. There are methods like `getHtml()` and `getContentHtml()`, which allow you to output the current page as you like. It's possible to use loops and create control structures. You don't have to learn a special web framework, but can use normal PHP. [Learn more about layouts](how-to-customise-a-layout).
 
 ## Objects
 
 With the help of the API you can access files, settings and more. A fundamental object is `$this->yellow->page` to access the current page. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the entire API can be found in file `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌───────────────┐   ┌───────────────┐   ┌───────────────┐    ┌───────────────┐
-│ Web browser   │   │ Command line  │   │ HTML layouts  │    │ Extensions    │
-└───────────────┘   └───────────────┘   └───────────────┘    └───────────────┘
-        │                   │                  │                  │
-        ▼                   ▼                  ▼                  ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ API                                                                        │
 │                                                                            │
@@ -77,8 +69,8 @@ With the help of the API you can access files, settings and more. A fundamental 
 │ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
 │ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
 └────────────────────────────────────────────────────────────────────────────┘
-        │                   │ 
-        ▼                   ▼ 
+     │                        │ 
+     ▼                        ▼ 
 ┌────────────────────┐   ┌───────────────────────────────────────────────────┐
 │ File system        │   │ Settings                                          │
 │                    │   │                                                   │
@@ -97,8 +89,8 @@ The following objects are available:
 `$this->yellow->language` = [access to language settings](#yellow-language)  
 `$this->yellow->user` = [access to user settings](#yellow-user)  
 `$this->yellow->extension` = [access to extensions](#yellow-extension)  
-`$this->yellow->lookup` = [access to lookup and normalisation](#yellow-lookup)  
-`$this->yellow->toolbox` = [access to toolbox with helper functions](#yellow-toolbox)  
+`$this->yellow->lookup` = [access to lookup and normalisation methods](#yellow-lookup)  
+`$this->yellow->toolbox` = [access to toolbox with helper methods](#yellow-toolbox)  
 `$this->yellow->page` = [access to current page](#yellow-page)  
 
 ### Yellow
@@ -139,29 +131,6 @@ Layout file with header and footer:
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
-```
-
-Layout file passing an argument:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $this->yellow->layout("hello", "Anna Svensson") ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layout file receiving an argument:
-
-
-``` html
-<?php list($name, $text) = $this->yellow->getLayoutArguments() ?>
-<p>
-<?php echo htmlspecialchars("Hello $text") ?>
-</p>
 ```
 
 ### Yellow content
@@ -654,7 +623,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 ### Yellow lookup
 
-The class `YellowLookup` gives access to lookup and normalisation functions. The following methods are available:
+The class `YellowLookup` gives access to lookup and normalisation methods. The following methods are available:
 
 `findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
@@ -768,7 +737,7 @@ if (!is_string_empty($url)) {
 
 ### Yellow toolbox
 
-The class `YellowToolbox` gives access to toolbox with helper functions. The following methods are available:
+The class `YellowToolbox` gives access to toolbox with helper methods. The following methods are available:
 
 `appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile`
 
@@ -1193,7 +1162,7 @@ Layout file for showing latest pages with pagination:
 
 ### Yellow string
 
-The following functions extend PHP string functions and variable functions:
+The following functions extend PHP string functions and array functions:
 
 `is_array_empty` `is_string_empty` `strlenu` `strposu` `strrposu` `strtoloweru` `strtoupperu` `substru`
 
@@ -1244,12 +1213,17 @@ echo strposu($string, "UTF");                // 10
 echo substru($string, -3, 3);                // åäö
 ```
 
-Code for checking if variables are empty:
+Code for checking if strings are empty:
 
 ``` php
 var_dump(is_string_empty(""));               // bool(true)
 var_dump(is_string_empty("text"));           // bool(false)
 var_dump(is_string_empty("0"));              // bool(false)
+```
+
+Code for checking if arrays are empty:
+
+``` php
 var_dump(is_array_empty(array()));           // bool(true)
 var_dump(is_array_empty(new ArrayObject())); // bool(true)
 var_dump(is_array_empty(array("entry")));    // bool(false)
@@ -1257,7 +1231,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Events
 
-With help of events the website informs when something happens. First extensions are loaded and `onLoad` will be called. As soon as all extensions are loaded `onStartup` will be called. A request from the web browser can be handled with various events. In most cases the page content will be generated. If an error has occurred, an error page will be generated. Finally the page is output and `onShutdown` will be called.
+With help of events the website informs you when something happens. First extensions are loaded and `onLoad` will be called. As soon as all extensions are loaded `onStartup` will be called. A request from the web browser can be handled with various events. In most cases the page content will be generated. If an error has occurred, an error page will be generated. Finally the page is output and `onShutdown` will be called.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐
@@ -1295,36 +1269,12 @@ Handle startup
 `public function onRequest($scheme, $address, $base, $location, $fileName)`  
 Handle request
 
-`public function onUpdate($action)`  
-Handle update
-
-`public function onMail($action, $headers, $message)`  
-Handle email
-
-`public function onLog($action, $message)`  
-Handle logging
-
 `public function onShutdown()`  
 Handle shutdown
 
 ---
 
-Extension for handling initialisation:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.1.0";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-}
-```
-
-Extension for handling daily update event:
+Extension for handling the initialisation:
 
 ``` php
 <?php
@@ -1335,13 +1285,6 @@ class YellowExample {
     // Handle initialisation
     public function onLoad($yellow) {
         $this->yellow = $yellow;
-    }
-
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="daily") {
-            $this->yellow->toolbox->log("info", "Handle daily update event");
-        }
     }
 }
 ```
@@ -1373,7 +1316,7 @@ Handle page output data
 
 ---
 
-Extension for custom shortcut:
+Extension for creating a shortcut:
 
 ``` php
 <?php
@@ -1399,7 +1342,7 @@ class YellowExample {
 }
 ```
 
-Extension for custom header:
+Extension for creating a HTML header:
 
 ``` php
 <?php
@@ -1443,7 +1386,7 @@ Handle user account changes
 
 ---
 
-Extension for handling page edit:
+Extension for handling content file changes:
 
 ``` php
 <?php
@@ -1456,7 +1399,7 @@ class YellowExample {
         $this->yellow = $yellow;
     }
     
-    // Handle media file changes
+    // Handle content file changes
     public function onEditContentFile($page, $action, $email) {
         if ($action=="edit") {
             $title = $page->get("title");
@@ -1467,7 +1410,7 @@ class YellowExample {
 }
 ```
 
-Extension for handling file upload:
+Extension for handling media file changes:
 
 ``` php
 <?php
@@ -1504,7 +1447,7 @@ Handle command help
 
 ---
 
-Extension for custom command:
+Extension for handling a command:
 
 ``` php
 <?php
@@ -1534,7 +1477,7 @@ class YellowExample {
 }
 ```
 
-Extension for multiple custom commands:
+Extension for handling multiple commands:
 
 ``` php
 <?php
@@ -1574,6 +1517,65 @@ class YellowExample {
         if (is_string_empty($text)) $text = "World";
         echo "Goodbye $text\n";
         return 200;
+    }
+}
+```
+
+### Yellow update events
+
+Yellow update events notify when an update happens:
+
+`public function onUpdate($action)`  
+Handle update
+
+`public function onMail($action, $headers, $message)`  
+Handle email
+
+`public function onLog($action, $message)`  
+Handle logging
+
+---
+
+Extension for handling an update event:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.8";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="install") {
+            $this->yellow->toolbox->log("info", "Install event");
+        }
+    }
+}
+```
+
+Extension for handling a daily event:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.9";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="daily") {
+            $this->yellow->toolbox->log("info", "Daily event");
+        }
     }
 }
 ```

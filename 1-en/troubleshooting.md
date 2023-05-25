@@ -32,7 +32,7 @@ Execute the command `chmod -R a+rw *` in the installation folder. You can also u
 Datenstrom Yellow requires configuration file!
 ```
 
-Copy the supplied `.htaccess` file into the installation folder. Check if your SFTP software has a setting to show all files. It sometimes happens that the `.htaccess` file was overlooked during installation. After the missing configuration file has been copied into the installation folder, the problem should be resolved.
+Copy the supplied `.htaccess` file into the installation folder. Check if your SFTP software has a setting to show all files. It sometimes happens that the `.htaccess` file was overlooked during installation. As soon as the missing configuration file has been copied into the installation folder, the problem should be resolved.
 
 ```
 Datenstrom Yellow requires rewrite support!
@@ -44,7 +44,7 @@ Check the configuration file of the web server, see [problems with Apache](#prob
 Datenstrom Yellow requires complete upload!
 ```
 
-Copy again all of the supplied files into the installation folder. Check if your SFTP software shows an error message during upload. It sometimes happens that the data transfer was interrupted during upload. After the missing files have been copied into the installation folder, the problem should be resolved.
+Copy again all of the supplied files into the installation folder. Check if your SFTP software shows an error message during upload. It sometimes happens that the data transfer was interrupted during upload. After all files have been copied into the installation folder, the problem should be resolved.
 
 ## Problems after installation
 

@@ -13,7 +13,7 @@ All system files are located in the `system` folder. You can change your website
     └── trash
 ```
 
-The `system/extensions` folder contains installed extensions and configuration files. You can change the appearance of your website in the `system/layouts` folder and `system/themes` folder. You can change layouts and themes as you like, knowledge of HTML, CSS and JavaScript is required. The `system/trash` folder contains deleted files, usually up to 90 days.
+The `system/extensions` folder contains installed extensions, configuration files and the log file. You can change the appearance of your website in the `system/layouts` folder and `system/themes` folder. You can change layouts and themes as you like, knowledge of HTML, CSS and JavaScript is required. The `system/trash` folder contains deleted files, usually up to 90 days.
 
 ## System settings
 
@@ -110,5 +110,21 @@ The following settings can be configured at the top of a page:
 `draft` = page is not visible, user needs to log in, [requires draft extension](https://github.com/annaesvensson/yellow-draft)  
 `unlisted` = page is not visible, but can be accessed with the correct link  
 `shared` = page is not visible, but can be included in other pages  
+
+## Log file
+
+The log file can be found in file `system/extensions/yellow-website.log`. Here's an example:
+
+```
+2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
+2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
+2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
+2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
+2020-10-28 14:13:07 info Install extension 'English 0.8.27'
+2020-10-28 14:13:07 info Install extension 'German 0.8.27'
+2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
+2020-10-28 14:18:11 info Install extension 'Fika 0.8.15'
+2020-10-28 14:18:11 error Can't parse file 'system/extensions/fika.php'!
+```
 
 Do you have questions? [Get help](.).

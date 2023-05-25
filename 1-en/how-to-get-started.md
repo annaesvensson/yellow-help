@@ -23,7 +23,7 @@ If you want to learn more about the folder structure, [see API for developers](a
 
 ## Installation by another human
 
-1. [Book an installation](https://datenstrom.se/contact/), if you encounter problems during the installation.
+1. [Order an installation](https://datenstrom.se/contact/), if you encounter problems during the installation.
 2. Ask your web hosting provider for the SSH/SFTP login information.
 3. Make sure that your website is empty and accessible via the Internet.
 4. Confirm your order, so that everything is the way you want it.

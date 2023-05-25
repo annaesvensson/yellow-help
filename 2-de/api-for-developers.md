@@ -1,7 +1,7 @@
 ---
 Title: API für Entwickler
 ---
-[image help-yellow.png "Datenstrom Yellow ist für Menschen die kleine Webseiten machen" rounded]
+[image help-yellow.jpg "Datenstrom Yellow ist für Menschen die kleine Webseiten machen" rounded]
 
 Wir <3 Menschen die programmieren.
 
@@ -9,7 +9,7 @@ Wir <3 Menschen die programmieren.
 
 ## Verzeichnisstruktur
 
-Du kannst alles im Dateimanager auf deinem Computer ändern. Das `content`-Verzeichnis enthält die Inhaltsdateien der Webseite. Hier bearbeitet man seine Webseite. Das `media`-Verzeichnis enthält die Mediendateien der Webseite. Hier speichert man seine Bilder und Dateien. Das `system`-Verzeichnis enthält die Systemdateien der Webseite. Hier findet man installierte Erweiterungen und Konfigurationsdateien.
+Du kannst alles im Dateimanager auf deinem Computer ändern. Das `content`-Verzeichnis enthält die [Inhaltsdateien](how-to-change-the-content) der Webseite. Hier bearbeitet man seine Webseite. Das `media`-Verzeichnis enthält die [Mediendateien](how-to-change-the-media) der Webseite. Hier speichert man seine Bilder und Dateien. Das `system`-Verzeichnis enthält die [Systemdateien](how-to-change-the-system) der Webseite. Hier findet man installierte Erweiterungen, Konfigurationsdateien und die Logdatei.
 
 ``` box-drawing {aria-hidden=true}
 ├── content               = Inhaltsdateien
@@ -21,54 +21,46 @@ Du kannst alles im Dateimanager auf deinem Computer ändern. Das `content`-Verze
 │   ├── images            = Bilder für den Inhalt
 │   └── thumbnails        = Miniaturbilder für den Inhalt
 └── system                = Systemdateien
-    ├── extensions        = installierte Erweiterungen und Konfigurationsdateien
-    ├── layouts           = konfigurierbare Layoutdateien
-    ├── themes            = konfigurierbare Themedateien
-    └── trash             = gelöschte Dateien
+    ├── extensions        = installierte Erweiterungen
+    ├── layouts           = konfigurierbare Layoutdateien, beispielsweise HTML und PHP
+    ├── themes            = konfigurierbare Themedateien, beispielsweise CSS und JavaScript
+    └── trash             = gelöschte Dateien, normalerweise bis zu 90 Tagen
 ```
 
-Die folgenden Systemverzeichnisse sind verfügbar:
-
-`system/extensions` = [enthält installierte Erweiterungen und Konfigurationsdateien](how-to-change-the-system)  
-`system/layouts` = [enthält konfigurierbare Layoutdateien, beispielsweise HTML](how-to-customise-a-layout)  
-`system/themes` = [enthält konfigurierbare Themedateien, beispielsweise CSS und JavaScript](how-to-customise-a-theme)  
-`system/trash` = [enthält gelöschte Dateien, normalerweise bis zu 90 Tagen](how-to-change-the-system)  
-
-Die folgenden Systemdateien sind verfügbar:
+Die folgenden Konfigurationsdateien und Systemdateien sind verfügbar:
 
 `system/extensions/yellow-system.ini` = [Datei mit Systemeinstellungen](how-to-change-the-system#systemeinstellungen)  
 `system/extensions/yellow-language.ini` = [Datei mit Spracheinstellungen](how-to-change-the-system#spracheinstellungen)  
 `system/extensions/yellow-user.ini` = [Datei mit Benutzereinstellungen](how-to-change-the-system#benutzereinstellungen)  
-`system/extensions/yellow-website.log` = [Logdatei der Webseite](troubleshooting#probleme-nach-der-installation)  
+`system/extensions/yellow-website.log` = [Logdatei der Webseite](how-to-change-the-system#logdatei)  
 
 ## Werkzeuge
 
-### Eingebauter Webeditor
+### Webeditor
 
-Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der eingebauten Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Textformatierung mit Markdown wird unterstützt. Um einen Bearbeitungslink anzuzeigen, benutze eine `[edit]`-Abkürzung. [Weitere Informationen zum Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
+Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der eingebaute Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Textformatierung mit Markdown wird unterstützt. HTML und Abkürzungen werden auch unterstützt. [Weitere Informationen zum Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
 
-### Eingebauter Webserver
+### Webserver
 
-Du kannst den eingebauten Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit Webseiten auf deinem Computer zu bearbeiten und sie später auf deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
+Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit Webseiten auf deinem Computer anzuzeigen, sie zu überprüfen und später auf den externen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
 
-### Static-Site-Generator
+### Webgenerator
 
-Du kannst eine statische Webseite in der Befehlszeile erstellen. Der Static-Site-Generator erstellt die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php build`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das erstellt eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und erstelle bei Bedarf eine neue. [Weitere Informationen zum Static-Site-Generator](https://github.com/annaesvensson/yellow-static/tree/main/README-de.md).
+Du kannst eine statische Webseite in der Befehlszeile erstellen. Der Static-Site-Generator erstellt die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php build`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das erstellt eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und erstelle bei Bedarf eine neue. [Weitere Informationen zum Webgenerator](https://github.com/annaesvensson/yellow-static/tree/main/README-de.md).
 
-### HTML-Layout-Engine
+### Erweiterungen
 
-Du kannst das Aussehen deiner Webseite im Texteditor anpassen. Die Layoutdateien werden im `system/extensions/layouts`-Verzeichnis gespeichert. Dem HTML-Layout-Engine ist es ziemlich egal was in den Layoutdateien steht. Der HTML-Code bleibt unverändert. Es gibt Ausgabemethoden wie `getHtml()` und `getContentHtml()`, mit denen man die aktuelle Seite so anzeigen kann wie man will. Es ist möglich Schleifen zu verwenden und Kontrollstrukturen zu erstellen. Dazu musst du keine besondere Template-Sprache lernen, sondern kannst normales PHP verwenden. [Weitere Informationen zu Layouts](how-to-customise-a-layout).
+Du kannst die Funktionen deiner Webseite anpassen. Es gibt einen Core und alles andere sind Erweiterungen. Die installierten Erweiterungen befinden sich im `system/extensions`-Verzeichnis. Die Idee ist, dass in der Standardinstallation nur die wichtigsten Dinge enthalten sind um kleine Webseiten zu machen. Es gibt Methoden wie `onLoad()` und `onParseContentShortcut()` mit denen man Ereignisse verarbeiten kann. Dieses System gibt dir die vollständige Kontrolle. Installiere einige Erweiterungen und schau dir an wie sie funktionieren. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
+
+### Layouts
+
+Du kannst das Aussehen deiner Webseite anpassen. Die Layoutdateien befinden sich im `system/layouts`-Verzeichnis. Dem Layoutsystem ist es eigentlich egal was in den Layoutdateien enthalten ist. Der HTML-Code bleibt unverändert. Es gibt Methoden wie `getHtml()` und `getContentHtml()` mit denen man die aktuelle Seite so ausgeben kann wie man will. Es ist möglich Schleifen zu verwenden und Kontrollstrukturen zu erstellen. Dazu musst du kein besonderes Webframework lernen, sondern kannst normales PHP verwenden. [Weitere Informationen zu Layouts](how-to-customise-a-layout).
 
 ## Objekte
 
 Mit Hilfe der API kann man auf Dateien, Einstellungen und mehr zugreifen. Ein grundlegendes Objekt ist `$this->yellow->page` um auf die aktuelle Seite zuzugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der gesamten API findet man in der Datei `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌───────────────┐   ┌───────────────┐   ┌───────────────┐    ┌───────────────┐
-│ Webbrowser    │   │ Befehlszeile  │   │ HTML-Layouts  │    │ Erweiterungen │
-└───────────────┘   └───────────────┘   └───────────────┘    └───────────────┘
-        │                   │                  │                  │
-        ▼                   ▼                  ▼                  ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ API                                                                        │
 │                                                                            │
@@ -77,8 +69,8 @@ Mit Hilfe der API kann man auf Dateien, Einstellungen und mehr zugreifen. Ein gr
 │ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
 │ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
 └────────────────────────────────────────────────────────────────────────────┘
-        │                   │ 
-        ▼                   ▼ 
+     │                        │ 
+     ▼                        ▼ 
 ┌────────────────────┐   ┌───────────────────────────────────────────────────┐
 │ Dateisystem        │   │ Einstellungen                                     │
 │                    │   │                                                   │
@@ -97,8 +89,8 @@ Die folgenden Objekte sind verfügbar:
 `$this->yellow->language` = [Zugang zu Spracheinstellungen](#yellow-language)  
 `$this->yellow->user` = [Zugang zu Benutzereinstellungen](#yellow-user)  
 `$this->yellow->extension` = [Zugang zu Erweiterungen](#yellow-extension)  
-`$this->yellow->lookup` = [Zugang zu Nachschlagen und Normalisierung](#yellow-lookup)  
-`$this->yellow->toolbox` = [Zugang zur Werkzeugkiste mit Hilfsfunktionen](#yellow-toolbox)  
+`$this->yellow->lookup` = [Zugang zu Nachschlags- und Normalisierungsmethoden](#yellow-lookup)  
+`$this->yellow->toolbox` = [Zugang zur Werkzeugkiste mit Hilfsmethoden](#yellow-toolbox)  
 `$this->yellow->page` = [Zugang zur aktuellen Seite](#yellow-page)  
 
 ### Yellow
@@ -139,29 +131,6 @@ Layoutdatei mit Header und Footer:
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei die ein Argument übergibt:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $this->yellow->layout("hello", "Anna Svensson") ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei die ein Argument empfängt:
-
-
-``` html
-<?php list($name, $text) = $this->yellow->getLayoutArguments() ?>
-<p>
-<?php echo htmlspecialchars("Hello $text") ?>
-</p>
 ```
 
 ### Yellow-Content
@@ -654,7 +623,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 ### Yellow-Lookup
 
-Die Klasse `YellowLookup` gibt Zugang zu Nachschlagen und Normalisierung. Die folgenden Methoden sind verfügbar:
+Die Klasse `YellowLookup` gibt Zugang zu Nachschlags- und Normalisierungsmethoden. Die folgenden Methoden sind verfügbar:
 
 `findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
@@ -768,7 +737,7 @@ if (!is_string_empty($url)) {
 
 ### Yellow-Toolbox
 
-Die Klasse `YellowToolbox` gibt Zugang zur Werkzeugkiste mit Hilfsfunktionen. Die folgenden Methoden sind verfügbar:
+Die Klasse `YellowToolbox` gibt Zugang zur Werkzeugkiste mit Hilfsmethoden. Die folgenden Methoden sind verfügbar:
 
 `appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile`
 
@@ -1193,7 +1162,7 @@ Layoutdatei um die neusten Seiten mit Paginierung anzuzeigen:
 
 ### Yellow-String
 
-Die folgenden Funktionen erweitern PHP-Stringfunktionen und Variablenfunktionen:
+Die folgenden Funktionen erweitern PHP-Stringfunktionen und Arrayfunktionen:
 
 `is_array_empty` `is_string_empty` `strlenu` `strposu` `strrposu` `strtoloweru` `strtoupperu` `substru`
 
@@ -1244,12 +1213,17 @@ echo strposu($string, "UTF");                // 9
 echo substru($string, -3, 3);                // åäö
 ```
 
-Code um zu überprüfen ob Variablen leer sind:
+Code um zu überprüfen ob Strings leer sind:
 
 ``` php
 var_dump(is_string_empty(""));               // bool(true)
 var_dump(is_string_empty("text"));           // bool(false)
 var_dump(is_string_empty("0"));              // bool(false)
+```
+
+Code um zu überprüfen ob Arrays leer sind:
+
+``` php
 var_dump(is_array_empty(array()));           // bool(true)
 var_dump(is_array_empty(new ArrayObject())); // bool(true)
 var_dump(is_array_empty(array("entry")));    // bool(false)
@@ -1257,7 +1231,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Ereignisse
 
-Mit Hilfe von Ereignissen informiert die Webseite wenn etwas passiert. Zuerst werden die Erweiterungen geladen und es wird `onLoad` aufgerufen. Sobald alle Erweiterungen geladen sind wird `onStartup` aufgerufen. Eine Anfrage vom Webbrowser kann mit verschiedenen Ereignissen verarbeitet werden. In den meisten Fällen wird der Inhalt einer Seite erzeugt. Sollte ein Fehler aufgetreten sein, wird eine Fehlerseite erzeugt. Zum Schluss wird die Seite ausgegeben und es wird `onShutdown` aufgerufen.
+Mit Hilfe von Ereignissen informiert dich die Webseite wenn etwas passiert. Zuerst werden die Erweiterungen geladen und es wird `onLoad` aufgerufen. Sobald alle Erweiterungen geladen sind wird `onStartup` aufgerufen. Eine Anfrage vom Webbrowser kann mit verschiedenen Ereignissen verarbeitet werden. In den meisten Fällen wird der Inhalt einer Seite erzeugt. Sollte ein Fehler aufgetreten sein, wird eine Fehlerseite erzeugt. Zum Schluss wird die Seite ausgegeben und es wird `onShutdown` aufgerufen.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐
@@ -1295,36 +1269,12 @@ Verarbeite das Hochfahren
 `public function onRequest($scheme, $address, $base, $location, $fileName)`  
 Verarbeite die Anfrage
 
-`public function onUpdate($action)`  
-Verarbeite die Aktualisierung
-
-`public function onMail($action, $headers, $message)`  
-Verarbeite E-Mail
-
-`public function onLog($action, $message)`  
-Verarbeite das Logging
-
 `public function onShutdown()`  
 Verarbeite das Runterfahren
 
 ---
 
-Erweiterung zur Behandlung der Initialisierung:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.1.0";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-}
-```
-
-Erweiterung zur Behandlung des täglichen Aktualisierungsereignisses:
+Erweiterung um die Initialisierung zu verarbeiten:
 
 ``` php
 <?php
@@ -1335,13 +1285,6 @@ class YellowExample {
     // Handle initialisation
     public function onLoad($yellow) {
         $this->yellow = $yellow;
-    }
-
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="daily") {
-            $this->yellow->toolbox->log("info", "Handle daily update event");
-        }
     }
 }
 ```
@@ -1373,7 +1316,7 @@ Verarbeite die Ausgabedaten einer Seite
 
 ---
 
-Erweiterung für eigene Abkürzung:
+Erweiterung um eine Abkürzung zu erstellen:
 
 ``` php
 <?php
@@ -1399,7 +1342,7 @@ class YellowExample {
 }
 ```
 
-Erweiterung für eigenen Header:
+Erweiterung um einen HTML-Header zu erstellen:
 
 ``` php
 <?php
@@ -1443,7 +1386,7 @@ Verarbeite Änderungen am Benutzerkonto
 
 ---
 
-Erweiterung zur Behandlung einer Seitenbearbeitung:
+Erweiterung um Änderungen an Inhaltsdatei zu verarbeiten:
 
 ``` php
 <?php
@@ -1456,7 +1399,7 @@ class YellowExample {
         $this->yellow = $yellow;
     }
     
-    // Handle media file changes
+    // Handle content file changes
     public function onEditContentFile($page, $action, $email) {
         if ($action=="edit") {
             $title = $page->get("title");
@@ -1467,7 +1410,7 @@ class YellowExample {
 }
 ```
 
-Erweiterung zur Behandlung einer Dateihochladung:
+Erweiterung um Änderungen an Mediendatei zu verarbeiten:
 
 ``` php
 <?php
@@ -1504,7 +1447,7 @@ Verarbeite Hilfe für Befehle
 
 ---
 
-Erweiterung für eigenen Befehl:
+Erweiterung um einen Befehl zu verarbeiten:
 
 ``` php
 <?php
@@ -1534,7 +1477,7 @@ class YellowExample {
 }
 ```
 
-Erweiterung für mehrere eigene Befehle:
+Erweiterung um mehrere Befehle zu verarbeiten:
 
 ``` php
 <?php
@@ -1574,6 +1517,66 @@ class YellowExample {
         if (is_string_empty($text)) $text = "World";
         echo "Goodbye $text\n";
         return 200;
+    }
+}
+```
+
+### Yellow-Update-Ereignisse
+
+Yellow-Update-Ereignisse unterrichten wenn eine Aktualisierung passiert:
+
+`public function onUpdate($action)`  
+Verarbeite Aktualisierung
+
+`public function onMail($action, $headers, $message)`  
+Verarbeite E-Mail
+
+`public function onLog($action, $message)`  
+Verarbeite Logging
+
+
+---
+
+Erweiterung um ein Aktualisierung-Ereignis zu verarbeiten:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.8";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="install") {
+            $this->yellow->toolbox->log("info", "Install event");
+        }
+    }
+}
+```
+
+Erweiterung um ein tägliches Ereignis zu verarbeiten:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.9";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="daily") {
+            $this->yellow->toolbox->log("info", "Daily event");
+        }
     }
 }
 ```

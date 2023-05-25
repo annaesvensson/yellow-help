@@ -13,7 +13,7 @@ Alle Systemdateien befinden sich im `system`-Verzeichnis. Hier passt man seine W
     └── trash
 ```
 
-Das `system/extensions`-Verzeichnis enthält installierte Erweiterungen und Konfigurationsdateien. Man kann das Aussehen seiner Webseite im `system/layouts`-Verzeichnis und `system/themes`-Verzeichnis anpassen. Man kann Layouts und Themes so ändern wie man will, Kenntnisse in HTML, CSS und JavaScript sind erforderlich. Das `system/trash`-Verzeichnis enthält gelöschte Dateien, normalerweise bis zu 90 Tagen.
+Das `system/extensions`-Verzeichnis enthält installierte Erweiterungen, Konfigurationsdateien und die Logdatei. Man kann das Aussehen seiner Webseite im `system/layouts`-Verzeichnis und `system/themes`-Verzeichnis anpassen. Man kann Layouts und Themes so ändern wie man will, Kenntnisse in HTML, CSS und JavaScript sind erforderlich. Das `system/trash`-Verzeichnis enthält gelöschte Dateien, normalerweise bis zu 90 Tagen.
 
 ## Systemeinstellungen
 
@@ -110,5 +110,21 @@ Die folgenden Einstellungen können ganz oben auf einer Seite vorgenommen werden
 `draft` = Seite ist nicht sichtbar, Benutzer muss sich einloggen, [erfordert Draft-Erweiterung](https://github.com/annaesvensson/yellow-draft/tree/main/README-de.md)  
 `unlisted` = Seite ist nicht sichtbar, aber kann mit dem richtigen Link abgerufen werden  
 `shared` = Seite ist nicht sichtbar, aber kann in andere Seiten eingebunden werden  
+
+## Logdatei
+
+Die Logdatei findet man in der Datei `system/extensions/yellow-website.log`. Hier ist ein Beispiel:
+
+```
+2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
+2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
+2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
+2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
+2020-10-28 14:13:07 info Install extension 'English 0.8.27'
+2020-10-28 14:13:07 info Install extension 'German 0.8.27'
+2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
+2020-10-28 14:18:11 info Install extension 'Fika 0.8.15'
+2020-10-28 14:18:11 error Can't parse file 'system/extensions/fika.php'!
+```
 
 Hast du Fragen? [Hilfe finden](.).

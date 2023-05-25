@@ -23,7 +23,7 @@ Falls du mehr über die Verzeichnisstruktur erfahren möchtest, [siehe API für 
 
 ## Installation durch einen anderen Menschen
 
-1. [Eine Installation buchen](https://datenstrom.se/de/contact/), falls bei dir Probleme während der Installation auftreten.
+1. [Eine Installation bestellen](https://datenstrom.se/de/contact/), falls bei dir Probleme während der Installation auftreten.
 2. Frage deinen Webhosting-Anbieter nach den Anmeldeinformationen für SSH/SFTP.
 3. Stelle sicher dass deine Webseite leer ist und über das Internet zu erreichen ist.
 4. Bestätige deine Bestellung, damit alles so wird wie du möchtest.

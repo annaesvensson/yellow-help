@@ -1,7 +1,7 @@
 ---
 Title: API för utvecklare
 ---
-[image help-yellow.png "Datenstrom Yellow är för människor som skapar små webbsidor" rounded]
+[image help-yellow.jpg "Datenstrom Yellow är för människor som skapar små webbsidor" rounded]
 
 Vi <3 människor som kodar. 
 
@@ -9,7 +9,7 @@ Vi <3 människor som kodar.
 
 ## Mappstruktur
 
-Du kan ändra allt i filhanteraren på din dator. Mappen `content` innehåller webbplatsens innehållsfilerna. Du kan redigera din webbplats här. Mappen `media` innehåller webbplatsens mediefiler. Du kan lagra dina bilder och filer här. Mappen `system` innehåller webbplatsens systemfilerna. Du kan hitta installerade tillägg och konfigurationsfilar här.
+Du kan ändra allt i filhanteraren på din dator. Mappen `content` innehåller webbplatsens [innehållsfilerna](how-to-change-the-content). Du kan redigera din webbplats här. Mappen `media` innehåller webbplatsens [mediefilerna](how-to-change-the-media). Du kan lagra dina bilder och filer här. Mappen `system` innehåller webbplatsens [systemfilerna](how-to-change-the-system). Du kan hitta installerade tillägg, konfigurationsfilar och loggfilen här.
 
 ``` box-drawing {aria-hidden=true}
 ├── content               = innehållsfiler
@@ -21,54 +21,46 @@ Du kan ändra allt i filhanteraren på din dator. Mappen `content` innehåller w
 │   ├── images            = bildfiler för innehåll
 │   └── thumbnails        = miniatyrbilder för innehåll
 └── system                = systemfiler
-    ├── extensions        = installerade tillägg och konfigurationsfilar
-    ├── layouts           = konfigurerbara layoutfiler
-    ├── themes            = konfigurerbara temafiler
-    └── trash             = raderade filer
+    ├── extensions        = installerade tillägg
+    ├── layouts           = konfigurerbara layoutfiler, till exempel HTML och PHP
+    ├── themes            = konfigurerbara temafiler, till exempel CSS och JavaScript
+    └── trash             = raderade filer, vanligtvis upp till 90 dagar
 ```
 
-Följande systemmappar är tillgängliga:
-
-`system/extensions` = [innehåller installerade tillägg och konfigurationsfilar](how-to-change-the-system)  
-`system/layouts` = [innehåller konfigurerbara layoutfiler, till exempel HTML](how-to-customise-a-layout)  
-`system/themes` = [innehåller konfigurerbara temafiler, till exempel CSS och JavaScript](how-to-customise-a-theme)  
-`system/trash` = [innehåller raderade filer, vanligtvis upp till 90 dagar](how-to-change-the-system)  
-
-Följande systemfiler är tillgängliga:
+Följande konfigurationsfilar och systemfiler är tillgängliga:
 
 `system/extensions/yellow-system.ini` = [fil med systeminställningar](how-to-change-the-system#systeminställningar)  
 `system/extensions/yellow-language.ini` = [fil med språkinställningar](how-to-change-the-system#språkinställningar)  
 `system/extensions/yellow-user.ini` = [fil med användarinställningar](how-to-change-the-system#användarinställningar)  
-`system/extensions/yellow-website.log` = [loggfilen för webbplatsen](troubleshooting#problem-efter-installationen)  
+`system/extensions/yellow-website.log` = [loggfilen för webbplatsen](how-to-change-the-system#loggfilen)  
 
 ## Verktyg
 
-### Inbyggd webbredigerare
+### Webbredigerare
 
-Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Inbyggda webbredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. För att visa en redigeringslänk, använd en `[edit]` förkortning. [Läs mer om webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
+Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Inbyggda webbredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. HTML och förkortningar stöds också. [Läs mer om webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
 
-### Inbyggd webbserver
+### Webbserver
 
-Du kan starta inbyggda webbservern på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att redigera webbsidor på din dator och ladda upp dem till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md).
+Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att visa webbsidor på din dator, granska dem och ladda upp dem till den externa webbservern senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md).
 
-### Static-site-generator
+### Webgenerator
 
-Du kan bygga en statisk webbplats på kommandoraden. Den static-site-generatorn bygger hella webbsidan i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv php `yellow.php build`, du kan valfritt ange en mapp och en plats. Detta kommer att bygga en statisk webbplats i `public` mappen. Ladda upp den statiska webbplatsen till din webbserver och bygg en ny när det behövs. [Läs mer om static-site-generatorn](https://github.com/annaesvensson/yellow-static/tree/main/README-sv.md).
+Du kan bygga en statisk webbplats på kommandoraden. Den static-site-generatorn bygger hella webbsidan i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv php `yellow.php build`, du kan valfritt ange en mapp och en plats. Detta kommer att bygga en statisk webbplats i `public` mappen. Ladda upp den statiska webbplatsen till din webbserver och bygg en ny när det behövs. [Läs mer om webgeneratorn](https://github.com/annaesvensson/yellow-static/tree/main/README-sv.md).
 
-### HTML-layout-motor
+### Tillägg
 
-Du kan anpassa utseendet på din webbplats i en textredigerare. Layoutfilerna lagras i `system/extensions/layouts` mappen. HTML-layout-motorn bryr sig inte riktigt vad som finns i layoutfiler. Det kommer att lämna HTML-koden oförändrad. Det finns utdatametoder som `getHtml()` och `getContentHtml()`, som låter dig visa den aktuella sidan som du vill. Det är möjligt att använda loopar och skapa kontrollstrukturer. Du behöver inte lära dig ett speciellt template-språk, men kan använda vanlig PHP. [Läs mer om layouter](how-to-customise-a-layout).
+Du kan anpassa funktionerna på din webbplats. Det finns en core och allt annat är ett tillägg. Installerade tilläggen finns i `system/extensions` mappen. Tanken är att standardinstallationen bara innehåller det viktigaste för att skapa små hemsidor. Det finns metoder som `onLoad()` och `onParseContentShortcut()`, som låter dig hantera händelser. Med detta system har du full kontroll. Installera några tillägg och se hur de fungerar. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
+
+### Layouts
+
+Du kan anpassa utseendet på din webbplats. Layoutfilerna finns i `system/layouts` mappen. Layoutsytemet bryr sig inte riktigt vad som finns i layoutfiler. Det kommer att lämna HTML-koden oförändrad. Det finns metoder som `getHtml()` och `getContentHtml()`, som låter dig mata ut den aktuella sidan som du vill. Det är möjligt att använda loopar och skapa kontrollstrukturer. Du behöver inte lära dig ett speciellt webbramverk, men kan använda vanlig PHP. [Läs mer om layouter](how-to-customise-a-layout).
 
 ## Objekt
 
 Med hjälp av API:et kan man komma åt filer, inställningar och mer. Ett grundläggande objekt är `$this->yellow->page` för att komma åt aktuella sidan. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för hela API:et finns i filen `system/extensions/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-┌───────────────┐   ┌───────────────┐   ┌───────────────┐    ┌───────────────┐
-│ Webbläsare    │   │ Kommandorad   │   │ HTML-layouter │    │ Tillägg       │
-└───────────────┘   └───────────────┘   └───────────────┘    └───────────────┘
-        │                   │                  │                  │
-        ▼                   ▼                  ▼                  ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ API                                                                        │
 │                                                                            │
@@ -77,8 +69,8 @@ Med hjälp av API:et kan man komma åt filer, inställningar och mer. Ett grundl
 │ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
 │ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
 └────────────────────────────────────────────────────────────────────────────┘
-        │                   │ 
-        ▼                   ▼ 
+     │                        │ 
+     ▼                        ▼ 
 ┌────────────────────┐   ┌───────────────────────────────────────────────────┐
 │ Filsystem          │   │ Inställningar                                     │
 │                    │   │                                                   │
@@ -97,8 +89,8 @@ Följande objekt är tillgängliga:
 `$this->yellow->language` = [tillgång till språkinställningar](#yellow-language)  
 `$this->yellow->user` = [tillgång till användarinställningar](#yellow-user)  
 `$this->yellow->extension` = [tillgång till tillägg](#yellow-extension)  
-`$this->yellow->lookup` = [tillgång till uppslag och normalisering](#yellow-lookup)  
-`$this->yellow->toolbox` = [tillgång till verktygslådan med hjälpfunktioner](#yellow-toolbox)  
+`$this->yellow->lookup` = [tillgång till uppslags och normaliseringsmetoder](#yellow-lookup)  
+`$this->yellow->toolbox` = [tillgång till verktygslådan med hjälpmetoder](#yellow-toolbox)  
 `$this->yellow->page` = [tillgång till aktuella sidan](#yellow-page)  
 
 ### Yellow
@@ -139,29 +131,6 @@ Layoutfil med header och footer:
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil som skickar ett argument:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $this->yellow->layout("hello", "Anna Svensson") ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil som tar emot ett argument:
-
-
-``` html
-<?php list($name, $text) = $this->yellow->getLayoutArguments() ?>
-<p>
-<?php echo htmlspecialchars("Hello $text") ?>
-</p>
 ```
 
 ### Yellow content
@@ -655,7 +624,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 ### Yellow lookup
 
-Klassen `YellowLookup` ger tillgång till uppslag och normalisering. Följande metoder är tillgängliga:
+Klassen `YellowLookup` ger tillgång till uppslags och normaliseringsmetoder. Följande metoder är tillgängliga:
 
 `findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
@@ -769,7 +738,7 @@ if (!is_string_empty($url)) {
 
 ### Yellow toolbox
 
-Klassen `YellowToolbox` ger tillgång till verktygslådan med hjälpfunktioner. Följande metoder är tillgängliga:
+Klassen `YellowToolbox` ger tillgång till verktygslådan med hjälpmetoder. Följande metoder är tillgängliga:
 
 `appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile`
 
@@ -1194,7 +1163,7 @@ Layoutfil för att visa senaste sidor med paginering:
 
 ### Yellow string
 
-Följande funktioner utökar PHP-strängfunktioner och variabelfunktioner: 
+Följande funktioner utökar PHP-strängfunktioner och arrayfunktioner: 
 
 `is_array_empty` `is_string_empty` `strlenu` `strposu` `strrposu` `strtoloweru` `strtoupperu` `substru`
 
@@ -1245,12 +1214,17 @@ echo strposu($string, "UTF");                // 9
 echo substru($string, -3, 3);                // åäö
 ```
 
-Kod för att kontrollera om variabler är tomma:
+Kod för att kontrollera om strängar är tomma:
 
 ``` php
 var_dump(is_string_empty(""));               // bool(true)
 var_dump(is_string_empty("text"));           // bool(false)
 var_dump(is_string_empty("0"));              // bool(false)
+```
+
+Kod för att kontrollera om arrayer är tomma:
+
+``` php
 var_dump(is_array_empty(array()));           // bool(true)
 var_dump(is_array_empty(new ArrayObject())); // bool(true)
 var_dump(is_array_empty(array("entry")));    // bool(false)
@@ -1258,7 +1232,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Händelser
 
-Med hjälp av händelser informerar hemsidan när något händer. Först laddas tilläggen och `onLoad` anropas. Så snart alla tillägg har laddats kallas `onStartup`. En begäran från webbläsaren kan hanteras med olika händelser. I de flesta fall genereras innehållet av en sida. Om ett fel har inträffat genereras en felsida. Slutligen matas sidan ut och `onShutdown` anropas.
+Med hjälp av händelser informerar hemsidan dig när något händer. Först laddas tilläggen och `onLoad` anropas. Så snart alla tillägg har laddats kallas `onStartup`. En begäran från webbläsaren kan hanteras med olika händelser. I de flesta fall genereras innehållet av en sida. Om ett fel har inträffat genereras en felsida. Slutligen matas sidan ut och `onShutdown` anropas.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐
@@ -1296,36 +1270,12 @@ Hantera start
 `public function onRequest($scheme, $address, $base, $location, $fileName)`  
 Hantera begäran
 
-`public function onUpdate($action)`  
-Hantera uppdatering
-
-`public function onMail($action, $headers, $message)`  
-Hantera email
-
-`public function onLog($action, $message)`  
-Hantera loggning
-
 `public function onShutdown()`  
 Hantera avstängningen
 
 ---
 
-Tillägg för hantering av initiering:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.1.0";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-}
-```
-
-Tillägg för hantering av daglig uppdateringshändelse:
+Tillägg för att hantera initieringen:
 
 ``` php
 <?php
@@ -1336,13 +1286,6 @@ class YellowExample {
     // Handle initialisation
     public function onLoad($yellow) {
         $this->yellow = $yellow;
-    }
-
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="daily") {
-            $this->yellow->toolbox->log("info", "Handle daily update event");
-        }
     }
 }
 ```
@@ -1374,7 +1317,7 @@ Hantera output data för sidan
 
 ---
 
-Tillägg för egen förkortning:
+Tillägg för att skapa en förkortning:
 
 ``` php
 <?php
@@ -1400,7 +1343,7 @@ class YellowExample {
 }
 ```
 
-Tillägg för egen header:
+Tillägg för att skapa en HTML header:
 
 ``` php
 <?php
@@ -1444,7 +1387,7 @@ Hantera ändringar av användarkonton
 
 ---
 
-Tillägg för hantering av sidredigering:
+Tillägg för att hantera innehållsfiländringar:
 
 ``` php
 <?php
@@ -1457,7 +1400,7 @@ class YellowExample {
         $this->yellow = $yellow;
     }
     
-    // Handle media file changes
+    // Handle content file changes
     public function onEditContentFile($page, $action, $email) {
         if ($action=="edit") {
             $title = $page->get("title");
@@ -1468,7 +1411,7 @@ class YellowExample {
 }
 ```
 
-Tillägg för hantering av filuppladdning:
+Tillägg för att hantera mediefiländringar:
 
 ``` php
 <?php
@@ -1505,7 +1448,7 @@ Hantera hjälp för kommandon
 
 ---
 
-Tillägg för eget kommando:
+Tillägg för att hantera ett kommando:
 
 ``` php
 <?php
@@ -1535,7 +1478,7 @@ class YellowExample {
 }
 ```
 
-Tillägg för flera egna kommandon:
+Tillägg för att hantera flera kommandon:
 
 ``` php
 <?php
@@ -1575,6 +1518,66 @@ class YellowExample {
         if (is_string_empty($text)) $text = "World";
         echo "Goodbye $text\n";
         return 200;
+    }
+}
+```
+
+### Yellow update händelser
+
+Yellow update händelser meddelar när en uppdatering sker:
+
+
+`public function onUpdate($action)`  
+Hantera uppdatering
+
+`public function onMail($action, $headers, $message)`  
+Hantera email
+
+`public function onLog($action, $message)`  
+Hantera loggning
+
+---
+
+Tillägg för att hantera en uppdateringshändelse:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.8";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="install") {
+            $this->yellow->toolbox->log("info", "Install event");
+        }
+    }
+}
+```
+
+Tillägg för att hantera en daglig händelse:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.9";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="daily") {
+            $this->yellow->toolbox->log("info", "Daily event");
+        }
     }
 }
 ```

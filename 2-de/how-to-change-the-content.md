@@ -28,7 +28,7 @@ Während die meisten Verzeichnisse auf deiner Website verfügbar sind, gibt es z
 
 ## Text
 
-Du kannst deine Webseite im Webbrowser oder Texteditor bearbeiten. Ganz oben auf einer Seite kannst du `Title` und andere [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen) ändern. Darunter kannst du Text und Bilder ändern. Textformatierung mit [Markdown](https://github.com/annaesvensson/yellow-markdown/tree/main/README-de.md) wird unterstützt. Du kannst auch HTML und Abkürzungen benutzen. Hier sind einige Beispiele:
+Du kannst deine Webseite im Webbrowser oder Texteditor bearbeiten. Ganz oben auf einer Seite kannst du `Title` und andere [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen) ändern. Darunter kannst du Text und Bilder ändern. Textformatierung mit [Markdown](https://github.com/annaesvensson/yellow-markdown/tree/main/README-de.md) wird unterstützt. HTML und Abkürzungen werden auch unterstützt. Hier sind einige Beispiele:
 
     ---
     Title: Beispielseite
