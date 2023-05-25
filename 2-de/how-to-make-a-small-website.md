@@ -81,6 +81,6 @@ Es gibt [Erweiterungen für deine Webseite](https://github.com/datenstrom/yellow
 
 * [Wie man eine Webseite im Webbrowser bearbeitet](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md)
 * [Wie man eine Webseite auf dem Computer bearbeitet](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md)
-* [Wie man eine statische Webseite erstellt](https://github.com/annaesvensson/yellow-static/tree/main/README-de.md)
+* [Wie man eine statische Webseite generiert](https://github.com/annaesvensson/yellow-static/tree/main/README-de.md)
 
 Hast du Fragen? [Hilfe finden](.).

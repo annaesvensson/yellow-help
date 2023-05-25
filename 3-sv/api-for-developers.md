@@ -38,7 +38,7 @@ Följande konfigurationsfilar och systemfiler är tillgängliga:
 
 ### Webbredigerare
 
-Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Inbyggda webbredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. HTML och förkortningar stöds också. [Läs mer om webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
+Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Inbyggda webbredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. HTML och förkortningar stöds också. [Läs mer om webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
 
 ### Webbserver
 
@@ -46,7 +46,7 @@ Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är prak
 
 ### Webgenerator
 
-Du kan bygga en statisk webbplats på kommandoraden. Den static-site-generatorn bygger hella webbsidan i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv php `yellow.php build`, du kan valfritt ange en mapp och en plats. Detta kommer att bygga en statisk webbplats i `public` mappen. Ladda upp den statiska webbplatsen till din webbserver och bygg en ny när det behövs. [Läs mer om webgeneratorn](https://github.com/annaesvensson/yellow-static/tree/main/README-sv.md).
+Du kan generera en statisk webbplats på kommandoraden. Den static-site-generatorn skapar hella webbsidan i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv php `yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp den statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om webgeneratorn](https://github.com/annaesvensson/yellow-static/tree/main/README-sv.md).
 
 ### Tillägg
 

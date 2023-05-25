@@ -100,7 +100,7 @@ Die folgenden Einstellungen können ganz oben auf einer Seite vorgenommen werden
 `Modified` = Änderungsdatum der Seite, JJJJ-MM-TT Format  
 `Published` = Veröffentlichungsdatum der Seite, JJJJ-MM-TT Format  
 `Tag` = Tags zur Kategorisierung der Seite, durch Komma getrennt  
-`Build` = Optionen zum Erstellen einer statischen Webseite, durch Komma getrennt  
+`Generate` = Optionen zum Generieren einer statischen Webseite, durch Komma getrennt  
 `Comment` = Optionen zum Anzeigen von Kommentaren, durch Komma getrennt  
 
 <a id="einstellungen-status"></a>Die folgenden Seiten-Statuswerte werden unterstützt:
