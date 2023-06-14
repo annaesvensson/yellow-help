@@ -81,6 +81,6 @@ There are [extensions for your website](https://github.com/datenstrom/yellow-ext
 
 * [How to edit a website in a web browser](https://github.com/annaesvensson/yellow-edit)
 * [How to edit a website on your computer](https://github.com/annaesvensson/yellow-core)
-* [How to generate a static website](https://github.com/annaesvensson/yellow-static)
+* [How to generate a static website](https://github.com/annaesvensson/yellow-generate)
 
 Do you have questions? [Get help](.).

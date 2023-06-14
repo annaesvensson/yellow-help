@@ -100,8 +100,8 @@ The following settings can be configured at the top of a page:
 `Modified` = page modification date, YYYY-MM-DD format  
 `Published` = page publication date, YYYY-MM-DD format  
 `Tag` = page tag(s) for categorisation, comma separated  
-`Generate` = page option(s) for generating a static website, comma separated  
-`Comment` = page option(s) for showing comments, comma separated  
+`Generate` = option(s) for generating a static website, comma separated  
+`Comment` = option(s) for showing comments, comma separated  
 
 <a id="settings-status"></a>The following page status values are supported:
 

@@ -46,7 +46,7 @@ Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver 
 
 ### Webgenerator
 
-Du kannst eine statische Webseite in der Befehlszeile generieren. Der Static-Site-Generator macht die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php generate`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das generiert eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und generiere bei Bedarf eine neue. [Weitere Informationen zum Webgenerator](https://github.com/annaesvensson/yellow-static/tree/main/README-de.md).
+Du kannst eine statische Webseite in der Befehlszeile generieren. Der Static-Site-Generator macht die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php generate`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das generiert eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und generiere bei Bedarf eine neue. [Weitere Informationen zum Webgenerator](https://github.com/annaesvensson/yellow-generate/tree/main/README-de.md).
 
 ### Erweiterungen
 
