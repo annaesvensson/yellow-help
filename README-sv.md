@@ -16,7 +16,7 @@ Hjälpen finns på din webbplats som `http://website/help/`. Hjälpen ger dig me
 
 ## Hur man förbättrar hjälpen
 
-Du kan förbättra hjälpen om något är fel i dokumentationen. Om du vill redigera hjälpen i en [webbläsare](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) kan du göra detta på din webbplats på `http://website/edit/help/`. Om du vill redigera hjälpen på din [dator](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md), ta en titt på `content/9-help` mappen. Här är några tips. Granska hjälpen ur användarens perspektiv. Gör en fork av detta repository. Ladda upp dina ändringar till GitHub och skapa en pull-request för `annaesvensson/yellow-help`.
+Du kan förbättra hjälpen om något är fel i dokumentationen. Installera hjälpen på din webbplats, sedan kan du göra ändringar och granska resultatet. Om du vill redigera hjälpen i en [webbläsare](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) kan du göra detta på din webbplats på `http://website/edit/help/`. Om du vill redigera hjälpen på din [dator](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md), ta en titt på `content/9-help` mappen. Här är några tips. Granska hjälpen ur användarens perspektiv. Gör en fork av detta repository. Ladda upp dina ändringar till GitHub och skapa en pull-request för `annaesvensson/yellow-help`.
 
 ## Tack
 
