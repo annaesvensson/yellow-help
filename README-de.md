@@ -16,7 +16,7 @@ Die Hilfe ist auf deiner Webseite vorhanden als `http://website/help/`. Die Hilf
 
 ## Wie man die Hilfe verbessert
 
-Du kannst die Hilfe verbessern falls in der Dokumentation etwas falsch ist. Installiere die Hilfe auf deiner Webseite, dann kannst du Änderungen machen und das Ergebnis überprüfen. Falls du die Hilfe im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) bearbeiten möchtest, kannst du das auf deiner Webseite machen unter `http://website/edit/help/`. Falls du die Hilfe auf deinem [Computer](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) bearbeiten möchtest, schau dir das `content/9-help`-Verzeichnis an. Überprüfe die Hilfe aus der Perspektive des Benutzers. Mache ein Fork von diesem Repository. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für `annaesvensson/yellow-help`.
+Du kannst die Hilfe verbessern falls in der Dokumentation etwas falsch ist. Installiere die Hilfe auf deiner Webseite, dann kannst du Änderungen machen und die Hilfe aus der Perspektive des Benutzers überprüfen. Falls du die Hilfe im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) bearbeiten möchtest, kannst du das auf deiner Webseite machen unter `http://website/edit/help/`. Falls du die Hilfe auf deinem [Computer](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) bearbeiten möchtest, schau dir das `content/9-help`-Verzeichnis an. Mache ein Fork von diesem Repository. Lade deine Änderungen zu GitHub hoch und erzeuge einen Pull-Request für `annaesvensson/yellow-help`.
 
 ## Danksagung
 
