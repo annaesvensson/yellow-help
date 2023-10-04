@@ -12,7 +12,7 @@ Help for your website.
 
 ## How to use the help
 
-The help is available on your website as `http://website/help/`. The help shows you how to make small websites, wikis and blogs. Here you can find instructions on how to customise everything. For developers, designers and translators there are descriptions of folders, tools and what can be done with the API. It's recommended to install the [highlight extension](https://github.com/annaesvensson/yellow-highlight), [search extension](https://github.com/annaesvensson/yellow-search), [toc extension](https://github.com/annaesvensson/yellow-toc) together with the help extension. Then you will have the same package as the [help on the official website](https://datenstrom.se/yellow/help/). 
+The help is available on your website as `http://website/help/`. The help shows you how to make small websites, wikis and blogs. Here you can find instructions on how to customise everything. For developers, designers and translators there are descriptions of files, folders and what can be done with the API. It's recommended to install the [highlight extension](https://github.com/annaesvensson/yellow-highlight), [search extension](https://github.com/annaesvensson/yellow-search), [toc extension](https://github.com/annaesvensson/yellow-toc) together with the help extension. Then you will have the same package as the [help on the official website](https://datenstrom.se/yellow/help/). 
 
 ## How to improve the help
 
