@@ -90,7 +90,6 @@ To show a header create the file `content/shared/header.md`. Here's an example:
 ```
 ---
 Title: Header
-Status: shared
 ---
 Website is under construction.
 ```
@@ -100,7 +99,6 @@ To show a footer create the file `content/shared/footer.md`. Here's an example:
 ```
 ---
 Title: Footer
-Status: shared
 ---
 [Made with Datenstrom Yellow](https://datenstrom.se/yellow/).
 ```

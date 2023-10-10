@@ -90,7 +90,6 @@ Um eine Kopfzeile anzuzeigen, erstelle die Datei `content/shared/header.md`. Hie
 ```
 ---
 Title: Header
-Status: shared
 ---
 Webseite ist im Aufbau.
 ```
@@ -100,7 +99,6 @@ Um eine Fußzeile anzuzeigen, erstelle die Datei `content/shared/footer.md`. Hie
 ```
 ---
 Title: Footer
-Status: shared
 ---
 [Erstellt mit Datenstrom Yellow](https://datenstrom.se/de/yellow/).
 ```
