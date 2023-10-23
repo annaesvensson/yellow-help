@@ -20,7 +20,7 @@ You can improve the help if something is wrong. Install the help on your website
 
 ## Acknowledgements
 
-This extension includes a [photo](https://unsplash.com/photos/azsk_6IMT3I) by Bruno Cervera and a [photo](https://unsplash.com/photos/sZYUKEWsDLA) by Andrew Neel. Thank you for the beautiful photos.
+This extension includes a [photo](https://unsplash.com/photos/azsk_6IMT3I) by Bruno Cervera. Thank you for the beautiful photos.
 
 ## Developer
 

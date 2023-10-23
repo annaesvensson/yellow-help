@@ -1,8 +1,6 @@
 ---
 Title: API für Entwickler
 ---
-[image help-yellow.jpg "Datenstrom Yellow ist für Menschen die kleine Webseiten machen" rounded]
-
 Wir <3 Menschen die programmieren.
 
 [toc]
@@ -1040,11 +1038,14 @@ Filtere eine Seitenkollektion nach Seiteneinstellung
 `pages->match($regex = "/.*/", $filterByLocation = true): YellowPageCollection`  
 Filtere eine Seitenkollektion nach Ort oder Datei
 
+`pages->similar($page): YellowPageCollection`  
+Sortiere eine Seitenkollektion nach Einstellungsähnlichkeit
+
 `pages->sort($key, $ascendingOrder = true): YellowPageCollection`  
 Sortiere eine Seitenkollektion nach Seiteneinstellung
 
-`pages->similar($page, $ascendingOrder = false): YellowPageCollection`  
-Sortiere eine Seitenkollektion nach Einstellungsähnlichkeit
+`pages->group($key, $ascendingOrder = true, $format = ""): array`  
+Gruppiere eine Seitenkollektion nach Seiteneinstellung, gebe Array mit mehreren Kollektionen zurück
 
 `pages->merge($input): YellowPageCollection`  
 Berechne Vereinigungsmenge, füge eine Seitenkollektion hinzu

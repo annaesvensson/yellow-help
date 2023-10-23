@@ -1,8 +1,6 @@
 ---
 Title: API for developers
 ---
-[image help-yellow.jpg "Datenstrom Yellow is for people who make small websites" rounded]
-
 We <3 people who code.
 
 [toc]
@@ -1040,11 +1038,14 @@ Filter page collection by page setting
 `pages->match($regex = "/.*/", $filterByLocation = true): YellowPageCollection`  
 Filter page collection by location or file
 
+`pages->similar($page: YellowPageCollection`  
+Sort page collection by settings similarity
+
 `pages->sort($key, $ascendingOrder = true): YellowPageCollection`  
 Sort page collection by page setting
 
-`pages->similar($page, $ascendingOrder = false): YellowPageCollection`  
-Sort page collection by settings similarity
+`pages->group($key, $ascendingOrder = true, $format = ""): array`  
+Group page collection by page setting, return array with multiple collections
 
 `pages->merge($input): YellowPageCollection`  
 Calculate union, merge page collection

@@ -20,7 +20,7 @@ Du kan förbättra hjälpen om något är fel. Installera hjälpen på din webbp
 
 ## Tack
 
-Detta tillägg innehåller ett [foto](https://unsplash.com/photos/azsk_6IMT3I) av Bruno Cervera och ett [foto](https://unsplash.com/photos/sZYUKEWsDLA) av Andrew Neel. Tack för de vackra foton.
+Detta tillägg innehåller ett [foto](https://unsplash.com/photos/azsk_6IMT3I) av Bruno Cervera. Tack för de vackra foton.
 
 ## Utvecklare
 

@@ -1,8 +1,6 @@
 ---
 Title: API för utvecklare
 ---
-[image help-yellow.jpg "Datenstrom Yellow är för människor som skapar små webbsidor" rounded]
-
 Vi <3 människor som kodar. 
 
 [toc]
@@ -1041,11 +1039,14 @@ Filtrera page collection efter sidinställning
 `pages->match($regex = "/.*/", $filterByLocation = true): YellowPageCollection`  
 Filtrera page collection efter plats eller fil
 
+`pages->similar($page): YellowPageCollection`  
+Sortera page collection efter inställningslikhet
+
 `pages->sort($key, $ascendingOrder = true): YellowPageCollection`  
 Sortera page collection efter sidinställning
 
-`pages->similar($page, $ascendingOrder = false): YellowPageCollection`  
-Sortera page collection efter inställningslikhet
+`pages->group($key, $ascendingOrder = true, $format = ""): array`  
+Gruppera page collection efter sidinställning, returnera array med flera collections
 
 `pages->merge($input): YellowPageCollection`  
 Beräkna union, lägg till en page collection
