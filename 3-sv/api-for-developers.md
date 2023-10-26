@@ -392,7 +392,7 @@ Layoutfil för att visa core-inställningar:
 
 Klassen `YellowLanguage` ger tillgång till [språkinställningar](how-to-change-the-system#språkinställningar). Följande metoder är tillgängliga:
 
-`getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText` `setDefaults` `setText`
+`getDateFormatted` `getDateRelative` `getDateStandard` `getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText` `setDefaults` `setText`
 
 ---
 
@@ -409,6 +409,15 @@ Returnera språkinställning
 
 `language->getTextHtml($key, $language = ""): string`  
 Returnera språkinställning, HTML-kodad
+
+`page->getDateStandard($text, $language = ""): string`  
+Returnera text som [språkspecifikt datum](how-to-change-the-system#språkinställningar), konvertera till ett av standardformaten
+
+`page->getDateRelative($timestamp, $format, $daysLimit, $language = ""): string`  
+Returnera Unix-tid som [datum](https://www.php.net/manual/en/function.date.php), i förhållande till idag
+
+`page->getDateFormatted($timestamp, $format, $language = ""): string`  
+Returnera Unix-tid som [datum](https://www.php.net/manual/en/function.date.php)
 
 `language->getSettings($filterStart = "", $filterEnd = "", $language = ""): array`  
 Returnera språkinställningar
@@ -494,7 +503,7 @@ Ställ in användarinställning
 Returnera användarinställning
 
 `user->getUserHtml($key, $email = ""): string`  
-Returnera användarinställning, HTML encoded
+Returnera användarinställning, HTML-kodad
 
 `user->getSettings($email = ""): array`  
 Returnera användarinställningar
@@ -624,7 +633,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 Klassen `YellowLookup` ger tillgång till uppslags och normaliseringsmetoder. Följande metoder är tillgängliga:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -653,9 +662,6 @@ Normalisera element och attribut i HTML/SVG-data
 
 `lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
 Normalisera fält i MIME-headers
-
-`lookup->normaliseArray($input): array`  
-Normalisera array, gör nycklar till samma skiftläge
 
 `lookup->normalisePath($text): string`  
 Normalisera relativa sökvägsandelar 
@@ -1018,7 +1024,7 @@ Layoutfil för att visa sidinnehåll och modifieringsdatum:
 
 Klassen `YellowPageCollection` ger tillgång till flera sidor. Följande metoder är tillgängliga:
 
-`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `remove` `reverse` `shuffle` `similar` `sort`
+`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `group` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `remove` `reverse` `shuffle` `similar` `sort`
 
 ---
 

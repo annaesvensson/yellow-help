@@ -391,7 +391,7 @@ Layoutdatei um die Core-Einstellungen anzuzeigen:
 
 Die Klasse `YellowLanguage` gibt Zugang zu [Spracheinstellungen](how-to-change-the-system#spracheinstellungen). Die folgenden Methoden sind verfügbar:
 
-`getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText` `setDefaults` `setText`
+`getDateFormatted` `getDateRelative` `getDateStandard` `getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText` `setDefaults` `setText`
 
 ---
 
@@ -407,7 +407,16 @@ Setze eine Spracheinstellung
 Hole eine Spracheinstellung
 
 `language->getTextHtml($key, $language = ""): string`  
-Hole eine Spracheinstellung, HTML encoded
+Hole eine Spracheinstellung, HTML-kodiert
+
+`page->getDateStandard($text, $language = ""): string`  
+Hole einen Text als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), in eines der Standardformate konvertieren
+
+`page->getDateRelative($timestamp, $format, $daysLimit, $language = ""): string`  
+Hole eine Unix-Zeit als [Datum](https://www.php.net/manual/de/function.date.php), relativ zu heute
+
+`page->getDateFormatted($timestamp, $format, $language = ""): string`  
+Hole eine Unix-Zeit als [Datum](https://www.php.net/manual/de/function.date.php)
 
 `language->getSettings($filterStart = "", $filterEnd = "", $language = ""): array`  
 Hole Spracheinstellungen
@@ -623,7 +632,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 Die Klasse `YellowLookup` gibt Zugang zu Nachschlags- und Normalisierungsmethoden. Die folgenden Methoden sind verfügbar:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -652,9 +661,6 @@ Normalisiere Elemente und Attribute in HTML/SVG-Daten
 
 `lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
 Normalisiere Felder in MIME-Headers
-
-`lookup->normaliseArray($input): array`  
-Normalisiere ein Array, mache Schlüssel mit gleicher Groß-/Kleinschreibung
 
 `lookup->normalisePath($text): string`  
 Normalisiere relative Pfadanteile
@@ -1017,7 +1023,7 @@ Layoutdatei um den Seiteninhalt und das Änderungsdatum anzuzeigen:
 
 Die Klasse `YellowPageCollection` gibt Zugang zu mehreren Seiten. Die folgenden Methoden sind verfügbar:
 
-`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `remove` `reverse` `shuffle` `similar` `sort`
+`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `group` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `remove` `reverse` `shuffle` `similar` `sort`
 
 ---
 

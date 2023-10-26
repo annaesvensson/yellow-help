@@ -391,7 +391,7 @@ Layout file for showing core settings:
 
 The class `YellowLanguage` gives access to [language settings](how-to-change-the-system#language-settings). The following methods are available:
 
-`getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText` `setDefaults` `setText`
+`getDateFormatted` `getDateRelative` `getDateStandard` `getModified` `getSettings` `getText` `getTextHtml` `isExisting` `isText` `setDefaults` `setText`
 
 ---
 
@@ -408,6 +408,15 @@ Return language setting
 
 `language->getTextHtml($key, $language = ""): string`  
 Return language setting, HTML encoded
+
+`page->getDateStandard($text, $language = ""): string`  
+Return text as [language specific date](how-to-change-the-system#language-settings), convert to one of the standard formats
+
+`page->getDateRelative($timestamp, $format, $daysLimit, $language = ""): string`  
+Return Unix time as [date](https://www.php.net/manual/en/function.date.php), relative to today
+
+`page->getDateFormatted($timestamp, $format, $language = ""): string`  
+Return Unix time as [date](https://www.php.net/manual/en/function.date.php)
 
 `language->getSettings($filterStart = "", $filterEnd = "", $language = ""): array`  
 Return language settings
@@ -623,7 +632,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 The class `YellowLookup` gives access to lookup and normalisation methods. The following methods are available:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseArray` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -652,9 +661,6 @@ Normalise elements and attributes in HTML/SVG data
 
 `lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
 Normalise fields in MIME headers
-
-`lookup->normaliseArray($input): array`  
-Normalise array, make keys with same upper/lower case
 
 `lookup->normalisePath($text): string`  
 Normalise relative path tokens
@@ -1017,7 +1023,7 @@ Layout file for showing page content and modification date:
 
 The class `YellowPageCollection` gives access to multiple pages. The following methods are available:
 
-`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `remove` `reverse` `shuffle` `similar` `sort`
+`append` `diff` `filter` `getFilter` `getModified` `getPageNext` `getPagePrevious` `getPaginationCount` `getPaginationLocation` `getPaginationNext` `getPaginationNumber` `getPaginationPrevious` `group` `intersect` `isEmpty` `isPagination` `limit` `match` `merge` `paginate` `prepend` `remove` `reverse` `shuffle` `similar` `sort`
 
 ---
 
