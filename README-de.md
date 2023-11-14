@@ -8,7 +8,7 @@ Hilfe für deine Webseite.
 
 ## Wie man die Hilfe installiert
 
-[ZIP-Datei herunterladen](https://github.com/annaesvensson/yellow-help/archive/main.zip) und in dein `system/extensions`-Verzeichnis kopieren. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
+[ZIP-Datei herunterladen](https://github.com/annaesvensson/yellow-help/archive/refs/heads/main.zip) und in dein `system/extensions`-Verzeichnis kopieren. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
 
 ## Wie man die Hilfe benutzt
 

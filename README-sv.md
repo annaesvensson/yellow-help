@@ -8,7 +8,7 @@ Hjälp för din webbplats.
 
 ## Hur man installerar hjälpen
 
-[Ladda ner ZIP-filen](https://github.com/annaesvensson/yellow-help/archive/main.zip) och kopiera den till din `system/extensions` mapp. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
+[Ladda ner ZIP-filen](https://github.com/annaesvensson/yellow-help/archive/refs/heads/main.zip) och kopiera den till din `system/extensions` mapp. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
 
 ## Hur man använder hjälpen
 
