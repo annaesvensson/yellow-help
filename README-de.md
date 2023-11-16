@@ -4,7 +4,7 @@
 
 Hilfe für deine Webseite.
 
-<p align="center"><img src="help-screenshot.png?raw=true" alt="Bildschirmfoto"></p>
+<p align="center"><img src="SCREENSHOT.png?raw=true" alt="Bildschirmfoto"></p>
 
 ## Wie man die Hilfe installiert
 
@@ -20,7 +20,7 @@ Du kannst die Hilfe verbessern falls etwas nicht stimmt. Installiere die Hilfe a
 
 ## Danksagung
 
-Diese Erweiterung enthält ein [Foto](https://unsplash.com/photos/azsk_6IMT3I) von Bruno Cervera. Danke für die schönen Fotos.
+Diese Erweiterung enthält ein [Foto](https://unsplash.com/photos/azsk_6IMT3I) von Bruno Cervera. Danke für das schöne Foto.
 
 ## Entwickler
 
