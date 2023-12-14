@@ -5,7 +5,7 @@ Erfahre wie du mit uns arbeiten und Probleme lösen kannst.
 
 ## Wie man mit uns arbeitet
 
-* [Verbessere Funktionen, Sprachen, Themes](https://github.com/datenstrom/yellow-extensions/tree/main/README-de.md) und [erstelle deine eigene Erweiterung](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md).
+* [Verbessere Funktionen, Sprachen, Themes](https://datenstrom.se/de/yellow/extensions/) und [erstelle deine eigene Erweiterung](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md).
 * Stell dir vor was das Leben einfacher machen würde und was der Benutzer machen möchte.
 * Strebe die kleinstmögliche Lösung an, erst funktionieren lassen dann besser machen.
 * Frage dich selbst, brauche ich das, will ich das, kann ich das besser machen?
