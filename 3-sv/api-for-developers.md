@@ -44,7 +44,7 @@ Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är prak
 
 ### Inbyggd static-site-generator
 
-Du kan generera en statisk webbplats på kommandoraden. Den static-site-generatorn skapar hella webbplatsen i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv php `yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp den statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om generatorn](https://github.com/annaesvensson/yellow-generate/tree/main/README-sv.md).
+Du kan generera en statisk webbplats på kommandoraden. Den static-site-generatorn skapar hella webbplatsen i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp den statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om generatorn](https://github.com/annaesvensson/yellow-generate/tree/main/README-sv.md).
 
 ## Objekt
 
