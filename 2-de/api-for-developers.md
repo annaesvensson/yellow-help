@@ -34,25 +34,17 @@ Die folgenden Konfigurationsdateien und Systemdateien sind verfügbar:
 
 ## Werkzeuge
 
-### Webeditor
+### Eingebauter Webeditor
 
-Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der eingebaute Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Textformatierung mit Markdown wird unterstützt. HTML und Abkürzungen werden auch unterstützt. [Weitere Informationen zum Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
+Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der eingebaute Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Textformatierung mit Markdown wird unterstützt. HTML wird auch unterstützt. [Weitere Informationen zum Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
 
-### Webserver
+### Eingebauter Webserver
 
-Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit Webseiten auf deinem Computer anzuzeigen, sie zu überprüfen und später auf den externen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
+Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer anzuzeigen und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
 
-### Webgenerator
+### Eingebauter Static-Site-Generator
 
-Du kannst eine statische Webseite in der Befehlszeile generieren. Der Static-Site-Generator macht die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php generate`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das generiert eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und generiere bei Bedarf eine neue. [Weitere Informationen zum Webgenerator](https://github.com/annaesvensson/yellow-generate/tree/main/README-de.md).
-
-### Erweiterungen
-
-Du kannst die Funktionen deiner Webseite anpassen. Es gibt einen Core und alles andere sind Erweiterungen. Die installierten Erweiterungen befinden sich im `system/extensions`-Verzeichnis. Die Idee ist, dass in der Standardinstallation nur die wichtigsten Dinge enthalten sind um kleine Webseiten zu machen. Es gibt Methoden wie `onLoad()` und `onParseContentShortcut()` mit denen man Ereignisse verarbeiten kann. Dieses System gibt dir die vollständige Kontrolle. Installiere einige Erweiterungen und schau dir an wie sie funktionieren. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
-
-### Layouts
-
-Du kannst das Aussehen deiner Webseite anpassen. Die Layoutdateien befinden sich im `system/layouts`-Verzeichnis. Dem Layoutsystem ist es eigentlich egal was in den Layoutdateien enthalten ist. Der HTML-Code bleibt unverändert. Es gibt Methoden wie `getHtml()` und `getContentHtml()` mit denen man die aktuelle Seite so ausgeben kann wie man will. Es ist möglich Schleifen zu verwenden und Kontrollstrukturen zu erstellen. Dazu musst du kein besonderes Webframework lernen, sondern kannst normales PHP verwenden. [Weitere Informationen zu Layouts](how-to-customise-a-layout).
+Du kannst eine statische Webseite in der Befehlszeile generieren. Der Static-Site-Generator macht die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php generate`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das generiert eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und generiere bei Bedarf eine neue. [Weitere Informationen zum Generator](https://github.com/annaesvensson/yellow-generate/tree/main/README-de.md).
 
 ## Objekte
 
@@ -144,10 +136,10 @@ Beschreibung der Methoden und Argumente:
 `content->find($location, $absoluteLocation = false): YellowPage|null`  
 Hole eine [Seite](#yellow-page), null falls nicht vorhanden
 
-`content->index($showInvisible = false, $multiLanguage = false, $levelMax = 0): YellowPageCollection`  
+`content->index($showInvisible = false, $multiLanguage = false): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) mit allen Seiten
 
-`content->top($showInvisible = false, $showOnePager = true): YellowPageCollection`  
+`content->top($showInvisible = false): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) mit Hauptseiten der Navigation
 
 `content->path($location, $absoluteLocation = false): YellowPageCollection`  
@@ -231,7 +223,7 @@ Beschreibung der Methoden und Argumente:
 `media->find($location, $absoluteLocation = false): YellowPage|null`  
 Hole eine [Seite](#yellow-page) mit Informationen über Mediendatei, null falls nicht vorhanden
 
-`media->index($showInvisible = false, $multiPass = false, $levelMax = 0): YellowPageCollection`  
+`media->index($showInvisible = false, $multiPass = false): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) mit allen Mediendateien
 
 `media->clean(): YellowPageCollection`  
@@ -743,7 +735,7 @@ if (!is_string_empty($url)) {
 
 Die Klasse `YellowToolbox` gibt Zugang zur Werkzeugkiste mit Hilfsmethoden. Die folgenden Methoden sind verfügbar:
 
-`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile`
+`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile`
 
 ---
 
@@ -763,6 +755,12 @@ Hole Dateien und Verzeichnisse
 
 `toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0): array`  
 Hole Dateien und Verzeichnisse rekursiv
+
+`toolbox->getDirectoryInformation($path): array`  
+Hole Verzeichnisinformationen, Änderungsdatum und Anzahl Dateien
+
+`toolbox->getDirectoryInformationRecursive($path, $levelMax = 0): array`  
+Hole Verzeichnisinformationen rekursive, Änderungsdatum und Anzahl Dateien
 
 `toolbox->readFile($fileName, $sizeMax = 0): string`  
 Lese eine Datei, leerer String falls nicht vorhanden
@@ -1249,7 +1247,7 @@ onLoad ───────▶ onStartup ────────────�
                     ▼                        ▼                       ▼
 onUpdate        onParseMetaData          onEditContentFile       onCommand  
 onMail          onParseContentRaw        onEditMediaFile         onCommandHelp
-onLog           onParseContentShortcut   onEditSystemFile            │
+onLog           onParseContentElement    onEditSystemFile            │
                 onParseContentHtml       onEditUserAccount           │
                 onParsePageLayout            │                       │
                 onParsePageExtra             │                       │
@@ -1261,7 +1259,7 @@ onLog           onParseContentShortcut   onEditSystemFile            │
 
 Die folgenden Ereignisse sind verfügbar:
 
-`onCommand` `onCommandHelp` `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount` `onLoad` `onLog` `onMail` `onParseContentHtml` `onParseContentRaw` `onParseContentShortcut` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput` `onRequest` `onShutdown` `onStartup` `onUpdate`
+`onCommand` `onCommandHelp` `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount` `onLoad` `onLog` `onMail` `onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput` `onRequest` `onShutdown` `onStartup` `onUpdate`
 
 ### Yellow-Core-Ereignisse
 
@@ -1306,8 +1304,8 @@ Verarbeite die Metadaten einer Seite
 `public function onParseContentRaw($page, $text)`  
 Verarbeite den Seiteninhalt im Rohformat
 
-`public function onParseContentShortcut($page, $name, $text, $type)`  
-Verarbeite den Seiteninhalt einer Abkürzung
+`public function onParseContentElement($page, $name, $text, $type)`  
+Verarbeite den Seiteninhalt eines Elements
 
 `public function onParseContentHtml($page, $text)`  
 Verarbeite den Seiteninhalt im HTML-Format
@@ -1323,7 +1321,7 @@ Verarbeite die Ausgabedaten einer Seite
 
 ---
 
-Erweiterung um eine Abkürzung zu erstellen:
+Erweiterung um eine eigene Abkürzung zu erstellen:
 
 ``` php
 <?php
@@ -1336,8 +1334,8 @@ class YellowExample {
         $this->yellow = $yellow;
     }
     
-    // Handle page content of shortcut
-    public function onParseContentShortcut($page, $name, $text, $type) {
+    // Handle page content element
+    public function onParseContentElement($page, $name, $text, $attributes, $type) {
         $output = null;
         if ($name=="example" && ($type=="block" || $type=="inline")) {
             $output = "<div class=\"".htmlspecialchars($name)."\">";

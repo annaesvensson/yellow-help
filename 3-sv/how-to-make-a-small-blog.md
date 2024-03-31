@@ -105,7 +105,7 @@ Title: Footer
 
 ## Add features languages and themes
 
-There are [extensions for your website](https://github.com/datenstrom/yellow-extensions) and an [API for developers](api-for-developers).
+There are [extensions for your website](https://datenstrom.se/yellow/extensions/) and an [API for developers](api-for-developers).
 
 ## Related information
 

@@ -28,7 +28,7 @@ While most folders are available on your website, there are two exception. The `
 
 ## Text
 
-You can edit your website in a web browser or text editor. At the top of a page you can change `Title` and other [page settings](how-to-change-the-system#page-settings). Below you can change text and images. Text formatting with [Markdown](https://github.com/annaesvensson/yellow-markdown) is supported. HTML and shortcuts are also supported. Here are some examples:
+You can edit your website in a web browser or text editor. At the top of a page you can change `Title` and other [page settings](how-to-change-the-system#page-settings). Below you can change text and images. Text formatting with [Markdown](https://github.com/annaesvensson/yellow-markdown) is supported. HTML is also supported. Here are some examples:
 
     ---
     Title: Example page
@@ -146,9 +146,9 @@ Using HTML:
     <img src="/media/images/photo.jpg" alt="This is an example image">
     <a href="https://datenstrom.se" target="_blank">Open link in new tab</a>.
 
-Using shortcuts:
+Using shortcuts with additional features:
 
-    [image photo.jpg]    = adding an image
+    [image photo.jpg]    = adding an image or image thumbnail
     [gallery photo.*jpg] = adding an image gallery with popup
     [slider photo.*jpg]  = adding an image gallery with slider
 

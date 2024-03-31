@@ -28,7 +28,7 @@ Medan flesta mappar är tillgängliga på din webbplats, finns det två undantag
 
 ## Text
 
-Du kan redigera din webbplats i en webbläsare eller textredigerare. Högst upp på en sida kan du ändra `Title` och andra [sidinställningar](how-to-change-the-system#sidinställningar). Nedan kan du ändra text och bilder. Textformatering med [Markdown](https://github.com/annaesvensson/yellow-markdown/tree/main/README-sv.md) stöds. HTML och förkortningar stöds också. Här är några exempel:
+Du kan redigera din webbplats i en webbläsare eller textredigerare. Högst upp på en sida kan du ändra `Title` och andra [sidinställningar](how-to-change-the-system#sidinställningar). Nedan kan du ändra text och bilder. Textformatering med [Markdown](https://github.com/annaesvensson/yellow-markdown/tree/main/README-sv.md) stöds. HTML stöds också. Här är några exempel:
 
     ---
     Title: Exempelsida
@@ -146,9 +146,9 @@ Använd HTML:
     <img src="/media/images/photo.jpg" alt="This is an example image">
     <a href="https://datenstrom.se" target="_blank">Öppna länken i en ny flik</a>.
 
-Använd förkortningar:
+Använd förkortningar med ytterligare funktioner:
 
-    [image photo.jpg]    = lägga till en bild
+    [image photo.jpg]    = lägga till en bild eller miniatyrbild
     [gallery photo.*jpg] = lägga till ett bildgalleri med popup
     [slider photo.*jpg]  = lägga till ett bildgalleri med reglaget
 

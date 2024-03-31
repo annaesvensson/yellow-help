@@ -34,25 +34,17 @@ The following configuration files and system files are available:
 
 ## Tools
 
-### Web editor
+### Built-in web editor
 
-You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The built-in web editor allows you to edit content files and upload media files. It is a great way to update your website. Text formatting with Markdown is supported. HTML and shortcuts are also supported. [Learn more about the web editor](https://github.com/annaesvensson/yellow-edit).
+You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The built-in web editor allows you to edit content files and upload media files. It is a great way to update your website. Text formatting with Markdown is supported. HTML is also supported. [Learn more about the web editor](https://github.com/annaesvensson/yellow-edit).
 
-### Web server
+### Built-in web server
 
-You can start a web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to display web pages on your computer, check them and upload them to the external web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the web server](https://github.com/annaesvensson/yellow-serve).
+You can start a web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to see your website on your computer and upload it to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the web server](https://github.com/annaesvensson/yellow-serve).
 
-### Web generator
+### Built-in static site generator
 
-You can generate a static website at the command line. The static site generator makes the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php generate`, you can optionally add a folder and a location. This will generate a static website in the `public` folder. Upload the static website to your web server and generate a new one when needed. [Learn more about the web generator](https://github.com/annaesvensson/yellow-generate).
-
-### Extensions
-
-You can customise the features of your website. There is a core and everything else is an extension. The installed extensions are stored in your `system/extensions` folder. The idea is that the standard installation only includes the most important things to make small websites. There are methods like `onLoad()` and `onParseContentShortcut()`, which allow you to handle events. With this system you have the complete control. Install some extensions and see how they are working. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
-
-### Layouts
-
-You can customise the look of your website. The layout files are stored in your `system/layouts` folder. The layout system does not really care what's in layout files. It will leave HTML code unchanged. There are methods like `getHtml()` and `getContentHtml()`, which allow you to output the current page as you like. It's possible to use loops and create control structures. You don't have to learn a special web framework, but can use normal PHP. [Learn more about layouts](how-to-customise-a-layout).
+You can generate a static website at the command line. The static site generator makes the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php generate`, you can optionally add a folder and a location. This will generate a static website in the `public` folder. Upload the static website to your web server and generate a new one when needed. [Learn more about the generator](https://github.com/annaesvensson/yellow-generate).
 
 ## Objects
 
@@ -144,10 +136,10 @@ Description of methods and arguments:
 `content->find($location, $absoluteLocation = false): YellowPage|null`  
 Return [page](#yellow-page), null if not found
 
-`content->index($showInvisible = false, $multiLanguage = false, $levelMax = 0): YellowPageCollection`  
+`content->index($showInvisible = false, $multiLanguage = false): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) with all pages
 
-`content->top($showInvisible = false, $showOnePager = true): YellowPageCollection`  
+`content->top($showInvisible = false): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) with top-level navigation
 
 `content->path($location, $absoluteLocation = false): YellowPageCollection`  
@@ -231,7 +223,7 @@ Description of methods and arguments:
 `media->find($location, $absoluteLocation = false): YellowPage|null`  
 Return [page](#yellow-page) with media file information, null if not found
 
-`media->index($showInvisible = false, $multiPass = false, $levelMax = 0): YellowPageCollection`  
+`media->index($showInvisible = false, $multiPass = false): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) with all media files
 
 `media->clean(): YellowPageCollection`  
@@ -743,7 +735,7 @@ if (!is_string_empty($url)) {
 
 The class `YellowToolbox` gives access to toolbox with helper methods. The following methods are available:
 
-`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile`
+`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile`
 
 ---
 
@@ -763,6 +755,12 @@ Return files and directories
 
 `toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0): array`  
 Return files and directories recursively
+
+`toolbox->getDirectoryInformation($path): array`  
+Return directory information, modification date and file count
+
+`toolbox->getDirectoryInformationRecursive($path, $levelMax = 0): array`  
+Return directory information recursively, modification date and file count
 
 `toolbox->readFile($fileName, $sizeMax = 0): string`  
 Read file, empty string if not found  
@@ -1249,7 +1247,7 @@ onLoad ───────▶ onStartup ────────────�
                     ▼                        ▼                       ▼
 onUpdate        onParseMetaData          onEditContentFile       onCommand  
 onMail          onParseContentRaw        onEditMediaFile         onCommandHelp
-onLog           onParseContentShortcut   onEditSystemFile            │
+onLog           onParseContentElement    onEditSystemFile            │
                 onParseContentHtml       onEditUserAccount           │
                 onParsePageLayout            │                       │
                 onParsePageExtra             │                       │
@@ -1261,7 +1259,7 @@ onLog           onParseContentShortcut   onEditSystemFile            │
 
 The following events are available:
 
-`onCommand` `onCommandHelp` `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount` `onLoad` `onLog` `onMail` `onParseContentHtml` `onParseContentRaw` `onParseContentShortcut` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput` `onRequest` `onShutdown` `onStartup` `onUpdate`
+`onCommand` `onCommandHelp` `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount` `onLoad` `onLog` `onMail` `onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput` `onRequest` `onShutdown` `onStartup` `onUpdate`
 
 ### Yellow core events
 
@@ -1306,8 +1304,8 @@ Handle page meta data
 `public function onParseContentRaw($page, $text)`  
 Handle page content in raw format
 
-`public function onParseContentShortcut($page, $name, $text, $type)`  
-Handle page content of shortcut
+`public function onParseContentElement($page, $name, $text, $attributes, $type)`  
+Handle page content element
 
 `public function onParseContentHtml($page, $text)`  
 Handle page content in HTML format
@@ -1323,7 +1321,7 @@ Handle page output data
 
 ---
 
-Extension for creating a shortcut:
+Extension for creating a custom shortcut:
 
 ``` php
 <?php
@@ -1336,8 +1334,8 @@ class YellowExample {
         $this->yellow = $yellow;
     }
     
-    // Handle page content of shortcut
-    public function onParseContentShortcut($page, $name, $text, $type) {
+    // Handle page content element
+    public function onParseContentElement($page, $name, $text, $attributes, $type) {
         $output = null;
         if ($name=="example" && ($type=="block" || $type=="inline")) {
             $output = "<div class=\"".htmlspecialchars($name)."\">";

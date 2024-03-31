@@ -1,7 +1,7 @@
 ---
 Title: API för utvecklare
 ---
-Vi <3 människor som kodar. 
+Vi <3 människor som kodar.
 
 [toc]
 
@@ -34,25 +34,17 @@ Följande konfigurationsfilar och systemfiler är tillgängliga:
 
 ## Verktyg
 
-### Webbredigerare
+### Inbyggd webbredigerare
 
-Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Inbyggda webbredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. HTML och förkortningar stöds också. [Läs mer om webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
+Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Inbyggda webbredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. HTML stöds också. [Läs mer om webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
 
-### Webbserver
+### Inbyggd webbserver
 
-Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att visa webbsidor på din dator, granska dem och ladda upp dem till den externa webbservern senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md).
+Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att se din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md).
 
-### Webgenerator
+### Inbyggd static-site-generator
 
-Du kan generera en statisk webbplats på kommandoraden. Den static-site-generatorn skapar hella webbsidan i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv php `yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp den statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om webgeneratorn](https://github.com/annaesvensson/yellow-generate/tree/main/README-sv.md).
-
-### Tillägg
-
-Du kan anpassa funktionerna på din webbplats. Det finns en core och allt annat är ett tillägg. Installerade tilläggen finns i `system/extensions` mappen. Tanken är att standardinstallationen bara innehåller det viktigaste för att skapa små hemsidor. Det finns metoder som `onLoad()` och `onParseContentShortcut()`, som låter dig hantera händelser. Med detta system har du full kontroll. Installera några tillägg och se hur de fungerar. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
-
-### Layouts
-
-Du kan anpassa utseendet på din webbplats. Layoutfilerna finns i `system/layouts` mappen. Layoutsytemet bryr sig inte riktigt vad som finns i layoutfiler. Det kommer att lämna HTML-koden oförändrad. Det finns metoder som `getHtml()` och `getContentHtml()`, som låter dig mata ut den aktuella sidan som du vill. Det är möjligt att använda loopar och skapa kontrollstrukturer. Du behöver inte lära dig ett speciellt webbramverk, men kan använda vanlig PHP. [Läs mer om layouter](how-to-customise-a-layout).
+Du kan generera en statisk webbplats på kommandoraden. Den static-site-generatorn skapar hella webbplatsen i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv php `yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp den statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om generatorn](https://github.com/annaesvensson/yellow-generate/tree/main/README-sv.md).
 
 ## Objekt
 
@@ -144,10 +136,10 @@ Beskrivning av metoder och argument:
 `content->find($location, $absoluteLocation = false): YellowPage|null`  
 Returnera [page](#yellow-page), null om det inte finns
 
-`content->index($showInvisible = false, $multiLanguage = false, $levelMax = 0): YellowPageCollection`  
+`content->index($showInvisible = false, $multiLanguage = false): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) med alla sidor
 
-`content->top($showInvisible = false, $showOnePager = true): YellowPageCollection`  
+`content->top($showInvisible = false): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) med navigering på toppnivå
 
 `content->path($location, $absoluteLocation = false): YellowPageCollection`  
@@ -232,7 +224,7 @@ Beskrivning av metoder och argument:
 `media->find($location, $absoluteLocation = false): YellowPage|null`  
 Returnera [page](#yellow-page) med information om mediefilen, null om det inte finns
 
-`media->index($showInvisible = false, $multiPass = false, $levelMax = 0): YellowPageCollection`  
+`media->index($showInvisible = false, $multiPass = false): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) med alla mediefiler
 
 `media->clean(): YellowPageCollection`  
@@ -744,7 +736,7 @@ if (!is_string_empty($url)) {
 
 Klassen `YellowToolbox` ger tillgång till verktygslådan med hjälpmetoder. Följande metoder är tillgängliga:
 
-`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile`
+`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile`
 
 ---
 
@@ -764,6 +756,12 @@ Returnera filer och kataloger
 
 `toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0): array`  
 Returnera filer och kataloger rekursivt
+
+`toolbox->getDirectoryInformation($path): array`  
+Returnera kataloginformation, ändringsdatum och filantal
+
+`toolbox->getDirectoryInformationRecursive($path, $levelMax = 0): array`  
+Returnera kataloginformation rekursivt, ändringsdatum och filantal
 
 `toolbox->readFile($fileName, $sizeMax = 0): string`  
 Läs fil, tom sträng om den inte hittas
@@ -1250,7 +1248,7 @@ onLoad ───────▶ onStartup ────────────�
                     ▼                        ▼                       ▼
 onUpdate        onParseMetaData          onEditContentFile       onCommand  
 onMail          onParseContentRaw        onEditMediaFile         onCommandHelp
-onLog           onParseContentShortcut   onEditSystemFile            │
+onLog           onParseContentElement    onEditSystemFile            │
                 onParseContentHtml       onEditUserAccount           │
                 onParsePageLayout            │                       │
                 onParsePageExtra             │                       │
@@ -1262,7 +1260,7 @@ onLog           onParseContentShortcut   onEditSystemFile            │
 
 Följande händelser är tillgängliga:
 
-`onCommand` `onCommandHelp` `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount` `onLoad` `onLog` `onMail` `onParseContentHtml` `onParseContentRaw` `onParseContentShortcut` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput` `onRequest` `onShutdown` `onStartup` `onUpdate`
+`onCommand` `onCommandHelp` `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount` `onLoad` `onLog` `onMail` `onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput` `onRequest` `onShutdown` `onStartup` `onUpdate`
 
 ### Yellow core händelser
 
@@ -1307,8 +1305,8 @@ Hantera metadata av en sida
 `public function onParseContentRaw($page, $text)`  
 Hantera sidinnehåll i råformat
 
-`public function onParseContentShortcut($page, $name, $text, $type)`  
-Hantera sidinnehåll av förkortning
+`public function onParseContentElement($page, $name, $text, $type)`  
+Hantera sidinnehåll för ett element
 
 `public function onParseContentHtml($page, $text)`  
 Hantera sidinnehåll i HTML-format
@@ -1324,7 +1322,7 @@ Hantera output data för sidan
 
 ---
 
-Tillägg för att skapa en förkortning:
+Tillägg för att skapa en egen förkortning:
 
 ``` php
 <?php
@@ -1337,8 +1335,8 @@ class YellowExample {
         $this->yellow = $yellow;
     }
     
-    // Handle page content of shortcut
-    public function onParseContentShortcut($page, $name, $text, $type) {
+    // Handle page content element
+    public function onParseContentElement($page, $name, $text, $attributes, $type) {
         $output = null;
         if ($name=="example" && ($type=="block" || $type=="inline")) {
             $output = "<div class=\"".htmlspecialchars($name)."\">";

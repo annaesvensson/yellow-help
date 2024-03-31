@@ -28,7 +28,7 @@ Während die meisten Verzeichnisse auf deiner Website verfügbar sind, gibt es z
 
 ## Text
 
-Du kannst deine Webseite im Webbrowser oder Texteditor bearbeiten. Ganz oben auf einer Seite kannst du `Title` und andere [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen) ändern. Darunter kannst du Text und Bilder ändern. Textformatierung mit [Markdown](https://github.com/annaesvensson/yellow-markdown/tree/main/README-de.md) wird unterstützt. HTML und Abkürzungen werden auch unterstützt. Hier sind einige Beispiele:
+Du kannst deine Webseite im Webbrowser oder Texteditor bearbeiten. Ganz oben auf einer Seite kannst du `Title` und andere [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen) ändern. Darunter kannst du Text und Bilder ändern. Textformatierung mit [Markdown](https://github.com/annaesvensson/yellow-markdown/tree/main/README-de.md) wird unterstützt. HTML wird auch unterstützt. Hier sind einige Beispiele:
 
     ---
     Title: Beispielseite
@@ -146,9 +146,9 @@ HTML benutzen:
     <img src="/media/images/photo.jpg" alt="Dies ist ein Beispielbild">
     <a href="https://datenstrom.se/de/" target="_blank">Link in einem neuen Tab öffnen</a>.
 
-Abkürzungen benutzen:
+Abkürzungen mit zusätzlichen Funktionen benutzen:
 
-    [image photo.jpg]    = Bild hinzufügen
+    [image photo.jpg]    = Bild oder Miniaturbild hinzufügen
     [gallery photo.*jpg] = Bildergalerie mit Popup hinzufügen
     [slider photo.*jpg]  = Bildergalerie mit Schieber hinzufügen
 

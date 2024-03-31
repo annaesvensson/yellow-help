@@ -105,7 +105,7 @@ Title: Footer
 
 ## Funktionen, Sprachen und Themes hinzufügen
 
-Es gibt [Erweiterungen für deine Webseite](https://github.com/datenstrom/yellow-extensions/tree/main/README-de.md) und eine [API für Entwickler](api-for-developers).
+Es gibt [Erweiterungen für deine Webseite](https://datenstrom.se/de/yellow/extensions/) und eine [API für Entwickler](api-for-developers).
 
 ## Verwandte Informationen
 
