@@ -95,15 +95,15 @@ YellowSystem::load Theme:stockholm
 Wichtige Informationen werden außerdem in die Datei `system/extensions/yellow-website.log` geschrieben. Falls du die Ursache eines Problems nicht selbst beheben kannst, dann [melde einen Fehler zusammen mit der Logdatei](contributing-guidelines). Die Logdatei gibt einen schnellen Überblick was auf deiner Website passiert, wann sie installiert wurde und welche Fehler aufgetreten sind. Hier ist ein Beispiel:
 
 ```
-2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
-2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
-2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
-2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
-2020-10-28 14:13:07 info Install extension 'English 0.8.27'
-2020-10-28 14:13:07 info Install extension 'German 0.8.27'
-2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
-2020-10-28 14:18:11 info Install extension 'Fika 0.8.15'
-2020-10-28 14:18:11 error Can't parse file 'system/extensions/fika.php'!
+2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
+2024-04-28 14:13:07 info Install extension 'Core 0.9.3'
+2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
+2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.1'
+2024-04-28 14:13:07 info Install extension 'English 0.9.2'
+2024-04-28 14:13:07 info Install extension 'German 0.9.2'
+2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
+2024-04-28 14:18:11 info Install extension 'Fika 0.9.1'
+2024-04-28 14:18:11 error Can't parse file 'system/workers/fika.php'!
 ```
 
 ## Probleme mit Apache

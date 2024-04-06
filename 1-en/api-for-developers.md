@@ -7,7 +7,7 @@ We <3 people who code.
 
 ## Folder structure
 
-You can change everything in the file manager on your computer. The `content` folder contains the [content files](how-to-change-the-content) of the website. You can edit your website here. The `media` folder contains the [media files](how-to-change-the-media) of the website. You can store your images and files here. The `system` folder contains the [system files](how-to-change-the-system) of the website. You can find installed extensions, configuration files and the log file here.
+You can change everything in the file manager on your computer. The `content` folder contains the [content files](how-to-change-the-content) of the website. You can edit your website here. The `media` folder contains the [media files](how-to-change-the-media) of the website. You can store your images and files here. The `system` folder contains the [system files](how-to-change-the-system) of the website. You can find configuration files and the log file here.
 
 ``` box-drawing {aria-hidden=true}
 ├── content               = content files
@@ -19,17 +19,18 @@ You can change everything in the file manager on your computer. The `content` fo
 │   ├── images            = image files for content
 │   └── thumbnails        = image thumbnails for content
 └── system                = system files
-    ├── extensions        = installed extensions
-    ├── layouts           = configurable layout files, for example HTML and PHP
+    ├── extensions        = configurable extension files, for example system settings
+    ├── layouts           = configurable layout files, for example HTML code
     ├── themes            = configurable theme files, for example CSS and JavaScript
-    └── trash             = deleted files, usually up to 90 days
+    └── workers           = files for developers, designers and translators
 ```
 
-The following configuration files and system files are available:
+The following configuration files and log files are available:
 
 `system/extensions/yellow-system.ini` = [file with system settings](how-to-change-the-system#system-settings)  
 `system/extensions/yellow-language.ini` = [file with language settings](how-to-change-the-system#language-settings)  
 `system/extensions/yellow-user.ini` = [file with user settings](how-to-change-the-system#user-settings)  
+`system/extensions/yellow-extension.ini` = [file with extension settings](how-to-change-the-system#extension-settings)  
 `system/extensions/yellow-website.log` = [log file of the website](how-to-change-the-system#log-file)  
 
 ## Tools
@@ -48,7 +49,7 @@ You can generate a static website at the command line. The static site generator
 
 ## Objects
 
-With the help of the API you can access files, settings and more. A fundamental object is `$this->yellow->page` to access the current page. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the entire API can be found in file `system/extensions/core.php`.
+With the help of the API you can access the file system and settings. A fundamental object is `$this->yellow->page` to access the current page. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the entire API can be found in file `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -624,7 +625,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 The class `YellowLookup` gives access to lookup and normalisation methods. The following methods are available:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -651,6 +652,9 @@ Normalise name
 `lookup->normaliseData($text, $type = "html", $filterStrict = true): string`  
 Normalise elements and attributes in HTML/SVG data
 
+`lookup->normaliseAddress($input, $type = "mail", $filterStrict = true): string`  
+Normalise name and email for a single address
+
 `lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
 Normalise fields in MIME headers
 
@@ -668,6 +672,9 @@ Normalise URL, make absolute URL
 
 `lookup->getUrlInformation($url): string`  
 Return URL information
+
+`lookup->getHtmlAttributes($text) : string`  
+Return HTML attributes from generic Markdown attributes
 
 `lookup->isFileLocation($location): bool`  
 Check if location is specifying file or directory
@@ -753,7 +760,7 @@ Return location arguments from current HTTP request
 `toolbox->getDirectoryEntries($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true): array`  
 Return files and directories
 
-`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0): array`  
+`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true, $levelMax = 0): array`  
 Return files and directories recursively
 
 `toolbox->getDirectoryInformation($path): array`  

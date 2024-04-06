@@ -20,8 +20,8 @@ Du kannst Dateien zum Herunterladen anbieten. Alle Dateiformate werden unterstü
 
 Link erstellen, unterschiedliche Dateiformate:
 
-    [PDF-Datei herunterladen](/media/downloads/yellow.pdf)
-    [ZIP-Datei herunterladen](/media/downloads/yellow.zip)
+    [PDF-Datei herunterladen](/media/downloads/yellow-deutsch.pdf)
+    [ZIP-Datei herunterladen](/media/downloads/yellow-main.zip)
     [Audio-Datei herunterladen](/media/downloads/audio-file.mp3)
 
 ## Bilder

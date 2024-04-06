@@ -20,8 +20,8 @@ You can provide files for download. All file formats are supported, however the 
 
 Making a link, different file formats:
 
-    [Download PDF file](/media/downloads/yellow.pdf)
-    [Download ZIP file](/media/downloads/yellow.zip)
+    [Download PDF file](/media/downloads/yellow-english.pdf)
+    [Download ZIP file](/media/downloads/yellow-main.zip)
     [Download audio file](/media/downloads/audio-file.mp3)
 
 ## Images

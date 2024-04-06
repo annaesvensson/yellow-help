@@ -7,7 +7,7 @@ Vi <3 människor som kodar.
 
 ## Mappstruktur
 
-Du kan ändra allt i filhanteraren på din dator. Mappen `content` innehåller webbplatsens [innehållsfilerna](how-to-change-the-content). Du kan redigera din webbplats här. Mappen `media` innehåller webbplatsens [mediefilerna](how-to-change-the-media). Du kan lagra dina bilder och filer här. Mappen `system` innehåller webbplatsens [systemfilerna](how-to-change-the-system). Du kan hitta installerade tillägg, konfigurationsfilar och loggfilen här.
+Du kan ändra allt i filhanteraren på din dator. Mappen `content` innehåller webbplatsens [innehållsfilerna](how-to-change-the-content). Du kan redigera din webbplats här. Mappen `media` innehåller webbplatsens [mediefilerna](how-to-change-the-media). Du kan lagra dina bilder och filer här. Mappen `system` innehåller webbplatsens [systemfilerna](how-to-change-the-system). Du kan hitta konfigurationsfilar och loggfilen här.
 
 ``` box-drawing {aria-hidden=true}
 ├── content               = innehållsfiler
@@ -19,17 +19,18 @@ Du kan ändra allt i filhanteraren på din dator. Mappen `content` innehåller w
 │   ├── images            = bildfiler för innehåll
 │   └── thumbnails        = miniatyrbilder för innehåll
 └── system                = systemfiler
-    ├── extensions        = installerade tillägg
+    ├── extensions        = konfigurerbara tilläggsfiler, till exempel systeminställningar
     ├── layouts           = konfigurerbara layoutfiler, till exempel HTML och PHP
     ├── themes            = konfigurerbara temafiler, till exempel CSS och JavaScript
-    └── trash             = raderade filer, vanligtvis upp till 90 dagar
+    └── workers           = filer for utvecklare, formgivare och översättare
 ```
 
-Följande konfigurationsfilar och systemfiler är tillgängliga:
+Följande konfigurationsfilar och loggfiler är tillgängliga:
 
 `system/extensions/yellow-system.ini` = [fil med systeminställningar](how-to-change-the-system#systeminställningar)  
 `system/extensions/yellow-language.ini` = [fil med språkinställningar](how-to-change-the-system#språkinställningar)  
 `system/extensions/yellow-user.ini` = [fil med användarinställningar](how-to-change-the-system#användarinställningar)  
+`system/extensions/yellow-extension.ini` = [fil med tilläggsinställningar](how-to-change-the-system#tilläggsinställningar)  
 `system/extensions/yellow-website.log` = [loggfilen för webbplatsen](how-to-change-the-system#loggfilen)  
 
 ## Verktyg
@@ -48,7 +49,7 @@ Du kan generera en statisk webbplats på kommandoraden. Den static-site-generato
 
 ## Objekt
 
-Med hjälp av API:et kan man komma åt filer, inställningar och mer. Ett grundläggande objekt är `$this->yellow->page` för att komma åt aktuella sidan. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för hela API:et finns i filen `system/extensions/core.php`.
+Med hjälp av API:et kan man komma åt filsystemet och inställningar. Ett grundläggande objekt är `$this->yellow->page` för att komma åt aktuella sidan. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för hela API:et finns i filen `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -625,7 +626,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 Klassen `YellowLookup` ger tillgång till uppslags och normaliseringsmetoder. Följande metoder är tillgängliga:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -652,6 +653,9 @@ Normalisera namn
 `lookup->normaliseData($text, $type = "html", $filterStrict = true): string`  
 Normalisera element och attribut i HTML/SVG-data 
 
+`lookup->normaliseAddress($input, $type = "mail", $filterStrict = true): string`  
+Normalisera namn och email för en enda adress
+
 `lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
 Normalisera fält i MIME-headers
 
@@ -669,6 +673,9 @@ Normalisera URL, gör absolut URL
 
 `lookup->getUrlInformation($url): string`  
 Returnera URL-information
+
+`lookup->getHtmlAttributes($text) : string`  
+Returnera HTML-attribut från generiska Markdown-attribut
 
 `lookup->isFileLocation($location): bool`  
 Kontrollera om platsen anger fil eller katalog
@@ -754,7 +761,7 @@ Returnera platsargument för aktuella HTTP-begäran
 `toolbox->getDirectoryEntries($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true): array`  
 Returnera filer och kataloger
 
-`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0): array`  
+`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true, $levelMax = 0): array`  
 Returnera filer och kataloger rekursivt
 
 `toolbox->getDirectoryInformation($path): array`  

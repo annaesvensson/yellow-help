@@ -10,10 +10,10 @@ All system files are located in the `system` folder. You can change your website
     ├── extensions
     ├── layouts
     ├── themes
-    └── trash
+    └── workers
 ```
 
-The `system/extensions` folder contains installed extensions, configuration files and the log file. You can change the appearance of your website in the `system/layouts` folder and `system/themes` folder. You can change layouts and themes as you like, knowledge of HTML, CSS and JavaScript is required. The `system/trash` folder contains deleted files, usually up to 90 days.
+The `system/extensions` folder contains configuration files and the log file. You can change the appearance of your website in the `system/layouts` folder and `system/themes` folder. You can change all layouts and themes as you like. Knowledge of HTML, CSS and JavaScript is required. It is better not to change any files in the `system/workers` folder.
 
 ## System settings
 
@@ -44,7 +44,7 @@ You can use a [web browser](https://github.com/annaesvensson/yellow-edit) or you
 The language settings are stored in file `system/extensions/yellow-language.ini`. Here's an example:
 
     Language: en
-    CoreDescription: Core functionality of the website.
+    CoreDescription: Core functionality of your website.
     CorePaginationPrevious: ← Previous
     CorePaginationNext: Next →
     CoreTimeFormatShort: H:i
@@ -63,7 +63,7 @@ The user settings are stored in file `system/extensions/yellow-user.ini`. Here's
 
     Email: anna@svensson.com
     Name: Anna Svensson
-    Description: Designer
+    Description: Developer and designer
     Language: en
     Access: create, edit, delete, restore, upload, configure, install, uninstall, update
     Home: /
@@ -75,6 +75,24 @@ The user settings are stored in file `system/extensions/yellow-user.ini`. Here's
     Status: active
 
 You can use a [web browser](https://github.com/annaesvensson/yellow-edit) or the [command line](https://github.com/annaesvensson/yellow-core) to create new user accounts. A user account consists of `Email` and other settings. If you don't want that pages are modified in a web browser, then restrict user accounts. Open the configuration file, change `Access` and `Home`. Users are allowed to edit pages within their home page, but nowhere else.
+
+## Extension settings
+
+The extension settings are stored in file `system/extensions/yellow-extension.ini`. Here's an example:
+
+    Extension: Core
+    Version: 0.9.3
+    Description: Core functionality of your website.
+    Developer: Anna Svensson
+    Tag: feature
+    DownloadUrl: https://github.com/annaesvensson/yellow-core/archive/refs/heads/main.zip
+    DocumentationUrl: https://github.com/annaesvensson/yellow-core
+    DocumentationLanguage: en, de, sv
+    Published: 2024-04-24 14:38:12
+    Status: available
+    system/workers/core.php: core.php, create, update
+
+You can see the installed extensions here. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
 
 ## Page settings
 
@@ -116,15 +134,15 @@ The following settings can be configured at the top of a page:
 The log file can be found in file `system/extensions/yellow-website.log`. Here's an example:
 
 ```
-2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
-2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
-2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
-2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
-2020-10-28 14:13:07 info Install extension 'English 0.8.27'
-2020-10-28 14:13:07 info Install extension 'German 0.8.27'
-2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
-2020-10-28 14:18:11 info Install extension 'Fika 0.8.15'
-2020-10-28 14:18:11 error Can't parse file 'system/extensions/fika.php'!
+2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
+2024-04-28 14:13:07 info Install extension 'Core 0.9.3'
+2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
+2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.1'
+2024-04-28 14:13:07 info Install extension 'English 0.9.2'
+2024-04-28 14:13:07 info Install extension 'German 0.9.2'
+2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
+2024-04-28 14:18:11 info Install extension 'Fika 0.9.1'
+2024-04-28 14:18:11 error Can't parse file 'system/workers/fika.php'!
 ```
 
 Do you have questions? [Get help](.).

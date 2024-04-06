@@ -76,7 +76,7 @@ Zitate erstellen:
 Links erstellen:
 
     [Link zu Seite](/help/how-to-make-a-small-website)
-    [Link zu Datei](/media/downloads/yellow.pdf)
+    [Link zu Datei](/media/downloads/yellow-deutsch.pdf)
     [Link zu Webseite](https://datenstrom.se/de/)
 
 Bilder hinzufügen:

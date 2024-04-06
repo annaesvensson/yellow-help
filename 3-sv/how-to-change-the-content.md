@@ -76,7 +76,7 @@ Skapa citat:
 Skapa länkar:
 
     [Länk till sidan](/help/how-to-make-a-small-website)
-    [Länk till fil](/media/downloads/yellow.pdf)
+    [Länk till fil](/media/downloads/yellow-svenska.pdf)
     [Länk till webbplats](https://datenstrom.se/sv/)
 
 Lägga till bilder:

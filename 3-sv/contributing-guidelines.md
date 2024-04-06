@@ -5,32 +5,38 @@ Läs hur du jobbar med oss och löser problem.
 
 ## Hur man jobbar med oss
 
-* [Förbättra funktioner, språk, teman](https://datenstrom.se/sv/yellow/extensions/) och [gör ditt eget tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md).
-* Föreställ dig vad som skulle göra livet enklare och vad användaren vill göra.
+* Föreställ dig vad användaren vill göra och vad som skulle göra livet enklare.
 * Sikta på minsta möjliga lösning, först få det att fungera och sedan gör det bättre.
 * Fråga dig själv, behöver jag det här, vill jag det här, kan jag göra det här bättre?
+* Förbättra tillgängliga tilläggen och gör dem mer användbara.
+
+Om du vill jobba med oss, [förbättra ett tillägg](https://datenstrom.se/sv/yellow/extensions/) eller [gör en översättning](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md).
 
 ## Hur man ställer en fråga
 
-* [Starta en ny diskussion för varje fråga](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
 * Skriv frågan i rubriken, det är det första alla kommer att se.
 * Beskriv så exakt som möjligt vad du vill göra och vilka problem du har.
+* Lägg till ett exempel, till exempel Markdown, inställningar eller din källkod.
 * Välj ett svar när din fråga har besvarats.
+
+Om du vill ställa en fråga, [starta en ny diskussion på engelska](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
 
 ## Hur man rapporterar ett fel
 
-* [Starta en ny diskussion för varje fel](https://github.com/datenstrom/yellow/discussions/categories/report-a-bug).
-* Förklara hur man återskapar felet, kolla om det händer varje gång.
+* Förklara hur man återskapar felet, med så mycket information som du har.
+* Visa felmeddelandet, det är bäst att kopiera det du ser på skärmen.
 * Lägg till många detaljer, särskilt loggfilen `system/extensions/yellow-website.log`.
 * Välj ett svar när felet har åtgärdats.
 
+Om du vill rapportera ett fel, [starta en ny diskussion på engelska](https://github.com/datenstrom/yellow/discussions/categories/report-a-bug).
+
 ## Bra att veta
 
-Vi gör saker för människor. Jobba med oss, ställ frågor och rapportera fel. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Tvinga ingenting. Du kan lämna diskussioner när som helst om dialogen inte är konstruktiv. Fokusera på människor som visa intresse och vill jobba med dig. Tacka människor som pekar dig i rätt riktning och ger dem en tumme upp. Du hittar oss på [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
+Jobba med oss, ställ frågor och rapportera fel. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Tvinga ingenting. Du kan lämna diskussioner när som helst om dialogen inte är konstruktiv. Fokusera på människor som visa intresse och vill jobba med dig. Tacka människor som pekar dig i rätt riktning, som skriver utförliga svar och ger dem en tumme upp. Du hittar oss på [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
 
 ## Exempel
 
-Ställa en fråga om inställningar, på engelska:
+Ställa en fråga om inställningar på engelska:
 
     Title: How do I change the language of my website?
     
@@ -50,7 +56,7 @@ Ställa en fråga om inställningar, på engelska:
     
     Let me know if you need more information. Thanks for your help.
 
-Ställa en fråga om layoutfiler, på engelska:
+Ställa en fråga om layoutfiler på engelska:
 
     Title: How do I show the correct date in layout files?
     
@@ -73,25 +79,25 @@ Ställa en fråga om layoutfiler, på engelska:
     
     Let me know if you need more information. Thanks for your help.
 
-Rapportera ett fel tillsammans med loggfilen, på engelska:
+Rapportera ett fel tillsammans med loggfilen på engelska:
 
     Title: Call to undefined function detectCoffee()
     
     Hello, I get the error message: Call to undefined function detectCoffee() 
-    in /var/www/website/system/extensions/fika.php. You can reproduce the bug 
+    in /var/www/website/system/workers/fika.php. You can reproduce the bug 
     in a new installation, select small website, install the fika extension. 
     Here is my log file `system/extensions/yellow-website.log`:
     
     ```
-    2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
-    2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
-    2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
-    2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
-    2020-10-28 14:13:07 info Install extension 'English 0.8.27'
-    2020-10-28 14:13:07 info Install extension 'German 0.8.27'
-    2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
-    2020-10-28 14:18:11 info Install extension 'Fika 0.8.15'
-    2020-10-28 14:18:11 error Can't parse file 'system/extensions/fika.php'!
+    2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
+    2024-04-28 14:13:07 info Install extension 'Core 0.9.3'
+    2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
+    2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.1'
+    2024-04-28 14:13:07 info Install extension 'English 0.9.2'
+    2024-04-28 14:13:07 info Install extension 'German 0.9.2'
+    2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
+    2024-04-28 14:18:11 info Install extension 'Fika 0.9.1'
+    2024-04-28 14:18:11 error Can't parse file 'system/workers/fika.php'!
     ```
     
     Let me know if you need more information. Thanks for investigating.

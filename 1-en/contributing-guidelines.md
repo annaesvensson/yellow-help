@@ -5,28 +5,34 @@ Learn how to work with us and solve problems.
 
 ## How to work with us
 
-* [Improve features, languages, themes](https://datenstrom.se/yellow/extensions/) and [make your own extension](https://github.com/annaesvensson/yellow-publish).
-* Imagine what would make life easier and what the user wants to do.
+* Imagine what the user wants to do and what would make life easier.
 * Aim for the smallest possible solution, first make it work then make it better.
 * Ask yourself, do I need this, do I want this, can I make this better?
+* Improve the available extensions and make them more useful.
+
+If you want to work with us, [improve an extension](https://datenstrom.se/yellow/extensions/) or [make a translation](https://github.com/annaesvensson/yellow-language).
 
 ## How to ask a question
 
-* [Start a new discussion for each question](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
 * Write the question in the title, it's the first thing everyone will see.
 * Describe as precisely as possible what you want to do and which problems you have.
+* Add an example, for example Markdown, settings or your source code.
 * Select an answer, when your question has been answered.
+
+If you want to ask a question, [start a new discussion](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
 
 ## How to report a bug
 
-* [Start a new discussion for each bug](https://github.com/datenstrom/yellow/discussions/categories/report-a-bug).
-* Explain how to reproduce the bug, check if it happens every time.
+* Explain how to reproduce the bug, with as many information as you have.
+* Show the error message, it's best to copy what you see on your screen.
 * Add many details, especially the log file `system/extensions/yellow-website.log`.
 * Select an answer, when the bug has been fixed.
 
+If you want to report a bug, [start a new discussion](https://github.com/datenstrom/yellow/discussions/categories/report-a-bug).
+
 ## Good to know
 
-We make things for people. Work with us, ask questions and report bugs. We are interested in what you want to do and which problems you have. The more we know the better we can help. Our community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Don't force anything. You can step out of discussions at any time if the dialog is not constructive. Focus on the people who show interest and want to work with you. Thank people who point you in the right direction and give them a thumbs up. You can find us on [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) or [contact a human](https://datenstrom.se/contact/).
+We are interested in what you want to do and which problems you have. The more we know the better we can help. Our community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Don't force anything. You can step out of discussions at any time if the dialog is not constructive. Focus on the people who show interest and want to work with you. Thank people who point you in the right direction, who write detailed answers and give them a thumbs up. You can find us on [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) or [contact a human](https://datenstrom.se/contact/).
 
 ## Examples
 
@@ -78,20 +84,20 @@ Reporting a bug along with the log file:
     Title: Call to undefined function detectCoffee()
     
     Hello, I get the error message: Call to undefined function detectCoffee() 
-    in /var/www/website/system/extensions/fika.php. You can reproduce the bug 
+    in /var/www/website/system/workers/fika.php. You can reproduce the bug 
     in a new installation, select small website, install the fika extension. 
     Here is my log file `system/extensions/yellow-website.log`:
     
     ```
-    2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
-    2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
-    2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
-    2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
-    2020-10-28 14:13:07 info Install extension 'English 0.8.27'
-    2020-10-28 14:13:07 info Install extension 'German 0.8.27'
-    2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
-    2020-10-28 14:18:11 info Install extension 'Fika 0.8.15'
-    2020-10-28 14:18:11 error Can't parse file 'system/extensions/fika.php'!
+    2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
+    2024-04-28 14:13:07 info Install extension 'Core 0.9.3'
+    2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
+    2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.1'
+    2024-04-28 14:13:07 info Install extension 'English 0.9.2'
+    2024-04-28 14:13:07 info Install extension 'German 0.9.2'
+    2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
+    2024-04-28 14:18:11 info Install extension 'Fika 0.9.1'
+    2024-04-28 14:18:11 error Can't parse file 'system/workers/fika.php'!
     ```
     
     Let me know if you need more information. Thanks for investigating.

@@ -19,7 +19,7 @@ Title: Startseite
 ---
 [image photo.jpg Beispiel rounded]
 
-[edit - Du kannst diese Seite im Webbrowser bearbeiten] oder einen Texteditor benutzen.  
+[edit - Du kannst diese Seite bearbeiten] oder einen Texteditor benutzen.  
 [Hilfe finden](https://datenstrom.se/de/yellow/help/).
 ```
 

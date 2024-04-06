@@ -10,10 +10,10 @@ Alle Systemdateien befinden sich im `system`-Verzeichnis. Hier passt man seine W
     ├── extensions
     ├── layouts
     ├── themes
-    └── trash
+    └── workers
 ```
 
-Das `system/extensions`-Verzeichnis enthält installierte Erweiterungen, Konfigurationsdateien und die Logdatei. Man kann das Aussehen seiner Webseite im `system/layouts`-Verzeichnis und `system/themes`-Verzeichnis anpassen. Man kann Layouts und Themes so ändern wie man will, Kenntnisse in HTML, CSS und JavaScript sind erforderlich. Das `system/trash`-Verzeichnis enthält gelöschte Dateien, normalerweise bis zu 90 Tagen.
+Das `system/extensions`-Verzeichnis enthält Konfigurationsdateien und die Logdatei. Man kann das Aussehen seiner Webseite im `system/layouts`-Verzeichnis und `system/themes`-Verzeichnis anpassen. Man kann alle Layouts und Themes so ändern wie man will. Kenntnisse in HTML, CSS und JavaScript sind erforderlich. Im `system/workers`-Verzeichnis sollte man keine Dateien ändern.
 
 ## Systemeinstellungen
 
@@ -44,7 +44,7 @@ Im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de
 Die Spracheinstellungen sind in der Datei `system/extensions/yellow-language.ini` gespeichert. Hier ist ein Beispiel:
 
     Language: de
-    CoreDescription: Kernfunktionalität der Webseite.
+    CoreDescription: Kernfunktionalität deiner Webseite.
     CorePaginationPrevious: ← Zurück
     CorePaginationNext: Weiter →
     CoreTimeFormatShort: H:i
@@ -63,7 +63,7 @@ Die Benutzereinstellungen sind in der Datei `system/extensions/yellow-user.ini` 
 
     Email: anna@svensson.com
     Name: Anna Svensson
-    Description: Designer
+    Description: Entwickler und Designer
     Language: de
     Access: create, edit, delete, restore, upload, configure, install, uninstall, update
     Home: /
@@ -75,6 +75,24 @@ Die Benutzereinstellungen sind in der Datei `system/extensions/yellow-user.ini` 
     Status: active
 
 Im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) oder der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) kannst du neue Benutzerkonten anlegen. Ein Benutzerkonto besteht aus `Email` und weiteren Einstellungen. Falls du nicht willst dass Seiten im Webbrowser verändert werden, dann beschränke Benutzerkonten. Öffne die Konfigurationsdatei, ändere `Access` und `Home`. Benutzer dürfen Seiten innerhalb ihrer Startseite bearbeiten, aber nirgendwo sonst.
+
+## Erweiterungseinstellungen
+
+Die Erweiterungseinstellungen sind in der Datei `system/extensions/yellow-extension.ini` gespeichert. Hier ist ein Beispiel:
+
+    Extension: Core
+    Version: 0.9.3
+    Description: Core functionality of your website.
+    Developer: Anna Svensson
+    Tag: feature
+    DownloadUrl: https://github.com/annaesvensson/yellow-core/archive/refs/heads/main.zip
+    DocumentationUrl: https://github.com/annaesvensson/yellow-core
+    DocumentationLanguage: en, de, sv
+    Published: 2024-04-24 14:38:12
+    Status: available
+    system/workers/core.php: core.php, create, update
+
+Hier kannst du sehen welche Erweiterungen installiert sind. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
 
 ## Seiteneinstellungen
 
@@ -116,15 +134,15 @@ Die folgenden Einstellungen können ganz oben auf einer Seite vorgenommen werden
 Die Logdatei findet man in der Datei `system/extensions/yellow-website.log`. Hier ist ein Beispiel:
 
 ```
-2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
-2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
-2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
-2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
-2020-10-28 14:13:07 info Install extension 'English 0.8.27'
-2020-10-28 14:13:07 info Install extension 'German 0.8.27'
-2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
-2020-10-28 14:18:11 info Install extension 'Fika 0.8.15'
-2020-10-28 14:18:11 error Can't parse file 'system/extensions/fika.php'!
+2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
+2024-04-28 14:13:07 info Install extension 'Core 0.9.3'
+2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
+2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.1'
+2024-04-28 14:13:07 info Install extension 'English 0.9.2'
+2024-04-28 14:13:07 info Install extension 'German 0.9.2'
+2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
+2024-04-28 14:18:11 info Install extension 'Fika 0.9.1'
+2024-04-28 14:18:11 error Can't parse file 'system/workers/fika.php'!
 ```
 
 Hast du Fragen? [Hilfe finden](.).

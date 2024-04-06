@@ -10,10 +10,10 @@ Alla systemfiler finns i `system` mappen. Du kan anpassa din webbplats här.
     ├── extensions
     ├── layouts
     ├── themes
-    └── trash
+    └── workers
 ```
 
-Mappen `system/extensions` innehåller installerade tillägg, konfigurationsfilar och loggfilen. Du kan justera utseendet på din webbplats i `system/layouts` mappen och `system/themes` mappen. Du kan ändra layouter och teman som du vill, vissa kunskaper i HTML, CSS och JavaScript krävs. Mappen `system/trash` innehåller raderade filer, vanligtvis upp till 90 dagar.
+Mappen `system/extensions` innehåller konfigurationsfilar och loggfilen. Du kan justera utseendet på din webbplats i `system/layouts` mappen och `system/themes` mappen. Du kan ändra alla layouter och teman som du vill. Vissa kunskaper i HTML, CSS och JavaScript krävs. Det är bättre om man inte ändrar filer i `system/workers` mappen.
 
 ## Systeminställningar
 
@@ -44,7 +44,7 @@ Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree
 Språkinställningar lagras i filen `system/extensions/yellow-language.ini`. Här är ett exempel:
 
     Language: sv
-    CoreDescription: Webbplatsens kärnfunktion.
+    CoreDescription: Kärnfunktionalitet på din webbplats.
     CorePaginationPrevious: ← Tidigare
     CorePaginationNext: Nästa →
     CoreTimeFormatShort: H:i
@@ -63,7 +63,7 @@ Användarinställningar lagras i filen `system/extensions/yellow-user.ini`. Här
 
     Email: anna@svensson.com
     Name: Anna Svensson
-    Description: Formgivare
+    Description: Utvecklare och formgivare
     Language: sv
     Access: create, edit, delete, restore, upload, configure, install, uninstall, update
     Home: /
@@ -75,6 +75,24 @@ Användarinställningar lagras i filen `system/extensions/yellow-user.ini`. Här
     Status: active
 
 Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) eller [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md) för att skapa nya användarkonton. Ett användarkonto består av `Email` och andra inställningar. Om du inte vill att sidorna ska ändras i en webbläsare begränsar du användarkonton. Öppna konfigurationsfilen, ändra `Access` och `Home`. Användare får redigera sidor på sin hemsida, men inte någon annanstans.
+
+## Tilläggsinställningar
+
+Tilläggsinställningar lagras i filen `system/extensions/yellow-extension.ini`. Här är ett exempel:
+
+    Extension: Core
+    Version: 0.9.3
+    Description: Core functionality of your website.
+    Developer: Anna Svensson
+    Tag: feature
+    DownloadUrl: https://github.com/annaesvensson/yellow-core/archive/refs/heads/main.zip
+    DocumentationUrl: https://github.com/annaesvensson/yellow-core
+    DocumentationLanguage: en, de, sv
+    Published: 2024-04-24 14:38:12
+    Status: available
+    system/workers/core.php: core.php, create, update
+
+Du kan se installerade tilläggen här. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
 
 ## Sidinställningar
 
@@ -116,15 +134,15 @@ Följande inställningar kan konfigureras högst upp på en sida:
 Loggfilen finns i filen `system/extensions/yellow-website.log`. Här är ett exempel:
 
 ```
-2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
-2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
-2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
-2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
-2020-10-28 14:13:07 info Install extension 'English 0.8.27'
-2020-10-28 14:13:07 info Install extension 'German 0.8.27'
-2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
-2020-10-28 14:18:11 info Install extension 'Fika 0.8.15'
-2020-10-28 14:18:11 error Can't parse file 'system/extensions/fika.php'!
+2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
+2024-04-28 14:13:07 info Install extension 'Core 0.9.3'
+2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
+2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.1'
+2024-04-28 14:13:07 info Install extension 'English 0.9.2'
+2024-04-28 14:13:07 info Install extension 'German 0.9.2'
+2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
+2024-04-28 14:18:11 info Install extension 'Fika 0.9.1'
+2024-04-28 14:18:11 error Can't parse file 'system/workers/fika.php'!
 ```
 
 Har du några frågor? [Få hjälp](.).

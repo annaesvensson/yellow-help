@@ -1,12 +1,12 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Help 0.8.23
+# Help 0.9.1
 
 Hjälp för din webbplats.
 
 <p align="center"><img src="SCREENSHOT.png" alt="Skärmdump"></p>
 
-## Hur man installerar hjälpen
+## Hur man installerar ett tillägg
 
 [Ladda ner ZIP-filen](https://github.com/annaesvensson/yellow-help/archive/refs/heads/main.zip) och kopiera den till din `system/extensions` mapp. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
 

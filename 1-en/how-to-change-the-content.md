@@ -76,7 +76,7 @@ Making quotes:
 Making links:
 
     [Link to page](/help/how-to-make-a-small-website)
-    [Link to file](/media/downloads/yellow.pdf)
+    [Link to file](/media/downloads/yellow-english.pdf)
     [Link to website](https://datenstrom.se)
 
 Adding images:

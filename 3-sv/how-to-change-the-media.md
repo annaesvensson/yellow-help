@@ -20,8 +20,8 @@ Du kan tillhandahålla filer för nedladdning. Alla filformat stöds, men upplad
 
 Skapa en länk, olika filformat:
 
-    [Ladda ner PDF-fil](/media/downloads/yellow.pdf)
-    [Ladda ner ZIP-fil](/media/downloads/yellow.zip)
+    [Ladda ner PDF-fil](/media/downloads/yellow-svenska.pdf)
+    [Ladda ner ZIP-fil](/media/downloads/yellow-main.zip)
     [Ladda ner audio-fil](/media/downloads/audio-file.mp3)
 
 ## Bilder

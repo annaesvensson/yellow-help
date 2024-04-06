@@ -5,32 +5,38 @@ Erfahre wie du mit uns arbeiten und Probleme lösen kannst.
 
 ## Wie man mit uns arbeitet
 
-* [Verbessere Funktionen, Sprachen, Themes](https://datenstrom.se/de/yellow/extensions/) und [erstelle deine eigene Erweiterung](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md).
-* Stell dir vor was das Leben einfacher machen würde und was der Benutzer machen möchte.
+* Stell dir vor was der Benutzer machen möchte und was das Leben einfacher machen würde.
 * Strebe die kleinstmögliche Lösung an, erst funktionieren lassen dann besser machen.
 * Frage dich selbst, brauche ich das, will ich das, kann ich das besser machen?
+* Verbessere die verfügbaren Erweiterungen und mache sie nützlicher.
+
+Falls du mit uns arbeiten willst, [verbessere eine Erweiterung](https://datenstrom.se/de/yellow/extensions/) oder [erstelle eine Übersetzung](https://github.com/annaesvensson/yellow-language/tree/main/README-de.md).
 
 ## Wie man eine Frage stellt
 
-* [Beginne eine neue Diskussion für jede Frage](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
 * Schreibe die Frage in den Titel, es ist das Erste was alle sehen.
 * Beschreibe möglichst genau was du machen möchtest und welche Probleme du hast.
+* Füge ein Beispiel hinzu, beispielsweise Markdown, Einstellungen oder deinen Quellcode.
 * Wähle eine Antwort aus, wenn deine Frage beantwortet wurde.
+
+Falls du eine Frage stellen willst, [beginne eine neue Diskussion auf Englisch](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
 
 ## Wie man einen Fehler meldet
 
-* [Beginne eine neue Diskussion für jeden Fehler](https://github.com/datenstrom/yellow/discussions/categories/report-a-bug).
-* Erkläre wie man den Fehler reproduziert, überprüfe ob es jedesmal passiert.
+* Erkläre wie man den Fehler reproduziert, mit so vielen Informationen wie du hast.
+* Zeige die Fehlermeldung an, am besten kopierst du was du auf dem Bildschirm siehst.
 * Füge viele Details hinzu, vor allem die Logdatei `system/extensions/yellow-website.log`.
 * Wähle eine Antwort aus, wenn der Fehler behoben wurde.
 
+Falls du einen Fehler melden willst, [beginne eine neue Diskussion auf Englisch](https://github.com/datenstrom/yellow/discussions/categories/report-a-bug).
+
 ## Gut zu wissen
 
-Wir machen Dingen für Menschen. Arbeite mit uns, stelle Fragen und melde Fehler. Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser können wir dir helfen. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei den Menschen, die dir den richtigen Weg zeigen und gebe ihnen einen Daumen nach oben. Du findest uns auf [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
+Arbeite mit uns, stelle Fragen und melde Fehler. Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser können wir dir helfen. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei den Menschen, die dir den richtigen Weg zeigen, die ausführliche Antworten schreiben und gebe ihnen einen Daumen nach oben. Du findest uns auf [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
 
 ## Beispiele
 
-Eine Frage über Einstellungen stellen, auf Englisch:
+Eine Frage über Einstellungen auf Englisch stellen:
 
     Title: How do I change the language of my website?
     
@@ -50,7 +56,7 @@ Eine Frage über Einstellungen stellen, auf Englisch:
     
     Let me know if you need more information. Thanks for your help.
 
-Eine Frage über Layoutdateien stellen, auf Englisch:
+Eine Frage über Layoutdateien auf Englisch stellen:
 
     Title: How do I show the correct date in layout files?
     
@@ -73,25 +79,25 @@ Eine Frage über Layoutdateien stellen, auf Englisch:
     
     Let me know if you need more information. Thanks for your help.
 
-Einen Fehler zusammen mit der Logdatei melden, auf Englisch:
+Einen Fehler zusammen mit der Logdatei auf Englisch melden:
 
     Title: Call to undefined function detectCoffee()
     
     Hello, I get the error message: Call to undefined function detectCoffee() 
-    in /var/www/website/system/extensions/fika.php. You can reproduce the bug 
+    in /var/www/website/system/workers/fika.php. You can reproduce the bug 
     in a new installation, select small website, install the fika extension. 
     Here is my log file `system/extensions/yellow-website.log`:
     
     ```
-    2020-10-28 14:13:07 info Install Datenstrom Yellow 0.8.17, PHP 8.0.24, Apache 2.4.33, Mac
-    2020-10-28 14:13:07 info Install extension 'Core 0.8.41'
-    2020-10-28 14:13:07 info Install extension 'Markdown 0.8.19'
-    2020-10-28 14:13:07 info Install extension 'Stockholm 0.8.13'
-    2020-10-28 14:13:07 info Install extension 'English 0.8.27'
-    2020-10-28 14:13:07 info Install extension 'German 0.8.27'
-    2020-10-28 14:13:07 info Install extension 'Swedish 0.8.27'
-    2020-10-28 14:18:11 info Install extension 'Fika 0.8.15'
-    2020-10-28 14:18:11 error Can't parse file 'system/extensions/fika.php'!
+    2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
+    2024-04-28 14:13:07 info Install extension 'Core 0.9.3'
+    2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
+    2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.1'
+    2024-04-28 14:13:07 info Install extension 'English 0.9.2'
+    2024-04-28 14:13:07 info Install extension 'German 0.9.2'
+    2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
+    2024-04-28 14:18:11 info Install extension 'Fika 0.9.1'
+    2024-04-28 14:18:11 error Can't parse file 'system/workers/fika.php'!
     ```
     
     Let me know if you need more information. Thanks for investigating.

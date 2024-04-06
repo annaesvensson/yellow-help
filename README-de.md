@@ -1,12 +1,12 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Help 0.8.23
+# Help 0.9.1
 
 Hilfe für deine Webseite.
 
 <p align="center"><img src="SCREENSHOT.png" alt="Bildschirmfoto"></p>
 
-## Wie man die Hilfe installiert
+## Wie man eine Erweiterung installiert
 
 [ZIP-Datei herunterladen](https://github.com/annaesvensson/yellow-help/archive/refs/heads/main.zip) und in dein `system/extensions`-Verzeichnis kopieren. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
 

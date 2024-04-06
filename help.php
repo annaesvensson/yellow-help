@@ -2,7 +2,7 @@
 // Help extension, https://github.com/annaesvensson/yellow-help
 
 class YellowHelp {
-    const VERSION = "0.8.23";
+    const VERSION = "0.9.1";
     public $yellow;         // access to API
 
     // Handle initialisation

@@ -7,7 +7,7 @@ Wir <3 Menschen die programmieren.
 
 ## Verzeichnisstruktur
 
-Du kannst alles im Dateimanager auf deinem Computer ändern. Das `content`-Verzeichnis enthält die [Inhaltsdateien](how-to-change-the-content) der Webseite. Hier bearbeitet man seine Webseite. Das `media`-Verzeichnis enthält die [Mediendateien](how-to-change-the-media) der Webseite. Hier speichert man seine Bilder und Dateien. Das `system`-Verzeichnis enthält die [Systemdateien](how-to-change-the-system) der Webseite. Hier findet man installierte Erweiterungen, Konfigurationsdateien und die Logdatei.
+Du kannst alles im Dateimanager auf deinem Computer ändern. Das `content`-Verzeichnis enthält die [Inhaltsdateien](how-to-change-the-content) der Webseite. Hier bearbeitet man seine Webseite. Das `media`-Verzeichnis enthält die [Mediendateien](how-to-change-the-media) der Webseite. Hier speichert man seine Bilder und Dateien. Das `system`-Verzeichnis enthält die [Systemdateien](how-to-change-the-system) der Webseite. Hier findet man Konfigurationsdateien und die Logdatei.
 
 ``` box-drawing {aria-hidden=true}
 ├── content               = Inhaltsdateien
@@ -19,17 +19,18 @@ Du kannst alles im Dateimanager auf deinem Computer ändern. Das `content`-Verze
 │   ├── images            = Bilder für den Inhalt
 │   └── thumbnails        = Miniaturbilder für den Inhalt
 └── system                = Systemdateien
-    ├── extensions        = installierte Erweiterungen
-    ├── layouts           = konfigurierbare Layoutdateien, beispielsweise HTML und PHP
+    ├── extensions        = konfigurierbare Erweiterungsdateien, beispielsweise Systemeinstellungen
+    ├── layouts           = konfigurierbare Layoutdateien, beispielsweise HTML-Code
     ├── themes            = konfigurierbare Themedateien, beispielsweise CSS und JavaScript
-    └── trash             = gelöschte Dateien, normalerweise bis zu 90 Tagen
+    └── workers           = Dateien für Entwickler, Designer und Übersetzer
 ```
 
-Die folgenden Konfigurationsdateien und Systemdateien sind verfügbar:
+Die folgenden Konfigurationsdateien und Logdateien sind verfügbar:
 
 `system/extensions/yellow-system.ini` = [Datei mit Systemeinstellungen](how-to-change-the-system#systemeinstellungen)  
 `system/extensions/yellow-language.ini` = [Datei mit Spracheinstellungen](how-to-change-the-system#spracheinstellungen)  
 `system/extensions/yellow-user.ini` = [Datei mit Benutzereinstellungen](how-to-change-the-system#benutzereinstellungen)  
+`system/extensions/yellow-extension.ini` = [Datei mit Erweiterungseinstellungen](how-to-change-the-system#erweiterungseinstellungen)  
 `system/extensions/yellow-website.log` = [Logdatei der Webseite](how-to-change-the-system#logdatei)  
 
 ## Werkzeuge
@@ -48,7 +49,7 @@ Du kannst eine statische Webseite in der Befehlszeile generieren. Der Static-Sit
 
 ## Objekte
 
-Mit Hilfe der API kann man auf Dateien, Einstellungen und mehr zugreifen. Ein grundlegendes Objekt ist `$this->yellow->page` um auf die aktuelle Seite zuzugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der gesamten API findet man in der Datei `system/extensions/core.php`.
+Mit Hilfe der API kann man auf das Dateisystem und Einstellungen zugreifen. Ein grundlegendes Objekt ist `$this->yellow->page` um auf die aktuelle Seite zuzugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der gesamten API findet man in der Datei `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -624,7 +625,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 Die Klasse `YellowLookup` gibt Zugang zu Nachschlags- und Normalisierungsmethoden. Die folgenden Methoden sind verfügbar:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseArguments` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -651,6 +652,9 @@ Normalisiere einen Namen
 `lookup->normaliseData($text, $type = "html", $filterStrict = true): string`  
 Normalisiere Elemente und Attribute in HTML/SVG-Daten
 
+`lookup->normaliseAddress($input, $type = "mail", $filterStrict = true): string`  
+Normalisiere Name und E-Mail für eine einzelne Adresse
+
 `lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
 Normalisiere Felder in MIME-Headers
 
@@ -668,6 +672,9 @@ Normalisiere eine URL, mache absolute URL
 
 `lookup->getUrlInformation($url): string`  
 Hole URL-Informationen
+
+`lookup->getHtmlAttributes($text) : string`  
+Hole HTML-Attribute aus generischen Markdown-Attributen
 
 `lookup->isFileLocation($location): bool`  
 Überprüfe ob der Ort eine Datei oder ein Verzeichnis angibt
@@ -753,7 +760,7 @@ Hole die Ortargumente der aktuellen HTTP-Anfrage
 `toolbox->getDirectoryEntries($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true): array`  
 Hole Dateien und Verzeichnisse
 
-`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $levelMax = 0): array`  
+`toolbox->getDirectoryEntriesRecursive($path, $regex = "/.*/", $sort = true, $directories = true, $includePath = true, $levelMax = 0): array`  
 Hole Dateien und Verzeichnisse rekursiv
 
 `toolbox->getDirectoryInformation($path): array`  
