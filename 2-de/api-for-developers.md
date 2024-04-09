@@ -625,7 +625,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 Die Klasse `YellowLookup` gibt Zugang zu Nachschlags- und Normalisierungsmethoden. Die folgenden Methoden sind verfügbar:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findMediaDirectory` `findMediaLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findFileFromSystemLocation` `findMediaDirectory` `findMediaLocationFromFile` `findSystemLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -645,6 +645,12 @@ Hole Dateipfad aus dem Medienort
 
 `lookup->findMediaDirectory($key): string`  
 Hole Medienpfad für eine Systemeinstellung
+
+`lookup->findSystemLocationFromFile($fileName): string`  
+Hole Systemort aus dem Dateipfad, für virtuell zugeordnete Systemdateien
+
+`lookup->findFileFromSystemLocation($location): string`  
+Hole Dateipfad aus dem Systemnort, für virtuell zugeordnete Systemdateien
 
 `lookup->normaliseName($text, $removePrefix = false, $removeExtension = false, $filterStrict = false): string`  
 Normalisiere einen Namen
@@ -1371,9 +1377,9 @@ class YellowExample {
     public function onParsePageExtra($page, $name) {
         $output = null;
         if ($name=="header") {
-            $extensionLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreExtensionLocation");
-            $output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$extensionLocation}example.css\" />\n";
-            $output .= "<script type=\"text/javascript\" defer=\"defer\" src=\"{$extensionLocation}example.js\"></script>\n";
+            $assetLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreAssetLocation");
+            $output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$assetLocation}example.css\" />\n";
+            $output .= "<script type=\"text/javascript\" defer=\"defer\" src=\"{$assetLocation}example.js\"></script>\n";
         }
         return $output;
     }
