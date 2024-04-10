@@ -748,7 +748,7 @@ if (!is_string_empty($url)) {
 
 Die Klasse `YellowToolbox` gibt Zugang zur Werkzeugkiste mit Hilfsmethoden. Die folgenden Methoden sind verfügbar:
 
-`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile`
+`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
 
 ---
 
@@ -778,8 +778,8 @@ Hole Verzeichnisinformationen rekursive, Änderungsdatum und Anzahl Dateien
 `toolbox->readFile($fileName, $sizeMax = 0): string`  
 Lese eine Datei, leerer String falls nicht vorhanden
 
-`toolbox->createFile($fileName, $fileData, $mkdir = false): bool`  
-Erstelle eine Datei
+`toolbox->writeFile($fileName, $fileData, $mkdir = false): bool`  
+Schreibe eine Datei
 
 `toolbox->appendFile($fileName, $fileData, $mkdir = false): bool`  
 Hänge an eine Datei an
@@ -854,7 +854,7 @@ $path = $this->yellow->system->get("coreContentDirectory");
 foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/", true, false) as $entry) {
     $fileData = $fileDataNew = $this->yellow->toolbox->readFile($entry);
     $fileDataNew = str_replace("I drink a lot of water", "I drink a lot of coffee", $fileDataNew);
-    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($entry, $fileDataNew)) {
+    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->writeFile($entry, $fileDataNew)) {
         $this->yellow->toolbox->log("error", "Can't write file '$entry'!");
     }
 }

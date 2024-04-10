@@ -748,7 +748,7 @@ if (!is_string_empty($url)) {
 
 The class `YellowToolbox` gives access to toolbox with helper methods. The following methods are available:
 
-`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile`
+`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
 
 ---
 
@@ -778,8 +778,8 @@ Return directory information recursively, modification date and file count
 `toolbox->readFile($fileName, $sizeMax = 0): string`  
 Read file, empty string if not found  
 
-`toolbox->createFile($fileName, $fileData, $mkdir = false): bool`  
-Create file  
+`toolbox->writeFile($fileName, $fileData, $mkdir = false): bool`  
+Write file  
 
 `toolbox->appendFile($fileName, $fileData, $mkdir = false): bool`  
 Append file  
@@ -854,7 +854,7 @@ $path = $this->yellow->system->get("coreContentDirectory");
 foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/", true, false) as $entry) {
     $fileData = $fileDataNew = $this->yellow->toolbox->readFile($entry);
     $fileDataNew = str_replace("I drink a lot of water", "I drink a lot of coffee", $fileDataNew);
-    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($entry, $fileDataNew)) {
+    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->writeFile($entry, $fileDataNew)) {
         $this->yellow->toolbox->log("error", "Can't write file '$entry'!");
     }
 }

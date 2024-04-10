@@ -749,7 +749,7 @@ if (!is_string_empty($url)) {
 
 Klassen `YellowToolbox` ger tillgång till verktygslådan med hjälpmetoder. Följande metoder är tillgängliga:
 
-`appendFile` `copyFile` `createFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile`
+`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
 
 ---
 
@@ -779,8 +779,8 @@ Returnera kataloginformation rekursivt, ändringsdatum och filantal
 `toolbox->readFile($fileName, $sizeMax = 0): string`  
 Läs fil, tom sträng om den inte hittas
 
-`toolbox->createFile($fileName, $fileData, $mkdir = false): bool`  
-Skapa fil  
+`toolbox->writeFile($fileName, $fileData, $mkdir = false): bool`  
+Skriv fil  
 
 `toolbox->appendFile($fileName, $fileData, $mkdir = false): bool`  
 Lägg till fil
@@ -855,7 +855,7 @@ $path = $this->yellow->system->get("coreContentDirectory");
 foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/", true, false) as $entry) {
     $fileData = $fileDataNew = $this->yellow->toolbox->readFile($entry);
     $fileDataNew = str_replace("I drink a lot of water", "I drink a lot of coffee", $fileDataNew);
-    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->createFile($entry, $fileDataNew)) {
+    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->writeFile($entry, $fileDataNew)) {
         $this->yellow->toolbox->log("error", "Can't write file '$entry'!");
     }
 }
