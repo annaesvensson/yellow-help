@@ -10,7 +10,7 @@ Erfahre wie du mit uns arbeiten und Probleme lösen kannst.
 * Frage dich selbst, brauche ich das, will ich das, kann ich das besser machen?
 * Verbessere die verfügbaren Erweiterungen und mache sie nützlicher.
 
-Falls du mit uns arbeiten willst, [verbessere eine Erweiterung](https://datenstrom.se/de/yellow/extensions/) oder [erstelle eine Übersetzung](https://github.com/annaesvensson/yellow-language/tree/main/README-de.md).
+Falls du mit uns arbeiten willst, [verbessere eine Erweiterung](https://datenstrom.se/de/yellow/extensions/) oder [erstelle eine Übersetzung](how-to-customise-a-language#erstelle-eine-übersetzung).
 
 ## Wie man eine Frage stellt
 
@@ -19,7 +19,7 @@ Falls du mit uns arbeiten willst, [verbessere eine Erweiterung](https://datenstr
 * Füge ein Beispiel hinzu, beispielsweise Markdown, Einstellungen oder deinen Quellcode.
 * Wähle eine Antwort aus, wenn deine Frage beantwortet wurde.
 
-Falls du eine Frage stellen willst, [beginne eine neue Diskussion auf Englisch](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
+Falls du eine Frage stellen willst, [beginne eine neue Diskussion](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
 
 ## Wie man einen Fehler meldet
 
@@ -28,20 +28,20 @@ Falls du eine Frage stellen willst, [beginne eine neue Diskussion auf Englisch](
 * Füge viele Details hinzu, vor allem die Logdatei `system/extensions/yellow-website.log`.
 * Wähle eine Antwort aus, wenn der Fehler behoben wurde.
 
-Falls du einen Fehler melden willst, [beginne eine neue Diskussion auf Englisch](https://github.com/datenstrom/yellow/discussions/categories/report-a-bug).
+Falls du einen Fehler melden willst, [beginne eine neue Diskussion](https://github.com/datenstrom/yellow/discussions/categories/report-a-bug).
 
 ## Gut zu wissen
 
-Arbeite mit uns, stelle Fragen und melde Fehler. Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser können wir dir helfen. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei den Menschen, die dir den richtigen Weg zeigen, die ausführliche Antworten schreiben und gebe ihnen einen Daumen nach oben. Du findest uns auf [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
+Arbeite mit uns, stelle Fragen und melde Fehler. Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser können wir dir helfen. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei den Menschen, die dir den richtigen Weg zeigen, die ausführliche Antworten schreiben und gebe ihnen einen Daumen nach oben. Du findest uns auf [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
 
 ## Beispiele
 
-Eine Frage über Einstellungen auf Englisch stellen:
+Eine Frage über Einstellungen stellen, denke daran Englisch zu benutzen:
 
     Title: How do I change the language of my website?
     
     Hello, during installation I selected the wrong language. Now I want to 
-    change the language of my website to english. When I change the settings 
+    change the language of my website to English. When I change the settings 
     it doesn't work. I checked that the english extension is installed. 
     Here are my settings in file `system/extensions/yellow-system.ini`:
     
@@ -56,7 +56,7 @@ Eine Frage über Einstellungen auf Englisch stellen:
     
     Let me know if you need more information. Thanks for your help.
 
-Eine Frage über Layoutdateien auf Englisch stellen:
+Eine Frage über Layoutdateien stellen, denke daran Englisch zu benutzen:
 
     Title: How do I show the correct date in layout files?
     
@@ -79,7 +79,7 @@ Eine Frage über Layoutdateien auf Englisch stellen:
     
     Let me know if you need more information. Thanks for your help.
 
-Einen Fehler zusammen mit der Logdatei auf Englisch melden:
+Einen Fehler zusammen mit der Logdatei zu melden, denke daran Englisch zu benutzen:
 
     Title: Call to undefined function detectCoffee()
     

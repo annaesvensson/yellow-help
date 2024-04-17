@@ -3,6 +3,9 @@ Title: Wie man eine Sprache anpasst
 ---
 Wie man eine Sprache seiner Webseite anpasst.
 
+## Spracheinstellungen anpassen
+
+Um die Sprache deiner Webseite anzupassen ändere die [Spracheinstellungen](how-to-change-the-system#spracheinstellungen). Die Spracheinstellungen enthalten die Einstellungen aller installierten Erweiterungen. Du kannst auch deine eigenen Spracheinstellungen zur Konfigurationsdatei hinzufügen, beispielsweise Bildunterschriften.
 
 ## Einsprachen-Modus
 
@@ -84,5 +87,9 @@ Der erste Screenshot zeigt die Verzeichnisse `1-en`, `2-de` und `3-sv`. Das erze
 Der zweite Screenshot zeigt die Verzeichnisse `1-en`, `2-de`, `3-sv` und `default`. Das erzeugt die URLs `http://website/en/` `http://website/de/` `http://website/sv/` und die Startseite `http://website/`, welche automatisch die Sprache der Besucher ermittelt. 
 
 Um eine Sprachauswahl anzuzeigen, kannst du eine Seite erstellen welche die vorhandenen Sprachen auflistet. Die Sprachauswahl kann man in die Navigation der Webseite einbauen. Das ermöglicht es Besuchern die Sprache auszuwählen.
+
+## Erstelle eine Übersetzung
+
+Bei der Installation einer Webseite wirst du mit einem Hallo in deiner Sprache begrüßt. Wenn deine Sprache fehlt, erstellen eine Übersetzung. Beginne mit der deutschen Sprachdatei oder einer der vorhandenen Sprachen. Das zeigt dir welche Textzeilen und Textbausteine vorhanden sind. Es reicht aus wenn du die deutsche Sprachdatei übersetzt. Ein Betreuer kann sich um alles weitere kümmern. [Mehr über Übersetzungen erfahren](https://github.com/annaesvensson/yellow-language/tree/main/README-de.md).
 
 Hast du Fragen? [Hilfe finden](.).

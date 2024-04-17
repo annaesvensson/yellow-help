@@ -10,7 +10,7 @@ Läs hur du jobbar med oss och löser problem.
 * Fråga dig själv, behöver jag det här, vill jag det här, kan jag göra det här bättre?
 * Förbättra tillgängliga tilläggen och gör dem mer användbara.
 
-Om du vill jobba med oss, [förbättra ett tillägg](https://datenstrom.se/sv/yellow/extensions/) eller [gör en översättning](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md).
+Om du vill jobba med oss, [förbättra ett tillägg](https://datenstrom.se/sv/yellow/extensions/) eller [gör en översättning](how-to-customise-a-language#gör-en-översättning).
 
 ## Hur man ställer en fråga
 
@@ -19,7 +19,7 @@ Om du vill jobba med oss, [förbättra ett tillägg](https://datenstrom.se/sv/ye
 * Lägg till ett exempel, till exempel Markdown, inställningar eller din källkod.
 * Välj ett svar när din fråga har besvarats.
 
-Om du vill ställa en fråga, [starta en ny diskussion på engelska](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
+Om du vill ställa en fråga, [starta en ny diskussion](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
 
 ## Hur man rapporterar ett fel
 
@@ -28,20 +28,20 @@ Om du vill ställa en fråga, [starta en ny diskussion på engelska](https://git
 * Lägg till många detaljer, särskilt loggfilen `system/extensions/yellow-website.log`.
 * Välj ett svar när felet har åtgärdats.
 
-Om du vill rapportera ett fel, [starta en ny diskussion på engelska](https://github.com/datenstrom/yellow/discussions/categories/report-a-bug).
+Om du vill rapportera ett fel, [starta en ny diskussion](https://github.com/datenstrom/yellow/discussions/categories/report-a-bug).
 
 ## Bra att veta
 
-Jobba med oss, ställ frågor och rapportera fel. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Tvinga ingenting. Du kan lämna diskussioner när som helst om dialogen inte är konstruktiv. Fokusera på människor som visa intresse och vill jobba med dig. Tacka människor som pekar dig i rätt riktning, som skriver utförliga svar och ger dem en tumme upp. Du hittar oss på [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
+Jobba med oss, ställ frågor och rapportera fel. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Tvinga ingenting. Du kan lämna diskussioner när som helst om dialogen inte är konstruktiv. Fokusera på människor som visa intresse och vill jobba med dig. Tacka människor som pekar dig i rätt riktning, som skriver utförliga svar och ger dem en tumme upp. Du hittar oss på [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
 
 ## Exempel
 
-Ställa en fråga om inställningar på engelska:
+Ställa en fråga om inställningar, tänk på att använda engelska:
 
     Title: How do I change the language of my website?
     
     Hello, during installation I selected the wrong language. Now I want to 
-    change the language of my website to english. When I change the settings 
+    change the language of my website to English. When I change the settings 
     it doesn't work. I checked that the english extension is installed. 
     Here are my settings in file `system/extensions/yellow-system.ini`:
     
@@ -56,7 +56,7 @@ Ställa en fråga om inställningar på engelska:
     
     Let me know if you need more information. Thanks for your help.
 
-Ställa en fråga om layoutfiler på engelska:
+Ställa en fråga om layoutfiler, tänk på att använda engelska:
 
     Title: How do I show the correct date in layout files?
     
@@ -79,7 +79,7 @@ Ställa en fråga om layoutfiler på engelska:
     
     Let me know if you need more information. Thanks for your help.
 
-Rapportera ett fel tillsammans med loggfilen på engelska:
+Rapportera ett fel tillsammans med loggfilen, tänk på att använda engelska:
 
     Title: Call to undefined function detectCoffee()
     

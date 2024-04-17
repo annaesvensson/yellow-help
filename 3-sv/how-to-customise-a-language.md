@@ -3,6 +3,10 @@ Title: Hur man anpassar ett språk
 ---
 Så här anpassar du ett språk på din webbplats.
 
+## Anpassa språkinställningar
+
+För att anpassa språket på din webbplats ändrar man [språkinställningar](how-to-change-the-system#språkinställningar). Språkinställningarna innehåller inställningarna för alla installerade tillägg. Du kan också lägga till dina egna språkinställningar i konfigurationsfilen, till exempel bildtexter.
+
 ## Enkelspråkigt läge 
 
 Standardspråket definieras [systeminställningarna](how-to-change-the-system#systeminställningar). Ett annat språk kan definieras i [sidinställningarna](how-to-change-the-system#sidinställningar) högst upp på varje sida, till exempel `Language: en`. 
@@ -83,5 +87,9 @@ Den första skärmdumpen visar mapparna `1-en`,` 2-de` och `3-sv`. Detta ger dig
 Den andra skärmdumpen visar mapparna `1-en`,` 2-de`, `3-sv` och `default`. Detta ger dig webbadresserna `http://website/en/` `http://website/de/` `http://website/sv/` och en hemsida `http://website/` som automatiskt upptäcker besökarens språk.
 
 För att visa ett språkval kan du skapa en sida som visar tillgängliga språk. Språkvalet kan integreras i navigeringen på din webbplats. Detta gör det möjligt för besökare att välja språk. 
+
+## Gör en översättning
+
+När du installerar en webbplats hälsas du med ett hej på ditt språk. Om ditt språk saknas gör en översättning. Börja med svenska språkfilen eller ett av tillgängliga språken. Detta visa dig vilka textrader och textfragment är tillgängliga. Det räcker om du översätter svenska språkfilen. En underhållare kan ta hand om allt annat. [Läs mer om översättningar](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md).
 
 Har du några frågor? [Få hjälp](.).

@@ -10,7 +10,7 @@ Learn how to work with us and solve problems.
 * Ask yourself, do I need this, do I want this, can I make this better?
 * Improve the available extensions and make them more useful.
 
-If you want to work with us, [improve an extension](https://datenstrom.se/yellow/extensions/) or [make a translation](https://github.com/annaesvensson/yellow-language).
+If you want to work with us, [improve an extension](https://datenstrom.se/yellow/extensions/) or [make a translation](how-to-customise-a-language#make-a-translation).
 
 ## How to ask a question
 
@@ -32,16 +32,16 @@ If you want to report a bug, [start a new discussion](https://github.com/datenst
 
 ## Good to know
 
-We are interested in what you want to do and which problems you have. The more we know the better we can help. Our community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Don't force anything. You can step out of discussions at any time if the dialog is not constructive. Focus on the people who show interest and want to work with you. Thank people who point you in the right direction, who write detailed answers and give them a thumbs up. You can find us on [Discord](https://discord.gg/NYvTETsHS9), [GitHub](https://github.com/datenstrom) or [contact a human](https://datenstrom.se/contact/).
+We are interested in what you want to do and which problems you have. The more we know the better we can help. Our community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Don't force anything. You can step out of discussions at any time if the dialog is not constructive. Focus on the people who show interest and want to work with you. Thank people who point you in the right direction, who write detailed answers and give them a thumbs up. You can find us on [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) or [contact a human](https://datenstrom.se/contact/).
 
 ## Examples
 
-Asking a question about settings:
+Asking a question about settings, remember to use English:
 
     Title: How do I change the language of my website?
     
     Hello, during installation I selected the wrong language. Now I want to 
-    change the language of my website to english. When I change the settings 
+    change the language of my website to English. When I change the settings 
     it doesn't work. I checked that the english extension is installed. 
     Here are my settings in file `system/extensions/yellow-system.ini`:
     
@@ -56,7 +56,7 @@ Asking a question about settings:
     
     Let me know if you need more information. Thanks for your help.
 
-Asking a question about layout files:
+Asking a question about layout files, remember to use English:
 
     Title: How do I show the correct date in layout files?
     
@@ -79,7 +79,7 @@ Asking a question about layout files:
     
     Let me know if you need more information. Thanks for your help.
 
-Reporting a bug along with the log file:
+Reporting a bug along with the log file, remember to use English:
 
     Title: Call to undefined function detectCoffee()
     
