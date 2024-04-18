@@ -90,6 +90,6 @@ För att visa ett språkval kan du skapa en sida som visar tillgängliga språk.
 
 ## Gör en översättning
 
-När du installerar en webbplats hälsas du med ett hej på ditt språk. Om ditt språk saknas gör en översättning. Börja med svenska språkfilen eller ett av tillgängliga språken. Detta visa dig vilka textrader och textfragment är tillgängliga. Det räcker om du översätter svenska språkfilen. En underhållare kan ta hand om allt annat. [Läs mer om översättningar](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md).
+När du installerar en webbplats hälsas du med ett hej. Du kan göra en översättning om ett språk saknas. Börja med svenska språkfilen eller ett av tillgängliga språken. Detta visa dig vilka textrader och textfragment är tillgängliga. Det räcker om du översätter svenska språkfilen. En underhållare kan ta hand om allt annat. [Läs mer om översättningar](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md).
 
 Har du några frågor? [Få hjälp](.).

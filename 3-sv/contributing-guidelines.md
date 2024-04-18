@@ -10,7 +10,7 @@ Läs hur du jobbar med oss och löser problem.
 * Fråga dig själv, behöver jag det här, vill jag det här, kan jag göra det här bättre?
 * Förbättra tillgängliga tilläggen och gör dem mer användbara.
 
-Om du vill jobba med oss, [förbättra ett tillägg](https://datenstrom.se/sv/yellow/extensions/) eller [gör en översättning](how-to-customise-a-language#gör-en-översättning).
+Om du vill jobba med oss, [gör ett tillägg](https://datenstrom.se/sv/yellow/extensions/) eller [gör en översättning](how-to-customise-a-language#gör-en-översättning).
 
 ## Hur man ställer en fråga
 
@@ -32,11 +32,11 @@ Om du vill rapportera ett fel, [starta en ny diskussion](https://github.com/date
 
 ## Bra att veta
 
-Jobba med oss, ställ frågor och rapportera fel. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Tvinga ingenting. Du kan lämna diskussioner när som helst om dialogen inte är konstruktiv. Fokusera på människor som visa intresse och vill jobba med dig. Tacka människor som pekar dig i rätt riktning, som skriver utförliga svar och ger dem en tumme upp. Du hittar oss på [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
+Jobba med oss, ställ frågor och rapportera fel. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Använd en onlineöversättare om engelska inte är ditt modersmål. Tvinga ingenting. Du kan lämna diskussioner när som helst om dialogen inte är konstruktiv. Fokusera på människor som visa intresse och vill jobba med dig. Tacka människor som pekar dig i rätt riktning, som skriver utförliga svar och ger dem en tumme upp. Du hittar oss på [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
 
 ## Exempel
 
-Ställa en fråga om inställningar, tänk på att använda engelska:
+Ställa en fråga om inställningar:
 
     Title: How do I change the language of my website?
     
@@ -56,7 +56,7 @@ Ställa en fråga om inställningar, tänk på att använda engelska:
     
     Let me know if you need more information. Thanks for your help.
 
-Ställa en fråga om layoutfiler, tänk på att använda engelska:
+Ställa en fråga om layoutfiler:
 
     Title: How do I show the correct date in layout files?
     
@@ -79,7 +79,7 @@ Ställa en fråga om layoutfiler, tänk på att använda engelska:
     
     Let me know if you need more information. Thanks for your help.
 
-Rapportera ett fel tillsammans med loggfilen, tänk på att använda engelska:
+Rapportera ett fel tillsammans med loggfilen:
 
     Title: Call to undefined function detectCoffee()
     

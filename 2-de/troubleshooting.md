@@ -204,7 +204,7 @@ Wenn deine Webseite nicht funktioniert, dann überprüfe `server_name` und `root
 ## Verwandte Informationen
 
 * [Wie man einen Webserver startet](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md)
-* [Wie man ein Benutzerkonto ändert](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md)
+* [Wie man ein Benutzerkonto erstellt](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md)
 * [Wie man eine Webseite aktualisiert](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md)
 
 Hast du Fragen? [Hilfe finden](.).

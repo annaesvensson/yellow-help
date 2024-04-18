@@ -90,6 +90,6 @@ To show a language selection, you can create a page that lists available languag
 
 ## Make a translation
 
-When you install a website you are greeted with a hello in your language. If your language is missing, make a translation. Start with the English language file or one of the available languages. This will show you which text lines and text fragments are available. It is enough if you translate the English language file. A maintainer can take care of everything else. [Learn more about translations](https://github.com/annaesvensson/yellow-language).
+When you install a website you are greeted with a hello. You can make a translation if a language is missing. Start with the English language file or one of the available languages. This will show you which text lines and text fragments are available. It is enough if you translate the English language file. A maintainer can take care of everything else. [Learn more about translations](https://github.com/annaesvensson/yellow-language).
 
 Do you have questions? [Get help](.).

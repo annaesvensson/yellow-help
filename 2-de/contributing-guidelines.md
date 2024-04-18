@@ -10,7 +10,7 @@ Erfahre wie du mit uns arbeiten und Probleme lösen kannst.
 * Frage dich selbst, brauche ich das, will ich das, kann ich das besser machen?
 * Verbessere die verfügbaren Erweiterungen und mache sie nützlicher.
 
-Falls du mit uns arbeiten willst, [verbessere eine Erweiterung](https://datenstrom.se/de/yellow/extensions/) oder [erstelle eine Übersetzung](how-to-customise-a-language#erstelle-eine-übersetzung).
+Falls du mit uns arbeiten willst, [erstelle eine Erweiterung](https://datenstrom.se/de/yellow/extensions/) oder [erstelle eine Übersetzung](how-to-customise-a-language#erstelle-eine-übersetzung).
 
 ## Wie man eine Frage stellt
 
@@ -32,11 +32,11 @@ Falls du einen Fehler melden willst, [beginne eine neue Diskussion](https://gith
 
 ## Gut zu wissen
 
-Arbeite mit uns, stelle Fragen und melde Fehler. Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser können wir dir helfen. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei den Menschen, die dir den richtigen Weg zeigen, die ausführliche Antworten schreiben und gebe ihnen einen Daumen nach oben. Du findest uns auf [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
+Arbeite mit uns, stelle Fragen und melde Fehler. Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser können wir dir helfen. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Online-Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei den Menschen, die dir den richtigen Weg zeigen, die ausführliche Antworten schreiben und gebe ihnen einen Daumen nach oben. Du findest uns auf [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
 
 ## Beispiele
 
-Eine Frage über Einstellungen stellen, denke daran Englisch zu benutzen:
+Eine Frage über Einstellungen stellen:
 
     Title: How do I change the language of my website?
     
@@ -56,7 +56,7 @@ Eine Frage über Einstellungen stellen, denke daran Englisch zu benutzen:
     
     Let me know if you need more information. Thanks for your help.
 
-Eine Frage über Layoutdateien stellen, denke daran Englisch zu benutzen:
+Eine Frage über Layoutdateien stellen:
 
     Title: How do I show the correct date in layout files?
     
@@ -79,7 +79,7 @@ Eine Frage über Layoutdateien stellen, denke daran Englisch zu benutzen:
     
     Let me know if you need more information. Thanks for your help.
 
-Einen Fehler zusammen mit der Logdatei zu melden, denke daran Englisch zu benutzen:
+Einen Fehler zusammen mit der Logdatei zu melden:
 
     Title: Call to undefined function detectCoffee()
     

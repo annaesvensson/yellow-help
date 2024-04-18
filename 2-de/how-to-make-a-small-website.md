@@ -1,7 +1,7 @@
 ---
-Title: Wie man eine kleine Webseite erstellt
+Title: Wie man eine kleine Webseite macht
 ---
-Hier erfährst du, wie du deine Webseite erstellst.
+Hier erfährst du, wie du deine Webseite machst.
 
 [toc]
 
