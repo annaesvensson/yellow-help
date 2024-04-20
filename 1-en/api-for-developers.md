@@ -35,17 +35,17 @@ The following configuration files and log files are available:
 
 ## Tools
 
-### Built-in web editor
+### Web editor
 
 You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The built-in web editor allows you to edit content files and upload media files. It is a great way to update your website. Text formatting with Markdown is supported. HTML is also supported. [Learn more about the web editor](https://github.com/annaesvensson/yellow-edit).
 
-### Built-in web server
+### Web server
 
 You can start a web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to see your website on your computer and upload it to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the web server](https://github.com/annaesvensson/yellow-serve).
 
-### Built-in static site generator
+### Static generator
 
-You can generate a static website at the command line. The static site generator makes the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php generate`, you can optionally add a folder and a location. This will generate a static website in the `public` folder. Upload the static website to your web server and generate a new one when needed. [Learn more about the generator](https://github.com/annaesvensson/yellow-generate).
+You can generate a static website at the command line. The static site generator makes the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php generate`, you can optionally add a folder and a location. This will generate a static website in the `public` folder. Upload the static website to your web server and generate a new one when needed. [Learn more about the static generator](https://github.com/annaesvensson/yellow-generate).
 
 ## Objects
 

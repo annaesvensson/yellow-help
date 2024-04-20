@@ -1,7 +1,7 @@
 ---
 Title: Hur man kommer igång
 ---
-Läs om hur du installerar en webbplats på några minuter.
+Läs hur du installerar en webbplats på några minuter.
 
 ## Installation på din webbserver
 
