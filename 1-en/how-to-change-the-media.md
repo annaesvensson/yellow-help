@@ -26,7 +26,7 @@ Making a link, different file formats:
 
 ## Images
 
-You can use the [image extension](https://github.com/annaesvensson/yellow-image) to embed images. The image formats GIF, JPG, PNG and SVG are supported. To add an image, copy the image into the `media/images` folder and create an `[image]` shortcut. You can also upload images in a web browser, then the image is added at the desired spot.
+You can use the [image extension](https://github.com/annaesvensson/yellow-image) to embed images. The image formats GIF, JPEG, PNG and SVG are supported. To add an image, copy the image into the `media/images` folder and create an `[image]` shortcut. You can also upload images in a web browser, then the image is added at the desired spot.
 
 Adding an image, different descriptions:
 
@@ -54,7 +54,7 @@ Adding an image, different sizes with the default style:
 
 ## Image galleries
 
-You can use the [gallery extension](https://github.com/annaesvensson/yellow-gallery) or [slider extension](https://github.com/annaesvensson/yellow-slider) to embed image galleries. The image formats GIF, JPG, PNG and SVG are supported. To add a gallery, copy images into the `media/images` folder and create a `[gallery]` shortcut. You can also upload images in a web browser.
+You can use the [gallery extension](https://github.com/annaesvensson/yellow-gallery) or [slider extension](https://github.com/annaesvensson/yellow-slider) to embed image galleries. The image formats GIF, JPEG, PNG and SVG are supported. To add a gallery, copy images into the `media/images` folder and create a `[gallery]` shortcut. You can also upload images in a web browser.
 
 Adding an image gallery with popup, different sortings:
 
