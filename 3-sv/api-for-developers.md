@@ -1318,7 +1318,7 @@ Hantera metadata av en sida
 `public function onParseContentRaw($page, $text)`  
 Hantera sidinnehåll i råformat
 
-`public function onParseContentElement($page, $name, $text, $type)`  
+`public function onParseContentElement($page, $name, $text, $attributes, $type)`   
 Hantera sidinnehåll för ett element
 
 `public function onParseContentHtml($page, $text)`  
