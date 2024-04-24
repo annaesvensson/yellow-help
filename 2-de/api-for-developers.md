@@ -930,7 +930,7 @@ Hole eine [Seitenkollektion](#yellow-page-collection) mit zusätzlichen Seiten
 `page->getPage($key): YellowPage`  
 Hole eine geteilte Seite
 
-`page->getUrl($canoncialUrl = false): string`  
+`page->getUrl($canonicalUrl = false): string`  
 Hole die URL der Seite 
 
 `page->getBase($multiLanguage = false): string`  

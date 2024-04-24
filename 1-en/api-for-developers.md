@@ -930,7 +930,7 @@ Return [page collection](#yellow-page-collection) with additional pages
 `page->getPage($key): YellowPage`  
 Return shared page
 
-`page->getUrl($canoncialUrl = false): string`  
+`page->getUrl($canonicalUrl = false): string`  
 Return page URL
 
 `page->getBase($multiLanguage = false): string`  

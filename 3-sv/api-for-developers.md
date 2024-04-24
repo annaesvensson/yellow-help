@@ -931,7 +931,7 @@ Returnera [page collection](#yellow-page-collection) med ytterligare sidor
 `page->getPage($key): YellowPage`  
 Returnera delad sida
 
-`page->getUrl($canoncialUrl = false): string`  
+`page->getUrl($canonicalUrl = false): string`  
 Returnera sidans URL
 
 `page->getBase($multiLanguage = false): string`  
