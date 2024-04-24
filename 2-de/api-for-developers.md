@@ -49,7 +49,7 @@ Du kannst eine statische Webseite in der Befehlszeile generieren. Der Static-Sit
 
 ## Objekte
 
-Mit Hilfe der API kann man auf das Dateisystem und Einstellungen zugreifen. Ein grundlegendes Objekt ist `$this->yellow->page` um auf die aktuelle Seite zuzugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der gesamten API findet man in der Datei `system/workers/core.php`.
+Mit Hilfe der API kann man auf das Dateisystem und Einstellungen zugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Ein grundlegendes Objekt ist `$this->yellow->page` um auf die aktuelle Seite zuzugreifen. Den Quellcode der gesamten API findet man in der Datei `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -748,7 +748,7 @@ if (!is_string_empty($url)) {
 
 Die Klasse `YellowToolbox` gibt Zugang zur Werkzeugkiste mit Hilfsmethoden. Die folgenden Methoden sind verfügbar:
 
-`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
+`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileSize` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
 
 ---
 
@@ -804,6 +804,9 @@ Setze das Änderungsdatum von Datei/Verzeichnis, Unix-Zeit
 
 `toolbox->getFileModified($fileName): int`  
 Hole das Änderungsdatum von Datei/Verzeichnis, Unix-Zeit
+
+`toolbox->getFileSize($fileName): int`  
+Hole die Grösse der Datei
 
 `toolbox->getFileType($fileName): string`  
 Hole den Typ der Datei
@@ -927,7 +930,7 @@ Hole eine [Seitenkollektion](#yellow-page-collection) mit zusätzlichen Seiten
 `page->getPage($key): YellowPage`  
 Hole eine geteilte Seite
 
-`page->getUrl(): string`  
+`page->getUrl($canoncialUrl = false): string`  
 Hole die URL der Seite 
 
 `page->getBase($multiLanguage = false): string`  

@@ -49,7 +49,7 @@ Du kan generera en statisk webbplats på kommandoraden. Den static-site-generato
 
 ## Objekt
 
-Med hjälp av API:et kan man komma åt filsystemet och inställningar. Ett grundläggande objekt är `$this->yellow->page` för att komma åt aktuella sidan. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för hela API:et finns i filen `system/workers/core.php`.
+Med hjälp av API:et kan man komma åt filsystemet och inställningar. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Ett grundläggande objekt är `$this->yellow->page` för att komma åt aktuella sidan. Källkoden för hela API:et finns i filen `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -749,7 +749,7 @@ if (!is_string_empty($url)) {
 
 Klassen `YellowToolbox` ger tillgång till verktygslådan med hjälpmetoder. Följande metoder är tillgängliga:
 
-`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
+`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileSize` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
 
 ---
 
@@ -805,6 +805,9 @@ Ställ in ändringsdatum för fil/mapp, Unix-tid
 
 `toolbox->getFileModified($fileName): int`  
 Returnera ändringsdatum för fil/mapp, Unix-tid 
+
+`toolbox->getFileSize($fileName): int`  
+Returnera filstorlek
 
 `toolbox->getFileType($fileName): string`  
 Returnera filtyp
@@ -928,7 +931,7 @@ Returnera [page collection](#yellow-page-collection) med ytterligare sidor
 `page->getPage($key): YellowPage`  
 Returnera delad sida
 
-`page->getUrl(): string`  
+`page->getUrl($canoncialUrl = false): string`  
 Returnera sidans URL
 
 `page->getBase($multiLanguage = false): string`  

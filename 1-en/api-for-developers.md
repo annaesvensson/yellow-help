@@ -49,7 +49,7 @@ You can generate a static website at the command line. The static site generator
 
 ## Objects
 
-With the help of the API you can access the file system and settings. A fundamental object is `$this->yellow->page` to access the current page. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the entire API can be found in file `system/workers/core.php`.
+With the help of the API you can access the file system and settings. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. A fundamental object is `$this->yellow->page` to access the current page. The source code of the entire API can be found in file `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -748,7 +748,7 @@ if (!is_string_empty($url)) {
 
 The class `YellowToolbox` gives access to toolbox with helper methods. The following methods are available:
 
-`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
+`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileSize` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
 
 ---
 
@@ -804,6 +804,9 @@ Set file/directory modification date, Unix time
 
 `toolbox->getFileModified($fileName): int`  
 Return file/directory modification date, Unix time  
+
+`toolbox->getFileSize($fileName): int`  
+Return file size
 
 `toolbox->getFileType($fileName): string`  
 Return file type
@@ -927,7 +930,7 @@ Return [page collection](#yellow-page-collection) with additional pages
 `page->getPage($key): YellowPage`  
 Return shared page
 
-`page->getUrl(): string`  
+`page->getUrl($canoncialUrl = false): string`  
 Return page URL
 
 `page->getBase($multiLanguage = false): string`  
