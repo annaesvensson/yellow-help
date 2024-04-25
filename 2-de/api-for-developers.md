@@ -1320,7 +1320,7 @@ Verarbeite die Metadaten einer Seite
 `public function onParseContentRaw($page, $text)`  
 Verarbeite den Seiteninhalt im Rohformat
 
-`public function onParseContentElement($page, $name, $text, $type)`  
+`public function onParseContentElement($page, $name, $text, $attributes, $type)`  
 Verarbeite den Seiteninhalt eines Elements
 
 `public function onParseContentHtml($page, $text)`  
