@@ -137,8 +137,8 @@ Beskrivning av metoder och argument:
 `content->find($location, $absoluteLocation = false): YellowPage|null`  
 Returnera [page](#yellow-page), null om det inte finns
 
-`content->index($showInvisible = false, $multiLanguage = false): YellowPageCollection`  
-Returnera [page collection](#yellow-page-collection) med alla sidor
+`content->index($showInvisible = false): YellowPageCollection`  
+Returnera [page collection](#yellow-page-collection) med sidor på webbplatsen
 
 `content->top($showInvisible = false): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) med navigering på toppnivå
@@ -162,7 +162,7 @@ Layoutfil för att visa alla sidor:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index(true, true) ?>
+<?php $pages = $this->yellow->content->index() ?>
 <?php $this->yellow->page->setLastModified($pages->getModified()) ?>
 <ul>
 <?php foreach ($pages as $page): ?>
@@ -225,22 +225,22 @@ Beskrivning av metoder och argument:
 `media->find($location, $absoluteLocation = false): YellowPage|null`  
 Returnera [page](#yellow-page) med information om mediefilen, null om det inte finns
 
-`media->index($showInvisible = false, $multiPass = false): YellowPageCollection`  
-Returnera [page collection](#yellow-page-collection) med alla mediefiler
+`media->index($showInvisible = false): YellowPageCollection`  
+Returnera [page collection](#yellow-page-collection) med mediefiler
 
 `media->clean(): YellowPageCollection`  
 Returnera [page collection](#yellow-page-collection) som är tom
 
 ---
 
-Layoutfil för att visa alla mediefiler:
+Layoutfil för att visa mediefiler:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $files = $this->yellow->media->index(true) ?>
+<?php $files = $this->yellow->media->index() ?>
 <?php $this->yellow->page->setLastModified($files->getModified()) ?>
 <ul>
 <?php foreach ($files as $file): ?>

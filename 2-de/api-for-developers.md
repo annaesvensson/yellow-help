@@ -137,8 +137,8 @@ Beschreibung der Methoden und Argumente:
 `content->find($location, $absoluteLocation = false): YellowPage|null`  
 Hole eine [Seite](#yellow-page), null falls nicht vorhanden
 
-`content->index($showInvisible = false, $multiLanguage = false): YellowPageCollection`  
-Hole eine [Seitenkollektion](#yellow-page-collection) mit allen Seiten
+`content->index($showInvisible = false): YellowPageCollection`  
+Hole eine [Seitenkollektion](#yellow-page-collection) mit Seiten der Webseite
 
 `content->top($showInvisible = false): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) mit Hauptseiten der Navigation
@@ -154,14 +154,14 @@ Hole eine [Seitenkollektion](#yellow-page-collection) die leer ist
 
 ---
 
-Layoutdatei um alle Seiten anzuzeigen:
+Layoutdatei um Seiten anzuzeigen:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index(true, true) ?>
+<?php $pages = $this->yellow->content->index() ?>
 <?php $this->yellow->page->setLastModified($pages->getModified()) ?>
 <ul>
 <?php foreach ($pages as $page): ?>
@@ -224,22 +224,22 @@ Beschreibung der Methoden und Argumente:
 `media->find($location, $absoluteLocation = false): YellowPage|null`  
 Hole eine [Seite](#yellow-page) mit Informationen über Mediendatei, null falls nicht vorhanden
 
-`media->index($showInvisible = false, $multiPass = false): YellowPageCollection`  
-Hole eine [Seitenkollektion](#yellow-page-collection) mit allen Mediendateien
+`media->index($showInvisible = false): YellowPageCollection`  
+Hole eine [Seitenkollektion](#yellow-page-collection) mit Mediendateien
 
 `media->clean(): YellowPageCollection`  
 Hole eine [Seitenkollektion](#yellow-page-collection) die leer ist
 
 ---
 
-Layoutdatei um alle Mediendateien anzuzeigen:
+Layoutdatei um Mediendateien anzuzeigen:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $files = $this->yellow->media->index(true) ?>
+<?php $files = $this->yellow->media->index() ?>
 <?php $this->yellow->page->setLastModified($files->getModified()) ?>
 <ul>
 <?php foreach ($files as $file): ?>

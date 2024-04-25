@@ -137,8 +137,8 @@ Description of methods and arguments:
 `content->find($location, $absoluteLocation = false): YellowPage|null`  
 Return [page](#yellow-page), null if not found
 
-`content->index($showInvisible = false, $multiLanguage = false): YellowPageCollection`  
-Return [page collection](#yellow-page-collection) with all pages
+`content->index($showInvisible = false): YellowPageCollection`  
+Return [page collection](#yellow-page-collection) with pages of the website
 
 `content->top($showInvisible = false): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) with top-level navigation
@@ -154,14 +154,14 @@ Return [page collection](#yellow-page-collection) that is empty
 
 ---
 
-Layout file for showing all pages:
+Layout file for showing pages:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index(true, true) ?>
+<?php $pages = $this->yellow->content->index() ?>
 <?php $this->yellow->page->setLastModified($pages->getModified()) ?>
 <ul>
 <?php foreach ($pages as $page): ?>
@@ -224,22 +224,22 @@ Description of methods and arguments:
 `media->find($location, $absoluteLocation = false): YellowPage|null`  
 Return [page](#yellow-page) with media file information, null if not found
 
-`media->index($showInvisible = false, $multiPass = false): YellowPageCollection`  
-Return [page collection](#yellow-page-collection) with all media files
+`media->index($showInvisible = false): YellowPageCollection`  
+Return [page collection](#yellow-page-collection) with media files
 
 `media->clean(): YellowPageCollection`  
 Return [page collection](#yellow-page-collection) that is empty
 
 ---
 
-Layout file for showing all media files:
+Layout file for showing media files:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $files = $this->yellow->media->index(true) ?>
+<?php $files = $this->yellow->media->index() ?>
 <?php $this->yellow->page->setLastModified($files->getModified()) ?>
 <ul>
 <?php foreach ($files as $file): ?>
