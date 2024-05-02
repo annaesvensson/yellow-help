@@ -32,7 +32,9 @@ Falls du einen Fehler melden willst, [beginne eine neue Diskussion](https://gith
 
 ## Gut zu wissen
 
-Arbeite mit uns, stelle Fragen und melde Fehler. Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser können wir dir helfen. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Online-Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei den Menschen, die dir den richtigen Weg zeigen, die ausführliche Antworten schreiben und gebe ihnen einen Daumen nach oben. Du findest uns auf [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
+Arbeite mit uns, stelle Fragen und melde Fehler. Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser können wir dir helfen. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Online-Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei den Menschen die dir den richtigen Weg zeigen und ausführliche Antworten schreiben.
+
+Du findest uns auf [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
 
 ## Beispiele
 

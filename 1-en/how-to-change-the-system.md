@@ -92,7 +92,7 @@ The extension settings are stored in file `system/extensions/yellow-extension.in
     Status: available
     system/workers/core.php: core.php, create, update
 
-You can see the installed extensions here. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
+You can see the installed extensions here. An extension consist of `Extension` and other settings. The extension settings contain information about all installed files. You can also see which developer, designer or translator is responsible for an extension. [Find extensions for your website](https://datenstrom.se/yellow/extensions/).
 
 ## Page settings
 

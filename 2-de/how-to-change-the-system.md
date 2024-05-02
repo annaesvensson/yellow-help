@@ -92,7 +92,7 @@ Die Erweiterungseinstellungen sind in der Datei `system/extensions/yellow-extens
     Status: available
     system/workers/core.php: core.php, create, update
 
-Hier kannst du sehen welche Erweiterungen installiert sind. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
+Hier kannst du sehen welche Erweiterungen installiert sind. Eine Erweiterung besteht aus `Extension` und weiteren Einstellungen. Die Erweiterungseinstellungen enthalten Informationen über alle installierte Dateien. Du kannst auch sehen welcher Entwickler, Designer oder Übersetzer für eine Erweiterung verantwortlich ist. [Erweiterungen für deine Webseite finden](https://datenstrom.se/de/yellow/extensions/).
 
 ## Seiteneinstellungen
 

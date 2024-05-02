@@ -92,7 +92,7 @@ Tilläggsinställningar lagras i filen `system/extensions/yellow-extension.ini`.
     Status: available
     system/workers/core.php: core.php, create, update
 
-Du kan se installerade tilläggen här. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
+Du kan se installerade tilläggen här. Ett tillägg består av `Extension` och andra inställningar. Tilläggsinställningarna innehåller information om alla installerade filer. Du kan också se vilken utvecklare, formgivare eller översättare som ansvarar för ett tillägg. [Få tillägg för din webbplats](https://datenstrom.se/sv/yellow/extensions/).
 
 ## Sidinställningar
 
