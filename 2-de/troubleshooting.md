@@ -26,13 +26,13 @@ Installiere die fehlende PHP-Erweiterung auf deinem Webserver. Du benötigst `cu
 Datenstrom Yellow requires write access!
 ```
 
-Führe den Befehl `chmod -R a+rw *` im Installations-Verzeichnis aus. Du kannst auch deine SFTP-Software verwenden, um allen Dateien Schreibrechte zu geben. Es wird empfohlen allen Dateien und Verzeichnissen im Installations-Verzeichnis Schreibrechte zu geben. Sobald die Webseite ausreichende Schreibrechte im `system`-Verzeichnis hat, sollte das Problem behoben sein.
+Führe den Befehl `chmod -R a+rw *` im Installations-Verzeichnis aus. Du kannst auch deine FTP-Anwendung verwenden, um allen Dateien Schreibrechte zu geben. Es wird empfohlen allen Dateien und Verzeichnissen im Installations-Verzeichnis Schreibrechte zu geben. Sobald die Webseite ausreichende Schreibrechte im `system`-Verzeichnis hat, sollte das Problem behoben sein.
 
 ```
 Datenstrom Yellow requires configuration file!
 ```
 
-Kopiere die mitgelieferte `.htaccess` Datei ins Installations-Verzeichnis. Überprüfe ob deine SFTP-Software eine Einstellung hat, um alle Dateien anzuzeigen. Es passiert manchmal dass die `.htaccess` Datei bei der Installation übersehen wurde. Sobald die fehlende Konfigurationsdatei ins Installations-Verzeichnis kopiert wurde, sollte das Problem behoben sein.
+Kopiere die mitgelieferte `.htaccess` Datei ins Installations-Verzeichnis. Überprüfe ob deine FTP-Anwendung eine Einstellung hat, um alle Dateien anzuzeigen. Es passiert manchmal dass die `.htaccess` Datei bei der Installation übersehen wurde. Sobald die fehlende Konfigurationsdatei ins Installations-Verzeichnis kopiert wurde, sollte das Problem behoben sein.
 
 ```
 Datenstrom Yellow requires rewrite support!
@@ -44,7 +44,7 @@ Datenstrom Yellow requires rewrite support!
 Datenstrom Yellow requires complete upload!
 ```
 
-Kopiere nochmal alle mitgelieferten Dateien ins Installations-Verzeichnis. Überprüfe ob deine SFTP-Software beim Hochladen eine Fehlermeldung anzeigt. Es passiert manchmal dass die Datenübertragung beim Hochladen unterbrochen wurde. Nachdem alle Dateien ins Installations-Verzeichnis kopiert wurden, sollte das Problem behoben sein.
+Kopiere nochmal alle mitgelieferten Dateien ins Installations-Verzeichnis. Überprüfe ob deine FTP-Anwendung beim Hochladen eine Fehlermeldung anzeigt. Es passiert manchmal dass die Datenübertragung beim Hochladen unterbrochen wurde. Nachdem alle Dateien ins Installations-Verzeichnis kopiert wurden, sollte das Problem behoben sein.
 
 ## Probleme nach der Installation
 
@@ -96,14 +96,14 @@ Wichtige Informationen werden außerdem in die Datei `system/extensions/yellow-w
 
 ```
 2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
-2024-04-28 14:13:07 info Install extension 'Core 0.9.3'
+2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
 2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
-2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.1'
+2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.2'
 2024-04-28 14:13:07 info Install extension 'English 0.9.2'
 2024-04-28 14:13:07 info Install extension 'German 0.9.2'
 2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
-2024-04-28 14:18:11 info Install extension 'Fika 0.9.1'
-2024-04-28 14:18:11 error Can't parse file 'system/workers/fika.php'!
+2024-04-28 14:23:11 info Install extension 'Fika 0.9.1'
+2024-04-28 14:23:11 error Process file 'system/workers/fika.php' with fatal error!
 ```
 
 ## Probleme mit Apache

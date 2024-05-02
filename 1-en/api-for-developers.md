@@ -20,7 +20,7 @@ You can change everything in the file manager on your computer. The `content` fo
 │   └── thumbnails        = image thumbnails for content
 └── system                = system files
     ├── extensions        = configurable extension files, for example system settings
-    ├── layouts           = configurable layout files, for example HTML code
+    ├── layouts           = configurable layout files, for example HTML
     ├── themes            = configurable theme files, for example CSS and JavaScript
     └── workers           = files for developers, designers and translators
 ```
@@ -1422,7 +1422,7 @@ class YellowExample {
     
     // Handle content file changes
     public function onEditContentFile($page, $action, $email) {
-        if ($action=="edit") {
+        if ($action=="edit" && !$page->isError()) {
             $title = $page->get("title");
             $name = $this->yellow->user->getUser("name", $email);
             $this->yellow->toolbox->log("info", "Edit page by user '".strtok($name, " ")."'");
@@ -1446,9 +1446,8 @@ class YellowExample {
     
     // Handle media file changes
     public function onEditMediaFile($file, $action, $email) {
-        if ($action=="upload") {
-            $fileName = $file->fileName;
-            $fileType = $this->yellow->toolbox->getFileType($file->get("fileNameShort"));
+        if ($action=="upload" && !$file->isError()) {
+            $fileType = $file->get("type");
             $name = $this->yellow->user->getUser("name", $email);
             $this->yellow->toolbox->log("info", "Upload file by user '".strtok($name, " ")."'");
         }

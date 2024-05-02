@@ -20,7 +20,7 @@ Du kan ändra allt i filhanteraren på din dator. Mappen `content` innehåller w
 │   └── thumbnails        = miniatyrbilder för innehåll
 └── system                = systemfiler
     ├── extensions        = konfigurerbara tilläggsfiler, till exempel systeminställningar
-    ├── layouts           = konfigurerbara layoutfiler, till exempel HTML och PHP
+    ├── layouts           = konfigurerbara layoutfiler, till exempel HTML
     ├── themes            = konfigurerbara temafiler, till exempel CSS och JavaScript
     └── workers           = filer for utvecklare, formgivare och översättare
 ```
@@ -49,7 +49,7 @@ Du kan generera en statisk webbplats på kommandoraden. Den static-site-generato
 
 ## Objekt
 
-Med hjälp av API:et kan man komma åt filsystemet och inställningar. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Ett grundläggande objekt är `$this->yellow->page` för att komma åt aktuella sidan. Källkoden för hela API:et finns i filen `system/workers/core.php`.
+Med hjälp av API:et kan du komma åt filsystemet och inställningar. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Ett grundläggande objekt är `$this->yellow->page` för att komma åt aktuella sidan. Källkoden för hela API:et finns i filen `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -1423,7 +1423,7 @@ class YellowExample {
     
     // Handle content file changes
     public function onEditContentFile($page, $action, $email) {
-        if ($action=="edit") {
+        if ($action=="edit" && !$page->isError()) {
             $title = $page->get("title");
             $name = $this->yellow->user->getUser("name", $email);
             $this->yellow->toolbox->log("info", "Edit page by user '".strtok($name, " ")."'");
@@ -1447,9 +1447,8 @@ class YellowExample {
     
     // Handle media file changes
     public function onEditMediaFile($file, $action, $email) {
-        if ($action=="upload") {
-            $fileName = $file->fileName;
-            $fileType = $this->yellow->toolbox->getFileType($file->get("fileNameShort"));
+        if ($action=="upload" && !$file->isError()) {
+            $fileType = $file->get("type");
             $name = $this->yellow->user->getUser("name", $email);
             $this->yellow->toolbox->log("info", "Upload file by user '".strtok($name, " ")."'");
         }

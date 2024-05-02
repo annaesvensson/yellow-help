@@ -90,14 +90,14 @@ Rapportera ett fel tillsammans med loggfilen:
     
     ```
     2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
-    2024-04-28 14:13:07 info Install extension 'Core 0.9.3'
+    2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
     2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
-    2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.1'
+    2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.2'
     2024-04-28 14:13:07 info Install extension 'English 0.9.2'
     2024-04-28 14:13:07 info Install extension 'German 0.9.2'
     2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
-    2024-04-28 14:18:11 info Install extension 'Fika 0.9.1'
-    2024-04-28 14:18:11 error Can't parse file 'system/workers/fika.php'!
+    2024-04-28 14:23:11 info Install extension 'Fika 0.9.1'
+    2024-04-28 14:23:11 error Process file 'system/workers/fika.php' with fatal error!
     ```
     
     Let me know if you need more information. Thanks for investigating.

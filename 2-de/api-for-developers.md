@@ -20,7 +20,7 @@ Du kannst alles im Dateimanager auf deinem Computer ändern. Das `content`-Verze
 │   └── thumbnails        = Miniaturbilder für den Inhalt
 └── system                = Systemdateien
     ├── extensions        = konfigurierbare Erweiterungsdateien, beispielsweise Systemeinstellungen
-    ├── layouts           = konfigurierbare Layoutdateien, beispielsweise HTML-Code
+    ├── layouts           = konfigurierbare Layoutdateien, beispielsweise HTML
     ├── themes            = konfigurierbare Themedateien, beispielsweise CSS und JavaScript
     └── workers           = Dateien für Entwickler, Designer und Übersetzer
 ```
@@ -49,7 +49,7 @@ Du kannst eine statische Webseite in der Befehlszeile generieren. Der Static-Sit
 
 ## Objekte
 
-Mit Hilfe der API kann man auf das Dateisystem und Einstellungen zugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Ein grundlegendes Objekt ist `$this->yellow->page` um auf die aktuelle Seite zuzugreifen. Den Quellcode der gesamten API findet man in der Datei `system/workers/core.php`.
+Mit Hilfe der API kannst du auf das Dateisystem und Einstellungen zugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Ein grundlegendes Objekt ist `$this->yellow->page` um auf die aktuelle Seite zuzugreifen. Den Quellcode der gesamten API findet man in der Datei `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -1422,7 +1422,7 @@ class YellowExample {
     
     // Handle content file changes
     public function onEditContentFile($page, $action, $email) {
-        if ($action=="edit") {
+        if ($action=="edit" && !$page->isError()) {
             $title = $page->get("title");
             $name = $this->yellow->user->getUser("name", $email);
             $this->yellow->toolbox->log("info", "Edit page by user '".strtok($name, " ")."'");
@@ -1446,9 +1446,8 @@ class YellowExample {
     
     // Handle media file changes
     public function onEditMediaFile($file, $action, $email) {
-        if ($action=="upload") {
-            $fileName = $file->fileName;
-            $fileType = $this->yellow->toolbox->getFileType($file->get("fileNameShort"));
+        if ($action=="upload" && !$file->isError()) {
+            $fileType = $file->get("type");
             $name = $this->yellow->user->getUser("name", $email);
             $this->yellow->toolbox->log("info", "Upload file by user '".strtok($name, " ")."'");
         }
