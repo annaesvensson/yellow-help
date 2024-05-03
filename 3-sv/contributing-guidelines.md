@@ -32,7 +32,7 @@ Om du vill rapportera ett fel, [starta en ny diskussion](https://github.com/date
 
 ## Bra att veta
 
-Jobba med oss, ställ frågor och rapportera fel. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Använd en onlineöversättare om engelska inte är ditt modersmål. Tvinga ingenting. Du kan lämna diskussioner när som helst om dialogen inte är konstruktiv. Fokusera på människor som visa intresse och vill jobba tillsammans med dig. Tacka människor som pekar dig i rätt riktning och som skriver användbara svar. 
+Jobba med oss, ställ frågor och rapportera fel. Vi är intresserade av vad du vill göra och vilka problem du har. Ju mer vi vet, desto bättre. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Använd en onlineöversättare om engelska inte är ditt modersmål. Tvinga ingenting. Du kan lämna diskussioner när som helst om dialogen inte är konstruktiv. Fokusera på människor som visa intresse och vill jobba tillsammans med dig. Tacka människor som pekar dig i rätt riktning och som skriver användbara svar. 
 
 Du hittar oss på [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
 
