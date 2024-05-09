@@ -19,7 +19,7 @@ Du kannst alles im Dateimanager auf deinem Computer ändern. Das `content`-Verze
 │   ├── images            = Bilder für den Inhalt
 │   └── thumbnails        = Miniaturbilder für den Inhalt
 └── system                = Systemdateien
-    ├── extensions        = konfigurierbare Erweiterungsdateien, beispielsweise Systemeinstellungen
+    ├── extensions        = konfigurierbare Erweiterungsdateien, beispielsweise INI
     ├── layouts           = konfigurierbare Layoutdateien, beispielsweise HTML
     ├── themes            = konfigurierbare Themedateien, beispielsweise CSS und JavaScript
     └── workers           = Dateien für Entwickler, Designer und Übersetzer
@@ -625,7 +625,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 Die Klasse `YellowLookup` gibt Zugang zu Nachschlags- und Normalisierungsmethoden. Die folgenden Methoden sind verfügbar:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findFileFromSystemLocation` `findMediaDirectory` `findMediaLocationFromFile` `findSystemLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findFileFromSystemLocation` `findMediaDirectory` `findMediaLocationFromFile` `findSystemLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseClass` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -664,13 +664,16 @@ Normalisiere Name und E-Mail für eine einzelne Adresse
 `lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
 Normalisiere Felder in MIME-Headers
 
+`lookup->normaliseClass($text): string`  
+Normalisiere CSS-Klasse
+
 `lookup->normalisePath($text): string`  
 Normalisiere relative Pfadanteile
 
 `lookup->normaliseLocation($location, $pageLocation, $filterStrict = true): string`  
 Normalisiere einen Ort, mache absoluten Ort
 
-`lookup->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
+`lookup->normaliseArguments($text, $filterStrict = true): string`  
 Normalisiere Ortargumente
 
 `lookup->normaliseUrl($scheme, $address, $base, $location, $filterStrict = true): string`  
@@ -1273,13 +1276,23 @@ onLog           onParseContentElement    onEditSystemFile            │
                 onShutDown ◀─────────────────┴───────────────────────┘
 ```
 
-Die folgenden Ereignisse sind verfügbar:
+Die folgenden Arten von Ereignissen sind verfügbar:
 
-`onCommand` `onCommandHelp` `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount` `onLoad` `onLog` `onMail` `onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput` `onRequest` `onShutdown` `onStartup` `onUpdate`
+Yellow-Core-Ereignisse = [unterrichten wenn sich ein Zustand ändert](#yellow-core-ereignisse)  
+Yellow-Parse-Ereignisse = [unterrichten wenn eine Seite angezeigt wird](#yellow-parse-ereignisse)  
+Yellow-Edit-Ereignisse = [unterrichten wenn eine Datei im Webbrowser bearbeitet wird](#yellow-edit-ereignisse)  
+Yellow-Command-Ereignisse = [unterrichten wenn ein Befehl ausgeführt wird](#yellow-command-ereignisse)  
+Yellow-Update-Ereignisse = [unterrichten wenn eine Aktualisierung passiert](#yellow-update-ereignisse)  
 
 ### Yellow-Core-Ereignisse
 
-Yellow-Core-Ereignisse unterrichten wenn sich ein Zustand ändert:
+Yellow-Core-Ereignisse unterrichten wenn sich ein Zustand ändert. Die folgenden Ereignisse sind verfügbar:
+
+`onLoad` `onRequest` `onShutdown` `onStartup`
+
+---
+
+Beschreibung der Ereignisse und Argumente:
 
 `public function onLoad($yellow)`  
 Verarbeite die Initialisierung
@@ -1312,7 +1325,14 @@ class YellowExample {
 
 ### Yellow-Parse-Ereignisse
 
-Yellow-Parse-Ereignisse unterrichten wenn eine Seite angezeigt wird:
+Yellow-Parse-Ereignisse unterrichten wenn eine Seite angezeigt wird. Die folgenden Ereignisse sind verfügbar:
+
+`onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput`
+
+---
+
+Beschreibung der Ereignisse und Argumente:
+
 
 `public function onParseMetaData($page)`  
 Verarbeite die Metadaten einer Seite
@@ -1391,7 +1411,14 @@ class YellowExample {
 
 ### Yellow-Edit-Ereignisse
 
-Yellow-Edit-Ereignisse unterrichten wenn eine Seite bearbeitet wird:
+Yellow-Edit-Ereignisse unterrichten wenn eine Datei im Webbrowser bearbeitet wird. Die folgenden Ereignisse sind verfügbar:
+
+`onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount`
+
+---
+
+Beschreibung der Ereignisse und Argumente:
+
 
 `public function onEditContentFile($page, $action, $email)`  
 Verarbeite Änderungen an Inhaltsdatei
@@ -1457,7 +1484,13 @@ class YellowExample {
 
 ### Yellow-Command-Ereignisse
 
-Yellow-Command-Ereignisse unterrichten wenn ein Befehl ausgeführt wird:
+Yellow-Command-Ereignisse unterrichten wenn ein Befehl ausgeführt wird. Die folgenden Ereignisse sind verfügbar:
+
+`onCommand` `onCommandHelp`
+
+---
+
+Beschreibung der Ereignisse und Argumente:
 
 `public function onCommand($command, $text)`  
 Verarbeite Befehle
@@ -1543,7 +1576,13 @@ class YellowExample {
 
 ### Yellow-Update-Ereignisse
 
-Yellow-Update-Ereignisse unterrichten wenn eine Aktualisierung passiert:
+Yellow-Update-Ereignisse unterrichten wenn eine Aktualisierung passiert. Die folgenden Ereignisse sind verfügbar:
+
+`onLog` `onMail` `onUpdate`
+
+---
+
+Beschreibung der Ereignisse und Argumente:
 
 `public function onUpdate($action)`  
 Verarbeite Aktualisierung
@@ -1553,7 +1592,6 @@ Verarbeite E-Mail
 
 `public function onLog($action, $message)`  
 Verarbeite Logging
-
 
 ---
 

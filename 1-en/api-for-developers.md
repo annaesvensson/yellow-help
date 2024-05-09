@@ -19,7 +19,7 @@ You can change everything in the file manager on your computer. The `content` fo
 │   ├── images            = image files for content
 │   └── thumbnails        = image thumbnails for content
 └── system                = system files
-    ├── extensions        = configurable extension files, for example system settings
+    ├── extensions        = configurable extension files, for example INI
     ├── layouts           = configurable layout files, for example HTML
     ├── themes            = configurable theme files, for example CSS and JavaScript
     └── workers           = files for developers, designers and translators
@@ -625,7 +625,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 The class `YellowLookup` gives access to lookup and normalisation methods. The following methods are available:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findFileFromSystemLocation` `findMediaDirectory` `findMediaLocationFromFile` `findSystemLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findFileFromSystemLocation` `findMediaDirectory` `findMediaLocationFromFile` `findSystemLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseClass` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -664,13 +664,16 @@ Normalise name and email for a single address
 `lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
 Normalise fields in MIME headers
 
+`lookup->normaliseClass($text): string`  
+Normalise CSS class
+
 `lookup->normalisePath($text): string`  
 Normalise relative path tokens
 
 `lookup->normaliseLocation($location, $pageLocation, $filterStrict = true): string`  
 Normalise location, make absolute location
 
-`lookup->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
+`lookup->normaliseArguments($text, $filterStrict = true): string`  
 Normalise location arguments
 
 `lookup->normaliseUrl($scheme, $address, $base, $location, $filterStrict = true): string`  
@@ -1273,13 +1276,23 @@ onLog           onParseContentElement    onEditSystemFile            │
                 onShutDown ◀─────────────────┴───────────────────────┘
 ```
 
-The following events are available:
+The following types of events are available:
 
-`onCommand` `onCommandHelp` `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount` `onLoad` `onLog` `onMail` `onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput` `onRequest` `onShutdown` `onStartup` `onUpdate`
+Yellow core events = [notify when a state has changed](#yellow-core-events)  
+Yellow parse events = [notify when a page is displayed](#yellow-parse-events)  
+Yellow edit events = [notify when a file is edited in the web browser](#yellow-edit-events)  
+Yellow command events = [notify when a command is executed](#yellow-command-events)  
+Yellow update events = [notify when an update happens](#yellow-update-events)  
 
 ### Yellow core events
 
-Yellow core events notify when a state has changed:
+Yellow core events notify when a state has changed. The following events are available:
+
+`onLoad` `onRequest` `onShutdown` `onStartup`
+
+---
+
+Description of events and arguments:
 
 `public function onLoad($yellow)`  
 Handle initialisation
@@ -1312,7 +1325,13 @@ class YellowExample {
 
 ### Yellow parse events
 
-Yellow parse events notify when a page is displayed:
+Yellow parse events notify when a page is displayed. The following events are available:
+
+`onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput`
+
+---
+
+Description of events and arguments:
 
 `public function onParseMetaData($page)`  
 Handle page meta data
@@ -1391,7 +1410,13 @@ class YellowExample {
 
 ### Yellow edit events
 
-Yellow edit events notify when a page is edited:
+Yellow edit events notify when a file is edited in the web browser. The following events are available:
+
+`onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount`
+
+---
+
+Description of events and arguments:
 
 `public function onEditContentFile($page, $action, $email)`  
 Handle content file changes
@@ -1457,7 +1482,13 @@ class YellowExample {
 
 ### Yellow command events
 
-Yellow command events notify when a command is executed:
+Yellow command events notify when a command is executed. The following events are available:
+
+`onCommand` `onCommandHelp`
+
+---
+
+Description of events and arguments:
 
 `public function onCommand($command, $text)`  
 Handle command
@@ -1543,7 +1574,13 @@ class YellowExample {
 
 ### Yellow update events
 
-Yellow update events notify when an update happens:
+Yellow update events notify when an update happens. The following events are available:
+
+`onLog` `onMail` `onUpdate`
+
+---
+
+Description of events and arguments:
 
 `public function onUpdate($action)`  
 Handle update

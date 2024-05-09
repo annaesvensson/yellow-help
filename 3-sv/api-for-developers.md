@@ -19,7 +19,7 @@ Du kan ändra allt i filhanteraren på din dator. Mappen `content` innehåller w
 │   ├── images            = bildfiler för innehåll
 │   └── thumbnails        = miniatyrbilder för innehåll
 └── system                = systemfiler
-    ├── extensions        = konfigurerbara tilläggsfiler, till exempel systeminställningar
+    ├── extensions        = konfigurerbara tilläggsfiler, till exempel INI
     ├── layouts           = konfigurerbara layoutfiler, till exempel HTML
     ├── themes            = konfigurerbara temafiler, till exempel CSS och JavaScript
     └── workers           = filer for utvecklare, formgivare och översättare
@@ -626,7 +626,7 @@ if ($this->yellow->extension->isExisting("image")) {
 
 Klassen `YellowLookup` ger tillgång till uppslags och normaliseringsmetoder. Följande metoder är tillgängliga:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findFileFromSystemLocation` `findMediaDirectory` `findMediaLocationFromFile` `findSystemLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findFileFromSystemLocation` `findMediaDirectory` `findMediaLocationFromFile` `findSystemLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseClass` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -665,13 +665,16 @@ Normalisera namn och email för en enda adress
 `lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
 Normalisera fält i MIME-headers
 
+`lookup->normaliseClass($text): string`  
+Normalisera CSS-klass
+
 `lookup->normalisePath($text): string`  
 Normalisera relativa sökvägsandelar 
 
 `lookup->normaliseLocation($location, $pageLocation, $filterStrict = true): string`  
 Normalisera plats, gör absolut plats
 
-`lookup->normaliseArguments($text, $appendSlash = true, $filterStrict = true): string`  
+`lookup->normaliseArguments($text, $filterStrict = true): string`  
 Normalisera platsargument
 
 `lookup->normaliseUrl($scheme, $address, $base, $location, $filterStrict = true): string`  
@@ -1274,13 +1277,23 @@ onLog           onParseContentElement    onEditSystemFile            │
                 onShutDown ◀─────────────────┴───────────────────────┘
 ```
 
-Följande händelser är tillgängliga:
+Följande typer av händelser är tillgängliga:
 
-`onCommand` `onCommandHelp` `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount` `onLoad` `onLog` `onMail` `onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput` `onRequest` `onShutdown` `onStartup` `onUpdate`
+Yellow core händelser = [meddelar när ett tillstånd ändras](#yellow-core-händelser)  
+Yellow parse händelser = [meddelar när en sida visas](#yellow-parse-händelser)  
+Yellow edit händelser = [meddelar när en fil redigeras i webbläsaren](#yellow-edit-händelser)  
+Yellow command händelser = [meddelar när ett kommando körs](#yellow-command-händelser)  
+Yellow update händelser = [meddelar när en uppdatering sker](#yellow-update-händelser)  
 
 ### Yellow core händelser
 
-Yellow core händelser meddelar när ett tillstånd ändras:
+Yellow core händelser meddelar när ett tillstånd ändras. Följande händelser är tillgängliga:
+
+`onLoad` `onRequest` `onShutdown` `onStartup`
+
+---
+
+Beskrivning av händelser och argument:
 
 `public function onLoad($yellow)`  
 Hantera initialisering
@@ -1313,7 +1326,13 @@ class YellowExample {
 
 ### Yellow parse händelser
 
-Yellow core händelser meddelar när en sida visas:
+Yellow parse händelser meddelar när en sida visas. Följande händelser är tillgängliga:
+
+`onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput`
+
+---
+
+Beskrivning av händelser och argument:
 
 `public function onParseMetaData($page)`  
 Hantera metadata av en sida
@@ -1392,7 +1411,13 @@ class YellowExample {
 
 ### Yellow edit händelser
 
-Yellow edit händelser meddelar när en sida redigeras:
+Yellow edit händelser meddelar när en fil redigeras i webbläsaren. Följande händelser är tillgängliga:
+
+`onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount`
+
+---
+
+Beskrivning av händelser och argument:
 
 `public function onEditContentFile($page, $action, $email)`  
 Hantera innehållsfiländringar
@@ -1458,7 +1483,13 @@ class YellowExample {
 
 ### Yellow command händelser
 
-Yellow command händelser när ett kommando körs:
+Yellow command händelser meddelar när ett kommando körs. Följande händelser är tillgängliga:
+
+`onCommand` `onCommandHelp`
+
+---
+
+Beskrivning av händelser och argument:
 
 `public function onCommand($command, $text)`  
 Hantera kommandon
@@ -1544,8 +1575,13 @@ class YellowExample {
 
 ### Yellow update händelser
 
-Yellow update händelser meddelar när en uppdatering sker:
+Yellow update händelser meddelar när en uppdatering sker. Följande händelser är tillgängliga:
 
+`onLog` `onMail` `onUpdate`
+
+---
+
+Beskrivning av händelser och argument:
 
 `public function onUpdate($action)`  
 Hantera uppdatering
