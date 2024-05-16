@@ -49,7 +49,7 @@ Du kan generera en statisk webbplats på kommandoraden. Den static-site-generato
 
 ## Objekt
 
-Med hjälp av API:et kan du komma åt filsystemet och inställningar. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Ett grundläggande objekt är `$this->yellow->page` för att komma åt aktuella sidan. Källkoden för hela API:et finns i filen `system/workers/core.php`.
+Med hjälp av API:et har du tillgång till filsystemet och inställningar. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Ett objekt du kommer att se ofta är `$this->yellow->page`, detta objekt ger dig tillgång till aktuella sidan. Källkoden för hela API:et finns i filen `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -1256,7 +1256,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Händelser
 
-Med hjälp av händelser informerar hemsidan dig när något händer. Först laddas tilläggen och `onLoad` anropas. Så snart alla tillägg har laddats kallas `onStartup`. En begäran från webbläsaren kan hanteras med olika händelser. I de flesta fall genereras innehållet av en sida. Om ett fel har inträffat genereras en felsida. Slutligen matas sidan ut och `onShutdown` anropas.
+Med hjälp av händelser meddelar hemsidan dig när något interessant händer. Först laddas tilläggen och `onLoad` anropas. Så snart systemet har startat kallas antingen `onRequest` eller `onCommand`. En begäran från webbläsaren kan hanteras med olika händelser. I de flesta fall genereras innehållet av en sida. Om ett fel har inträffat genereras en felsida. Slutligen matas den genererade sidan ut.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐
@@ -1265,25 +1265,25 @@ onLoad ───────▶ onStartup ────────────�
                 onRequest ───────────────────┐                       │
                     │                        │                       │
                     ▼                        ▼                       ▼
-onUpdate        onParseMetaData          onEditContentFile       onCommand  
+onLog           onParseMetaData          onEditContentFile       onCommand  
 onMail          onParseContentRaw        onEditMediaFile         onCommandHelp
-onLog           onParseContentElement    onEditSystemFile            │
+onUpdate        onParseContentElement    onEditSystemFile            │
                 onParseContentHtml       onEditUserAccount           │
                 onParsePageLayout            │                       │
                 onParsePageExtra             │                       │
                 onParsePageOutput            │                       │
                     │                        │                       │
                     ▼                        │                       │
-                onShutDown ◀─────────────────┴───────────────────────┘
+                onShutdown ◀─────────────────┴───────────────────────┘
 ```
 
 Följande typer av händelser är tillgängliga:
 
-Yellow core händelser = [meddelar när ett tillstånd ändras](#yellow-core-händelser)  
-Yellow parse händelser = [meddelar när en sida visas](#yellow-parse-händelser)  
-Yellow edit händelser = [meddelar när en fil redigeras i webbläsaren](#yellow-edit-händelser)  
-Yellow command händelser = [meddelar när ett kommando körs](#yellow-command-händelser)  
-Yellow update händelser = [meddelar när en uppdatering sker](#yellow-update-händelser)  
+`Yellow core händelser` = [meddelar när ett tillstånd ändras](#yellow-core-händelser)  
+`Yellow info händelser` = [meddelar när information finns tillgänglig](#yellow-info-händelser)  
+`Yellow parse händelser` = [meddelar när en sida visas](#yellow-parse-händelser)  
+`Yellow edit händelser` = [meddelar när en fil redigeras i webbläsaren](#yellow-edit-händelser)  
+`Yellow command händelser` = [meddelar när ett kommando körs](#yellow-command-händelser)  
 
 ### Yellow core händelser
 
@@ -1324,11 +1324,92 @@ class YellowExample {
 }
 ```
 
+### Yellow info händelser
+
+Yellow info händelser meddelar när information finns tillgänglig. Följande händelser är tillgängliga:
+
+`onLog` `onMail` `onUpdate`
+
+Följande uppdateringsåtgärder är tillgängliga:
+
+`clean` = städa upp filer för statisk webbplats  
+`daily` = daglig händelse för alla tillägg  
+`install` = tillägget är installerat  
+`uninstall` = tillägget är avinstallerat  
+`update` = tillägget är uppdaterat  
+
+---
+
+Beskrivning av händelser och argument:
+
+`public function onLog($action, $message)`  
+Hantera loggning
+
+`public function onMail($action, $headers, $message)`  
+Hantera email
+
+`public function onUpdate($action)`  
+Hantera uppdatering
+
+---
+
+Tillägg för att hantera en uppdateringshändelse:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.2";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="install") {
+            $this->yellow->toolbox->log("info", "Install event");
+        }
+    }
+}
+```
+
+Tillägg för att hantera en daglig händelse:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.3";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="daily") {
+            $this->yellow->toolbox->log("info", "Daily event");
+        }
+    }
+}
+```
+
 ### Yellow parse händelser
 
 Yellow parse händelser meddelar när en sida visas. Följande händelser är tillgängliga:
 
 `onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput`
+
+Följande elementtyper är tillgängliga:
+
+`inline` = förkortning med ett textelement  
+`block` = förkortning med ett blockelement  
+`code` = kod blockelement, kan innehålla flera textrader  
+`notice` = indikation blockelement, kan innehålla flera textrader   
+`symbol` = symbol textelement, används för emoji och ikoner  
 
 ---
 
@@ -1362,7 +1443,7 @@ Tillägg för att skapa en egen förkortning:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.2";
+    const VERSION = "0.1.4";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1388,7 +1469,7 @@ Tillägg för att skapa en HTML header:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.3";
+    const VERSION = "0.1.5";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1415,6 +1496,15 @@ Yellow edit händelser meddelar när en fil redigeras i webbläsaren. Följande 
 
 `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount`
 
+Följande innehållsåtgärder är tillgängliga:
+
+`precreate` = sidan skapas, metadata är inte klar än  
+`preedit` = sidan redigeras, metadata är inte klar än  
+`create` = sidan skapas  
+`edit` = sidan redigeras  
+`delete` = sidan tas bort  
+`restore` = sidan återställs  
+
 ---
 
 Beskrivning av händelser och argument:
@@ -1438,7 +1528,7 @@ Tillägg för att hantera innehållsfiländringar:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.4";
+    const VERSION = "0.1.6";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1462,7 +1552,7 @@ Tillägg för att hantera mediefiländringar:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.5";
+    const VERSION = "0.1.7";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1504,7 +1594,7 @@ Tillägg för att hantera ett kommando:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.6";
+    const VERSION = "0.1.8";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1534,7 +1624,7 @@ Tillägg för att hantera flera kommandon:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.7";
+    const VERSION = "0.1.9";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1569,71 +1659,6 @@ class YellowExample {
         if (is_string_empty($text)) $text = "World";
         echo "Goodbye $text\n";
         return 200;
-    }
-}
-```
-
-### Yellow update händelser
-
-Yellow update händelser meddelar när en uppdatering sker. Följande händelser är tillgängliga:
-
-`onLog` `onMail` `onUpdate`
-
----
-
-Beskrivning av händelser och argument:
-
-`public function onUpdate($action)`  
-Hantera uppdatering
-
-`public function onMail($action, $headers, $message)`  
-Hantera email
-
-`public function onLog($action, $message)`  
-Hantera loggning
-
----
-
-Tillägg för att hantera en uppdateringshändelse:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.1.8";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="install") {
-            $this->yellow->toolbox->log("info", "Install event");
-        }
-    }
-}
-```
-
-Tillägg för att hantera en daglig händelse:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.1.9";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="daily") {
-            $this->yellow->toolbox->log("info", "Daily event");
-        }
     }
 }
 ```

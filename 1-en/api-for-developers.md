@@ -49,7 +49,7 @@ You can generate a static website at the command line. The static site generator
 
 ## Objects
 
-With the help of the API you can access the file system and settings. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. A fundamental object is `$this->yellow->page` to access the current page. The source code of the entire API can be found in file `system/workers/core.php`.
+With the help of the API you have access to the file system and settings. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. An object you will see often is `$this->yellow->page`, this object gives you access to the current page. The source code of the entire API can be found in file `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -1255,7 +1255,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Events
 
-With help of events the website informs you when something happens. First extensions are loaded and `onLoad` will be called. As soon as all extensions are loaded `onStartup` will be called. A request from the web browser can be handled with various events. In most cases the page content will be generated. If an error has occurred, an error page will be generated. Finally the page is output and `onShutdown` will be called.
+With help of events the website notifys you when something interesting happens. First extensions are loaded and `onLoad` will be called. As soon as the system has started up either `onRequest` or `onCommand` will be called. A request from the web browser can be handled with various events. In most cases the page content will be generated. If an error has occurred, an error page will be generated. Finally the generated page is output.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐
@@ -1264,25 +1264,25 @@ onLoad ───────▶ onStartup ────────────�
                 onRequest ───────────────────┐                       │
                     │                        │                       │
                     ▼                        ▼                       ▼
-onUpdate        onParseMetaData          onEditContentFile       onCommand  
+onLog           onParseMetaData          onEditContentFile       onCommand  
 onMail          onParseContentRaw        onEditMediaFile         onCommandHelp
-onLog           onParseContentElement    onEditSystemFile            │
+onUpdate        onParseContentElement    onEditSystemFile            │
                 onParseContentHtml       onEditUserAccount           │
                 onParsePageLayout            │                       │
                 onParsePageExtra             │                       │
                 onParsePageOutput            │                       │
                     │                        │                       │
                     ▼                        │                       │
-                onShutDown ◀─────────────────┴───────────────────────┘
+                onShutdown ◀─────────────────┴───────────────────────┘
 ```
 
 The following types of events are available:
 
-Yellow core events = [notify when a state has changed](#yellow-core-events)  
-Yellow parse events = [notify when a page is displayed](#yellow-parse-events)  
-Yellow edit events = [notify when a file is edited in the web browser](#yellow-edit-events)  
-Yellow command events = [notify when a command is executed](#yellow-command-events)  
-Yellow update events = [notify when an update happens](#yellow-update-events)  
+`Yellow core events` = [notify when a state has changed](#yellow-core-events)  
+`Yellow info events` = [notify when information is available](#yellow-info-events)  
+`Yellow parse events` = [notify when a page is displayed](#yellow-parse-events)  
+`Yellow edit events` = [notify when a file is edited in the web browser](#yellow-edit-events)  
+`Yellow command events` = [notify when a command is executed](#yellow-command-events)  
 
 ### Yellow core events
 
@@ -1323,11 +1323,92 @@ class YellowExample {
 }
 ```
 
+### Yellow info events
+
+Yellow info events notify when information is available. The following events are available:
+
+`onLog` `onMail` `onUpdate`
+
+The following update actions are available:
+
+`clean` = clean up files for static website  
+`daily` = daily event for all extensions  
+`install` = extension is installed  
+`uninstall` = extension is uninstalled  
+`update` = extension is updated  
+
+---
+
+Description of events and arguments:
+
+`public function onLog($action, $message)`  
+Handle logging
+
+`public function onMail($action, $headers, $message)`  
+Handle email
+
+`public function onUpdate($action)`  
+Handle update
+
+---
+
+Extension for handling an update event:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.2";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="install") {
+            $this->yellow->toolbox->log("info", "Install event");
+        }
+    }
+}
+```
+
+Extension for handling a daily event:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.3";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="daily") {
+            $this->yellow->toolbox->log("info", "Daily event");
+        }
+    }
+}
+```
+
 ### Yellow parse events
 
 Yellow parse events notify when a page is displayed. The following events are available:
 
 `onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput`
+
+The following element types are available:
+
+`inline` = shortcut with an inline element  
+`block` = shortcut with a block element  
+`code` = code block element, may contain multiple text lines  
+`notice` = notice block element, may contain multiple text lines   
+`symbol` = symbol inline element, used for emojis and icons  
 
 ---
 
@@ -1361,7 +1442,7 @@ Extension for creating a custom shortcut:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.2";
+    const VERSION = "0.1.4";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1387,7 +1468,7 @@ Extension for creating a HTML header:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.3";
+    const VERSION = "0.1.5";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1414,6 +1495,15 @@ Yellow edit events notify when a file is edited in the web browser. The followin
 
 `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount`
 
+The following content actions are available:
+
+`precreate` = page is created, meta data is not ready yet  
+`preedit` = page is edited, meta data is not ready yet  
+`create` = page is created  
+`edit` = page is edited  
+`delete` = page is deleted  
+`restore` = page is restored  
+
 ---
 
 Description of events and arguments:
@@ -1437,7 +1527,7 @@ Extension for handling content file changes:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.4";
+    const VERSION = "0.1.6";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1461,7 +1551,7 @@ Extension for handling media file changes:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.5";
+    const VERSION = "0.1.7";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1503,7 +1593,7 @@ Extension for handling a command:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.6";
+    const VERSION = "0.1.8";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1533,7 +1623,7 @@ Extension for handling multiple commands:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.7";
+    const VERSION = "0.1.9";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1568,71 +1658,6 @@ class YellowExample {
         if (is_string_empty($text)) $text = "World";
         echo "Goodbye $text\n";
         return 200;
-    }
-}
-```
-
-### Yellow update events
-
-Yellow update events notify when an update happens. The following events are available:
-
-`onLog` `onMail` `onUpdate`
-
----
-
-Description of events and arguments:
-
-`public function onUpdate($action)`  
-Handle update
-
-`public function onMail($action, $headers, $message)`  
-Handle email
-
-`public function onLog($action, $message)`  
-Handle logging
-
----
-
-Extension for handling an update event:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.1.8";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="install") {
-            $this->yellow->toolbox->log("info", "Install event");
-        }
-    }
-}
-```
-
-Extension for handling a daily event:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.1.9";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="daily") {
-            $this->yellow->toolbox->log("info", "Daily event");
-        }
     }
 }
 ```

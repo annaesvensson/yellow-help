@@ -49,7 +49,8 @@ Du kannst eine statische Webseite in der Befehlszeile generieren. Der Static-Sit
 
 ## Objekte
 
-Mit Hilfe der API kannst du auf das Dateisystem und Einstellungen zugreifen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Ein grundlegendes Objekt ist `$this->yellow->page` um auf die aktuelle Seite zuzugreifen. Den Quellcode der gesamten API findet man in der Datei `system/workers/core.php`.
+Mit Hilfe der API hast du Zugriff auf das Dateisystem und die Einstellungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Ein Objekt das du häufig sehen wirst ist `$this->yellow->page`, dieses Objekt gibt dir Zugang zur aktuellen Seite. Den Quellcode der gesamten API findest du in der Datei `system/workers/core.php`.
+
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -1255,7 +1256,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Ereignisse
 
-Mit Hilfe von Ereignissen informiert dich die Webseite wenn etwas passiert. Zuerst werden die Erweiterungen geladen und es wird `onLoad` aufgerufen. Sobald alle Erweiterungen geladen sind wird `onStartup` aufgerufen. Eine Anfrage vom Webbrowser kann mit verschiedenen Ereignissen verarbeitet werden. In den meisten Fällen wird der Inhalt einer Seite erzeugt. Sollte ein Fehler aufgetreten sein, wird eine Fehlerseite erzeugt. Zum Schluss wird die Seite ausgegeben und es wird `onShutdown` aufgerufen.
+Mit Hilfe von Ereignissen unterrichtet dich die Webseite wenn etwas Interessantes passiert. Zuerst werden die Erweiterungen geladen und es wird `onLoad` aufgerufen. Sobald das System hochgefahren ist wird entweder `onRequest` oder `onCommand` aufgerufen. Eine Anfrage vom Webbrowser kann mit verschiedenen Ereignissen verarbeitet werden. In den meisten Fällen wird der Inhalt einer Seite erzeugt. Sollte ein Fehler aufgetreten sein, wird eine Fehlerseite erzeugt. Zum Schluss wird die erzeugte Seite ausgegeben.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐
@@ -1264,25 +1265,25 @@ onLoad ───────▶ onStartup ────────────�
                 onRequest ───────────────────┐                       │
                     │                        │                       │
                     ▼                        ▼                       ▼
-onUpdate        onParseMetaData          onEditContentFile       onCommand  
+onLog           onParseMetaData          onEditContentFile       onCommand  
 onMail          onParseContentRaw        onEditMediaFile         onCommandHelp
-onLog           onParseContentElement    onEditSystemFile            │
+onUpdate        onParseContentElement    onEditSystemFile            │
                 onParseContentHtml       onEditUserAccount           │
                 onParsePageLayout            │                       │
                 onParsePageExtra             │                       │
                 onParsePageOutput            │                       │
                     │                        │                       │
                     ▼                        │                       │
-                onShutDown ◀─────────────────┴───────────────────────┘
+                onShutdown ◀─────────────────┴───────────────────────┘
 ```
 
 Die folgenden Arten von Ereignissen sind verfügbar:
 
-Yellow-Core-Ereignisse = [unterrichten wenn sich ein Zustand ändert](#yellow-core-ereignisse)  
-Yellow-Parse-Ereignisse = [unterrichten wenn eine Seite angezeigt wird](#yellow-parse-ereignisse)  
-Yellow-Edit-Ereignisse = [unterrichten wenn eine Datei im Webbrowser bearbeitet wird](#yellow-edit-ereignisse)  
-Yellow-Command-Ereignisse = [unterrichten wenn ein Befehl ausgeführt wird](#yellow-command-ereignisse)  
-Yellow-Update-Ereignisse = [unterrichten wenn eine Aktualisierung passiert](#yellow-update-ereignisse)  
+`Yellow-Core-Ereignisse` = [unterrichten wenn sich ein Zustand ändert](#yellow-core-ereignisse)  
+`Yellow-Info-Ereignisse` = [unterrichten wenn Informationen verfügbar sind](#yellow-info-ereignisse)  
+`Yellow-Parse-Ereignisse` = [unterrichten wenn eine Seite angezeigt wird](#yellow-parse-ereignisse)  
+`Yellow-Edit-Ereignisse` = [unterrichten wenn eine Datei im Webbrowser bearbeitet wird](#yellow-edit-ereignisse)  
+`Yellow-Command-Ereignisse` = [unterrichten wenn ein Befehl ausgeführt wird](#yellow-command-ereignisse)  
 
 ### Yellow-Core-Ereignisse
 
@@ -1323,11 +1324,92 @@ class YellowExample {
 }
 ```
 
+### Yellow-Info-Ereignisse
+
+Yellow-Info-Ereignisse unterrichten wenn Informationen verfügbar sind. Die folgenden Ereignisse sind verfügbar:
+
+`onLog` `onMail` `onUpdate`
+
+Die folgenden Aktualisierungs-Aktionen sind verfügbar:
+
+`clean` = Dateien für statische Webseite aufräumen  
+`daily` = tägliches Ereignis für alle Erweiterungen  
+`install` = Erweiterung wird installiert  
+`uninstall` = Erweiterung wird deinstalliert  
+`update` = Erweiterung wird aktualisiert  
+
+---
+
+Beschreibung der Ereignisse und Argumente:
+
+`public function onLog($action, $message)`  
+Verarbeite Logging
+
+`public function onMail($action, $headers, $message)`  
+Verarbeite E-Mail
+
+`public function onUpdate($action)`  
+Verarbeite Aktualisierung
+
+---
+
+Erweiterung um ein Aktualisierung-Ereignis zu verarbeiten:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.2";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="install") {
+            $this->yellow->toolbox->log("info", "Install event");
+        }
+    }
+}
+```
+
+Erweiterung um ein tägliches Ereignis zu verarbeiten:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.3";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="daily") {
+            $this->yellow->toolbox->log("info", "Daily event");
+        }
+    }
+}
+```
+
 ### Yellow-Parse-Ereignisse
 
 Yellow-Parse-Ereignisse unterrichten wenn eine Seite angezeigt wird. Die folgenden Ereignisse sind verfügbar:
 
 `onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput`
+
+Die folgenden Element-Typen sind verfügbar:
+
+`inline` = Abkürzung mit einem Textelement  
+`block` = Abkürzung mit einem Blockelement  
+`code` = Code-Blockelement, kann mehrere Textzeilen enthalten  
+`notice` = Hinweis-Blockelement, kann mehrere Textzeilen enthalten  
+`symbol` = Symbol-Textelement, wird für Emoji und Symbole verwendet  
 
 ---
 
@@ -1362,7 +1444,7 @@ Erweiterung um eine eigene Abkürzung zu erstellen:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.2";
+    const VERSION = "0.1.4";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1388,7 +1470,7 @@ Erweiterung um einen HTML-Header zu erstellen:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.3";
+    const VERSION = "0.1.5";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1415,6 +1497,15 @@ Yellow-Edit-Ereignisse unterrichten wenn eine Datei im Webbrowser bearbeitet wir
 
 `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount`
 
+Die folgenden Inhalts-Aktionen sind verfügbar:
+
+`precreate` = Seite wird erstellt, Metadaten sind noch nicht bereit  
+`preedit` = Seite wird bearbeitet, Metadaten sind noch nicht bereit  
+`create` = Seite wird erstellt  
+`edit` = Seite wird bearbeitet  
+`delete` = Seite wird gelöscht  
+`restore` = Seite wird wiederhergestellt  
+
 ---
 
 Beschreibung der Ereignisse und Argumente:
@@ -1439,7 +1530,7 @@ Erweiterung um Änderungen an Inhaltsdatei zu verarbeiten:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.4";
+    const VERSION = "0.1.6";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1463,7 +1554,7 @@ Erweiterung um Änderungen an Mediendatei zu verarbeiten:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.5";
+    const VERSION = "0.1.7";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1505,7 +1596,7 @@ Erweiterung um einen Befehl zu verarbeiten:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.6";
+    const VERSION = "0.1.8";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1535,7 +1626,7 @@ Erweiterung um mehrere Befehle zu verarbeiten:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.7";
+    const VERSION = "0.1.9";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1570,71 +1661,6 @@ class YellowExample {
         if (is_string_empty($text)) $text = "World";
         echo "Goodbye $text\n";
         return 200;
-    }
-}
-```
-
-### Yellow-Update-Ereignisse
-
-Yellow-Update-Ereignisse unterrichten wenn eine Aktualisierung passiert. Die folgenden Ereignisse sind verfügbar:
-
-`onLog` `onMail` `onUpdate`
-
----
-
-Beschreibung der Ereignisse und Argumente:
-
-`public function onUpdate($action)`  
-Verarbeite Aktualisierung
-
-`public function onMail($action, $headers, $message)`  
-Verarbeite E-Mail
-
-`public function onLog($action, $message)`  
-Verarbeite Logging
-
----
-
-Erweiterung um ein Aktualisierung-Ereignis zu verarbeiten:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.1.8";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="install") {
-            $this->yellow->toolbox->log("info", "Install event");
-        }
-    }
-}
-```
-
-Erweiterung um ein tägliches Ereignis zu verarbeiten:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.1.9";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="daily") {
-            $this->yellow->toolbox->log("info", "Daily event");
-        }
     }
 }
 ```
