@@ -1256,7 +1256,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Händelser
 
-Med hjälp av händelser meddelar hemsidan dig när något interessant händer. Först laddas tilläggen och `onLoad` anropas. Så snart systemet har startat kallas antingen `onRequest` eller `onCommand`. En begäran från webbläsaren kan hanteras med olika händelser. I de flesta fall genereras innehållet av en sida. Om ett fel har inträffat genereras en felsida. Slutligen matas den genererade sidan ut.
+Med hjälp av händelser meddelar hemsidan dig när något interessant händer. Först laddas tilläggen och `onLoad` anropas. Så snart systemet har startat anropas antingen `onRequest` eller `onCommand`. En begäran från webbläsaren kan hanteras med olika händelser. I de flesta fall genereras innehållet av en sida. Om ett fel har inträffat genereras en felsida. Slutligen matas den genererade sidan ut.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐
