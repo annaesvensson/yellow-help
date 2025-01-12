@@ -403,13 +403,13 @@ Hole eine Spracheinstellung
 `language->getTextHtml($key, $language = ""): string`  
 Hole eine Spracheinstellung, HTML-kodiert
 
-`page->getDateStandard($text, $language = ""): string`  
+`language->getDateStandard($text, $language = ""): string`  
 Hole einen Text als [sprachspezifisches Datum](how-to-change-the-system#spracheinstellungen), in eines der Standardformate konvertieren
 
-`page->getDateRelative($timestamp, $format, $daysLimit, $language = ""): string`  
+`language->getDateRelative($timestamp, $format, $daysLimit, $language = ""): string`  
 Hole eine Unix-Zeit als [Datum](https://www.php.net/manual/de/function.date.php), relativ zu heute
 
-`page->getDateFormatted($timestamp, $format, $language = ""): string`  
+`language->getDateFormatted($timestamp, $format, $language = ""): string`  
 Hole eine Unix-Zeit als [Datum](https://www.php.net/manual/de/function.date.php)
 
 `language->getSettings($filterStart = "", $filterEnd = "", $language = ""): array`  

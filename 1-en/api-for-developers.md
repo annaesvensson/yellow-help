@@ -402,13 +402,13 @@ Return language setting
 `language->getTextHtml($key, $language = ""): string`  
 Return language setting, HTML encoded
 
-`page->getDateStandard($text, $language = ""): string`  
+`language->getDateStandard($text, $language = ""): string`  
 Return text as [language specific date](how-to-change-the-system#language-settings), convert to one of the standard formats
 
-`page->getDateRelative($timestamp, $format, $daysLimit, $language = ""): string`  
+`language->getDateRelative($timestamp, $format, $daysLimit, $language = ""): string`  
 Return Unix time as [date](https://www.php.net/manual/en/function.date.php), relative to today
 
-`page->getDateFormatted($timestamp, $format, $language = ""): string`  
+`language->getDateFormatted($timestamp, $format, $language = ""): string`  
 Return Unix time as [date](https://www.php.net/manual/en/function.date.php)
 
 `language->getSettings($filterStart = "", $filterEnd = "", $language = ""): array`  
