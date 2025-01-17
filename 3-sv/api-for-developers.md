@@ -403,13 +403,13 @@ Returnera språkinställning
 `language->getTextHtml($key, $language = ""): string`  
 Returnera språkinställning, HTML-kodad
 
-`page->getDateStandard($text, $language = ""): string`  
+`language->getDateStandard($text, $language = ""): string`  
 Returnera text som [språkspecifikt datum](how-to-change-the-system#språkinställningar), konvertera till ett av standardformaten
 
-`page->getDateRelative($timestamp, $format, $daysLimit, $language = ""): string`  
+`language->getDateRelative($timestamp, $format, $daysLimit, $language = ""): string`  
 Returnera Unix-tid som [datum](https://www.php.net/manual/en/function.date.php), i förhållande till idag
 
-`page->getDateFormatted($timestamp, $format, $language = ""): string`  
+`language->getDateFormatted($timestamp, $format, $language = ""): string`  
 Returnera Unix-tid som [datum](https://www.php.net/manual/en/function.date.php)
 
 `language->getSettings($filterStart = "", $filterEnd = "", $language = ""): array`  
