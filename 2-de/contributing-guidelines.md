@@ -1,16 +1,7 @@
 ---
 Title: Richtlinien zum Zusammenarbeiten
 ---
-Erfahre wie du mit uns arbeiten und Probleme lösen kannst.
-
-## Wie man mit uns arbeitet
-
-* Stell dir vor was der Benutzer machen möchte und was das Leben einfacher machen würde.
-* Strebe die kleinstmögliche Lösung an, erst funktionieren lassen dann besser machen.
-* Frage dich selbst, brauche ich das, will ich das, kann ich das besser machen?
-* Verbessere die verfügbaren Erweiterungen und mache sie nützlicher.
-
-Falls du mit uns arbeiten willst, [erstelle eine Erweiterung](https://datenstrom.se/de/yellow/extensions/) oder [erstelle eine Übersetzung](how-to-customise-a-language#erstelle-eine-übersetzung).
+Erfahre wie du Fragen stellen, Fehler melden und mit uns arbeiten kannst.
 
 ## Wie man eine Frage stellt
 
@@ -19,7 +10,7 @@ Falls du mit uns arbeiten willst, [erstelle eine Erweiterung](https://datenstrom
 * Füge ein Beispiel hinzu, beispielsweise Markdown, Einstellungen oder deinen Quellcode.
 * Wähle eine Antwort aus, wenn deine Frage beantwortet wurde.
 
-Falls du eine Frage stellen willst, [beginne eine neue Diskussion](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
+Falls du eine Frage stellen willst, [beginne eine neue Diskussion](https://github.com/datenstrom/community/discussions/categories/ask-a-question).
 
 ## Wie man einen Fehler meldet
 
@@ -28,7 +19,14 @@ Falls du eine Frage stellen willst, [beginne eine neue Diskussion](https://githu
 * Füge viele Details hinzu, vor allem die Logdatei `system/extensions/yellow-website.log`.
 * Wähle eine Antwort aus, wenn der Fehler behoben wurde.
 
-Falls du einen Fehler melden willst, [beginne eine neue Diskussion](https://github.com/datenstrom/yellow/discussions/categories/report-a-bug).
+Falls du einen Fehler melden willst, [beginne eine neue Diskussion](https://github.com/datenstrom/community/discussions/categories/report-a-bug).
+
+## Wie man mit uns arbeitet
+
+* Stell dir vor was der Benutzer machen möchte und was das Leben einfacher machen würde.
+* Strebe die kleinstmögliche Lösung an, erst funktionieren lassen dann besser machen.
+* Frage dich selbst, brauche ich das, will ich das, kann ich das besser machen?
+* Verbessere die verfügbaren Erweiterungen und mache sie nützlicher.
 
 ## Gut zu wissen
 

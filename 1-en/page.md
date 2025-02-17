@@ -24,7 +24,3 @@ TitleSlug: help
 ## Want to ask questions?
 
 Something doesn't work as expected? Something missing in the documentation? There's a good chance that your question has already been answered. If not, describe what you want to do and which problems you have. Our community is a place to help each other. Where you can ask and answer questions. [Learn more about contributing](contributing-guidelines). 
-
-## Want to have support?
-
-Looking for someone that helps you? Are you stuck? First contact the person who installed your website. Usually you can get help there. If not, contact the commercial support for Datenstrom Yellow. Our commercial support is here to help you. Talk to a consultant via email, chat or phone. We're happy to listen and take care of problems. [Learn more about commercial support](https://mayberg.se/support/).

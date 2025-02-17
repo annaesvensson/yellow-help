@@ -1,16 +1,7 @@
 ---
 Title: Contributing guidelines
 ---
-Learn how to work with us and solve problems.
-
-## How to work with us
-
-* Imagine what the user wants to do and what would make life easier.
-* Aim for the smallest possible solution, first make it work then make it better.
-* Ask yourself, do I need this, do I want this, can I make this better?
-* Improve the available extensions and make them more useful.
-
-If you want to work with us, [make an extension](https://datenstrom.se/yellow/extensions/) or [make a translation](how-to-customise-a-language#make-a-translation).
+Learn how to ask questions, report bugs and work with us.
 
 ## How to ask a question
 
@@ -19,7 +10,7 @@ If you want to work with us, [make an extension](https://datenstrom.se/yellow/ex
 * Add an example, for example Markdown, settings or your source code.
 * Select an answer, when your question has been answered.
 
-If you want to ask a question, [start a new discussion](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
+If you want to ask a question, [start a new discussion](https://github.com/datenstrom/community/discussions/categories/ask-a-question).
 
 ## How to report a bug
 
@@ -28,7 +19,14 @@ If you want to ask a question, [start a new discussion](https://github.com/daten
 * Add many details, especially the log file `system/extensions/yellow-website.log`.
 * Select an answer, when the bug has been fixed.
 
-If you want to report a bug, [start a new discussion](https://github.com/datenstrom/yellow/discussions/categories/report-a-bug).
+If you want to report a bug, [start a new discussion](https://github.com/datenstrom/community/discussions/categories/report-a-bug).
+
+## How to work with us
+
+* Imagine what the user wants to do and what would make life easier.
+* Aim for the smallest possible solution, first make it work then make it better.
+* Ask yourself, do I need this, do I want this, can I make this better?
+* Improve the available extensions and make them more useful.
 
 ## Good to know
 

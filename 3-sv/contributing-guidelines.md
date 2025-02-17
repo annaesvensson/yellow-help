@@ -1,16 +1,7 @@
 ---
 Title: Riktlinjer för samarbete
 ---
-Läs hur du jobbar med oss och löser problem.
-
-## Hur man jobbar med oss
-
-* Föreställ dig vad användaren vill göra och vad som skulle göra livet enklare.
-* Sikta på minsta möjliga lösning, först få det att fungera och sedan gör det bättre.
-* Fråga dig själv, behöver jag det här, vill jag det här, kan jag göra det här bättre?
-* Förbättra tillgängliga tilläggen och gör dem mer användbara.
-
-Om du vill jobba med oss, [gör ett tillägg](https://datenstrom.se/sv/yellow/extensions/) eller [gör en översättning](how-to-customise-a-language#gör-en-översättning).
+Läs hur du ställer frågor, rapporterar fel och jobbar med oss.
 
 ## Hur man ställer en fråga
 
@@ -19,7 +10,7 @@ Om du vill jobba med oss, [gör ett tillägg](https://datenstrom.se/sv/yellow/ex
 * Lägg till ett exempel, till exempel Markdown, inställningar eller din källkod.
 * Välj ett svar när din fråga har besvarats.
 
-Om du vill ställa en fråga, [starta en ny diskussion](https://github.com/datenstrom/yellow/discussions/categories/ask-a-question).
+Om du vill ställa en fråga, [starta en ny diskussion](https://github.com/datenstrom/community/discussions/categories/ask-a-question).
 
 ## Hur man rapporterar ett fel
 
@@ -28,7 +19,14 @@ Om du vill ställa en fråga, [starta en ny diskussion](https://github.com/daten
 * Lägg till många detaljer, särskilt loggfilen `system/extensions/yellow-website.log`.
 * Välj ett svar när felet har åtgärdats.
 
-Om du vill rapportera ett fel, [starta en ny diskussion](https://github.com/datenstrom/yellow/discussions/categories/report-a-bug).
+Om du vill rapportera ett fel, [starta en ny diskussion](https://github.com/datenstrom/community/discussions/categories/report-a-bug).
+
+## Hur man jobbar med oss
+
+* Föreställ dig vad användaren vill göra och vad som skulle göra livet enklare.
+* Sikta på minsta möjliga lösning, först få det att fungera och sedan gör det bättre.
+* Fråga dig själv, behöver jag det här, vill jag det här, kan jag göra det här bättre?
+* Förbättra tillgängliga tilläggen och gör dem mer användbara.
 
 ## Bra att veta
 
