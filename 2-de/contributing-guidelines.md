@@ -23,84 +23,16 @@ Falls du einen Fehler melden willst, [beginne eine neue Diskussion](https://gith
 
 ## Wie man mit uns arbeitet
 
-* Stell dir vor was der Benutzer machen möchte und was das Leben einfacher machen würde.
-* Strebe die kleinstmögliche Lösung an, erst funktionieren lassen dann besser machen.
+* Denke darüber nach was du machen möchte und was das Leben einfacher machen würde.
 * Frage dich selbst, brauche ich das, will ich das, kann ich das besser machen?
 * Verbessere die verfügbaren Erweiterungen und mache sie nützlicher.
+* Erst funktionieren lassen dann besser machen.
 
 ## Gut zu wissen
 
 Arbeite mit uns, stelle Fragen und melde Fehler. Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Online-Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei den Menschen die dir den richtigen Weg zeigen und hilfreiche Antworten schreiben.
 
 Du findest uns auf [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
-
-## Beispiele
-
-Eine Frage über Einstellungen stellen:
-
-    Title: How do I change the language of my website?
-    
-    Hello, during installation I selected the wrong language. Now I want to 
-    change the language of my website to English. When I change the settings 
-    it doesn't work. I checked that the english extension is installed. 
-    Here are my settings in file `system/extensions/yellow-system.ini`:
-    
-    ```
-    Sitename: Datenstrom Yellow
-    Author: Datenstrom
-    Email: webmaster
-    Language: english
-    Layout: default
-    Theme: stockholm
-    ```
-    
-    Let me know if you need more information. Thanks for your help.
-
-Eine Frage über Layoutdateien stellen:
-
-    Title: How do I show the correct date in layout files?
-    
-    Hello, I want to show the date a page was last updated, similar to what 
-    is shown on wiki pages. I am having some problems with the API, no matter 
-    what I do, the generated HTML code always shows the date 1970-01-01.
-    Here is my layout file `system/layouts/default.html`:
-    
-    ```
-    <?php $this->yellow->layout("header") ?>
-    <div class="content">
-    <div class="main" role="main">
-    <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-    <p>Last updated on <?php echo $this->yellow->page->getDateHtml("updated") ?></p>
-    <?php echo $this->yellow->page->getContentHtml() ?>
-    </div>
-    </div>
-    <?php $this->yellow->layout("footer") ?>
-    ```
-    
-    Let me know if you need more information. Thanks for your help.
-
-Einen Fehler zusammen mit der Logdatei zu melden:
-
-    Title: Call to undefined function detectCoffee()
-    
-    Hello, I get the error message: Call to undefined function detectCoffee() 
-    in /var/www/website/system/workers/fika.php. You can reproduce the bug 
-    in a new installation, select small website, install the fika extension. 
-    Here is my log file `system/extensions/yellow-website.log`:
-    
-    ```
-    2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
-    2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
-    2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
-    2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.2'
-    2024-04-28 14:13:07 info Install extension 'English 0.9.2'
-    2024-04-28 14:13:07 info Install extension 'German 0.9.2'
-    2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
-    2024-04-28 14:23:11 info Install extension 'Fika 0.9.1'
-    2024-04-28 14:23:11 error Process file 'system/workers/fika.php' with fatal error!
-    ```
-    
-    Let me know if you need more information. Thanks for investigating.
 
 ## Verwandte Informationen
 
