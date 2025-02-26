@@ -35,9 +35,9 @@ Följande konfigurationsfilar och loggfiler är tillgängliga:
 
 ## Verktyg
 
-### Webbredigerare
+### Nättredigerare
 
-Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Inbyggda webbredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. HTML stöds också. [Läs mer om webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
+Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Nättredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. HTML stöds också. [Läs mer om nättredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
 
 ### Webbserver
 
@@ -1662,11 +1662,5 @@ class YellowExample {
     }
 }
 ```
-
-## Relaterad information
-
-* [Hur man gör ett tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md)
-* [Hur man gör en översättning](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md)
-* [Hur man förbättrar hjälpen](https://github.com/annaesvensson/yellow-help/tree/main/README-sv.md)
 
 Har du några frågor? [Få hjälp](.).

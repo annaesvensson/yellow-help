@@ -34,10 +34,4 @@ We are interested in what you want to do and which problems you have. The more w
 
 You can find us on [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) or [contact a human](https://datenstrom.se/contact/).
 
-## Related information
-
-* [How to make an extension](https://github.com/annaesvensson/yellow-publish)
-* [How to make a translation](https://github.com/annaesvensson/yellow-language)
-* [How to improve the help](https://github.com/annaesvensson/yellow-help)
-
 Do you have questions? [Get help](.).

@@ -34,10 +34,4 @@ Jobba med oss, ställ frågor och rapportera fel. Vi är intresserade av vad du 
 
 Du hittar oss på [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) eller [kontakta en människa](https://datenstrom.se/sv/contact/).
 
-## Relaterad information
-
-* [Hur man gör ett tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md)
-* [Hur man gör en översättning](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md)
-* [Hur man förbättrar hjälpen](https://github.com/annaesvensson/yellow-help/tree/main/README-sv.md) 
-
 Har du några frågor? [Få hjälp](.).

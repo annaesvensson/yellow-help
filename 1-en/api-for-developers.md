@@ -35,9 +35,9 @@ The following configuration files and log files are available:
 
 ## Tools
 
-### Web editor
+### Online editor
 
-You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The built-in web editor allows you to edit content files and upload media files. It is a great way to update your website. Text formatting with Markdown is supported. HTML is also supported. [Learn more about the web editor](https://github.com/annaesvensson/yellow-edit).
+You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The online editor allows you to edit content files and upload media files. It is a great way to update your website. Text formatting with Markdown is supported. HTML is also supported. [Learn more about the online editor](https://github.com/annaesvensson/yellow-edit).
 
 ### Web server
 
@@ -1661,11 +1661,5 @@ class YellowExample {
     }
 }
 ```
-
-## Related information
-
-* [How to make an extension](https://github.com/annaesvensson/yellow-publish)
-* [How to make a translation](https://github.com/annaesvensson/yellow-language)
-* [How to improve the help](https://github.com/annaesvensson/yellow-help)
 
 Do you have questions? [Get help](.).

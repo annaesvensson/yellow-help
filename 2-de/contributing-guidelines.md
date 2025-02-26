@@ -34,10 +34,4 @@ Arbeite mit uns, stelle Fragen und melde Fehler. Es interessiert uns was du mach
 
 Du findest uns auf [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
 
-## Verwandte Informationen
-
-* [Wie man eine Erweiterung erstellt](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md)
-* [Wie man eine Übersetzung erstellt](https://github.com/annaesvensson/yellow-language/tree/main/README-de.md)
-* [Wie man die Hilfe verbessert](https://github.com/annaesvensson/yellow-help/tree/main/README-de.md) 
-
 Hast du Fragen? [Hilfe finden](.).

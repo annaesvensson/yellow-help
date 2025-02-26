@@ -35,9 +35,9 @@ Die folgenden Konfigurationsdateien und Logdateien sind verfügbar:
 
 ## Werkzeuge
 
-### Webeditor
+### Online-Editor
 
-Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der eingebaute Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Textformatierung mit Markdown wird unterstützt. HTML wird auch unterstützt. [Weitere Informationen zum Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
+Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der Online-Editor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Textformatierung mit Markdown wird unterstützt. HTML wird auch unterstützt. [Weitere Informationen zum Online-Editor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
 
 ### Webserver
 
@@ -1664,11 +1664,5 @@ class YellowExample {
     }
 }
 ```
-
-## Verwandte Informationen
-
-* [Wie man eine Erweiterung erstellt](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md)
-* [Wie man eine Übersetzung erstellt](https://github.com/annaesvensson/yellow-language/tree/main/README-de.md)
-* [Wie man die Hilfe verbessert](https://github.com/annaesvensson/yellow-help/tree/main/README-de.md)
 
 Hast du Fragen? [Hilfe finden](.).
