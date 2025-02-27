@@ -10,7 +10,7 @@ Erfahre wie du Fragen stellen, Fehler melden und mit uns arbeiten kannst.
 * Füge ein Beispiel hinzu, beispielsweise Markdown, Einstellungen oder deinen Quellcode.
 * Wähle eine Antwort aus, wenn deine Frage beantwortet wurde.
 
-Falls du eine Frage stellen willst, [beginne eine neue Diskussion](https://github.com/datenstrom/community/discussions/categories/ask-a-question).
+Falls du eine Frage stellen möchtest, [beginne eine neue Diskussion](https://github.com/datenstrom/community/discussions/categories/ask-a-question).
 
 ## Wie man einen Fehler meldet
 
@@ -19,7 +19,7 @@ Falls du eine Frage stellen willst, [beginne eine neue Diskussion](https://githu
 * Füge viele Details hinzu, vor allem die Logdatei `system/extensions/yellow-website.log`.
 * Wähle eine Antwort aus, wenn der Fehler behoben wurde.
 
-Falls du einen Fehler melden willst, [beginne eine neue Diskussion](https://github.com/datenstrom/community/discussions/categories/report-a-bug).
+Falls du einen Fehler melden möchtest, [beginne eine neue Diskussion](https://github.com/datenstrom/community/discussions/categories/report-a-bug).
 
 ## Wie man mit uns arbeitet
 
@@ -28,10 +28,10 @@ Falls du einen Fehler melden willst, [beginne eine neue Diskussion](https://gith
 * Verbessere die verfügbaren Erweiterungen und mache sie nützlicher.
 * Erst funktionieren lassen dann besser machen.
 
+Falls du dich engagieren möchtest, [siehe Tipps zum Zusammenarbeiten](https://github.com/datenstrom/community/discussions/760).
+
 ## Gut zu wissen
 
-Arbeite mit uns, stelle Fragen und melde Fehler. Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Online-Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei den Menschen die dir den richtigen Weg zeigen und hilfreiche Antworten schreiben.
-
-Du findest uns auf [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
+Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Online-Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei den Menschen die dir den richtigen Weg zeigen und hilfreiche Antworten schreiben. Du findest uns auf [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
 
 Hast du Fragen? [Hilfe finden](.).
