@@ -80,20 +80,4 @@ Lägga till ett bildgalleri med reglaget, olika storlekar:
     [slider photo.*jpg name loop 50%]
     [slider photo.*jpg name loop 100%]
 
-## Videor
-
-Du kan använda [Youtube-tillägget](https://github.com/annaesvensson/yellow-youtube/tree/main/README-sv.md) för att bädda in videor: 
-
-Bädda in en video, olika videor:
-
-    [youtube fhs55HEl-Gc]
-    [youtube wNiyp89pTi0]
-    [youtube OV5J6BfToSw]
-
-Bädda in en video, olika storlekar:
-
-    [youtube fhs55HEl-Gc right 50%]
-    [youtube fhs55HEl-Gc right 200 112]
-    [youtube fhs55HEl-Gc right 400 224]
-
 Har du några frågor? [Få hjälp](.).

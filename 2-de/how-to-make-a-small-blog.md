@@ -45,7 +45,7 @@ schwedischen Alltag, dass es sowohl als Verb als auch als Nomen verwendet
 wird. Wie oft machst du Fika?
 ```
 
-Du kannst ein Video hinzufügen mit der [Youtube-Erweiterung](https://github.com/annaesvensson/yellow-youtube/tree/main/README-de.md):
+Du kannst ein Foto hinzufügen mit der [Image-Erweiterung](https://github.com/annaesvensson/yellow-image/tree/main/README-de.md):
 
 ```
 ---
@@ -53,7 +53,7 @@ Title: Fika ist gut für dich
 Published: 2020-06-01
 Author: Datenstrom
 Layout: blog
-Tag: Beispiel, Kaffee, Video
+Tag: Beispiel, Kaffee, Foto
 ---
 Fika ist ein schwedischer Brauch. Es ist eine Kaffeepause, bei der Menschen  
 bei einer Tasse Kaffee oder Tee zusammenkommen. Das kann mit Arbeitskollegen  
@@ -61,7 +61,7 @@ sein oder du lädst Freunde dazu ein. Fika ist ein so bedeutender Teil vom
 schwedischen Alltag, dass es sowohl als Verb als auch als Nomen verwendet  
 wird. Wie oft machst du Fika?
 
-[youtube SUpY1BT9Xf4]
+[image photo.jpg "Dies ist ein Beispielbild"]
 ```
 
 Du kannst `[--more--]` benutzen, um an der gewünschten Stelle einen Seitenumbruch zu erzeugen. Der Rest wird angezeigt, wenn ein Besucher auf die Blogseite klickt:
@@ -72,7 +72,7 @@ Title: Fika ist gut für dich
 Published: 2020-06-01
 Author: Datenstrom
 Layout: blog
-Tag: Beispiel, Kaffee, Video
+Tag: Beispiel, Kaffee, Foto
 ---
 Fika ist ein schwedischer Brauch. Es ist eine Kaffeepause, bei der Menschen  
 bei einer Tasse Kaffee oder Tee zusammenkommen. Das kann mit Arbeitskollegen  
@@ -80,7 +80,7 @@ sein oder du lädst Freunde dazu ein. Fika ist ein so bedeutender Teil vom
 schwedischen Alltag, dass es sowohl als Verb als auch als Nomen verwendet  
 wird. Wie oft machst du Fika? [--more--]
 
-[youtube SUpY1BT9Xf4]
+[image photo.jpg "Dies ist ein Beispielbild"]
 ```
 
 ## Kopfzeile und Fußzeile anzeigen

@@ -46,13 +46,13 @@ Coffee is a beverage made from the roasted beans of the coffee plant.
 3. Enjoy.
 ```
 
-Now let's add a video with the [Youtube extension](https://github.com/annaesvensson/yellow-youtube):
+Now let's add a photo with the [image extension](https://github.com/annaesvensson/yellow-image):
 
 ```
 ---
 Title: Coffee is good for you
 Layout: wiki
-Tag: Example, Coffee, Video
+Tag: Example, Coffee, Photo
 ---
 Coffee is a beverage made from the roasted beans of the coffee plant.
 
@@ -65,7 +65,7 @@ Coffee is a beverage made from the roasted beans of the coffee plant.
    out what's your favorite.
 3. Enjoy.
 
-[youtube SUpY1BT9Xf4]
+[image photo.jpg "This is an example image"]
 ```
 
 ## Show header and footer

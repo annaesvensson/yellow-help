@@ -45,7 +45,7 @@ an important part of life in Sweden that it is both a verb and a noun.
 How often do you fika?
 ```
 
-Now let's add a video with the [Youtube extension](https://github.com/annaesvensson/yellow-youtube):
+Now let's add a photo with the [image extension](https://github.com/annaesvensson/yellow-image):
 
 ```
 ---
@@ -53,7 +53,7 @@ Title: Fika is good for you
 Published: 2020-06-01
 Author: Datenstrom
 Layout: blog
-Tag: Example, Coffee, Video
+Tag: Example, Coffee, Photo
 ---
 Fika is a Swedish custom. It's a social coffee break where people 
 gather to have a cup of coffee or tea together. You can have fika with 
@@ -61,7 +61,7 @@ colleagues at work. You can invite your friends to fika. Fika is such
 an important part of life in Sweden that it is both a verb and a noun. 
 How often do you fika?
 
-[youtube SUpY1BT9Xf4]
+[image photo.jpg "This is an example image"]
 ```
 
 You can use `[--more--]` to add a page break at the desired spot. The rest will be shown when a visitor clicks on the blog page:
@@ -72,7 +72,7 @@ Title: Fika is good for you
 Published: 2020-06-01
 Author: Datenstrom
 Layout: blog
-Tag: Example, Coffee, Video
+Tag: Example, Coffee, Photo
 ---
 Fika is a Swedish custom. It's a social coffee break where people 
 gather to have a cup of coffee or tea together. You can have fika with 
@@ -80,7 +80,7 @@ colleagues at work. You can invite your friends to fika. Fika is such
 an important part of life in Sweden that it is both a verb and a noun. 
 How often do you fika? [--more--]
 
-[youtube SUpY1BT9Xf4]
+[image photo.jpg "This is an example image"]
 ```
 
 ## Show header and footer

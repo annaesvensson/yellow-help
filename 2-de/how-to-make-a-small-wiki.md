@@ -46,13 +46,13 @@ Kaffee ist ein Getränk aus gerösteten Bohnen der Kaffeepflanze.
 3. Genieße.
 ```
 
-Du kannst ein Video hinzufügen mit der [Youtube-Erweiterung](https://github.com/annaesvensson/yellow-youtube/tree/main/README-de.md):
+Du kannst ein Foto hinzufügen mit der [Image-Erweiterung](https://github.com/annaesvensson/yellow-image/tree/main/README-de.md):
 
 ```
 ---
 Title: Kaffee ist gut für dich
 Layout: wiki
-Tag: Beispiel, Kaffee, Video
+Tag: Beispiel, Kaffee, Foto
 ---
 Kaffee ist ein Getränk aus gerösteten Bohnen der Kaffeepflanze.
 
@@ -65,7 +65,7 @@ Kaffee ist ein Getränk aus gerösteten Bohnen der Kaffeepflanze.
    Mokka, Türkischen Kaffee und vieles mehr. Finde deinen Lieblingsgeschmack.
 3. Genieße.
 
-[youtube SUpY1BT9Xf4]
+[image photo.jpg "Dies ist ein Beispielbild"]
 ```
 
 ## Kopfzeile und Fußzeile anzeigen

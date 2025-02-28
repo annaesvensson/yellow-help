@@ -23,6 +23,6 @@ Om du vill läsa mer om din webbplats, [se hjälp för din webbplats](.).
 
 Om du vill veta mer om installationskraven, [se felsökning](troubleshooting).
 
-## Vill du ställa frågor?
+## Vill du ställa frågor om installationen?
 
 Är det något som inte fungerar som förväntat? Saknas något i dokumentationen? Det finns en stor chans att din fråga redan har besvarats. Om inte, beskriv vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre kan vi hjälpa till. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. [Läs mer om samarbete](contributing-guidelines).

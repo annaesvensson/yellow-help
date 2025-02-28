@@ -28,7 +28,7 @@ Falls du einen Fehler melden möchtest, [beginne eine neue Diskussion](https://g
 * Verbessere die verfügbaren Erweiterungen und mache sie nützlicher.
 * Erst funktionieren lassen dann besser machen.
 
-Falls du dich engagieren möchtest, [siehe Tipps zum Zusammenarbeiten](https://github.com/datenstrom/community/discussions/760).
+Falls du dich engagieren möchtest, [siehe Tipps zum Zusammenarbeiten](https://github.com/datenstrom/community/discussions/760) und [API für Entwickler](api-for-developers).
 
 ## Gut zu wissen
 

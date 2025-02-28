@@ -80,20 +80,4 @@ Bildergalerie mit Slider hinzufügen, unterschiedliche Größen:
     [slider photo.*jpg name loop 50%]
     [slider photo.*jpg name loop 100%]
 
-## Videos
-
-Du kannst die [Youtube-Erweiterung](https://github.com/annaesvensson/yellow-youtube/tree/main/README-de.md) benutzen um Videos einzubinden.
-
-Video einbinden, unterschiedliche Videos:
-
-    [youtube fhs55HEl-Gc]
-    [youtube wNiyp89pTi0]
-    [youtube OV5J6BfToSw]
-
-Video einbinden, unterschiedliche Größen:
-
-    [youtube fhs55HEl-Gc right 50%]
-    [youtube fhs55HEl-Gc right 200 112]
-    [youtube fhs55HEl-Gc right 400 224]
-
 Hast du Fragen? [Hilfe finden](.).
