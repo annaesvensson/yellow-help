@@ -1,7 +1,7 @@
 ---
 Title: Hur man kommer igång
 ---
-Läs hur du installerar en webbplats på några minuter.
+Datenstrom Yellow är för människor som skapar små webbsidor.
 
 ## Installation på din webbserver
 

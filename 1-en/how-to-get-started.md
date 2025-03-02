@@ -1,7 +1,7 @@
 ---
 Title: How to get started
 ---
-Learn how to install a website in a few minutes.
+Datenstrom Yellow is for people who make small websites.
 
 ## Installation on your web server
 

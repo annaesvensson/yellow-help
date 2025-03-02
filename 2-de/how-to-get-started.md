@@ -1,7 +1,7 @@
 ---
 Title: Wie man loslegt
 ---
-Erfahre wie du eine Webseite in wenigen Minuten installierst.
+Datenstrom Yellow ist für Menschen die kleine Webseiten machen.
 
 ## Installation auf deinem Webserver
 

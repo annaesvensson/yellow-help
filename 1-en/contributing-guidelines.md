@@ -28,7 +28,7 @@ If you want to report a bug, [start a new discussion](https://github.com/datenst
 * Improve the available extensions and make them more useful.
 * First make it work then make it better.
 
-If you want to get involved, [see tips for working with us](https://github.com/datenstrom/community/discussions/760) and [API for developers](api-for-developers).
+If you want to get involved, [see tips for working together](https://github.com/datenstrom/community/discussions/760) and [API for developers](api-for-developers).
 
 ## Good to know
 

@@ -28,7 +28,7 @@ Om du vill rapportera ett fel, [starta en ny diskussion](https://github.com/date
 * Förbättra tillgängliga tilläggen och gör dem mer användbara.
 * Först få det att fungera och sedan gör det bättre.
 
-Om du vill engagera dig, [se tips för att jobba med oss](https://github.com/datenstrom/community/discussions/760) och [API för utvecklare](api-for-developers).
+Om du vill engagera dig, [se tips för att samarbeta](https://github.com/datenstrom/community/discussions/760) och [API för utvecklare](api-for-developers).
 
 ## Bra att veta
 
