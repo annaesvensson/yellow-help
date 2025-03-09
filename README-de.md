@@ -20,7 +20,7 @@ Du kannst die Hilfe verbessern falls etwas nicht stimmt. Installiere die Hilfe a
 
 ## Danksagung
 
-Diese Erweiterung enthält ein [Foto](https://unsplash.com/photos/azsk_6IMT3I) von Bruno Cervera. Danke für das schöne Foto.
+Diese Erweiterung enthält ein Foto von Bruno Cervera. Danke für das schöne Foto.
 
 ## Entwickler
 
