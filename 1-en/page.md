@@ -20,6 +20,7 @@ TitleSlug: help
 ! * [How to customise a theme](how-to-customise-a-theme)
 ! * [API for developers](api-for-developers)
 ! * [Troubleshooting](troubleshooting)
+! * [What's new](what-s-new)
 
 ## Want to ask questions?
 

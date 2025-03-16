@@ -32,6 +32,6 @@ If you want to get involved, [see tips for working together](https://github.com/
 
 ## Good to know
 
-We are interested in what you want to do and which problems you have. The more we know, the better. Our community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Use an online translator if English is not your first language. Don't force anything. You can step out of discussions at any time if the dialog is not constructive. Focus on the people who show interest and want to work together with you. Thank people who point you in the right direction and who write helpful answers. You can find us on [GitHub](https://github.com/datenstrom), [Discord](https://discord.gg/NYvTETsHS9) or [contact a human](https://datenstrom.se/contact/).
+We are interested in what you want to do and which problems you have. The more we know, the better. Our community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Use an online translator if English is not your first language. Don't force anything. You can step out of discussions at any time if the dialog is not constructive. Focus on the people who show interest and want to work together with you. Thank people who point you in the right direction and who write helpful answers. You can find us on [GitHub](https://github.com/datenstrom) or [contact a human](https://datenstrom.se/contact/).
 
 Do you have questions? [Get help](.).

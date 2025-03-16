@@ -20,6 +20,7 @@ TitleSlug: help
 ! * [Hur man anpassar ett tema](how-to-customise-a-theme)
 ! * [API för utvecklare](api-for-developers)
 ! * [Felsökning](troubleshooting)
+! * [Vad är nytt](what-s-new)
 
 ## Vill du ställa frågor?
 

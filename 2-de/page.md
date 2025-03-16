@@ -20,6 +20,7 @@ TitleSlug: help
 ! * [Wie man ein Theme anpasst](how-to-customise-a-theme)
 ! * [API für Entwickler](api-for-developers)
 ! * [Fehlerbehebung](troubleshooting)
+! * [Was ist neu](what-s-new)
 
 ## Möchtest du Fragen stellen?
 
