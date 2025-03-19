@@ -23,6 +23,8 @@ If you want to learn more about your website, [see help for your website](.).
 
 If you want to know more about the installation requirements, [see troubleshooting](troubleshooting).
 
-## Want to ask questions about the installation?
+## Need help with the installation?
 
-Something doesn't work as expected? Something missing in the documentation? There's a good chance that your question has already been answered. If not, describe what you want to do and which problems you have. Our community is a place to help each other. Where you can ask and answer questions. [Learn more about contributing](contributing-guidelines). 
+Installation doesn't work? Are you stuck? First contact the customer service of your web server hosting. Usually you can get help there. If not, contact us. We are interested in what you want to do and which problems you have. Our community is a place to help each other. Where you can ask and answer questions. [Learn more about contributing](contributing-guidelines). 
+
+Do you have questions? [Get help](.).

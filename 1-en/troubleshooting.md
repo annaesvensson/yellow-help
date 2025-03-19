@@ -204,7 +204,9 @@ When your website doesn't work, then check `server_name` and `root` in the confi
 ## Related information
 
 * [How to start a web server](https://github.com/annaesvensson/yellow-serve)
-* [How to create a user account](https://github.com/annaesvensson/yellow-edit)
-* [How to update a website](https://github.com/annaesvensson/yellow-update)
+* [How to generate a static website](https://github.com/annaesvensson/yellow-generate)
+* [How to edit a website in a web browser](https://github.com/annaesvensson/yellow-edit)
+* [How to edit a website on your computer](https://github.com/annaesvensson/yellow-core)
+* [How to install, uninstall and show extensions](https://github.com/annaesvensson/yellow-update)
 
 Do you have questions? [Get help](.).

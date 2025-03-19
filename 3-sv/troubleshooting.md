@@ -204,7 +204,9 @@ När din webbplats inte fungerar, kontrollera `server_name` och `root` i konfigu
 ## Relaterad information
 
 * [Hur man startar en webbserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md)
-* [Hur man skapar ett användarkonto](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md)
-* [Hur man uppdaterar en webbplats](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md)
+* [Hur man genererar en statisk webbplats](https://github.com/annaesvensson/yellow-generate/tree/main/README-sv.md)
+* [Hur man redigerar en webbplats i en webbläsare](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md)
+* [Hur man redigerar en webbplats på datorn](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md)
+* [Hur man installerar, avinstallerar och visar tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md)
 
 Har du några frågor? [Få hjälp](.).

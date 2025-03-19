@@ -23,6 +23,8 @@ Falls du mehr über deine Webseite erfahren möchtest, [siehe Hilfe für deine W
 
 Falls du mehr über die Installationsanforderungen erfahren möchtest, [siehe Fehlerbehebung](troubleshooting).
 
-## Möchtest du Fragen zur Installation stellen?
+## Brauchst du Hilfe bei der Installation?
 
-Funktioniert etwas nicht wie erwartet? Fehlt etwas in der Dokumentation? Es besteht eine gute Chance, dass deine Frage bereits beantwortet wurde. Falls nicht, beschreibe was du machen möchtest und welche Probleme du hast. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. [Weitere Informationen zum Zusammenarbeiten](contributing-guidelines).
+Funktioniert die Installation nicht? Steckst du fest? Wende dich zuerst an den Kundenservice deines Webserver-Betreibers. Normalerweise kann dir dort geholfen werden. Falls nicht, wende dich an uns. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. [Weitere Informationen zum Zusammenarbeiten](contributing-guidelines).
+
+Hast du Fragen? [Hilfe finden](.).
