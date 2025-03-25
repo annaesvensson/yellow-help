@@ -23,10 +23,10 @@ If you want to report a bug, [start a new discussion](https://github.com/datenst
 
 ## How to work with us
 
-* Think about what you want to do and what would make life easier.
+* Think about what you want to do and what would make your life easier.
 * Ask yourself, do I need this, do I want this, can I make this better?
-* Improve the available extensions and make them more useful.
-* First make it work then make it better.
+* First make it work, then make it better.
+* Test extensions and give feedback.
 
 If you want to get involved, [see tips for working together](https://github.com/datenstrom/community/discussions/760) and [API for developers](api-for-developers).
 

@@ -38,7 +38,7 @@ Kopiera medföljande `.htaccess`-filen till installationsmappen. Kontrollera om 
 Datenstrom Yellow requires rewrite support!
 ```
 
-Kontrollera webbserverns konfigurationsfil, se [problem med Apache](#problem-med-apache) och [problem med Nginx](#problem-med-nginx). Du måste antingen ändra konfigurationsfilen för din webbserver eller så använder du en annan webbserver. Så snart webbservern vidarebefordrar HTTP-förfrågningar till `yellow.php` bör problemet lösas.
+Kontrollera konfigurationsfilen för din webbserver, se [problem med Apache](#problem-med-apache) och [problem med Nginx](#problem-med-nginx). Vissa webbservrar kräver ytterligare inställningar, men det beror mycket på vilken webbserver och vilket operativsystem du använder. Så snart webbservern vidarebefordrar HTTP-förfrågningar till `yellow.php` bör problemet lösas.
 
 ```
 Datenstrom Yellow requires complete upload!
@@ -149,7 +149,7 @@ RewriteRule ^ yellow.php [L]
 </IfModule>
 ```
 
-När din webbplats inte fungerar, [aktivera rewrite-modulen](https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2) och [kontrollera AllowOverride-konfigurationen](https://stackoverflow.com/questions/18740419/how-to-set-allowoverride-all). På vissa webbservrar måste du ändra AllowOverride-konfigurationen från `AllowOverride None` till `AllowOverride All`. Efter att konfigurationen har ändrats kan du behöva starta om Apache-webbservern.
+När din webbplats inte fungerar, aktivera rewrite-modulen och kontrollera AllowOverride-konfigurationen. På vissa webbservrar måste du ändra AllowOverride-konfigurationen från `AllowOverride None` till `AllowOverride All`. Efter att konfigurationen har ändrats kan du behöva starta om Apache-webbservern.
 
 ## Problem med Nginx
 
@@ -199,7 +199,7 @@ server {
 }
 ```
 
-När din webbplats inte fungerar, kontrollera `server_name` och `root` i konfigurationsfilen. På vissa webbservrar måste du ändra FastCGI-konfigurationen till `fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;` beroende på PHP-versionen. Efter att konfigurationen har ändrats kan du behöva [starta om Nginx-webbservern](https://stackoverflow.com/questions/21292533/reload-nginx-configuration).
+När din webbplats inte fungerar, kontrollera `server_name` och `root` i konfigurationsfilen. På vissa webbservrar måste du ändra FastCGI-konfigurationen till `fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;` beroende på PHP-versionen. Efter att konfigurationen har ändrats kan du behöva starta om Nginx-webbservern.
 
 ## Relaterad information
 

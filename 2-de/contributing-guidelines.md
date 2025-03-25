@@ -23,10 +23,10 @@ Falls du einen Fehler melden möchtest, [beginne eine neue Diskussion](https://g
 
 ## Wie man mit uns arbeitet
 
-* Denke darüber nach was du machen möchte und was das Leben einfacher machen würde.
+* Denke darüber nach was du machen möchte und was dein Leben einfacher machen würde.
 * Frage dich selbst, brauche ich das, will ich das, kann ich das besser machen?
-* Verbessere die verfügbaren Erweiterungen und mache sie nützlicher.
-* Erst funktionieren lassen dann besser machen.
+* Erst funktionieren lassen, dann besser machen.
+* Teste Erweiterungen und gebe Feedback.
 
 Falls du dich engagieren möchtest, [siehe Tipps zum Zusammenarbeiten](https://github.com/datenstrom/community/discussions/760) und [API für Entwickler](api-for-developers).
 

@@ -23,10 +23,10 @@ Om du vill rapportera ett fel, [starta en ny diskussion](https://github.com/date
 
 ## Hur man jobbar med oss
 
-* Fundera på vad du vill göra och vad som skulle göra livet lättare.
+* Fundera på vad du vill göra och vad som skulle göra ditt liv lättare.
 * Fråga dig själv, behöver jag det här, vill jag det här, kan jag göra det här bättre?
-* Förbättra tillgängliga tilläggen och gör dem mer användbara.
-* Först få det att fungera och sedan gör det bättre.
+* Först få det att fungera, sedan gör det bättre.
+* Testa tillägg och ge feedback.
 
 Om du vill engagera dig, [se tips för att samarbeta](https://github.com/datenstrom/community/discussions/760) och [API för utvecklare](api-for-developers).
 

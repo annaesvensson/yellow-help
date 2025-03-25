@@ -38,7 +38,7 @@ Kopiere die mitgelieferte `.htaccess` Datei ins Installations-Verzeichnis. Über
 Datenstrom Yellow requires rewrite support!
 ```
 
-Überprüfe die Konfigurationsdatei des Webservers, siehe [Probleme mit Apache](#probleme-mit-apache) und [Probleme mit Nginx](#probleme-mit-nginx). Du musst entweder die Konfigurationsdatei deines Webservers ändern oder du verwendest einen anderen Webserver. Sobald der Webserver HTTP-Anfragen an die `yellow.php` weiterleitet, sollte das Problem behoben sein.
+Überprüfe die Konfigurationsdatei deines Webservers, siehe [Probleme mit Apache](#probleme-mit-apache) und [Probleme mit Nginx](#probleme-mit-nginx). Bei einigen Webservern sind zusätzliche Einstellungen erforderlich, aber das hängt stark vom verwendeten Webserver und Betriebssystem ab. Sobald der Webserver HTTP-Anfragen an die `yellow.php` weiterleitet, sollte das Problem behoben sein.
 
 ```
 Datenstrom Yellow requires complete upload!
@@ -149,7 +149,7 @@ RewriteRule ^ yellow.php [L]
 </IfModule>
 ```
 
-Wenn deine Webseite nicht funktioniert, dann [aktiviere das Rewrite-Modul](https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2) und [überprüfe die AllowOverride-Konfiguration](https://stackoverflow.com/questions/18740419/how-to-set-allowoverride-all). Auf manchen Webservern muss du die AllowOverride-Konfiguration ändern von `AllowOverride None` zu `AllowOverride All`. Nachdem die Konfiguration verändert wurde, musst du möglicherweise den Apache-Webserver neustarten.
+Wenn deine Webseite nicht funktioniert, dann aktiviere das Rewrite-Modul und überprüfe die AllowOverride-Konfiguration. Auf manchen Webservern muss du die AllowOverride-Konfiguration ändern von `AllowOverride None` zu `AllowOverride All`. Nachdem die Konfiguration verändert wurde, musst du möglicherweise den Apache-Webserver neustarten.
 
 ## Probleme mit Nginx
 
@@ -199,7 +199,7 @@ server {
 }
 ```
 
-Wenn deine Webseite nicht funktioniert, dann überprüfe `server_name` und `root` in der Konfigurationsdatei. Auf manchen Webservern musst du die FastCGI-Konfiguration ändern zu `fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;` abhängig von der PHP-Version. Nachdem die Konfiguration verändert wurde, musst du möglicherweise den [Nginx-Webserver neustarten](https://stackoverflow.com/questions/21292533/reload-nginx-configuration).
+Wenn deine Webseite nicht funktioniert, dann überprüfe `server_name` und `root` in der Konfigurationsdatei. Auf manchen Webservern musst du die FastCGI-Konfiguration ändern zu `fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;` abhängig von der PHP-Version. Nachdem die Konfiguration verändert wurde, musst du möglicherweise den Nginx-Webserver neustarten.
 
 ## Verwandte Informationen
 

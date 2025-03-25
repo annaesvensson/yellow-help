@@ -38,7 +38,7 @@ Copy the supplied `.htaccess` file into the installation folder. Check if your F
 Datenstrom Yellow requires rewrite support!
 ```
 
-Check the configuration file of the web server, see [problems with Apache](#problems-with-apache) and [problems with Nginx](#problems-with-nginx). You either need to change the configuration file of your web server or you use another web server. As soon as the web server forwards HTTP requests to the `yellow.php`, the problem should be resolved.
+Check the configuration file of your web server, see [problems with Apache](#problems-with-apache) and [problems with Nginx](#problems-with-nginx). Some web servers require additional settings, but this depends very much on the web server and operating system you use. As soon as the web server forwards HTTP requests to the `yellow.php`, the problem should be resolved.
 
 ```
 Datenstrom Yellow requires complete upload!
@@ -149,7 +149,7 @@ RewriteRule ^ yellow.php [L]
 </IfModule>
 ```
 
-When your website doesn't work, then [enable the rewrite module](https://stackoverflow.com/questions/869092/how-to-enable-mod-rewrite-for-apache-2-2) and [check the AllowOverride configuration](https://stackoverflow.com/questions/18740419/how-to-set-allowoverride-all). On some web servers you have to change the AllowOverride configuration from `AllowOverride None` to `AllowOverride All`. After the configuration has been changed, you may have to restart the Apache web server.
+When your website doesn't work, then enable the rewrite module and check the AllowOverride configuration. On some web servers you have to change the AllowOverride configuration from `AllowOverride None` to `AllowOverride All`. After the configuration has been changed, you may have to restart the Apache web server.
 
 ## Problems with Nginx
 
@@ -199,7 +199,7 @@ server {
 }
 ```
 
-When your website doesn't work, then check `server_name` and `root` in the configuration file. On some web servers you have to change the FastCGI configuration to `fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;` depending on the PHP version. After the configuration has been changed, you may have to [restart the Nginx web server](https://stackoverflow.com/questions/21292533/reload-nginx-configuration).
+When your website doesn't work, then check `server_name` and `root` in the configuration file. On some web servers you have to change the FastCGI configuration to `fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;` depending on the PHP version. After the configuration has been changed, you may have to restart the Nginx web server.
 
 ## Related information
 

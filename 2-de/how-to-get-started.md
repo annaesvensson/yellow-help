@@ -25,6 +25,6 @@ Falls du mehr über die Installationsanforderungen erfahren möchtest, [siehe Fe
 
 ## Brauchst du Hilfe bei der Installation?
 
-Funktioniert die Installation nicht? Steckst du fest? Wende dich zuerst an den Kundenservice deines Webserver-Betreibers. Normalerweise kann dir dort geholfen werden. Falls nicht, wende dich an uns. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. [Weitere Informationen zum Zusammenarbeiten](contributing-guidelines).
+Hast du Probleme mit deinem Webserver? Steckst du fest? Wende dich zuerst an den Kundenservice deines Webserver-Betreibers. Normalerweise kann dir dort geholfen werden. Falls nicht, wende dich an uns. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. [Weitere Informationen zum Zusammenarbeiten](contributing-guidelines).
 
 Hast du Fragen? [Hilfe finden](.).
