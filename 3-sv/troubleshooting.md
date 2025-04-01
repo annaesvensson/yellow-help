@@ -38,7 +38,7 @@ Kopiera medföljande `.htaccess`-filen till installationsmappen. Kontrollera om 
 Datenstrom Yellow requires rewrite support!
 ```
 
-Kontrollera konfigurationsfilen för din webbserver, se [problem med Apache](#problem-med-apache) och [problem med Nginx](#problem-med-nginx). Vissa webbservrar kräver ytterligare inställningar, men det beror mycket på vilken webbserver och vilket operativsystem du använder. Så snart webbservern vidarebefordrar HTTP-förfrågningar till `yellow.php` bör problemet lösas.
+Kontrollera konfigurationsfilen för din webbserver, se [problem med webbservrar](#problem-med-webbservrar), [Apache](#problem-med-apache) och [Nginx](#problem-med-nginx). Vissa webbservrar kräver ytterligare inställningar, men det beror mycket på vilken webbserver och vilket operativsystem du använder. Så snart webbservern vidarebefordrar HTTP-förfrågningar till `yellow.php` bör problemet lösas.
 
 ```
 Datenstrom Yellow requires complete upload!
@@ -95,7 +95,7 @@ YellowSystem::load Theme:stockholm
 Viktig information skrivs också till filen `system/extensions/yellow-website.log`. Om du inte kan åtgärda orsaken till ett problem själv, [rapportera ett fel tillsammans med loggfilen](contributing-guidelines). Loggfilen ger en snabb översikt över vad som händer på din webbplats, när den installerades och vilka fel som uppstod. Här är ett exempel:
 
 ```
-2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
+2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
 2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
 2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
 2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.2'
@@ -105,6 +105,10 @@ Viktig information skrivs också till filen `system/extensions/yellow-website.lo
 2024-04-28 14:23:11 info Install extension 'Fika 0.9.1'
 2024-04-28 14:23:11 error Process file 'system/workers/fika.php' with fatal error!
 ```
+
+## Problem med webbservrar
+
+Om din webbplats inte fungerar, kontrollera konfigurationsfilen på din webbserver. De flesta webbservrar levereras med konfigurationsfiler för innehållshanteringssystem. Du kan också översätta den medföljande `.htaccess`-filen till ett format som din webbserver förstår. Om du inte kan hitta en konfigurationsfil för din webbserver, [fråga vår nätgemenskap](contributing-guidelines).
 
 ## Problem med Apache
 
@@ -149,7 +153,7 @@ RewriteRule ^ yellow.php [L]
 </IfModule>
 ```
 
-När din webbplats inte fungerar, aktivera rewrite-modulen och kontrollera AllowOverride-konfigurationen. På vissa webbservrar måste du ändra AllowOverride-konfigurationen från `AllowOverride None` till `AllowOverride All`. Efter att konfigurationen har ändrats kan du behöva starta om Apache-webbservern.
+När din webbplats inte fungerar, kontrollera AllowOverride-konfigurationen på din webbserver. På vissa webbservrar måste du ändra AllowOverride-konfigurationen från `AllowOverride None` till `AllowOverride All`. Efter att konfigurationen har ändrats kan du behöva starta om Apache-webbservern.
 
 ## Problem med Nginx
 

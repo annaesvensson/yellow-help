@@ -7,7 +7,7 @@ We <3 people who code.
 
 ## Folder structure
 
-You can change everything in the file manager on your computer. The `content` folder contains the [content files](how-to-change-the-content) of the website. You can edit your website here. The `media` folder contains the [media files](how-to-change-the-media) of the website. You can store your images and files here. The `system` folder contains the [system files](how-to-change-the-system) of the website. You can find configuration files and the log file here.
+You can edit your website in a text editor. The `content` folder contains the [content files](how-to-change-the-content) of the website. You can edit your website here. The `media` folder contains the [media files](how-to-change-the-media) of the website. You can store your images and files here. The `system` folder contains the [system files](how-to-change-the-system) of the website. You can find configuration files here.
 
 ``` box-drawing {aria-hidden=true}
 ├── content               = content files
@@ -21,16 +21,15 @@ You can change everything in the file manager on your computer. The `content` fo
 └── system                = system files
     ├── extensions        = configurable extension files, for example INI
     ├── layouts           = configurable layout files, for example HTML
-    ├── themes            = configurable theme files, for example CSS and JavaScript
+    ├── themes            = configurable theme files, for example CSS
     └── workers           = files for developers, designers and translators
 ```
 
-The following configuration files and log files are available:
+The following files are important, it is best to take a closer look at them:
 
 `system/extensions/yellow-system.ini` = [file with system settings](how-to-change-the-system#system-settings)  
 `system/extensions/yellow-language.ini` = [file with language settings](how-to-change-the-system#language-settings)  
 `system/extensions/yellow-user.ini` = [file with user settings](how-to-change-the-system#user-settings)  
-`system/extensions/yellow-extension.ini` = [file with extension settings](how-to-change-the-system#extension-settings)  
 `system/extensions/yellow-website.log` = [log file of the website](how-to-change-the-system#log-file)  
 
 ## Tools
@@ -49,7 +48,7 @@ You can generate a static website at the command line. The static site generator
 
 ## Objects
 
-With the help of the API you have access to the file system and settings. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. An object you will see often is `$this->yellow->page`, this object gives you access to the current page. The source code of the entire API can be found in file `system/workers/core.php`.
+With the help of the API you have access to the file system, settings and extensions. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. An object you will see often is `$this->yellow->page`, this object gives you access to the current page. The source code of the entire API can be found in file `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -60,15 +59,15 @@ With the help of the API you have access to the file system and settings. The AP
 │ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
 │ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
 └────────────────────────────────────────────────────────────────────────────┘
-     │                        │ 
-     ▼                        ▼ 
-┌────────────────────┐   ┌───────────────────────────────────────────────────┐
-│ File system        │   │ Settings                                          │
-│                    │   │                                                   │
-│ ├── content        │   │ System settings         Extension settings        │
-│ ├── media          │   │ Language settings       Page settings             │
-│ └── system         │   │ User settings           and more...               │
-└────────────────────┘   └───────────────────────────────────────────────────┘
+          │                           │                           │  
+          ▼                           ▼                           ▼ 
+┌────────────────────┐     ┌───────────────────────┐    ┌────────────────────┐
+│ File system        │     │ Settings              │    │ Extensions         │
+│                    │     │                       │    │                    │
+│ ├── content        │     │ System settings       │    │ Events             │
+│ ├── media          │     │ Language settings     │    │ and more...        │
+│ └── system         │     │ User settings         │    │                    │
+└────────────────────┘     └───────────────────────┘    └────────────────────┘
 ```
 
 The following objects are available:

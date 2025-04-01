@@ -7,7 +7,7 @@ Vi <3 människor som kodar.
 
 ## Mappstruktur
 
-Du kan ändra allt i filhanteraren på din dator. Mappen `content` innehåller webbplatsens [innehållsfilerna](how-to-change-the-content). Du kan redigera din webbplats här. Mappen `media` innehåller webbplatsens [mediefilerna](how-to-change-the-media). Du kan lagra dina bilder och filer här. Mappen `system` innehåller webbplatsens [systemfilerna](how-to-change-the-system). Du kan hitta konfigurationsfilar och loggfilen här.
+Du kan redigera din webbplats i textredigeraren. Mappen `content` innehåller webbplatsens [innehållsfilerna](how-to-change-the-content). Du kan redigera din webbplats här. Mappen `media` innehåller webbplatsens [mediefilerna](how-to-change-the-media). Du kan lagra dina bilder och filer här. Mappen `system` innehåller webbplatsens [systemfilerna](how-to-change-the-system). Du kan hitta konfigurationsfilar här.
 
 ``` box-drawing {aria-hidden=true}
 ├── content               = innehållsfiler
@@ -21,16 +21,15 @@ Du kan ändra allt i filhanteraren på din dator. Mappen `content` innehåller w
 └── system                = systemfiler
     ├── extensions        = konfigurerbara tilläggsfiler, till exempel INI
     ├── layouts           = konfigurerbara layoutfiler, till exempel HTML
-    ├── themes            = konfigurerbara temafiler, till exempel CSS och JavaScript
+    ├── themes            = konfigurerbara temafiler, till exempel CSS
     └── workers           = filer for utvecklare, formgivare och översättare
 ```
 
-Följande konfigurationsfilar och loggfiler är tillgängliga:
+Följande filer är viktiga, det är bäst att ta en närmare titt på dem:
 
 `system/extensions/yellow-system.ini` = [fil med systeminställningar](how-to-change-the-system#systeminställningar)  
 `system/extensions/yellow-language.ini` = [fil med språkinställningar](how-to-change-the-system#språkinställningar)  
 `system/extensions/yellow-user.ini` = [fil med användarinställningar](how-to-change-the-system#användarinställningar)  
-`system/extensions/yellow-extension.ini` = [fil med tilläggsinställningar](how-to-change-the-system#tilläggsinställningar)  
 `system/extensions/yellow-website.log` = [loggfilen för webbplatsen](how-to-change-the-system#loggfilen)  
 
 ## Verktyg
@@ -49,7 +48,7 @@ Du kan generera en statisk webbplats på kommandoraden. Den static-site-generato
 
 ## Objekt
 
-Med hjälp av API:et har du tillgång till filsystemet och inställningar. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Ett objekt du kommer att se ofta är `$this->yellow->page`, detta objekt ger dig tillgång till aktuella sidan. Källkoden för hela API:et finns i filen `system/workers/core.php`.
+Med hjälp av API:et har du tillgång till filsystemet, inställningar och tillägg. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Ett objekt du kommer att se ofta är `$this->yellow->page`, detta objekt ger dig tillgång till aktuella sidan. Källkoden för hela API:et finns i filen `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────────────────────────────────────────────────────────────┐
@@ -60,15 +59,15 @@ Med hjälp av API:et har du tillgång till filsystemet och inställningar. API:e
 │ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
 │ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
 └────────────────────────────────────────────────────────────────────────────┘
-     │                        │ 
-     ▼                        ▼ 
-┌────────────────────┐   ┌───────────────────────────────────────────────────┐
-│ Filsystem          │   │ Inställningar                                     │
-│                    │   │                                                   │
-│ ├── content        │   │ Systeminställningar     Tillägginställningar      │
-│ ├── media          │   │ Språkinställningar      Sidinställningar          │
-│ └── system         │   │ Användarinställningar   och mer...                │
-└────────────────────┘   └───────────────────────────────────────────────────┘
+          │                           │                           │  
+          ▼                           ▼                           ▼ 
+┌────────────────────┐     ┌───────────────────────┐    ┌────────────────────┐
+│ Filsystem          │     │ Inställningar         │    │ Tillägg            │
+│                    │     │                       │    │                    │
+│ ├── content        │     │ Systeminställningar   │    │ Händelser          │
+│ ├── media          │     │ Språkinställningar    │    │ och mer...         │
+│ └── system         │     │ Användarinställningar │    │                    │
+└────────────────────┘     └───────────────────────┘    └────────────────────┘
 ```
 
 Följande objekt är tillgängliga:

@@ -13,7 +13,7 @@ All system files are located in the `system` folder. You can change your website
     └── workers
 ```
 
-The `system/extensions` folder contains configuration files and the log file. You can change the appearance of your website in the `system/layouts` folder and `system/themes` folder. You can change all layouts and themes as you like. Knowledge of HTML, CSS and JavaScript is required. It is better not to change any files in the `system/workers` folder.
+The `system/extensions` folder contains configuration files and the log file. You can change the appearance of your website in the `system/layouts` folder and `system/themes` folder. You can change all layouts and themes as you like. Knowledge of HTML and CSS is required. It is better not to change any files in the `system/workers` folder.
 
 ## System settings
 
@@ -76,24 +76,6 @@ The user settings are stored in file `system/extensions/yellow-user.ini`. Here's
 
 You can use a [web browser](https://github.com/annaesvensson/yellow-edit) or the [command line](https://github.com/annaesvensson/yellow-core) to create new user accounts. A user account consists of `Email` and other settings. If you don't want that pages are modified in a web browser, then restrict user accounts. Open the configuration file, change `Access` and `Home`. Users are allowed to edit pages within their home page, but nowhere else.
 
-## Extension settings
-
-The extension settings are stored in file `system/extensions/yellow-extension.ini`. Here's an example:
-
-    Extension: Core
-    Version: 0.9.3
-    Description: Core functionality of your website.
-    Developer: Anna Svensson
-    Tag: feature
-    DownloadUrl: https://github.com/annaesvensson/yellow-core/archive/refs/heads/main.zip
-    DocumentationUrl: https://github.com/annaesvensson/yellow-core
-    DocumentationLanguage: en, de, sv
-    Published: 2024-04-24 14:38:12
-    Status: available
-    system/workers/core.php: core.php, create, update
-
-You can see the installed extensions here. An extension consist of `Extension` and other settings. The extension settings contain information about all installed files. You can also see which developer, designer or translator is responsible for an extension. [Find extensions for your website](https://datenstrom.se/yellow/extensions/).
-
 ## Page settings
 
 The following settings can be configured at the top of a page:
@@ -134,7 +116,7 @@ The following settings can be configured at the top of a page:
 The log file can be found in file `system/extensions/yellow-website.log`. Here's an example:
 
 ```
-2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
+2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
 2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
 2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
 2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.2'

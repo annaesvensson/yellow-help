@@ -13,7 +13,7 @@ Alla systemfiler finns i `system` mappen. Du kan anpassa din webbplats här.
     └── workers
 ```
 
-Mappen `system/extensions` innehåller konfigurationsfilar och loggfilen. Du kan justera utseendet på din webbplats i `system/layouts` mappen och `system/themes` mappen. Du kan ändra alla layouter och teman som du vill. Vissa kunskaper i HTML, CSS och JavaScript krävs. Det är bättre om man inte ändrar filer i `system/workers` mappen.
+Mappen `system/extensions` innehåller konfigurationsfilar och loggfilen. Du kan justera utseendet på din webbplats i `system/layouts` mappen och `system/themes` mappen. Du kan ändra alla layouter och teman som du vill. Vissa kunskaper i HTML och CSS krävs. Det är bättre om man inte ändrar filer i `system/workers` mappen.
 
 ## Systeminställningar
 
@@ -76,24 +76,6 @@ Användarinställningar lagras i filen `system/extensions/yellow-user.ini`. Här
 
 Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) eller [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md) för att skapa nya användarkonton. Ett användarkonto består av `Email` och andra inställningar. Om du inte vill att sidorna ska ändras i en webbläsare begränsar du användarkonton. Öppna konfigurationsfilen, ändra `Access` och `Home`. Användare får redigera sidor på sin hemsida, men inte någon annanstans.
 
-## Tilläggsinställningar
-
-Tilläggsinställningar lagras i filen `system/extensions/yellow-extension.ini`. Här är ett exempel:
-
-    Extension: Core
-    Version: 0.9.3
-    Description: Core functionality of your website.
-    Developer: Anna Svensson
-    Tag: feature
-    DownloadUrl: https://github.com/annaesvensson/yellow-core/archive/refs/heads/main.zip
-    DocumentationUrl: https://github.com/annaesvensson/yellow-core
-    DocumentationLanguage: en, de, sv
-    Published: 2024-04-24 14:38:12
-    Status: available
-    system/workers/core.php: core.php, create, update
-
-Du kan se installerade tilläggen här. Ett tillägg består av `Extension` och andra inställningar. Tilläggsinställningarna innehåller information om alla installerade filer. Du kan också se vilken utvecklare, formgivare eller översättare som ansvarar för ett tillägg. [Få tillägg för din webbplats](https://datenstrom.se/sv/yellow/extensions/).
-
 ## Sidinställningar
 
 Följande inställningar kan konfigureras högst upp på en sida:
@@ -134,7 +116,7 @@ Följande inställningar kan konfigureras högst upp på en sida:
 Loggfilen finns i filen `system/extensions/yellow-website.log`. Här är ett exempel:
 
 ```
-2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
+2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
 2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
 2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
 2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.2'

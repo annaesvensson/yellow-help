@@ -13,7 +13,7 @@ Alle Systemdateien befinden sich im `system`-Verzeichnis. Hier passt man seine W
     └── workers
 ```
 
-Das `system/extensions`-Verzeichnis enthält Konfigurationsdateien und die Logdatei. Man kann das Aussehen seiner Webseite im `system/layouts`-Verzeichnis und `system/themes`-Verzeichnis anpassen. Man kann alle Layouts und Themes so ändern wie man will. Kenntnisse in HTML, CSS und JavaScript sind erforderlich. Im `system/workers`-Verzeichnis sollte man keine Dateien ändern.
+Das `system/extensions`-Verzeichnis enthält Konfigurationsdateien und die Logdatei. Man kann das Aussehen seiner Webseite im `system/layouts`-Verzeichnis und `system/themes`-Verzeichnis anpassen. Man kann alle Layouts und Themes so ändern wie man will. Kenntnisse in HTML und CSS sind erforderlich. Im `system/workers`-Verzeichnis sollte man keine Dateien ändern.
 
 ## Systemeinstellungen
 
@@ -76,24 +76,6 @@ Die Benutzereinstellungen sind in der Datei `system/extensions/yellow-user.ini` 
 
 Im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md) oder der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) kannst du neue Benutzerkonten anlegen. Ein Benutzerkonto besteht aus `Email` und weiteren Einstellungen. Falls du nicht willst dass Seiten im Webbrowser verändert werden, dann beschränke Benutzerkonten. Öffne die Konfigurationsdatei, ändere `Access` und `Home`. Benutzer dürfen Seiten innerhalb ihrer Startseite bearbeiten, aber nirgendwo sonst.
 
-## Erweiterungseinstellungen
-
-Die Erweiterungseinstellungen sind in der Datei `system/extensions/yellow-extension.ini` gespeichert. Hier ist ein Beispiel:
-
-    Extension: Core
-    Version: 0.9.3
-    Description: Core functionality of your website.
-    Developer: Anna Svensson
-    Tag: feature
-    DownloadUrl: https://github.com/annaesvensson/yellow-core/archive/refs/heads/main.zip
-    DocumentationUrl: https://github.com/annaesvensson/yellow-core
-    DocumentationLanguage: en, de, sv
-    Published: 2024-04-24 14:38:12
-    Status: available
-    system/workers/core.php: core.php, create, update
-
-Hier kannst du sehen welche Erweiterungen installiert sind. Eine Erweiterung besteht aus `Extension` und weiteren Einstellungen. Die Erweiterungseinstellungen enthalten Informationen über alle installierte Dateien. Du kannst auch sehen welcher Entwickler, Designer oder Übersetzer für eine Erweiterung verantwortlich ist. [Erweiterungen für deine Webseite finden](https://datenstrom.se/de/yellow/extensions/).
-
 ## Seiteneinstellungen
 
 Die folgenden Einstellungen können ganz oben auf einer Seite vorgenommen werden
@@ -134,7 +116,7 @@ Die folgenden Einstellungen können ganz oben auf einer Seite vorgenommen werden
 Die Logdatei findet man in der Datei `system/extensions/yellow-website.log`. Hier ist ein Beispiel:
 
 ```
-2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
+2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
 2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
 2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
 2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.2'

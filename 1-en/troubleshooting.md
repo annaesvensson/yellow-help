@@ -38,7 +38,7 @@ Copy the supplied `.htaccess` file into the installation folder. Check if your F
 Datenstrom Yellow requires rewrite support!
 ```
 
-Check the configuration file of your web server, see [problems with Apache](#problems-with-apache) and [problems with Nginx](#problems-with-nginx). Some web servers require additional settings, but this depends very much on the web server and operating system you use. As soon as the web server forwards HTTP requests to the `yellow.php`, the problem should be resolved.
+Check the configuration file of your web server, see [problems with web servers](#problems-with-web-servers), [Apache](#problems-with-apache) and [Nginx](#problems-with-nginx). Some web servers require additional settings, but this depends very much on the web server and operating system you use. As soon as the web server forwards HTTP requests to the `yellow.php`, the problem should be resolved.
 
 ```
 Datenstrom Yellow requires complete upload!
@@ -95,7 +95,7 @@ YellowSystem::load Theme:stockholm
 Important information is also written to file `system/extensions/yellow-website.log`. If you can't fix the cause of a problem yourself, then [report a bug along with the log file](contributing-guidelines). The log file gives a quick overview of what happens on your website, when it was installed and which errors occurred. Here's an example:
 
 ```
-2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
+2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
 2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
 2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
 2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.2'
@@ -105,6 +105,10 @@ Important information is also written to file `system/extensions/yellow-website.
 2024-04-28 14:23:11 info Install extension 'Fika 0.9.1'
 2024-04-28 14:23:11 error Process file 'system/workers/fika.php' with fatal error!
 ```
+
+## Problems with web servers
+
+When your website doesn't work, then check the configuration file of your web server. Most web servers come with configuration files for content management systems. You can also translate the supplied `.htaccess` configuration file into a format that your web server understands. If you can't find a configuration file for your web server, [ask our community](contributing-guidelines).
 
 ## Problems with Apache
 
@@ -149,7 +153,7 @@ RewriteRule ^ yellow.php [L]
 </IfModule>
 ```
 
-When your website doesn't work, then enable the rewrite module and check the AllowOverride configuration. On some web servers you have to change the AllowOverride configuration from `AllowOverride None` to `AllowOverride All`. After the configuration has been changed, you may have to restart the Apache web server.
+When your website doesn't work, then check the AllowOverride configuration of your web server. On some web servers you have to change the AllowOverride configuration from `AllowOverride None` to `AllowOverride All`. After the configuration has been changed, you may have to restart the Apache web server.
 
 ## Problems with Nginx
 

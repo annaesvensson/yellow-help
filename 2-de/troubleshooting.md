@@ -38,7 +38,7 @@ Kopiere die mitgelieferte `.htaccess` Datei ins Installations-Verzeichnis. Über
 Datenstrom Yellow requires rewrite support!
 ```
 
-Überprüfe die Konfigurationsdatei deines Webservers, siehe [Probleme mit Apache](#probleme-mit-apache) und [Probleme mit Nginx](#probleme-mit-nginx). Bei einigen Webservern sind zusätzliche Einstellungen erforderlich, aber das hängt stark vom verwendeten Webserver und Betriebssystem ab. Sobald der Webserver HTTP-Anfragen an die `yellow.php` weiterleitet, sollte das Problem behoben sein.
+Überprüfe die Konfigurationsdatei deines Webservers, siehe [Probleme mit Webservern](#probleme-mit-webservern), [Apache](#probleme-mit-apache) und [Nginx](#probleme-mit-nginx). Bei einigen Webservern sind zusätzliche Einstellungen erforderlich, aber das hängt stark vom verwendeten Webserver und Betriebssystem ab. Sobald der Webserver HTTP-Anfragen an die `yellow.php` weiterleitet, sollte das Problem behoben sein.
 
 ```
 Datenstrom Yellow requires complete upload!
@@ -95,7 +95,7 @@ YellowSystem::load Theme:stockholm
 Wichtige Informationen werden außerdem in die Datei `system/extensions/yellow-website.log` geschrieben. Falls du die Ursache eines Problems nicht selbst beheben kannst, dann [melde einen Fehler zusammen mit der Logdatei](contributing-guidelines). Die Logdatei gibt einen schnellen Überblick was auf deiner Website passiert, wann sie installiert wurde und welche Fehler aufgetreten sind. Hier ist ein Beispiel:
 
 ```
-2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Mac
+2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
 2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
 2024-04-28 14:13:07 info Install extension 'Markdown 0.9.1'
 2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.2'
@@ -105,6 +105,10 @@ Wichtige Informationen werden außerdem in die Datei `system/extensions/yellow-w
 2024-04-28 14:23:11 info Install extension 'Fika 0.9.1'
 2024-04-28 14:23:11 error Process file 'system/workers/fika.php' with fatal error!
 ```
+
+## Probleme mit Webservern
+
+Wenn deine Webseite nicht funktioniert, dann überprüfe die Konfigurationsdatei deines Webservers. Die meisten Webserver bieten Konfigurationsdateien für Content-Management-Systeme an. Du kannst auch die mitgelieferte `.htaccess` Konfigurationsdatei in ein Format übersetzen, die dein Webserver versteht. Falls du keine Konfigurationsdatei für deinen Webserver finden kannst, [frage unsere Netzgemeinschaft](contributing-guidelines).
 
 ## Probleme mit Apache
 
@@ -149,7 +153,7 @@ RewriteRule ^ yellow.php [L]
 </IfModule>
 ```
 
-Wenn deine Webseite nicht funktioniert, dann aktiviere das Rewrite-Modul und überprüfe die AllowOverride-Konfiguration. Auf manchen Webservern muss du die AllowOverride-Konfiguration ändern von `AllowOverride None` zu `AllowOverride All`. Nachdem die Konfiguration verändert wurde, musst du möglicherweise den Apache-Webserver neustarten.
+Wenn deine Webseite nicht funktioniert, dann überprüfe die AllowOverride-Konfiguration deines Webservers. Auf manchen Webservern muss du die AllowOverride-Konfiguration ändern von `AllowOverride None` zu `AllowOverride All`. Nachdem die Konfiguration verändert wurde, musst du möglicherweise den Apache-Webserver neustarten.
 
 ## Probleme mit Nginx
 

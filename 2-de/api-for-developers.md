@@ -7,7 +7,7 @@ Wir <3 Menschen die programmieren.
 
 ## Verzeichnisstruktur
 
-Du kannst alles im Dateimanager auf deinem Computer ändern. Das `content`-Verzeichnis enthält die [Inhaltsdateien](how-to-change-the-content) der Webseite. Hier bearbeitet man seine Webseite. Das `media`-Verzeichnis enthält die [Mediendateien](how-to-change-the-media) der Webseite. Hier speichert man seine Bilder und Dateien. Das `system`-Verzeichnis enthält die [Systemdateien](how-to-change-the-system) der Webseite. Hier findet man Konfigurationsdateien und die Logdatei.
+Du kannst deine Webseite im Texteditor bearbeiten. Das `content`-Verzeichnis enthält die [Inhaltsdateien](how-to-change-the-content) der Webseite. Hier bearbeitet man seine Webseite. Das `media`-Verzeichnis enthält die [Mediendateien](how-to-change-the-media) der Webseite. Hier speichert man seine Bilder und Dateien. Das `system`-Verzeichnis enthält die [Systemdateien](how-to-change-the-system) der Webseite. Hier findet man Konfigurationsdateien.
 
 ``` box-drawing {aria-hidden=true}
 ├── content               = Inhaltsdateien
@@ -21,16 +21,15 @@ Du kannst alles im Dateimanager auf deinem Computer ändern. Das `content`-Verze
 └── system                = Systemdateien
     ├── extensions        = konfigurierbare Erweiterungsdateien, beispielsweise INI
     ├── layouts           = konfigurierbare Layoutdateien, beispielsweise HTML
-    ├── themes            = konfigurierbare Themedateien, beispielsweise CSS und JavaScript
+    ├── themes            = konfigurierbare Themedateien, beispielsweise CSS
     └── workers           = Dateien für Entwickler, Designer und Übersetzer
 ```
 
-Die folgenden Konfigurationsdateien und Logdateien sind verfügbar:
+Die folgenden Dateien sind wichtig, schaue sie dir am besten genauer an:
 
 `system/extensions/yellow-system.ini` = [Datei mit Systemeinstellungen](how-to-change-the-system#systemeinstellungen)  
 `system/extensions/yellow-language.ini` = [Datei mit Spracheinstellungen](how-to-change-the-system#spracheinstellungen)  
 `system/extensions/yellow-user.ini` = [Datei mit Benutzereinstellungen](how-to-change-the-system#benutzereinstellungen)  
-`system/extensions/yellow-extension.ini` = [Datei mit Erweiterungseinstellungen](how-to-change-the-system#erweiterungseinstellungen)  
 `system/extensions/yellow-website.log` = [Logdatei der Webseite](how-to-change-the-system#logdatei)  
 
 ## Werkzeuge
@@ -49,7 +48,7 @@ Du kannst eine statische Webseite in der Befehlszeile generieren. Der Static-Sit
 
 ## Objekte
 
-Mit Hilfe der API hast du Zugriff auf das Dateisystem und die Einstellungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Ein Objekt das du häufig sehen wirst ist `$this->yellow->page`, dieses Objekt gibt dir Zugang zur aktuellen Seite. Den Quellcode der gesamten API findest du in der Datei `system/workers/core.php`.
+Mit Hilfe der API hast du Zugriff auf das Dateisystem, Einstellungen und Erweiterungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Ein Objekt das du häufig sehen wirst ist `$this->yellow->page`, dieses Objekt gibt dir Zugang zur aktuellen Seite. Den Quellcode der gesamten API findest du in der Datei `system/workers/core.php`.
 
 
 ``` box-drawing {aria-hidden=true}
@@ -61,15 +60,15 @@ Mit Hilfe der API hast du Zugriff auf das Dateisystem und die Einstellungen. Die
 │ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
 │ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
 └────────────────────────────────────────────────────────────────────────────┘
-     │                        │ 
-     ▼                        ▼ 
-┌────────────────────┐   ┌───────────────────────────────────────────────────┐
-│ Dateisystem        │   │ Einstellungen                                     │
-│                    │   │                                                   │
-│ ├── content        │   │ Systemeinstellungen     Erweiterungseinstellungen │
-│ ├── media          │   │ Spracheinstellungen     Seiteneinstellungen       │
-│ └── system         │   │ Benutzereinstellungen   und mehr...               │
-└────────────────────┘   └───────────────────────────────────────────────────┘
+          │                           │                           │  
+          ▼                           ▼                           ▼ 
+┌────────────────────┐     ┌───────────────────────┐    ┌────────────────────┐
+│ Dateisystem        │     │ Einstellungen         │    │ Erweiterungen      │
+│                    │     │                       │    │                    │
+│ ├── content        │     │ Systemeinstellungen   │    │ Ereignisse         │
+│ ├── media          │     │ Spracheinstellungen   │    │ und mehr...        │
+│ └── system         │     │ Benutzereinstellungen │    │                    │
+└────────────────────┘     └───────────────────────┘    └────────────────────┘
 ```
 
 Die folgenden Objekte sind verfügbar:
