@@ -108,7 +108,7 @@ Viktig information skrivs också till filen `system/extensions/yellow-website.lo
 
 ## Problem med webbservrar
 
-Om din webbplats inte fungerar, kontrollera konfigurationsfilen på din webbserver. De flesta webbservrar levereras med konfigurationsfiler för innehållshanteringssystem. Du kan också översätta den medföljande `.htaccess`-filen till ett format som din webbserver förstår. Om du inte kan hitta en konfigurationsfil för din webbserver, [fråga vår nätgemenskap](contributing-guidelines).
+Om din webbplats inte fungerar, kontrollera konfigurationsfilen på din webbserver. Du behöver en konfigurationsfil som vidarebefordrar HTTP-förfrågningar till innehållshanteringssystemet. Du kan översätta medföljande `.htaccess`-konfigurationsfilen till ett format som din webbserver förstår. Om du inte hittar någon lämplig konfigurationsfil, [fråga vår nätgemenskap](contributing-guidelines).
 
 ## Problem med Apache
 

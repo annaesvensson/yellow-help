@@ -108,7 +108,7 @@ Important information is also written to file `system/extensions/yellow-website.
 
 ## Problems with web servers
 
-When your website doesn't work, then check the configuration file of your web server. Most web servers come with configuration files for content management systems. You can also translate the supplied `.htaccess` configuration file into a format that your web server understands. If you can't find a configuration file for your web server, [ask our community](contributing-guidelines).
+When your website doesn't work, then check the configuration file of your web server. You need a configuration file that forwards HTTP requests to the content management system. You can translate the supplied `.htaccess` configuration file into a format that your web server understands. If you can't find a suitable configuration file, then [ask our community](contributing-guidelines).
 
 ## Problems with Apache
 
