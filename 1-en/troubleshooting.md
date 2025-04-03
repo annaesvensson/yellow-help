@@ -38,7 +38,7 @@ Copy the supplied `.htaccess` file into the installation folder. Check if your F
 Datenstrom Yellow requires rewrite support!
 ```
 
-Check the configuration file of your web server, see [problems with web servers](#problems-with-web-servers), [Apache](#problems-with-apache) and [Nginx](#problems-with-nginx). Some web servers require additional settings, but this depends very much on the web server and operating system you use. As soon as the web server forwards HTTP requests to the `yellow.php`, the problem should be resolved.
+Check the configuration file of your web server, see [problems with web server](#problems-with-web-server), [Apache](#problems-with-apache) and [Nginx](#problems-with-nginx). Some web servers require additional settings, but this depends very much on the web server and operating system you use. As soon as the web server forwards HTTP requests to the `yellow.php`, the problem should be resolved.
 
 ```
 Datenstrom Yellow requires complete upload!
@@ -106,7 +106,7 @@ Important information is also written to file `system/extensions/yellow-website.
 2024-04-28 14:23:11 error Process file 'system/workers/fika.php' with fatal error!
 ```
 
-## Problems with web servers
+## Problems with web server
 
 When your website doesn't work, then check the configuration file of your web server. You need a configuration file that forwards HTTP requests to the content management system. You can translate the supplied `.htaccess` configuration file into a format that your web server understands. If you can't find a suitable configuration file, then [ask our community](contributing-guidelines).
 

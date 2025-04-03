@@ -46,27 +46,27 @@ You can start a web server at the command line. The built-in web server is conve
 
 You can generate a static website at the command line. The static site generator makes the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php generate`, you can optionally add a folder and a location. This will generate a static website in the `public` folder. Upload the static website to your web server and generate a new one when needed. [Learn more about the static generator](https://github.com/annaesvensson/yellow-generate).
 
+### Command line 
+
+You can execute commands at the command line. This allows you, for example, to start a web server, generate a static website and update a website. The available commands depend on extensions installed. Open a terminal window. Go to your installation folder, where the file yellow.php is. Type php yellow.php to show available commands. [Learn more about the command line](https://github.com/annaesvensson/yellow-core).
+
 ## Objects
 
-With the help of the API you have access to the file system, settings and extensions. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. An object you will see often is `$this->yellow->page`, this object gives you access to the current page. The source code of the entire API can be found in file `system/workers/core.php`.
+With the help of the API you have access to the file system, settings and extensions. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the entire API can be found in file `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ API                                                                        │
 │                                                                            │
-│ $this->yellow                                                              │
-│ $this->yellow->content   $this->yellow->language    $this->yellow->lookup  │
-│ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
-│ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
+│ $this->yellow            $this->yellow->system    $this->yellow->extension │
+│ $this->yellow->content   $this->yellow->language  $this->yellow->lookup    │ 
+│ $this->yellow->media     $this->yellow->user      $this->yellow->toolbox   │
+│                          $this->yellow->page                               │
 └────────────────────────────────────────────────────────────────────────────┘
           │                           │                           │  
           ▼                           ▼                           ▼ 
 ┌────────────────────┐     ┌───────────────────────┐    ┌────────────────────┐
 │ File system        │     │ Settings              │    │ Extensions         │
-│                    │     │                       │    │                    │
-│ ├── content        │     │ System settings       │    │ Events             │
-│ ├── media          │     │ Language settings     │    │ and more...        │
-│ └── system         │     │ User settings         │    │                    │
 └────────────────────┘     └───────────────────────┘    └────────────────────┘
 ```
 

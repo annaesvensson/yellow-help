@@ -46,27 +46,27 @@ Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är prak
 
 Du kan generera en statisk webbplats på kommandoraden. Den static-site-generatorn skapar hella webbplatsen i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om statiska generatorn](https://github.com/annaesvensson/yellow-generate/tree/main/README-sv.md).
 
+### Kommandorad
+
+Du kan köra kommandon från kommandoraden. Detta ger dig möjlighet att till exempel starta en webbserver, generera en statisk webbplats och uppdatera en webbplats. De tillgängliga kommandona beror på installerade tillägg. Öppna ett terminalfönster. Gå till installationsmappen där filen yellow.php finns. Skriv php yellow.php för att visa tillgängliga kommandona. [Läs mer om kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md).
+
 ## Objekt
 
-Med hjälp av API:et har du tillgång till filsystemet, inställningar och tillägg. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Ett objekt du kommer att se ofta är `$this->yellow->page`, detta objekt ger dig tillgång till aktuella sidan. Källkoden för hela API:et finns i filen `system/workers/core.php`.
+Med hjälp av API:et har du tillgång till filsystemet, inställningar och tillägg. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för hela API:et finns i filen `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ API                                                                        │
 │                                                                            │
-│ $this->yellow                                                              │
-│ $this->yellow->content   $this->yellow->language    $this->yellow->lookup  │
-│ $this->yellow->media     $this->yellow->user        $this->yellow->toolbox │ 
-│ $this->yellow->system    $this->yellow->extension   $this->yellow->page    │
+│ $this->yellow            $this->yellow->system    $this->yellow->extension │
+│ $this->yellow->content   $this->yellow->language  $this->yellow->lookup    │ 
+│ $this->yellow->media     $this->yellow->user      $this->yellow->toolbox   │
+│                          $this->yellow->page                               │
 └────────────────────────────────────────────────────────────────────────────┘
           │                           │                           │  
           ▼                           ▼                           ▼ 
 ┌────────────────────┐     ┌───────────────────────┐    ┌────────────────────┐
 │ Filsystem          │     │ Inställningar         │    │ Tillägg            │
-│                    │     │                       │    │                    │
-│ ├── content        │     │ Systeminställningar   │    │ Händelser          │
-│ ├── media          │     │ Språkinställningar    │    │ och mer...         │
-│ └── system         │     │ Användarinställningar │    │                    │
 └────────────────────┘     └───────────────────────┘    └────────────────────┘
 ```
 

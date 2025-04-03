@@ -38,7 +38,7 @@ Kopiere die mitgelieferte `.htaccess` Datei ins Installations-Verzeichnis. Über
 Datenstrom Yellow requires rewrite support!
 ```
 
-Überprüfe die Konfigurationsdatei deines Webservers, siehe [Probleme mit Webservern](#probleme-mit-webservern), [Apache](#probleme-mit-apache) und [Nginx](#probleme-mit-nginx). Bei einigen Webservern sind zusätzliche Einstellungen erforderlich, aber das hängt stark vom verwendeten Webserver und Betriebssystem ab. Sobald der Webserver HTTP-Anfragen an die `yellow.php` weiterleitet, sollte das Problem behoben sein.
+Überprüfe die Konfigurationsdatei deines Webservers, siehe [Probleme mit Webserver](#probleme-mit-webserver), [Apache](#probleme-mit-apache) und [Nginx](#probleme-mit-nginx). Bei einigen Webservern sind zusätzliche Einstellungen erforderlich, aber das hängt stark vom verwendeten Webserver und Betriebssystem ab. Sobald der Webserver HTTP-Anfragen an die `yellow.php` weiterleitet, sollte das Problem behoben sein.
 
 ```
 Datenstrom Yellow requires complete upload!
@@ -106,7 +106,7 @@ Wichtige Informationen werden außerdem in die Datei `system/extensions/yellow-w
 2024-04-28 14:23:11 error Process file 'system/workers/fika.php' with fatal error!
 ```
 
-## Probleme mit Webservern
+## Probleme mit Webserver
 
 Wenn deine Webseite nicht funktioniert, dann überprüfe die Konfigurationsdatei deines Webservers. Du benötigst eine Konfigurationsdatei welche HTTP-Anfragen an das Content-Management-System weiterleitet. Du kannst die mitgelieferte `.htaccess` Konfigurationsdatei in ein Format übersetzen, das dein Webserver versteht. Falls du keine geeignete Konfigurationsdatei findest, dann [frage unsere Netzgemeinschaft](contributing-guidelines).
 
