@@ -205,12 +205,4 @@ server {
 
 When your website doesn't work, then check `server_name` and `root` in the configuration file. On some web servers you have to change the FastCGI configuration to `fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;` depending on the PHP version. After the configuration has been changed, you may have to restart the Nginx web server.
 
-## Related information
-
-* [How to start a web server](https://github.com/annaesvensson/yellow-serve)
-* [How to generate a static website](https://github.com/annaesvensson/yellow-generate)
-* [How to edit a website in a web browser](https://github.com/annaesvensson/yellow-edit)
-* [How to edit a website on your computer](https://github.com/annaesvensson/yellow-core)
-* [How to install, uninstall and show extensions](https://github.com/annaesvensson/yellow-update)
-
 Do you have questions? [Get help](.).

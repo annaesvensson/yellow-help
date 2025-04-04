@@ -46,15 +46,20 @@ You can start a web server at the command line. The built-in web server is conve
 
 You can generate a static website at the command line. The static site generator makes the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php generate`, you can optionally add a folder and a location. This will generate a static website in the `public` folder. Upload the static website to your web server and generate a new one when needed. [Learn more about the static generator](https://github.com/annaesvensson/yellow-generate).
 
-### Command line 
+### Layout engine
 
-You can execute commands at the command line. This allows you, for example, to start a web server, generate a static website and update a website. The available commands depend on extensions installed. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php` to show available commands. [Learn more about the command line](https://github.com/annaesvensson/yellow-core).
+You can customise the appearance of your website with HTML and CSS. You don't have to learn a special web framework, but can use normal PHP. This allows you to access the API, create control structures and most of it will probably look pretty familiar to you. We are using the same API everywhere from layout files to extensions. This is part of the core functionality, quite powerful and worth learning sooner or later. [Learn more about layouts](how-to-customise-a-layout) and [themes](how-to-customise-a-theme).
 
 ## Objects
 
 With the help of the API you have access to the file system, settings and extensions. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the entire API can be found in file `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
+┌────────────────────┐     ┌───────────────────────┐
+│ Web server         │     │ Command line          │
+└────────────────────┘     └───────────────────────┘
+         │                             │
+         ▼                             ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ API                                                                        │
 │                                                                            │

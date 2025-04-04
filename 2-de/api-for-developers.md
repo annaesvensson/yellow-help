@@ -46,9 +46,9 @@ Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver 
 
 Du kannst eine statische Webseite in der Befehlszeile generieren. Der Static-Site-Generator macht die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php generate`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das generiert eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und generiere bei Bedarf eine neue. [Weitere Informationen zum statischen Generator](https://github.com/annaesvensson/yellow-generate/tree/main/README-de.md).
 
-### Befehlszeile
+### Layout-Engine
 
-Du kannst Befehle in der Befehlszeile ausführen. Das gibt dir beispielsweise die Möglichkeit einen Webserver zu starten, eine statische Webseite zu generieren und eine Webseite zu aktualisieren. Die verfügbaren Befehle hängen von den installierten Erweiterungen ab. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php`, um die verfügbaren Befehle anzuzeigen. [Weitere Informationen zur Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md).
+Du kannst das Aussehen deiner Website mit HTML und CSS anpassen. Du musst kein spezielles Web-Framework lernen, sondern kannst normales PHP verwenden. Das gibt dir die Möglichkeit auf die API zuzugreifen, Kontrollstrukturen erstellen und das meiste wird dir wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. Das ist Teil der Kernfunktionalität, ziemlich mächtig und es lohnt sich das zu lernen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
 
 ## Objekte
 
@@ -56,6 +56,11 @@ Mit Hilfe der API hast du Zugriff auf das Dateisystem, Einstellungen und Erweite
 
 
 ``` box-drawing {aria-hidden=true}
+┌────────────────────┐     ┌───────────────────────┐
+│ Webserver          │     │ Befehlszeile          │
+└────────────────────┘     └───────────────────────┘
+         │                            │
+         ▼                            ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ API                                                                        │
 │                                                                            │

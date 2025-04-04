@@ -46,15 +46,20 @@ Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är prak
 
 Du kan generera en statisk webbplats på kommandoraden. Den static-site-generatorn skapar hella webbplatsen i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om statiska generatorn](https://github.com/annaesvensson/yellow-generate/tree/main/README-sv.md).
 
-### Kommandorad
+### Layout engine
 
-Du kan köra kommandon från kommandoraden. Detta ger dig möjlighet att till exempel starta en webbserver, generera en statisk webbplats och uppdatera en webbplats. De tillgängliga kommandona beror på installerade tillägg. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php` för att visa tillgängliga kommandona. [Läs mer om kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md).
+Du kan anpassa utseendet på din webbplats med HTML och CSS. Du behöver inte lära dig något speciellt webbramverk, utan kan använda vanlig PHP. Detta ger dig möjlighet att komma åt API:et, skapa kontrollstrukturer och det mesta kommer förmodligen att kännas ganska bekant för dig. Vi använder samma API:et överallt, från layoutfiler till tillägg. Detta är en del av kärnfunktionaliteten, ganska kraftfull och värd att lära sig förr eller senare. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
 
 ## Objekt
 
 Med hjälp av API:et har du tillgång till filsystemet, inställningar och tillägg. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för hela API:et finns i filen `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
+┌────────────────────┐     ┌───────────────────────┐
+│ Webbserver         │     │ Kommandorad           │
+└────────────────────┘     └───────────────────────┘
+         │                            │
+         ▼                            ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ API                                                                        │
 │                                                                            │

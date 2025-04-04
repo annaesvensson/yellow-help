@@ -205,12 +205,4 @@ server {
 
 När din webbplats inte fungerar, kontrollera `server_name` och `root` i konfigurationsfilen. På vissa webbservrar måste du ändra FastCGI-konfigurationen till `fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;` beroende på PHP-versionen. Efter att konfigurationen har ändrats kan du behöva starta om Nginx-webbservern.
 
-## Relaterad information
-
-* [Hur man startar en webbserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md)
-* [Hur man genererar en statisk webbplats](https://github.com/annaesvensson/yellow-generate/tree/main/README-sv.md)
-* [Hur man redigerar en webbplats i en webbläsare](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md)
-* [Hur man redigerar en webbplats på datorn](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md)
-* [Hur man installerar, avinstallerar och visar tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md)
-
 Har du några frågor? [Få hjälp](.).

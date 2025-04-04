@@ -38,7 +38,7 @@ Kopiere die mitgelieferte `.htaccess` Datei ins Installations-Verzeichnis. Über
 Datenstrom Yellow requires rewrite support!
 ```
 
-Überprüfe die Konfigurationsdatei deines Webservers, siehe [Probleme mit Webserver](#probleme-mit-webserver), [Apache](#probleme-mit-apache) und [Nginx](#probleme-mit-nginx). Bei einigen Webservern sind zusätzliche Einstellungen erforderlich, aber das hängt stark vom verwendeten Webserver und Betriebssystem ab. Sobald der Webserver HTTP-Anfragen an die `yellow.php` weiterleitet, sollte das Problem behoben sein.
+Überprüfe die Konfigurationsdatei deines Webservers, siehe [Probleme mit dem Webserver](#probleme-mit-dem-webserver), [Apache](#probleme-mit-apache) und [Nginx](#probleme-mit-nginx). Bei einigen Webservern sind zusätzliche Einstellungen erforderlich, aber das hängt stark vom verwendeten Webserver und Betriebssystem ab. Sobald der Webserver HTTP-Anfragen an die `yellow.php` weiterleitet, sollte das Problem behoben sein.
 
 ```
 Datenstrom Yellow requires complete upload!
@@ -106,7 +106,7 @@ Wichtige Informationen werden außerdem in die Datei `system/extensions/yellow-w
 2024-04-28 14:23:11 error Process file 'system/workers/fika.php' with fatal error!
 ```
 
-## Probleme mit Webserver
+## Probleme mit dem Webserver
 
 Wenn deine Webseite nicht funktioniert, dann überprüfe die Konfigurationsdatei deines Webservers. Du benötigst eine Konfigurationsdatei welche HTTP-Anfragen an das Content-Management-System weiterleitet. Du kannst die mitgelieferte `.htaccess` Konfigurationsdatei in ein Format übersetzen, das dein Webserver versteht. Falls du keine geeignete Konfigurationsdatei findest, dann [frage unsere Netzgemeinschaft](contributing-guidelines).
 
@@ -204,13 +204,5 @@ server {
 ```
 
 Wenn deine Webseite nicht funktioniert, dann überprüfe `server_name` und `root` in der Konfigurationsdatei. Auf manchen Webservern musst du die FastCGI-Konfiguration ändern zu `fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;` abhängig von der PHP-Version. Nachdem die Konfiguration verändert wurde, musst du möglicherweise den Nginx-Webserver neustarten.
-
-## Verwandte Informationen
-
-* [Wie man einen Webserver startet](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md)
-* [Wie man eine statische Webseite generiert](https://github.com/annaesvensson/yellow-generate/tree/main/README-de.md)
-* [Wie man eine Webseite im Webbrowser bearbeitet](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md)
-* [Wie man eine Webseite auf dem Computer bearbeitet](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md)
-* [Wie man Erweiterungen installiert, deinstalliert und anzeigt](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md)
 
 Hast du Fragen? [Hilfe finden](.).
