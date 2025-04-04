@@ -48,7 +48,7 @@ You can generate a static website at the command line. The static site generator
 
 ### Command line 
 
-You can execute commands at the command line. This allows you, for example, to start a web server, generate a static website and update a website. The available commands depend on extensions installed. Open a terminal window. Go to your installation folder, where the file yellow.php is. Type php yellow.php to show available commands. [Learn more about the command line](https://github.com/annaesvensson/yellow-core).
+You can execute commands at the command line. This allows you, for example, to start a web server, generate a static website and update a website. The available commands depend on extensions installed. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php` to show available commands. [Learn more about the command line](https://github.com/annaesvensson/yellow-core).
 
 ## Objects
 

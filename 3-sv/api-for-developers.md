@@ -48,7 +48,7 @@ Du kan generera en statisk webbplats på kommandoraden. Den static-site-generato
 
 ### Kommandorad
 
-Du kan köra kommandon från kommandoraden. Detta ger dig möjlighet att till exempel starta en webbserver, generera en statisk webbplats och uppdatera en webbplats. De tillgängliga kommandona beror på installerade tillägg. Öppna ett terminalfönster. Gå till installationsmappen där filen yellow.php finns. Skriv php yellow.php för att visa tillgängliga kommandona. [Läs mer om kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md).
+Du kan köra kommandon från kommandoraden. Detta ger dig möjlighet att till exempel starta en webbserver, generera en statisk webbplats och uppdatera en webbplats. De tillgängliga kommandona beror på installerade tillägg. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php` för att visa tillgängliga kommandona. [Läs mer om kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md).
 
 ## Objekt
 
