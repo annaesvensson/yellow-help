@@ -23,15 +23,15 @@ Falls du einen Fehler melden möchtest, [beginne eine neue Diskussion](https://g
 
 ## Wie man mit uns arbeitet
 
-* Denke darüber nach was du machen möchte und was dein Leben einfacher machen würde.
+* Mach mit bei der Entwicklung von Datenstrom Yellow.
+* Denke darüber nach was du machen möchtest und was dein Leben einfacher machen würde.
 * Frage dich selbst, brauche ich das, will ich das, kann ich das besser machen?
 * Erst funktionieren lassen, dann besser machen.
-* Teste Erweiterungen und gebe Feedback.
 
 Falls du dich engagieren möchtest, [siehe Tipps zum Zusammenarbeiten](https://github.com/datenstrom/community/discussions/760) und [API für Entwickler](api-for-developers).
 
 ## Gut zu wissen
 
-Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Online-Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei den Menschen die dir den richtigen Weg zeigen und hilfreiche Antworten schreiben. Gib guten Ideen einen Daumen nach oben. Das mögen nur kleine Gesten sein, aber sie sorgen für Inspiration und Freude bei der Arbeit. Du findest uns auf [GitHub](https://github.com/datenstrom) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
+Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Online-Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei den Menschen die dir den richtigen Weg zeigen und hilfreiche Antworten schreiben. Gib guten Ideen einen Daumen nach oben. Das mögen zwar nur kleine Gesten sein, aber sie sorgen für mehr Freude bei der Arbeit. Du findest uns auf [GitHub](https://github.com/datenstrom) oder [kontaktiere einen Menschen](https://datenstrom.se/de/contact/).
 
 Hast du Fragen? [Hilfe finden](.).

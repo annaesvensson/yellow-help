@@ -38,25 +38,25 @@ The following files are important, it is best to take a closer look at them:
 
 You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The online editor allows you to edit content files and upload media files. It is a great way to update your website. Text formatting with Markdown is supported. HTML is also supported. [Learn more about the online editor](https://github.com/annaesvensson/yellow-edit).
 
-### Web server
+### Built-in web server
 
-You can start a web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to see your website on your computer and upload it to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the web server](https://github.com/annaesvensson/yellow-serve).
+You can start a web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to see your website on your computer and upload it to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the built-in web server](https://github.com/annaesvensson/yellow-serve).
 
 ### Static generator
 
 You can generate a static website at the command line. The static site generator makes the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php generate`, you can optionally add a folder and a location. This will generate a static website in the `public` folder. Upload the static website to your web server and generate a new one when needed. [Learn more about the static generator](https://github.com/annaesvensson/yellow-generate).
 
-### Layout engine
+### Layout system
 
-You can customise the appearance of your website with HTML and CSS. You don't have to learn a special web framework, but can use normal PHP. This allows you to access the API, create control structures and most of it will probably look pretty familiar to you. We are using the same API everywhere from layout files to extensions. This is part of the core functionality, quite powerful and worth learning sooner or later. [Learn more about layouts](how-to-customise-a-layout) and [themes](how-to-customise-a-theme).
+You can customise the appearance of your website with HTML and CSS. Fortunately you don't have to learn a web framework, but can use normal PHP. This allows you to access the API, create control structures and most of it will probably look pretty familiar to you. We are using the same API everywhere, from layout files to extensions. It's quite powerful and worth taking a closer look at the layout system sooner or later. [Learn more about layouts](how-to-customise-a-layout) and [themes](how-to-customise-a-theme).
 
 ## Objects
 
-With the help of the API you have access to the file system, settings and extensions. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. The source code of the entire API can be found in file `system/workers/core.php`.
+With the help of the API you have access to the file system, settings and extensions. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────┐     ┌───────────────────────┐
-│ Web server         │     │ Command line          │
+│ Web browser        │     │ Command line          │
 └────────────────────┘     └───────────────────────┘
          │                            │
          ▼                            ▼
@@ -565,7 +565,7 @@ Layout file for showing users and their status:
 
 ### Yellow extension
 
-The class `YellowExtension` gives access to extensions. The following methods are available:
+The class `YellowExtension` gives access to [extensions](#extensions). The following methods are available:
 
 `get` `getModified` `isExisting`
 
@@ -1257,9 +1257,9 @@ var_dump(is_array_empty(new ArrayObject())); // bool(true)
 var_dump(is_array_empty(array("entry")));    // bool(false)
 ```
 
-## Events
+## Extensions
 
-With help of events the website notifys you when something interesting happens. First extensions are loaded and `onLoad` will be called. As soon as the system has started up either `onRequest` or `onCommand` will be called. A request from the web browser can be handled with various events. In most cases the page content will be generated. If an error has occurred, an error page will be generated. Finally the generated page is output.
+Your website consists of the core and other extensions. As soon as the system has started up either `onRequest` or `onCommand` will be called. A request from the web browser can be handled with various events. In most cases the page content will be generated with parse events. If an error has occurred, an error page will be generated.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐
@@ -1283,16 +1283,15 @@ onUpdate        onParseContentElement    onEditSystemFile            │
 The following types of events are available:
 
 `Yellow core events` = [notify when a state has changed](#yellow-core-events)  
-`Yellow info events` = [notify when information is available](#yellow-info-events)  
-`Yellow parse events` = [notify when a page is displayed](#yellow-parse-events)  
+`Yellow parse events` = [notify when a page is generated](#yellow-parse-events)  
 `Yellow edit events` = [notify when a file is edited in the web browser](#yellow-edit-events)  
-`Yellow command events` = [notify when a command is executed](#yellow-command-events)  
+`Yellow info events` = [notify when information is available](#yellow-info-events)  
 
 ### Yellow core events
 
 Yellow core events notify when a state has changed. The following events are available:
 
-`onLoad` `onRequest` `onShutdown` `onStartup`
+`onCommand` `onCommandHelp` `onLoad` `onRequest` `onShutdown` `onStartup`
 
 ---
 
@@ -1306,6 +1305,12 @@ Handle startup
 
 `public function onRequest($scheme, $address, $base, $location, $fileName)`  
 Handle request
+
+`public function onCommand($command, $text)`  
+Handle command
+
+`public function onCommandHelp()`  
+Handle command help
 
 `public function onShutdown()`  
 Handle shutdown
@@ -1327,36 +1332,7 @@ class YellowExample {
 }
 ```
 
-### Yellow info events
-
-Yellow info events notify when information is available. The following events are available:
-
-`onLog` `onMail` `onUpdate`
-
-The following update actions are available:
-
-`clean` = clean up files for static website  
-`daily` = daily event for all extensions  
-`install` = extension is installed  
-`uninstall` = extension is uninstalled  
-`update` = extension is updated  
-
----
-
-Description of events and arguments:
-
-`public function onLog($action, $message)`  
-Handle logging
-
-`public function onMail($action, $headers, $message)`  
-Handle email
-
-`public function onUpdate($action)`  
-Handle update
-
----
-
-Extension for handling an update event:
+Extension for handling a command:
 
 ``` php
 <?php
@@ -1368,41 +1344,27 @@ class YellowExample {
     public function onLoad($yellow) {
         $this->yellow = $yellow;
     }
-
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="install") {
-            $this->yellow->toolbox->log("info", "Install event");
-        }
-    }
-}
-```
-
-Extension for handling a daily event:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.1.3";
-    public $yellow;         // access to API
     
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
+    // Handle command
+    public function onCommand($command, $text) {
+        $statusCode = 0;
+        if ($command=="example") {
+            echo "Yellow $command: Add more text here\n";
+            $statusCode = 200;
+        }
+        return $statusCode;
     }
 
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="daily") {
-            $this->yellow->toolbox->log("info", "Daily event");
-        }
+    // Handle command help
+    public function onCommandHelp() {
+        return "example";
     }
 }
 ```
 
 ### Yellow parse events
 
-Yellow parse events notify when a page is displayed. The following events are available:
+Yellow parse events notify when a page is generated. The following events are available:
 
 `onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput`
 
@@ -1446,7 +1408,7 @@ Extension for creating a custom shortcut:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.4";
+    const VERSION = "0.1.3";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1472,7 +1434,7 @@ Extension for creating a HTML header:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.5";
+    const VERSION = "0.1.4";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1531,7 +1493,7 @@ Extension for handling content file changes:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.6";
+    const VERSION = "0.1.5";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1555,7 +1517,7 @@ Extension for handling media file changes:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.7";
+    const VERSION = "0.1.6";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1574,25 +1536,58 @@ class YellowExample {
 }
 ```
 
-### Yellow command events
+### Yellow info events
 
-Yellow command events notify when a command is executed. The following events are available:
+Yellow info events notify when information is available. The following events are available:
 
-`onCommand` `onCommandHelp`
+`onLog` `onMail` `onUpdate`
+
+The following update actions are available:
+
+`clean` = clean up files for static website  
+`daily` = daily event for all extensions  
+`install` = extension is installed  
+`uninstall` = extension is uninstalled  
+`update` = extension is updated  
 
 ---
 
 Description of events and arguments:
 
-`public function onCommand($command, $text)`  
-Handle command
+`public function onLog($action, $message)`  
+Handle logging
 
-`public function onCommandHelp()`  
-Handle command help
+`public function onMail($action, $headers, $message)`  
+Handle email
+
+`public function onUpdate($action)`  
+Handle update
 
 ---
 
-Extension for handling a command:
+Extension for handling an update event:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.7";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="install") {
+            $this->yellow->toolbox->log("info", "Install event");
+        }
+    }
+}
+```
+
+Extension for handling a daily event:
 
 ``` php
 <?php
@@ -1604,66 +1599,18 @@ class YellowExample {
     public function onLoad($yellow) {
         $this->yellow = $yellow;
     }
-    
-    // Handle command
-    public function onCommand($command, $text) {
-        $statusCode = 0;
-        if ($command=="example") {
-            echo "Yellow $command: Add more text here\n";
-            $statusCode = 200;
-        }
-        return $statusCode;
-    }
 
-    // Handle command help
-    public function onCommandHelp() {
-        return "example";
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="daily") {
+            $this->yellow->toolbox->log("info", "Daily event");
+        }
     }
 }
 ```
 
-Extension for handling multiple commands:
+## Debug mode
 
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.1.9";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-    
-     // Handle command
-    public function onCommand($command, $text) {
-        switch ($command) {
-            case "hello":   $statusCode = $this->processCommandHello($command, $text); break;
-            case "goodbye": $statusCode = $this->processCommandGoodbye($command, $text); break;
-            default:        $statusCode = 0;
-        }
-        return $statusCode;
-    }
-
-    // Handle command help
-    public function onCommandHelp() {
-        return array("hello [name]", "goodbye [name]");
-    }
-    
-    // Handle command for hello
-    public function processCommandHello($command, $text) {
-        if (is_string_empty($text)) $text = "World";
-        echo "Hello $text\n";
-        return 200;
-    }
-    
-    // Handle command for goodbye
-    public function processCommandGoodbye($command, $text) {
-        if (is_string_empty($text)) $text = "World";
-        echo "Goodbye $text\n";
-        return 200;
-    }
-}
-```
+You can use the debug mode to investigate the cause of a problem in more detail or if you are curious about how Datenstrom Yellow works. To activate the debug mode on your website open file `system/extensions/yellow-system.ini` and change `CoreDebugMode: 1`. Depending on the debug mode, more or less information are shown on screen.
 
 Do you have questions? [Get help](.).

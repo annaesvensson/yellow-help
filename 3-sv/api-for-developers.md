@@ -38,25 +38,25 @@ Följande filer är viktiga, det är bäst att ta en närmare titt på dem:
 
 Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Nättredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. HTML stöds också. [Läs mer om nättredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
 
-### Webbserver
+### Inbyggd webbserver
 
-Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att se din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md).
+Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att se din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md).
 
 ### Statisk generator
 
 Du kan generera en statisk webbplats på kommandoraden. Den static-site-generatorn skapar hella webbplatsen i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om statiska generatorn](https://github.com/annaesvensson/yellow-generate/tree/main/README-sv.md).
 
-### Layout engine
+### Layoutsystem
 
-Du kan anpassa utseendet på din webbplats med HTML och CSS. Du behöver inte lära dig något speciellt webbramverk, utan kan använda vanlig PHP. Detta ger dig möjlighet att komma åt API:et, skapa kontrollstrukturer och det mesta kommer förmodligen att kännas ganska bekant för dig. Vi använder samma API:et överallt, från layoutfiler till tillägg. Detta är en del av kärnfunktionaliteten, ganska kraftfull och värd att lära sig förr eller senare. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
+Du kan anpassa utseendet på din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett webbramverk, utan kan använda vanlig PHP. Detta ger dig möjlighet att komma åt API:et, skapa kontrollstrukturer och det mesta kommer förmodligen att kännas ganska bekant för dig. Vi använder samma API:et överallt, från layoutfiler till tillägg. Det är ganska kraftfullt och värt att ta en närmare titt på layoutsystemet förr eller senare. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
 
 ## Objekt
 
-Med hjälp av API:et har du tillgång till filsystemet, inställningar och tillägg. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Källkoden för hela API:et finns i filen `system/workers/core.php`.
+Med hjälp av API:et har du tillgång till filsystemet, inställningar och tillägg. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────┐     ┌───────────────────────┐
-│ Webbserver         │     │ Kommandorad           │
+│ Webbläsare         │     │ Kommandorad           │
 └────────────────────┘     └───────────────────────┘
          │                            │
          ▼                            ▼
@@ -566,7 +566,7 @@ Layoutfil för att visa användare och deras status:
 
 ### Yellow extension
 
-Klassen `YellowExtension` ger tillgång till tillägg. Följande metoder är tillgängliga:
+Klassen `YellowExtension` ger tillgång till [tillägg](#tillägg). Följande metoder är tillgängliga:
 
 `get` `getModified` `isExisting`
 
@@ -1258,9 +1258,9 @@ var_dump(is_array_empty(new ArrayObject())); // bool(true)
 var_dump(is_array_empty(array("entry")));    // bool(false)
 ```
 
-## Händelser
+## Tillägg
 
-Med hjälp av händelser meddelar hemsidan dig när något interessant händer. Först laddas tilläggen och `onLoad` anropas. Så snart systemet har startat anropas antingen `onRequest` eller `onCommand`. En begäran från webbläsaren kan hanteras med olika händelser. I de flesta fall genereras innehållet av en sida. Om ett fel har inträffat genereras en felsida. Slutligen matas den genererade sidan ut.
+Din webbplats består av kärnan och andra tillägg. Så snart systemet har startat anropas antingen `onRequest` eller `onCommand`. En begäran från webbläsaren kan hanteras med olika händelser. I de flesta fall genereras innehållet av en sida med parse händelser. Om ett fel har inträffat genereras en felsida.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐
@@ -1284,16 +1284,15 @@ onUpdate        onParseContentElement    onEditSystemFile            │
 Följande typer av händelser är tillgängliga:
 
 `Yellow core händelser` = [meddelar när ett tillstånd ändras](#yellow-core-händelser)  
-`Yellow info händelser` = [meddelar när information finns tillgänglig](#yellow-info-händelser)  
-`Yellow parse händelser` = [meddelar när en sida visas](#yellow-parse-händelser)  
+`Yellow parse händelser` = [meddelar när en sida genereras](#yellow-parse-händelser)  
 `Yellow edit händelser` = [meddelar när en fil redigeras i webbläsaren](#yellow-edit-händelser)  
-`Yellow command händelser` = [meddelar när ett kommando körs](#yellow-command-händelser)  
+`Yellow info händelser` = [meddelar när information finns tillgänglig](#yellow-info-händelser)  
 
 ### Yellow core händelser
 
 Yellow core händelser meddelar när ett tillstånd ändras. Följande händelser är tillgängliga:
 
-`onLoad` `onRequest` `onShutdown` `onStartup`
+`onCommand` `onCommandHelp` `onLoad` `onRequest` `onShutdown` `onStartup`
 
 ---
 
@@ -1307,6 +1306,12 @@ Hantera start
 
 `public function onRequest($scheme, $address, $base, $location, $fileName)`  
 Hantera begäran
+
+`public function onCommand($command, $text)`  
+Hantera kommandon
+
+`public function onCommandHelp()`  
+Hantera hjälp för kommandon
 
 `public function onShutdown()`  
 Hantera avstängningen
@@ -1328,36 +1333,7 @@ class YellowExample {
 }
 ```
 
-### Yellow info händelser
-
-Yellow info händelser meddelar när information finns tillgänglig. Följande händelser är tillgängliga:
-
-`onLog` `onMail` `onUpdate`
-
-Följande uppdateringsåtgärder är tillgängliga:
-
-`clean` = städa upp filer för statisk webbplats  
-`daily` = daglig händelse för alla tillägg  
-`install` = tillägget är installerat  
-`uninstall` = tillägget är avinstallerat  
-`update` = tillägget är uppdaterat  
-
----
-
-Beskrivning av händelser och argument:
-
-`public function onLog($action, $message)`  
-Hantera loggning
-
-`public function onMail($action, $headers, $message)`  
-Hantera email
-
-`public function onUpdate($action)`  
-Hantera uppdatering
-
----
-
-Tillägg för att hantera en uppdateringshändelse:
+Tillägg för att hantera ett kommando:
 
 ``` php
 <?php
@@ -1369,41 +1345,27 @@ class YellowExample {
     public function onLoad($yellow) {
         $this->yellow = $yellow;
     }
-
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="install") {
-            $this->yellow->toolbox->log("info", "Install event");
-        }
-    }
-}
-```
-
-Tillägg för att hantera en daglig händelse:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.1.3";
-    public $yellow;         // access to API
     
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
+    // Handle command
+    public function onCommand($command, $text) {
+        $statusCode = 0;
+        if ($command=="example") {
+            echo "Yellow $command: Add more text here\n";
+            $statusCode = 200;
+        }
+        return $statusCode;
     }
 
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="daily") {
-            $this->yellow->toolbox->log("info", "Daily event");
-        }
+    // Handle command help
+    public function onCommandHelp() {
+        return "example";
     }
 }
 ```
 
 ### Yellow parse händelser
 
-Yellow parse händelser meddelar när en sida visas. Följande händelser är tillgängliga:
+Yellow parse händelser meddelar när en sida genereras. Följande händelser är tillgängliga:
 
 `onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput`
 
@@ -1447,7 +1409,7 @@ Tillägg för att skapa en egen förkortning:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.4";
+    const VERSION = "0.1.3";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1473,7 +1435,7 @@ Tillägg för att skapa en HTML header:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.5";
+    const VERSION = "0.1.4";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1532,7 +1494,7 @@ Tillägg för att hantera innehållsfiländringar:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.6";
+    const VERSION = "0.1.5";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1556,7 +1518,7 @@ Tillägg för att hantera mediefiländringar:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.7";
+    const VERSION = "0.1.6";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1575,25 +1537,58 @@ class YellowExample {
 }
 ```
 
-### Yellow command händelser
+### Yellow info händelser
 
-Yellow command händelser meddelar när ett kommando körs. Följande händelser är tillgängliga:
+Yellow info händelser meddelar när information finns tillgänglig. Följande händelser är tillgängliga:
 
-`onCommand` `onCommandHelp`
+`onLog` `onMail` `onUpdate`
+
+Följande uppdateringsåtgärder är tillgängliga:
+
+`clean` = städa upp filer för statisk webbplats  
+`daily` = daglig händelse för alla tillägg  
+`install` = tillägget är installerat  
+`uninstall` = tillägget är avinstallerat  
+`update` = tillägget är uppdaterat  
 
 ---
 
 Beskrivning av händelser och argument:
 
-`public function onCommand($command, $text)`  
-Hantera kommandon
+`public function onLog($action, $message)`  
+Hantera loggning
 
-`public function onCommandHelp()`  
-Hantera hjälp för kommandon
+`public function onMail($action, $headers, $message)`  
+Hantera email
+
+`public function onUpdate($action)`  
+Hantera uppdatering
 
 ---
 
-Tillägg för att hantera ett kommando:
+Tillägg för att hantera en uppdateringshändelse:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.7";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="install") {
+            $this->yellow->toolbox->log("info", "Install event");
+        }
+    }
+}
+```
+
+Tillägg för att hantera en daglig händelse:
 
 ``` php
 <?php
@@ -1605,66 +1600,19 @@ class YellowExample {
     public function onLoad($yellow) {
         $this->yellow = $yellow;
     }
-    
-    // Handle command
-    public function onCommand($command, $text) {
-        $statusCode = 0;
-        if ($command=="example") {
-            echo "Yellow $command: Add more text here\n";
-            $statusCode = 200;
-        }
-        return $statusCode;
-    }
 
-    // Handle command help
-    public function onCommandHelp() {
-        return "example";
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="daily") {
+            $this->yellow->toolbox->log("info", "Daily event");
+        }
     }
 }
 ```
 
-Tillägg för att hantera flera kommandon:
+### Felsökningsläge
 
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.1.9";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-    
-     // Handle command
-    public function onCommand($command, $text) {
-        switch ($command) {
-            case "hello":   $statusCode = $this->processCommandHello($command, $text); break;
-            case "goodbye": $statusCode = $this->processCommandGoodbye($command, $text); break;
-            default:        $statusCode = 0;
-        }
-        return $statusCode;
-    }
+Du kan använda felsökningsläget för att undersöka orsaken till ett problem mer i detalj eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget på din webbplats, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Beroende på felsökningsläget visas mer eller mindre information på skärmen.
 
-    // Handle command help
-    public function onCommandHelp() {
-        return array("hello [name]", "goodbye [name]");
-    }
-    
-    // Handle command for hello
-    public function processCommandHello($command, $text) {
-        if (is_string_empty($text)) $text = "World";
-        echo "Hello $text\n";
-        return 200;
-    }
-    
-    // Handle command for goodbye
-    public function processCommandGoodbye($command, $text) {
-        if (is_string_empty($text)) $text = "World";
-        echo "Goodbye $text\n";
-        return 200;
-    }
-}
-```
 
 Har du några frågor? [Få hjälp](.).

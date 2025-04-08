@@ -38,26 +38,26 @@ Die folgenden Dateien sind wichtig, schaue sie dir am besten genauer an:
 
 Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der Online-Editor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Textformatierung mit Markdown wird unterstützt. HTML wird auch unterstützt. [Weitere Informationen zum Online-Editor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
 
-### Webserver
+### Eingebauter Webserver
 
-Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer anzuzeigen und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
+Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer anzuzeigen und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum eingebauten Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
 
 ### Statischer Generator
 
 Du kannst eine statische Webseite in der Befehlszeile generieren. Der Static-Site-Generator macht die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php generate`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das generiert eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und generiere bei Bedarf eine neue. [Weitere Informationen zum statischen Generator](https://github.com/annaesvensson/yellow-generate/tree/main/README-de.md).
 
-### Layout-Engine
+### Layout-System
 
-Du kannst das Aussehen deiner Website mit HTML und CSS anpassen. Du musst kein spezielles Web-Framework lernen, sondern kannst normales PHP verwenden. Das gibt dir die Möglichkeit auf die API zuzugreifen, Kontrollstrukturen erstellen und das meiste wird dir wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. Das ist Teil der Kernfunktionalität, ziemlich mächtig und es lohnt sich das zu lernen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
+Du kannst das Aussehen deiner Webseite mit HTML und CSS anpassen. Glücklicherweise musst dazu du kein Web-Framework lernen, sondern kannst normales PHP verwenden. Das gibt dir die Möglichkeit auf die API zuzugreifen, Kontrollstrukturen erstellen und das meiste wird dir wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. Es ist ziemlich mächtig und lohnt sich früher oder später einen genaueren Blick auf das Layout-System zu werfen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
 
 ## Objekte
 
-Mit Hilfe der API hast du Zugriff auf das Dateisystem, Einstellungen und Erweiterungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde genommen das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Den Quellcode der gesamten API findest du in der Datei `system/workers/core.php`.
+Mit Hilfe der API hast du Zugriff auf das Dateisystem, Einstellungen und Erweiterungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen.
 
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────┐     ┌───────────────────────┐
-│ Webserver          │     │ Befehlszeile          │
+│ Webbrowser         │     │ Befehlszeile          │
 └────────────────────┘     └───────────────────────┘
          │                            │
          ▼                            ▼
@@ -566,7 +566,7 @@ Layoutdatei um Benutzer und ihren Status anzuzeigen:
 
 ### Yellow-Extension
 
-Die Klasse `YellowExtension` gibt Zugang zu Erweiterungen. Die folgenden Methoden sind verfügbar:
+Die Klasse `YellowExtension` gibt Zugang zu [Erweiterungen](#erweiterungen). Die folgenden Methoden sind verfügbar:
 
 `get` `getModified` `isExisting`
 
@@ -1258,9 +1258,9 @@ var_dump(is_array_empty(new ArrayObject())); // bool(true)
 var_dump(is_array_empty(array("entry")));    // bool(false)
 ```
 
-## Ereignisse
+## Erweiterungen
 
-Mit Hilfe von Ereignissen unterrichtet dich die Webseite wenn etwas Interessantes passiert. Zuerst werden die Erweiterungen geladen und es wird `onLoad` aufgerufen. Sobald das System hochgefahren ist wird entweder `onRequest` oder `onCommand` aufgerufen. Eine Anfrage vom Webbrowser kann mit verschiedenen Ereignissen verarbeitet werden. In den meisten Fällen wird der Inhalt einer Seite erzeugt. Sollte ein Fehler aufgetreten sein, wird eine Fehlerseite erzeugt. Zum Schluss wird die erzeugte Seite ausgegeben.
+Deine Webseite besteht aus dem Core und anderen Erweiterungen. Sobald das System hochgefahren ist wird entweder `onRequest` oder `onCommand` aufgerufen. Eine Anfrage vom Webbrowser kann mit verschiedenen Ereignissen verarbeitet werden. In den meisten Fällen wird der Inhalt einer Seite mit Parse-Ereignissen erzeugt. Sollte ein Fehler aufgetreten sein, wird eine Fehlerseite erzeugt.
 
 ``` box-drawing {aria-hidden=true}
 onLoad ───────▶ onStartup ───────────────────────────────────────────┐
@@ -1284,16 +1284,15 @@ onUpdate        onParseContentElement    onEditSystemFile            │
 Die folgenden Arten von Ereignissen sind verfügbar:
 
 `Yellow-Core-Ereignisse` = [unterrichten wenn sich ein Zustand ändert](#yellow-core-ereignisse)  
-`Yellow-Info-Ereignisse` = [unterrichten wenn Informationen verfügbar sind](#yellow-info-ereignisse)  
-`Yellow-Parse-Ereignisse` = [unterrichten wenn eine Seite angezeigt wird](#yellow-parse-ereignisse)  
+`Yellow-Parse-Ereignisse` = [unterrichten wenn eine Seite erzeugt wird](#yellow-parse-ereignisse)  
 `Yellow-Edit-Ereignisse` = [unterrichten wenn eine Datei im Webbrowser bearbeitet wird](#yellow-edit-ereignisse)  
-`Yellow-Command-Ereignisse` = [unterrichten wenn ein Befehl ausgeführt wird](#yellow-command-ereignisse)  
+`Yellow-Info-Ereignisse` = [unterrichten wenn Informationen verfügbar sind](#yellow-info-ereignisse)  
 
 ### Yellow-Core-Ereignisse
 
 Yellow-Core-Ereignisse unterrichten wenn sich ein Zustand ändert. Die folgenden Ereignisse sind verfügbar:
 
-`onLoad` `onRequest` `onShutdown` `onStartup`
+`onCommand` `onCommandHelp` `onLoad` `onRequest` `onShutdown` `onStartup`
 
 ---
 
@@ -1307,6 +1306,12 @@ Verarbeite das Hochfahren
 
 `public function onRequest($scheme, $address, $base, $location, $fileName)`  
 Verarbeite die Anfrage
+
+`public function onCommand($command, $text)`  
+Verarbeite Befehle
+
+`public function onCommandHelp()`  
+Verarbeite Hilfe für Befehle
 
 `public function onShutdown()`  
 Verarbeite das Runterfahren
@@ -1328,36 +1333,7 @@ class YellowExample {
 }
 ```
 
-### Yellow-Info-Ereignisse
-
-Yellow-Info-Ereignisse unterrichten wenn Informationen verfügbar sind. Die folgenden Ereignisse sind verfügbar:
-
-`onLog` `onMail` `onUpdate`
-
-Die folgenden Aktualisierungs-Aktionen sind verfügbar:
-
-`clean` = Dateien für statische Webseite aufräumen  
-`daily` = tägliches Ereignis für alle Erweiterungen  
-`install` = Erweiterung wird installiert  
-`uninstall` = Erweiterung wird deinstalliert  
-`update` = Erweiterung wird aktualisiert  
-
----
-
-Beschreibung der Ereignisse und Argumente:
-
-`public function onLog($action, $message)`  
-Verarbeite Logging
-
-`public function onMail($action, $headers, $message)`  
-Verarbeite E-Mail
-
-`public function onUpdate($action)`  
-Verarbeite Aktualisierung
-
----
-
-Erweiterung um ein Aktualisierung-Ereignis zu verarbeiten:
+Erweiterung um einen Befehl zu verarbeiten:
 
 ``` php
 <?php
@@ -1369,41 +1345,27 @@ class YellowExample {
     public function onLoad($yellow) {
         $this->yellow = $yellow;
     }
-
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="install") {
-            $this->yellow->toolbox->log("info", "Install event");
-        }
-    }
-}
-```
-
-Erweiterung um ein tägliches Ereignis zu verarbeiten:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.1.3";
-    public $yellow;         // access to API
     
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
+    // Handle command
+    public function onCommand($command, $text) {
+        $statusCode = 0;
+        if ($command=="example") {
+            echo "Yellow $command: Add more text here\n";
+            $statusCode = 200;
+        }
+        return $statusCode;
     }
 
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="daily") {
-            $this->yellow->toolbox->log("info", "Daily event");
-        }
+    // Handle command help
+    public function onCommandHelp() {
+        return "example";
     }
 }
 ```
 
 ### Yellow-Parse-Ereignisse
 
-Yellow-Parse-Ereignisse unterrichten wenn eine Seite angezeigt wird. Die folgenden Ereignisse sind verfügbar:
+Yellow-Parse-Ereignisse unterrichten wenn eine Seite erzeugt wird. Die folgenden Ereignisse sind verfügbar:
 
 `onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput`
 
@@ -1448,7 +1410,7 @@ Erweiterung um eine eigene Abkürzung zu erstellen:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.4";
+    const VERSION = "0.1.3";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1474,7 +1436,7 @@ Erweiterung um einen HTML-Header zu erstellen:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.5";
+    const VERSION = "0.1.4";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1534,7 +1496,7 @@ Erweiterung um Änderungen an Inhaltsdatei zu verarbeiten:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.6";
+    const VERSION = "0.1.5";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1558,7 +1520,7 @@ Erweiterung um Änderungen an Mediendatei zu verarbeiten:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.7";
+    const VERSION = "0.1.6";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1577,25 +1539,58 @@ class YellowExample {
 }
 ```
 
-### Yellow-Command-Ereignisse
+### Yellow-Info-Ereignisse
 
-Yellow-Command-Ereignisse unterrichten wenn ein Befehl ausgeführt wird. Die folgenden Ereignisse sind verfügbar:
+Yellow-Info-Ereignisse unterrichten wenn Informationen verfügbar sind. Die folgenden Ereignisse sind verfügbar:
 
-`onCommand` `onCommandHelp`
+`onLog` `onMail` `onUpdate`
+
+Die folgenden Aktualisierungs-Aktionen sind verfügbar:
+
+`clean` = Dateien für statische Webseite aufräumen  
+`daily` = tägliches Ereignis für alle Erweiterungen  
+`install` = Erweiterung wird installiert  
+`uninstall` = Erweiterung wird deinstalliert  
+`update` = Erweiterung wird aktualisiert  
 
 ---
 
 Beschreibung der Ereignisse und Argumente:
 
-`public function onCommand($command, $text)`  
-Verarbeite Befehle
+`public function onLog($action, $message)`  
+Verarbeite Logging
 
-`public function onCommandHelp()`  
-Verarbeite Hilfe für Befehle
+`public function onMail($action, $headers, $message)`  
+Verarbeite E-Mail
+
+`public function onUpdate($action)`  
+Verarbeite Aktualisierung
 
 ---
 
-Erweiterung um einen Befehl zu verarbeiten:
+Erweiterung um ein Aktualisierung-Ereignis zu verarbeiten:
+
+``` php
+<?php
+class YellowExample {
+    const VERSION = "0.1.7";
+    public $yellow;         // access to API
+    
+    // Handle initialisation
+    public function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="install") {
+            $this->yellow->toolbox->log("info", "Install event");
+        }
+    }
+}
+```
+
+Erweiterung um ein tägliches Ereignis zu verarbeiten:
 
 ``` php
 <?php
@@ -1607,66 +1602,18 @@ class YellowExample {
     public function onLoad($yellow) {
         $this->yellow = $yellow;
     }
-    
-    // Handle command
-    public function onCommand($command, $text) {
-        $statusCode = 0;
-        if ($command=="example") {
-            echo "Yellow $command: Add more text here\n";
-            $statusCode = 200;
-        }
-        return $statusCode;
-    }
 
-    // Handle command help
-    public function onCommandHelp() {
-        return "example";
+    // Handle update
+    public function onUpdate($action) {
+        if ($action=="daily") {
+            $this->yellow->toolbox->log("info", "Daily event");
+        }
     }
 }
 ```
 
-Erweiterung um mehrere Befehle zu verarbeiten:
+## Debug-Modus
 
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.1.9";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-    
-     // Handle command
-    public function onCommand($command, $text) {
-        switch ($command) {
-            case "hello":   $statusCode = $this->processCommandHello($command, $text); break;
-            case "goodbye": $statusCode = $this->processCommandGoodbye($command, $text); break;
-            default:        $statusCode = 0;
-        }
-        return $statusCode;
-    }
-
-    // Handle command help
-    public function onCommandHelp() {
-        return array("hello [name]", "goodbye [name]");
-    }
-    
-    // Handle command for hello
-    public function processCommandHello($command, $text) {
-        if (is_string_empty($text)) $text = "World";
-        echo "Hello $text\n";
-        return 200;
-    }
-    
-    // Handle command for goodbye
-    public function processCommandGoodbye($command, $text) {
-        if (is_string_empty($text)) $text = "World";
-        echo "Goodbye $text\n";
-        return 200;
-    }
-}
-```
+Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei  `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Abhängig vom Debug-Modus werden mehr oder weniger Informationen auf dem Bildschirm angezeigt.
 
 Hast du Fragen? [Hilfe finden](.).
