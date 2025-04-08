@@ -34,9 +34,9 @@ The following files are important, it is best to take a closer look at them:
 
 ## Tools
 
-### Online editor
+### Small web editor
 
-You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The online editor allows you to edit content files and upload media files. It is a great way to update your website. Text formatting with Markdown is supported. HTML is also supported. [Learn more about the online editor](https://github.com/annaesvensson/yellow-edit).
+You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The small web editor allows you to edit content files and upload media files. It is a great way to update your website. Text formatting with Markdown is supported. HTML is also supported. [Learn more about the small web editor](https://github.com/annaesvensson/yellow-edit).
 
 ### Built-in web server
 
@@ -44,11 +44,11 @@ You can start a web server at the command line. The built-in web server is conve
 
 ### Static generator
 
-You can generate a static website at the command line. The static site generator makes the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php generate`, you can optionally add a folder and a location. This will generate a static website in the `public` folder. Upload the static website to your web server and generate a new one when needed. [Learn more about the static generator](https://github.com/annaesvensson/yellow-generate).
+You can generate a static website at the command line. The static generator makes the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php generate`, you can optionally add a folder and a location. This will generate a static website in the `public` folder. Upload the static website to your web server and generate a new one when needed. [Learn more about the static generator](https://github.com/annaesvensson/yellow-generate).
 
 ### Layout system
 
-You can customise the appearance of your website with HTML and CSS. Fortunately you don't have to learn a web framework, but can use normal PHP. This allows you to access the API, create control structures and most of it will probably look pretty familiar to you. We are using the same API everywhere, from layout files to extensions. It's quite powerful and worth taking a closer look at the layout system sooner or later. [Learn more about layouts](how-to-customise-a-layout) and [themes](how-to-customise-a-theme).
+You can customise the appearance of your website with HTML and CSS. Fortunately you don't have to learn another web framework, but can use normal PHP. This allows you to access the API, create control structures and most of it will probably look pretty familiar to you. We are using the same API everywhere, from layout files to extensions. It's quite powerful and worth taking a closer look at the layout system sooner or later. [Learn more about layouts](how-to-customise-a-layout) and [themes](how-to-customise-a-theme).
 
 ## Objects
 
@@ -1262,29 +1262,32 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 Your website consists of the core and other extensions. As soon as the system has started up either `onRequest` or `onCommand` will be called. A request from the web browser can be handled with various events. In most cases the page content will be generated with parse events. If an error has occurred, an error page will be generated.
 
 ``` box-drawing {aria-hidden=true}
-onLoad ───────▶ onStartup ───────────────────────────────────────────┐
-                    │                                                │
-                    ▼                                                │
-                onRequest ───────────────────┐                       │
-                    │                        │                       │
-                    ▼                        ▼                       ▼
-onLog           onParseMetaData          onEditContentFile       onCommand  
-onMail          onParseContentRaw        onEditMediaFile         onCommandHelp
-onUpdate        onParseContentElement    onEditSystemFile            │
-                onParseContentHtml       onEditUserAccount           │
-                onParsePageLayout            │                       │
-                onParsePageExtra             │                       │
-                onParsePageOutput            │                       │
-                    │                        │                       │
-                    ▼                        │                       │
-                onShutdown ◀─────────────────┴───────────────────────┘
+onLoad
+    │
+    ▼
+onStartup ───────────────────────────────────────────┐
+    │                                                │
+    ▼                                                │
+onRequest ───────────────────┐                       │
+    │                        │                       │
+    ▼                        ▼                       ▼
+onParseMetaData          onEditContentFile       onCommand          onLog
+onParseContentRaw        onEditMediaFile         onCommandHelp      onMail
+onParseContentElement    onEditSystemFile            │              onUpdate
+onParseContentHtml       onEditUserAccount           │
+onParsePageLayout            │                       │
+onParsePageExtra             │                       │
+onParsePageOutput            │                       │
+    │                        │                       │
+    ▼                        │                       │
+onShutdown ◀─────────────────┴───────────────────────┘
 ```
 
 The following types of events are available:
 
 `Yellow core events` = [notify when a state has changed](#yellow-core-events)  
 `Yellow parse events` = [notify when a page is generated](#yellow-parse-events)  
-`Yellow edit events` = [notify when a file is edited in the web browser](#yellow-edit-events)  
+`Yellow edit events` = [notify when a file is edited](#yellow-edit-events)  
 `Yellow info events` = [notify when information is available](#yellow-info-events)  
 
 ### Yellow core events
@@ -1370,11 +1373,11 @@ Yellow parse events notify when a page is generated. The following events are av
 
 The following element types are available:
 
-`inline` = shortcut with an inline element  
-`block` = shortcut with a block element  
+`symbol` = symbol for inline element  
+`inline` = shortcut for inline element  
+`block` = shortcut for block element, may contain multiple text lines  
 `code` = code block element, may contain multiple text lines  
-`notice` = notice block element, may contain multiple text lines   
-`symbol` = symbol inline element, used for emojis and icons  
+`notice` = general block element, may contain multiple text lines  
 
 ---
 
@@ -1457,7 +1460,7 @@ class YellowExample {
 
 ### Yellow edit events
 
-Yellow edit events notify when a file is edited in the web browser. The following events are available:
+Yellow edit events notify when a file is edited. The following events are available:
 
 `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount`
 

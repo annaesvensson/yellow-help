@@ -34,9 +34,9 @@ Die folgenden Dateien sind wichtig, schaue sie dir am besten genauer an:
 
 ## Werkzeuge
 
-### Online-Editor
+### Kleiner Webeditor
 
-Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der Online-Editor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Textformatierung mit Markdown wird unterstützt. HTML wird auch unterstützt. [Weitere Informationen zum Online-Editor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
+Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der kleine Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Textformatierung mit Markdown wird unterstützt. HTML wird auch unterstützt. [Weitere Informationen zum kleinen Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
 
 ### Eingebauter Webserver
 
@@ -44,11 +44,11 @@ Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver 
 
 ### Statischer Generator
 
-Du kannst eine statische Webseite in der Befehlszeile generieren. Der Static-Site-Generator macht die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php generate`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das generiert eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und generiere bei Bedarf eine neue. [Weitere Informationen zum statischen Generator](https://github.com/annaesvensson/yellow-generate/tree/main/README-de.md).
+Du kannst eine statische Webseite in der Befehlszeile generieren. Der statische Generator macht die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php generate`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das generiert eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und generiere bei Bedarf eine neue. [Weitere Informationen zum statischen Generator](https://github.com/annaesvensson/yellow-generate/tree/main/README-de.md).
 
 ### Layout-System
 
-Du kannst das Aussehen deiner Webseite mit HTML und CSS anpassen. Glücklicherweise musst dazu du kein Web-Framework lernen, sondern kannst normales PHP verwenden. Das gibt dir die Möglichkeit auf die API zuzugreifen, Kontrollstrukturen erstellen und das meiste wird dir wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. Es ist ziemlich mächtig und lohnt sich früher oder später einen genaueren Blick auf das Layout-System zu werfen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
+Du kannst das Aussehen deiner Webseite mit HTML und CSS anpassen. Glücklicherweise musst du kein weiteres Web-Framework lernen, sondern kannst normales PHP verwenden. Das gibt dir die Möglichkeit auf die API zuzugreifen, Kontrollstrukturen zu erstellen und das meiste wird dir wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. Es ist ziemlich mächtig und lohnt sich früher oder später einen genaueren Blick auf das Layout-System zu werfen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
 
 ## Objekte
 
@@ -1263,29 +1263,32 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 Deine Webseite besteht aus dem Core und anderen Erweiterungen. Sobald das System hochgefahren ist wird entweder `onRequest` oder `onCommand` aufgerufen. Eine Anfrage vom Webbrowser kann mit verschiedenen Ereignissen verarbeitet werden. In den meisten Fällen wird der Inhalt einer Seite mit Parse-Ereignissen erzeugt. Sollte ein Fehler aufgetreten sein, wird eine Fehlerseite erzeugt.
 
 ``` box-drawing {aria-hidden=true}
-onLoad ───────▶ onStartup ───────────────────────────────────────────┐
-                    │                                                │
-                    ▼                                                │
-                onRequest ───────────────────┐                       │
-                    │                        │                       │
-                    ▼                        ▼                       ▼
-onLog           onParseMetaData          onEditContentFile       onCommand  
-onMail          onParseContentRaw        onEditMediaFile         onCommandHelp
-onUpdate        onParseContentElement    onEditSystemFile            │
-                onParseContentHtml       onEditUserAccount           │
-                onParsePageLayout            │                       │
-                onParsePageExtra             │                       │
-                onParsePageOutput            │                       │
-                    │                        │                       │
-                    ▼                        │                       │
-                onShutdown ◀─────────────────┴───────────────────────┘
+onLoad
+    │
+    ▼
+onStartup ───────────────────────────────────────────┐
+    │                                                │
+    ▼                                                │
+onRequest ───────────────────┐                       │
+    │                        │                       │
+    ▼                        ▼                       ▼
+onParseMetaData          onEditContentFile       onCommand          onLog
+onParseContentRaw        onEditMediaFile         onCommandHelp      onMail
+onParseContentElement    onEditSystemFile            │              onUpdate
+onParseContentHtml       onEditUserAccount           │
+onParsePageLayout            │                       │
+onParsePageExtra             │                       │
+onParsePageOutput            │                       │
+    │                        │                       │
+    ▼                        │                       │
+onShutdown ◀─────────────────┴───────────────────────┘
 ```
 
 Die folgenden Arten von Ereignissen sind verfügbar:
 
 `Yellow-Core-Ereignisse` = [unterrichten wenn sich ein Zustand ändert](#yellow-core-ereignisse)  
 `Yellow-Parse-Ereignisse` = [unterrichten wenn eine Seite erzeugt wird](#yellow-parse-ereignisse)  
-`Yellow-Edit-Ereignisse` = [unterrichten wenn eine Datei im Webbrowser bearbeitet wird](#yellow-edit-ereignisse)  
+`Yellow-Edit-Ereignisse` = [unterrichten wenn eine Datei bearbeitet wird](#yellow-edit-ereignisse)  
 `Yellow-Info-Ereignisse` = [unterrichten wenn Informationen verfügbar sind](#yellow-info-ereignisse)  
 
 ### Yellow-Core-Ereignisse
@@ -1371,11 +1374,11 @@ Yellow-Parse-Ereignisse unterrichten wenn eine Seite erzeugt wird. Die folgenden
 
 Die folgenden Element-Typen sind verfügbar:
 
-`inline` = Abkürzung mit einem Textelement  
-`block` = Abkürzung mit einem Blockelement  
+`symbol` = Symbol für Textelement  
+`inline` = Abkürzung für Textelement  
+`block` = Abkürzung für Blockelement, kann mehrere Textzeilen enthalten  
 `code` = Code-Blockelement, kann mehrere Textzeilen enthalten  
-`notice` = Hinweis-Blockelement, kann mehrere Textzeilen enthalten  
-`symbol` = Symbol-Textelement, wird für Emoji und Symbole verwendet  
+`notice` = allgemeines Blockelement, kann mehrere Textzeilen enthalten  
 
 ---
 
@@ -1459,7 +1462,7 @@ class YellowExample {
 
 ### Yellow-Edit-Ereignisse
 
-Yellow-Edit-Ereignisse unterrichten wenn eine Datei im Webbrowser bearbeitet wird. Die folgenden Ereignisse sind verfügbar:
+Yellow-Edit-Ereignisse unterrichten wenn eine Datei bearbeitet wird. Die folgenden Ereignisse sind verfügbar:
 
 `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount`
 

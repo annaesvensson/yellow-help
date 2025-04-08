@@ -34,9 +34,9 @@ Följande filer är viktiga, det är bäst att ta en närmare titt på dem:
 
 ## Verktyg
 
-### Nättredigerare
+### Liten webbredigerare
 
-Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Nättredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. HTML stöds också. [Läs mer om nättredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
+Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Den lilla webbredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. HTML stöds också. [Läs mer om lilla webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
 
 ### Inbyggd webbserver
 
@@ -44,11 +44,11 @@ Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är prak
 
 ### Statisk generator
 
-Du kan generera en statisk webbplats på kommandoraden. Den static-site-generatorn skapar hella webbplatsen i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om statiska generatorn](https://github.com/annaesvensson/yellow-generate/tree/main/README-sv.md).
+Du kan generera en statisk webbplats på kommandoraden. Den statiska generatorn skapar hella webbplatsen i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om statiska generatorn](https://github.com/annaesvensson/yellow-generate/tree/main/README-sv.md).
 
 ### Layoutsystem
 
-Du kan anpassa utseendet på din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett webbramverk, utan kan använda vanlig PHP. Detta ger dig möjlighet att komma åt API:et, skapa kontrollstrukturer och det mesta kommer förmodligen att kännas ganska bekant för dig. Vi använder samma API:et överallt, från layoutfiler till tillägg. Det är ganska kraftfullt och värt att ta en närmare titt på layoutsystemet förr eller senare. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
+Du kan anpassa utseendet på din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett annat webbramverk, utan kan använda vanlig PHP. Detta ger dig möjlighet att komma åt API:et, skapa kontrollstrukturer och det mesta kommer förmodligen att kännas ganska bekant för dig. Vi använder samma API:et överallt, från layoutfiler till tillägg. Det är ganska kraftfullt och värt att ta en närmare titt på layoutsystemet förr eller senare. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
 
 ## Objekt
 
@@ -1263,29 +1263,32 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 Din webbplats består av kärnan och andra tillägg. Så snart systemet har startat anropas antingen `onRequest` eller `onCommand`. En begäran från webbläsaren kan hanteras med olika händelser. I de flesta fall genereras innehållet av en sida med parse händelser. Om ett fel har inträffat genereras en felsida.
 
 ``` box-drawing {aria-hidden=true}
-onLoad ───────▶ onStartup ───────────────────────────────────────────┐
-                    │                                                │
-                    ▼                                                │
-                onRequest ───────────────────┐                       │
-                    │                        │                       │
-                    ▼                        ▼                       ▼
-onLog           onParseMetaData          onEditContentFile       onCommand  
-onMail          onParseContentRaw        onEditMediaFile         onCommandHelp
-onUpdate        onParseContentElement    onEditSystemFile            │
-                onParseContentHtml       onEditUserAccount           │
-                onParsePageLayout            │                       │
-                onParsePageExtra             │                       │
-                onParsePageOutput            │                       │
-                    │                        │                       │
-                    ▼                        │                       │
-                onShutdown ◀─────────────────┴───────────────────────┘
+onLoad
+    │
+    ▼
+onStartup ───────────────────────────────────────────┐
+    │                                                │
+    ▼                                                │
+onRequest ───────────────────┐                       │
+    │                        │                       │
+    ▼                        ▼                       ▼
+onParseMetaData          onEditContentFile       onCommand          onLog
+onParseContentRaw        onEditMediaFile         onCommandHelp      onMail
+onParseContentElement    onEditSystemFile            │              onUpdate
+onParseContentHtml       onEditUserAccount           │
+onParsePageLayout            │                       │
+onParsePageExtra             │                       │
+onParsePageOutput            │                       │
+    │                        │                       │
+    ▼                        │                       │
+onShutdown ◀─────────────────┴───────────────────────┘
 ```
 
 Följande typer av händelser är tillgängliga:
 
 `Yellow core händelser` = [meddelar när ett tillstånd ändras](#yellow-core-händelser)  
 `Yellow parse händelser` = [meddelar när en sida genereras](#yellow-parse-händelser)  
-`Yellow edit händelser` = [meddelar när en fil redigeras i webbläsaren](#yellow-edit-händelser)  
+`Yellow edit händelser` = [meddelar när en fil redigeras](#yellow-edit-händelser)  
 `Yellow info händelser` = [meddelar när information finns tillgänglig](#yellow-info-händelser)  
 
 ### Yellow core händelser
@@ -1371,11 +1374,11 @@ Yellow parse händelser meddelar när en sida genereras. Följande händelser ä
 
 Följande elementtyper är tillgängliga:
 
-`inline` = förkortning med ett textelement  
-`block` = förkortning med ett blockelement  
+`symbol` = symbol för textelement  
+`inline` = förkortning för textelement  
+`block` = förkortning för blockelement, kan innehålla flera textrader  
 `code` = kod blockelement, kan innehålla flera textrader  
-`notice` = indikation blockelement, kan innehålla flera textrader   
-`symbol` = symbol textelement, används för emoji och ikoner  
+`notice` = allmänt blockelement, kan innehålla flera textrader  
 
 ---
 
@@ -1458,7 +1461,7 @@ class YellowExample {
 
 ### Yellow edit händelser
 
-Yellow edit händelser meddelar när en fil redigeras i webbläsaren. Följande händelser är tillgängliga:
+Yellow edit händelser meddelar när en fil redigeras. Följande händelser är tillgängliga:
 
 `onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount`
 
