@@ -1265,15 +1265,15 @@ Your website consists of the core and other extensions. As soon as the system ha
 onLoad
     │
     ▼
-onStartup ───────────────────────────────────────────┐
-    │                                                │
-    ▼                                                │
-onRequest ───────────────────┐                       │
-    │                        │                       │
-    ▼                        ▼                       ▼
-onParseMetaData          onEditContentFile       onCommand          onLog
+onStartup ───────────────────────────────────────────┐             Information
+    │                                                │              available
+    ▼                                                │                  │
+onRequest ───────────────────┐                       │                  │
+    │                        │                       │                  │
+    ▼                        ▼                       ▼                  ▼
+onParseMetaData          onEditContentFile       onCommand          onUpdate
 onParseContentRaw        onEditMediaFile         onCommandHelp      onMail
-onParseContentElement    onEditSystemFile            │              onUpdate
+onParseContentElement    onEditSystemFile            │              onLog
 onParseContentHtml       onEditUserAccount           │
 onParsePageLayout            │                       │
 onParsePageExtra             │                       │
@@ -1557,14 +1557,14 @@ The following update actions are available:
 
 Description of events and arguments:
 
-`public function onLog($action, $message)`  
-Handle logging
+`public function onUpdate($action)`  
+Handle update
 
 `public function onMail($action, $headers, $message)`  
 Handle email
 
-`public function onUpdate($action)`  
-Handle update
+`public function onLog($action, $message)`  
+Handle logging
 
 ---
 

@@ -1266,15 +1266,15 @@ Deine Webseite besteht aus dem Core und anderen Erweiterungen. Sobald das System
 onLoad
     │
     ▼
-onStartup ───────────────────────────────────────────┐
-    │                                                │
-    ▼                                                │
-onRequest ───────────────────┐                       │
-    │                        │                       │
-    ▼                        ▼                       ▼
-onParseMetaData          onEditContentFile       onCommand          onLog
+onStartup ───────────────────────────────────────────┐            Informationen
+    │                                                │              verfügbar
+    ▼                                                │                  │
+onRequest ───────────────────┐                       │                  │
+    │                        │                       │                  │
+    ▼                        ▼                       ▼                  ▼
+onParseMetaData          onEditContentFile       onCommand          onUpdate
 onParseContentRaw        onEditMediaFile         onCommandHelp      onMail
-onParseContentElement    onEditSystemFile            │              onUpdate
+onParseContentElement    onEditSystemFile            │              onLog
 onParseContentHtml       onEditUserAccount           │
 onParsePageLayout            │                       │
 onParsePageExtra             │                       │
@@ -1560,14 +1560,14 @@ Die folgenden Aktualisierungs-Aktionen sind verfügbar:
 
 Beschreibung der Ereignisse und Argumente:
 
-`public function onLog($action, $message)`  
-Verarbeite Logging
+`public function onUpdate($action)`  
+Verarbeite Aktualisierung
 
 `public function onMail($action, $headers, $message)`  
 Verarbeite E-Mail
 
-`public function onUpdate($action)`  
-Verarbeite Aktualisierung
+`public function onLog($action, $message)`  
+Verarbeite Logging
 
 ---
 

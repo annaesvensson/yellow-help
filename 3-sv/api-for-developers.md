@@ -1266,15 +1266,15 @@ Din webbplats består av kärnan och andra tillägg. Så snart systemet har star
 onLoad
     │
     ▼
-onStartup ───────────────────────────────────────────┐
-    │                                                │
-    ▼                                                │
-onRequest ───────────────────┐                       │
-    │                        │                       │
-    ▼                        ▼                       ▼
-onParseMetaData          onEditContentFile       onCommand          onLog
+onStartup ───────────────────────────────────────────┐             Information
+    │                                                │             tillgänglig
+    ▼                                                │                  │
+onRequest ───────────────────┐                       │                  │
+    │                        │                       │                  │
+    ▼                        ▼                       ▼                  ▼
+onParseMetaData          onEditContentFile       onCommand          onUpdate
 onParseContentRaw        onEditMediaFile         onCommandHelp      onMail
-onParseContentElement    onEditSystemFile            │              onUpdate
+onParseContentElement    onEditSystemFile            │              onLog
 onParseContentHtml       onEditUserAccount           │
 onParsePageLayout            │                       │
 onParsePageExtra             │                       │
@@ -1558,14 +1558,14 @@ Följande uppdateringsåtgärder är tillgängliga:
 
 Beskrivning av händelser och argument:
 
-`public function onLog($action, $message)`  
-Hantera loggning
+`public function onUpdate($action)`  
+Hantera uppdatering
 
 `public function onMail($action, $headers, $message)`  
 Hantera email
 
-`public function onUpdate($action)`  
-Hantera uppdatering
+`public function onLog($action, $message)`  
+Hantera loggning
 
 ---
 
