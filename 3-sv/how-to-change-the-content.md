@@ -67,12 +67,6 @@ Skapa en rubrik:
     ## Rubrik 2
     ### Rubrik 3
 
-Skapa citat:
-
-    > Citat
-    >> Citat i citat
-    >>> Citat i citat i citat
-
 Skapa länkar:
 
     [Länk till sidan](/help/how-to-make-a-small-website)
@@ -125,6 +119,14 @@ Skapa radbrytningar:
     
     Mellanslag i slutet av raden representeras av prickar (⋅)
 
+Skapa citat:
+
+    > Citat
+    
+    >> Citat i citat
+    
+    >>> Citat i citat i citat
+
 Skapa indikationer:
 
     ! Här är en indikation med varning 
@@ -136,7 +138,7 @@ Skapa indikationer:
 Använd CSS:
 
     ! {.class}
-    ! Här är en indikation med anpassad klass.
+    ! Här är ett allmänt blockelement.
     ! Text kan sträcka sig över flera rader
     ! och innehåller Markdown-textformatering.
 
@@ -148,8 +150,8 @@ Använd HTML:
 
 Använd förkortningar med ytterligare funktioner:
 
-    [image photo.jpg]    = lägga till en bild eller miniatyrbild
-    [gallery photo.*jpg] = lägga till ett bildgalleri med popup
-    [slider photo.*jpg]  = lägga till ett bildgalleri med reglaget
+    [image photo.jpg] = lägga till en bild eller miniatyrbild
+    [gallery photo]   = lägga till ett bildgalleri med popup
+    [slider photo]    = lägga till ett bildgalleri med reglaget
 
 Har du några frågor? [Få hjälp](.).

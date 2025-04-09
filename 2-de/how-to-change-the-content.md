@@ -67,12 +67,6 @@ Eine Überschrift erstellen:
     ## Überschrift 2
     ### Überschrift 3
 
-Zitate erstellen:
-
-    > Zitat
-    >> Zitat im Zitat
-    >>> Zitat im Zitat im Zitat
-
 Links erstellen:
 
     [Link zu Seite](/help/how-to-make-a-small-website)
@@ -125,6 +119,14 @@ Zeilenumbrüche erstellen:
     
     Leerzeichen am Zeilenende sind dargestellt durch Punkte (⋅)
 
+Zitate erstellen:
+
+    > Zitat
+    
+    >> Zitat im Zitat
+    
+    >>> Zitat im Zitat im Zitat
+
 Hinweise erstellen:
 
     ! Hier ist ein Hinweis mit Warnung
@@ -136,7 +138,7 @@ Hinweise erstellen:
 CSS benutzen:
 
     ! {.class}
-    ! Hier ist ein Hinweis mit benutzerdefinierter Klasse.
+    ! Hier ist ein allgemeines Blockelement.
     ! Der Text kann über mehrere Zeilen gehen
     ! und Markdown-Textformatierung beinhalten.
 
@@ -148,8 +150,8 @@ HTML benutzen:
 
 Abkürzungen mit zusätzlichen Funktionen benutzen:
 
-    [image photo.jpg]    = Bild oder Miniaturbild hinzufügen
-    [gallery photo.*jpg] = Bildergalerie mit Popup hinzufügen
-    [slider photo.*jpg]  = Bildergalerie mit Schieber hinzufügen
+    [image photo.jpg] = Bild oder Miniaturbild hinzufügen
+    [gallery photo]   = Bildergalerie mit Popup hinzufügen
+    [slider photo]    = Bildergalerie mit Schieber hinzufügen
 
 Hast du Fragen? [Hilfe finden](.).

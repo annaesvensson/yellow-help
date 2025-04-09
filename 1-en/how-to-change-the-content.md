@@ -67,12 +67,6 @@ Making a heading:
     ## Heading 2
     ### Heading 3
 
-Making quotes:
-
-    > Quote
-    >> Quote of a quote
-    >>> Quote of a quote of a quote
-
 Making links:
 
     [Link to page](/help/how-to-make-a-small-website)
@@ -125,6 +119,14 @@ Making line breaks:
     
     Spaces at the end of the line are shown with dots (⋅)
 
+Making quotes:
+
+    > Quote
+    
+    >> Quote of a quote
+    
+    >>> Quote of a quote of a quote
+
 Making notices:
 
     ! Here's a notice with warning
@@ -136,7 +138,7 @@ Making notices:
 Using CSS:
 
     ! {.class}
-    ! Here's a notice with custom class.
+    ! Here's a general block element.
     ! Text can span over several lines
     ! and contain Markdown text formatting.
 
@@ -148,8 +150,8 @@ Using HTML:
 
 Using shortcuts with additional features:
 
-    [image photo.jpg]    = adding an image or image thumbnail
-    [gallery photo.*jpg] = adding an image gallery with popup
-    [slider photo.*jpg]  = adding an image gallery with slider
+    [image photo.jpg] = adding an image or image thumbnail
+    [gallery photo]   = adding an image gallery with popup
+    [slider photo]    = adding an image gallery with slider
 
 Do you have questions? [Get help](.).
