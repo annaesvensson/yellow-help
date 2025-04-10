@@ -40,7 +40,7 @@ Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgängli
 
 ### Inbyggd webbserver
 
-Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att se din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md).
+Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att ändra din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md).
 
 ### Statisk generator
 
@@ -1260,14 +1260,14 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Tillägg
 
-Din webbplats består av kärnan och andra tillägg. Så snart systemet har startat anropas antingen `onRequest` eller `onCommand`. En begäran från webbläsaren kan hanteras med olika händelser. I de flesta fall genereras innehållet av en sida med parse händelser. Om ett fel har inträffat genereras en felsida.
+Din webbplats består av kärnan och andra tillägg. I början laddas alla tillägg och `onLoad` kommer att anropas. Det finns olika händelser som informerar dig när en begäran från webbläsaren tas emot, ett kommando utförs eller information finns tillgänglig. I de flesta fall kommer en sida att genereras.
 
 ``` box-drawing {aria-hidden=true}
 onLoad
     │
     ▼
 onStartup ───────────────────────────────────────────┐             Information
-    │                                                │             tillgänglig
+    │                                                │          finns tillgänglig
     ▼                                                │                  │
 onRequest ───────────────────┐                       │                  │
     │                        │                       │                  │

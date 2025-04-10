@@ -40,7 +40,7 @@ Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf dein
 
 ### Eingebauter Webserver
 
-Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer anzuzeigen und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum eingebauten Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
+Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer zu ändern und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum eingebauten Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
 
 ### Statischer Generator
 
@@ -1260,14 +1260,14 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Erweiterungen
 
-Deine Webseite besteht aus dem Core und anderen Erweiterungen. Sobald das System hochgefahren ist wird entweder `onRequest` oder `onCommand` aufgerufen. Eine Anfrage vom Webbrowser kann mit verschiedenen Ereignissen verarbeitet werden. In den meisten Fällen wird der Inhalt einer Seite mit Parse-Ereignissen erzeugt. Sollte ein Fehler aufgetreten sein, wird eine Fehlerseite erzeugt.
+Deine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden alle Erweiterungen geladen und `onLoad` wird aufgerufen. Es gibt verschiedene Ereignisse die dich informieren wenn eine Anfrage vom Webbrowser empfangen wird, ein Befehl ausgeführt wird oder Informationen verfügbar sind. In den meisten Fällen wird eine Seite erzeugt. 
 
 ``` box-drawing {aria-hidden=true}
 onLoad
     │
     ▼
 onStartup ───────────────────────────────────────────┐            Informationen
-    │                                                │              verfügbar
+    │                                                │            sind verfügbar
     ▼                                                │                  │
 onRequest ───────────────────┐                       │                  │
     │                        │                       │                  │

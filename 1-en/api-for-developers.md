@@ -40,7 +40,7 @@ You can edit your website in a web browser. The login page is available on your 
 
 ### Built-in web server
 
-You can start a web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to see your website on your computer and upload it to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the built-in web server](https://github.com/annaesvensson/yellow-serve).
+You can start a web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to change your website on your computer and upload it to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the built-in web server](https://github.com/annaesvensson/yellow-serve).
 
 ### Static generator
 
@@ -1259,14 +1259,14 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Extensions
 
-Your website consists of the core and other extensions. As soon as the system has started up either `onRequest` or `onCommand` will be called. A request from the web browser can be handled with various events. In most cases the page content will be generated with parse events. If an error has occurred, an error page will be generated.
+Your website consists of the core and other extensions. At the beginning, all extensions are loaded and `onLoad` will be called. There are various events that inform you when a request from the web browser is received, a command is executed or information is available. In most cases a page will be generated.
 
 ``` box-drawing {aria-hidden=true}
 onLoad
     │
     ▼
 onStartup ───────────────────────────────────────────┐             Information
-    │                                                │              available
+    │                                                │             is available
     ▼                                                │                  │
 onRequest ───────────────────┐                       │                  │
     │                        │                       │                  │
