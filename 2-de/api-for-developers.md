@@ -52,7 +52,7 @@ Du kannst das Aussehen deiner Webseite mit HTML und CSS anpassen. Glücklicherwe
 
 ## Objekte
 
-Mit Hilfe der API hast du Zugriff auf das Dateisystem, Einstellungen und Erweiterungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen.
+Mit Hilfe der API hast du Zugriff auf Dateien, Einstellungen und Erweiterungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen.
 
 
 ``` box-drawing {aria-hidden=true}
@@ -72,7 +72,7 @@ Mit Hilfe der API hast du Zugriff auf das Dateisystem, Einstellungen und Erweite
           │                           │                           │  
           ▼                           ▼                           ▼ 
 ┌────────────────────┐     ┌───────────────────────┐    ┌────────────────────┐
-│ Dateisystem        │     │ Einstellungen         │    │ Erweiterungen      │
+│ Dateien            │     │ Einstellungen         │    │ Erweiterungen      │
 └────────────────────┘     └───────────────────────┘    └────────────────────┘
 ```
 
@@ -1374,11 +1374,11 @@ Yellow-Parse-Ereignisse unterrichten wenn eine Seite erzeugt wird. Die folgenden
 
 Die folgenden Element-Typen sind verfügbar:
 
-`symbol` = Symbol für Textelement  
 `inline` = Abkürzung für Textelement  
 `block` = Abkürzung für Blockelement, kann mehrere Textzeilen enthalten  
-`code` = Code-Blockelement, kann mehrere Textzeilen enthalten  
 `notice` = allgemeines Blockelement, kann mehrere Textzeilen enthalten  
+`code` = Code-Blockelement, kann mehrere Textzeilen enthalten  
+`symbol` = Symbol für Textelement  
 
 ---
 

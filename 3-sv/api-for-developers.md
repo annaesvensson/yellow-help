@@ -52,7 +52,7 @@ Du kan anpassa utseendet på din webbplats med HTML och CSS. Lyckligtvis behöve
 
 ## Objekt
 
-Med hjälp av API:et har du tillgång till filsystemet, inställningar och tillägg. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar.
+Med hjälp av API:et har du tillgång till filer, inställningar och tillägg. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────┐     ┌───────────────────────┐
@@ -71,7 +71,7 @@ Med hjälp av API:et har du tillgång till filsystemet, inställningar och till�
           │                           │                           │  
           ▼                           ▼                           ▼ 
 ┌────────────────────┐     ┌───────────────────────┐    ┌────────────────────┐
-│ Filsystem          │     │ Inställningar         │    │ Tillägg            │
+│ Filer              │     │ Inställningar         │    │ Tillägg            │
 └────────────────────┘     └───────────────────────┘    └────────────────────┘
 ```
 
@@ -1374,11 +1374,11 @@ Yellow parse händelser meddelar när en sida genereras. Följande händelser ä
 
 Följande elementtyper är tillgängliga:
 
-`symbol` = symbol för textelement  
 `inline` = förkortning för textelement  
 `block` = förkortning för blockelement, kan innehålla flera textrader  
-`code` = kod blockelement, kan innehålla flera textrader  
 `notice` = allmänt blockelement, kan innehålla flera textrader  
+`code` = kod blockelement, kan innehålla flera textrader  
+`symbol` = symbol för textelement  
 
 ---
 

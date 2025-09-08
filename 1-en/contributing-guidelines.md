@@ -7,7 +7,7 @@ Learn how to ask questions, report bugs and work with us.
 
 * Write the question in the title, it's the first thing everyone will see.
 * Describe as precisely as possible what you want to do and which problems you have.
-* Add an example, for example Markdown, settings or your source code.
+* Add an example, for example Markdown, settings, images or your source code.
 * Select an answer, when your question has been answered.
 
 If you want to ask a question, [start a new discussion](https://github.com/datenstrom/community/discussions/categories/ask-a-question).
@@ -23,15 +23,15 @@ If you want to report a bug, [start a new discussion](https://github.com/datenst
 
 ## How to work with us
 
-* Contribute to the development of Datenstrom Yellow.
-* Think about what you want to do and what would make your life easier.
+* Think about what you want to do and what would make life easier.
 * Ask yourself, do I need this, do I want this, can I make this better?
+* Make something that is useful in function and aesthetic.
 * First make it work, then make it better.
 
-If you want to get involved, [see tips for working together](https://github.com/datenstrom/community/discussions/760) and [API for developers](api-for-developers).
+If you want to get involved, [see tips for working together](https://github.com/datenstrom/community/discussions/760) and [unanswered discussions](https://github.com/datenstrom/community/discussions?discussions_q=is%3Aunanswered+sort%3Adate_created).
 
 ## Good to know
 
-We are interested in what you want to do and which problems you have. The more we know, the better. Our community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Use an online translator if English is not your first language. Don't force anything. You can step out of discussions at any time if the dialog is not constructive. Focus on the people who show interest and want to work together with you. Thank people who point you in the right direction and who write helpful answers. Give good ideas a thumbs up. This may only be small gestures, but they create more joy at work. You can find us on [GitHub](https://github.com/datenstrom) or [contact a human](https://datenstrom.se/contact/).
+We are interested in what you want to do and which problems you have. The more we know, the better. Our community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Use an online translator if English is not your first language. Don't force anything. You can step out of discussions at any time if the dialog is not constructive. You should move on if you find yourself in a situation where you have nothing to contribute or learn. Focus on the people who show interest and want to work together with you. Thank the people who point you in the right direction and write helpful answers. These are only small gestures, but we think they make working together more enjoyable.
 
 Do you have questions? [Get help](.).

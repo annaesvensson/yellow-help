@@ -52,7 +52,7 @@ You can customise the appearance of your website with HTML and CSS. Fortunately 
 
 ## Objects
 
-With the help of the API you have access to the file system, settings and extensions. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings.
+With the help of the API you have access to the files, settings and extensions. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────┐     ┌───────────────────────┐
@@ -71,7 +71,7 @@ With the help of the API you have access to the file system, settings and extens
           │                           │                           │  
           ▼                           ▼                           ▼ 
 ┌────────────────────┐     ┌───────────────────────┐    ┌────────────────────┐
-│ File system        │     │ Settings              │    │ Extensions         │
+│ Files              │     │ Settings              │    │ Extensions         │
 └────────────────────┘     └───────────────────────┘    └────────────────────┘
 ```
 
@@ -1373,11 +1373,11 @@ Yellow parse events notify when a page is generated. The following events are av
 
 The following element types are available:
 
-`symbol` = symbol for inline element  
 `inline` = shortcut for inline element  
 `block` = shortcut for block element, may contain multiple text lines  
-`code` = code block element, may contain multiple text lines  
 `notice` = general block element, may contain multiple text lines  
+`code` = code block element, may contain multiple text lines  
+`symbol` = symbol for inline element  
 
 ---
 
