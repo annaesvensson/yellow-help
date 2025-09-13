@@ -20,7 +20,7 @@ You can improve the help if something is wrong or missing. Install the help on y
 
 ## How to improve documentation
 
-You can find cross-topic documentation in the help and more detailed documentation in extensions. Typically the documentation of an extension consists of multiple sections, with examples to copy/paste and settings you can customise. Good technology is simple to use and adjust. Review the documentation from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Did you improve documentation? Fork the relevant repository. Upload your changes and send a pull request.
+You can find cross-topic documentation in the help and more detailed documentation in extensions. Typically the documentation of an extension consists of multiple sections, with examples to copy/paste and settings you can customise. Good technology is simple to use and adjust. Review the documentation from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Did you improve documentation? Fork the relevant repository. Upload your changes and send a pull request to the developer.
 
 ## Acknowledgements
 

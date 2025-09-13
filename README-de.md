@@ -20,7 +20,7 @@ Du kannst die Hilfe verbessern falls etwas nicht stimmt oder fehlt. Installiere 
 
 ## Wie man die Dokumentation verbessert
 
-Du findest themenübergreifende Dokumentation in der Hilfe und ausführlichere Dokumentation in den Erweiterungen. Normalerweise besteht die Dokumentation einer Erweiterung aus mehreren Abschnitten, mit Beispielen zum Kopieren/Einfügen und Einstellungen zum Anpassen. Gute Technologie ist einfach zu benutzen und anzupassen. Überprüfe die Dokumentation aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Hast du die Dokumentation verbessert? Mache ein Fork vom entsprechenden Repository. Lade deine Änderungen hoch und sende einen Pull-Request.
+Du findest themenübergreifende Dokumentation in der Hilfe und ausführlichere Dokumentation in den Erweiterungen. Normalerweise besteht die Dokumentation einer Erweiterung aus mehreren Abschnitten, mit Beispielen zum Kopieren/Einfügen und Einstellungen zum Anpassen. Gute Technologie ist einfach zu benutzen und anzupassen. Überprüfe die Dokumentation aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Hast du die Dokumentation verbessert? Mache ein Fork vom entsprechenden Repository. Lade deine Änderungen hoch und sende einen Pull-Request an den Entwickler.
 
 ## Danksagung
 
