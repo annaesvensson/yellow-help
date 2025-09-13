@@ -20,7 +20,7 @@ Du kan förbättra hjälpen om något är fel eller saknas. Installera hjälpen 
 
 ## Hur man förbättrar dokumentationen
 
-Du hittar dokumentation som täcker flera ämnen i hjälpen och mer detaljerad dokumentation i tilläggen. Vanligtvis består dokumentationen för ett tillägg av flera avsnitt, med exempel att kopiera/klistra in och inställningar du kan anpassa. Bra teknologi är enkel att använda och anpassa. Granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Förbättrade du dokumentationen för ett tillägg? Gör en fork av relevanta repository. Ladda upp dina ändringar och skicka en pull-request till den ansvariga utvecklaren/formgivaren/översättaren,
+Du hittar dokumentation som täcker flera ämnen i hjälpen och mer detaljerad dokumentation i tilläggen. Vanligtvis består dokumentationen för ett tillägg av flera avsnitt, med exempel att kopiera/klistra in och inställningar du kan anpassa. Bra teknologi är enkel att använda och anpassa. Granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Förbättrade du dokumentationen? Gör en fork av relevanta repository. Ladda upp dina ändringar och skicka en pull-request till den ansvariga utvecklaren/formgivaren/översättaren,
 
 ## Tack
 
