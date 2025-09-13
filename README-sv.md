@@ -16,7 +16,11 @@ Hjälpen finns på din webbplats som `http://website/help/`. Hjälpen visar dig 
 
 ## Hur man förbättrar hjälpen
 
-Du kan förbättra hjälpen om något är fel. Installera hjälpen på din webbplats, sedan kan du göra ändringar och granska hjälpen ur användarens perspektiv. Om du vill redigera hjälpen i en [webbläsare](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) kan du göra detta på din webbplats på `http://website/edit/help/`. Om du vill redigera hjälpen på din [dator](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md), ta en titt på `content/9-help` mappen. Förbättrade du hjälpen? Gör en fork av detta repository. Ladda upp dina ändringar och skapa en pull-request för repository `annaesvensson/yellow-help`.
+Du kan förbättra hjälpen om något är fel eller saknas. Installera hjälpen på din webbplats, sedan kan du göra ändringar och granska hjälpen ur användarens perspektiv. Om du vill redigera hjälpen i en [webbläsare](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) kan du göra detta på din webbplats på `http://website/edit/help/`. Om du vill redigera hjälpen på din [dator](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md), ta en titt på `content/9-help` mappen. Förbättrade du hjälpen? Gör en fork av detta repository. Ladda upp dina ändringar och skapa en pull-request för repository `annaesvensson/yellow-help`.
+
+## Hur man förbättrar dokumentationen
+
+Du hittar dokumentation som täcker flera ämnen i hjälpen och mer detaljerad dokumentation i tilläggen. Vanligtvis består dokumentationen för ett tillägg av flera avsnitt, med exempel att kopiera/klistra in och inställningar du kan anpassa. Bra teknologi är enkel att använda och anpassa. Granska ditt tillägg ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Förbättrade du dokumentationen för ett tillägg? Gör en fork av relevanta repository. Ladda upp dina ändringar och skicka en pull-request till den ansvariga utvecklaren/formgivaren/översättaren,
 
 ## Tack
 
