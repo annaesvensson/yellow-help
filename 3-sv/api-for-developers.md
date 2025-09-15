@@ -1376,7 +1376,7 @@ Följande elementtyper är tillgängliga:
 
 `inline` = förkortning för textelement  
 `block` = förkortning för blockelement, kan innehålla flera textrader  
-`notice` = allmänt blockelement, kan innehålla flera textrader  
+`general` = allmänt blockelement, kan innehålla flera textrader  
 `code` = kod blockelement, kan innehålla flera textrader  
 `symbol` = symbol för textelement  
 

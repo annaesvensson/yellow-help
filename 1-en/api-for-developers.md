@@ -1375,7 +1375,7 @@ The following element types are available:
 
 `inline` = shortcut for inline element  
 `block` = shortcut for block element, may contain multiple text lines  
-`notice` = general block element, may contain multiple text lines  
+`general` = general block element, may contain multiple text lines  
 `code` = code block element, may contain multiple text lines  
 `symbol` = symbol for inline element  
 

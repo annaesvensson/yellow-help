@@ -127,31 +127,28 @@ Zitate erstellen:
     
     >>> Zitat im Zitat im Zitat
 
-Hinweise erstellen:
-
-    ! Hier ist ein Hinweis mit Warnung
-    
-    !! Hier ist ein Hinweis mit Fehler
-    
-    !!! Hier ist ein Hinweis mit Tipp
-
-CSS benutzen:
-
-    ! {.class}
-    ! Hier ist ein allgemeines Blockelement.
-    ! Der Text kann über mehrere Zeilen gehen
-    ! und Markdown-Textformatierung beinhalten.
-
 HTML benutzen:
 
     <strong>Text mit HTML</strong> kann wahlweise benutzt werden.
     <img src="/media/images/photo.jpg" alt="Dies ist ein Beispielbild">
     <a href="https://datenstrom.se/de/" target="_blank">Link in einem neuen Tab öffnen</a>.
 
-Abkürzungen mit zusätzlichen Funktionen benutzen:
+Abkürzungen benutzen:
 
     [image photo.jpg] = Bild oder Miniaturbild hinzufügen
     [gallery photo]   = Bildergalerie mit Popup hinzufügen
     [slider photo]    = Bildergalerie mit Schieber hinzufügen
+
+Blockelemente benutzen:
+
+    ! Hier ist ein allgemeines Blockelement.
+    ! Der Text kann über mehrere Zeilen gehen
+    ! und Markdown-Textformatierung beinhalten.
+
+    ! {.important}
+    ! Hier sind Informationen die beachtet werden müssen.
+
+    ! {.note}
+    ! Hier sind Informationen die du wissen solltest.
 
 Hast du Fragen? [Hilfe finden](.).

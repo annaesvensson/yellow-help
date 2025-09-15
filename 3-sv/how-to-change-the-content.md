@@ -127,31 +127,28 @@ Skapa citat:
     
     >>> Citat i citat i citat
 
-Skapa indikationer:
-
-    ! Här är en indikation med varning 
-    
-    !! Här är en indikation med fel
-    
-    !!! Här är en indikation med tip
-
-Använd CSS:
-
-    ! {.class}
-    ! Här är ett allmänt blockelement.
-    ! Text kan sträcka sig över flera rader
-    ! och innehåller Markdown-textformatering.
-
 Använd HTML:
 
     <strong>Text med HTML</strong> kan valfritt användas.
     <img src="/media/images/photo.jpg" alt="This is an example image">
     <a href="https://datenstrom.se" target="_blank">Öppna länken i en ny flik</a>.
 
-Använd förkortningar med ytterligare funktioner:
+Använd förkortningar:
 
     [image photo.jpg] = lägga till en bild eller miniatyrbild
     [gallery photo]   = lägga till ett bildgalleri med popup
     [slider photo]    = lägga till ett bildgalleri med reglaget
+
+Använd blockelementen:
+
+    ! Här är ett allmänt blockelement.
+    ! Text kan sträcka sig över flera rader
+    ! och innehåller Markdown-textformatering.
+
+    ! {.important}
+    ! Här är information som måste beaktas.
+
+    ! {.note}
+    ! Här är information du borde känna till.
 
 Har du några frågor? [Få hjälp](.).

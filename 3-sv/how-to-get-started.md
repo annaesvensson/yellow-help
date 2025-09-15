@@ -23,8 +23,4 @@ Om du vill läsa mer om din webbplats, [se hjälp för din webbplats](.).
 
 Om du vill veta mer om installationskraven, [se felsökning](troubleshooting).
 
-## Behöver du hjälp med installationen?
-
-Har du problem med din webbserver? Har du fastnat? Kontakta först kundtjänsten på ditt webbhotell. Vanligtvis får du hjälp där. Om inte, kontakta oss. Beskriv vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. [Läs mer om samarbete](contributing-guidelines).
-
 Har du några frågor? [Få hjälp](.).

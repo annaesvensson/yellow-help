@@ -1376,7 +1376,7 @@ Die folgenden Element-Typen sind verfügbar:
 
 `inline` = Abkürzung für Textelement  
 `block` = Abkürzung für Blockelement, kann mehrere Textzeilen enthalten  
-`notice` = allgemeines Blockelement, kann mehrere Textzeilen enthalten  
+`general` = allgemeines Blockelement, kann mehrere Textzeilen enthalten  
 `code` = Code-Blockelement, kann mehrere Textzeilen enthalten  
 `symbol` = Symbol für Textelement  
 

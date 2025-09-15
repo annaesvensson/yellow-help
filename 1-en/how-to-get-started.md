@@ -23,8 +23,4 @@ If you want to learn more about your website, [see help for your website](.).
 
 If you want to know more about the installation requirements, [see troubleshooting](troubleshooting).
 
-## Need help with the installation?
-
-Do you have problems with your web server? Are you stuck? First contact the customer service of your web server hosting. Usually you can get help there. If not, contact us. We are interested in what you want to do and which problems you have. Our community is a place to help each other. Where you can ask and answer questions. [Learn more about contributing](contributing-guidelines). 
-
 Do you have questions? [Get help](.).

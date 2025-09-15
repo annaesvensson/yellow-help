@@ -127,31 +127,28 @@ Making quotes:
     
     >>> Quote of a quote of a quote
 
-Making notices:
-
-    ! Here's a notice with warning
-    
-    !! Here's a notice with error
-    
-    !!! Here's a notice with tip
-
-Using CSS:
-
-    ! {.class}
-    ! Here's a general block element.
-    ! Text can span over several lines
-    ! and contain Markdown text formatting.
-
 Using HTML:
 
     <strong>Text with HTML</strong> can be used optionally.
     <img src="/media/images/photo.jpg" alt="This is an example image">
     <a href="https://datenstrom.se" target="_blank">Open link in new tab</a>.
 
-Using shortcuts with additional features:
+Using shortcuts:
 
     [image photo.jpg] = adding an image or image thumbnail
     [gallery photo]   = adding an image gallery with popup
     [slider photo]    = adding an image gallery with slider
+
+Using block elements:
+
+    ! Here's a general block element.
+    ! Text can span over several lines
+    ! and contain Markdown text formatting.
+
+    ! {.important}
+    ! Here's information that needs attention.
+
+    ! {.note}
+    ! Here's information you should know.
 
 Do you have questions? [Get help](.).
