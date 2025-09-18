@@ -25,13 +25,13 @@ If you want to report a bug, [start a new discussion](https://github.com/datenst
 
 * Think about what you want to do and what would make life easier.
 * Ask yourself, do I need this, do I want this, can I make this better?
-* Make something that is useful in function and aesthetic.
 * First make it work, then make it better.
+* You can do it, believe in yourself.
 
-If you want to get involved, [see tips for working together](https://github.com/datenstrom/community/discussions/760) and [unanswered discussions](https://github.com/datenstrom/community/discussions?discussions_q=is%3Aunanswered+sort%3Adate_created).
+If you want to work with us, [see tips for working together](https://github.com/datenstrom/community/discussions/760) and [unanswered discussions](https://github.com/datenstrom/community/discussions?discussions_q=is%3Aunanswered+sort%3Adate_created).
 
 ## Good to know
 
-We are interested in what you want to do and which problems you have. The more we know, the better. Our community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Use an online translator if English is not your first language. Don't force anything. You can step out of discussions at any time if the dialog is not constructive. You should move on if you find yourself in a situation where you have nothing to contribute or learn. Focus on the people who show interest and want to work together with you. Thank the people who point you in the right direction and write helpful answers. These are only small gestures, but we think they make working together more enjoyable.
+We are interested in what you want to do and which problems you have. The Datenstrom community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Use an online translator if English is not your first language. Don't force anything. You can step out of discussions at any time if they are not constructive. Move on if you find yourself in a situation where you have nothing to contribute or learn. Focus on the people who show interest and want to work together with you. Say thank you for helpful answers. These are only small gestures, but they make working together more enjoyable.
 
 Do you have questions? [Get help](.).

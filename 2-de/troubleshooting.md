@@ -54,43 +54,7 @@ Die folgende Fehlermeldung kann auftreten:
 Datenstrom Yellow stopped with fatal error. Activate the debug mode for more information.
 ```
 
-Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei  `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Abhängig vom Debug-Modus werden mehr oder weniger Informationen auf dem Bildschirm angezeigt.
-
-Grundlegende Informationen mit der Einstellung `CoreDebugMode: 1`:
-
-```
-YellowCore::sendPage Cache-Control: max-age=60
-YellowCore::sendPage Content-Type: text/html; charset=utf-8
-YellowCore::sendPage Content-Modified: Wed, 06 Feb 2019 13:54:17 GMT
-YellowCore::sendPage Last-Modified: Thu, 07 Feb 2019 09:37:48 GMT
-YellowCore::sendPage language:de layout:wiki-start theme:stockholm parser:markdown
-YellowCore::processRequest file:content/2-de/2-wiki/page.md
-YellowCore::request status:200 time:19 ms
-```
-
-Dateisysteminformationen mit der Einstellung `CoreDebugMode: 2`:
-
-```
-YellowSystem::load file:system/extensions/yellow-system.ini
-YellowLanguage::load file:system/extensions/yellow-language.ini
-YellowUser::load file:system/extensions/yellow-user.ini
-YellowLookup::findFileFromContentLocation /de/wiki/ -> content/2-de/2-wiki/page.md
-YellowContent::scanLocation location:/de/shared/
-YellowLookup::findContentLocationFromFile /de/shared/page-new-default <- content/2-de/shared/page-new-default.md
-YellowLookup::findContentLocationFromFile /de/shared/page-new-wiki <- content/2-de/shared/page-new-wiki.md
-```
-
-Maximum Informationen mit der Einstellung `CoreDebugMode: 3`:
-
-```
-YellowSystem::load file:system/extensions/yellow-system.ini
-YellowSystem::load Sitename:Datenstrom Yellow
-YellowSystem::load Author:Datenstrom
-YellowSystem::load Email:webmaster
-YellowSystem::load Language:de
-YellowSystem::load Layout:default
-YellowSystem::load Theme:stockholm
-```
+Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei  `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Abhängig vom Debug-Modus werden mehr oder weniger Informationen auf dem Bildschirm angezeigt. [Weitere Informationen zum Debug-Modus](api-for-developers#debug-modus).
 
 Wichtige Informationen werden außerdem in die Datei `system/extensions/yellow-website.log` geschrieben. Falls du die Ursache eines Problems nicht selbst beheben kannst, dann [melde einen Fehler zusammen mit der Logdatei](contributing-guidelines). Die Logdatei gibt einen schnellen Überblick was auf deiner Website passiert, wann sie installiert wurde und welche Fehler aufgetreten sind. Hier ist ein Beispiel:
 

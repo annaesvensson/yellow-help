@@ -25,13 +25,13 @@ Falls du einen Fehler melden möchtest, [beginne eine neue Diskussion](https://g
 
 * Denke darüber nach was du machen möchte und was das Leben einfacher machen würde.
 * Frage dich selbst, brauche ich das, will ich das, kann ich das besser machen?
-* Mache etwas das nützlich ist in Funktionalität und Ästhetik.
 * Erst funktionieren lassen und dann besser machen.
+* Du schaffst das, glaub an dich selbst.
 
-Falls du dich engagieren möchtest, [siehe Tipps zum Zusammenarbeiten](https://github.com/datenstrom/community/discussions/760) und [unbeantwortete Diskussionen](https://github.com/datenstrom/community/discussions?discussions_q=is%3Aunanswered+sort%3Adate_created).
+Falls du mit uns arbeiten möchtest, [siehe Tipps zum Zusammenarbeiten](https://github.com/datenstrom/community/discussions/760) und [unbeantwortete Diskussionen](https://github.com/datenstrom/community/discussions?discussions_q=is%3Aunanswered+sort%3Adate_created).
 
 ## Gut zu wissen
 
-Es interessiert uns was du machen möchtest und welche Probleme du hast. Je mehr wir wissen, desto besser. Unsere Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Online-Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Du solltest weitergehen, falls du dich in einer Situation befindest, in der du nichts beitragen oder lernen kannst. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei den Menschen die dir den richtigen Weg zeigen und hilfreiche Antworten schreiben. Das sind zwar nur kleine Gesten, aber wir denken sie machen die Zusammenarbeit angenehmer. 
+Es interessiert uns was du machen möchtest und welche Probleme du hast. Die Datenstrom-Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Online-Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Gehe weiter, falls du dich in einer Situation befindest in der du nichts beitragen oder lernen kannst. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich für hilfreiche Antworten. Das sind zwar nur kleine Gesten, aber sie machen die Zusammenarbeit angenehmer.
 
 Hast du Fragen? [Hilfe finden](.).

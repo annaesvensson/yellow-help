@@ -24,4 +24,4 @@ TitleSlug: help
 
 ## Want to ask questions?
 
-Something doesn't work as expected? Looking for more information? There's a good chance that your question has already been answered. If not, describe what you want to do and which problems you have. Our community is a place to help each other. Where you can ask and answer questions. [Learn more about contributing](contributing-guidelines). 
+Something doesn't work as expected? Looking for more information? There's a good chance that your question has already been answered. If not, describe what you want to do and which problems you have. The Datenstrom community is a place to help each other. Where you can ask and answer questions. [Learn more about contributing](contributing-guidelines). 

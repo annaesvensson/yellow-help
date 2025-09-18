@@ -54,43 +54,7 @@ Följande felmeddelande kan uppstå:
 Datenstrom Yellow stopped with fatal error. Activate the debug mode for more information.
 ```
 
-Du kan använda felsökningsläget för att undersöka orsaken till ett problem mer i detalj eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget på din webbplats, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Beroende på felsökningsläget visas mer eller mindre information på skärmen.
-
-Grundläggande information med inställningen `CoreDebugMode: 1`:
-
-```
-YellowCore::sendPage Cache-Control: max-age=60
-YellowCore::sendPage Content-Type: text/html; charset=utf-8
-YellowCore::sendPage Content-Modified: Wed, 06 Feb 2019 13:54:17 GMT
-YellowCore::sendPage Last-Modified: Thu, 07 Feb 2019 09:37:48 GMT
-YellowCore::sendPage language:sv layout:wiki-start theme:stockholm parser:markdown
-YellowCore::processRequest file:content/3-sv/2-wiki/page.md
-YellowCore::request status:200 time:19 ms
-```
-
-Filsystem information med inställningen `CoreDebugMode: 2`:
-
-```
-YellowSystem::load file:system/extensions/yellow-system.ini
-YellowLanguage::load file:system/extensions/yellow-language.ini
-YellowUser::load file:system/extensions/yellow-user.ini
-YellowLookup::findFileFromContentLocation /sv/wiki/ -> content/3-sv/2-wiki/page.md
-YellowContent::scanLocation location:/sv/shared/
-YellowLookup::findContentLocationFromFile /sv/shared/page-new-default <- content/3-sv/shared/page-new-default.md
-YellowLookup::findContentLocationFromFile /sv/shared/page-new-wiki <- content/3-sv/shared/page-new-wiki.md
-```
-
-Maximal information med inställningen `CoreDebugMode: 3`:
-
-```
-YellowSystem::load file:system/extensions/yellow-system.ini
-YellowSystem::load Sitename:Datenstrom Yellow
-YellowSystem::load Author:Datenstrom
-YellowSystem::load Email:webmaster
-YellowSystem::load Language:sv
-YellowSystem::load Layout:default
-YellowSystem::load Theme:stockholm
-```
+Du kan använda felsökningsläget för att undersöka orsaken till ett problem mer i detalj eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget på din webbplats, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Beroende på felsökningsläget visas mer eller mindre information på skärmen. [Läs mer om felsökningsläget](api-for-developers#felsökningsläge).
 
 Viktig information skrivs också till filen `system/extensions/yellow-website.log`. Om du inte kan åtgärda orsaken till ett problem själv, [rapportera ett fel tillsammans med loggfilen](contributing-guidelines). Loggfilen ger en snabb översikt över vad som händer på din webbplats, när den installerades och vilka fel som uppstod. Här är ett exempel:
 

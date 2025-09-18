@@ -38,6 +38,10 @@ Följande filer är viktiga, det är bäst att ta en närmare titt på dem:
 
 Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Den lilla webbredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. HTML stöds också. [Läs mer om lilla webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
 
+### Litet layoutsystem
+
+Du kan anpassa utseendet på din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett annat webbramverk, utan kan använda vanlig PHP. Detta ger dig möjlighet att komma åt API:et, skapa kontrollstrukturer och det mesta kommer förmodligen att kännas ganska bekant för dig. Vi använder samma API:et överallt, från layoutfiler till tillägg. Det är ganska kraftfullt och värt att ta en närmare titt på layoutsystemet förr eller senare. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
+
 ### Inbyggd webbserver
 
 Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att ändra din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md).
@@ -45,10 +49,6 @@ Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är prak
 ### Statisk generator
 
 Du kan generera en statisk webbplats på kommandoraden. Den statiska generatorn skapar hella webbplatsen i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om statiska generatorn](https://github.com/annaesvensson/yellow-generate/tree/main/README-sv.md).
-
-### Layoutsystem
-
-Du kan anpassa utseendet på din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett annat webbramverk, utan kan använda vanlig PHP. Detta ger dig möjlighet att komma åt API:et, skapa kontrollstrukturer och det mesta kommer förmodligen att kännas ganska bekant för dig. Vi använder samma API:et överallt, från layoutfiler till tillägg. Det är ganska kraftfullt och värt att ta en närmare titt på layoutsystemet förr eller senare. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
 
 ## Objekt
 
@@ -1617,5 +1617,40 @@ class YellowExample {
 
 Du kan använda felsökningsläget för att undersöka orsaken till ett problem mer i detalj eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget på din webbplats, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Beroende på felsökningsläget visas mer eller mindre information på skärmen.
 
+Grundläggande information med inställningen `CoreDebugMode: 1`:
+
+```
+YellowCore::sendPage Cache-Control: max-age=60
+YellowCore::sendPage Content-Type: text/html; charset=utf-8
+YellowCore::sendPage Content-Modified: Wed, 06 Feb 2019 13:54:17 GMT
+YellowCore::sendPage Last-Modified: Thu, 07 Feb 2019 09:37:48 GMT
+YellowCore::sendPage language:sv layout:wiki-start theme:stockholm parser:markdown
+YellowCore::processRequest file:content/3-sv/2-wiki/page.md
+YellowCore::request status:200 time:19 ms
+```
+
+Filsystem information med inställningen `CoreDebugMode: 2`:
+
+```
+YellowSystem::load file:system/extensions/yellow-system.ini
+YellowLanguage::load file:system/extensions/yellow-language.ini
+YellowUser::load file:system/extensions/yellow-user.ini
+YellowLookup::findFileFromContentLocation /sv/wiki/ -> content/3-sv/2-wiki/page.md
+YellowContent::scanLocation location:/sv/shared/
+YellowLookup::findContentLocationFromFile /sv/shared/page-new-default <- content/3-sv/shared/page-new-default.md
+YellowLookup::findContentLocationFromFile /sv/shared/page-new-wiki <- content/3-sv/shared/page-new-wiki.md
+```
+
+Maximal information med inställningen `CoreDebugMode: 3`:
+
+```
+YellowSystem::load file:system/extensions/yellow-system.ini
+YellowSystem::load Sitename:Datenstrom Yellow
+YellowSystem::load Author:Datenstrom
+YellowSystem::load Email:webmaster
+YellowSystem::load Language:sv
+YellowSystem::load Layout:default
+YellowSystem::load Theme:stockholm
+```
 
 Har du några frågor? [Få hjälp](.).

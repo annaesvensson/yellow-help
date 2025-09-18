@@ -38,6 +38,10 @@ Die folgenden Dateien sind wichtig, schaue sie dir am besten genauer an:
 
 Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der kleine Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Textformatierung mit Markdown wird unterstützt. HTML wird auch unterstützt. [Weitere Informationen zum kleinen Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
 
+### Kleines Layout-System
+
+Du kannst das Aussehen deiner Webseite mit HTML und CSS anpassen. Glücklicherweise musst du kein weiteres Web-Framework lernen, sondern kannst normales PHP verwenden. Das gibt dir die Möglichkeit auf die API zuzugreifen, Kontrollstrukturen zu erstellen und das meiste wird dir wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. Es ist ziemlich mächtig und lohnt sich früher oder später einen genaueren Blick auf das Layout-System zu werfen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
+
 ### Eingebauter Webserver
 
 Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer zu ändern und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum eingebauten Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
@@ -45,10 +49,6 @@ Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver 
 ### Statischer Generator
 
 Du kannst eine statische Webseite in der Befehlszeile generieren. Der statische Generator macht die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php generate`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das generiert eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und generiere bei Bedarf eine neue. [Weitere Informationen zum statischen Generator](https://github.com/annaesvensson/yellow-generate/tree/main/README-de.md).
-
-### Layout-System
-
-Du kannst das Aussehen deiner Webseite mit HTML und CSS anpassen. Glücklicherweise musst du kein weiteres Web-Framework lernen, sondern kannst normales PHP verwenden. Das gibt dir die Möglichkeit auf die API zuzugreifen, Kontrollstrukturen zu erstellen und das meiste wird dir wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. Es ist ziemlich mächtig und lohnt sich früher oder später einen genaueren Blick auf das Layout-System zu werfen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
 
 ## Objekte
 
@@ -1618,5 +1618,41 @@ class YellowExample {
 ## Debug-Modus
 
 Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei  `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Abhängig vom Debug-Modus werden mehr oder weniger Informationen auf dem Bildschirm angezeigt.
+
+Grundlegende Informationen mit der Einstellung `CoreDebugMode: 1`:
+
+```
+YellowCore::sendPage Cache-Control: max-age=60
+YellowCore::sendPage Content-Type: text/html; charset=utf-8
+YellowCore::sendPage Content-Modified: Wed, 06 Feb 2019 13:54:17 GMT
+YellowCore::sendPage Last-Modified: Thu, 07 Feb 2019 09:37:48 GMT
+YellowCore::sendPage language:de layout:wiki-start theme:stockholm parser:markdown
+YellowCore::processRequest file:content/2-de/2-wiki/page.md
+YellowCore::request status:200 time:19 ms
+```
+
+Dateisysteminformationen mit der Einstellung `CoreDebugMode: 2`:
+
+```
+YellowSystem::load file:system/extensions/yellow-system.ini
+YellowLanguage::load file:system/extensions/yellow-language.ini
+YellowUser::load file:system/extensions/yellow-user.ini
+YellowLookup::findFileFromContentLocation /de/wiki/ -> content/2-de/2-wiki/page.md
+YellowContent::scanLocation location:/de/shared/
+YellowLookup::findContentLocationFromFile /de/shared/page-new-default <- content/2-de/shared/page-new-default.md
+YellowLookup::findContentLocationFromFile /de/shared/page-new-wiki <- content/2-de/shared/page-new-wiki.md
+```
+
+Maximum Informationen mit der Einstellung `CoreDebugMode: 3`:
+
+```
+YellowSystem::load file:system/extensions/yellow-system.ini
+YellowSystem::load Sitename:Datenstrom Yellow
+YellowSystem::load Author:Datenstrom
+YellowSystem::load Email:webmaster
+YellowSystem::load Language:de
+YellowSystem::load Layout:default
+YellowSystem::load Theme:stockholm
+```
 
 Hast du Fragen? [Hilfe finden](.).

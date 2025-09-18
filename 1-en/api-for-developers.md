@@ -38,6 +38,10 @@ The following files are important, it is best to take a closer look at them:
 
 You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The small web editor allows you to edit content files and upload media files. It is a great way to update your website. Text formatting with Markdown is supported. HTML is also supported. [Learn more about the small web editor](https://github.com/annaesvensson/yellow-edit).
 
+### Small layout system
+
+You can customise the appearance of your website with HTML and CSS. Fortunately you don't have to learn another web framework, but can use normal PHP. This allows you to access the API, create control structures and most of it will probably look pretty familiar to you. We are using the same API everywhere, from layout files to extensions. It's quite powerful and worth taking a closer look at the layout system sooner or later. [Learn more about layouts](how-to-customise-a-layout) and [themes](how-to-customise-a-theme).
+
 ### Built-in web server
 
 You can start a web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to change your website on your computer and upload it to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the built-in web server](https://github.com/annaesvensson/yellow-serve).
@@ -45,10 +49,6 @@ You can start a web server at the command line. The built-in web server is conve
 ### Static generator
 
 You can generate a static website at the command line. The static generator makes the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php generate`, you can optionally add a folder and a location. This will generate a static website in the `public` folder. Upload the static website to your web server and generate a new one when needed. [Learn more about the static generator](https://github.com/annaesvensson/yellow-generate).
-
-### Layout system
-
-You can customise the appearance of your website with HTML and CSS. Fortunately you don't have to learn another web framework, but can use normal PHP. This allows you to access the API, create control structures and most of it will probably look pretty familiar to you. We are using the same API everywhere, from layout files to extensions. It's quite powerful and worth taking a closer look at the layout system sooner or later. [Learn more about layouts](how-to-customise-a-layout) and [themes](how-to-customise-a-theme).
 
 ## Objects
 
@@ -1615,5 +1615,41 @@ class YellowExample {
 ## Debug mode
 
 You can use the debug mode to investigate the cause of a problem in more detail or if you are curious about how Datenstrom Yellow works. To activate the debug mode on your website open file `system/extensions/yellow-system.ini` and change `CoreDebugMode: 1`. Depending on the debug mode, more or less information are shown on screen.
+
+Basic information with the setting `CoreDebugMode: 1`:
+
+```
+YellowCore::sendPage Cache-Control: max-age=60
+YellowCore::sendPage Content-Type: text/html; charset=utf-8
+YellowCore::sendPage Content-Modified: Wed, 06 Feb 2019 13:54:17 GMT
+YellowCore::sendPage Last-Modified: Thu, 07 Feb 2019 09:37:48 GMT
+YellowCore::sendPage language:en layout:wiki-start theme:stockholm parser:markdown
+YellowCore::processRequest file:content/1-en/2-wiki/page.md
+YellowCore::request status:200 time:19 ms
+```
+
+File system information with the setting `CoreDebugMode: 2`:
+
+```
+YellowSystem::load file:system/extensions/yellow-system.ini
+YellowLanguage::load file:system/extensions/yellow-language.ini
+YellowUser::load file:system/extensions/yellow-user.ini
+YellowLookup::findFileFromContentLocation /wiki/ -> content/1-en/2-wiki/page.md
+YellowContent::scanLocation location:/shared/
+YellowLookup::findContentLocationFromFile /shared/page-new-default <- content/1-en/shared/page-new-default.md
+YellowLookup::findContentLocationFromFile /shared/page-new-wiki <- content/1-en/shared/page-new-wiki.md
+```
+
+Maximum information with the setting `CoreDebugMode: 3`:
+
+```
+YellowSystem::load file:system/extensions/yellow-system.ini
+YellowSystem::load Sitename:Datenstrom Yellow
+YellowSystem::load Author:Datenstrom
+YellowSystem::load Email:webmaster
+YellowSystem::load Language:en
+YellowSystem::load Layout:default
+YellowSystem::load Theme:stockholm
+```
 
 Do you have questions? [Get help](.).

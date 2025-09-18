@@ -24,4 +24,4 @@ TitleSlug: help
 
 ## Vill du ställa frågor?
 
-Är det något som inte fungerar som förväntat? Letar du efter mer information? Det finns en stor chans att din fråga redan har besvarats. Om inte, beskriv vad du vill göra och vilka problem du har. Ju mer vi vet desto bättre. Vår nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. [Läs mer om samarbete](contributing-guidelines).
+Är det något som inte fungerar som förväntat? Letar du efter mer information? Det finns en stor chans att din fråga redan har besvarats. Om inte, beskriv vad du vill göra och vilka problem du har. Datenstroms nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. [Läs mer om samarbete](contributing-guidelines).
