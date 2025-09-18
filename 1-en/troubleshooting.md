@@ -54,7 +54,7 @@ The following error message can happen:
 Datenstrom Yellow stopped with fatal error. Activate the debug mode for more information.
 ```
 
-You can use the debug mode to investigate the cause of a problem in more detail or if you are curious about how Datenstrom Yellow works. To activate the debug mode on your website open file `system/extensions/yellow-system.ini` and change `CoreDebugMode: 1`. Depending on the debug mode, more or less information are shown on screen. [Learn more about debugging](api-for-developers#debug-mode).
+You can use the debug mode to investigate problems or if you are curious about how Datenstrom Yellow works. To activate the debug mode on your website open file `system/extensions/yellow-system.ini` and change `CoreDebugMode: 1`. Depending on the debug mode, more or less information are shown on screen. [Learn more about debugging](api-for-developers#debug-mode).
 
 Important information is also written to file `system/extensions/yellow-website.log`. If you can't fix the cause of a problem yourself, then [report a bug along with the log file](contributing-guidelines). The log file gives a quick overview of what happens on your website, when it was installed and which errors occurred. Here's an example:
 
