@@ -38,7 +38,7 @@ Kopiera medföljande `.htaccess`-filen till installationsmappen. Kontrollera om 
 Datenstrom Yellow requires rewrite support!
 ```
 
-Kontrollera konfigurationsfilen för din webbserver, se [problem med webbserver](#problem-med-webbserver), [Apache](#problem-med-apache) och [Nginx](#problem-med-nginx). Vissa webbservrar kräver ytterligare inställningar, men det beror mycket på vilken webbserver och vilket operativsystem du använder. Så snart webbservern vidarebefordrar HTTP-förfrågningar till `yellow.php` bör problemet lösas.
+Kontrollera konfigurationsfilen för din webbserver, [se problem med webbserver](#problem-med-webbserver), [Apache](#problem-med-apache) och [Nginx](#problem-med-nginx). Vissa webbservrar kräver ytterligare inställningar, men det beror mycket på vilken webbserver och vilket operativsystem du använder. Så snart webbservern vidarebefordrar HTTP-förfrågningar till `yellow.php` bör problemet lösas.
 
 ```
 Datenstrom Yellow requires complete upload!
@@ -72,7 +72,7 @@ Viktig information skrivs också till filen `system/extensions/yellow-website.lo
 
 ## Problem med webbserver
 
-Om din webbplats inte fungerar, kontrollera konfigurationsfilen på din webbserver. Du behöver en konfigurationsfil som vidarebefordrar HTTP-förfrågningar till innehållshanteringssystemet. Du kan översätta medföljande `.htaccess`-konfigurationsfilen till ett format som din webbserver förstår. Om du inte hittar någon lämplig konfigurationsfil, [fråga vår nätgemenskap](contributing-guidelines).
+Om din webbplats inte fungerar, kontrollera konfigurationsfilen på din webbserver. Du behöver en konfigurationsfil som vidarebefordrar HTTP-förfrågningar till innehållshanteringssystemet. Du kan översätta medföljande `.htaccess`-konfigurationsfilen till ett format som din webbserver förstår. Du kan också kontakta din webbhotell och be om en konfigurationsfil. Om du inte hittar någon lämplig konfigurationsfil, [fråga Datenstroms nätgemenskapen](contributing-guidelines).
 
 ## Problem med Apache
 

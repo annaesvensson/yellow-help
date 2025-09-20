@@ -26,12 +26,12 @@ Om du vill rapportera ett fel, [starta en ny diskussion](https://github.com/date
 * Fundera på vad du vill göra och vad som skulle göra livet lättare.
 * Fråga dig själv, behöver jag det här, vill jag det här, kan jag göra det här bättre?
 * Först få det att fungera och sedan gör det bättre.
-* Du klarar det, tro på dig själv.
+* Du klarar det, det är enklare än du tror.
 
 Om du vill jobba med oss, [se tips för samarbete](https://github.com/datenstrom/community/discussions/760) och [obesvarade diskussioner](https://github.com/datenstrom/community/discussions?discussions_q=is%3Aunanswered+sort%3Adate_created).
 
 ## Bra att veta
 
-Vi är intresserade av vad du vill göra och vilka problem du har. Datenstroms nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Använd en onlineöversättare om engelska inte är ditt modersmål. Tvinga ingenting. Du kan lämna diskussioner när som helst om de inte är konstruktiva. Gå vidare om du hamnar i en situation där du inte har något att bidra eller lära dig. Fokusera på de människor som visa intresse och vill jobba tillsammans med dig. Säg tack för hjälpsamma svar. Det här är bara små gester, men vi tror att de gör samarbetet roligare.
+Vi är intresserade av vad du vill göra och vilka problem du har. Datenstroms nätgemenskapen är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Använd en onlineöversättare om engelska inte är ditt modersmål. Tvinga ingenting. Du kan lämna diskussioner när som helst om de inte är konstruktiva. Gå vidare om du hamnar i en situation där du inte har något att bidra eller lära dig. Fokusera på de människor som visa intresse och vill sammarbeta med dig. Tacka andra för deras hjälp. Det här är bara små gester, men vi tror att de gör samarbetet roligare.
 
 Har du några frågor? [Få hjälp](.).
