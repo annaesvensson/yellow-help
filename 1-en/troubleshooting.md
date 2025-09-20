@@ -72,7 +72,7 @@ Important information is also written to file `system/extensions/yellow-website.
 
 ## Problems with web server
 
-When your website doesn't work, then check the configuration file of your web server. You need a configuration file that forwards HTTP requests to the content management system. You can translate the supplied `.htaccess` configuration file into a format that your web server understands. You can also contact your web hosting provider and ask for a configuration file. If you can't find a suitable configuration file, [ask the Datenstrom community](contributing-guidelines).
+When your website doesn't work, then check the configuration file of your web server. You need a configuration file that forwards HTTP requests to the content management system. Don't worry, your web hosting provider can certainly help you. You can also translate the supplied `.htaccess` configuration file into a format that your web server understands. If you can't find a suitable configuration file for your web server, [ask the Datenstrom community](contributing-guidelines).
 
 ## Problems with Apache
 

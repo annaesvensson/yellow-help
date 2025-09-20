@@ -72,7 +72,7 @@ Viktig information skrivs också till filen `system/extensions/yellow-website.lo
 
 ## Problem med webbserver
 
-Om din webbplats inte fungerar, kontrollera konfigurationsfilen på din webbserver. Du behöver en konfigurationsfil som vidarebefordrar HTTP-förfrågningar till innehållshanteringssystemet. Du kan översätta medföljande `.htaccess`-konfigurationsfilen till ett format som din webbserver förstår. Du kan också kontakta din webbhotell och be om en konfigurationsfil. Om du inte hittar någon lämplig konfigurationsfil, [fråga Datenstroms nätgemenskapen](contributing-guidelines).
+Om din webbplats inte fungerar, kontrollera konfigurationsfilen på din webbserver. Du behöver en konfigurationsfil som vidarebefordrar HTTP-förfrågningar till innehållshanteringssystemet. Oroa dig inte, din webbhotell kan säkert hjälpa dig. Du kan också översätta medföljande `.htaccess`-konfigurationsfilen till ett format som din webbserver förstår. Om du inte hittar någon lämplig konfigurationsfil för din webbserver, [fråga Datenstroms nätgemenskapen](contributing-guidelines).
 
 ## Problem med Apache
 
