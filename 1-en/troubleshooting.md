@@ -56,7 +56,7 @@ Datenstrom Yellow stopped with fatal error. Activate the debug mode for more inf
 
 You can use the debug mode to investigate problems or if you are curious about how Datenstrom Yellow works. To activate the debug mode on your website open file `system/extensions/yellow-system.ini` and change `CoreDebugMode: 1`. Depending on the debug mode, more or less information are shown on screen. [Learn more about debugging](api-for-developers#debug-mode).
 
-Important information is also written to file `system/extensions/yellow-website.log`. If you can't fix the cause of a problem yourself, then [report a bug along with the log file](contributing-guidelines). The log file gives a quick overview of what happens on your website, when it was installed and which errors occurred. Here's an example:
+Important information is also written to file `system/extensions/yellow-website.log`. If you can't fix the cause of a problem yourself, then [report a bug along with the log file](contributing-guidelines). The log file gives an overview of what happens on your website, which extensions were installed and which errors occurred. Here's an example:
 
 ```
 2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
@@ -72,7 +72,7 @@ Important information is also written to file `system/extensions/yellow-website.
 
 ## Problems with web server
 
-When your website doesn't work, then check the configuration file of your web server. You need a configuration file that forwards HTTP requests to the content management system. Don't worry, your web hosting provider can certainly help you. You can also translate the supplied `.htaccess` configuration file into a format that your web server understands. If you can't find a suitable configuration file for your web server, [ask the Datenstrom community](contributing-guidelines).
+Check the configuration file of your web server. You need a configuration file that forwards HTTP requests to the content management system. You can also translate the supplied `.htaccess` configuration file into a format that your web server understands. If you can't find a suitable configuration file for your web server, contact your web hosting provider or [ask the Datenstrom community](contributing-guidelines).
 
 ## Problems with Apache
 

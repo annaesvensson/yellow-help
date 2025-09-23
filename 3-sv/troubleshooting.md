@@ -56,7 +56,7 @@ Datenstrom Yellow stopped with fatal error. Activate the debug mode for more inf
 
 Du kan använda felsökningsläget för att undersöka problem eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget på din webbplats, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Beroende på felsökningsläget visas mer eller mindre information på skärmen. [Läs mer om felsökningsläget](api-for-developers#felsökningsläge).
 
-Viktig information skrivs också till filen `system/extensions/yellow-website.log`. Om du inte kan åtgärda orsaken till ett problem själv, [rapportera ett fel tillsammans med loggfilen](contributing-guidelines). Loggfilen ger en snabb översikt över vad som händer på din webbplats, när den installerades och vilka fel som uppstod. Här är ett exempel:
+Viktig information skrivs också till filen `system/extensions/yellow-website.log`. Om du inte kan åtgärda orsaken till ett problem själv, [rapportera ett fel tillsammans med loggfilen](contributing-guidelines). Loggfilen ger en översikt över vad som händer på din webbplats, vilka tillägg installerades och vilka fel som uppstod. Här är ett exempel:
 
 ```
 2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
@@ -72,7 +72,7 @@ Viktig information skrivs också till filen `system/extensions/yellow-website.lo
 
 ## Problem med webbserver
 
-Om din webbplats inte fungerar, kontrollera konfigurationsfilen på din webbserver. Du behöver en konfigurationsfil som vidarebefordrar HTTP-förfrågningar till innehållshanteringssystemet. Oroa dig inte, din webbhotell kan säkert hjälpa dig. Du kan också översätta medföljande `.htaccess`-konfigurationsfilen till ett format som din webbserver förstår. Om du inte hittar någon lämplig konfigurationsfil för din webbserver, [fråga Datenstroms nätgemenskapen](contributing-guidelines).
+Kontrollera konfigurationsfilen på din webbserver. Du behöver en konfigurationsfil som vidarebefordrar HTTP-förfrågningar till innehållshanteringssystemet. Du kan också översätta medföljande `.htaccess`-konfigurationsfilen till ett format som din webbserver förstår. Om du inte hittar en konfigurationsfil för din webbserver, kontakta din webbhotell eller [fråga Datenstroms nätgemenskapen](contributing-guidelines).
 
 ## Problem med Apache
 

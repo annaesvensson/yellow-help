@@ -56,7 +56,7 @@ Datenstrom Yellow stopped with fatal error. Activate the debug mode for more inf
 
 Du kannst den Debug-Modus benutzen um Probleme zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei  `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Abhängig vom Debug-Modus werden mehr oder weniger Informationen auf dem Bildschirm angezeigt. [Weitere Informationen zum Debug-Modus](api-for-developers#debug-modus).
 
-Wichtige Informationen werden außerdem in die Datei `system/extensions/yellow-website.log` geschrieben. Falls du die Ursache eines Problems nicht selbst beheben kannst, dann [melde einen Fehler zusammen mit der Logdatei](contributing-guidelines). Die Logdatei gibt einen schnellen Überblick was auf deiner Website passiert, wann sie installiert wurde und welche Fehler aufgetreten sind. Hier ist ein Beispiel:
+Wichtige Informationen werden außerdem in die Datei `system/extensions/yellow-website.log` geschrieben. Falls du die Ursache eines Problems nicht selbst beheben kannst, dann [melde einen Fehler zusammen mit der Logdatei](contributing-guidelines). Die Logdatei gibt einen Überblick was auf deiner Website passiert, welche Erweiterungen installiert wurden und welche Fehler aufgetreten sind. Hier ist ein Beispiel:
 
 ```
 2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
@@ -72,7 +72,7 @@ Wichtige Informationen werden außerdem in die Datei `system/extensions/yellow-w
 
 ## Probleme mit dem Webserver
 
-Wenn deine Webseite nicht funktioniert, dann überprüfe die Konfigurationsdatei deines Webservers. Du benötigst eine Konfigurationsdatei welche HTTP-Anfragen an das Content-Management-System weiterleitet. Keine Sorge, dein Webhosting kann dir sicher helfen. Du kannst auch die mitgelieferte `.htaccess` Konfigurationsdatei in ein Format übersetzen, das dein Webserver versteht. Falls du keine geeignete Konfigurationsdatei für deinen Webserver findest, [frage die Datenstrom-Netzgemeinschaft](contributing-guidelines).
+Überprüfe die Konfigurationsdatei deines Webservers. Du benötigst eine Konfigurationsdatei welche HTTP-Anfragen an das Content-Management-System weiterleitet. Du kannst auch die mitgelieferte `.htaccess` Konfigurationsdatei in ein Format übersetzen, das dein Webserver versteht. Falls du keine geeignete Konfigurationsdatei für deinen Webserver findest, wende dich an dein Webhosting-Anbieter oder [frage die Datenstrom-Netzgemeinschaft](contributing-guidelines).
 
 ## Probleme mit Apache
 
