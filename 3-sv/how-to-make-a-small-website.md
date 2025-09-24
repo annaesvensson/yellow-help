@@ -1,7 +1,8 @@
 ---
 Title: Hur man skapar små webbsidor
 ---
-!!! Den här sidan finns inte på ditt språk. Vill du göra en översättning? [Läs mer](https://github.com/annaesvensson/yellow-help/blob/main/README-sv.md).
+! {.important}
+! Den här sidan finns inte på ditt språk. Vill du göra en översättning? [Läs mer](https://github.com/annaesvensson/yellow-help/blob/main/README-sv.md).
 
 [toc]
 

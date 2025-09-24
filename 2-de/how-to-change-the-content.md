@@ -149,6 +149,6 @@ Blockelemente benutzen:
     ! Hier sind Informationen die beachtet werden müssen.
 
     ! {.note}
-    ! Hier sind Informationen die du wissen solltest.
+    ! Hallo, dieser Text sieht aus wie ein Klebezettel.
 
 Hast du Fragen? [Hilfe finden](.).

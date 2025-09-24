@@ -149,6 +149,6 @@ Använd blockelementen:
     ! Här är information som måste beaktas.
 
     ! {.note}
-    ! Här är information du borde känna till.
+    ! Hej, den här texten ser ut som en klisterlapp.
 
 Har du några frågor? [Få hjälp](.).

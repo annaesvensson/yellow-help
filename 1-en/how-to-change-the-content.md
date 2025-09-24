@@ -149,6 +149,6 @@ Using block elements:
     ! Here's information that needs attention.
 
     ! {.note}
-    ! Here's information you should know.
+    ! Hello, this text looks like a sticky note.
 
 Do you have questions? [Get help](.).
