@@ -32,6 +32,6 @@ Om du vill jobba med oss, [se tips för samarbete](https://github.com/datenstrom
 
 ## Bra att veta
 
-Vi är intresserade av vad du vill göra och vilka problem du har. Datenstroms nätgemenskapen är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Använd en onlineöversättare om engelska inte är ditt modersmål. Tvinga ingenting. Du kan lämna diskussioner när som helst om de inte är konstruktiva. Gå vidare om du hamnar i en situation där du inte har något att bidra eller lära dig. Fokusera på de människor som visa intresse och vill sammarbeta med dig. Tacka andra för deras hjälp. Det här är bara små gester, men vi tror att de gör samarbetet roligare.
+Vi är intresserade av vad du vill göra och vilka problem du har. Datenstroms nätgemenskapen är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Använd en översättare om engelska inte är ditt modersmål. Tvinga ingenting. Du kan lämna diskussioner när som helst om de inte är konstruktiva. Gå vidare om du hamnar i en situation där du inte har något att bidra eller lära dig. Fokusera på de människor som visa intresse och vill sammarbeta med dig. Tacka andra för deras hjälp. Det här är bara små gester, men vi tror att de gör samarbetet roligare.
 
 Har du några frågor? [Få hjälp](.).

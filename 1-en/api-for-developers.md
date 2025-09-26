@@ -40,7 +40,7 @@ You can edit your website in a web browser. The login page is available on your 
 
 ### Small layout system
 
-You can customise the appearance of your website with HTML and CSS. Fortunately you don't have to learn a web framework, but can use normal PHP. This allows you to access content files, create control structures and most of it will probably seem pretty familiar to you as a developer. We are using the same API everywhere, from layout files to extensions. It's worth taking a look at the small layout system sooner or later. [Learn more about layouts](how-to-customise-a-layout) and [themes](how-to-customise-a-theme).
+You can customise the appearance of your website with HTML and CSS. Fortunately you don't have to learn a web framework, but can use normal CSS. For sophisticated things there's the API. This allows you to access content files, create control structures and most of it will probably seem pretty familiar to you as a developer. We are using the same API everywhere, from layout files to extensions. It's worth taking a look at the small layout system sooner or later. [Learn more about layouts](how-to-customise-a-layout) and [themes](how-to-customise-a-theme).
 
 ### Built-in web server
 

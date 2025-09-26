@@ -32,6 +32,6 @@ If you want to work with us, [see tips for working together](https://github.com/
 
 ## Good to know
 
-We are interested in what you want to do and which problems you have. The Datenstrom community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Use an online translator if English is not your first language. Don't force anything. You can step out of discussions at any time if they are not constructive. Move on if you find yourself in a situation where you have nothing to contribute or learn. Focus on the people who show interest and want to work together with you. Thank others for their help. These are only small gestures, but they make working together more enjoyable.
+We are interested in what you want to do and which problems you have. The Datenstrom community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Use a translator if English is not your first language. Don't force anything. You can step out of discussions at any time if they are not constructive. Move on if you find yourself in a situation where you have nothing to contribute or learn. Focus on the people who show interest and want to work together with you. Thank others for their help. These are only small gestures, but they make working together more enjoyable.
 
 Do you have questions? [Get help](.).

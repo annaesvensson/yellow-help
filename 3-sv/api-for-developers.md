@@ -40,7 +40,7 @@ Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgängli
 
 ### Litet layoutsystem
 
-Du kan anpassa utseendet på din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett webbramverk, utan kan använda vanlig PHP. Detta ger dig möjlighet att komma åt innehållsfiler, skapa kontrollstrukturer och det mesta kommer förmodligen att verka ganska bekant för dig som utvecklare. Vi använder samma API:et överallt, från layoutfiler till tillägg. Förr eller senare är det värt att ta en titt på det lilla layoutsystemet. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
+Du kan anpassa utseendet på din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett webbramverk, utan kan använda vanlig CSS. För sofistikerade saker finns det API:et. Detta ger dig möjlighet att komma åt innehållsfiler, skapa kontrollstrukturer och det mesta kommer förmodligen att verka ganska bekant för dig som utvecklare. Vi använder samma API:et överallt, från layoutfiler till tillägg. Förr eller senare är det värt att ta en titt på det lilla layoutsystemet. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
 
 ### Inbyggd webbserver
 
