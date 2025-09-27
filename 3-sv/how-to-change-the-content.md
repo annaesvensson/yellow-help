@@ -133,7 +133,7 @@ Använd förkortningar:
     [gallery photo]   = lägga till ett bildgalleri med popup
     [slider photo]    = lägga till ett bildgalleri med reglaget
 
-Använd blockelementen:
+Använd blockelement:
 
     ! Här är ett allmänt blockelement.
     ! Text kan sträcka sig över flera rader
