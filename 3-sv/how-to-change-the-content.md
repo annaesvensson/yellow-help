@@ -127,12 +127,6 @@ Skapa citat:
     
     >>> Citat i citat i citat
 
-Använd HTML:
-
-    <strong>Text med HTML</strong> kan valfritt användas.
-    <img src="/media/images/photo.jpg" alt="This is an example image">
-    <a href="https://datenstrom.se" target="_blank">Öppna länken i en ny flik</a>.
-
 Använd förkortningar:
 
     [image photo.jpg] = lägga till en bild eller miniatyrbild

@@ -1259,7 +1259,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Extensions
 
-Your website consists of the core and other extensions. At the beginning, all extensions are loaded and `onLoad` will be called. There are various events that inform you when a request from the web browser is received, a command is executed or information is available. In most cases a page will be generated.
+Your website consists of the core and other extensions. The source code of all extensions is stored in your `system/workers` folder. At the beginning, all extensions are loaded and `onLoad` will be called. There are various events that inform you when a request from the web browser is received, a command is executed or information is available. In most cases a page will be generated.
 
 ``` box-drawing {aria-hidden=true}
 onLoad
@@ -1320,7 +1320,7 @@ Handle shutdown
 
 ---
 
-Extension for handling the initialisation:
+Code for handling the initialisation:
 
 ``` php
 <?php
@@ -1335,7 +1335,7 @@ class YellowExample {
 }
 ```
 
-Extension for handling a command:
+Code for handling a command:
 
 ``` php
 <?php
@@ -1406,7 +1406,7 @@ Handle page output data
 
 ---
 
-Extension for creating a custom shortcut:
+Code for creating a custom shortcut:
 
 ``` php
 <?php
@@ -1432,7 +1432,7 @@ class YellowExample {
 }
 ```
 
-Extension for creating a HTML header:
+Code for creating a HTML header:
 
 ``` php
 <?php
@@ -1491,7 +1491,7 @@ Handle user account changes
 
 ---
 
-Extension for handling content file changes:
+Code for handling content file changes:
 
 ``` php
 <?php
@@ -1515,7 +1515,7 @@ class YellowExample {
 }
 ```
 
-Extension for handling media file changes:
+Code for handling media file changes:
 
 ``` php
 <?php
@@ -1568,7 +1568,7 @@ Handle logging
 
 ---
 
-Extension for handling an update event:
+Code for handling an update event:
 
 ``` php
 <?php
@@ -1590,7 +1590,7 @@ class YellowExample {
 }
 ```
 
-Extension for handling a daily event:
+Code for handling a daily event:
 
 ``` php
 <?php

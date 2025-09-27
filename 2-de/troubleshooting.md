@@ -72,7 +72,7 @@ Wichtige Informationen werden außerdem in die Datei `system/extensions/yellow-w
 
 ## Probleme mit dem Webserver
 
-Überprüfe die Konfigurationsdatei deines Webservers. Du benötigst eine Konfigurationsdatei welche HTTP-Anfragen an das Content-Management-System weiterleitet. Du kannst auch die mitgelieferte `.htaccess` Konfigurationsdatei in ein Format übersetzen, das dein Webserver versteht. Falls du keine geeignete Konfigurationsdatei für deinen Webserver findest, wende dich an dein Webhosting-Anbieter oder [frage die Datenstrom-Netzgemeinschaft](contributing-guidelines).
+Überprüfe die Konfigurationsdatei deines Webservers. Du benötigst eine Konfigurationsdatei welche HTTP-Anfragen an das Content-Management-System weiterleitet. Du kannst die mitgelieferte `.htaccess` Konfigurationsdatei in ein Format übersetzen, das dein Webserver versteht. Falls du keine geeignete Konfigurationsdatei für deinen Webserver findest, wende dich an dein Webhosting-Anbieter oder [frage die Datenstrom-Netzgemeinschaft](contributing-guidelines).
 
 ## Probleme mit Apache
 

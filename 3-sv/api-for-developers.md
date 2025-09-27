@@ -1260,7 +1260,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Tillägg
 
-Din webbplats består av kärnan och andra tillägg. I början laddas alla tillägg och `onLoad` kommer att anropas. Det finns olika händelser som informerar dig när en begäran från webbläsaren tas emot, ett kommando utförs eller information finns tillgänglig. I de flesta fall kommer en sida att genereras.
+Din webbplats består av kärnan och andra tillägg. Källkoden för alla tillägg finns i `system/layouts` mappen. I början laddas alla tillägg och `onLoad` kommer att anropas. Det finns olika händelser som informerar dig när en begäran från webbläsaren tas emot, ett kommando utförs eller information finns tillgänglig. I de flesta fall kommer en sida att genereras.
 
 ``` box-drawing {aria-hidden=true}
 onLoad
@@ -1321,7 +1321,7 @@ Hantera avstängningen
 
 ---
 
-Tillägg för att hantera initieringen:
+Kod för att hantera initieringen:
 
 ``` php
 <?php
@@ -1336,7 +1336,7 @@ class YellowExample {
 }
 ```
 
-Tillägg för att hantera ett kommando:
+Kod för att hantera ett kommando:
 
 ``` php
 <?php
@@ -1407,7 +1407,7 @@ Hantera output data för sidan
 
 ---
 
-Tillägg för att skapa en egen förkortning:
+Kod för att skapa en egen förkortning:
 
 ``` php
 <?php
@@ -1433,7 +1433,7 @@ class YellowExample {
 }
 ```
 
-Tillägg för att skapa en HTML header:
+Kod för att skapa en HTML header:
 
 ``` php
 <?php
@@ -1492,7 +1492,7 @@ Hantera ändringar av användarkonton
 
 ---
 
-Tillägg för att hantera innehållsfiländringar:
+Kod för att hantera innehållsfiländringar:
 
 ``` php
 <?php
@@ -1516,7 +1516,7 @@ class YellowExample {
 }
 ```
 
-Tillägg för att hantera mediefiländringar:
+Kod för att hantera mediefiländringar:
 
 ``` php
 <?php
@@ -1569,7 +1569,7 @@ Hantera loggning
 
 ---
 
-Tillägg för att hantera en uppdateringshändelse:
+Kod för att hantera en uppdateringshändelse:
 
 ``` php
 <?php
@@ -1591,7 +1591,7 @@ class YellowExample {
 }
 ```
 
-Tillägg för att hantera en daglig händelse:
+Kod för att hantera en daglig händelse:
 
 ``` php
 <?php

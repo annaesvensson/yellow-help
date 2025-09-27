@@ -1260,7 +1260,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Erweiterungen
 
-Deine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden alle Erweiterungen geladen und `onLoad` wird aufgerufen. Es gibt verschiedene Ereignisse die dich informieren wenn eine Anfrage vom Webbrowser empfangen wird, ein Befehl ausgeführt wird oder Informationen verfügbar sind. In den meisten Fällen wird eine Seite erzeugt. 
+Deine Webseite besteht aus dem Core und anderen Erweiterungen. Der Quellcode von allen Erweiterungen befindet sich im `system/workers`-Verzeichnis. Am Anfang werden alle Erweiterungen geladen und `onLoad` wird aufgerufen. Es gibt verschiedene Ereignisse die dich informieren wenn eine Anfrage vom Webbrowser empfangen wird, ein Befehl ausgeführt wird oder Informationen verfügbar sind. In den meisten Fällen wird eine Seite erzeugt. 
 
 ``` box-drawing {aria-hidden=true}
 onLoad
@@ -1321,7 +1321,7 @@ Verarbeite das Runterfahren
 
 ---
 
-Erweiterung um die Initialisierung zu verarbeiten:
+Code um die Initialisierung zu verarbeiten:
 
 ``` php
 <?php
@@ -1336,7 +1336,7 @@ class YellowExample {
 }
 ```
 
-Erweiterung um einen Befehl zu verarbeiten:
+Code um einen Befehl zu verarbeiten:
 
 ``` php
 <?php
@@ -1408,7 +1408,7 @@ Verarbeite die Ausgabedaten einer Seite
 
 ---
 
-Erweiterung um eine eigene Abkürzung zu erstellen:
+Code um eine eigene Abkürzung zu erstellen:
 
 ``` php
 <?php
@@ -1434,7 +1434,7 @@ class YellowExample {
 }
 ```
 
-Erweiterung um einen HTML-Header zu erstellen:
+Code um einen HTML-Header zu erstellen:
 
 ``` php
 <?php
@@ -1494,7 +1494,7 @@ Verarbeite Änderungen am Benutzerkonto
 
 ---
 
-Erweiterung um Änderungen an Inhaltsdatei zu verarbeiten:
+Code um Änderungen an Inhaltsdatei zu verarbeiten:
 
 ``` php
 <?php
@@ -1518,7 +1518,7 @@ class YellowExample {
 }
 ```
 
-Erweiterung um Änderungen an Mediendatei zu verarbeiten:
+Code um Änderungen an Mediendatei zu verarbeiten:
 
 ``` php
 <?php
@@ -1571,7 +1571,7 @@ Verarbeite Logging
 
 ---
 
-Erweiterung um ein Aktualisierung-Ereignis zu verarbeiten:
+Code um ein Aktualisierung-Ereignis zu verarbeiten:
 
 ``` php
 <?php
@@ -1593,7 +1593,7 @@ class YellowExample {
 }
 ```
 
-Erweiterung um ein tägliches Ereignis zu verarbeiten:
+Code um ein tägliches Ereignis zu verarbeiten:
 
 ``` php
 <?php

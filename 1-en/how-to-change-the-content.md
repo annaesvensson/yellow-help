@@ -127,12 +127,6 @@ Making quotes:
     
     >>> Quote of a quote of a quote
 
-Using HTML:
-
-    <strong>Text with HTML</strong> can be used optionally.
-    <img src="/media/images/photo.jpg" alt="This is an example image">
-    <a href="https://datenstrom.se" target="_blank">Open link in new tab</a>.
-
 Using shortcuts:
 
     [image photo.jpg] = adding an image or image thumbnail

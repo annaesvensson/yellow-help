@@ -127,12 +127,6 @@ Zitate erstellen:
     
     >>> Zitat im Zitat im Zitat
 
-HTML benutzen:
-
-    <strong>Text mit HTML</strong> kann wahlweise benutzt werden.
-    <img src="/media/images/photo.jpg" alt="Dies ist ein Beispielbild">
-    <a href="https://datenstrom.se/de/" target="_blank">Link in einem neuen Tab öffnen</a>.
-
 Abkürzungen benutzen:
 
     [image photo.jpg] = Bild oder Miniaturbild hinzufügen
