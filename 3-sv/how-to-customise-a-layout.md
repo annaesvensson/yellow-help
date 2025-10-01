@@ -1,11 +1,11 @@
 ---
 Title: Hur man anpassar en layout
 ---
-Så här anpassar du en layout på din webbplats. 
+Så här anpassar du utseendet på din webbplats.
 
 ## Anpassa HTML
 
-För att anpassa [HTML](https://www.w3schools.com/html/)-koden på din webbplats ändrar man layouten. Låt oss se hur layouter görs. Standardlayouten definieras i [systeminställningarna](how-to-change-the-system#systeminställningar). En annan layout kan definieras i [sidinställningarna](how-to-change-the-system#sidinställningar) högst upp på varje sida, till exempel `Layout: default`. 
+Du kan anpassa utseendet på din webbplats med HTML och CSS. Alla HTML-filer finns i `system/layouts` mappen. Alla CSS-filer finns i `system/themes` mappen. Du kan ändra dessa filer som du vill och även lägga till dina egna filer. Dina ändringar kommer inte att skrivas över när webbplatsen uppdateras. För sofistikerade layouter finns det ett [API för utvecklare](api-for-developers).
 
 Här är en exempelfil `system/layouts/default.html`:
 
@@ -59,6 +59,10 @@ Här är en exempellayout för att visa sidinnehåll och ytterligare bloggsidor:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Teman kan ha sina egna layoutfiler för att skriva över den befintliga layouten. Lägg till ett tema i filnamnet. Till exempel kommer filen `system/layouts/default.html` att användas med vilket tema som helst, filen `system/layouts/stockholm-default.html` kommer bara att användas med `Theme: stockholm`. 
+Observera att teman kan ha sina egna layoutfiler. Till exempel kommer filen `system/layouts/default.html` att användas med vilket tema som helst, filen `system/layouts/stockholm-default.html` kommer bara att användas med `Theme: stockholm`. 
+
+## Anpassa inställningar
+
+Standardlayouten definieras i [systeminställningarna](how-to-change-the-system#systeminställningar) i filen `system/extensions/yellow-system.ini`. En annan layout kan definieras i [sidinställningarna](how-to-change-the-system#sidinställningar) högst upp på varje sida, till exempel `Layout: default`. 
 
 Har du några frågor? [Få hjälp](.).

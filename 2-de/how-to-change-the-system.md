@@ -55,7 +55,7 @@ Die Spracheinstellungen sind in der Datei `system/extensions/yellow-language.ini
     CoreDateFormatLong: d.m.Y H:i
     media/images/photo.jpg: Das ist ein Beispielbild
 
-Hier kannst du die Spracheinstellungen festlegen. Eine Sprache besteht aus `Language` und weiteren Einstellungen. Die Spracheinstellungen enthalten die Einstellungen aller installierten Erweiterungen. Du kannst auch deine eigenen Spracheinstellungen zur Konfigurationsdatei hinzufügen, beispielsweise Bildunterschriften.
+Hier kannst du die Spracheinstellungen festlegen. Eine Sprache besteht aus `Language` und weiteren Einstellungen. Die Spracheinstellungen enthalten die Spracheinstellungen der Webseite und aller installierten Erweiterungen. Du kannst auch deine eigenen Spracheinstellungen zur Konfigurationsdatei hinzufügen, beispielsweise Bildunterschriften.
 
 ## Benutzereinstellungen
 

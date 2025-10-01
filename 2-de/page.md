@@ -15,7 +15,7 @@ TitleSlug: help
 ! * [Wie man den Inhalt ändert](how-to-change-the-content)
 ! * [Wie man die Medien ändert](how-to-change-the-media)
 ! * [Wie man das System ändert](how-to-change-the-system)
-! * [Wie man eine Sprache anpasst](how-to-customise-a-language)
+! * [Wie man Sprachen anpasst](how-to-customise-languages)
 ! * [Wie man ein Layout anpasst](how-to-customise-a-layout)
 ! * [Wie man ein Theme anpasst](how-to-customise-a-theme)
 ! * [API für Entwickler](api-for-developers)

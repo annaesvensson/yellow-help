@@ -40,7 +40,7 @@ Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgängli
 
 ### Litet layoutsystem
 
-Du kan anpassa utseendet på din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett webbramverk, utan kan använda vanlig CSS. För sofistikerade saker finns det API:et. Detta ger dig möjlighet att komma åt innehållsfiler, skapa kontrollstrukturer och det mesta kommer förmodligen att verka ganska bekant för dig som utvecklare. Vi använder samma API:et överallt, från layoutfiler till tillägg. Förr eller senare är det värt att ta en titt på det lilla layoutsystemet. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
+Du kan anpassa utseendet på din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett webbramverk, utan kan använda vanlig HTML och CSS. För sofistikerade layouter finns det ett API för utvecklare. Detta ger dig möjlighet att komma åt innehållsfiler, skapa kontrollstrukturer och det mesta kommer förmodligen att verka ganska bekant för dig som utvecklare. Vi använder samma API:et överallt, från layoutfiler till tillägg. Det är värt att titta på layoutsystemet. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
 
 ### Inbyggd webbserver
 
@@ -126,6 +126,26 @@ Layoutfil med header och footer:
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
+```
+
+Layoutfil för header:
+
+``` html
+<!DOCTYPE html>
+<html lang="<?php echo $this->yellow->page->getHtml("language") ?>">
+<head>
+<title><?php echo $this->yellow->page->getHtml("titleHeader") ?></title>
+<?php echo $this->yellow->page->getExtraHtml("header") ?>
+</head>
+<body>
+```
+
+Layoutfil för footer:
+
+``` html
+<?php echo $this->yellow->page->getExtraHtml("footer") ?>
+</body>
+</html>
 ```
 
 ### Yellow content
@@ -1326,7 +1346,7 @@ Kod för att hantera initieringen:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.1";
+    const VERSION = "0.9.1";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1341,7 +1361,7 @@ Kod för att hantera ett kommando:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.2";
+    const VERSION = "0.9.2";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1412,7 +1432,7 @@ Kod för att skapa en egen förkortning:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.3";
+    const VERSION = "0.9.3";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1438,7 +1458,7 @@ Kod för att skapa en HTML header:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.4";
+    const VERSION = "0.9.4";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1497,7 +1517,7 @@ Kod för att hantera innehållsfiländringar:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.5";
+    const VERSION = "0.9.5";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1521,7 +1541,7 @@ Kod för att hantera mediefiländringar:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.6";
+    const VERSION = "0.9.6";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1574,7 +1594,7 @@ Kod för att hantera en uppdateringshändelse:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.7";
+    const VERSION = "0.9.7";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1596,7 +1616,7 @@ Kod för att hantera en daglig händelse:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.8";
+    const VERSION = "0.9.8";
     public $yellow;         // access to API
     
     // Handle initialisation

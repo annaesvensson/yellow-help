@@ -40,7 +40,7 @@ You can edit your website in a web browser. The login page is available on your 
 
 ### Small layout system
 
-You can customise the appearance of your website with HTML and CSS. Fortunately you don't have to learn a web framework, but can use normal CSS. For sophisticated things there's the API. This allows you to access content files, create control structures and most of it will probably seem pretty familiar to you as a developer. We are using the same API everywhere, from layout files to extensions. It's worth taking a look at the small layout system sooner or later. [Learn more about layouts](how-to-customise-a-layout) and [themes](how-to-customise-a-theme).
+You can customise the appearance of your website with HTML and CSS. Fortunately you don't have to learn a web framework, but can use normal HTML and CSS. For sophisticated layouts there's an API for developers. This allows you to access content files, create control structures and most of it will probably seem pretty familiar to you as a developer. We are using the same API everywhere, from layout files to extensions. It's worth taking a look at the layout system sooner or later. [Learn more about layouts](how-to-customise-a-layout) and [themes](how-to-customise-a-theme).
 
 ### Built-in web server
 
@@ -126,6 +126,26 @@ Layout file with header and footer:
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
+```
+
+Layout file for header:
+
+``` html
+<!DOCTYPE html>
+<html lang="<?php echo $this->yellow->page->getHtml("language") ?>">
+<head>
+<title><?php echo $this->yellow->page->getHtml("titleHeader") ?></title>
+<?php echo $this->yellow->page->getExtraHtml("header") ?>
+</head>
+<body>
+```
+
+Layout file for footer:
+
+``` html
+<?php echo $this->yellow->page->getExtraHtml("footer") ?>
+</body>
+</html>
 ```
 
 ### Yellow content
@@ -1325,7 +1345,7 @@ Code for handling the initialisation:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.1";
+    const VERSION = "0.9.1";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1340,7 +1360,7 @@ Code for handling a command:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.2";
+    const VERSION = "0.9.2";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1411,7 +1431,7 @@ Code for creating a custom shortcut:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.3";
+    const VERSION = "0.9.3";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1437,7 +1457,7 @@ Code for creating a HTML header:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.4";
+    const VERSION = "0.9.4";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1496,7 +1516,7 @@ Code for handling content file changes:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.5";
+    const VERSION = "0.9.5";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1520,7 +1540,7 @@ Code for handling media file changes:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.6";
+    const VERSION = "0.9.6";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1573,7 +1593,7 @@ Code for handling an update event:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.7";
+    const VERSION = "0.9.7";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1595,7 +1615,7 @@ Code for handling a daily event:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.8";
+    const VERSION = "0.9.8";
     public $yellow;         // access to API
     
     // Handle initialisation

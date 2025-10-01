@@ -1,38 +1,70 @@
 ---
 Title: Wie man ein Theme anpasst
 ---
-Wie man ein Aussehen seiner Webseite anpasst.
+Wie man das Aussehen seiner Webseite anpasst.
 
 ## CSS anpassen
 
-Um das [CSS](https://www.w3schools.com/css/) deiner Webseite anzupassen, ändere das Theme. Das Standard-Theme wird in den [Systemeinstellungen](how-to-change-the-system#systemeinstellungen) festgelegt. Ein anderes Theme lässt sich in den [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen) ganz oben auf jeder Seite festlegen, zum Beispiel `Theme: custom`. 
+Du kannst das Aussehen deiner Webseite mit HTML und CSS anpassen. Alle HTML-Dateien befinden sich im `system/layouts`-Verzeichnis. Alle CSS-Dateien befinden sich im `system/themes`-Verzeichnis. Du kannst diese Dateien beliebig ändern und auch deine eigenen Dateien hinzufügen. Deine Änderungen werden bei der Aktualisierung der Webseite nicht überschrieben. Farben, Schriftarten, Blockelemente und andere CSS-Klassen werden in einem Theme definiert.
 
-Hier ist eine Beispiel-Datei `system/themes/custom.css`:
+Hier ist der Abschnitt für Farben und Schriftarten aus der Datei `system/themes/stockholm.css`:
 
 ``` css
-.page {
-    background-color: #fc4;
-    color: #fff;
-    text-align: center; 
+:root {
+    --bg: #fff;
+    --code-bg: #f7f7f7;
+    --important-bg: #f0f8fe;
+    --note-bg: #fffbf0;
+    --heading: #111;
+    --text: #333;
+    --code: #666;
+    --link: #07d;
+    --link-active: #29f;
+    --blockquote-accent: #29f;
+    --important-accent: #08e;
+    --note-accent: #fb0;
+    --separator: #ddd;
+    --border: #bbb;
+    --font: "Open Sans", Helvetica, sans-serif;
+    --monospace-font: Consolas, Menlo, Courier, monospace;
 }
 ```
+
+Hier ist ein Beispiel-CSS um ein eigenes Blockelement zu definieren:
+
+``` css
+.content .example {
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    background-color: #f7f7f7;
+    color: #333;
+    border-radius: 3px;
+}
+```
+
+Hier ist ein Beispiel-CSS um ein zentriertes Layout zu definieren:
+
+``` css
+.layout-example .content {
+    text-align: center;
+}
+.layout-example .content p {
+    font-size: 1.1em;
+    max-width: 48em;
+    margin: 2em auto;
+}
+```
+
+## Bilder anpassen
+
+Ein Theme kann zusätzliche Bilder enthalten, die im Stylesheet verwendet werden. Du kannst diese Bilder beliebig ändern und auch deine eigene Bilder hinzufügen. Jede Webseite hat ein kleines Icon, auch Favicon genannt. Der Webbrowser zeigt dieses Icon in Lesezeichen und der Adressleiste an. Zum Beispiel ist das Icon für das Stockholm-Theme die Datei `system/themes/stockholm.png`.
 
 ## JavaScript anpassen
 
-Um deine Webseiten noch weiter anzupassen, kannst du [JavaScript](https://www.w3schools.com/js/) benutzen. Damit kannst du dynamische Funktionen für Webseiten erstellen. Du kannst JavaScript in eine Datei speichern die einen ähnlichen Namen hat wie die CSS-Datei. Sie wird dann automatisch eingebunden.
+Ein Theme kann JavaScript für dynamische Funktionen enthalten, die mit CSS allein nicht möglich sind. Du kannst JavaScript in eine Datei speichern die einen ähnlichen Namen hat wie die CSS-Datei. Sie wird dann automatisch in die Webseite eingebunden. Zum Beispiel wäre die entsprechende Datei für das Stockholm-Theme die Datei `system/themes/stockholm.js`.
 
-Hier ist eine Beispiel-Datei `system/themes/custom.js`:
+## Einstellungen anpassen
 
-``` javascript
-var ready = function() {
-	console.log("Hello world");
-	// Add more JavaScript code here
-}
-window.addEventListener("DOMContentLoaded", ready, false);
-```
-
-## Bilder und Dateien anpassen
-
-Im `system/themes`-Verzeichnis befinden sich alle Themedateien. Hier speichert man Bilder und Schriftarten, die in Themes verwendet werden. Jede Webseite hat ein kleines Icon, auch Favicon genannt. Der Webbrowser zeigt dieses Icon beispielsweise in der Adresszeile an.
+Das Standard-Theme wird in den [Systemeinstellungen](how-to-change-the-system#systemeinstellungen) in der Datei `system/extensions/yellow-system.ini` festgelegt. Ein anderes Theme lässt sich in den [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen) ganz oben auf jeder Seite festlegen, zum Beispiel `Theme: stockholm`.
 
 Hast du Fragen? [Hilfe finden](.).

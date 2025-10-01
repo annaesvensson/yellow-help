@@ -1,15 +1,11 @@
 ---
-Title: How to customise a language
+Title: How to customise languages
 ---
-Here's how to customise a language of your website.
-
-## Customise language settings
-
-To adjust the language of your website change the [language settings](how-to-change-the-system#language-settings). The language settings contain the settings of all installed extensions. You can also add your own language settings to the configuration file, for example image captions.
+Here's how to customise the languages of your website.
 
 ## Single language mode
 
-The default language is defined the [system settings](how-to-change-the-system#system-settings). A different language can be defined in the [page settings](how-to-change-the-system#page-settings) at the top of each page, for example `Language: en`.
+The default language is defined the [system settings](how-to-change-the-system#system-settings) in file `system/extensions/yellow-system.ini`. A different language can be defined in the [page settings](how-to-change-the-system#page-settings) at the top of each page, for example `Language: en`.
 
 An English page:
 
@@ -88,8 +84,8 @@ The second screenshot shows the folders `1-en`, `2-de`, `3-sv` and `default`. Th
 
 To show a language selection, you can create a page that lists available languages. The language selection can be integrated into the navigation of your website. This allows visitors to choose the language.
 
-## Make a translation
+## Customise settings
 
-When you install a website you are greeted with a hello. You can make a translation if a language is missing. Start with the English language file or one of the available languages. This will show you which text lines and text fragments are available. It is enough if you translate the English language file. A maintainer can take care of everything else. [Learn more about translations](https://github.com/annaesvensson/yellow-language).
+To adjust the language of your website change the [language settings](how-to-change-the-system#language-settings). The language settings contain the language settings of of your website and all installed extensions. You can also add your own language settings to the configuration file, for example image captions. You can [make a translation](https://github.com/annaesvensson/yellow-language) if a language is missing.
 
 Do you have questions? [Get help](.).

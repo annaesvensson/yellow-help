@@ -5,34 +5,66 @@ Here's how to customise the appearance of your website.
 
 ## Customising CSS
 
-To adjust the [CSS](https://www.w3schools.com/css/) of your website change the theme. Let's see how themes work. The default theme is defined in the [system settings](how-to-change-the-system#system-settings). A different theme can be defined in the [page settings](how-to-change-the-system#page-settings) at the top of each page, for example `Theme: custom`.
+You can customise the appearance of your website with HTML and CSS. All HTML files are stored in your `system/layouts` folder. All CSS files are stored in your `system/themes` folder. You can change these files as you like and also add your own files. Your changes will not be overwritten when the website is updated. Colors, fonts, block elements and other CSS classes are defined in a theme.
 
-Here's an example file `system/themes/custom.css`:
+Here's the section for colors and fonts from the file `system/themes/stockholm.css`:
 
 ``` css
-.page {
-    background-color: #fc4;
-    color: #fff;
-    text-align: center; 
+:root {
+    --bg: #fff;
+    --code-bg: #f7f7f7;
+    --important-bg: #f0f8fe;
+    --note-bg: #fffbf0;
+    --heading: #111;
+    --text: #333;
+    --code: #666;
+    --link: #07d;
+    --link-active: #29f;
+    --blockquote-accent: #29f;
+    --important-accent: #08e;
+    --note-accent: #fb0;
+    --separator: #ddd;
+    --border: #bbb;
+    --font: "Open Sans", Helvetica, sans-serif;
+    --monospace-font: Consolas, Menlo, Courier, monospace;
 }
 ```
+
+Here's an example CSS for defining a custom block element:
+
+``` css
+.content .example {
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    background-color: #f7f7f7;
+    color: #333;
+    border-radius: 3px;
+}
+```
+
+Here's an example CSS for defining a centered layout:
+
+``` css
+.layout-example .content {
+    text-align: center;
+}
+.layout-example .content p {
+    font-size: 1.1em;
+    max-width: 48em;
+    margin: 2em auto;
+}
+```
+
+## Customising images
+
+A theme may have additional images that are used in the stylesheet. You can change these images as you like and also add your own images. Each website has a small icon, sometimes called a favicon. The web browser displays this icon in bookmarks and the address bar. For example the icon for the Stockholm theme is file `system/themes/stockholm.png`.
 
 ## Customising JavaScript
 
-To adjust your website even more you can use [JavaScript](https://www.w3schools.com/js/). This allows you to create dynamic features for websites. You can save JavaScript into a file which has a similar name as the CSS file. Then it will be automatically included.
+A theme may have JavaScript for dynamic features that are not possible with CSS alone. You can save JavaScript into a file which has a similar name as the CSS file. Then it will be automatically included in the website. For example the corresponding file for the Stockholm theme would be the file `system/themes/stockholm.js`.
 
-Here's an example file `system/themes/custom.js`:
+## Customising settings
 
-``` javascript
-var ready = function() {
-	console.log("Hello world");
-	// Add more JavaScript code here
-}
-window.addEventListener("DOMContentLoaded", ready, false);
-```
-
-## Customising images and files
-
-The `system/themes` folder contains all theme files. You can store your images and font files here, which are used in themes. Each website has a small icon, sometimes called a favicon. The web browser displays this icon for example in the address bar.
+The default theme is defined in the [system settings](how-to-change-the-system#system-settings) in file `system/extensions/yellow-system.ini`. A different theme can be defined in the [page settings](how-to-change-the-system#page-settings) at the top of each page, for example `Theme: stockholm`.
 
 Do you have questions? [Get help](.).

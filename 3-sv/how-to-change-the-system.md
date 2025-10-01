@@ -55,7 +55,7 @@ Språkinställningar lagras i filen `system/extensions/yellow-language.ini`. Hä
     CoreDateFormatLong: Y-m-d H:i
     media/images/photo.jpg: Detta är en exempelbild
 
-Du kan definiera språkinställningarna här. Ett språk består av `Language` och andra inställningar. Språkinställningarna innehåller inställningarna för alla installerade tillägg. Du kan också lägga till dina egna språkinställningar i konfigurationsfilen, till exempel bildtexter.
+Du kan definiera språkinställningarna här. Ett språk består av `Language` och andra inställningar. Språkinställningarna innehåller språkinställningarna för din webbplats och för alla installerade tillägg. Du kan också lägga till dina egna språkinställningar i konfigurationsfilen, till exempel bildtexter.
 
 ## Användarinställningar
 

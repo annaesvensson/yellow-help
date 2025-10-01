@@ -1,15 +1,11 @@
 ---
-Title: Hur man anpassar ett språk
+Title: Hur man anpassar språk
 ---
-Så här anpassar du ett språk på din webbplats.
-
-## Anpassa språkinställningar
-
-För att anpassa språket på din webbplats ändrar man [språkinställningar](how-to-change-the-system#språkinställningar). Språkinställningarna innehåller inställningarna för alla installerade tillägg. Du kan också lägga till dina egna språkinställningar i konfigurationsfilen, till exempel bildtexter.
+Så här anpassar du språk på din webbplats.
 
 ## Enkelspråkigt läge 
 
-Standardspråket definieras [systeminställningarna](how-to-change-the-system#systeminställningar). Ett annat språk kan definieras i [sidinställningarna](how-to-change-the-system#sidinställningar) högst upp på varje sida, till exempel `Language: en`. 
+Standardspråket definieras [systeminställningarna](how-to-change-the-system#systeminställningar) i filen `system/extensions/yellow-system.ini`. Ett annat språk kan definieras i [sidinställningarna](how-to-change-the-system#sidinställningar) högst upp på varje sida, till exempel `Language: sv`. 
 
 En engelsk sida:
 
@@ -88,8 +84,8 @@ Den andra skärmdumpen visar mapparna `1-en`,` 2-de`, `3-sv` och `default`. Dett
 
 För att visa ett språkval kan du skapa en sida som visar tillgängliga språk. Språkvalet kan integreras i navigeringen på din webbplats. Detta gör det möjligt för besökare att välja språk. 
 
-## Gör en översättning
+## Anpassa språkinställningar
 
-När du installerar en webbplats hälsas du med ett hej. Du kan göra en översättning om ett språk saknas. Börja med svenska språkfilen eller ett av tillgängliga språken. Detta visa dig vilka textrader och textfragment är tillgängliga. Det räcker om du översätter svenska språkfilen. En underhållare kan ta hand om allt annat. [Läs mer om översättningar](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md).
+För att anpassa språket på din webbplats ändrar man [språkinställningar](how-to-change-the-system#språkinställningar). Språkinställningarna innehåller språkinställningarna för din webbplats och för alla installerade tillägg. Du kan också lägga till dina egna språkinställningar i konfigurationsfilen, till exempel bildtexter. Du kan [göra en översättning](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md) om ett språk saknas.
 
 Har du några frågor? [Få hjälp](.).

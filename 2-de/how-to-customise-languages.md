@@ -1,15 +1,11 @@
 ---
-Title: Wie man eine Sprache anpasst
+Title: Wie man Sprachen anpasst
 ---
-Wie man eine Sprache seiner Webseite anpasst.
-
-## Spracheinstellungen anpassen
-
-Um die Sprache deiner Webseite anzupassen ändere die [Spracheinstellungen](how-to-change-the-system#spracheinstellungen). Die Spracheinstellungen enthalten die Einstellungen aller installierten Erweiterungen. Du kannst auch deine eigenen Spracheinstellungen zur Konfigurationsdatei hinzufügen, beispielsweise Bildunterschriften.
+Wie man die Sprachen seiner Webseite anpasst.
 
 ## Einsprachen-Modus
 
-Die Standardsprache wird in den [Systemeinstellungen](how-to-change-the-system#systemeinstellungen) festgelegt. Eine andere Sprache lässt sich in den [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen) ganz oben auf jeder Seite festlegen, zum Beispiel `Language: en`. 
+Die Standardsprache wird in den [Systemeinstellungen](how-to-change-the-system#systemeinstellungen) in der Datei `system/extensions/yellow-system.ini` festgelegt. Eine andere Sprache lässt sich in den [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen) ganz oben auf jeder Seite festlegen, zum Beispiel `Language: de`. 
 
 Eine Englische Seite:
 
@@ -88,8 +84,8 @@ Der zweite Screenshot zeigt die Verzeichnisse `1-en`, `2-de`, `3-sv` und `defaul
 
 Um eine Sprachauswahl anzuzeigen, kannst du eine Seite erstellen welche die vorhandenen Sprachen auflistet. Die Sprachauswahl kann man in die Navigation der Webseite einbauen. Das ermöglicht es Besuchern die Sprache auszuwählen.
 
-## Erstelle eine Übersetzung
+## Einstellungen anpassen
 
-Bei der Installation einer Webseite wirst du mit einem Hallo begrüßt. Du kannst eine Übersetzung erstellen falls eine Sprache fehlt. Beginne mit der deutschen Sprachdatei oder einer der vorhandenen Sprachen. Das zeigt dir welche Textzeilen und Textbausteine vorhanden sind. Es reicht aus wenn du die deutsche Sprachdatei übersetzt. Ein Betreuer kann sich um alles weitere kümmern. [Weitere Informationen zu Übersetzungen](https://github.com/annaesvensson/yellow-language/tree/main/README-de.md).
+Um die Sprache deiner Webseite anzupassen ändere die [Spracheinstellungen](how-to-change-the-system#spracheinstellungen). Die Spracheinstellungen enthalten die Spracheinstellungen der Webseite und aller installierten Erweiterungen. Du kannst auch deine eigenen Spracheinstellungen zur Konfigurationsdatei hinzufügen, beispielsweise Bildunterschriften. Du kannst eine [Übersetzung erstellen](https://github.com/annaesvensson/yellow-language/tree/main/README-de.md), falls eine Sprache fehlt.
 
 Hast du Fragen? [Hilfe finden](.).

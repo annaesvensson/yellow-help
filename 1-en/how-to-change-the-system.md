@@ -55,7 +55,7 @@ The language settings are stored in file `system/extensions/yellow-language.ini`
     CoreDateFormatLong: Y-m-d H:i
     media/images/photo.jpg: This is an example image
 
-You can define the language settings here. A language consist of `Language` and other settings. The language settings contain the settings of all installed extensions. You can also add your own language settings to the configuration file, for example image captions.
+You can define the language settings here. A language consist of `Language` and other settings. The language settings contain the language settings of your website and all installed extensions. You can also add your own language settings to the configuration file, for example image captions.
 
 ## User settings
 

@@ -1,11 +1,11 @@
 ---
 Title: How to customise a layout
 ---
-Here's how to customise a layout of your website.
+Here's how to customise the appearance of your website.
 
 ## Customising HTML
 
-To adjust the [HTML](https://www.w3schools.com/html/) code of your website change the layout. Let's see how layouts are made. The default layout is defined in the [system settings](how-to-change-the-system#system-settings). A different layout can be defined in the [page settings](how-to-change-the-system#page-settings) at the top of each page, for example `Layout: default`.
+You can customise the appearance of your website with HTML and CSS. All HTML files are stored in your `system/layouts` folder. All CSS files are stored in your `system/themes` folder. You can change these files as you like and also add your own files. Your changes will not be overwritten when the website is updated. For sophisticated layouts there's an [API for developers](api-for-developers).
 
 Here's an example file `system/layouts/default.html`:
 
@@ -59,6 +59,10 @@ Here's an example layout for showing page content and additional blog pages:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Themes can have their own layout files, to override the existing layout. Add a theme to the file name. For example the file `system/layouts/default.html` will be used with any theme, the file `system/layouts/stockholm-default.html` will only be used with `Theme: stockholm`.
+Note that themes can have their own layout files. For example the file `system/layouts/default.html` will be used with any theme, the file `system/layouts/stockholm-default.html` will only be used with `Theme: stockholm`.
+
+## Customising settings
+
+The default layout is defined in the [system settings](how-to-change-the-system#system-settings) in file `system/extensions/yellow-system.ini`. A different layout can be defined in the [page settings](how-to-change-the-system#page-settings) at the top of each page, for example `Layout: default`.
 
 Do you have questions? [Get help](.).

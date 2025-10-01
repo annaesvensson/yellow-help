@@ -40,7 +40,7 @@ Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf dein
 
 ### Kleines Layout-System
 
-Du kannst das Aussehen deiner Webseite mit HTML und CSS anpassen. Glücklicherweise musst du kein Web-Framework lernen, sondern kannst normales CSS verwenden. Für anspruchsvolle Erweiterungen gibt es die API. Das gibt dir die Möglichkeit auf Inhaltsdateien zuzugreifen, Kontrollstrukturen zu erstellen und das meiste wird dir als Entwickler wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. Es lohnt sich früher oder später einen Blick auf das kleine Layout-System zu werfen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
+Du kannst das Aussehen deiner Webseite mit HTML und CSS anpassen. Glücklicherweise musst du kein Web-Framework lernen, sondern kannst normales HTML und CSS verwenden. Für anspruchsvolle Layouts gibt es eine API für Entwickler. Das gibt dir die Möglichkeit auf Inhaltsdateien zuzugreifen, Kontrollstrukturen zu erstellen und das meiste wird dir als Entwickler wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. Es lohnt sich einen Blick auf das Layout-System zu werfen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
 
 ### Eingebauter Webserver
 
@@ -127,6 +127,26 @@ Layoutdatei mit Header und Footer:
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
+```
+
+Layoutdatei für Header:
+
+``` html
+<!DOCTYPE html>
+<html lang="<?php echo $this->yellow->page->getHtml("language") ?>">
+<head>
+<title><?php echo $this->yellow->page->getHtml("titleHeader") ?></title>
+<?php echo $this->yellow->page->getExtraHtml("header") ?>
+</head>
+<body>
+```
+
+Layoutdatei für Footer:
+
+``` html
+<?php echo $this->yellow->page->getExtraHtml("footer") ?>
+</body>
+</html>
 ```
 
 ### Yellow-Content
@@ -1326,7 +1346,7 @@ Code um die Initialisierung zu verarbeiten:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.1";
+    const VERSION = "0.9.1";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1341,7 +1361,7 @@ Code um einen Befehl zu verarbeiten:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.2";
+    const VERSION = "0.9.2";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1413,7 +1433,7 @@ Code um eine eigene Abkürzung zu erstellen:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.3";
+    const VERSION = "0.9.3";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1439,7 +1459,7 @@ Code um einen HTML-Header zu erstellen:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.4";
+    const VERSION = "0.9.4";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1499,7 +1519,7 @@ Code um Änderungen an Inhaltsdatei zu verarbeiten:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.5";
+    const VERSION = "0.9.5";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1523,7 +1543,7 @@ Code um Änderungen an Mediendatei zu verarbeiten:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.6";
+    const VERSION = "0.9.6";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1576,7 +1596,7 @@ Code um ein Aktualisierung-Ereignis zu verarbeiten:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.7";
+    const VERSION = "0.9.7";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1598,7 +1618,7 @@ Code um ein tägliches Ereignis zu verarbeiten:
 ``` php
 <?php
 class YellowExample {
-    const VERSION = "0.1.8";
+    const VERSION = "0.9.8";
     public $yellow;         // access to API
     
     // Handle initialisation

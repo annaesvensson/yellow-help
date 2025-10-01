@@ -15,7 +15,7 @@ TitleSlug: help
 ! * [Hur man ändrar innehållet](how-to-change-the-content)
 ! * [Hur man ändrar medierna](how-to-change-the-media)
 ! * [Hur man ändrar systemet](how-to-change-the-system)
-! * [Hur man anpassar ett språk](how-to-customise-a-language)
+! * [Hur man anpassar språk](how-to-customise-languages)
 ! * [Hur man anpassar en layout](how-to-customise-a-layout)
 ! * [Hur man anpassar ett tema](how-to-customise-a-theme)
 ! * [API för utvecklare](api-for-developers)

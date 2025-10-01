@@ -1,11 +1,11 @@
 ---
 Title: Wie man ein Layout anpasst
 ---
-Wie man ein Layout seiner Webseite anpasst.
+Wie man das Aussehen seiner Webseite anpasst.
 
 ## HTML anpassen
 
-Um den [HTML](https://www.w3schools.com/html/)-Code deiner Webseite anzupassen, ändere das Layout. Das Standard-Layout wird in den [Systemeinstellungen](how-to-change-the-system#systemeinstellungen) festgelegt. Ein anderes Layout lässt sich in den [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen) ganz oben auf jeder Seite festlegen, zum Beispiel `Layout: default`.
+Du kannst das Aussehen deiner Webseite mit HTML und CSS anpassen. Alle HTML-Dateien befinden sich im `system/layouts`-Verzeichnis. Alle CSS-Dateien befinden sich im `system/themes`-Verzeichnis. Du kannst diese Dateien beliebig ändern und auch deine eigenen Dateien hinzufügen. Deine Änderungen werden bei der Aktualisierung der Webseite nicht überschrieben. Für anspruchsvolle Layouts gibt es eine [API für Entwickler](api-for-developers).
 
 Hier ist eine Beispiel-Datei `system/layouts/default.html`:
 
@@ -59,6 +59,10 @@ Hier ist ein Beispiel-Layout um Seiteninhalt und zusätzliche Blogseiten anzuzei
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Themes können ihre eigenen Layoutdateien haben, um das vorhandene Layout zu überschreiben. Zum Beispiel wird die Datei `system/layouts/default.html` bei allen Themes verwendet, die Datei `system/layouts/stockholm-default.html` jedoch nur beim `Theme: stockholm`.
+Beachte daß Themes ihre eigenen Layoutdateien haben können. Zum Beispiel wird die Datei `system/layouts/default.html` bei allen Themes verwendet, die Datei `system/layouts/stockholm-default.html` jedoch nur beim `Theme: stockholm`.
+
+## Einstellungen anpassen
+
+Das Standard-Layout wird in den [Systemeinstellungen](how-to-change-the-system#systemeinstellungen) in der Datei `system/extensions/yellow-system.ini` festgelegt. Ein anderes Layout lässt sich in den [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen) ganz oben auf jeder Seite festlegen, zum Beispiel `Layout: default`.
 
 Hast du Fragen? [Hilfe finden](.).
