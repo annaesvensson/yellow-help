@@ -142,7 +142,4 @@ Using block elements:
     ! {.important}
     ! Here's information that needs attention.
 
-    ! {.note}
-    ! Hello, this text looks like a sticky note.
-
 Do you have questions? [Get help](.).

@@ -14,7 +14,6 @@ Här är avsnittet för färger och teckensnitt från filen `system/themes/stock
     --bg: #fff;
     --code-bg: #f7f7f7;
     --important-bg: #f0f8fe;
-    --note-bg: #fffbf0;
     --heading: #111;
     --text: #333;
     --code: #666;
@@ -22,7 +21,6 @@ Här är avsnittet för färger och teckensnitt från filen `system/themes/stock
     --link-active: #29f;
     --blockquote-accent: #29f;
     --important-accent: #08e;
-    --note-accent: #fb0;
     --separator: #ddd;
     --border: #bbb;
     --font: "Open Sans", Helvetica, sans-serif;
@@ -30,25 +28,33 @@ Här är avsnittet för färger och teckensnitt från filen `system/themes/stock
 }
 ```
 
-Här är en exempel-CSS för att definiera ett eget blockelement:
+Här är en exempel-CSS för ett eget blockelement med gul färg:
 
 ``` css
 .content .example {
     margin: 1em 0;
     padding: 0.5em 1em;
-    background-color: #f7f7f7;
+    background-color: #fffbf0;
     color: #333;
-    border-radius: 3px;
+}
+```
+
+Här är en exempel-CSS för ett eget blockelement med större teckensnitt:
+
+``` css
+.content .superduper {
+    margin: 2em 0;
+    font-size: 1.3em;
 }
 ```
 
 Här är en exempel-CSS för att definiera en centrerad layout:
 
 ``` css
-.layout-example .content {
+.layout-center .content {
     text-align: center;
 }
-.layout-example .content p {
+.layout-center .content p {
     font-size: 1.1em;
     max-width: 48em;
     margin: 2em auto;

@@ -140,9 +140,6 @@ Använd blockelement:
     ! och innehåller Markdown-textformatering.
 
     ! {.important}
-    ! Här är information som måste beaktas.
-
-    ! {.note}
-    ! Hej, den här texten ser ut som en klisterlapp.
+    ! Här är information som kräver uppmärksamhet.
 
 Har du några frågor? [Få hjälp](.).

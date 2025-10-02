@@ -20,7 +20,7 @@ Här är en exempelfil `system/layouts/default.html`:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Här är en exempellayout för att visa sidinnehåll och ytterligare HTML-kod:
+Här är en exempellayout för att visa sidinnehåll och modifieringsdatum:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -28,7 +28,7 @@ Här är en exempellayout för att visa sidinnehåll och ytterligare HTML-kod:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <?php echo $this->yellow->page->getContentHtml() ?>
-<p>Hello world</p>
+<p>Senast redigerad <?php echo $this->yellow->page->getDateHtml("modified") ?></p>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>

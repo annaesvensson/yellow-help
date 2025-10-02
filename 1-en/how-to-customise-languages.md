@@ -5,6 +5,8 @@ Here's how to customise the languages of your website.
 
 ## Single language mode
 
+All [language settings](how-to-change-the-system#language-settings) are stored in file `system/extensions/yellow-language.ini`. You can change this file as you like and also add your own language settings, for example image captions. Your changes will not be overwritten when the website is updated.
+
 The default language is defined the [system settings](how-to-change-the-system#system-settings) in file `system/extensions/yellow-system.ini`. A different language can be defined in the [page settings](how-to-change-the-system#page-settings) at the top of each page, for example `Language: en`.
 
 An English page:
@@ -82,10 +84,6 @@ The first screenshot shows the folders `1-en`, `2-de` and `3-sv`. This gives you
 
 The second screenshot shows the folders `1-en`, `2-de`, `3-sv` and `default`. This gives you the URLs `http://website/en/` `http://website/de/` `http://website/sv/` and a home page `http://website/` that automatically detects the visitor's language. 
 
-To show a language selection, you can create a page that lists available languages. The language selection can be integrated into the navigation of your website. This allows visitors to choose the language.
-
-## Customise settings
-
-To adjust the language of your website change the [language settings](how-to-change-the-system#language-settings). The language settings contain the language settings of of your website and all installed extensions. You can also add your own language settings to the configuration file, for example image captions. You can [make a translation](https://github.com/annaesvensson/yellow-language) if a language is missing.
+To show a language selection, you can create a page that lists available languages. The language selection can be integrated into the navigation of your website. This allows visitors to choose the language. There are around 20 languages ​​to choose from. You can [make a translation](https://github.com/annaesvensson/yellow-language) if a language is missing.
 
 Do you have questions? [Get help](.).

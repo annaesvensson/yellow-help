@@ -14,7 +14,6 @@ Hier ist der Abschnitt für Farben und Schriftarten aus der Datei `system/themes
     --bg: #fff;
     --code-bg: #f7f7f7;
     --important-bg: #f0f8fe;
-    --note-bg: #fffbf0;
     --heading: #111;
     --text: #333;
     --code: #666;
@@ -22,7 +21,6 @@ Hier ist der Abschnitt für Farben und Schriftarten aus der Datei `system/themes
     --link-active: #29f;
     --blockquote-accent: #29f;
     --important-accent: #08e;
-    --note-accent: #fb0;
     --separator: #ddd;
     --border: #bbb;
     --font: "Open Sans", Helvetica, sans-serif;
@@ -30,25 +28,33 @@ Hier ist der Abschnitt für Farben und Schriftarten aus der Datei `system/themes
 }
 ```
 
-Hier ist ein Beispiel-CSS um ein eigenes Blockelement zu definieren:
+Hier ist ein Beispiel-CSS für ein eigenes Blockelement mit gelber Farbe:
 
 ``` css
 .content .example {
     margin: 1em 0;
     padding: 0.5em 1em;
-    background-color: #f7f7f7;
+    background-color: #fffbf0;
     color: #333;
-    border-radius: 3px;
 }
 ```
 
-Hier ist ein Beispiel-CSS um ein zentriertes Layout zu definieren:
+Hier ist ein Beispiel-CSS für ein eigenes Blockelement mit größerer Schriftart:
 
 ``` css
-.layout-example .content {
+.content .superduper {
+    margin: 2em 0;
+    font-size: 1.3em;
+}
+```
+
+Hier ist ein Beispiel-CSS für ein eigenes Layout mit zentriertem Text:
+
+``` css
+.layout-center .content {
     text-align: center;
 }
-.layout-example .content p {
+.layout-center .content p {
     font-size: 1.1em;
     max-width: 48em;
     margin: 2em auto;

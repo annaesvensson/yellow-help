@@ -14,7 +14,6 @@ Here's the section for colors and fonts from the file `system/themes/stockholm.c
     --bg: #fff;
     --code-bg: #f7f7f7;
     --important-bg: #f0f8fe;
-    --note-bg: #fffbf0;
     --heading: #111;
     --text: #333;
     --code: #666;
@@ -22,7 +21,6 @@ Here's the section for colors and fonts from the file `system/themes/stockholm.c
     --link-active: #29f;
     --blockquote-accent: #29f;
     --important-accent: #08e;
-    --note-accent: #fb0;
     --separator: #ddd;
     --border: #bbb;
     --font: "Open Sans", Helvetica, sans-serif;
@@ -30,25 +28,33 @@ Here's the section for colors and fonts from the file `system/themes/stockholm.c
 }
 ```
 
-Here's an example CSS for defining a custom block element:
+Here's an example CSS for a custom block element with yellow color:
 
 ``` css
 .content .example {
     margin: 1em 0;
     padding: 0.5em 1em;
-    background-color: #f7f7f7;
+    background-color: #fffbf0;
     color: #333;
-    border-radius: 3px;
 }
 ```
 
-Here's an example CSS for defining a centered layout:
+Here's an example CSS for a custom block element with bigger font:
 
 ``` css
-.layout-example .content {
+.content .superduper {
+    margin: 2em 0;
+    font-size: 1.3em;
+}
+```
+
+Here's an example CSS for a custom layout with centered text:
+
+``` css
+.layout-center .content {
     text-align: center;
 }
-.layout-example .content p {
+.layout-center .content p {
     font-size: 1.1em;
     max-width: 48em;
     margin: 2em auto;

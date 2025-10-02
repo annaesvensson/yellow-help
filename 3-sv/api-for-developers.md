@@ -1054,8 +1054,8 @@ Layoutfil för att visa sidinnehåll och modifieringsdatum:
 <div class="content">
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p><?php echo $this->yellow->page->getDateHtml("modified") ?></p>
 <?php echo $this->yellow->page->getContentHtml() ?>
+<p>Senast redigerad <?php echo $this->yellow->page->getDateHtml("modified") ?></p>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>

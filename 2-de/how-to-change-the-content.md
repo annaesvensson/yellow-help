@@ -140,9 +140,6 @@ Blockelemente benutzen:
     ! und Markdown-Textformatierung beinhalten.
 
     ! {.important}
-    ! Hier sind Informationen die beachtet werden müssen.
-
-    ! {.note}
-    ! Hallo, dieser Text sieht aus wie ein Klebezettel.
+    ! Hier sind Informationen die Aufmerksamkeit erfordern.
 
 Hast du Fragen? [Hilfe finden](.).
