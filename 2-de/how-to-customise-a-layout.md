@@ -28,7 +28,7 @@ Hier ist ein Beispiel-Layout um Seiteninhalt und das Änderungsdatum anzuzeigen:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <?php echo $this->yellow->page->getContentHtml() ?>
-<p>Zuletzt bearbeitet am <?php echo $this->yellow->page->getDateHtml("modified") ?></p>
+<p>Zuletzt aktualisiert am <?php echo $this->yellow->page->getDateHtml("modified") ?></p>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>

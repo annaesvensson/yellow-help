@@ -28,7 +28,7 @@ Here's an example layout for showing page content and modification date:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <?php echo $this->yellow->page->getContentHtml() ?>
-<p>Last edited on <?php echo $this->yellow->page->getDateHtml("modified") ?></p>
+<p>Last updated on <?php echo $this->yellow->page->getDateHtml("modified") ?></p>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
