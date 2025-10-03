@@ -1,5 +1,36 @@
 ---
 Title: What's new
-Redirect: https://github.com/datenstrom/community/discussions/categories/see-what-s-new?discussions_q=category%3A%22See+what%27s+new%22+sort%3Adate_created
 ---
-See what's new in Datenstrom Yellow.
+Stay up to date with the latest changes and new features.
+
+## Latest changes from 2025-10-03
+
+! {.wikiblock}
+! - Improved website with more information about latest changes
+! - Updated API, changed content element type notice to general
+! - Updated edit extension, upload with different JPEG file name extensions
+! - Updated gallery extension, popup can be triggered by clicking on a link
+! - Updated Markdown extension, improved email handling for long TLD
+! - Updated Markdown extension, syntax for block elements has changed
+
+## Datenstrom Yellow 0.9
+
+! {.wikiblock}
+! - Improved website with more information about available extensions
+! - Updated API, added method pages->group()
+! - Updated API, added method lookup->getHtmlAttributes()
+! - Updated API, added method lookup->normaliseAddress()
+! - Updated API, added method toolbox->getDirectoryInformation() 
+! - Updated API, added coreAssetLocation for virtually mapped system files
+! - Updated API, replaced coreThemeLocation with coreAssetLocation
+! - Updated API, replaced coreExtensionLocation with coreAssetLocation
+! - Updated API, changed onParseContentShortcut() to onParseContentElement()
+! - Updated API, changed parseContentShortcut() to parseContentElement()
+! - Updated API, backwards compatibility with the old API will be removed soon
+! - Updated core extension, virtual location for layouts/themes/workers has changed
+! - Updated core extension, support for sourcemap files was added
+! - Updated feed extension, support for more filters was added
+! - Updated Markdown extension, better event handling
+! - Updated publish extension, new way of publishing extensions
+
+Do you have questions? [Get help](.).

@@ -1392,7 +1392,7 @@ Yellow-Parse-Ereignisse unterrichten wenn eine Seite erzeugt wird. Die folgenden
 
 `onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput`
 
-Die folgenden Element-Typen sind verfügbar:
+Die folgenden Content-Element-Typen sind verfügbar:
 
 `inline` = Abkürzung für Textelement  
 `block` = Abkürzung für Blockelement, kann mehrere Textzeilen enthalten  

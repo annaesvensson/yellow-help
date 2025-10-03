@@ -34,6 +34,6 @@ Falls du mit uns arbeiten möchtest, [siehe Tipps zum Zusammenarbeiten](https://
 
 Es interessiert uns was du machen möchtest und welche Probleme du hast. Die Datenstrom-Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Gehe weiter, falls du dich in einer Situation befindest in der du nichts beitragen oder lernen kannst. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei anderen für ihre Hilfe. Das sind zwar nur kleine Gesten, aber sie machen die Zusammenarbeit angenehmer.
 
-Den Quellcode findest du auf [GitHub](https://github.com/topics/datenstrom-yellow) und [Codeberg](https://codeberg.org/explore/repos?q=datenstrom-yellow&topic=1), Pull-Requests mit Verbesserungen sind willkommen.
+Den Quellcode findest du auf [GitHub](https://github.com/topics/datenstrom-yellow) und [Codeberg](https://codeberg.org/explore/repos?q=datenstrom-yellow&topic=1), Pull-Requests und Verbesserungen sind willkommen.
 
 Hast du Fragen? [Hilfe finden](.).

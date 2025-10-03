@@ -1392,7 +1392,7 @@ Yellow parse händelser meddelar när en sida genereras. Följande händelser ä
 
 `onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput`
 
-Följande elementtyper är tillgängliga:
+Följande content-element-typer är tillgängliga:
 
 `inline` = förkortning för textelement  
 `block` = förkortning för blockelement, kan innehålla flera textrader  

@@ -1391,7 +1391,7 @@ Yellow parse events notify when a page is generated. The following events are av
 
 `onParseContentElement` `onParseContentHtml` `onParseContentRaw` `onParseMetaData` `onParsePageExtra` `onParsePageLayout` `onParsePageOutput`
 
-The following element types are available:
+The following content element types are available:
 
 `inline` = shortcut for inline element  
 `block` = shortcut for block element, may contain multiple text lines  
