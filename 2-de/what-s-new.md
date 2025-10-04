@@ -1,7 +1,7 @@
 ---
 Title: Was ist neu
 ---
-Bleibe über die neuesten Änderungen und neuen Funktionen auf dem Laufenden.
+Bleibe über Produktänderungen und neue Funktionen auf dem Laufenden.
 
 ! {.wikiblock}
 ! ## Zuletzt aktualisiert am 04.10.2025
@@ -13,7 +13,7 @@ Bleibe über die neuesten Änderungen und neuen Funktionen auf dem Laufenden.
 ! - Markdown-Erweiterung aktualisiert, E-Mail-Verarbeitung für lange TLD verbessert
 ! - Markdown-Erweiterung aktualisiert, Syntax für Blockelemente wurde geändert
 ! 
-! [Weitere Informationen zur Software-Aktualisierung](how-to-change-the-system#software-aktualisierung).
+! [Weitere Informationen zur Webseiten-Aktualisierung](how-to-change-the-system#webseiten-aktualisierung).
 
 ! {.wikiblock}
 ! ## Datenstrom Yellow 0.9

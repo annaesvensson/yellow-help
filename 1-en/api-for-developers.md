@@ -32,24 +32,6 @@ The following files are important, it is best to take a closer look at them:
 `system/extensions/yellow-user.ini` = [file with user settings](how-to-change-the-system#user-settings)  
 `system/extensions/yellow-website.log` = [log file of the website](how-to-change-the-system#log-file)  
 
-## Tools
-
-### Small web editor
-
-You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The small web editor allows you to edit content files and upload media files. It is a great way to update your website. Text formatting with Markdown is supported. HTML is also supported. [Learn more about the small web editor](https://github.com/annaesvensson/yellow-edit).
-
-### Small layout system
-
-You can customise the appearance of your website with HTML and CSS. Fortunately you don't have to learn a web framework, but can use normal HTML and CSS. For sophisticated layouts there's an API for developers. This allows you to access content files, create control structures and most of it will probably seem pretty familiar to you as a developer. We are using the same API everywhere, from layout files to extensions. It's worth taking a look at the layout system sooner or later. [Learn more about layouts](how-to-customise-a-layout) and [themes](how-to-customise-a-theme).
-
-### Built-in web server
-
-You can start a web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to change your website on your computer and upload it to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the built-in web server](https://github.com/annaesvensson/yellow-serve).
-
-### Static generator
-
-You can generate a static website at the command line. The static generator makes the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php generate`, you can optionally add a folder and a location. This will generate a static website in the `public` folder. Upload the static website to your web server and generate a new one when needed. [Learn more about the static generator](https://github.com/annaesvensson/yellow-generate).
-
 ## Objects
 
 With the help of the API you have access to the files, settings and extensions. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings.
@@ -1631,6 +1613,24 @@ class YellowExample {
     }
 }
 ```
+
+## Tools
+
+### Small web editor
+
+You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The small web editor allows you to edit content files and upload media files. It is a great way to update your website. Text formatting with Markdown is supported. HTML is also supported. [Learn more about the small web editor](https://github.com/annaesvensson/yellow-edit).
+
+### Small layout system
+
+You can customise the appearance of your website with HTML and CSS. Fortunately you don't have to learn a web framework, but can use normal HTML and CSS. For sophisticated layouts there's an API for developers. This allows you to access content files, create control structures and most of it will probably seem pretty familiar to you as a developer. We are using the same API everywhere, from layout files to extensions. It's worth taking a look at the layout system sooner or later. [Learn more about layouts](how-to-customise-a-layout) and [themes](how-to-customise-a-theme).
+
+### Built-in web server
+
+You can start a web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to change your website on your computer and upload it to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the built-in web server](https://github.com/annaesvensson/yellow-serve).
+
+### Static generator
+
+You can generate a static website at the command line. The static generator makes the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php generate`, you can optionally add a folder and a location. This will generate a static website in the `public` folder. Upload the static website to your web server and generate a new one when needed. [Learn more about the static generator](https://github.com/annaesvensson/yellow-generate).
 
 ## Debug mode
 

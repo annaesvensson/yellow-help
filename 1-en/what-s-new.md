@@ -1,7 +1,7 @@
 ---
 Title: What's new
 ---
-Stay up to date with the latest changes and new features.
+Stay up to date with the latest product changes and new features.
 
 ! {.wikiblock}
 ! ## Last updated on 2025-10-04
@@ -13,7 +13,7 @@ Stay up to date with the latest changes and new features.
 ! - Updated Markdown extension, improved email handling for long TLD
 ! - Updated Markdown extension, syntax for block elements has changed
 !
-! [Learn more about software update](how-to-change-the-system#software-update).
+! [Learn more about the website update](how-to-change-the-system#website-update).
 
 ! {.wikiblock}
 ! ## Datenstrom Yellow 0.9

@@ -111,9 +111,9 @@ The following settings can be configured at the top of a page:
 `unlisted` = page is not visible, but can be accessed with the correct link  
 `shared` = page is not visible, but can be included in other pages  
 
-## Software update
+## Website update
 
-You can use a [web browser](https://github.com/annaesvensson/yellow-update) or the [command line](https://github.com/annaesvensson/yellow-core) to update a website. Your website will show if updates are available. After updating your website, you can see in the log file which extensions have been updated. Detailed information can be found in the documentation for the respective extension.
+You can use a [web browser](https://github.com/annaesvensson/yellow-update) or the [command line](https://github.com/annaesvensson/yellow-core) to update your website. You decide when you want to update your website. There's also a [what's new page](what-s-new). Here you'll find information about the latest product changes and published extensions. Detailed information can be found in the documentation for each extension.
 
 ## Log file
 

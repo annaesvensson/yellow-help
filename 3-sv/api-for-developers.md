@@ -32,24 +32,6 @@ Följande filer är viktiga, det är bäst att ta en närmare titt på dem:
 `system/extensions/yellow-user.ini` = [fil med användarinställningar](how-to-change-the-system#användarinställningar)  
 `system/extensions/yellow-website.log` = [loggfilen för webbplatsen](how-to-change-the-system#loggfilen)  
 
-## Verktyg
-
-### Liten webbredigerare
-
-Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Den lilla webbredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. HTML stöds också. [Läs mer om lilla webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
-
-### Litet layoutsystem
-
-Du kan anpassa utseendet på din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett webbramverk, utan kan använda vanlig HTML och CSS. För sofistikerade layouter finns det ett API för utvecklare. Detta ger dig möjlighet att komma åt innehållsfiler, skapa kontrollstrukturer och det mesta kommer förmodligen att verka ganska bekant för dig som utvecklare. Vi använder samma API:et överallt, från layoutfiler till tillägg. Det är värt att titta på layoutsystemet. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
-
-### Inbyggd webbserver
-
-Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att ändra din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md).
-
-### Statisk generator
-
-Du kan generera en statisk webbplats på kommandoraden. Den statiska generatorn skapar hella webbplatsen i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om statiska generatorn](https://github.com/annaesvensson/yellow-generate/tree/main/README-sv.md).
-
 ## Objekt
 
 Med hjälp av API:et har du tillgång till filer, inställningar och tillägg. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar.
@@ -1632,6 +1614,24 @@ class YellowExample {
     }
 }
 ```
+
+## Verktyg
+
+### Liten webbredigerare
+
+Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Den lilla webbredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. HTML stöds också. [Läs mer om lilla webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
+
+### Litet layoutsystem
+
+Du kan anpassa utseendet på din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett webbramverk, utan kan använda vanlig HTML och CSS. För sofistikerade layouter finns det ett API för utvecklare. Detta ger dig möjlighet att komma åt innehållsfiler, skapa kontrollstrukturer och det mesta kommer förmodligen att verka ganska bekant för dig som utvecklare. Vi använder samma API:et överallt, från layoutfiler till tillägg. Det är värt att titta på layoutsystemet. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
+
+### Inbyggd webbserver
+
+Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att ändra din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md).
+
+### Statisk generator
+
+Du kan generera en statisk webbplats på kommandoraden. Den statiska generatorn skapar hella webbplatsen i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om statiska generatorn](https://github.com/annaesvensson/yellow-generate/tree/main/README-sv.md).
 
 ### Felsökningsläge
 

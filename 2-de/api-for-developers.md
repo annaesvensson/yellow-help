@@ -32,24 +32,6 @@ Die folgenden Dateien sind wichtig, schaue sie dir am besten genauer an:
 `system/extensions/yellow-user.ini` = [Datei mit Benutzereinstellungen](how-to-change-the-system#benutzereinstellungen)  
 `system/extensions/yellow-website.log` = [Logdatei der Webseite](how-to-change-the-system#logdatei)  
 
-## Werkzeuge
-
-### Kleiner Webeditor
-
-Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der kleine Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Textformatierung mit Markdown wird unterstützt. HTML wird auch unterstützt. [Weitere Informationen zum kleinen Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
-
-### Kleines Layout-System
-
-Du kannst das Aussehen deiner Webseite mit HTML und CSS anpassen. Glücklicherweise musst du kein Web-Framework lernen, sondern kannst normales HTML und CSS verwenden. Für anspruchsvolle Layouts gibt es eine API für Entwickler. Das gibt dir die Möglichkeit auf Inhaltsdateien zuzugreifen, Kontrollstrukturen zu erstellen und das meiste wird dir als Entwickler wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. Es lohnt sich einen Blick auf das Layout-System zu werfen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
-
-### Eingebauter Webserver
-
-Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer zu ändern und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum eingebauten Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
-
-### Statischer Generator
-
-Du kannst eine statische Webseite in der Befehlszeile generieren. Der statische Generator macht die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php generate`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das generiert eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und generiere bei Bedarf eine neue. [Weitere Informationen zum statischen Generator](https://github.com/annaesvensson/yellow-generate/tree/main/README-de.md).
-
 ## Objekte
 
 Mit Hilfe der API hast du Zugriff auf Dateien, Einstellungen und Erweiterungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen.
@@ -1634,6 +1616,24 @@ class YellowExample {
     }
 }
 ```
+
+## Werkzeuge
+
+### Kleiner Webeditor
+
+Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der kleine Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Textformatierung mit Markdown wird unterstützt. HTML wird auch unterstützt. [Weitere Informationen zum kleinen Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
+
+### Kleines Layout-System
+
+Du kannst das Aussehen deiner Webseite mit HTML und CSS anpassen. Glücklicherweise musst du kein Web-Framework lernen, sondern kannst normales HTML und CSS verwenden. Für anspruchsvolle Layouts gibt es eine API für Entwickler. Das gibt dir die Möglichkeit auf Inhaltsdateien zuzugreifen, Kontrollstrukturen zu erstellen und das meiste wird dir als Entwickler wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. Es lohnt sich einen Blick auf das Layout-System zu werfen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
+
+### Eingebauter Webserver
+
+Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer zu ändern und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum eingebauten Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
+
+### Statischer Generator
+
+Du kannst eine statische Webseite in der Befehlszeile generieren. Der statische Generator macht die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php generate`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das generiert eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und generiere bei Bedarf eine neue. [Weitere Informationen zum statischen Generator](https://github.com/annaesvensson/yellow-generate/tree/main/README-de.md).
 
 ## Debug-Modus
 

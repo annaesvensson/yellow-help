@@ -111,9 +111,9 @@ Följande inställningar kan konfigureras högst upp på en sida:
 `unlisted` = sidan är inte synlig, men kan nås med rätt länk  
 `shared` = sidan är inte synlig, men kan ingå i andra sidor  
 
-## Mjukvaruuppdatering
+## Webbplatsuppdatering
 
-Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md) eller [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md) för att uppdatera en webbsida. Din webbplats kommer att visas om uppdateringar är tillgängliga. Efter att du har uppdaterat din webbplats kan du se i loggfilen vilka tillägg som har uppdaterats. Detaljerad information finns i dokumentationen för respektive tillägg.
+Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md) eller [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md) för att uppdatera din webbplats. Du bestämmer själv när du vill uppdatera din webbplats. Det finns också en [nyhetssida](what-s-new). Här hittar du information om senaste produktändringarna och publicerade tillägg. Detaljerad information finns i dokumentationen för respektive tillägg.
 
 ## Loggfilen
 
