@@ -3,19 +3,21 @@ Title: Vad är nytt
 ---
 Håll dig uppdaterad med senaste ändringarna och nya funktionerna.
 
-## Senaste ändringarna från 2025-10-03
-
 ! {.wikiblock}
-! - Förbättrad webbplats med mer information om de senaste ändringarna
+! ## Senast uppdaterad 2025-10-04
+!
+! - Förbättrad webbplats med mer information om produktändringar
 ! - Uppdaterat API, ändrat content-element-typ notice till general
 ! - Uppdaterat edit-tillägg, uppladdning med olika JPEG-filändele
 ! - Uppdaterat gallery-tillägg, popup kan utlösas genom att klicka på en länk
 ! - Uppdaterat Markdown-tillägg, förbättrad e-posthantering för lång toppdomän
 ! - Uppdaterat Markdown-tillägg, syntax för blockelement har ändrats
-
-## Datenstrom Yellow 0.9
+!
+! [Läs mer om mjukvaruuppdatering](how-to-change-the-system#mjukvaruuppdatering).
 
 ! {.wikiblock}
+! ## Datenstrom Yellow 0.9
+!
 ! - Förbättrad webbplats med mer information om tillgängliga tillägg
 ! - Uppdaterat API, tillagt metod pages->group()
 ! - Uppdaterat API, tillagt metod lookup->getHtmlAttributes()

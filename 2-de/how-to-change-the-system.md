@@ -111,6 +111,10 @@ Die folgenden Einstellungen können ganz oben auf einer Seite vorgenommen werden
 `unlisted` = Seite ist nicht sichtbar, aber kann mit dem richtigen Link abgerufen werden  
 `shared` = Seite ist nicht sichtbar, aber kann in andere Seiten eingebunden werden  
 
+## Software-Aktualisierung
+
+Im [Webbrowser](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md) oder der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) kannst du eine Webseite aktualisieren. Deine Webseite zeigt an, ob Aktualisierungen verfügbar sind. Nachdem du deine Webseite aktualisiert hast, kannst du in der Logdatei sehen welche Erweiterungen aktualisiert wurden. Detaillierte Information findest du in der Dokumentation der entsprechenden Erweiterung.
+
 ## Logdatei
 
 Die Logdatei findet man in der Datei `system/extensions/yellow-website.log`. Hier ist ein Beispiel:

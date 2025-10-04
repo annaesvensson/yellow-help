@@ -3,19 +3,21 @@ Title: What's new
 ---
 Stay up to date with the latest changes and new features.
 
-## Latest changes from 2025-10-03
-
 ! {.wikiblock}
-! - Improved website with more information about latest changes
+! ## Last updated on 2025-10-04
+!
+! - Improved website with more information about product changes
 ! - Updated API, changed content element type notice to general
 ! - Updated edit extension, upload with different JPEG file name extensions
 ! - Updated gallery extension, popup can be triggered by clicking on a link
 ! - Updated Markdown extension, improved email handling for long TLD
 ! - Updated Markdown extension, syntax for block elements has changed
-
-## Datenstrom Yellow 0.9
+!
+! [Learn more about software update](how-to-change-the-system#software-update).
 
 ! {.wikiblock}
+! ## Datenstrom Yellow 0.9
+!
 ! - Improved website with more information about available extensions
 ! - Updated API, added method pages->group()
 ! - Updated API, added method lookup->getHtmlAttributes()

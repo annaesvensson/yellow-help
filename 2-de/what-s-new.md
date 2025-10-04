@@ -3,19 +3,21 @@ Title: Was ist neu
 ---
 Bleibe über die neuesten Änderungen und neuen Funktionen auf dem Laufenden.
 
-## Neuste Änderungen vom 03.10.2025
-
 ! {.wikiblock}
-! - Verbesserte Webseite mit mehr Informationen über neuste Änderungen
+! ## Zuletzt aktualisiert am 04.10.2025
+!
+! - Verbesserte Webseite mit mehr Informationen über Produktänderungen
 ! - API aktualisiert, Content-Element-Typ notice in general geändert
 ! - Edit-Erweiterung aktualisiert, Upload mit verschiedenen JPEG-Dateinamenerweiterungen
 ! - Gallery-Erweiterung aktualisiert, Popup kann durch Klicken auf einen Link ausgelöst werden
 ! - Markdown-Erweiterung aktualisiert, E-Mail-Verarbeitung für lange TLD verbessert
 ! - Markdown-Erweiterung aktualisiert, Syntax für Blockelemente wurde geändert
-
-## Datenstrom Yellow 0.9
+! 
+! [Weitere Informationen zur Software-Aktualisierung](how-to-change-the-system#software-aktualisierung).
 
 ! {.wikiblock}
+! ## Datenstrom Yellow 0.9
+!
 ! - Verbesserte Webseite mit mehr Informationen zu verfügbaren Erweiterungen
 ! - API aktualisiert, Methode pages->group() hinzugefügt
 ! - API aktualisiert, Methode lookup->getHtmlAttributes() hinzugefügt
