@@ -111,9 +111,9 @@ Die folgenden Einstellungen können ganz oben auf einer Seite vorgenommen werden
 `unlisted` = Seite ist nicht sichtbar, aber kann mit dem richtigen Link abgerufen werden  
 `shared` = Seite ist nicht sichtbar, aber kann in andere Seiten eingebunden werden  
 
-## Webseiten-Aktualisierung
+## Webseite aktualisieren
 
-Im [Webbrowser](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md) oder der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) kannst du deine Webseite aktualisieren. Du bestimmst selbst wann du deine Webseite aktualisieren möchtest. Es gibt auch eine [Seite mit Neuigkeiten](what-s-new). Hier findest du Informationen über Produktänderungen und veröffentlichte Erweiterungen. Detaillierte Information findest du in der Dokumentation der entsprechenden Erweiterung.
+Im [Webbrowser](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md) oder der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) kannst du deine Webseite aktualisieren. Es gibt Informationen über die [neusten Produktänderungen](what-s-new) und Erweiterungen. Denke daran dass nur veröffentlichte Erweiterungen aktualisiert werden, möglicherweise musst du experimentelle Erweiterungen manuell aktualisieren. Detaillierte Information findest du in  der entsprechenden Erweiterung.
 
 ## Logdatei
 

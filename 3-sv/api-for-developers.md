@@ -1262,7 +1262,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Tillägg
 
-Din webbplats består av kärnan och andra tillägg. Källkoden för alla tillägg finns i `system/layouts` mappen. I början laddas alla tillägg och `onLoad` kommer att anropas. Det finns olika händelser som informerar dig när en begäran från webbläsaren tas emot, ett kommando utförs eller information finns tillgänglig. I de flesta fall kommer en sida att genereras.
+En webbplats består av kärnan och andra tillägg. Källkoden för alla tillägg finns i `system/layouts` mappen. I början laddas alla tillägg och `onLoad` kommer att anropas. Det finns olika händelser som informerar dig när en begäran från webbläsaren tas emot, ett kommando utförs eller information finns tillgänglig. I de flesta fall kommer en sida att genereras.
 
 ``` box-drawing {aria-hidden=true}
 onLoad
@@ -1624,6 +1624,10 @@ Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgängli
 ### Litet layoutsystem
 
 Du kan anpassa utseendet på din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett webbramverk, utan kan använda vanlig HTML och CSS. För sofistikerade layouter finns det ett API för utvecklare. Detta ger dig möjlighet att komma åt innehållsfiler, skapa kontrollstrukturer och det mesta kommer förmodligen att verka ganska bekant för dig som utvecklare. Vi använder samma API:et överallt, från layoutfiler till tillägg. Det är värt att titta på layoutsystemet. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
+
+### Litet tilläggssystem
+
+Du kan anpassa utseendet på din webbplats med tillägg. En webbplats består av kärnan och andra tillägg. Tanken är att standardinstallationen endast innehåller det viktigaste för små webbplatser. Du kan lägga till fler funktioner senare. Detta ger dig möjlighet att anpassa nästan alla aspekter av systemet, till exempel för att lägga till en egen förkortning eller ett JavaScript-bibliotek. Vi använder samma API:et överallt. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md) och [att göra tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md).
 
 ### Inbyggd webbserver
 

@@ -46,7 +46,7 @@ Datenstrom Yellow requires complete upload!
 
 Kopiera igen alla medföljande filer till installationsmappen. Kontrollera om din FTP-applikation visar ett felmeddelande under uppladdningen. Ibland händer det att dataöverföringen avbröts under uppladdningen. Efter att alla filer har kopierats till installationsmappen bör problemet lösas.
 
-## Problem efter installationen
+## Problem efter installationen eller uppdateringen
 
 Följande felmeddelande kan uppstå:
 

@@ -1261,7 +1261,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Extensions
 
-Your website consists of the core and other extensions. The source code of all extensions is stored in your `system/workers` folder. At the beginning, all extensions are loaded and `onLoad` will be called. There are various events that inform you when a request from the web browser is received, a command is executed or information is available. In most cases a page will be generated.
+A website consists of the core and other extensions. The source code of all extensions is stored in your `system/workers` folder. At the beginning, all extensions are loaded and `onLoad` will be called. There are various events that inform you when a request from the web browser is received, a command is executed or information is available. In most cases a page will be generated.
 
 ``` box-drawing {aria-hidden=true}
 onLoad
@@ -1623,6 +1623,10 @@ You can edit your website in a web browser. The login page is available on your 
 ### Small layout system
 
 You can customise the appearance of your website with HTML and CSS. Fortunately you don't have to learn a web framework, but can use normal HTML and CSS. For sophisticated layouts there's an API for developers. This allows you to access content files, create control structures and most of it will probably seem pretty familiar to you as a developer. We are using the same API everywhere, from layout files to extensions. It's worth taking a look at the layout system sooner or later. [Learn more about layouts](how-to-customise-a-layout) and [themes](how-to-customise-a-theme).
+
+### Small extension system 
+
+You can customise the appearance of your website with extensions. A website consists of the core and other extensions. The idea is that the standard installation only includes the most important things for small websites. You can add more features later. This allows you to customise neraly every aspect of the system, for example to add a custom shortcut or a JavaScript library. We are using the same API everywhere. [Learn more about extensions](https://github.com/annaesvensson/yellow-update) and [making extensions](https://github.com/annaesvensson/yellow-publish).
 
 ### Built-in web server
 

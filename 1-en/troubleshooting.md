@@ -46,7 +46,7 @@ Datenstrom Yellow requires complete upload!
 
 Copy again all of the supplied files into the installation folder. Check if your FTP application shows an error message during upload. It sometimes happens that the data transfer was interrupted during upload. After all files have been copied into the installation folder, the problem should be resolved.
 
-## Problems after installation
+## Problems after installation or update
 
 The following error message can happen:
 

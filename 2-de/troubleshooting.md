@@ -46,7 +46,7 @@ Datenstrom Yellow requires complete upload!
 
 Kopiere nochmal alle mitgelieferten Dateien ins Installations-Verzeichnis. Überprüfe ob deine FTP-Anwendung beim Hochladen eine Fehlermeldung anzeigt. Es passiert manchmal dass die Datenübertragung beim Hochladen unterbrochen wurde. Nachdem alle Dateien ins Installations-Verzeichnis kopiert wurden, sollte das Problem behoben sein.
 
-## Probleme nach der Installation
+## Probleme nach der Installation oder Aktualisierung
 
 Die folgende Fehlermeldung kann auftreten: 
 

@@ -1627,6 +1627,10 @@ Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf dein
 
 Du kannst das Aussehen deiner Webseite mit HTML und CSS anpassen. Glücklicherweise musst du kein Web-Framework lernen, sondern kannst normales HTML und CSS verwenden. Für anspruchsvolle Layouts gibt es eine API für Entwickler. Das gibt dir die Möglichkeit auf Inhaltsdateien zuzugreifen, Kontrollstrukturen zu erstellen und das meiste wird dir als Entwickler wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. Es lohnt sich einen Blick auf das Layout-System zu werfen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
 
+### Kleines Erweiterungssystem
+
+Du kannst das Aussehen deiner Webseite mit Erweiterungen anpassen. Deine Webseite besteht aus dem Core und anderen Erweiterungen. Die Standardinstallation enthält nur die wichtigsten Funktionen für kleine Webseiten. Du kannst später weitere Funktionen hinzufügen. Das gibt dir die Möglichkeit nahezu jeden Aspekt des Systems individuell anzupassen, zum Beispiel eine eigene Abkürzung oder eine JavaScript-Bibliothek hinzufügen. Wir verwenden überall die gleiche API. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md) und [Erstellen von Erweiterungen](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md).
+
 ### Eingebauter Webserver
 
 Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer zu ändern und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum eingebauten Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
