@@ -568,7 +568,7 @@ Layoutfil för att visa användare och deras status:
 
 ### Yellow extension
 
-Klassen `YellowExtension` ger tillgång till [tillägg](#tillägg). Följande metoder är tillgängliga:
+Klassen `YellowExtension` ger tillgång till installerade tillägg. Följande metoder är tillgängliga:
 
 `get` `getModified` `isExisting`
 
@@ -1260,9 +1260,9 @@ var_dump(is_array_empty(new ArrayObject())); // bool(true)
 var_dump(is_array_empty(array("entry")));    // bool(false)
 ```
 
-## Tillägg
+## Händelser
 
-En webbplats består av kärnan och andra tillägg. Källkoden för alla tillägg finns i `system/layouts` mappen. I början laddas alla tillägg och `onLoad` kommer att anropas. Det finns olika händelser som informerar dig när en begäran från webbläsaren tas emot, ett kommando utförs eller information finns tillgänglig. I de flesta fall kommer en sida att genereras.
+En webbplats består av kärnan och andra tillägg. I början laddas alla tillägg och `onLoad` kommer att anropas. Det finns olika händelser som informerar dig när en begäran från webbläsaren tas emot, ett kommando utförs eller information finns tillgänglig. Du kan hantera de händelser du är intresserad av.
 
 ``` box-drawing {aria-hidden=true}
 onLoad
@@ -1627,7 +1627,7 @@ Du kan anpassa utseendet på din webbplats med HTML och CSS. Lyckligtvis behöve
 
 ### Litet tilläggssystem
 
-Du kan anpassa utseendet på din webbplats med tillägg. En webbplats består av kärnan och andra tillägg. Tanken är att standardinstallationen endast innehåller det viktigaste för små webbplatser. Du kan lägga till fler funktioner senare. Detta ger dig möjlighet att anpassa nästan alla aspekter av systemet, till exempel för att lägga till en egen förkortning eller ett JavaScript-bibliotek. Vi använder samma API:et överallt. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md) och [att göra tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md).
+Du kan anpassa utseendet på din webbplats med tillägg. En webbplats består av kärnan och andra tillägg. Tanken är att standardinstallationen endast innehåller de viktigaste sakerna för små webbplatser. Du kan lägga till fler funktioner senare. Detta ger dig möjlighet att anpassa nästan alla aspekter av systemet, till exempel för att lägga till en egen förkortning eller ett JavaScript-bibliotek. Vi använder samma API:et överallt. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md) och [att göra tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md).
 
 ### Inbyggd webbserver
 

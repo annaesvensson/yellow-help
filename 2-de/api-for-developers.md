@@ -568,7 +568,7 @@ Layoutdatei um Benutzer und ihren Status anzuzeigen:
 
 ### Yellow-Extension
 
-Die Klasse `YellowExtension` gibt Zugang zu [Erweiterungen](#erweiterungen). Die folgenden Methoden sind verfügbar:
+Die Klasse `YellowExtension` gibt Zugang zu installierten Erweiterungen. Die folgenden Methoden sind verfügbar:
 
 `get` `getModified` `isExisting`
 
@@ -1260,9 +1260,9 @@ var_dump(is_array_empty(new ArrayObject())); // bool(true)
 var_dump(is_array_empty(array("entry")));    // bool(false)
 ```
 
-## Erweiterungen
+## Ereignisse
 
-Deine Webseite besteht aus dem Core und anderen Erweiterungen. Der Quellcode von allen Erweiterungen befindet sich im `system/workers`-Verzeichnis. Am Anfang werden alle Erweiterungen geladen und `onLoad` wird aufgerufen. Es gibt verschiedene Ereignisse die dich informieren wenn eine Anfrage vom Webbrowser empfangen wird, ein Befehl ausgeführt wird oder Informationen verfügbar sind. In den meisten Fällen wird eine Seite erzeugt. 
+Eine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden alle Erweiterungen geladen und `onLoad` wird aufgerufen. Es gibt verschiedene Ereignisse die Erweiterung informieren wenn eine Anfrage vom Webbrowser empfangen wird, ein Befehl ausgeführt wird oder Informationen verfügbar sind. Du kannst die Ereignisse verarbeiten an denen du interessiert bist.
 
 ``` box-drawing {aria-hidden=true}
 onLoad
@@ -1629,7 +1629,7 @@ Du kannst das Aussehen deiner Webseite mit HTML und CSS anpassen. Glücklicherwe
 
 ### Kleines Erweiterungssystem
 
-Du kannst das Aussehen deiner Webseite mit Erweiterungen anpassen. Deine Webseite besteht aus dem Core und anderen Erweiterungen. Die Standardinstallation enthält nur die wichtigsten Funktionen für kleine Webseiten. Du kannst später weitere Funktionen hinzufügen. Das gibt dir die Möglichkeit nahezu jeden Aspekt des Systems individuell anzupassen, zum Beispiel eine eigene Abkürzung oder eine JavaScript-Bibliothek hinzufügen. Wir verwenden überall die gleiche API. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md) und [Erstellen von Erweiterungen](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md).
+Du kannst das Aussehen deiner Webseite mit Erweiterungen anpassen. Eine Webseite besteht aus dem Core und anderen Erweiterungen. Die Standardinstallation enthält nur die wichtigsten Dinge für kleine Webseiten. Du kannst später weitere Funktionen hinzufügen. Das gibt dir die Möglichkeit nahezu jeden Aspekt des Systems individuell anzupassen, zum Beispiel eine eigene Abkürzung oder eine JavaScript-Bibliothek hinzufügen. Wir verwenden überall die gleiche API. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md) und [Erstellen von Erweiterungen](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md).
 
 ### Eingebauter Webserver
 

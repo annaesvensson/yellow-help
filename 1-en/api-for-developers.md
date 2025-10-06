@@ -567,7 +567,7 @@ Layout file for showing users and their status:
 
 ### Yellow extension
 
-The class `YellowExtension` gives access to [extensions](#extensions). The following methods are available:
+The class `YellowExtension` gives access to installed extensions. The following methods are available:
 
 `get` `getModified` `isExisting`
 
@@ -1259,9 +1259,9 @@ var_dump(is_array_empty(new ArrayObject())); // bool(true)
 var_dump(is_array_empty(array("entry")));    // bool(false)
 ```
 
-## Extensions
+## Events
 
-A website consists of the core and other extensions. The source code of all extensions is stored in your `system/workers` folder. At the beginning, all extensions are loaded and `onLoad` will be called. There are various events that inform you when a request from the web browser is received, a command is executed or information is available. In most cases a page will be generated.
+A website consists of the core and other extensions. At the beginning, all extensions are loaded and `onLoad` will be called. There are various events that inform extensions when a request from the web browser is received, a command is executed or information is available. You can handle the events you are interested in.
 
 ``` box-drawing {aria-hidden=true}
 onLoad
