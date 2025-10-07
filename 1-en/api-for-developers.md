@@ -1626,7 +1626,7 @@ You can customise the appearance of your website with HTML and CSS. Fortunately 
 
 ### Small extension system 
 
-You can customise the appearance of your website with extensions. A website consists of the core and other extensions. The idea is that the standard installation only includes the most important things for small websites. You can add more features later. This allows you to customise neraly every aspect of the system, for example to add a custom shortcut or a JavaScript library. We are using the same API everywhere. [Learn more about extensions](https://github.com/annaesvensson/yellow-update) and [making extensions](https://github.com/annaesvensson/yellow-publish).
+You can customise the appearance of your website with extensions. A website consists of the core and other extensions. The idea is that the standard installation only includes the most important things for small websites. You can add more features later. This allows you to customise nearly every aspect of the system, for example to add a custom shortcut or a JavaScript library. We are using the same API everywhere. [Learn more about extensions](https://github.com/annaesvensson/yellow-update) and [making extensions](https://github.com/annaesvensson/yellow-publish).
 
 ### Built-in web server
 
