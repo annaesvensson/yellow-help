@@ -15,6 +15,10 @@ Alle Systemdateien befinden sich im `system`-Verzeichnis. Hier passt man seine W
 
 Das `system/extensions`-Verzeichnis enthält Konfigurationsdateien und die Logdatei. Man kann das Aussehen seiner Webseite im `system/layouts`-Verzeichnis und `system/themes`-Verzeichnis anpassen. Man kann alle Layouts und Themes so ändern wie man will. Kenntnisse in HTML und CSS sind erforderlich. Im `system/workers`-Verzeichnis sollte man keine Dateien ändern.
 
+## Erweiterungen
+
+Du kannst deine Webseite mit [Erweiterungen](https://datenstrom.se/de/yellow/extensions/) anpassen. Das gibt dir die Möglichkeit nahezu jeden Aspekt des Systems anzupassen. Erweiterungen bieten dir zusätzliche Funktionen, Sprachen und Themes. Der Core hat die [Kernfunktionalität deiner Webseite](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md). Alles andere bestimmst du. Es gibt eine Bildergalerie, ein Kontaktformular, Suchfunktion, Kommentarfunktion und vieles mehr.
+
 ## Systemeinstellungen
 
 Die zentrale Konfigurationsdatei ist `system/extensions/yellow-system.ini`. Hier ist ein Beispiel:
@@ -111,10 +115,6 @@ Die folgenden Einstellungen können ganz oben auf einer Seite vorgenommen werden
 `unlisted` = Seite ist nicht sichtbar, aber kann mit dem richtigen Link abgerufen werden  
 `shared` = Seite ist nicht sichtbar, aber kann in andere Seiten eingebunden werden  
 
-## Webseite aktualisieren
-
-Im [Webbrowser](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md) oder der [Befehlszeile](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md) kannst du deine Webseite aktualisieren. Es gibt Informationen über die [neusten Produktänderungen](what-s-new) und Erweiterungen. Denke daran dass nur veröffentlichte Erweiterungen aktualisiert werden, möglicherweise musst du experimentelle Erweiterungen manuell aktualisieren. Detaillierte Information findest du in  der entsprechenden Erweiterung.
-
 ## Logdatei
 
 Die Logdatei findet man in der Datei `system/extensions/yellow-website.log`. Hier ist ein Beispiel:
@@ -122,8 +122,8 @@ Die Logdatei findet man in der Datei `system/extensions/yellow-website.log`. Hie
 ```
 2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
 2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
+2024-04-28 14:13:07 info Install extension 'Edit 0.9.2'
 2024-04-28 14:13:07 info Install extension 'Markdown 0.9.2'
-2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.2'
 2024-04-28 14:13:07 info Install extension 'English 0.9.2'
 2024-04-28 14:13:07 info Install extension 'German 0.9.2'
 2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'

@@ -1265,11 +1265,11 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 En webbplats består av kärnan och andra tillägg. I början laddas alla tillägg och `onLoad` kommer att anropas. Det finns olika händelser som informerar dig när en begäran från webbläsaren tas emot, ett kommando utförs eller information finns tillgänglig. Du kan hantera de händelser du är intresserad av.
 
 ``` box-drawing {aria-hidden=true}
-onLoad
-    │
-    ▼
-onStartup ───────────────────────────────────────────┐             Information
-    │                                                │          finns tillgänglig
+onLoad                                                             Information
+    │                                                           finns tillgänglig
+    ▼                                                                   │
+onStartup ───────────────────────────────────────────┐                  │
+    │                                                │                  │
     ▼                                                │                  │
 onRequest ───────────────────┐                       │                  │
     │                        │                       │                  │
@@ -1426,7 +1426,7 @@ class YellowExample {
     public function onParseContentElement($page, $name, $text, $attributes, $type) {
         $output = null;
         if ($name=="example" && ($type=="block" || $type=="inline")) {
-            $output = "<div class=\"".htmlspecialchars($name)."\">";
+            $output = "<div class=\"example\">";
             $output .= "Add more HTML code here";
             $output .= "</div>";
         }
@@ -1623,11 +1623,11 @@ Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgängli
 
 ### Litet layoutsystem
 
-Du kan anpassa utseendet på din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett webbramverk, utan kan använda vanlig HTML och CSS. För sofistikerade layouter finns det ett API för utvecklare. Detta ger dig möjlighet att komma åt innehållsfiler, skapa kontrollstrukturer och det mesta kommer förmodligen att verka ganska bekant för dig som utvecklare. Vi använder samma API:et överallt, från layoutfiler till tillägg. Det är värt att titta på layoutsystemet. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
+Du kan anpassa din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett webbramverk, utan kan använda vanlig HTML och CSS. För sofistikerade layouter finns det ett API för utvecklare. Detta ger dig möjlighet att komma åt innehållsfiler, skapa kontrollstrukturer och det mesta kommer förmodligen att verka ganska bekant för dig som utvecklare. Vi använder samma API:et överallt, från layoutfiler till tillägg. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
 
 ### Litet tilläggssystem
 
-Du kan anpassa utseendet på din webbplats med tillägg. En webbplats består av kärnan och andra tillägg. Tanken är att standardinstallationen endast innehåller de viktigaste sakerna för små webbplatser. Du kan lägga till fler funktioner senare. Detta ger dig möjlighet att anpassa nästan alla aspekter av systemet, till exempel för att lägga till en egen förkortning eller ett JavaScript-bibliotek. Vi använder samma API:et överallt. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md) och [att göra tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md).
+Du kan anpassa din webbplats med tillägg. Detta ger dig möjlighet att anpassa nästan alla aspekter av systemet. Tanken är att standardinstallationen innehåller de viktigaste sakerna för små webbplatser. Du kan lägga till fler funktioner senare. Det finns tillägg med ytterligare funktioner, språk och teman som du kan installera. Vi använder samma API:et överallt, från layoutfiler till tillägg. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md) och [att göra tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md).
 
 ### Inbyggd webbserver
 

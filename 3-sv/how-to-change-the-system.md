@@ -15,6 +15,10 @@ Alla systemfiler finns i `system` mappen. Du kan anpassa din webbplats här.
 
 Mappen `system/extensions` innehåller konfigurationsfilar och loggfilen. Du kan justera utseendet på din webbplats i `system/layouts` mappen och `system/themes` mappen. Du kan ändra alla layouter och teman som du vill. Vissa kunskaper i HTML och CSS krävs. Det är bättre om man inte ändrar filer i `system/workers` mappen.
 
+## Tillägg
+
+Du kan anpassa din webbplats med [tillägg](https://datenstrom.se/sv/yellow/extensions/). Detta ger dig möjlighet att anpassa nästan alla aspekter av systemet. Tillägg ger dig ytterligare funktioner, språk och teman. Det som kallas core har [kärnfunktionaliteten på din webbplats](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md). Allt annat är upp till dig. Det finns ett bildgalleri, kontaktformulär, sökfunktion, kommentarsfunktion och mycket mer.
+
 ## Systeminställningar
 
 Den centrala konfigurationsfilen är `system/extensions/yellow-system.ini`. Här är ett exempel: 
@@ -111,10 +115,6 @@ Följande inställningar kan konfigureras högst upp på en sida:
 `unlisted` = sidan är inte synlig, men kan nås med rätt länk  
 `shared` = sidan är inte synlig, men kan ingå i andra sidor  
 
-## Uppdatera webbplats
-
-Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md) eller [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md) för att uppdatera din webbplats. Det finns information om [senaste produktändringarna](what-s-new) och tillägg. Tänk på att att endast publicerade tillägg kommer att uppdateras, du kan behöva uppdatera experimentella tillägg manuellt. Detaljerad information finns i dokumentationen för respektive tillägg.
-
 ## Loggfilen
 
 Loggfilen finns i filen `system/extensions/yellow-website.log`. Här är ett exempel:
@@ -122,8 +122,8 @@ Loggfilen finns i filen `system/extensions/yellow-website.log`. Här är ett exe
 ```
 2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
 2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
+2024-04-28 14:13:07 info Install extension 'Edit 0.9.2'
 2024-04-28 14:13:07 info Install extension 'Markdown 0.9.2'
-2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.2'
 2024-04-28 14:13:07 info Install extension 'English 0.9.2'
 2024-04-28 14:13:07 info Install extension 'German 0.9.2'
 2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'

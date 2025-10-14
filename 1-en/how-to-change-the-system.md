@@ -15,6 +15,10 @@ All system files are located in the `system` folder. You can change your website
 
 The `system/extensions` folder contains configuration files and the log file. You can change the appearance of your website in the `system/layouts` folder and `system/themes` folder. You can change all layouts and themes as you like. Knowledge of HTML and CSS is required. It is better not to change any files in the `system/workers` folder.
 
+## Extensions
+
+You can customise your website with [extensions](https://datenstrom.se/yellow/extensions/). This allows you to customise nearly every aspect of the system. Extensions give you additional features, languages and themes. The core has the [core functionality of your website](https://github.com/annaesvensson/yellow-core). Everything else is up to you. There is an image gallery, contact form, search feature, comment feature and much more.
+
 ## System settings
 
 The main configuration file is `system/extensions/yellow-system.ini`. Here's an example:
@@ -111,10 +115,6 @@ The following settings can be configured at the top of a page:
 `unlisted` = page is not visible, but can be accessed with the correct link  
 `shared` = page is not visible, but can be included in other pages  
 
-## Updating website
-
-You can use a [web browser](https://github.com/annaesvensson/yellow-update) or the [command line](https://github.com/annaesvensson/yellow-core) to update your website. There are information about the [latest product changes](what-s-new) and extensions. Keep in mind that only published extensions will be updated, you may need to update experimental extensions manually. Detailed information can be found in the documentation for each extension. 
-
 ## Log file
 
 The log file can be found in file `system/extensions/yellow-website.log`. Here's an example:
@@ -122,8 +122,8 @@ The log file can be found in file `system/extensions/yellow-website.log`. Here's
 ```
 2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
 2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
+2024-04-28 14:13:07 info Install extension 'Edit 0.9.2'
 2024-04-28 14:13:07 info Install extension 'Markdown 0.9.2'
-2024-04-28 14:13:07 info Install extension 'Stockholm 0.9.2'
 2024-04-28 14:13:07 info Install extension 'English 0.9.2'
 2024-04-28 14:13:07 info Install extension 'German 0.9.2'
 2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'

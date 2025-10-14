@@ -1265,11 +1265,11 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 Eine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden alle Erweiterungen geladen und `onLoad` wird aufgerufen. Es gibt verschiedene Ereignisse die Erweiterung informieren wenn eine Anfrage vom Webbrowser empfangen wird, ein Befehl ausgeführt wird oder Informationen verfügbar sind. Du kannst die Ereignisse verarbeiten an denen du interessiert bist.
 
 ``` box-drawing {aria-hidden=true}
-onLoad
-    │
-    ▼
-onStartup ───────────────────────────────────────────┐            Informationen
-    │                                                │            sind verfügbar
+onLoad                                                             Informationen
+    │                                                              sind verfügbar
+    ▼                                                                   │
+onStartup ───────────────────────────────────────────┐                  │
+    │                                                │                  │
     ▼                                                │                  │
 onRequest ───────────────────┐                       │                  │
     │                        │                       │                  │
@@ -1427,7 +1427,7 @@ class YellowExample {
     public function onParseContentElement($page, $name, $text, $attributes, $type) {
         $output = null;
         if ($name=="example" && ($type=="block" || $type=="inline")) {
-            $output = "<div class=\"".htmlspecialchars($name)."\">";
+            $output = "<div class=\"example\">";
             $output .= "Add more HTML code here";
             $output .= "</div>";
         }
@@ -1625,11 +1625,11 @@ Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf dein
 
 ### Kleines Layout-System
 
-Du kannst das Aussehen deiner Webseite mit HTML und CSS anpassen. Glücklicherweise musst du kein Web-Framework lernen, sondern kannst normales HTML und CSS verwenden. Für anspruchsvolle Layouts gibt es eine API für Entwickler. Das gibt dir die Möglichkeit auf Inhaltsdateien zuzugreifen, Kontrollstrukturen zu erstellen und das meiste wird dir als Entwickler wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. Es lohnt sich einen Blick auf das Layout-System zu werfen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
+Du kannst deine Webseite mit HTML und CSS anpassen. Glücklicherweise musst du kein Web-Framework lernen, sondern kannst normales HTML und CSS verwenden. Für anspruchsvolle Layouts gibt es eine API für Entwickler. Das gibt dir die Möglichkeit auf Inhaltsdateien zuzugreifen, Kontrollstrukturen zu erstellen und das meiste wird dir als Entwickler wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
 
 ### Kleines Erweiterungssystem
 
-Du kannst das Aussehen deiner Webseite mit Erweiterungen anpassen. Eine Webseite besteht aus dem Core und anderen Erweiterungen. Die Standardinstallation enthält nur die wichtigsten Dinge für kleine Webseiten. Du kannst später weitere Funktionen hinzufügen. Das gibt dir die Möglichkeit nahezu jeden Aspekt des Systems individuell anzupassen, zum Beispiel eine eigene Abkürzung oder eine JavaScript-Bibliothek hinzufügen. Wir verwenden überall die gleiche API. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md) und [Erstellen von Erweiterungen](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md).
+Du kannst deine Webseite mit Erweiterungen anpassen. Das gibt dir die Möglichkeit nahezu jeden Aspekt des Systems anzupassen. Die Idee dahinter ist, dass die Standardinstallation die wichtigsten Dinge für kleine Webseiten beinhaltet. Du kannst später weitere Funktionen hinzufügen. Es gibt Erweiterungen mit zusätzlichen Funktionen, Sprachen und Themes die du installieren kannst. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md) und [Erstellen von Erweiterungen](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md).
 
 ### Eingebauter Webserver
 

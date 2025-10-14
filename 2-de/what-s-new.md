@@ -13,7 +13,7 @@ Bleibe über die neusten Produktänderungen und Erweiterungen auf dem Laufenden.
 ! - Markdown-Erweiterung aktualisiert, E-Mail-Verarbeitung für lange TLD verbessert
 ! - Markdown-Erweiterung aktualisiert, Syntax für Blockelemente wurde geändert
 ! 
-! [Weitere Informationen zum Aktualisieren](how-to-change-the-system#webseite-aktualisieren).
+! [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
 
 ! {.wikiblock}
 ! ## Datenstrom Yellow 0.9

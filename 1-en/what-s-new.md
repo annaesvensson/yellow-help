@@ -13,7 +13,7 @@ Stay up to date with the latest product changes and extensions.
 ! - Updated Markdown extension, improved email handling for long TLD
 ! - Updated Markdown extension, syntax for block elements has changed
 !
-! [Learn more about updating](how-to-change-the-system#updating-website).
+! [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
 
 ! {.wikiblock}
 ! ## Datenstrom Yellow 0.9
