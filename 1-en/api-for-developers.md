@@ -25,7 +25,7 @@ You can edit your website in a text editor. The `content` folder contains the [c
     └── workers           = files for developers, designers and translators
 ```
 
-The following files are important, it is best to take a closer look at them:
+The following files are important for the functionality of the website:
 
 `system/extensions/yellow-system.ini` = [file with system settings](how-to-change-the-system#system-settings)  
 `system/extensions/yellow-language.ini` = [file with language settings](how-to-change-the-system#language-settings)  

@@ -23,7 +23,7 @@ Falls du einen Fehler melden möchtest, [beginne eine neue Diskussion](https://g
 
 ## Wie man mit uns arbeitet
 
-* Denke darüber nach was du machen möchte und was das Leben einfacher machen würde.
+* Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde.
 * Frage dich selbst, brauche ich das, will ich das, kann ich das besser machen?
 * Erst funktionieren lassen und dann besser machen.
 * Du schaffst das, es ist einfacher als du denkst

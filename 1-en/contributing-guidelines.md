@@ -23,7 +23,7 @@ If you want to report a bug, [start a new discussion](https://github.com/datenst
 
 ## How to work with us
 
-* Think about what you want to do and what would make life easier.
+* Imagine what the user wants to do and what would make their life easier.
 * Ask yourself, do I need this, do I want this, can I make this better?
 * First make it work and then make it better.
 * You can do it, it's easier than you think.

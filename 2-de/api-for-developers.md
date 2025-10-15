@@ -25,7 +25,7 @@ Du kannst deine Webseite im Texteditor bearbeiten. Das `content`-Verzeichnis ent
     └── workers           = Dateien für Entwickler, Designer und Übersetzer
 ```
 
-Die folgenden Dateien sind wichtig, schaue sie dir am besten genauer an:
+Die folgenden Dateien sind wichtig für die Funktionsweise der Webseite:
 
 `system/extensions/yellow-system.ini` = [Datei mit Systemeinstellungen](how-to-change-the-system#systemeinstellungen)  
 `system/extensions/yellow-language.ini` = [Datei mit Spracheinstellungen](how-to-change-the-system#spracheinstellungen)  

@@ -25,12 +25,12 @@ Du kan redigera din webbplats i textredigeraren. Mappen `content` innehåller we
     └── workers           = filer for utvecklare, formgivare och översättare
 ```
 
-Följande filer är viktiga, det är bäst att ta en närmare titt på dem:
+Följande filer är viktiga för webbplatsens funktion:
 
 `system/extensions/yellow-system.ini` = [fil med systeminställningar](how-to-change-the-system#systeminställningar)  
 `system/extensions/yellow-language.ini` = [fil med språkinställningar](how-to-change-the-system#språkinställningar)  
 `system/extensions/yellow-user.ini` = [fil med användarinställningar](how-to-change-the-system#användarinställningar)  
-`system/extensions/yellow-website.log` = [loggfilen för webbplatsen](how-to-change-the-system#loggfilen)  
+`system/extensions/yellow-website.log` = [webbplatsen loggfil](how-to-change-the-system#loggfilen)  
 
 ## Objekt
 

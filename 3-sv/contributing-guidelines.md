@@ -23,7 +23,7 @@ Om du vill rapportera ett fel, [starta en ny diskussion](https://github.com/date
 
 ## Hur man jobbar med oss
 
-* Fundera på vad du vill göra och vad som skulle göra livet lättare.
+* Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare.
 * Fråga dig själv, behöver jag det här, vill jag det här, kan jag göra det här bättre?
 * Först få det att fungera och sedan gör det bättre.
 * Du klarar det, det är enklare än du tror.
