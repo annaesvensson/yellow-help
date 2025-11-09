@@ -1,7 +1,7 @@
 ---
 Title: Was ist neu
 ---
-Bleibe über die neusten Produktänderungen und Erweiterungen auf dem Laufenden.
+Bleibe über die neusten Produktänderungen auf dem Laufenden.
 
 ! {.wikiblock}
 ! ## Zuletzt aktualisiert am 04.10.2025
@@ -13,7 +13,7 @@ Bleibe über die neusten Produktänderungen und Erweiterungen auf dem Laufenden.
 ! - Markdown-Erweiterung aktualisiert, E-Mail-Verarbeitung für lange TLD verbessert
 ! - Markdown-Erweiterung aktualisiert, Syntax für Blockelemente wurde geändert
 ! 
-! [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
+! [Weitere Informationen zum Aktualisieren](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
 
 ! {.wikiblock}
 ! ## Datenstrom Yellow 0.9

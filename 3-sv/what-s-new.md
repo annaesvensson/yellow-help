@@ -1,7 +1,7 @@
 ---
 Title: Vad är nytt
 ---
-Håll dig uppdaterad med senaste produktändringarna och tilläggen.
+Håll dig uppdaterad med senaste produktändringarna.
 
 ! {.wikiblock}
 ! ## Senast uppdaterad 2025-10-04
@@ -13,7 +13,7 @@ Håll dig uppdaterad med senaste produktändringarna och tilläggen.
 ! - Uppdaterat Markdown-tillägg, förbättrad e-posthantering för lång toppdomän
 ! - Uppdaterat Markdown-tillägg, syntax för blockelement har ändrats
 !
-! [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
+! [Läs mer om uppdatering](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
 
 ! {.wikiblock}
 ! ## Datenstrom Yellow 0.9
