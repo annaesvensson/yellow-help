@@ -4,10 +4,11 @@ Title: What's new
 Stay up to date with the latest product changes.
 
 ! {.wikiblock}
-! ## Last updated on 2025-10-04
+! ## Last updated on 2025-11-09
 !
 ! - Improved website with more information about product changes
 ! - Updated API, changed content element type notice to general
+! - Updated core extension, support for webmanifest files was added
 ! - Updated edit extension, upload with different JPEG file name extensions
 ! - Updated gallery extension, popup can be triggered by clicking on a link
 ! - Updated Markdown extension, improved email handling for long TLD

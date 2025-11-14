@@ -4,10 +4,11 @@ Title: Vad är nytt
 Håll dig uppdaterad med senaste produktändringarna.
 
 ! {.wikiblock}
-! ## Senast uppdaterad 2025-10-04
+! ## Senast uppdaterad 2025-11-09
 !
 ! - Förbättrad webbplats med mer information om produktändringar
 ! - Uppdaterat API, ändrat content-element-typ notice till general
+! - Uppdaterat core-tillägg, stöd för webmanifest-filer har lagts till
 ! - Uppdaterat edit-tillägg, uppladdning med olika JPEG-filändele
 ! - Uppdaterat gallery-tillägg, popup kan utlösas genom att klicka på en länk
 ! - Uppdaterat Markdown-tillägg, förbättrad e-posthantering för lång toppdomän

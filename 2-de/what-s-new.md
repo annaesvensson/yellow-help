@@ -4,10 +4,11 @@ Title: Was ist neu
 Bleibe über die neusten Produktänderungen auf dem Laufenden.
 
 ! {.wikiblock}
-! ## Zuletzt aktualisiert am 04.10.2025
+! ## Zuletzt aktualisiert am 09.11.2025
 !
 ! - Verbesserte Webseite mit mehr Informationen über Produktänderungen
 ! - API aktualisiert, Content-Element-Typ notice in general geändert
+! - Core-Erweiterung aktualisiert, Unterstützung für Webmanifest-Dateien hinzugefügt
 ! - Edit-Erweiterung aktualisiert, Upload mit verschiedenen JPEG-Dateinamenerweiterungen
 ! - Gallery-Erweiterung aktualisiert, Popup kann durch Klicken auf einen Link ausgelöst werden
 ! - Markdown-Erweiterung aktualisiert, E-Mail-Verarbeitung für lange TLD verbessert
