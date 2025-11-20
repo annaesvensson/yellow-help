@@ -24,4 +24,4 @@ TitleSlug: help
 
 ## Möchtest du Fragen stellen?
 
-Funktioniert etwas nicht wie erwartet? Suchst du weitere Informationen? Es besteht eine gute Chance, dass deine Frage bereits beantwortet wurde. Falls nicht, beschreibe was du machen möchtest. Die Datenstrom-Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. [Weitere Informationen zum Zusammenarbeiten](contributing-guidelines).
+Funktioniert etwas nicht wie erwartet? Suchst du weitere Informationen? Es besteht eine gute Chance, dass deine Frage bereits beantwortet wurde. Die Datenstrom-Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. [Weitere Informationen zum Zusammenarbeiten](contributing-guidelines).
