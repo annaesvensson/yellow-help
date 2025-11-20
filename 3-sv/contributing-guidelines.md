@@ -25,7 +25,7 @@ Om du vill rapportera ett fel, [starta en ny diskussion](https://github.com/date
 
 * Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare.
 * Fråga dig själv, behöver jag det här, vill jag det här, kan jag göra det här bättre?
-* Titta på filer, mappar, verktyg och API:et för utvecklare.
+* Titta på filer, mappar och API:et för utvecklare.
 * Först få det att fungera och sedan gör det bättre.
 
 Om du vill jobba med oss, [se tips för samarbete](https://github.com/datenstrom/community/discussions/760) och [obesvarade diskussioner](https://github.com/datenstrom/community/discussions?discussions_q=is%3Aunanswered+sort%3Adate_created).
