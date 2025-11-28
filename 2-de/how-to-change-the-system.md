@@ -15,10 +15,6 @@ Alle Systemdateien befinden sich im `system`-Verzeichnis. Hier passt man seine W
 
 Das `system/extensions`-Verzeichnis enthält Konfigurationsdateien und die Logdatei. Man kann das Aussehen seiner Webseite im `system/layouts`-Verzeichnis und `system/themes`-Verzeichnis anpassen. Man kann alle Layouts und Themes so ändern wie man will. Kenntnisse in HTML und CSS sind erforderlich. Im `system/workers`-Verzeichnis sollte man keine Dateien ändern.
 
-## Erweiterungen
-
-Du kannst deine Webseite mit [Erweiterungen](https://datenstrom.se/de/yellow/extensions/) anpassen. Das gibt dir die Möglichkeit nahezu jeden Aspekt des Systems anzupassen. Erweiterungen bieten dir zusätzliche Funktionen, Sprachen und Themes. Der Core hat die [Kernfunktionalität deiner Webseite](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md). Alles andere bestimmst du. Es gibt eine Bildergalerie, ein Kontaktformular, Suchfunktion, Kommentarfunktion und vieles mehr.
-
 ## Systemeinstellungen
 
 Die zentrale Konfigurationsdatei ist `system/extensions/yellow-system.ini`. Hier ist ein Beispiel:
@@ -127,9 +123,9 @@ Die Logdatei findet man in der Datei `system/extensions/yellow-website.log`. Hie
 2024-04-28 14:13:07 info Install extension 'English 0.9.2'
 2024-04-28 14:13:07 info Install extension 'German 0.9.2'
 2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
-2024-04-28 14:23:11 info Install extension 'Fika 0.9.1'
-2024-04-28 14:23:11 error Process file 'system/workers/fika.php' with fatal error!
+2024-04-28 14:23:10 info Install extension 'Fika 0.9.1'
 2024-04-28 14:33:13 info Update extension 'Fika 0.9.2'
+2024-04-28 14:33:14 error Process file 'system/workers/fika.php' with fatal error!
 ```
 
 Hast du Fragen? [Hilfe finden](.).

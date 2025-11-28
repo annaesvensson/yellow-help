@@ -2,7 +2,7 @@
 Title: Felsökning
 ShowLanguageSelection: 1
 ---
-Läs hur du hittar och löser problem.
+Läs hur du löser vanliga problem.
 
 [toc]
 
@@ -29,16 +29,16 @@ Datenstrom Yellow requires write access!
 Kör kommandot `chmod -R a+rw *` i installationsmappen. Du kan också använda din FTP-applikation för att ge skrivbehörighet till alla filer. Det rekommenderas att ge skrivbehörighet till alla filer och mappar i installationsmappen. Så snart webbplatsen har tillräcklig skrivåtkomst i `system`-mappen bör problemet lösas.
 
 ```
-Datenstrom Yellow requires configuration file!
-```
-
-Kopiera medföljande `.htaccess`-filen till installationsmappen. Kontrollera om din FTP-applikation har en inställning för att visa alla filer. Ibland händer det att filen `.htaccess` förbises under installationen. Så snart saknade konfigurationsfilen har kopierats till installationsmappen bör problemet lösas.
-
-```
 Datenstrom Yellow requires rewrite support!
 ```
 
-Kontrollera konfigurationsfilen för din webbserver, [se problem med webbserver](#problem-med-webbserver), [Apache](#problem-med-apache) och [Nginx](#problem-med-nginx). Vissa webbservrar kräver ytterligare inställningar, men det beror mycket på vilken webbserver och vilket operativsystem du använder. Så snart webbservern vidarebefordrar HTTP-förfrågningar till `yellow.php` bör problemet lösas.
+Kontrollera konfiguration för din webbserver, [se exempel](#problem-med-webbservern). Vissa webbservrar kräver ytterligare inställningar, men det beror mycket på vilken webbserver och vilket operativsystem du använder. Det är bäst att kontakta din webbhotell för hjälp. Så snart webbservern vidarebefordrar HTTP-förfrågningar till `yellow.php` bör problemet lösas.
+
+```
+Datenstrom Yellow requires htaccess file!
+```
+
+Kopiera medföljande `.htaccess`-filen till installationsmappen. Kontrollera om din FTP-applikation har en inställning för att visa alla filer. Ibland händer det att filen `.htaccess` förbises under installationen. Så snart saknade konfigurationsfilen har kopierats till installationsmappen bör problemet lösas.
 
 ```
 Datenstrom Yellow requires complete upload!
@@ -46,7 +46,7 @@ Datenstrom Yellow requires complete upload!
 
 Kopiera igen alla medföljande filer till installationsmappen. Kontrollera om din FTP-applikation visar ett felmeddelande under uppladdningen. Ibland händer det att dataöverföringen avbröts under uppladdningen. Efter att alla filer har kopierats till installationsmappen bör problemet lösas.
 
-## Problem efter installationen eller uppdateringen
+## Problem efter uppdateringen
 
 Följande felmeddelande kan uppstå:
 
@@ -54,9 +54,7 @@ Följande felmeddelande kan uppstå:
 Datenstrom Yellow stopped with fatal error. Activate the debug mode for more information.
 ```
 
-Du kan använda felsökningsläget för att undersöka problem eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget på din webbplats, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Beroende på felsökningsläget visas mer eller mindre information på skärmen. [Läs mer om felsökningsläget](api-for-developers#felsökningsläge).
-
-Viktig information skrivs också till filen `system/extensions/yellow-website.log`. Om du inte kan åtgärda orsaken till ett problem själv, [rapportera ett fel tillsammans med loggfilen](contributing-guidelines). Loggfilen ger en översikt över vad som händer på din webbplats, vilka tillägg installerades och vilka uppdaterades. Här är ett exempel:
+Sök efter problem i loggfilen `system/extensions/yellow-website.log`. Här är ett exempel:
 
 ```
 2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
@@ -66,20 +64,29 @@ Viktig information skrivs också till filen `system/extensions/yellow-website.lo
 2024-04-28 14:13:07 info Install extension 'English 0.9.2'
 2024-04-28 14:13:07 info Install extension 'German 0.9.2'
 2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
-2024-04-28 14:23:11 info Install extension 'Fika 0.9.1'
-2024-04-28 14:23:11 error Process file 'system/workers/fika.php' with fatal error!
+2024-04-28 14:23:10 info Install extension 'Fika 0.9.1'
 2024-04-28 14:33:13 info Update extension 'Fika 0.9.2'
+2024-04-28 14:33:14 error Process file 'system/workers/fika.php' with fatal error!
 ```
 
-## Problem med webbserver
+Du kan använda felsökningsläget för att undersöka orsaken till ett problem eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Ytterligare information kommer att visas på skärmen och i webbläsarkonsolen. Beroende på felsökningsläget visas mer eller mindre information. [Läs mer om felsökningsläget](api-for-developers#felsökningsläge).
 
-Kontrollera konfigurationsfilen på din webbserver. Du behöver en konfigurationsfil som vidarebefordrar HTTP-förfrågningar till innehållshanteringssystemet. Du kan översätta medföljande `.htaccess`-konfigurationsfilen till ett format som din webbserver förstår. Om du inte hittar en konfigurationsfil för din webbserver, kontakta din webbhotell eller [fråga Datenstroms nätgemenskapen](contributing-guidelines).
+## Problem med e-postservern
 
-## Problem med Apache
+Du behöver en e-postserver för att Datenstrom Yellow ska kunna skicka e-post. Kontakta din webbhotell och fråga om sendmail är aktiverat. När du har bekräftat att sendmail är aktiverat är nästa alternativ att konfigurera email för utgående meddelanden. Standard-e-postadressen för utgående meddelanden är `noreply`. E-postservern behöver lägga till ditt domännamn för att skapa en komplett e-postadress, till exempel `noreply@example.com`. Ibland fungerar det inte eller så är e-postservern felkonfigurerad.
 
-Här är en `.htaccess`-konfigurationsfil för Apache-webbservern:
+Följande inställningar kan konfigureras i filen `system/extensions/yellow-system.ini`:
 
-``` apache
+`ContactSiteEmail` = email för utgående meddelanden, [kräver contact-tillägg](https://github.com/annaesvensson/yellow-contact/tree/main/README-sv.md)  
+`EditSiteEmail` =  email för utgående meddelanden, [kräver edit-tillägg](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md)  
+
+## Problem med webbservern
+
+Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Din webbserver måste utföra tre uppgifter. För det första måste den omdirigera förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. Vissa webbservrar kräver ytterligare inställningar, men det beror mycket på vilken webbserver och vilket operativsystem du använder. Det är bäst att kontakta din webbhotell för hjälp.
+
+Här är en `.htaccess`-exempel för Apache-webbservern:
+
+```
 <IfModule mod_rewrite.c>
 RewriteEngine on
 DirectoryIndex index.html yellow.php
@@ -90,45 +97,30 @@ RewriteRule ^ yellow.php [L]
 </IfModule>
 ```
 
-Här är en `.htaccess`-konfigurationsfil för en undermapp, till exempel `http://website/yellow/`:
+Här är en `Caddyfile`-exempel för Caddy-webbservern:
 
-``` apache
-<IfModule mod_rewrite.c>
-RewriteEngine on
-RewriteBase /yellow/
-DirectoryIndex index.html yellow.php
-RewriteRule ^(content|system)/ error [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ yellow.php [L]
-</IfModule>
+```
+example.com {
+   root * /var/www/example
+   file_server
+   php_fastcgi 127.0.0.1:9000	
+   try_files {path} /index.html /yellow.php
+   
+   @blocked {
+      path /content/* 
+      path /system/*
+   }
+   rewrite @blocked /error 
+}
 ```
 
-Här är en `.htaccess`-konfigurationsfil för en underdomän, till exempel `http://sub.domain.website/`:
+Här är en `nginx.conf`-exempel för Nginx-webbservern:
 
-``` apache
-<IfModule mod_rewrite.c>
-RewriteEngine on
-RewriteBase /
-DirectoryIndex index.html yellow.php
-RewriteRule ^(content|system)/ error [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ yellow.php [L]
-</IfModule>
 ```
-
-När din webbplats inte fungerar, kontrollera AllowOverride-konfigurationen på din webbserver. På vissa webbservrar måste du ändra AllowOverride-konfigurationen från `AllowOverride None` till `AllowOverride All`. Efter att konfigurationen har ändrats kan du behöva starta om Apache-webbservern.
-
-## Problem med Nginx
-
-Här är en `nginx.conf `-konfigurationsfil för Nginx-webbservern:
-
-``` nginx
 server {
     listen 80;
-    server_name website.com;
-    root /var/www/website/;
+    server_name example.com;
+    root /var/www/example/;
     default_type text/html;
     index index.html yellow.php;
 
@@ -155,19 +147,5 @@ server {
     }
 }
 ```
-
-Här är en `nginx.conf`-konfigurationsfil för en statisk webbsida:
-
-``` nginx
-server {
-    listen 80;
-    server_name website.com;
-    root /var/www/website/;
-    default_type text/html;
-    error_page 404 /404.html;
-}
-```
-
-När din webbplats inte fungerar, kontrollera `server_name` och `root` i konfigurationsfilen. På vissa webbservrar måste du ändra FastCGI-konfigurationen till `fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;` beroende på PHP-versionen. Efter att konfigurationen har ändrats kan du behöva starta om Nginx-webbservern.
 
 Har du några frågor? [Få hjälp](.).

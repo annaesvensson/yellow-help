@@ -15,10 +15,6 @@ Alla systemfiler finns i `system` mappen. Du kan anpassa din webbplats här.
 
 Mappen `system/extensions` innehåller konfigurationsfilar och loggfilen. Du kan justera utseendet på din webbplats i `system/layouts` mappen och `system/themes` mappen. Du kan ändra alla layouter och teman som du vill. Vissa kunskaper i HTML och CSS krävs. Det är bättre om man inte ändrar filer i `system/workers` mappen.
 
-## Tillägg
-
-Du kan anpassa din webbplats med [tillägg](https://datenstrom.se/sv/yellow/extensions/). Detta ger dig möjlighet att anpassa nästan alla aspekter av systemet. Tillägg ger dig ytterligare funktioner, språk och teman. Det som kallas core har [kärnfunktionaliteten på din webbplats](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md). Allt annat är upp till dig. Det finns ett bildgalleri, kontaktformulär, sökfunktion, kommentarsfunktion och mycket mer.
-
 ## Systeminställningar
 
 Den centrala konfigurationsfilen är `system/extensions/yellow-system.ini`. Här är ett exempel: 
@@ -127,9 +123,9 @@ Loggfilen finns i filen `system/extensions/yellow-website.log`. Här är ett exe
 2024-04-28 14:13:07 info Install extension 'English 0.9.2'
 2024-04-28 14:13:07 info Install extension 'German 0.9.2'
 2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
-2024-04-28 14:23:11 info Install extension 'Fika 0.9.1'
-2024-04-28 14:23:11 error Process file 'system/workers/fika.php' with fatal error!
+2024-04-28 14:23:10 info Install extension 'Fika 0.9.1'
 2024-04-28 14:33:13 info Update extension 'Fika 0.9.2'
+2024-04-28 14:33:14 error Process file 'system/workers/fika.php' with fatal error!
 ```
 
 Har du några frågor? [Få hjälp](.).

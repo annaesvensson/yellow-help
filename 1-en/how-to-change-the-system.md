@@ -15,10 +15,6 @@ All system files are located in the `system` folder. You can change your website
 
 The `system/extensions` folder contains configuration files and the log file. You can change the appearance of your website in the `system/layouts` folder and `system/themes` folder. You can change all layouts and themes as you like. Knowledge of HTML and CSS is required. It is better not to change any files in the `system/workers` folder.
 
-## Extensions
-
-You can customise your website with [extensions](https://datenstrom.se/yellow/extensions/). This allows you to customise nearly every aspect of the system. Extensions give you additional features, languages and themes. The core has the [core functionality of your website](https://github.com/annaesvensson/yellow-core). Everything else is up to you. There is an image gallery, contact form, search feature, comment feature and much more.
-
 ## System settings
 
 The main configuration file is `system/extensions/yellow-system.ini`. Here's an example:
@@ -127,9 +123,9 @@ The log file can be found in file `system/extensions/yellow-website.log`. Here's
 2024-04-28 14:13:07 info Install extension 'English 0.9.2'
 2024-04-28 14:13:07 info Install extension 'German 0.9.2'
 2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
-2024-04-28 14:23:11 info Install extension 'Fika 0.9.1'
-2024-04-28 14:23:11 error Process file 'system/workers/fika.php' with fatal error!
+2024-04-28 14:23:10 info Install extension 'Fika 0.9.1'
 2024-04-28 14:33:13 info Update extension 'Fika 0.9.2'
+2024-04-28 14:33:14 error Process file 'system/workers/fika.php' with fatal error!
 ```
 
 Do you have questions? [Get help](.).

@@ -2,7 +2,7 @@
 Title: Fehlerbehebung
 ShowLanguageSelection: 1
 ---
-Erfahre wie du Probleme finden und lösen kannst.
+Erfahre wie du häufige Probleme lösen kannst.
 
 [toc]
 
@@ -14,13 +14,13 @@ Die folgenden Fehlermeldungen können auftreten:
 Datenstrom Yellow requires PHP 7.0 or higher!
 ```
 
-Installiere die aktuelle PHP-Version auf deinem Webserver. Du benötigst `PHP 7.0` oder höher. Unter Linux benutzt man am besten die Paketverwaltung der Linux-Distribution, für Mac gibt es MAMP, für Windows gibt es XAMPP. Es wird empfohlen die neuste PHP-Version zu verwenden. Sobald die Website die notwendige PHP-Version findet, sollte das Problem behoben sein.
+Installiere die aktuelle PHP-Version auf deinem Webserver. Du benötigst `PHP 7.0` oder höher. Unter Linux benutzt man am besten die Paketverwaltung der Linux-Distribution, für Mac gibt es MAMP, für Windows gibt es XAMPP. Es wird empfohlen die neuste PHP-Version zu verwenden. Sobald die Webseite die notwendige PHP-Version findet, sollte das Problem behoben sein.
 
 ```
 Datenstrom Yellow requires PHP xxx extension!
 ```
 
-Installiere die fehlende PHP-Erweiterung auf deinem Webserver. Du benötigst `curl gd mbstring zip`. Denke daran dass der Webserver und die Befehlszeile möglicherweise unterschiedliche PHP-Versionen verwenden. Es wird empfohlen die gleiche PHP-Version zu verwenden. Sobald die Website die notwendigen PHP-Erweiterungen findet, sollte das Problem behoben sein.
+Installiere die fehlende PHP-Erweiterung auf deinem Webserver. Du benötigst `curl gd mbstring zip`. Denke daran dass der Webserver und die Befehlszeile möglicherweise unterschiedliche PHP-Versionen verwenden. Es wird empfohlen die gleiche PHP-Version zu verwenden. Sobald die Webseite die notwendigen PHP-Erweiterungen findet, sollte das Problem behoben sein.
 
 ```
 Datenstrom Yellow requires write access!
@@ -29,16 +29,16 @@ Datenstrom Yellow requires write access!
 Führe den Befehl `chmod -R a+rw *` im Installations-Verzeichnis aus. Du kannst auch deine FTP-Anwendung verwenden, um allen Dateien Schreibrechte zu geben. Es wird empfohlen allen Dateien und Verzeichnissen im Installations-Verzeichnis Schreibrechte zu geben. Sobald die Webseite ausreichende Schreibrechte im `system`-Verzeichnis hat, sollte das Problem behoben sein.
 
 ```
-Datenstrom Yellow requires configuration file!
-```
-
-Kopiere die mitgelieferte `.htaccess` Datei ins Installations-Verzeichnis. Überprüfe ob deine FTP-Anwendung eine Einstellung hat, um alle Dateien anzuzeigen. Es passiert manchmal dass die `.htaccess` Datei bei der Installation übersehen wurde. Sobald die fehlende Konfigurationsdatei ins Installations-Verzeichnis kopiert wurde, sollte das Problem behoben sein.
-
-```
 Datenstrom Yellow requires rewrite support!
 ```
 
-Überprüfe die Konfigurationsdatei deines Webservers, [siehe Probleme mit dem Webserver](#probleme-mit-dem-webserver), [Apache](#probleme-mit-apache) und [Nginx](#probleme-mit-nginx). Bei einigen Webservern sind zusätzliche Einstellungen erforderlich, aber das hängt stark vom verwendeten Webserver und Betriebssystem ab. Sobald der Webserver HTTP-Anfragen an die `yellow.php` weiterleitet, sollte das Problem behoben sein.
+Überprüfe die Konfiguration deines Webservers, [siehe Beispiele](#probleme-mit-dem-webserver). Bei einigen Webservern sind zusätzliche Einstellungen erforderlich, aber das hängt sehr stark vom verwendeten Webserver und Betriebssystem ab. Wende dich am besten an deinen Webhosting-Anbieter. Sobald der Webserver HTTP-Anfragen an die `yellow.php` weiterleitet, sollte das Problem behoben sein.
+
+```
+Datenstrom Yellow requires htaccess file!
+```
+
+Kopiere die mitgelieferte `.htaccess` Datei ins Installations-Verzeichnis. Überprüfe ob deine FTP-Anwendung eine Einstellung hat, um alle Dateien anzuzeigen. Es passiert manchmal dass die `.htaccess` Datei bei der Installation übersehen wurde. Sobald die fehlende Konfigurationsdatei ins Installations-Verzeichnis kopiert wurde, sollte das Problem behoben sein.
 
 ```
 Datenstrom Yellow requires complete upload!
@@ -46,7 +46,7 @@ Datenstrom Yellow requires complete upload!
 
 Kopiere nochmal alle mitgelieferten Dateien ins Installations-Verzeichnis. Überprüfe ob deine FTP-Anwendung beim Hochladen eine Fehlermeldung anzeigt. Es passiert manchmal dass die Datenübertragung beim Hochladen unterbrochen wurde. Nachdem alle Dateien ins Installations-Verzeichnis kopiert wurden, sollte das Problem behoben sein.
 
-## Probleme nach der Installation oder Aktualisierung
+## Probleme nach der Aktualisierung
 
 Die folgende Fehlermeldung kann auftreten: 
 
@@ -54,9 +54,7 @@ Die folgende Fehlermeldung kann auftreten:
 Datenstrom Yellow stopped with fatal error. Activate the debug mode for more information.
 ```
 
-Du kannst den Debug-Modus benutzen um Probleme zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei  `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Abhängig vom Debug-Modus werden mehr oder weniger Informationen auf dem Bildschirm angezeigt. [Weitere Informationen zum Debug-Modus](api-for-developers#debug-modus).
-
-Wichtige Informationen werden außerdem in die Datei `system/extensions/yellow-website.log` geschrieben. Falls du die Ursache eines Problems nicht selbst beheben kannst, dann [melde einen Fehler zusammen mit der Logdatei](contributing-guidelines). Die Logdatei gibt einen Überblick was auf deiner Website passiert, welche Erweiterungen installiert und welche aktualisiert wurden. Hier ist ein Beispiel:
+Suche in der Logdatei `system/extensions/yellow-website.log` nach Problemen. Hier ist ein Beispiel:
 
 ```
 2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
@@ -66,20 +64,29 @@ Wichtige Informationen werden außerdem in die Datei `system/extensions/yellow-w
 2024-04-28 14:13:07 info Install extension 'English 0.9.2'
 2024-04-28 14:13:07 info Install extension 'German 0.9.2'
 2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
-2024-04-28 14:23:11 info Install extension 'Fika 0.9.1'
-2024-04-28 14:23:11 error Process file 'system/workers/fika.php' with fatal error!
+2024-04-28 14:23:10 info Install extension 'Fika 0.9.1'
 2024-04-28 14:33:13 info Update extension 'Fika 0.9.2'
+2024-04-28 14:33:14 error Process file 'system/workers/fika.php' with fatal error!
 ```
+
+Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Es werden dann zusätzliche Informationen auf dem Bildschirm und in der Browser-Konsole angezeigt. Abhängig vom Debug-Modus werden mehr oder weniger Informationen angezeigt. [Weitere Informationen zum Debug-Modus](api-for-developers#debug-modus).
+
+## Probleme mit dem Mailserver 
+
+Du benötigst einen Mailserver damit Datenstrom Yellow E-Mails verschicken kann. Wende dich an deinen Webhosting-Anbieter und frage ob Sendmail aktiviert ist. Nachdem du überprüft hast dass Sendmail aktiviert ist, besteht die nächste Möglichkeit darin die E-Mail für ausgehende Nachrichten zu konfigurieren. Die Standard-E-Mail-Adresse für ausgehende Nachrichten ist `noreply`. Der Mailserver muss deinen Domainnamen hinzufügen, damit daraus eine vollständige E-Mail-Adresse wird, zum Beispiel `noreply@example.com`. Manchmal funktioniert das nicht oder der Mailserver ist falsch konfiguriert.
+
+Die folgenden Einstellungen können in der Datei `system/extensions/yellow-system.ini` vorgenommen werden:
+
+`ContactSiteEmail` = Email für ausgehende Nachrichten, [erfordert Contact-Erweiterung](https://github.com/annaesvensson/yellow-contact/tree/main/README-de.md)  
+`EditSiteEmail` =  Email für ausgehende Nachrichten, [erfordert Edit-Erweiterung](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md)  
 
 ## Probleme mit dem Webserver
 
-Überprüfe die Konfigurationsdatei deines Webservers. Du benötigst eine Konfigurationsdatei welche HTTP-Anfragen an das Content-Management-System weiterleitet. Du kannst die mitgelieferte `.htaccess` Konfigurationsdatei in ein Format übersetzen, das dein Webserver versteht. Falls du keine geeignete Konfigurationsdatei für deinen Webserver findest, wende dich an dein Webhosting-Anbieter oder [frage die Datenstrom-Netzgemeinschaft](contributing-guidelines).
+Du benötigst einen Webserver der HTTP-Anfragen an Datenstrom Yellow weiterleitet. Dein Webserver muss drei Dinge erledigen. Erstens muss er Anfragen für nicht existierende Dateien/Verzeichnisse an die `yellow.php` weiterleiten. Zweitens muss er den direkten Zugriff auf das `content`-Verzeichnis mit einer Fehlerseite blockieren. Drittens muss er den direkten Zugriff auf das `system`-Verzeichnis mit einer Fehlerseite blockieren. Bei einigen Webservern sind zusätzliche Einstellungen erforderlich, aber das hängt sehr stark vom verwendeten Webserver und Betriebssystem ab. Wende dich am besten an deinen Webhosting-Anbieter.
 
-## Probleme mit Apache
+Hier ist ein `.htaccess`-Beispiel für den Apache-Webserver:
 
-Hier ist eine `.htaccess` Konfigurationsdatei für den Apache-Webserver:
-
-``` apache
+```
 <IfModule mod_rewrite.c>
 RewriteEngine on
 DirectoryIndex index.html yellow.php
@@ -90,45 +97,31 @@ RewriteRule ^ yellow.php [L]
 </IfModule>
 ```
 
-Hier ist eine `.htaccess` Konfigurationsdatei für ein Unterverzeichnis, beispielsweise `http://website/yellow/`:
+Hier ist ein `Caddyfile`-Beispiel für den Caddy-Webserver:
 
-``` apache
-<IfModule mod_rewrite.c>
-RewriteEngine on
-RewriteBase /yellow/
-DirectoryIndex index.html yellow.php
-RewriteRule ^(content|system)/ error [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ yellow.php [L]
-</IfModule>
+```
+example.com {
+   root * /var/www/example
+   file_server
+   php_fastcgi 127.0.0.1:9000	
+   try_files {path} /index.html /yellow.php
+   
+   @blocked {
+      path /content/* 
+      path /system/*
+   }
+   rewrite @blocked /error 
+}
 ```
 
-Hier ist eine `.htaccess` Konfigurationsdatei für eine Subdomain, beispielsweise `http://sub.domain.website/`:
+Hier ist ein `nginx.conf`-Beispiel für den Nginx-Webserver:
 
-``` apache
-<IfModule mod_rewrite.c>
-RewriteEngine on
-RewriteBase /
-DirectoryIndex index.html yellow.php
-RewriteRule ^(content|system)/ error [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ yellow.php [L]
-</IfModule>
+
 ```
-
-Wenn deine Webseite nicht funktioniert, dann überprüfe die AllowOverride-Konfiguration deines Webservers. Auf manchen Webservern muss du die AllowOverride-Konfiguration ändern von `AllowOverride None` zu `AllowOverride All`. Nachdem die Konfiguration verändert wurde, musst du möglicherweise den Apache-Webserver neustarten.
-
-## Probleme mit Nginx
-
-Hier ist eine `nginx.conf` Konfigurationsdatei für den Nginx-Webserver:
-
-``` nginx
 server {
     listen 80;
-    server_name website.com;
-    root /var/www/website/;
+    server_name example.com;
+    root /var/www/example/;
     default_type text/html;
     index index.html yellow.php;
 
@@ -155,19 +148,5 @@ server {
     }
 }
 ```
-
-Hier ist eine `nginx.conf` Konfigurationsdatei für eine statische Webseite:
-
-``` nginx
-server {
-    listen 80;
-    server_name website.com;
-    root /var/www/website/;
-    default_type text/html;
-    error_page 404 /404.html;
-}
-```
-
-Wenn deine Webseite nicht funktioniert, dann überprüfe `server_name` und `root` in der Konfigurationsdatei. Auf manchen Webservern musst du die FastCGI-Konfiguration ändern zu `fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;` abhängig von der PHP-Version. Nachdem die Konfiguration verändert wurde, musst du möglicherweise den Nginx-Webserver neustarten.
 
 Hast du Fragen? [Hilfe finden](.).
