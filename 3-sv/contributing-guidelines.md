@@ -15,8 +15,8 @@ Om du vill ställa en fråga, [starta en ny diskussion](https://github.com/daten
 ## Hur man rapporterar ett fel
 
 * Förklara hur man återskapar felet, med så mycket information som du har.
-* Visa felmeddelanden du ser på skärmen.
 * Lägg till loggfilen `system/extensions/yellow-website.log`.
+* Visa alla felmeddelanden du ser på skärmen.
 * Välj ett svar när felet har åtgärdats.
 
 Om du vill rapportera ett fel, [starta en ny diskussion](https://github.com/datenstrom/community/discussions/categories/report-a-bug).

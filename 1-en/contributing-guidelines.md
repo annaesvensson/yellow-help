@@ -15,8 +15,8 @@ If you want to ask a question, [start a new discussion](https://github.com/daten
 ## How to report a bug
 
 * Explain how to reproduce the bug, with as many information as you have.
-* Show the error messages you see on screen.
 * Add the log file `system/extensions/yellow-website.log`.
+* Show all the error messages you see on screen.
 * Select an answer, when the bug has been fixed.
 
 If you want to report a bug, [start a new discussion](https://github.com/datenstrom/community/discussions/categories/report-a-bug).

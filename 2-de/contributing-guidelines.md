@@ -15,8 +15,8 @@ Falls du eine Frage stellen möchtest, [beginne eine neue Diskussion](https://gi
 ## Wie man einen Fehler meldet
 
 * Erkläre wie man den Fehler reproduziert, mit so vielen Informationen wie du hast.
-* Zeige die Fehlermeldungen die du auf dem Bildschirm siehst.
 * Füge die Logdatei `system/extensions/yellow-website.log` hinzu.
+* Zeige alle Fehlermeldungen die du auf dem Bildschirm siehst.
 * Wähle eine Antwort aus, wenn der Fehler behoben wurde.
 
 Falls du einen Fehler melden möchtest, [beginne eine neue Diskussion](https://github.com/datenstrom/community/discussions/categories/report-a-bug).
