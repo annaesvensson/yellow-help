@@ -6,7 +6,7 @@ Erfahre wie du Fragen stellen, Fehler melden und mit uns arbeiten kannst.
 ## Wie man eine Frage stellt
 
 * Schreibe die Frage in den Titel, es ist das Erste was alle sehen.
-* Beschreibe das Probleme das du lösen möchtest.
+* Beschreibe das Problem das du lösen möchtest.
 * Erkläre was du bisher versucht hast.
 * Wähle eine Antwort aus, wenn deine Frage beantwortet wurde.
 
@@ -32,6 +32,6 @@ Falls du mit uns arbeiten möchtest, [siehe Tipps zum Zusammenarbeiten](https://
 
 ## Gut zu wissen
 
-Die Datenstrom-Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Gehe weiter, falls du dich in einer Situation befindest in der du nichts beitragen oder lernen kannst. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Gib guten Ideen einen Daumen nach oben. Bedanke dich bei anderen Menschen für ihre Hilfe. Zeige Freundlichkeit. Das sind nur kleine Gesten, aber sie machen die Zusammenarbeit angenehmer.
+Die Datenstrom-Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Gehe weiter, falls du dich in einer Situation befindest in der du nichts beitragen oder lernen kannst. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei Menschen für ihre Hilfe. Gib einen Daumen nach oben. Zeige Freundlichkeit. Das sind nur drei kleine Gesten, aber sie machen die Zusammenarbeit angenehmer.
 
 Hast du Fragen? [Hilfe finden](.).

@@ -46,7 +46,7 @@ Datenstrom Yellow requires complete upload!
 
 Copy again all of the supplied files into the installation folder. Check if your FTP application shows an error message during upload. It sometimes happens that the data transfer was interrupted during upload. After all files have been copied into the installation folder, the problem should be resolved.
 
-## Problems after update
+## Problems after installation or update
 
 The following error message can happen:
 
@@ -82,7 +82,7 @@ The following settings can be configured in file `system/extensions/yellow-syste
 
 ## Problems with web server
 
-You need a web server that forwards HTTP requests to Datenstrom Yellow. Your web server has to do three things. First it has to forward requests for non existing files/directories to the `yellow.php`. Second it has to block direct access to the `content` folder with an error page. Third it has to block direct access to the `system` folder with an error page. Some web servers require additional settings, but this depends very much on the web server and operating system you use. It's best to contact your web hosting provider.
+You need a web server that forwards HTTP requests to Datenstrom Yellow. Your web server has to do three important things. First it has to forward requests for non existing files/folders to the `yellow.php`. Second it has to block direct access to the `content` folder with an error page. Third it has to block direct access to the `system` folder with an error page. Some web servers require additional settings, but this depends very much on the web server and operating system you use. It's best to contact your web hosting provider.
 
 Here's a `.htaccess` example for the Apache web server:
 

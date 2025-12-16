@@ -46,7 +46,7 @@ Datenstrom Yellow requires complete upload!
 
 Kopiere nochmal alle mitgelieferten Dateien ins Installations-Verzeichnis. Überprüfe ob deine FTP-Anwendung beim Hochladen eine Fehlermeldung anzeigt. Es passiert manchmal dass die Datenübertragung beim Hochladen unterbrochen wurde. Nachdem alle Dateien ins Installations-Verzeichnis kopiert wurden, sollte das Problem behoben sein.
 
-## Probleme nach der Aktualisierung
+## Probleme nach der Installation oder Aktualisierung
 
 Die folgende Fehlermeldung kann auftreten: 
 
@@ -82,7 +82,7 @@ Die folgenden Einstellungen können in der Datei `system/extensions/yellow-syste
 
 ## Probleme mit dem Webserver
 
-Du benötigst einen Webserver der HTTP-Anfragen an Datenstrom Yellow weiterleitet. Dein Webserver muss drei Dinge erledigen. Erstens muss er Anfragen für nicht existierende Dateien/Verzeichnisse an die `yellow.php` weiterleiten. Zweitens muss er den direkten Zugriff auf das `content`-Verzeichnis mit einer Fehlerseite blockieren. Drittens muss er den direkten Zugriff auf das `system`-Verzeichnis mit einer Fehlerseite blockieren. Bei einigen Webservern sind zusätzliche Einstellungen erforderlich, aber das hängt sehr stark vom verwendeten Webserver und Betriebssystem ab. Wende dich am besten an deinen Webhosting-Anbieter.
+Du benötigst einen Webserver der HTTP-Anfragen an Datenstrom Yellow weiterleitet. Dein Webserver muss drei wichtige Dinge erledigen. Erstens muss er Anfragen für nicht existierende Dateien/Verzeichnisse an die `yellow.php` weiterleiten. Zweitens muss er den direkten Zugriff auf das `content`-Verzeichnis mit einer Fehlerseite blockieren. Drittens muss er den direkten Zugriff auf das `system`-Verzeichnis mit einer Fehlerseite blockieren. Bei einigen Webservern sind zusätzliche Einstellungen erforderlich, aber das hängt sehr stark vom verwendeten Webserver und Betriebssystem ab. Wende dich am besten an deinen Webhosting-Anbieter.
 
 Hier ist ein `.htaccess`-Beispiel für den Apache-Webserver:
 

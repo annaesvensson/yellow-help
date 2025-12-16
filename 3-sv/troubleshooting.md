@@ -6,7 +6,7 @@ Läs hur du löser vanliga problem.
 
 [toc]
 
-## Problem under installationen
+## Problem under installation
 
 Följande felmeddelanden kan uppstå:
 
@@ -46,7 +46,7 @@ Datenstrom Yellow requires complete upload!
 
 Kopiera igen alla medföljande filer till installationsmappen. Kontrollera om din FTP-applikation visar ett felmeddelande under uppladdningen. Ibland händer det att dataöverföringen avbröts under uppladdningen. Efter att alla filer har kopierats till installationsmappen bör problemet lösas.
 
-## Problem efter uppdateringen
+## Problem efter installation eller uppdatering
 
 Följande felmeddelande kan uppstå:
 
@@ -82,7 +82,7 @@ Följande inställningar kan konfigureras i filen `system/extensions/yellow-syst
 
 ## Problem med webbservern
 
-Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Din webbserver måste utföra tre uppgifter. För det första måste den vidarebefordra förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. Vissa webbservrar kräver ytterligare inställningar, men det beror mycket på vilken webbserver och vilket operativsystem du använder. Det är bäst att kontakta din webbhotell för hjälp.
+Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Din webbserver måste utföra tre viktiga uppgifter. För det första måste den vidarebefordra förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. Vissa webbservrar kräver ytterligare inställningar, men det beror mycket på vilken webbserver och vilket operativsystem du använder. Det är bäst att kontakta din webbhotell för hjälp.
 
 Här är en `.htaccess`-exempel för Apache-webbservern:
 
