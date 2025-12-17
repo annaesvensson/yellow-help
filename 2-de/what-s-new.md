@@ -1,25 +1,25 @@
 ---
 Title: Was ist neu
 ---
-Bleibe über die neusten Produktänderungen auf dem Laufenden.
+Erfahre was sich seit letztem Mal geändert hat.
 
 ! {.wikiblock}
-! ## Zuletzt aktualisiert am 09.11.2025
+! ## Datenstrom Yellow - neuste Produktänderungen
 !
-! - Verbesserte Webseite mit mehr Informationen über Produktänderungen
 ! - API aktualisiert, Content-Element-Typ notice in general geändert
 ! - Core-Erweiterung aktualisiert, Unterstützung für Webmanifest-Dateien hinzugefügt
 ! - Edit-Erweiterung aktualisiert, Upload mit verschiedenen JPEG-Dateinamenerweiterungen
 ! - Gallery-Erweiterung aktualisiert, Popup kann durch Klicken auf einen Link ausgelöst werden
 ! - Markdown-Erweiterung aktualisiert, E-Mail-Verarbeitung für lange TLD verbessert
 ! - Markdown-Erweiterung aktualisiert, Syntax für Blockelemente wurde geändert
+! - Themes aktualisiert, CSS für farbige Blockelemente wurde geändert 
+! - Webseite aktualisiert, mehr Informationen über neuste Produktänderungen
 ! 
-! [Weitere Informationen zum Aktualisieren](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md).
+! [Siehe Entwicklungsgeschichte](https://github.com/datenstrom/yellow/commits/main/), [API-Änderungen](https://github.com/datenstrom/yellow/commits/main/system/workers/core.php) und [Erweiterungen](https://datenstrom.se/de/yellow/extensions/).
 
 ! {.wikiblock}
 ! ## Datenstrom Yellow 0.9
 !
-! - Verbesserte Webseite mit mehr Informationen zu verfügbaren Erweiterungen
 ! - API aktualisiert, Methode pages->group() hinzugefügt
 ! - API aktualisiert, Methode lookup->getHtmlAttributes() hinzugefügt
 ! - API aktualisiert, Methode lookup->normaliseAddress() hinzugefügt
@@ -35,5 +35,8 @@ Bleibe über die neusten Produktänderungen auf dem Laufenden.
 ! - Feed-Erweiterung aktualisiert, Unterstützung für weitere Filter hinzugefügt
 ! - Markdown-Erweiterung aktualisiert, bessere Ereignisbehandlung
 ! - Publish-Erweiterung aktualisiert, neue Art zur Veröffentlichen von Erweiterungen
+! - Webseite aktualisiert, mehr Informationen zu verfügbaren Erweiterungen
+!
+! [Siehe Entwicklungsgeschichte](https://github.com/datenstrom/yellow/commits/3f6cc2e/), [API-Änderungen](https://github.com/datenstrom/yellow/commits/3f6cc2e/system/extensions/core.php) und [Erweiterungen](https://datenstrom.se/de/yellow/extensions/).
 
 Hast du Fragen? [Hilfe finden](.).

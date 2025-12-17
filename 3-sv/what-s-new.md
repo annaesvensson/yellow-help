@@ -1,25 +1,25 @@
 ---
 Title: Vad är nytt
 ---
-Håll dig uppdaterad med senaste produktändringarna.
+Läs vad som har förändrats sedan förra gången.
 
 ! {.wikiblock}
-! ## Senast uppdaterad 2025-11-09
+! ## Datenstrom Yellow - senaste produktändringar
 !
-! - Förbättrad webbplats med mer information om produktändringar
 ! - Uppdaterat API, ändrat content-element-typ notice till general
 ! - Uppdaterat core-tillägg, stöd för webmanifest-filer har lagts till
 ! - Uppdaterat edit-tillägg, uppladdning med olika JPEG-filändele
 ! - Uppdaterat gallery-tillägg, popup kan utlösas genom att klicka på en länk
 ! - Uppdaterat Markdown-tillägg, förbättrad e-posthantering för lång toppdomän
 ! - Uppdaterat Markdown-tillägg, syntax för blockelement har ändrats
+! - Uppdaterade teman, CSS för färgade blockelement har ändrats
+! - Uppdaterat webbplats, mer information om senaste produktändringar
 !
-! [Läs mer om uppdatering](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md).
+! [Se utvecklingshistorik](https://github.com/datenstrom/yellow/commits/main/), [API-ändringar](https://github.com/datenstrom/yellow/commits/main/system/workers/core.php) och [tillägg](https://datenstrom.se/sv/yellow/extensions/).
 
 ! {.wikiblock}
 ! ## Datenstrom Yellow 0.9
 !
-! - Förbättrad webbplats med mer information om tillgängliga tillägg
 ! - Uppdaterat API, tillagt metod pages->group()
 ! - Uppdaterat API, tillagt metod lookup->getHtmlAttributes()
 ! - Uppdaterat API, tillagt metod lookup->normaliseAddress()
@@ -35,5 +35,8 @@ Håll dig uppdaterad med senaste produktändringarna.
 ! - Uppdaterat feed-tillägg, stöd för fler filter har lagts till
 ! - Uppdaterat Markdown-tillägg, bättre händelsehantering
 ! - Uppdaterat publish-tillägg, nytt sätt att publicera tillägg
+! - Uppdaterat webbplats, mer information om tillgängliga tillägg
+!
+! [Se utvecklingshistorik](https://github.com/datenstrom/yellow/commits/3f6cc2e/), [API-ändringar](https://github.com/datenstrom/yellow/commits/3f6cc2e/system/extensions/core.php) och [tillägg](https://datenstrom.se/sv/yellow/extensions/).
 
 Har du några frågor? [Få hjälp](.).
