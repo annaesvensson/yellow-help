@@ -15,7 +15,7 @@ Erfahre was sich seit letztem Mal geändert hat.
 ! - Themes aktualisiert, CSS für farbige Blockelemente wurde geändert 
 ! - Webseite aktualisiert, mehr Informationen über neuste Produktänderungen
 ! 
-! [Siehe Entwicklungsgeschichte](https://github.com/datenstrom/yellow/commits/main/), [API-Änderungen](https://github.com/datenstrom/yellow/commits/main/system/workers/core.php) und [Erweiterungen](https://datenstrom.se/de/yellow/extensions/).
+! [Siehe Entwicklungsgeschichte](https://github.com/datenstrom/yellow/commits/main/), [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/main/) und [Erweiterungen](https://datenstrom.se/de/yellow/extensions/).
 
 ! {.wikiblock}
 ! ## Datenstrom Yellow 0.9
@@ -37,6 +37,6 @@ Erfahre was sich seit letztem Mal geändert hat.
 ! - Publish-Erweiterung aktualisiert, neue Art zur Veröffentlichen von Erweiterungen
 ! - Webseite aktualisiert, mehr Informationen zu verfügbaren Erweiterungen
 !
-! [Siehe Entwicklungsgeschichte](https://github.com/datenstrom/yellow/commits/3f6cc2e/), [API-Änderungen](https://github.com/datenstrom/yellow/commits/3f6cc2e/system/extensions/core.php) und [Erweiterungen](https://datenstrom.se/de/yellow/extensions/).
+! [Siehe Entwicklungsgeschichte](https://github.com/datenstrom/yellow/commits/3f6cc2e/), [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/b6877ff/) und [Erweiterungen](https://datenstrom.se/de/yellow/extensions/).
 
 Hast du Fragen? [Hilfe finden](.).
