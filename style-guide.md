@@ -1,4 +1,4 @@
-# Datenstrom Yellow style guide
+# Style guide
 
 You should use the following guidelines for your code:
 
