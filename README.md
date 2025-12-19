@@ -1,8 +1,8 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Help 0.9.6
+# Help 0.9.7
 
-Help for your website.
+Documentation of the basics.
 
 <p align="center"><img src="SCREENSHOT.png" alt="Screenshot"></p>
 
@@ -20,7 +20,7 @@ You can improve the help if something is wrong or missing. Install the help on y
 
 ## How to improve documentation
 
-You can find cross-topic documentation in the help and more detailed documentation in [extensions](https://datenstrom.se/yellow/extensions/). Typically the documentation of an extension consists of multiple sections, with examples to copy/paste and settings you can customise. Review the entire documentation from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Did you improve documentation? Fork the relevant repository. Upload your changes and send a pull request to the developer.
+You can find basic documentation in the help and more detailed documentation in [extensions](https://datenstrom.se/yellow/extensions/). Typically the documentation of an extension consists of multiple sections, with examples to copy/paste and settings you can customise. Review the entire documentation from the perspective of the user. Imagine what the user wants to do and what would make their life easier. Did you improve documentation? Fork the relevant repository. Upload your changes and send a pull request to the developer.
 
 ## Acknowledgements
 

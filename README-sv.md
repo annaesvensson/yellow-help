@@ -1,8 +1,8 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Help 0.9.6
+# Help 0.9.7
 
-Hjälp för din webbplats.
+Dokumentation av grunderna.
 
 <p align="center"><img src="SCREENSHOT.png" alt="Skärmdump"></p>
 
@@ -20,7 +20,7 @@ Du kan förbättra hjälpen om något är fel eller saknas. Installera hjälpen 
 
 ## Hur man förbättrar dokumentationen
 
-Du hittar dokumentation som täcker flera ämnen i hjälpen och mer detaljerad dokumentation i [tilläggen](https://datenstrom.se/sv/yellow/extensions/). Vanligtvis består dokumentationen för ett tillägg av flera avsnitt, med exempel att kopiera/klistra in och inställningar du kan anpassa. Granska hela dokumentationen ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Förbättrade du dokumentationen? Gör en fork av relevanta repository. Ladda upp dina ändringar och skicka en pull-request till utvecklaren.
+Du hittar grundläggande dokumentation i hjälpen och mer detaljerad dokumentation i [tilläggen](https://datenstrom.se/sv/yellow/extensions/). Vanligtvis består dokumentationen för ett tillägg av flera avsnitt, med exempel att kopiera/klistra in och inställningar du kan anpassa. Granska hela dokumentationen ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Förbättrade du dokumentationen? Gör en fork av relevanta repository. Ladda upp dina ändringar och skicka en pull-request till utvecklaren.
 
 ## Tack
 

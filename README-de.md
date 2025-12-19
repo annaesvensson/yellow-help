@@ -1,8 +1,8 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a> &nbsp; <a href="README-sv.md">Svenska</a></p>
 
-# Help 0.9.6
+# Help 0.9.7
 
-Hilfe für deine Webseite.
+Dokumentation der Grundlagen.
 
 <p align="center"><img src="SCREENSHOT.png" alt="Bildschirmfoto"></p>
 
@@ -20,7 +20,7 @@ Du kannst die Hilfe verbessern falls etwas nicht stimmt oder fehlt. Installiere 
 
 ## Wie man die Dokumentation verbessert
 
-Du findest themenübergreifende Dokumentation in der Hilfe und ausführlichere Dokumentation in den [Erweiterungen](https://datenstrom.se/de/yellow/extensions/). Normalerweise besteht die Dokumentation einer Erweiterung aus mehreren Abschnitten, mit Beispielen zum Kopieren/Einfügen und Einstellungen zum Anpassen. Überprüfe die gesamte Dokumentation aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Hast du die Dokumentation verbessert? Mache ein Fork vom entsprechenden Repository. Lade deine Änderungen hoch und sende einen Pull-Request an den Entwickler.
+Du findest grundlegende Dokumentation in der Hilfe und ausführlichere Dokumentation in den [Erweiterungen](https://datenstrom.se/de/yellow/extensions/). Normalerweise besteht die Dokumentation einer Erweiterung aus mehreren Abschnitten, mit Beispielen zum Kopieren/Einfügen und Einstellungen zum Anpassen. Überprüfe die gesamte Dokumentation aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Hast du die Dokumentation verbessert? Mache ein Fork vom entsprechenden Repository. Lade deine Änderungen hoch und sende einen Pull-Request an den Entwickler.
 
 ## Danksagung
 
