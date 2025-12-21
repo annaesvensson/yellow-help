@@ -15,7 +15,7 @@ Learn what has changed since last time.
 ! - Updated themes, CSS for coloured block elements has changed
 ! - Updated website, more information about latest product changes
 !
-! [See code history](https://github.com/datenstrom/yellow/commits/main/), [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/) and [extensions](https://datenstrom.se/yellow/extensions/).
+! [See code history](https://github.com/datenstrom/yellow/commits/main/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/).
 
 ! {.wikiblock}
 ! ## Datenstrom Yellow 0.9
@@ -37,6 +37,6 @@ Learn what has changed since last time.
 ! - Updated publish extension, new way of publishing extensions
 ! - Updated website, more information about available extensions
 !
-! [See code history](https://github.com/datenstrom/yellow/commits/3f6cc2e/), [documentation history](https://github.com/annaesvensson/yellow-help/commits/b6877ff/) and [extensions](https://datenstrom.se/yellow/extensions/).
+! [See code history](https://github.com/datenstrom/yellow/commits/3f6cc2e/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/b6877ff/).
 
 Do you have questions? [Get help](.).

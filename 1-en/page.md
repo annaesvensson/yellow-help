@@ -18,6 +18,7 @@ TitleSlug: help
 ! * [How to customise languages](how-to-customise-languages)
 ! * [How to customise a layout](how-to-customise-a-layout)
 ! * [How to customise a theme](how-to-customise-a-theme)
+! * [How to get extensions](how-to-get-extensions)
 ! * [API for developers](api-for-developers)
 ! * [Troubleshooting](troubleshooting)
 ! * [What's new](what-s-new)

@@ -15,7 +15,7 @@ Läs vad som har förändrats sedan förra gången.
 ! - Uppdaterade teman, CSS för färgade blockelement har ändrats
 ! - Uppdaterat webbplats, mer information om senaste produktändringar
 !
-! [Se kodhistorik](https://github.com/datenstrom/yellow/commits/main/), [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/main/) och [tillägg](https://datenstrom.se/sv/yellow/extensions/).
+! [Se kodhistorik](https://github.com/datenstrom/yellow/commits/main/) och [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/main/).
 
 ! {.wikiblock}
 ! ## Datenstrom Yellow 0.9
@@ -37,6 +37,6 @@ Läs vad som har förändrats sedan förra gången.
 ! - Uppdaterat publish-tillägg, nytt sätt att publicera tillägg
 ! - Uppdaterat webbplats, mer information om tillgängliga tillägg
 !
-! [Se kodhistorik](https://github.com/datenstrom/yellow/commits/3f6cc2e/), [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/b6877ff/) och [tillägg](https://datenstrom.se/sv/yellow/extensions/).
+! [Se kodhistorik](https://github.com/datenstrom/yellow/commits/3f6cc2e/) och [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/b6877ff/).
 
 Har du några frågor? [Få hjälp](.).

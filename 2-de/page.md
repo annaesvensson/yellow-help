@@ -18,6 +18,7 @@ TitleSlug: help
 ! * [Wie man Sprachen anpasst](how-to-customise-languages)
 ! * [Wie man ein Layout anpasst](how-to-customise-a-layout)
 ! * [Wie man ein Theme anpasst](how-to-customise-a-theme)
+! * [Wie man Erweiterungen findet](how-to-get-extensions)
 ! * [API für Entwickler](api-for-developers)
 ! * [Fehlerbehebung](troubleshooting)
 ! * [Was ist neu](what-s-new)
