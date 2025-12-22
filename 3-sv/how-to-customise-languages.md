@@ -1,7 +1,7 @@
 ---
 Title: Hur man anpassar språk
 ---
-Så här anpassar du språk på din webbplats.
+Läs hur man anpassar språken på sin webbplats.
 
 ## Enkelspråkigt läge 
 

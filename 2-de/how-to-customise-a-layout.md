@@ -1,7 +1,7 @@
 ---
 Title: Wie man ein Layout anpasst
 ---
-Wie man das Aussehen seiner Webseite anpasst.
+Erfahre wie man das Aussehen seiner Webseite anpasst.
 
 ## HTML anpassen
 

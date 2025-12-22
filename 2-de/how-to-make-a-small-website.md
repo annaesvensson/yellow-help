@@ -1,7 +1,7 @@
 ---
 Title: Wie man eine kleine Webseite macht
 ---
-Hier erfährst du, wie du deine Webseite machst.
+Erfahre wie man eine kleine Webseite von Grund auf macht.
 
 [toc]
 

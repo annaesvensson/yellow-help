@@ -1,7 +1,7 @@
 ---
 Title: How to make a small wiki
 ---
-Learn how to make your wiki.
+Learn how to make a small wiki from scratch.
 
 [toc]
 

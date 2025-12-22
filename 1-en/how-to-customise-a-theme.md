@@ -1,7 +1,7 @@
 ---
 Title: How to customise a theme
 ---
-Here's how to customise the appearance of your website.
+Learn how to customise the appearance of your website.
 
 ## Customising CSS
 

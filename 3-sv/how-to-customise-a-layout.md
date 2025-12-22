@@ -1,7 +1,7 @@
 ---
 Title: Hur man anpassar en layout
 ---
-Så här anpassar du utseendet på din webbplats.
+Läs hur man anpassar utseendet på sin webbplats.
 
 ## Anpassa HTML
 

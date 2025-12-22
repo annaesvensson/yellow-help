@@ -1,7 +1,7 @@
 ---
 Title: Wie man ein kleines Blog macht
 ---
-Hier erfährst du, wie du dein Blog machst.
+Erfahre wie man ein kleines Blog von Grund auf macht.
 
 [toc]
 

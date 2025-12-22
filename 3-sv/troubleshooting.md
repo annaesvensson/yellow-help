@@ -2,7 +2,7 @@
 Title: Felsökning
 ShowLanguageSelection: 1
 ---
-Läs hur du löser vanliga problem.
+Läs hur man löser vanliga problem.
 
 [toc]
 

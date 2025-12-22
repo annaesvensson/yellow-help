@@ -1,7 +1,7 @@
 ---
 Title: How to customise languages
 ---
-Here's how to customise the languages of your website.
+Learn how to customise the languages of your website.
 
 ## Single language mode
 

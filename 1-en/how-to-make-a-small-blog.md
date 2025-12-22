@@ -1,7 +1,7 @@
 ---
 Title: How to make a small blog
 ---
-Learn how to make your blog.
+Learn how to make a small blog from scratch.
 
 [toc]
 

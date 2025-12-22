@@ -2,7 +2,7 @@
 Title: Fehlerbehebung
 ShowLanguageSelection: 1
 ---
-Erfahre wie du häufige Probleme lösen kannst.
+Erfahre wie man häufige Probleme löst.
 
 [toc]
 

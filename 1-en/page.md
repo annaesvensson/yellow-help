@@ -8,6 +8,7 @@ TitleSlug: help
 ## Get help
 
 ! {.wikipages}
+! * [What's new](what-s-new)
 ! * [How to get started](how-to-get-started)
 ! * [How to make a small website](how-to-make-a-small-website)
 ! * [How to make a small wiki](how-to-make-a-small-wiki)
@@ -21,7 +22,6 @@ TitleSlug: help
 ! * [How to get extensions](how-to-get-extensions)
 ! * [API for developers](api-for-developers)
 ! * [Troubleshooting](troubleshooting)
-! * [What's new](what-s-new)
 
 ## Want to ask questions?
 

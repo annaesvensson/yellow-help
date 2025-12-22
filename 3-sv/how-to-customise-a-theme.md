@@ -1,7 +1,7 @@
 ---
 Title: Hur man anpassar ett tema
 ---
-Så här anpassar du utseendet på din webbplats.
+Läs hur man anpassar utseendet på sin webbplats.
 
 ## Anpassa CSS
 

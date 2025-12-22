@@ -1,7 +1,7 @@
 ---
 Title: How to make a small website
 ---
-Learn how to make your website.
+Learn how to make a small website from scratch.
 
 [toc]
 

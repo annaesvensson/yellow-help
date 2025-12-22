@@ -8,6 +8,7 @@ TitleSlug: help
 ## Få hjälp
 
 ! {.wikipages}
+! * [Vad är nytt](what-s-new)
 ! * [Hur man kommer igång](how-to-get-started)
 ! * [Hur man skapar små webbsidor](how-to-make-a-small-website)
 ! * [Hur man skapar en liten wiki](how-to-make-a-small-wiki)
@@ -21,7 +22,6 @@ TitleSlug: help
 ! * [Hur man får tillägg](how-to-get-extensions)
 ! * [API för utvecklare](api-for-developers)
 ! * [Felsökning](troubleshooting)
-! * [Vad är nytt](what-s-new)
 
 ## Vill du ställa frågor?
 

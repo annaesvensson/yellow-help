@@ -1,7 +1,7 @@
 ---
 Title: Wie man Sprachen anpasst
 ---
-Wie man die Sprachen seiner Webseite anpasst.
+Erfahre wie man die Sprachen seiner Webseite anpasst.
 
 ## Einsprachen-Modus
 

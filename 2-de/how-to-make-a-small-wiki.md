@@ -1,7 +1,7 @@
 ---
 Title: Wie man ein kleines Wiki macht
 ---
-Hier erfährst du, wie du dein Wiki machst.
+Erfahre wie man ein kleines Wiki von Grund auf macht.
 
 [toc]
 
