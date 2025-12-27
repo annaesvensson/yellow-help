@@ -40,7 +40,9 @@ You should use the following guidelines for your documentation:
 * Files should be described in the following style:  
   `system/extensions/yellow-system.ini` = file with system settings  
   `system/extensions/yellow-language.ini` = file with language settings  
-  `system/extensions/yellow-user.ini` = file with user settings  
+  `system/extensions/yellow-user.ini` = file with user settings
+* Use HTML to add a screenshot suitable for GitHub and Codeberg,  
+  e.g. `<p align="center"><img src="SCREENSHOT.png" alt="Screenshot"></p>`.
 * Use HTML at the beginning of a line to add additional link targets,  
   e.g. `<a id="settings-page"></a>`, `<a id="settings-files"></a>`.
 * Give multiple examples for users to copy/paste, if unsure add more examples.
@@ -62,7 +64,7 @@ You should use the following guidelines for your extension:
 * Keep extensions relatively small, sweet and focused on one thing, if unsure do less.
 * Don't have more than one extension per repository.
 
-You should use the following technical terms:
+You should use the following technical terms, alphabetical order:
 
 * An `extension` gives you additional features, languages and themes - not "plugin".
 * A `layout` is a HTML file, it can render a complete or a partial page - not "template".
