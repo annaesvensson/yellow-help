@@ -14,9 +14,9 @@ If you want to ask a question, [start a new discussion](https://github.com/daten
 
 ## How to report a bug
 
-* Explain how to reproduce the bug, with as many information as you have.
+* Explain how to reproduce the bug and provide detailed information.
 * Add the log file `system/extensions/yellow-website.log`.
-* Show all the error messages you see on screen.
+* Check if the bug occurs in a brand new installation.
 * Select an answer, when the bug has been fixed.
 
 If you want to report a bug, [start a new discussion](https://github.com/datenstrom/community/discussions/categories/report-a-bug).
@@ -25,13 +25,13 @@ If you want to report a bug, [start a new discussion](https://github.com/datenst
 
 * Imagine what the user wants to do and what would make their life easier.
 * Ask yourself, do I need this, do I want this, can I make this better?
-* Have a look at files, folders and the API for developers.
+* Then look at files, folders and the API for developers.
 * First make it work and then make it better.
 
-If you want to work with us, [see tips for working together](https://github.com/datenstrom/community/discussions/760) and [unanswered discussions](https://github.com/datenstrom/community/discussions?discussions_q=is%3Aunanswered+sort%3Adate_created).
+If you want to work with us, [see tips for working together](https://github.com/datenstrom/community/discussions/760).
 
 ## Good to know
 
-The Datenstrom community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Use a translator if English is not your first language. Don't force anything. You can step out of discussions at any time if they are not constructive. Move on if you find yourself in a situation where you have nothing to contribute or learn. Focus on the people who show interest and want to work together with you. Thank people, give a thumbs up, show kindness. These are only three small gestures, but they make working together more enjoyable.
+The Datenstrom community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Use a translator if English is not your first language. Don't force anything. You can step out of discussions at any time if they are not constructive. Move on if you find yourself in a situation where you have nothing to contribute or learn. Focus on the people who show interest and want to work together with you. Say thank you, give a thumbs up, show kindness. These are only three small gestures, but they make working together with people more enjoyable.
 
 Do you have questions? [Get help](.).

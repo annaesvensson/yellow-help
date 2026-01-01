@@ -14,9 +14,9 @@ Falls du eine Frage stellen möchtest, [beginne eine neue Diskussion](https://gi
 
 ## Wie man einen Fehler meldet
 
-* Erkläre wie man den Fehler reproduziert, mit so vielen Informationen wie du hast.
+* Erkläre wie man den Fehler reproduziert und gebe detaillierte Informationen an
 * Füge die Logdatei `system/extensions/yellow-website.log` hinzu.
-* Zeige alle Fehlermeldungen die du auf dem Bildschirm siehst.
+* Überprüfe ob der Fehler bei einer brandneuen Installation auftritt.
 * Wähle eine Antwort aus, wenn der Fehler behoben wurde.
 
 Falls du einen Fehler melden möchtest, [beginne eine neue Diskussion](https://github.com/datenstrom/community/discussions/categories/report-a-bug).
@@ -25,13 +25,13 @@ Falls du einen Fehler melden möchtest, [beginne eine neue Diskussion](https://g
 
 * Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde.
 * Frage dich selbst, brauche ich das, will ich das, kann ich das besser machen?
-* Schau dir Dateien, Verzeichnisse und die API für Entwickler an.
+* Schau dir danach Dateien, Verzeichnisse und die API für Entwickler an.
 * Erst funktionieren lassen und dann besser machen.
 
-Falls du mit uns arbeiten möchtest, [siehe Tipps zum Zusammenarbeiten](https://github.com/datenstrom/community/discussions/760) und [unbeantwortete Diskussionen](https://github.com/datenstrom/community/discussions?discussions_q=is%3Aunanswered+sort%3Adate_created).
+Falls du mit uns arbeiten möchtest, [siehe Tipps zum Zusammenarbeiten](https://github.com/datenstrom/community/discussions/760).
 
 ## Gut zu wissen
 
-Die Datenstrom-Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Gehe weiter, falls du dich in einer Situation befindest in der du nichts beitragen oder lernen kannst. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich bei Menschen, gib einen Daumen nach oben, zeige Freundlichkeit. Das sind nur drei kleine Gesten, aber sie machen die Zusammenarbeit angenehmer.
+Die Datenstrom-Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Gehe weiter, falls du dich in einer Situation befindest in der du nichts beitragen oder lernen kannst. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich, gib einen Daumen nach oben, zeige Freundlichkeit. Das sind nur drei kleine Gesten, aber sie machen die Zusammenarbeit mit Menschen angenehmer.
 
 Hast du Fragen? [Hilfe finden](.).
