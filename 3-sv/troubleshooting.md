@@ -73,7 +73,7 @@ Du kan använda felsökningsläget för att undersöka orsaken till ett problem 
 
 ## Problem med e-postservern
 
-Du behöver en e-postserver för att Datenstrom Yellow ska kunna skicka e-post. Kontakta din webbhotell och fråga om sendmail är aktiverat. När du har bekräftat att sendmail är aktiverat är nästa alternativ att konfigurera email för utgående meddelanden. Standard-e-postadressen för utgående meddelanden är `noreply`. E-postservern behöver lägga till ditt domännamn för att skapa en komplett e-postadress, till exempel `noreply@example.com`. Ibland fungerar det inte eller så är e-postservern felkonfigurerad.
+Du behöver en e-postserver för att Datenstrom Yellow ska kunna skicka e-post. Det är bäst att kontakta din webbhotell och fråga om sendmail är aktiverat. När du har bekräftat att sendmail är aktiverat är nästa steg att konfigurera email för utgående meddelanden. Standard-e-postadressen för utgående meddelanden är `noreply`. E-postservern behöver lägga till ditt domännamn för att skapa en komplett e-postadress, till exempel `noreply@example.com`. Ibland fungerar det inte eller så är e-postservern felkonfigurerad.
 
 Följande inställningar kan konfigureras i filen `system/extensions/yellow-system.ini`:
 
@@ -147,5 +147,9 @@ server {
     }
 }
 ```
+
+## Prata med din webbhotell
+
+Kontakta din webbhotell om du inte kommer vidare med felsökningen. Beskriv vilka problem du har och vilka felmeddelanden som visas på skärmen. Din webbhotell känner till de tekniska begränsningarna i sitt system. Vanligtvis vet de hur man löser problem med e-postservern och webbservern.
 
 Har du några frågor? [Få hjälp](.).

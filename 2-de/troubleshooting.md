@@ -73,7 +73,7 @@ Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu unte
 
 ## Probleme mit dem Mailserver 
 
-Du benötigst einen Mailserver damit Datenstrom Yellow E-Mails verschicken kann. Wende dich an deinen Webhosting-Anbieter und frage ob Sendmail aktiviert ist. Nachdem du überprüft hast dass Sendmail aktiviert ist, besteht die nächste Möglichkeit darin die E-Mail für ausgehende Nachrichten zu konfigurieren. Die Standard-E-Mail-Adresse für ausgehende Nachrichten ist `noreply`. Der Mailserver muss deinen Domainnamen hinzufügen, damit daraus eine vollständige E-Mail-Adresse wird, zum Beispiel `noreply@example.com`. Manchmal funktioniert das nicht oder der Mailserver ist falsch konfiguriert.
+Du benötigst einen Mailserver damit Datenstrom Yellow E-Mails verschicken kann. Wende dich am besten an deinen Webhosting-Anbieter und frage ob Sendmail aktiviert ist. Nachdem du überprüft hast dass Sendmail aktiviert ist, besteht die nächste Möglichkeit darin die E-Mail für ausgehende Nachrichten zu konfigurieren. Die Standard-E-Mail-Adresse für ausgehende Nachrichten ist `noreply`. Der Mailserver muss deinen Domainnamen hinzufügen, damit daraus eine vollständige E-Mail-Adresse wird, zum Beispiel `noreply@example.com`. Manchmal funktioniert das nicht oder der Mailserver ist falsch konfiguriert.
 
 Die folgenden Einstellungen können in der Datei `system/extensions/yellow-system.ini` vorgenommen werden:
 
@@ -148,5 +148,9 @@ server {
     }
 }
 ```
+
+## Rede mit deinem Anbieter
+
+Wende dich an deinen Webhosting-Anbieter, falls du bei der Fehlerbehebung nicht weiter kommst. Beschreibe welche Probleme du hast und welche Fehlermeldungen auf dem Bildschirm angezeigt werden. Dein Webhosting-Anbieter kennt die technischen Beschränkungen auf seinem System. In der Regel weiss er wie man Probleme mit dem Mailserver und dem Webserver löst.
 
 Hast du Fragen? [Hilfe finden](.).

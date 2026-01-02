@@ -73,7 +73,7 @@ You can use the debug mode to investigate the cause of a problem or if you are c
 
 ## Problems with mail server
 
-You need a mail server for Datenstrom Yellow to send emails. Contact your web hosting provider and ask if sendmail is enabled. When you have confirmed that sendmail is enabled, your next option is to configure the email for outgoing messages. The default email address for outgoing messages is `noreply`. The mail server has to add your domain name so that it becomes a complete email address, for example `noreply@example.com`. Sometimes this doesn't work or the mail server is miss-configured. 
+You need a mail server for Datenstrom Yellow to send emails. It's best to contact your web hosting provider and ask if sendmail is enabled. When you have confirmed that sendmail is enabled, your next option is to configure the email for outgoing messages. The default email address for outgoing messages is `noreply`. The mail server has to add your domain name so that it becomes a complete email address, for example `noreply@example.com`. Sometimes this doesn't work or the mail server is miss-configured. 
 
 The following settings can be configured in file `system/extensions/yellow-system.ini`:
 
@@ -147,5 +147,9 @@ server {
     }
 }
 ```
+
+## Talk to your provider
+
+Contact your web hosting provider if you are stuck with troubleshooting. Describe which problems you are experiencing and which error messages are displayed on the screen. Your web hosting provider is familiar with the technical limitations of their system. They usually know how to solve problems with the mail server and the web server.
 
 Do you have questions? [Get help](.).
