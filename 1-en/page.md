@@ -8,8 +8,8 @@ TitleSlug: help
 ## Get help
 
 ! {.wikipages}
-! * [What's new](what-s-new)
 ! * [How to get started](how-to-get-started)
+! * [How to get extensions](how-to-get-extensions)
 ! * [How to make a small website](how-to-make-a-small-website)
 ! * [How to make a small wiki](how-to-make-a-small-wiki)
 ! * [How to make a small blog](how-to-make-a-small-blog)
@@ -19,9 +19,9 @@ TitleSlug: help
 ! * [How to customise languages](how-to-customise-languages)
 ! * [How to customise a layout](how-to-customise-a-layout)
 ! * [How to customise a theme](how-to-customise-a-theme)
-! * [How to get extensions](how-to-get-extensions)
 ! * [API for developers](api-for-developers)
 ! * [Troubleshooting](troubleshooting)
+! * [What's new](what-s-new)
 
 ## Want to ask questions?
 

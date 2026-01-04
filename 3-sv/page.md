@@ -8,8 +8,8 @@ TitleSlug: help
 ## Få hjälp
 
 ! {.wikipages}
-! * [Vad är nytt](what-s-new)
 ! * [Hur man kommer igång](how-to-get-started)
+! * [Hur man får tillägg](how-to-get-extensions)
 ! * [Hur man skapar små webbsidor](how-to-make-a-small-website)
 ! * [Hur man skapar en liten wiki](how-to-make-a-small-wiki)
 ! * [Hur man skapar en liten blogg](how-to-make-a-small-blog)
@@ -19,9 +19,9 @@ TitleSlug: help
 ! * [Hur man anpassar språk](how-to-customise-languages)
 ! * [Hur man anpassar en layout](how-to-customise-a-layout)
 ! * [Hur man anpassar ett tema](how-to-customise-a-theme)
-! * [Hur man får tillägg](how-to-get-extensions)
 ! * [API för utvecklare](api-for-developers)
 ! * [Felsökning](troubleshooting)
+! * [Vad är nytt](what-s-new)
 
 ## Vill du ställa frågor?
 

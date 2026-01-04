@@ -8,8 +8,8 @@ TitleSlug: help
 ## Hilfe finden
 
 ! {.wikipages}
-! * [Was ist neu](what-s-new)
 ! * [Wie man loslegt](how-to-get-started)
+! * [Wie man Erweiterungen findet](how-to-get-extensions)
 ! * [Wie man eine kleine Webseite macht](how-to-make-a-small-website)
 ! * [Wie man ein kleines Wiki macht](how-to-make-a-small-wiki)
 ! * [Wie man ein kleines Blog macht](how-to-make-a-small-blog)
@@ -19,9 +19,9 @@ TitleSlug: help
 ! * [Wie man Sprachen anpasst](how-to-customise-languages)
 ! * [Wie man ein Layout anpasst](how-to-customise-a-layout)
 ! * [Wie man ein Theme anpasst](how-to-customise-a-theme)
-! * [Wie man Erweiterungen findet](how-to-get-extensions)
 ! * [API für Entwickler](api-for-developers)
 ! * [Fehlerbehebung](troubleshooting)
+! * [Was ist neu](what-s-new)
 
 ## Möchtest du Fragen stellen?
 
