@@ -26,8 +26,8 @@ You should use the following guidelines for your documentation:
 * Use Markdown for text formatting, no tabs.
 * Use appropriate titles, e.g. `How to make a small website`, `Troubleshooting`, `Core 0.9.1`.
 * Descriptions should fit into one line, e.g. `Core functionality of your website`.
-* README files should start with a section explaining how to install an extension.
-* README files should use the following order for headings, all are optional:  
+* Readme files should start with a section explaining how to install an extension.
+* Readme files should use the following order for headings, all are optional:  
   `How to...`  
   `Examples`  
   `Settings`  
@@ -42,9 +42,10 @@ You should use the following guidelines for your documentation:
   `system/extensions/yellow-language.ini` = file with language settings  
   `system/extensions/yellow-user.ini` = file with user settings
 * Use HTML to add a screenshot suitable for GitHub and Codeberg,  
-  e.g. `<p align="center"><img src="SCREENSHOT.png" alt="Screenshot"></p>`.
+  e.g. `<p align="center"><img src="screenshot.png" alt="Screenshot"></p>`.
 * Use HTML at the beginning of a line to add additional link targets,  
   e.g. `<a id="settings-page"></a>`, `<a id="settings-files"></a>`.
+* Check spelling, British English is the reference language, other languages are optional.
 * Give multiple examples for users to copy/paste, if unsure add more examples.
 * Review the entire documentation from the perspective of the user.
 * Don't use the words "easy, flexible, user-friendly".
@@ -57,10 +58,10 @@ You should use the following guidelines for your extension:
 * File names should use kebab-case, the extension name is used as prefix,  
   e.g. `fika.php`, `fika.css`, `fika.js`, `fika-library.min.js`, `fika-stack.svg`.
 * Repository names should use kebap-case, e.g. `yellow-core`, `yellow-edit`, `yellow-fika`.
-* Repository documentation files should be in Markdown format, e.g. `README.md`.
-* Repository screenshots/previews should be in PNG image format, e.g. `SCREENSHOT.png`.
+* Repository documentation files should be in Markdown format, e.g. `readme.md`.
+* Repository screenshots/previews should be in PNG image format, e.g. `screenshot.png`.
 * Repositories should have a flat folder structure, file actions are stored in file `extension.ini`.
-* Check spelling, British English is the reference language, other languages are optional.
+* Repositories should have a `.gitattributes` file to remove unnecesarry files from the ZIP file.
 * Keep extensions relatively small, sweet and focused on one thing, if unsure do less.
 * Don't have more than one extension per repository.
 
