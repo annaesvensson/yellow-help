@@ -77,8 +77,8 @@ Du behöver en e-postserver för att Datenstrom Yellow ska kunna skicka e-post. 
 
 Följande inställningar kan konfigureras i filen `system/extensions/yellow-system.ini`:
 
-`ContactSiteEmail` = email för utgående meddelanden, [kräver contact-tillägg](https://github.com/annaesvensson/yellow-contact/tree/main/README-sv.md)  
-`EditSiteEmail` =  email för utgående meddelanden, [kräver edit-tillägg](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md)  
+`ContactSiteEmail` = email för utgående meddelanden, [kräver contact-tillägg](https://github.com/annaesvensson/yellow-contact/tree/main/readme-sv.md)  
+`EditSiteEmail` =  email för utgående meddelanden, [kräver edit-tillägg](https://github.com/annaesvensson/yellow-edit/tree/main/readme-sv.md)  
 
 ## Problem med webbservern
 

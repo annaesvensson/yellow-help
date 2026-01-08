@@ -84,6 +84,6 @@ Den första skärmdumpen visar mapparna `1-en`,` 2-de` och `3-sv`. Detta ger dig
 
 Den andra skärmdumpen visar mapparna `1-en`,` 2-de`, `3-sv` och `default`. Detta ger dig webbadresserna `http://website/en/` `http://website/de/` `http://website/sv/` och en hemsida `http://website/` som automatiskt upptäcker besökarens språk.
 
-För att visa ett språkval kan du skapa en sida som visar tillgängliga språk. Språkvalet kan integreras i navigeringen på din webbplats. Detta gör det möjligt för besökare att välja språk. Det finns runt 20 språk att välja mellan. Du kan [göra en översättning](https://github.com/annaesvensson/yellow-language/tree/main/README-sv.md) om ett språk saknas.
+För att visa ett språkval kan du skapa en sida som visar tillgängliga språk. Språkvalet kan integreras i navigeringen på din webbplats. Detta gör det möjligt för besökare att välja språk. Det finns runt 20 språk att välja mellan. Du kan [göra en översättning](https://github.com/annaesvensson/yellow-language/tree/main/readme-sv.md) om ett språk saknas.
 
 Har du några frågor? [Få hjälp](.).

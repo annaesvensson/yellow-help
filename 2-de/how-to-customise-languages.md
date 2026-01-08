@@ -84,6 +84,6 @@ Der erste Screenshot zeigt die Verzeichnisse `1-en`, `2-de` und `3-sv`. Das erze
 
 Der zweite Screenshot zeigt die Verzeichnisse `1-en`, `2-de`, `3-sv` und `default`. Das erzeugt die URLs `http://website/en/` `http://website/de/` `http://website/sv/` und die Startseite `http://website/`, welche automatisch die Sprache der Besucher ermittelt.
 
-Um eine Sprachauswahl anzuzeigen, kannst du eine Seite erstellen welche die vorhandenen Sprachen auflistet. Die Sprachauswahl kann man in die Navigation der Webseite einbauen. Das ermöglicht es Besuchern die Sprache auszuwählen. Es gibt rund 20 Sprachen zur Auswahl. Du kannst eine [Übersetzung erstellen](https://github.com/annaesvensson/yellow-language/tree/main/README-de.md), falls eine Sprache fehlt.
+Um eine Sprachauswahl anzuzeigen, kannst du eine Seite erstellen welche die vorhandenen Sprachen auflistet. Die Sprachauswahl kann man in die Navigation der Webseite einbauen. Das ermöglicht es Besuchern die Sprache auszuwählen. Es gibt rund 20 Sprachen zur Auswahl. Du kannst eine [Übersetzung erstellen](https://github.com/annaesvensson/yellow-language/tree/main/readme-de.md), falls eine Sprache fehlt.
 
 Hast du Fragen? [Hilfe finden](.).

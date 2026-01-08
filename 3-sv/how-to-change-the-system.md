@@ -28,7 +28,7 @@ Den centrala konfigurationsfilen är `system/extensions/yellow-system.ini`. Här
     Parser: markdown
     Status: public
 
-Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) eller din [dator](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md) för att ändra systeminställningar. Systeminställningarna innehåller inställningarna för din webbplats och för alla installerade tillägg. Följande inställningar kan konfigureras:
+Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree/main/readme-sv.md) eller din [dator](https://github.com/annaesvensson/yellow-core/tree/main/readme-sv.md) för att ändra systeminställningar. Systeminställningarna innehåller inställningarna för din webbplats och för alla installerade tillägg. Följande inställningar kan konfigureras:
 
 `Sitename` = webbplatsens namn  
 `Author` = webmasterns namn  
@@ -74,7 +74,7 @@ Användarinställningar lagras i filen `system/extensions/yellow-user.ini`. Här
     Modified: 2000-01-01 13:37:00
     Status: active
 
-Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md) eller [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/README-sv.md) för att skapa nya användarkonton. Ett användarkonto består av `Email` och andra inställningar. Om du inte vill att sidorna ska ändras i en webbläsare begränsar du användarkonton. Öppna konfigurationsfilen, ändra `Access` och `Home`. Användare får redigera sidor på sin hemsida, men inte någon annanstans.
+Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree/main/readme-sv.md) eller [kommandoraden](https://github.com/annaesvensson/yellow-core/tree/main/readme-sv.md) för att skapa nya användarkonton. Ett användarkonto består av `Email` och andra inställningar. Om du inte vill att sidorna ska ändras i en webbläsare begränsar du användarkonton. Öppna konfigurationsfilen, ändra `Access` och `Home`. Användare får redigera sidor på sin hemsida, men inte någon annanstans.
 
 ## Sidinställningar
 
@@ -107,7 +107,7 @@ Följande inställningar kan konfigureras högst upp på en sida:
 
 `public` = sidan är en vanlig sida  
 `private` = sidan är inte synlig, användaren måste ange lösenord, [kräver private-tillägg](https://github.com/schulle4u/yellow-private)  
-`draft` = sidan är inte synlig, användaren måste logga in, [kräver draft-tillägg](https://github.com/annaesvensson/yellow-draft/tree/main/README-sv.md)  
+`draft` = sidan är inte synlig, användaren måste logga in, [kräver draft-tillägg](https://github.com/annaesvensson/yellow-draft/tree/main/readme-sv.md)  
 `unlisted` = sidan är inte synlig, men kan nås med rätt länk  
 `shared` = sidan är inte synlig, men kan ingå i andra sidor  
 

@@ -15,10 +15,10 @@ Learn what has changed since last time.
 ! - Updated themes, CSS for coloured block elements has changed
 ! - Updated website, more information about latest product changes
 !
-! [See code history](https://github.com/datenstrom/yellow/commits/main/), [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/) and [new features](https://github.com/datenstrom/community/discussions/categories/write-an-announcement).
+! [See code history](https://github.com/datenstrom/yellow/commits/main/), [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/) and [announcements](https://github.com/datenstrom/community/discussions/categories/write-an-announcement).
 
 ! {.wikiblock}
-! ## Datenstrom Yellow 0.9
+! ## Datenstrom Yellow 0.9 - published on 2024-04-04
 !
 ! - Updated API, added method pages->group()
 ! - Updated API, added method lookup->getHtmlAttributes()

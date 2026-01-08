@@ -46,7 +46,7 @@ Kaffee ist ein Getränk aus gerösteten Bohnen der Kaffeepflanze.
 3. Genieße.
 ```
 
-Du kannst ein Foto hinzufügen mit der [Image-Erweiterung](https://github.com/annaesvensson/yellow-image/tree/main/README-de.md):
+Du kannst ein Foto hinzufügen mit der [Image-Erweiterung](https://github.com/annaesvensson/yellow-image/tree/main/readme-de.md):
 
 ```
 ---
@@ -94,8 +94,8 @@ Es gibt [Erweiterungen für deine Webseite](https://datenstrom.se/de/yellow/exte
 
 ## Verwandte Informationen
 
-* [Wie man eine Webseite im Webbrowser bearbeitet](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md)
-* [Wie man eine Webseite auf dem Computer bearbeitet](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md)
-* [Wie man ein Wiki benutzt](https://github.com/annaesvensson/yellow-wiki/tree/main/README-de.md)
+* [Wie man eine Webseite im Webbrowser bearbeitet](https://github.com/annaesvensson/yellow-edit/tree/main/readme-de.md)
+* [Wie man eine Webseite auf dem Computer bearbeitet](https://github.com/annaesvensson/yellow-core/tree/main/readme-de.md)
+* [Wie man ein Wiki benutzt](https://github.com/annaesvensson/yellow-wiki/tree/main/readme-de.md)
 
 Hast du Fragen? [Hilfe finden](.).

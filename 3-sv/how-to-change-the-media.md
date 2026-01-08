@@ -26,7 +26,7 @@ Skapa en länk, olika filformat:
 
 ## Bilder
 
-Du kan använda [image-tillägget](https://github.com/annaesvensson/yellow-image/tree/main/README-sv.md) för att bädda in bilder. Bildformaten GIF, JPEG, PNG och SVG stöds. För att lägga till en bild, kopiera bilden till `media/images` mappen och skapa en `[image]` förkortning. Du kan också ladda upp bilder i en webbläsare, sedan läggs bilden till på önskad plats.
+Du kan använda [image-tillägget](https://github.com/annaesvensson/yellow-image/tree/main/readme-sv.md) för att bädda in bilder. Bildformaten GIF, JPEG, PNG och SVG stöds. För att lägga till en bild, kopiera bilden till `media/images` mappen och skapa en `[image]` förkortning. Du kan också ladda upp bilder i en webbläsare, sedan läggs bilden till på önskad plats.
 
 Lägga till en bild, olika beskrivningar:
 
@@ -54,7 +54,7 @@ Lägga till en bild, olika storlekar med standardstilen:
 
 ## Bildgallerier
 
-Du kan använda [gallery-tillägget](https://github.com/annaesvensson/yellow-gallery/tree/main/README-sv.md) eller [slider-tillägget](https://github.com/annaesvensson/yellow-slider/tree/main/README-sv.md) för att bädda in bildgallerier. Bildformaten GIF, JPEG, PNG och SVG stöds. För att lägga till ett bildgalleri, kopiera bilder till `media/images` mappen och skapa en `[gallery]` förkortning. Du kan också ladda upp bilder i en webbläsare.
+Du kan använda [gallery-tillägget](https://github.com/annaesvensson/yellow-gallery/tree/main/readme-sv.md) eller [slider-tillägget](https://github.com/annaesvensson/yellow-slider/tree/main/readme-sv.md) för att bädda in bildgallerier. Bildformaten GIF, JPEG, PNG och SVG stöds. För att lägga till ett bildgalleri, kopiera bilder till `media/images` mappen och skapa en `[gallery]` förkortning. Du kan också ladda upp bilder i en webbläsare.
 
 Lägga till ett bildgalleri med popup, olika sorteringar:
 

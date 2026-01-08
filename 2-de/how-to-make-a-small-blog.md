@@ -45,7 +45,7 @@ schwedischen Alltag, dass es sowohl als Verb als auch als Nomen verwendet
 wird. Wie oft machst du Fika?
 ```
 
-Du kannst ein Foto hinzufügen mit der [Image-Erweiterung](https://github.com/annaesvensson/yellow-image/tree/main/README-de.md):
+Du kannst ein Foto hinzufügen mit der [Image-Erweiterung](https://github.com/annaesvensson/yellow-image/tree/main/readme-de.md):
 
 ```
 ---
@@ -109,8 +109,8 @@ Es gibt [Erweiterungen für deine Webseite](https://datenstrom.se/de/yellow/exte
 
 ## Verwandte Informationen
 
-* [Wie man eine Webseite im Webbrowser bearbeitet](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md)
-* [Wie man eine Webseite auf dem Computer bearbeitet](https://github.com/annaesvensson/yellow-core/tree/main/README-de.md)
-* [Wie man ein Blog benutzt](https://github.com/annaesvensson/yellow-blog/tree/main/README-de.md)
+* [Wie man eine Webseite im Webbrowser bearbeitet](https://github.com/annaesvensson/yellow-edit/tree/main/readme-de.md)
+* [Wie man eine Webseite auf dem Computer bearbeitet](https://github.com/annaesvensson/yellow-core/tree/main/readme-de.md)
+* [Wie man ein Blog benutzt](https://github.com/annaesvensson/yellow-blog/tree/main/readme-de.md)
 
 Hast du Fragen? [Hilfe finden](.).

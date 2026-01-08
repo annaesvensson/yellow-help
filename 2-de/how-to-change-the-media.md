@@ -26,7 +26,7 @@ Link erstellen, unterschiedliche Dateiformate:
 
 ## Bilder
 
-Du kannst die [Image-Erweiterung](https://github.com/annaesvensson/yellow-image/tree/main/README-de.md) benutzen um Bilder einzubinden. Die Bildformate GIF, JPEG, PNG und SVG werden unterstützt. Um ein Bild hinzuzufügen, kopierst du das Bild ins `media/images`-Verzeichnis und erstellst eine `[image]`-Abkürzung. Du kannst Bilder auch im Webbrowser hochladen, dann wird das Bild an der gewünschten Stelle hinzugefügt.
+Du kannst die [Image-Erweiterung](https://github.com/annaesvensson/yellow-image/tree/main/readme-de.md) benutzen um Bilder einzubinden. Die Bildformate GIF, JPEG, PNG und SVG werden unterstützt. Um ein Bild hinzuzufügen, kopierst du das Bild ins `media/images`-Verzeichnis und erstellst eine `[image]`-Abkürzung. Du kannst Bilder auch im Webbrowser hochladen, dann wird das Bild an der gewünschten Stelle hinzugefügt.
 
 Bild hinzufügen, unterschiedliche Beschreibungen:
 
@@ -54,7 +54,7 @@ Bild hinzufügen, unterschiedliche Größen mit dem Standardstil:
 
 ## Bildergalerien
 
-Du kannst die [Gallery-Erweiterung](https://github.com/annaesvensson/yellow-gallery/tree/main/README-de.md) oder [Slider-Erweiterung](https://github.com/annaesvensson/yellow-slider/tree/main/README-de.md) benutzen um Bildergalerien einzubinden. Die Bildformate GIF, JPEG, PNG und SVG werden unterstützt. Um eine Bildergalerie hinzuzufügen, kopierst du die Bilder ins `media/images`-Verzeichnis und erstellst eine `[gallery]`-Abkürzung. Du kannst Bilder auch im Webbrowser hochladen.
+Du kannst die [Gallery-Erweiterung](https://github.com/annaesvensson/yellow-gallery/tree/main/readme-de.md) oder [Slider-Erweiterung](https://github.com/annaesvensson/yellow-slider/tree/main/readme-de.md) benutzen um Bildergalerien einzubinden. Die Bildformate GIF, JPEG, PNG und SVG werden unterstützt. Um eine Bildergalerie hinzuzufügen, kopierst du die Bilder ins `media/images`-Verzeichnis und erstellst eine `[gallery]`-Abkürzung. Du kannst Bilder auch im Webbrowser hochladen.
 
 Bildergalerie mit Popup hinzufügen, unterschiedliche Sortierungen:
 

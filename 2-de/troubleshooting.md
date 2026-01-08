@@ -77,8 +77,8 @@ Du benötigst einen Mailserver damit Datenstrom Yellow E-Mails verschicken kann.
 
 Die folgenden Einstellungen können in der Datei `system/extensions/yellow-system.ini` vorgenommen werden:
 
-`ContactSiteEmail` = Email für ausgehende Nachrichten, [erfordert Contact-Erweiterung](https://github.com/annaesvensson/yellow-contact/tree/main/README-de.md)  
-`EditSiteEmail` =  Email für ausgehende Nachrichten, [erfordert Edit-Erweiterung](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md)  
+`ContactSiteEmail` = Email für ausgehende Nachrichten, [erfordert Contact-Erweiterung](https://github.com/annaesvensson/yellow-contact/tree/main/readme-de.md)  
+`EditSiteEmail` =  Email für ausgehende Nachrichten, [erfordert Edit-Erweiterung](https://github.com/annaesvensson/yellow-edit/tree/main/readme-de.md)  
 
 ## Probleme mit dem Webserver
 

@@ -2,7 +2,7 @@
 Title: Hur man skapar en liten blogg
 ---
 ! {.important}
-! Den här sidan finns inte på ditt språk. Vill du göra en översättning? [Läs mer](https://github.com/annaesvensson/yellow-help/blob/main/README-sv.md).
+! Den här sidan finns inte på ditt språk. Vill du göra en översättning? [Läs mer](https://github.com/annaesvensson/yellow-help/blob/main/readme-sv.md).
 
 [toc]
 
