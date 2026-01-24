@@ -25,7 +25,7 @@ Falls du einen Fehler melden möchtest, [beginne eine neue Diskussion](https://g
 
 * Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde.
 * Frage dich selbst, brauche ich das, will ich das, kann ich das besser machen?
-* Schau dir danach Dateien, Verzeichnisse und die API für Entwickler an.
+* Mach dich mit Dateien, Verzeichnissen und der API für Entwickler vertraut.
 * Erst funktionieren lassen und dann besser machen.
 
 Falls du mit uns arbeiten möchtest, [siehe Tipps zum Zusammenarbeiten](https://github.com/datenstrom/community/discussions/760).

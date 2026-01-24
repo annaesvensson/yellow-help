@@ -25,7 +25,7 @@ If you want to report a bug, [start a new discussion](https://github.com/datenst
 
 * Imagine what the user wants to do and what would make their life easier.
 * Ask yourself, do I need this, do I want this, can I make this better?
-* Then look at files, folders and the API for developers.
+* Get familiar with files, folders and the API for developers.
 * First make it work and then make it better.
 
 If you want to work with us, [see tips for working together](https://github.com/datenstrom/community/discussions/760).
