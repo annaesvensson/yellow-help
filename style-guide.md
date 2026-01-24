@@ -17,13 +17,12 @@ You should use the following guidelines for your code:
   e.g. `// Core extension, https://github.com/annaesvensson/yellow-core`.
 * Use a single-line comment to describe classes, methods and properties,  
   e.g. `// Return request information`.
-* Don't have code comments inside methods and functions.
 * Keep methods relatively small, sweet and focused on one thing, if unsure do less.
-* Download a copy of the PHP standards and burn them, it's a great symbolic gesture.
+* Don't have code comments inside methods and functions.
 
 You should use the following guidelines for your documentation:
 
-* Use Markdown for text formatting, no tabs.
+* Use Markdown for text formatting, use spaces instead of tabs.
 * Use appropriate titles, e.g. `How to make a small website`, `Troubleshooting`, `Core 0.9.1`.
 * Descriptions should fit into one line, e.g. `Core functionality of your website`.
 * Readme files should start with a section explaining how to install an extension.
