@@ -12,7 +12,7 @@ Dokumentation der Grundlagen.
 
 ## Wie man die Hilfe benutzt
 
-Die Hilfe ist auf deiner Webseite vorhanden als `http://website/help/`. Die Hilfe zeigt dir wie man kleine Webseiten, Wikis und Blogs macht. Hier findest du Anleitungen wie du deine Webseite anpasst. Für Entwickler gibt es Beschreibungen von Dateien, Verzeichnissen und was man mit der API machen kann. Es wird empfohlen die [Highlight-Erweiterung](https://github.com/annaesvensson/yellow-highlight/tree/main/readme-de.md), [Search-Erweiterung](https://github.com/annaesvensson/yellow-search/tree/main/readme-de.md), [Toc-Erweiterung](https://github.com/annaesvensson/yellow-toc/tree/main/readme-de.md) zusammen mit der Hilfe-Erweiterung zu installieren. Dann hast du das selbe Paket wie die [Hilfe auf der offiziellen Webseite](https://datenstrom.se/de/yellow/help/).
+Die Hilfe ist auf deiner Webseite vorhanden als `http://website/help/`. Die Hilfe zeigt dir wie man kleine Webseiten, Wikis und Blogs macht. Hier findest du Anleitungen wie du deine Webseite anpasst in Englisch, Deutsch und Schwedisch. Für Entwickler gibt es Beschreibungen von Dateien, Verzeichnissen und was man mit der API machen kann. Es wird empfohlen die [Highlight-Erweiterung](https://github.com/annaesvensson/yellow-highlight/tree/main/readme-de.md), [Search-Erweiterung](https://github.com/annaesvensson/yellow-search/tree/main/readme-de.md), [Toc-Erweiterung](https://github.com/annaesvensson/yellow-toc/tree/main/readme-de.md) zusammen mit der Hilfe-Erweiterung zu installieren. Dann hast du das selbe Paket wie die [Hilfe auf der offiziellen Webseite](https://datenstrom.se/de/yellow/help/).
 
 ## Wie man die Hilfe verbessert
 
