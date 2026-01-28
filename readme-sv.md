@@ -18,7 +18,7 @@ Du kan förbättra hjälpen om något är fel eller saknas. Installera hjälpen 
 
 ## Hur man förbättrar dokumentationen
 
-Du hittar grundläggande dokumentation i hjälpen och mer detaljerad dokumentation i [tilläggen](https://datenstrom.se/sv/yellow/extensions/). Vanligtvis består dokumentationen för ett tillägg av flera avsnitt, med exempel att kopiera/klistra in och inställningar du kan anpassa. Granska hela dokumentationen ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. Förbättrade du dokumentationen? Gör en fork av relevanta repository. Ladda upp dina ändringar och skicka en pull-request till utvecklaren.
+Du hittar grundläggande dokumentation i hjälpen och mer detaljerad dokumentation i [tilläggen](https://datenstrom.se/sv/yellow/extensions/). Vanligtvis består dokumentationen för ett tillägg av flera avsnitt, med exempel att kopiera/klistra in och inställningar du kan anpassa. Granska hela dokumentationen ur användarens perspektiv. Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare. För erfarna författare finns det en [stilguide](style-guide.md). Förbättrade du dokumentationen? Gör en fork av relevanta repository. Ladda upp dina ändringar och skicka en pull-request till utvecklaren.
 
 ## Tack
 
