@@ -23,15 +23,13 @@ You should use the following guidelines for your code:
 You should use the following guidelines for your documentation:
 
 * Use Markdown for text formatting, use spaces instead of tabs.
-* Use appropriate titles, e.g. `How to make a small website`, `Troubleshooting`, `Core 0.9.1`.
-* Descriptions should fit into one line, e.g. `Core functionality of your website`.
-* Readme files should start with a section explaining how to install an extension.
-* Readme files should use the following order for headings, all are optional:  
+* Use appropriate titles, e.g. `How to make a small website`, `Ten principles for good design`
+* Extension documentation should use titles with a version number, e.g.  `Core 0.9.1`.
+* Extension documentation should arrange headings in the following order, all are optional:  
   `How to...`  
   `Examples`  
   `Settings`  
   `Acknowledgements`  
-  `Developer`, `Designer`, `Translator`
 * Settings should be described in the following style:  
   `CoreServerUrl` = URL of the website  
   `CoreTimezone` = timezone of the website  
@@ -40,11 +38,11 @@ You should use the following guidelines for your documentation:
   `system/extensions/yellow-system.ini` = file with system settings  
   `system/extensions/yellow-language.ini` = file with language settings  
   `system/extensions/yellow-user.ini` = file with user settings
-* Use HTML to add a screenshot suitable for GitHub and Codeberg,  
+* Use HTML to add a screenshot suitable for GitHub, Codeberg and other platforms,  
   e.g. `<p align="center"><img src="screenshot.png" alt="Screenshot"></p>`.
-* Use HTML at the beginning of a line to add additional link targets,  
+* Use HTML at the beginning of a line to add additional link targets to a page,  
   e.g. `<a id="settings-page"></a>`, `<a id="settings-files"></a>`.
-* Check spelling, British English is the reference language, other languages are optional.
+* Check spelling, British English is the reference language, all other languages are optional.
 * Give multiple examples for users to copy/paste, if unsure add more examples.
 * Review the entire documentation from the perspective of the user.
 * Don't use the words "easy, flexible, user-friendly".
