@@ -1,8 +1,6 @@
-<p align="right"><a href="readme-de.md">Deutsch</a> &nbsp; <a href="readme.md">English</a> &nbsp; <a href="readme-sv.md">Svenska</a></p>
-
 # Help 0.9.7
 
-Dokumentation av grunderna.
+Dokumentation av grunderna. Utvecklad av Anna Svensson.
 
 <p align="center"><img src="screenshot.png" alt="Skärmdump"></p>
 
@@ -26,6 +24,4 @@ Du hittar grundläggande dokumentation i hjälpen och mer detaljerad dokumentati
 
 Detta tillägg innehåller ett foto av Bruno Cervera. Tack för det vackra fotot.
 
-## Utvecklare
-
-Anna Svensson. [Få hjälp](https://datenstrom.se/sv/yellow/help/).
+Har du några frågor? [Få hjälp](https://datenstrom.se/sv/yellow/help/).

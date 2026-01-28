@@ -1,8 +1,6 @@
-<p align="right"><a href="readme-de.md">Deutsch</a> &nbsp; <a href="readme.md">English</a> &nbsp; <a href="readme-sv.md">Svenska</a></p>
-
 # Help 0.9.7
 
-Documentation of the basics.
+Documentation of the basics. Developed by Anna Svensson.
 
 <p align="center"><img src="screenshot.png" alt="Screenshot"></p>
 
@@ -26,6 +24,4 @@ You can find basic documentation in the help and more detailed documentation in 
 
 This extension includes a photo by Bruno Cervera. Thank you for the beautiful photo.
 
-## Developer
-
-Anna Svensson. [Get help](https://datenstrom.se/yellow/help/).
+Do you have questions? [Get help](https://datenstrom.se/yellow/help/).

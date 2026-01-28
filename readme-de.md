@@ -1,8 +1,6 @@
-<p align="right"><a href="readme-de.md">Deutsch</a> &nbsp; <a href="readme.md">English</a> &nbsp; <a href="readme-sv.md">Svenska</a></p>
-
 # Help 0.9.7
 
-Dokumentation der Grundlagen.
+Dokumentation der Grundlagen. Entwickelt von Anna Svensson.
 
 <p align="center"><img src="screenshot.png" alt="Bildschirmfoto"></p>
 
@@ -26,6 +24,4 @@ Du findest grundlegende Dokumentation in der Hilfe und ausführlichere Dokumenta
 
 Diese Erweiterung enthält ein Foto von Bruno Cervera. Danke für das schöne Foto.
 
-## Entwickler
-
-Anna Svensson. [Hilfe finden](https://datenstrom.se/de/yellow/help/).
+Hast du Fragen? [Hilfe finden](https://datenstrom.se/de/yellow/help/).
