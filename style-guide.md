@@ -52,7 +52,7 @@ You should use the following guidelines for your extension:
 * Extension names should be one word, singular, no spaces, e.g. `Core`, `Edit`, `Fika`.
 * Version numbers should begin with the release number, e.g. `0.9.1`, `0.9.2`, `0.9.3`.
 * Descriptions should be one short sentence, e.g. `Core functionality of your website`.
-* File names should use kebab-case, the extension name is used as prefix,  
+* File names should use kebab-case, the extension name is sometimes used as prefix,  
   e.g. `fika.php`, `fika.css`, `fika.js`, `fika-library.min.js`, `fika-stack.svg`.
 * Repository names should use kebap-case, e.g. `yellow-core`, `yellow-edit`, `yellow-fika`.
 * Repository documentation files should be in Markdown format, e.g. `readme.md`.
