@@ -7,7 +7,7 @@ Läs hur du ställer frågor, rapporterar fel och jobbar med oss.
 
 * Skriv frågan i rubriken, det är det första alla kommer att se.
 * Beskriv problemet du försöker lösa.
-* Förklara vad du har försökt hittills.
+* Förklara vad du har gjort.
 * Välj ett svar när din fråga har besvarats.
 
 Om du vill ställa en fråga, [starta en ny diskussion](https://github.com/datenstrom/community/discussions/categories/ask-a-question).

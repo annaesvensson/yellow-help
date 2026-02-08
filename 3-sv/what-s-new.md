@@ -6,6 +6,7 @@ Läs vad som har förändrats sedan förra gången.
 ! {.wikiblock}
 ! ## Datenstrom Yellow - senaste produktändringar
 !
+! - Uppdaterat API, ändrat getAvailable() till enumerate()
 ! - Uppdaterat API, ändrat content-element-typ notice till general
 ! - Uppdaterat core-tillägg, stöd för webmanifest-filer har lagts till
 ! - Uppdaterat edit-tillägg, uppladdning med olika JPEG-filändele

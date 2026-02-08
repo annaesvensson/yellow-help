@@ -84,50 +84,25 @@ Beskrivning av metoder och argument:
 Hantera initialisering
 
 `yellow->request(): int`  
-Hantera begäran från webbläsaren
+Hantera en begäran från webbläsaren
 
 `yellow->command($line = ""): int`  
-Hantera kommandon från kommandoraden
+Hantera ett kommando från kommandoraden
 
 `yellow->layout($name, $arguments = null): void`  
-Inkludera layouten
+Inkludera ett layout
 
 `yellow->getLayoutArguments($sizeMin = 9): array`  
 Returnera layoutargument
 
 ---
 
-Layoutfil med header och footer:
+Exempelkod för att hantera en begäran från webbläsaren:
 
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php echo $this->yellow->page->getContentHtml() ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil för header:
-
-``` html
-<!DOCTYPE html>
-<html lang="<?php echo $this->yellow->page->getHtml("language") ?>">
-<head>
-<title><?php echo $this->yellow->page->getHtml("titleHeader") ?></title>
-<?php echo $this->yellow->page->getExtraHtml("header") ?>
-</head>
-<body>
-```
-
-Layoutfil för footer:
-
-``` html
-<?php echo $this->yellow->page->getExtraHtml("footer") ?>
-</body>
-</html>
+``` php
+$yellow = new YellowCore();
+$yellow->load();
+$yellow->request();
 ```
 
 ### Yellow content
@@ -160,8 +135,7 @@ Returnera [page collection](#yellow-page-collection) som är tom
 
 ---
 
-Layoutfil för att visa alla sidor:
-
+Layoutfil för att visa innehållsfiler:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -172,45 +146,7 @@ Layoutfil för att visa alla sidor:
 <?php $this->yellow->page->setLastModified($pages->getModified()) ?>
 <ul>
 <?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil för att visa sidor under en viss plats:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->find("/help/")->getChildren() ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil för att visa navigationssidor på toppnivå:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->top() ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("titleNavigation") ?></li>
+<li><?php echo $page->getLocation(true) ?></li>
 <?php endforeach ?>
 </ul>
 </div>
@@ -258,49 +194,11 @@ Layoutfil för att visa mediefiler:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layoutfil för att visa senaste mediefiler:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $files = $this->yellow->media->index()->sort("modified", false) ?>
-<?php $this->yellow->page->setLastModified($files->getModified()) ?>
-<ul>
-<?php foreach ($files as $file): ?>
-<li><?php echo $file->getLocation(true) ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil för att visa mediefiler av en viss typ:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $files = $this->yellow->media->index()->filter("type", "pdf") ?>
-<?php $this->yellow->page->setLastModified($files->getModified()) ?>
-<ul>
-<?php foreach ($files as $file): ?>
-<li><?php echo $file->getLocation(true) ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
 ### Yellow system
 
 Klassen `YellowSystem` ger tillgång till [systeminställningar](how-to-change-the-system#systeminställningar). Följande metoder är tillgängliga:
 
-`get` `getAvailable` `getDifferent` `getHtml` `getModified` `getSettings` `isExisting` `save` `set` `setDefault`
+`get` `getDifferent` `getHtml` `getModified` `getSettings` `isExisting` `save` `set` `setDefault`
 
 ---
 
@@ -324,9 +222,6 @@ Returnera systeminställning, HTML-kodad
 `system->getDifferent($key): string`  
 Returnera ett annat värde för en systeminställning
 
-`system->getAvailable($key): array`  
-Returnera tillgängliga värden för en systeminställning
-
 `system->getSettings($filterStart = "", $filterEnd = ""): array`  
 Returnera systeminställningar
 
@@ -338,7 +233,7 @@ Kontrollera om systeminställning finns
 
 ---
 
-Layoutfil för att visa webbansvarig:
+Layoutfil för att visa systeminställningar:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -346,41 +241,9 @@ Layoutfil för att visa webbansvarig:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
+<?php echo "Sitename: ".$this->yellow->system->getHtml("sitename")."<br />" ?>
 <?php echo "Name: ".$this->yellow->system->getHtml("author")."<br />" ?>
 <?php echo "Email: ".$this->yellow->system->getHtml("email")."<br />" ?>
-</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil för att kontrollera om en specifik inställning är aktiverad: 
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p>
-<?php $debugMode = $this->yellow->system->get("coreDebugMode") ?>
-Debug mode is <?php echo htmlspecialchars($debugMode ? "on" : "off") ?>.
-</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil för att visa core-inställningar: 
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p>
-<?php foreach ($this->yellow->system->getSettings("core") as $key=>$value): ?>
-<?php echo htmlspecialchars("$key: $value") ?><br />
-<?php endforeach ?>
 </p>
 </div>
 </div>
@@ -432,36 +295,7 @@ Kontrollera om språket finns
 
 ---
 
-Layoutfil för att visa en språkinställning:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p><?php echo $this->yellow->language->getTextHtml("wikiModified") ?> 
-<?php echo $this->yellow->page->getDateHtml("modified") ?></p>
-<?php echo $this->yellow->page->getContentHtml() ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil för att kontrollera om ett specifikt språk finns:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $found = $this->yellow->language->isExisting("sv") ?>
-<p>Swedish language <?php echo htmlspecialchars($found? "" : "not") ?> installed.</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil för att visa språk och översättare:
+Layoutfil för att visa språkinställningar:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -469,7 +303,7 @@ Layoutfil för att visa språk och översättare:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php foreach ($this->yellow->system->getAvailable("language") as $language): ?>
+<?php foreach ($this->yellow->toolbox->enumerate("system", "language") as $language): ?>
 <?php echo $this->yellow->language->getTextHtml("languageDescription", $language) ?> - 
 <?php echo $this->yellow->language->getTextHtml("languageTranslator", $language) ?><br />
 <?php endforeach ?>
@@ -518,7 +352,7 @@ Kontrollera om användaren finns
 
 ---
 
-Layoutfil för att visa den aktuella användaren:
+Layoutfil för att visa användarinställningar:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -526,37 +360,7 @@ Layoutfil för att visa den aktuella användaren:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php echo "Name: ".$this->yellow->user->getUserHtml("name")."<br />" ?>
-<?php echo "Email: ".$this->yellow->user->getUserHtml("email")."<br />" ?>
-</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil för att kontrollera om en användare är inloggad:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $found = $this->yellow->user->isUser("name") ?>
-<p>You are <?php echo htmlspecialchars($found? "" : "not") ?> logged in.</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil för att visa användare och deras status:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p>
-<?php foreach ($this->yellow->system->getAvailable("email") as $email): ?>
+<?php foreach ($this->yellow->toolbox->enumerate("system", "email") as $email): ?>
 <?php echo $this->yellow->user->getUserHtml("name", $email) ?> - 
 <?php echo $this->yellow->user->getUserHtml("status", $email) ?><br />
 <?php endforeach ?>
@@ -587,7 +391,7 @@ Kontrollera om tilläget finns
 
 ---
 
-Layoutfil för att visa tillägg:
+Layoutfil för att visa installerade tillägg:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -602,30 +406,6 @@ Layoutfil för att visa tillägg:
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil för att kontrollera om ett specifikt tillägg finns:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $found = $this->yellow->extension->isExisting("search") ?>
-<p>Search extension <?php echo htmlspecialchars($found ? "" : "not") ?> installed.</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Kod för att anropa en funktion från ett annat tillägg:
-
-``` php
-if ($this->yellow->extension->isExisting("image")) {
-    $fileName = "media/images/photo.jpg";
-    list($src, $width, $height) = $this->yellow->extension->get("image")->getImageInformation($fileName, "100%", "100%");
-    echo "<img src=\"".htmlspecialchars($src)."\" width=\"".htmlspecialchars($width)."\" height=\"".htmlspecialchars($height)."\" />";
-}
 ```
 
 ### Yellow lookup
@@ -731,34 +511,11 @@ Layoutfil för att visa bildsökvägar:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layoutfil för att visa sidtyp:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $fileLocation = $this->yellow->lookup->isFileLocation($this->yellow->page->location) ?>
-<p>Page is <?php echo htmlspecialchars($fileLocation? "file" : "directory") ?>.</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Kod för att dela upp en URL:
-
-``` php
-if (!is_string_empty($url)) {
-    list($scheme, $address, $base) = $this->yellow->lookup->getUrlInformation($url);
-    echo "Found scheme:$scheme address:$address base:$base\n";
-}
-```
-
 ### Yellow toolbox
 
 Klassen `YellowToolbox` ger tillgång till verktygslådan med hjälpmetoder. Följande metoder är tillgängliga:
 
-`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileSize` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
+`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `enumerate` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileSize` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
 
 ---
 
@@ -833,6 +590,9 @@ Returnera array med variabel storlek från text, separerade av mellanslag
 `toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
 Skapa textbeskrivning, med eller utan HTML
 
+`toolbox->enumerate($action, $text): array`  
+Returnera tillgängliga värden
+
 `toolbox->mail($action, $headers, $message): bool`  
 Skicka emailmeddelande
 
@@ -841,36 +601,22 @@ Skriv information till loggfilen
 
 ---
 
-Kod för att läsa textrader från filen:
+Layoutfil for att visa katalog:
 
-``` php
-$fileName = $this->yellow->system->get("coreExtensionDirectory").$this->yellow->system->get("coreSystemFile");
-$fileData = $this->yellow->toolbox->readFile($fileName);
-foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
-    echo $line;
-}
-```
-
-Kod för att visa filer i en mapp:
-
-``` php
-$path = $this->yellow->system->get("coreExtensionDirectory");
-foreach ($this->yellow->toolbox->getDirectoryEntries($path, "/.*/", true, false) as $entry) {
-    echo "Found file $entry\n";
-}
-```
-
-Kod för att ändra text i flera filer:
-
-``` php
-$path = $this->yellow->system->get("coreContentDirectory");
-foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/", true, false) as $entry) {
-    $fileData = $fileDataNew = $this->yellow->toolbox->readFile($entry);
-    $fileDataNew = str_replace("I drink a lot of water", "I drink a lot of coffee", $fileDataNew);
-    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->writeFile($entry, $fileDataNew)) {
-        $this->yellow->toolbox->log("error", "Can't write file '$entry'!");
-    }
-}
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<ul>
+<?php $path = $this->yellow->system->get("coreExtensionDirectory") ?>
+<?php foreach($this->yellow->toolbox->getDirectoryEntries($path, "/.*/", true, false) as $entry): ?>
+<li><?php echo htmlspecialchars($entry) ?></li>
+<?php endforeach ?>
+</ul>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
 ```
 
 ### Yellow page
@@ -1015,34 +761,6 @@ Layoutfil för att visa sidinnehåll:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layoutfil för att visa sidinnehåll och författare:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p><?php echo $this->yellow->page->getHtml("author") ?></p>
-<?php echo $this->yellow->page->getContentHtml() ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil för att visa sidinnehåll och modifieringsdatum:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php echo $this->yellow->page->getContentHtml() ?>
-<p>Senast uppdaterad <?php echo $this->yellow->page->getDateHtml("modified") ?></p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
 ### Yellow page collection
 
 Klassen `YellowPageCollection` ger tillgång till flera sidor. Följande metoder är tillgängliga:
@@ -1152,45 +870,6 @@ Layoutfil för att visa tre slumpmässiga sidor:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layoutfil för att visa senaste sidor:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index()->sort("modified", false) ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutfil för att visa senaste sidor med paginering:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index()->sort("modified", false)->paginate(10) ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-<?php $this->yellow->layout("pagination", $pages) ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
 ### Yellow string
 
 Följande funktioner utökar PHP-strängfunktioner och arrayfunktioner: 
@@ -1227,46 +906,45 @@ Kontrollera om arrayen är tom
 
 ---
 
-Kod för att konvertera strängar:
+Layoutfil för att testa strängfunktioner och arrayfunktioner:
 
-``` php
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<pre><?php
+
 $string = "För människor och maskiner";
 echo strtoloweru($string);                   // för människor och maskiner
 echo strtoupperu($string);                   // FÖR MÄNNISKOR OCH MASKINER
-```
 
-Kod för att komma åt strängar:
-
-``` php
 $string = "Text med UTF-8 tecken åäö";
 echo strlenu($string);                       // 25
 echo strposu($string, "UTF");                // 9
 echo substru($string, -3, 3);                // åäö
-```
 
-Kod för att kontrollera om strängar är tomma:
-
-``` php
 var_dump(is_string_empty(""));               // bool(true)
 var_dump(is_string_empty("text"));           // bool(false)
 var_dump(is_string_empty("0"));              // bool(false)
-```
 
-Kod för att kontrollera om arrayer är tomma:
-
-``` php
 var_dump(is_array_empty(array()));           // bool(true)
 var_dump(is_array_empty(new ArrayObject())); // bool(true)
 var_dump(is_array_empty(array("entry")));    // bool(false)
+
+?></pre>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
 ```
 
 ## Händelser
 
-En webbplats består av kärnan och andra tillägg. I början laddas alla tillägg och `onLoad` kommer att anropas. Det finns olika händelser som informerar dig när en begäran från webbläsaren tas emot, ett kommando utförs eller information finns tillgänglig. Du kan hantera de händelser du är intresserad av.
+En webbplats består av kärnan och andra tillägg. I början laddas alla tillägg och `onLoad` kommer att anropas. Det finns olika händelser som informerar dig när en begäran från webbläsaren tas emot, ett kommando utförs eller information uppdateras. Du kan hantera de händelser som du är intresserad av.
 
 ``` box-drawing {aria-hidden=true}
-onLoad                                                             Information
-    │                                                           finns tillgänglig
+onLoad                                                              Information
+    │                                                               uppdateras
     ▼                                                                   │
 onStartup ───────────────────────────────────────────┐                  │
     │                                                │                  │
@@ -1275,9 +953,9 @@ onRequest ───────────────────┐          
     │                        │                       │                  │
     ▼                        ▼                       ▼                  ▼
 onParseMetaData          onEditContentFile       onCommand          onUpdate
-onParseContentRaw        onEditMediaFile         onCommandHelp      onMail
-onParseContentElement    onEditSystemFile            │              onLog
-onParseContentHtml       onEditUserAccount           │
+onParseContentRaw        onEditMediaFile         onCommandHelp      onEnumerate
+onParseContentElement    onEditSystemFile            │              onMail
+onParseContentHtml       onEditUserAccount           │              onLog
 onParsePageLayout            │                       │
 onParsePageExtra             │                       │
 onParsePageOutput            │                       │
@@ -1291,13 +969,14 @@ Följande typer av händelser är tillgängliga:
 `Yellow core händelser` = [meddelar när ett tillstånd ändras](#yellow-core-händelser)  
 `Yellow parse händelser` = [meddelar när en sida genereras](#yellow-parse-händelser)  
 `Yellow edit händelser` = [meddelar när en fil redigeras](#yellow-edit-händelser)  
-`Yellow info händelser` = [meddelar när information finns tillgänglig](#yellow-info-händelser)  
+`Yellow command händelser` = [meddelar när ett kommando utförs](#yellow-command-händelser)  
+`Yellow update händelser` = [meddelar när information uppdateras](#yellow-update-händelser)  
 
 ### Yellow core händelser
 
 Yellow core händelser meddelar när ett tillstånd ändras. Följande händelser är tillgängliga:
 
-`onCommand` `onCommandHelp` `onLoad` `onRequest` `onShutdown` `onStartup`
+`onLoad` `onRequest` `onShutdown` `onStartup`
 
 ---
 
@@ -1312,21 +991,17 @@ Hantera start
 `public function onRequest($scheme, $address, $base, $location, $fileName)`  
 Hantera begäran
 
-`public function onCommand($command, $text)`  
-Hantera kommandon
-
-`public function onCommandHelp()`  
-Hantera hjälp för kommandon
-
 `public function onShutdown()`  
 Hantera avstängningen
 
 ---
 
-Kod för att hantera initieringen:
+Tilläggsfil för att hantera initieringen:
 
 ``` php
 <?php
+// Example extension, https://github.com/annaesvenson/yellow-example
+
 class YellowExample {
     const VERSION = "0.9.1";
     public $yellow;         // access to API
@@ -1334,36 +1009,6 @@ class YellowExample {
     // Handle initialisation
     public function onLoad($yellow) {
         $this->yellow = $yellow;
-    }
-}
-```
-
-Kod för att hantera ett kommando:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.9.2";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-    
-    // Handle command
-    public function onCommand($command, $text) {
-        $statusCode = 0;
-        if ($command=="example") {
-            echo "Yellow $command: Add more text here\n";
-            $statusCode = 200;
-        }
-        return $statusCode;
-    }
-
-    // Handle command help
-    public function onCommandHelp() {
-        return "example";
     }
 }
 ```
@@ -1409,12 +1054,14 @@ Hantera output data för sidan
 
 ---
 
-Kod för att skapa en egen förkortning:
+Tilläggsfil för att hantera en förkortning:
 
 ``` php
 <?php
+// Example extension, https://github.com/annaesvenson/yellow-example
+
 class YellowExample {
-    const VERSION = "0.9.3";
+    const VERSION = "0.9.2";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1426,35 +1073,8 @@ class YellowExample {
     public function onParseContentElement($page, $name, $text, $attributes, $type) {
         $output = null;
         if ($name=="example" && ($type=="block" || $type=="inline")) {
-            $output = "<div class=\"example\">";
-            $output .= "Add more HTML code here";
-            $output .= "</div>";
-        }
-        return $output;
-    }
-}
-```
-
-Kod för att skapa en HTML header:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.9.4";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-    
-    // Handle page extra data
-    public function onParsePageExtra($page, $name) {
-        $output = null;
-        if ($name=="header") {
-            $assetLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreAssetLocation");
-            $output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$assetLocation}example.css\" />\n";
-            $output .= "<script type=\"text/javascript\" defer=\"defer\" src=\"{$assetLocation}example.js\"></script>\n";
+            if (is_string_empty($text)) $text = "Hello World";
+            $output = "<div class=\"example\">".htmlspecialchars($text)."</div>";
         }
         return $output;
     }
@@ -1494,12 +1114,14 @@ Hantera ändringar av användarkonton
 
 ---
 
-Kod för att hantera innehållsfiländringar:
+Tilläggsfil för att hantera innehållsfiländringar:
 
 ``` php
 <?php
+// Example extension, https://github.com/annaesvenson/yellow-example
+
 class YellowExample {
-    const VERSION = "0.9.5";
+    const VERSION = "0.9.3";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1518,12 +1140,32 @@ class YellowExample {
 }
 ```
 
-Kod för att hantera mediefiländringar:
+### Yellow command händelser
+
+Yellow command händelser meddelar när ett kommando utförs. Följande händelser är tillgängliga:
+
+`onCommand` `onCommandHelp`
+
+---
+
+Beskrivning av händelser och argument:
+
+`public function onCommand($command, $text)`  
+Hantera kommandon
+
+`public function onCommandHelp()`  
+Hantera hjälp för kommandon
+
+---
+
+Tilläggsfil för att hantera ett kommando:
 
 ``` php
 <?php
+// Example extension, https://github.com/annaesvenson/yellow-example
+
 class YellowExample {
-    const VERSION = "0.9.6";
+    const VERSION = "0.9.4";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1531,22 +1173,29 @@ class YellowExample {
         $this->yellow = $yellow;
     }
     
-    // Handle media file changes
-    public function onEditMediaFile($file, $action, $email) {
-        if ($action=="upload" && !$file->isError()) {
-            $fileType = $file->get("type");
-            $name = $this->yellow->user->getUser("name", $email);
-            $this->yellow->toolbox->log("info", "Upload file by user '".strtok($name, " ")."'");
+    // Handle command
+    public function onCommand($command, $text) {
+        $statusCode = 0;
+        if ($command=="example") {
+            if (is_string_empty($text)) $text = "Command has been handled";
+            echo "Yellow $command: $text\n";
+            $statusCode = 200;
         }
+        return $statusCode;
+    }
+
+    // Handle command help
+    public function onCommandHelp() {
+        return "example";
     }
 }
 ```
 
-### Yellow info händelser
+### Yellow update händelser
 
-Yellow info händelser meddelar när information finns tillgänglig. Följande händelser är tillgängliga:
+Yellow update händelser meddelar när information uppdateras. Följande händelser är tillgängliga:
 
-`onLog` `onMail` `onUpdate`
+`onEnumerate` `onLog` `onMail` `onUpdate`
 
 Följande uppdateringsåtgärder är tillgängliga:
 
@@ -1556,12 +1205,19 @@ Följande uppdateringsåtgärder är tillgängliga:
 `uninstall` = tillägget är avinstallerat  
 `update` = tillägget är uppdaterat  
 
+Följande uppräkningsåtgärder är tillgängliga:
+
+`system` = tillgängliga värden för en nyckel i systeminställningar  
+
 ---
 
 Beskrivning av händelser och argument:
 
 `public function onUpdate($action)`  
 Hantera uppdatering
+
+`public function onEnumerate($action, $text)`  
+Hantera uppräkning
 
 `public function onMail($action, $headers, $message)`  
 Hantera email
@@ -1571,34 +1227,14 @@ Hantera loggning
 
 ---
 
-Kod för att hantera en uppdateringshändelse:
+Tilläggsfil för att hantera en daglig händelse:
 
 ``` php
 <?php
+// Example extension, https://github.com/annaesvenson/yellow-example
+
 class YellowExample {
-    const VERSION = "0.9.7";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="install") {
-            $this->yellow->toolbox->log("info", "Install event");
-        }
-    }
-}
-```
-
-Kod för att hantera en daglig händelse:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.9.8";
+    const VERSION = "0.9.5";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1609,7 +1245,7 @@ class YellowExample {
     // Handle update
     public function onUpdate($action) {
         if ($action=="daily") {
-            $this->yellow->toolbox->log("info", "Daily event");
+            $this->yellow->toolbox->log("info", "Daily event has been handled");
         }
     }
 }
@@ -1619,27 +1255,23 @@ class YellowExample {
 
 ### Liten webbredigerare
 
-Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Den lilla webbredigeraren ger dig möjlighet att redigera innehållsfiler och ladda upp mediefiler. Det är ett utmärkt sätt att uppdatera webbsidor. Textformatering med Markdown stöds. HTML stöds också. [Läs mer om lilla webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/README-sv.md).
+Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Den lilla webbredigeraren ger dig möjlighet att ändra innehållsfiler, ladda upp mediefiler och konfigurera inställningar. Textformatering med Markdown stöds. HTML stöds också. [Läs mer om lilla webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/readme-sv.md).
 
 ### Litet layoutsystem
 
 Du kan anpassa din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett webbramverk, utan kan använda vanlig HTML och CSS. För sofistikerade layouter finns det ett API för utvecklare. Detta ger dig möjlighet att komma åt innehållsfiler, skapa kontrollstrukturer och det mesta kommer förmodligen att verka ganska bekant för dig som utvecklare. Vi använder samma API:et överallt, från layoutfiler till tillägg. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
 
-### Litet tilläggssystem
-
-Du kan anpassa din webbplats med tillägg. Detta ger dig möjlighet att anpassa nästan alla aspekter av systemet. Tanken är att standardinstallationen innehåller de viktigaste sakerna för små webbplatser. Du kan lägga till fler funktioner senare. Det finns tillägg med ytterligare funktioner, språk och teman som du kan installera. Vi använder samma API:et överallt, från layoutfiler till tillägg. [Läs mer om tillägg](https://github.com/annaesvensson/yellow-update/tree/main/README-sv.md) och [att göra tillägg](https://github.com/annaesvensson/yellow-publish/tree/main/README-sv.md).
-
 ### Inbyggd webbserver
 
-Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att ändra din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/README-sv.md).
+Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att ändra din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/readme-sv.md).
 
 ### Statisk generator
 
-Du kan generera en statisk webbplats på kommandoraden. Den statiska generatorn skapar hella webbplatsen i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om statiska generatorn](https://github.com/annaesvensson/yellow-generate/tree/main/README-sv.md).
+Du kan generera en statisk webbplats på kommandoraden. Den statiska generatorn skapar hella webbplatsen i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om statiska generatorn](https://github.com/annaesvensson/yellow-generate/tree/main/readme-sv.md).
 
-### Felsökningsläge
+## Felsökningsläge
 
-Du kan använda felsökningsläget för att undersöka problem eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget på din webbplats, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Beroende på felsökningsläget visas mer eller mindre information på skärmen.
+Du kan använda felsökningsläget för att undersöka orsaken till ett problem eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Ytterligare information kommer att visas på skärmen och i webbläsarkonsolen. Beroende på felsökningsläget visas mer eller mindre information.
 
 Grundläggande information med inställningen `CoreDebugMode: 1`:
 

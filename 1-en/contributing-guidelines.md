@@ -7,7 +7,7 @@ Learn how to ask questions, report bugs and work with us.
 
 * Write the question in the title, it's the first thing everyone will see.
 * Describe the problem you are trying to solve.
-* Explain what you have tried so far. 
+* Explain what you have done. 
 * Select an answer, when your question has been answered.
 
 If you want to ask a question, [start a new discussion](https://github.com/datenstrom/community/discussions/categories/ask-a-question).

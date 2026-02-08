@@ -98,37 +98,12 @@ Hole die Layout-Argumente
 
 ---
 
-Layoutdatei mit Header und Footer:
+Beispielcode für die Verarbeitung einer Anfrage vom Webbrowser:
 
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php echo $this->yellow->page->getContentHtml() ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei für Header:
-
-``` html
-<!DOCTYPE html>
-<html lang="<?php echo $this->yellow->page->getHtml("language") ?>">
-<head>
-<title><?php echo $this->yellow->page->getHtml("titleHeader") ?></title>
-<?php echo $this->yellow->page->getExtraHtml("header") ?>
-</head>
-<body>
-```
-
-Layoutdatei für Footer:
-
-``` html
-<?php echo $this->yellow->page->getExtraHtml("footer") ?>
-</body>
-</html>
+``` php
+$yellow = new YellowCore();
+$yellow->load();
+$yellow->request();
 ```
 
 ### Yellow-Content
@@ -161,7 +136,7 @@ Hole eine [Seitenkollektion](#yellow-page-collection) die leer ist
 
 ---
 
-Layoutdatei um Seiten anzuzeigen:
+Layoutdatei um Inhaltsdateien anzuzeigen:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -172,45 +147,7 @@ Layoutdatei um Seiten anzuzeigen:
 <?php $this->yellow->page->setLastModified($pages->getModified()) ?>
 <ul>
 <?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei um Seiten unterhalb eines bestimmten Orts anzuzeigen:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->find("/help/")->getChildren() ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei um die Hauptseiten der Navigation anzuzeigen:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->top() ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("titleNavigation") ?></li>
+<li><?php echo $page->getLocation(true) ?></li>
 <?php endforeach ?>
 </ul>
 </div>
@@ -258,49 +195,11 @@ Layoutdatei um Mediendateien anzuzeigen:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layoutdatei um die neusten Mediendateien anzuzeigen:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $files = $this->yellow->media->index()->sort("modified", false) ?>
-<?php $this->yellow->page->setLastModified($files->getModified()) ?>
-<ul>
-<?php foreach ($files as $file): ?>
-<li><?php echo $file->getLocation(true) ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei um Mediendateien eines bestimmten Typen anzuzeigen:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $files = $this->yellow->media->index()->filter("type", "pdf") ?>
-<?php $this->yellow->page->setLastModified($files->getModified()) ?>
-<ul>
-<?php foreach ($files as $file): ?>
-<li><?php echo $file->getLocation(true) ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
 ### Yellow-System
 
 Die Klasse `YellowSystem` gibt Zugang zu [Systemeinstellungen](how-to-change-the-system#systemeinstellungen). Die folgenden Methoden sind verfügbar:
 
-`get` `getAvailable` `getDifferent` `getHtml` `getModified` `getSettings` `isExisting` `save` `set` `setDefault`
+`get` `getDifferent` `getHtml` `getModified` `getSettings` `isExisting` `save` `set` `setDefault`
 
 ---
 
@@ -324,9 +223,6 @@ Hole eine Systemeinstellung, HTML-kodiert
 `system->getDifferent($key): string`  
 Hole einen anderen Wert für eine Systemeinstellung
 
-`system->getAvailable($key): array`  
-Hole die vorhandenen Werte einer Systemeinstellung
-
 `system->getSettings($filterStart = "", $filterEnd = ""): array`  
 Hole Systemeinstellungen
 
@@ -338,7 +234,7 @@ Hole das Änderungsdatum von Systemeinstellungen, Unix-Zeit oder HTTP-Format
 
 ---
 
-Layoutdatei um den Webmaster anzuzeigen:
+Layoutdatei um Systemeinstellungen anzuzeigen:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -346,41 +242,9 @@ Layoutdatei um den Webmaster anzuzeigen:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
+<?php echo "Sitename: ".$this->yellow->system->getHtml("sitename")."<br />" ?>
 <?php echo "Name: ".$this->yellow->system->getHtml("author")."<br />" ?>
 <?php echo "Email: ".$this->yellow->system->getHtml("email")."<br />" ?>
-</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei um zu überprüfen ob eine bestimmte Einstellung aktiviert ist:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p>
-<?php $debugMode = $this->yellow->system->get("coreDebugMode") ?>
-Debug mode is <?php echo htmlspecialchars($debugMode ? "on" : "off") ?>.
-</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei um die Core-Einstellungen anzuzeigen:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p>
-<?php foreach ($this->yellow->system->getSettings("core") as $key=>$value): ?>
-<?php echo htmlspecialchars("$key: $value") ?><br />
-<?php endforeach ?>
 </p>
 </div>
 </div>
@@ -432,36 +296,7 @@ Hole das Änderungsdatum von Spracheinstellungen, Unix-Zeit oder HTTP-Format
 
 ---
 
-Layoutdatei um eine Spracheinstellung anzuzeigen:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p><?php echo $this->yellow->language->getTextHtml("wikiModified") ?> 
-<?php echo $this->yellow->page->getDateHtml("modified") ?></p>
-<?php echo $this->yellow->page->getContentHtml() ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei um zu überprüfen ob eine bestimmte Sprache existiert:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $found = $this->yellow->language->isExisting("sv") ?>
-<p>Swedish language <?php echo htmlspecialchars($found ? "" : "not") ?> installed.</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei um Sprachen und Übersetzer anzuzeigen:
+Layoutdatei um Spracheinstellungen anzuzeigen:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -469,7 +304,7 @@ Layoutdatei um Sprachen und Übersetzer anzuzeigen:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php foreach ($this->yellow->system->getAvailable("language") as $language): ?>
+<?php foreach ($this->yellow->toolbox->enumerate("system", "language") as $language): ?>
 <?php echo $this->yellow->language->getTextHtml("languageDescription", $language) ?> - 
 <?php echo $this->yellow->language->getTextHtml("languageTranslator", $language) ?><br />
 <?php endforeach ?>
@@ -518,7 +353,7 @@ Hole das Änderungsdatum von Benutzereinstellungen, Unix-Zeit oder HTTP-Format
 
 ---
 
-Layoutdatei um den aktuellen Benutzer anzuzeigen:
+Layoutdatei um Benutzereinstellungen anzuzeigen:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -526,37 +361,7 @@ Layoutdatei um den aktuellen Benutzer anzuzeigen:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php echo "Name: ".$this->yellow->user->getUserHtml("name")."<br />" ?>
-<?php echo "Email: ".$this->yellow->user->getUserHtml("email")."<br />" ?>
-</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei um zu überprüfen ob ein Benutzer angemeldet ist:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $found = $this->yellow->user->isUser("name") ?>
-<p>You are <?php echo htmlspecialchars($found? "" : "not") ?> logged in.</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei um Benutzer und ihren Status anzuzeigen:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p>
-<?php foreach ($this->yellow->system->getAvailable("email") as $email): ?>
+<?php foreach ($this->yellow->toolbox->enumerate("system", "email") as $email): ?>
 <?php echo $this->yellow->user->getUserHtml("name", $email) ?> - 
 <?php echo $this->yellow->user->getUserHtml("status", $email) ?><br />
 <?php endforeach ?>
@@ -587,7 +392,7 @@ Hole das Änderungsdatum von Erweiterungen, Unix-Zeit oder HTTP-Format
 
 ---
 
-Layoutdatei um Erweiterungen anzuzeigen:
+Layoutdatei um installierte Erweiterungen anzuzeigen:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -602,30 +407,6 @@ Layoutdatei um Erweiterungen anzuzeigen:
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei um zu überprüfen ob eine bestimmte Erweiterung existiert:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $found = $this->yellow->extension->isExisting("search") ?>
-<p>Search extension <?php echo htmlspecialchars($found ? "" : "not") ?> installed.</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Code um eine Funktion aus einer anderen Erweiterung aufzurufen:
-
-``` php
-if ($this->yellow->extension->isExisting("image")) {
-    $fileName = "media/images/photo.jpg";
-    list($src, $width, $height) = $this->yellow->extension->get("image")->getImageInformation($fileName, "100%", "100%");
-    echo "<img src=\"".htmlspecialchars($src)."\" width=\"".htmlspecialchars($width)."\" height=\"".htmlspecialchars($height)."\" />";
-}
 ```
 
 ### Yellow-Lookup
@@ -731,34 +512,11 @@ Layoutdatei um Bildpfade anzuzeigen:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layoutdatei um den Seitentyp anzuzeigen:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $fileLocation = $this->yellow->lookup->isFileLocation($this->yellow->page->location) ?>
-<p>Page is <?php echo htmlspecialchars($fileLocation? "file" : "directory") ?>.</p>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Code um eine URL in Bestandteile zu zerlegen:
-
-``` php
-if (!is_string_empty($url)) {
-    list($scheme, $address, $base) = $this->yellow->lookup->getUrlInformation($url);
-    echo "Found scheme:$scheme address:$address base:$base\n";
-}
-```
-
 ### Yellow-Toolbox
 
 Die Klasse `YellowToolbox` gibt Zugang zur Werkzeugkiste mit Hilfsmethoden. Die folgenden Methoden sind verfügbar:
 
-`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileSize` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
+`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `enumerate` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileSize` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
 
 ---
 
@@ -833,6 +591,9 @@ Hole ein Array mit variabler Grösse aus dem Text, durch Leerzeichen getrennt
 `toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
 Erstelle eine Textbeschreibung, mit oder ohne HTML
 
+`toolbox->enumerate($action, $text): array`  
+Hole mögliche Werte
+
 `toolbox->mail($action, $headers, $message): bool`  
 Sende E-Mail-Nachricht
 
@@ -841,36 +602,22 @@ Schreibe Informationen in die Logdatei
 
 ---
 
-Code um Textzeilen von einer Datei zu lesen:
+Layoutdatei um Verzeichnis anzuzeigen:
 
-``` php
-$fileName = $this->yellow->system->get("coreExtensionDirectory").$this->yellow->system->get("coreSystemFile");
-$fileData = $this->yellow->toolbox->readFile($fileName);
-foreach ($this->yellow->toolbox->getTextLines($fileData) as $line) {
-    echo $line;
-}
-```
-
-Code um Dateien in einem Verzeichnis anzuzeigen:
-
-``` php
-$path = $this->yellow->system->get("coreExtensionDirectory");
-foreach ($this->yellow->toolbox->getDirectoryEntries($path, "/.*/", true, false) as $entry) {
-    echo "Found file $entry\n";
-}
-```
-
-Code um Text in mehreren Dateien zu ändern:
-
-``` php
-$path = $this->yellow->system->get("coreContentDirectory");
-foreach ($this->yellow->toolbox->getDirectoryEntriesRecursive($path, "/^.*\.md$/", true, false) as $entry) {
-    $fileData = $fileDataNew = $this->yellow->toolbox->readFile($entry);
-    $fileDataNew = str_replace("I drink a lot of water", "I drink a lot of coffee", $fileDataNew);
-    if ($fileData!=$fileDataNew && !$this->yellow->toolbox->writeFile($entry, $fileDataNew)) {
-        $this->yellow->toolbox->log("error", "Can't write file '$entry'!");
-    }
-}
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<ul>
+<?php $path = $this->yellow->system->get("coreExtensionDirectory") ?>
+<?php foreach($this->yellow->toolbox->getDirectoryEntries($path, "/.*/", true, false) as $entry): ?>
+<li><?php echo htmlspecialchars($entry) ?></li>
+<?php endforeach ?>
+</ul>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
 ```
 
 ### Yellow-Page
@@ -1002,7 +749,7 @@ Antworte mit Fehlerseite
 
 ---
 
-Layoutdatei um den Seiteninhalt anzuzeigen:
+Layoutdatei um Seiteninhalt anzuzeigen:
 
 ``` html
 <?php $this->yellow->layout("header") ?>
@@ -1010,34 +757,6 @@ Layoutdatei um den Seiteninhalt anzuzeigen:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <?php echo $this->yellow->page->getContentHtml() ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei um den Seiteninhalt und den Autor anzuzeigen:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<p><?php echo $this->yellow->page->getHtml("author") ?></p>
-<?php echo $this->yellow->page->getContentHtml() ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei um den Seiteninhalt und das Änderungsdatum anzuzeigen:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php echo $this->yellow->page->getContentHtml() ?>
-<p>Zuletzt aktualisiert am <?php echo $this->yellow->page->getDateHtml("modified") ?></p>
 </div>
 </div>
 <?php $this->yellow->layout("footer") ?>
@@ -1152,45 +871,6 @@ Layoutdatei um drei zufällige Seiten anzuzeigen:
 <?php $this->yellow->layout("footer") ?>
 ```
 
-Layoutdatei um die neusten Seiten anzuzeigen:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index()->sort("modified", false) ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
-Layoutdatei um die neusten Seiten mit Paginierung anzuzeigen:
-
-``` html
-<?php $this->yellow->layout("header") ?>
-<div class="content">
-<div class="main" role="main">
-<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
-<?php $pages = $this->yellow->content->index()->sort("modified", false)->paginate(10) ?>
-<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
-<ul>
-<?php foreach ($pages as $page): ?>
-<li><?php echo $page->getHtml("title") ?></li>
-<?php endforeach ?>
-</ul>
-<?php $this->yellow->layout("pagination", $pages) ?>
-</div>
-</div>
-<?php $this->yellow->layout("footer") ?>
-```
-
 ### Yellow-String
 
 Die folgenden Funktionen erweitern PHP-Stringfunktionen und Arrayfunktionen:
@@ -1227,46 +907,45 @@ Hole Teilstring, UTF-8-Zeichen oder Bytes
 
 ---
 
-Code um Strings zu konvertieren:
+Layoutdatei um Stringfunktionen und Arrayfunktionen zu testen:
 
-``` php
+``` html
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
+<pre><?php
+
 $string = "Für Menschen und Maschinen";
 echo strtoloweru($string);                   // für menschen und maschinen
 echo strtoupperu($string);                   // FÜR MENSCHEN UND MASCHINEN
-```
 
-Code um auf Strings zuzugerifen:
-
-``` php
 $string = "Text mit UTF-8-Zeichen åäö";
 echo strlenu($string);                       // 26
 echo strposu($string, "UTF");                // 9
 echo substru($string, -3, 3);                // åäö
-```
 
-Code um zu überprüfen ob Strings leer sind:
-
-``` php
 var_dump(is_string_empty(""));               // bool(true)
 var_dump(is_string_empty("text"));           // bool(false)
 var_dump(is_string_empty("0"));              // bool(false)
-```
 
-Code um zu überprüfen ob Arrays leer sind:
-
-``` php
 var_dump(is_array_empty(array()));           // bool(true)
 var_dump(is_array_empty(new ArrayObject())); // bool(true)
 var_dump(is_array_empty(array("entry")));    // bool(false)
+
+?></pre>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
 ```
 
 ## Ereignisse
 
-Eine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden alle Erweiterungen geladen und `onLoad` wird aufgerufen. Es gibt verschiedene Ereignisse die Erweiterung informieren wenn eine Anfrage vom Webbrowser empfangen wird, ein Befehl ausgeführt wird oder Informationen verfügbar sind. Du kannst die Ereignisse verarbeiten an denen du interessiert bist.
+Eine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden alle Erweiterungen geladen und `onLoad` wird aufgerufen. Es gibt verschiedene Ereignisse die Erweiterung informieren wenn eine Anfrage vom Webbrowser empfangen wird, ein Befehl ausgeführt wird oder Informationen aktualisiert werden. Du kannst die Ereignisse verarbeiten an denen du interessiert bist.
 
 ``` box-drawing {aria-hidden=true}
 onLoad                                                             Informationen
-    │                                                              sind verfügbar
+    │                                                           werden aktualisiert
     ▼                                                                   │
 onStartup ───────────────────────────────────────────┐                  │
     │                                                │                  │
@@ -1275,9 +954,9 @@ onRequest ───────────────────┐          
     │                        │                       │                  │
     ▼                        ▼                       ▼                  ▼
 onParseMetaData          onEditContentFile       onCommand          onUpdate
-onParseContentRaw        onEditMediaFile         onCommandHelp      onMail
-onParseContentElement    onEditSystemFile            │              onLog
-onParseContentHtml       onEditUserAccount           │
+onParseContentRaw        onEditMediaFile         onCommandHelp      onEnumerate
+onParseContentElement    onEditSystemFile            │              onMail
+onParseContentHtml       onEditUserAccount           │              onLog
 onParsePageLayout            │                       │
 onParsePageExtra             │                       │
 onParsePageOutput            │                       │
@@ -1291,13 +970,14 @@ Die folgenden Arten von Ereignissen sind verfügbar:
 `Yellow-Core-Ereignisse` = [unterrichten wenn sich ein Zustand ändert](#yellow-core-ereignisse)  
 `Yellow-Parse-Ereignisse` = [unterrichten wenn eine Seite erzeugt wird](#yellow-parse-ereignisse)  
 `Yellow-Edit-Ereignisse` = [unterrichten wenn eine Datei bearbeitet wird](#yellow-edit-ereignisse)  
-`Yellow-Info-Ereignisse` = [unterrichten wenn Informationen verfügbar sind](#yellow-info-ereignisse)  
+`Yellow-Command-Ereignisse` = [unterrichten wenn ein Befehl ausgeführt wird](#yellow-command-ereignisse)  
+`Yellow-Update-Ereignisse` = [unterrichten wenn Informationen aktualisiert werden](#yellow-update-ereignisse)  
 
 ### Yellow-Core-Ereignisse
 
 Yellow-Core-Ereignisse unterrichten wenn sich ein Zustand ändert. Die folgenden Ereignisse sind verfügbar:
 
-`onCommand` `onCommandHelp` `onLoad` `onRequest` `onShutdown` `onStartup`
+`onLoad` `onRequest` `onShutdown` `onStartup`
 
 ---
 
@@ -1312,21 +992,17 @@ Verarbeite das Hochfahren
 `public function onRequest($scheme, $address, $base, $location, $fileName)`  
 Verarbeite die Anfrage
 
-`public function onCommand($command, $text)`  
-Verarbeite Befehle
-
-`public function onCommandHelp()`  
-Verarbeite Hilfe für Befehle
-
 `public function onShutdown()`  
 Verarbeite das Runterfahren
 
 ---
 
-Code um die Initialisierung zu verarbeiten:
+Erweiterungsdatei um Initialisierung zu verarbeiten:
 
 ``` php
 <?php
+// Example extension, https://github.com/annaesvenson/yellow-example
+
 class YellowExample {
     const VERSION = "0.9.1";
     public $yellow;         // access to API
@@ -1334,36 +1010,6 @@ class YellowExample {
     // Handle initialisation
     public function onLoad($yellow) {
         $this->yellow = $yellow;
-    }
-}
-```
-
-Code um einen Befehl zu verarbeiten:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.9.2";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-    
-    // Handle command
-    public function onCommand($command, $text) {
-        $statusCode = 0;
-        if ($command=="example") {
-            echo "Yellow $command: Add more text here\n";
-            $statusCode = 200;
-        }
-        return $statusCode;
-    }
-
-    // Handle command help
-    public function onCommandHelp() {
-        return "example";
     }
 }
 ```
@@ -1410,12 +1056,14 @@ Verarbeite die Ausgabedaten einer Seite
 
 ---
 
-Code um eine eigene Abkürzung zu erstellen:
+Erweiterungsdatei um eine Abkürzung zu verarbeiten:
 
 ``` php
 <?php
+// Example extension, https://github.com/annaesvenson/yellow-example
+
 class YellowExample {
-    const VERSION = "0.9.3";
+    const VERSION = "0.9.2";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1427,35 +1075,8 @@ class YellowExample {
     public function onParseContentElement($page, $name, $text, $attributes, $type) {
         $output = null;
         if ($name=="example" && ($type=="block" || $type=="inline")) {
-            $output = "<div class=\"example\">";
-            $output .= "Add more HTML code here";
-            $output .= "</div>";
-        }
-        return $output;
-    }
-}
-```
-
-Code um einen HTML-Header zu erstellen:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.9.4";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-    
-    // Handle page extra data
-    public function onParsePageExtra($page, $name) {
-        $output = null;
-        if ($name=="header") {
-            $assetLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreAssetLocation");
-            $output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$assetLocation}example.css\" />\n";
-            $output .= "<script type=\"text/javascript\" defer=\"defer\" src=\"{$assetLocation}example.js\"></script>\n";
+            if (is_string_empty($text)) $text = "Hello World";
+            $output = "<div class=\"example\">".htmlspecialchars($text)."</div>";
         }
         return $output;
     }
@@ -1496,12 +1117,14 @@ Verarbeite Änderungen am Benutzerkonto
 
 ---
 
-Code um Änderungen an Inhaltsdatei zu verarbeiten:
+Erweiterungsdatei um Änderungen an Inhaltsdatei zu verarbeiten:
 
 ``` php
 <?php
+// Example extension, https://github.com/annaesvenson/yellow-example
+
 class YellowExample {
-    const VERSION = "0.9.5";
+    const VERSION = "0.9.3";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1520,12 +1143,32 @@ class YellowExample {
 }
 ```
 
-Code um Änderungen an Mediendatei zu verarbeiten:
+### Yellow-Command-Ereignisse
+
+Yellow-Command-Ereignisse unterrichten wenn ein Befehl ausgeführt wird. Die folgenden Ereignisse sind verfügbar:
+
+`onCommand` `onCommandHelp`
+
+---
+
+Beschreibung der Ereignisse und Argumente:
+
+`public function onCommand($command, $text)`  
+Verarbeite Befehle
+
+`public function onCommandHelp()`  
+Verarbeite Hilfe für Befehle
+
+---
+
+Erweiterungsdatei um einen Befehl zu verarbeiten:
 
 ``` php
 <?php
+// Example extension, https://github.com/annaesvenson/yellow-example
+
 class YellowExample {
-    const VERSION = "0.9.6";
+    const VERSION = "0.9.4";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1533,22 +1176,29 @@ class YellowExample {
         $this->yellow = $yellow;
     }
     
-    // Handle media file changes
-    public function onEditMediaFile($file, $action, $email) {
-        if ($action=="upload" && !$file->isError()) {
-            $fileType = $file->get("type");
-            $name = $this->yellow->user->getUser("name", $email);
-            $this->yellow->toolbox->log("info", "Upload file by user '".strtok($name, " ")."'");
+    // Handle command
+    public function onCommand($command, $text) {
+        $statusCode = 0;
+        if ($command=="example") {
+            if (is_string_empty($text)) $text = "Command has been handled";
+            echo "Yellow $command: $text\n";
+            $statusCode = 200;
         }
+        return $statusCode;
+    }
+
+    // Handle command help
+    public function onCommandHelp() {
+        return "example";
     }
 }
 ```
 
-### Yellow-Info-Ereignisse
+### Yellow-Update-Ereignisse
 
-Yellow-Info-Ereignisse unterrichten wenn Informationen verfügbar sind. Die folgenden Ereignisse sind verfügbar:
+Yellow-Update-Ereignisse unterrichten wenn Informationen aktualisiert werden. Die folgenden Ereignisse sind verfügbar:
 
-`onLog` `onMail` `onUpdate`
+`onEnumerate` `onLog` `onMail` `onUpdate`
 
 Die folgenden Aktualisierungs-Aktionen sind verfügbar:
 
@@ -1558,12 +1208,19 @@ Die folgenden Aktualisierungs-Aktionen sind verfügbar:
 `uninstall` = Erweiterung wird deinstalliert  
 `update` = Erweiterung wird aktualisiert  
 
+Die folgenden Auflistungs-Aktionen sind verfügbar:
+
+`system` = mögliche Werte für einen Schlüssel in Systemeinstellungen  
+
 ---
 
 Beschreibung der Ereignisse und Argumente:
 
 `public function onUpdate($action)`  
 Verarbeite Aktualisierung
+
+`public function onEnumerate($action, $text)`  
+Verarbeite Auflistung
 
 `public function onMail($action, $headers, $message)`  
 Verarbeite E-Mail
@@ -1573,34 +1230,14 @@ Verarbeite Logging
 
 ---
 
-Code um ein Aktualisierung-Ereignis zu verarbeiten:
+Erweiterungsdatei um ein tägliches Ereignis zu verarbeiten:
 
 ``` php
 <?php
+// Example extension, https://github.com/annaesvenson/yellow-example
+
 class YellowExample {
-    const VERSION = "0.9.7";
-    public $yellow;         // access to API
-    
-    // Handle initialisation
-    public function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="install") {
-            $this->yellow->toolbox->log("info", "Install event");
-        }
-    }
-}
-```
-
-Code um ein tägliches Ereignis zu verarbeiten:
-
-``` php
-<?php
-class YellowExample {
-    const VERSION = "0.9.8";
+    const VERSION = "0.9.5";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1611,7 +1248,7 @@ class YellowExample {
     // Handle update
     public function onUpdate($action) {
         if ($action=="daily") {
-            $this->yellow->toolbox->log("info", "Daily event");
+            $this->yellow->toolbox->log("info", "Daily event has been handled");
         }
     }
 }
@@ -1621,27 +1258,23 @@ class YellowExample {
 
 ### Kleiner Webeditor
 
-Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der kleine Webeditor gibt dir die Möglichkeit Inhaltsdateien zu bearbeiten und Mediendateien hochzuladen. Es ist eine großartige Art Webseiten zu aktualisieren. Textformatierung mit Markdown wird unterstützt. HTML wird auch unterstützt. [Weitere Informationen zum kleinen Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/README-de.md).
+Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der kleine Webeditor gibt dir die Möglichkeit Inhaltsdateien zu ändern, Mediendateien hochzuladen und Einstellungen zu konfigurieren. Textformatierung mit Markdown wird unterstützt. HTML wird auch unterstützt. [Weitere Informationen zum kleinen Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/readme-de.md).
 
 ### Kleines Layout-System
 
 Du kannst deine Webseite mit HTML und CSS anpassen. Glücklicherweise musst du kein Web-Framework lernen, sondern kannst normales HTML und CSS verwenden. Für anspruchsvolle Layouts gibt es eine API für Entwickler. Das gibt dir die Möglichkeit auf Inhaltsdateien zuzugreifen, Kontrollstrukturen zu erstellen und das meiste wird dir als Entwickler wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
 
-### Kleines Erweiterungssystem
-
-Du kannst deine Webseite mit Erweiterungen anpassen. Das gibt dir die Möglichkeit nahezu jeden Aspekt des Systems anzupassen. Die Idee dahinter ist, dass die Standardinstallation die wichtigsten Dinge für kleine Webseiten beinhaltet. Du kannst später weitere Funktionen hinzufügen. Es gibt Erweiterungen mit zusätzlichen Funktionen, Sprachen und Themes die du installieren kannst. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. [Weitere Informationen zu Erweiterungen](https://github.com/annaesvensson/yellow-update/tree/main/README-de.md) und [Erstellen von Erweiterungen](https://github.com/annaesvensson/yellow-publish/tree/main/README-de.md).
-
 ### Eingebauter Webserver
 
-Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer zu ändern und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum eingebauten Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/README-de.md).
+Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer zu ändern und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum eingebauten Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/readme-de.md).
 
 ### Statischer Generator
 
-Du kannst eine statische Webseite in der Befehlszeile generieren. Der statische Generator macht die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php generate`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das generiert eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und generiere bei Bedarf eine neue. [Weitere Informationen zum statischen Generator](https://github.com/annaesvensson/yellow-generate/tree/main/README-de.md).
+Du kannst eine statische Webseite in der Befehlszeile generieren. Der statische Generator macht die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php generate`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das generiert eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und generiere bei Bedarf eine neue. [Weitere Informationen zum statischen Generator](https://github.com/annaesvensson/yellow-generate/tree/main/readme-de.md).
 
 ## Debug-Modus
 
-Du kannst den Debug-Modus benutzen um Probleme zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei  `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Abhängig vom Debug-Modus werden mehr oder weniger Informationen auf dem Bildschirm angezeigt.
+Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Es werden dann zusätzliche Informationen auf dem Bildschirm und in der Browser-Konsole angezeigt. Abhängig vom Debug-Modus werden mehr oder weniger Informationen angezeigt.
 
 Grundlegende Informationen mit der Einstellung `CoreDebugMode: 1`:
 

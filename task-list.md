@@ -10,7 +10,7 @@ You can help us with open tasks for Datenstrom Yellow:
 - [ ] Added support for web forms in Markdown. Users can create email contact forms or a feedback/survey forms.
 - [ ] Added support for Wysiwyg editor for Markdown. Users can edit websites without much knowledge.
 - [ ] Updated API, YellowPageCollection no longer derives from ArrayObject. ArrayObject interface is strange.
-- [ ] Updated API, changed getAvailable() to enumerate(). Designers want to use non-flattened themes.
+- [x] Updated API, changed getAvailable() to enumerate(). Designers want to use non-flattened themes.
 - [x] Updated API, changed content element type notice to general. Make it more intuitive.
 - [x] Updated core extension, support for webmanifest files was added. Websites and web applications use it.
 - [ ] Updated contact extension, message delivery with brute force protection. Spammers gonna spam.

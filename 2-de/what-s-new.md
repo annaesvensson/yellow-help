@@ -6,6 +6,7 @@ Erfahre was sich seit letztem Mal geändert hat.
 ! {.wikiblock}
 ! ## Datenstrom Yellow - neuste Produktänderungen
 !
+! - API aktualisiert, getAvailable() in enumerate() geändert
 ! - API aktualisiert, Content-Element-Typ notice in general geändert
 ! - Core-Erweiterung aktualisiert, Unterstützung für Webmanifest-Dateien hinzugefügt
 ! - Edit-Erweiterung aktualisiert, Upload mit verschiedenen JPEG-Dateinamenerweiterungen
