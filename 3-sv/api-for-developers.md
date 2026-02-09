@@ -303,7 +303,7 @@ Layoutfil för att visa språkinställningar:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php foreach ($this->yellow->toolbox->enumerate("system", "language") as $language): ?>
+<?php foreach ($this->yellow->toolbox->enumerate("language") as $language): ?>
 <?php echo $this->yellow->language->getTextHtml("languageDescription", $language) ?> - 
 <?php echo $this->yellow->language->getTextHtml("languageTranslator", $language) ?><br />
 <?php endforeach ?>
@@ -360,7 +360,7 @@ Layoutfil för att visa användarinställningar:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php foreach ($this->yellow->toolbox->enumerate("system", "email") as $email): ?>
+<?php foreach ($this->yellow->toolbox->enumerate("email") as $email): ?>
 <?php echo $this->yellow->user->getUserHtml("name", $email) ?> - 
 <?php echo $this->yellow->user->getUserHtml("status", $email) ?><br />
 <?php endforeach ?>
@@ -590,7 +590,7 @@ Returnera array med variabel storlek från text, separerade av mellanslag
 `toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
 Skapa textbeskrivning, med eller utan HTML
 
-`toolbox->enumerate($action, $text): array`  
+`toolbox->enumerate($action, $context = ""): array`  
 Returnera tillgängliga värden
 
 `toolbox->mail($action, $headers, $message): bool`  
@@ -1207,7 +1207,9 @@ Följande uppdateringsåtgärder är tillgängliga:
 
 Följande uppräkningsåtgärder är tillgängliga:
 
-`system` = tillgängliga värden för en nyckel i systeminställningar  
+`email` = tillgängliga värden för en email i användarinställningar  
+`language` = tillgängliga värden för ett språk i språkinställningar  
+`theme` = tillgängliga värden för ett tema i systeminställningar  
 
 ---
 
@@ -1216,7 +1218,7 @@ Beskrivning av händelser och argument:
 `public function onUpdate($action)`  
 Hantera uppdatering
 
-`public function onEnumerate($action, $text)`  
+`public function onEnumerate($action, $context)`  
 Hantera uppräkning
 
 `public function onMail($action, $headers, $message)`  

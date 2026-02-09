@@ -304,7 +304,7 @@ Layoutdatei um Spracheinstellungen anzuzeigen:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php foreach ($this->yellow->toolbox->enumerate("system", "language") as $language): ?>
+<?php foreach ($this->yellow->toolbox->enumerate("language") as $language): ?>
 <?php echo $this->yellow->language->getTextHtml("languageDescription", $language) ?> - 
 <?php echo $this->yellow->language->getTextHtml("languageTranslator", $language) ?><br />
 <?php endforeach ?>
@@ -361,7 +361,7 @@ Layoutdatei um Benutzereinstellungen anzuzeigen:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php foreach ($this->yellow->toolbox->enumerate("system", "email") as $email): ?>
+<?php foreach ($this->yellow->toolbox->enumerate("email") as $email): ?>
 <?php echo $this->yellow->user->getUserHtml("name", $email) ?> - 
 <?php echo $this->yellow->user->getUserHtml("status", $email) ?><br />
 <?php endforeach ?>
@@ -591,7 +591,7 @@ Hole ein Array mit variabler Grösse aus dem Text, durch Leerzeichen getrennt
 `toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
 Erstelle eine Textbeschreibung, mit oder ohne HTML
 
-`toolbox->enumerate($action, $text): array`  
+`toolbox->enumerate($action, $context = ""): array`  
 Hole mögliche Werte
 
 `toolbox->mail($action, $headers, $message): bool`  
@@ -1210,7 +1210,9 @@ Die folgenden Aktualisierungs-Aktionen sind verfügbar:
 
 Die folgenden Auflistungs-Aktionen sind verfügbar:
 
-`system` = mögliche Werte für einen Schlüssel in Systemeinstellungen  
+`email` = mögliche Werte für eine Email in Benutzereinstellungen  
+`language` = mögliche Werte für eine Sprache in Spracheinstellungen  
+`theme` = mögliche Werte für ein Theme in Systemeinstellungen  
 
 ---
 
@@ -1219,7 +1221,7 @@ Beschreibung der Ereignisse und Argumente:
 `public function onUpdate($action)`  
 Verarbeite Aktualisierung
 
-`public function onEnumerate($action, $text)`  
+`public function onEnumerate($action, $context)`  
 Verarbeite Auflistung
 
 `public function onMail($action, $headers, $message)`  

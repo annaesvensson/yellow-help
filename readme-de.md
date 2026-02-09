@@ -1,4 +1,4 @@
-# Help 0.9.7
+# Help 0.9.8
 
 Dokumentation der Grundlagen. Entwickelt von Anna Svensson.
 

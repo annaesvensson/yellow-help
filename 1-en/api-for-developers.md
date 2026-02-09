@@ -303,7 +303,7 @@ Layout file for showing language settings:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php foreach ($this->yellow->toolbox->enumerate("system", "language") as $language): ?>
+<?php foreach ($this->yellow->toolbox->enumerate("language") as $language): ?>
 <?php echo $this->yellow->language->getTextHtml("languageDescription", $language) ?> - 
 <?php echo $this->yellow->language->getTextHtml("languageTranslator", $language) ?><br />
 <?php endforeach ?>
@@ -360,7 +360,7 @@ Layout file for showing user settings:
 <div class="main" role="main">
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
-<?php foreach ($this->yellow->toolbox->enumerate("system", "email") as $email): ?>
+<?php foreach ($this->yellow->toolbox->enumerate("email") as $email): ?>
 <?php echo $this->yellow->user->getUserHtml("name", $email) ?> - 
 <?php echo $this->yellow->user->getUserHtml("status", $email) ?><br />
 <?php endforeach ?>
@@ -590,7 +590,7 @@ Return array of variable size from text, space separated
 `toolbox->createTextDescription($text, $lengthMax = 0, $removeHtml = true, $endMarker = "", $endMarkerText = ""): string`  
 Create text description, with or without HTML
 
-`toolbox->enumerate($action, $text): array`  
+`toolbox->enumerate($action, $context = ""): array`  
 Return possible values
 
 `toolbox->mail($action, $headers, $message): bool`  
@@ -1207,7 +1207,9 @@ The following update actions are available:
 
 The following enumerate actions are available:
 
-`system` = possible values for a key in system settings  
+`email` = possible values for an email in user settings  
+`language` = possible values for a language in language settings  
+`theme` = possible values for a theme in system settings  
 
 ---
 
@@ -1216,7 +1218,7 @@ Description of events and arguments:
 `public function onUpdate($action)`  
 Handle update
 
-`public function onEnumerate($action, $text)`  
+`public function onEnumerate($action, $context)`  
 Handle enumeration
 
 `public function onMail($action, $headers, $message)`  
