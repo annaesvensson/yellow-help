@@ -59,6 +59,7 @@ You should use the following guidelines for your extension:
 * Repository screenshots/previews should be in PNG image format, e.g. `screenshot.png`.
 * Repositories should have a flat folder structure, file actions are stored in file `extension.ini`.
 * Repositories should have a `.gitattributes` file to remove unnecesarry files from the ZIP file.
+* Repositories should have the topic `datenstrom-yellow`, all others topics are optional.
 * Keep extensions relatively small, sweet and focused on one thing, if unsure do less.
 * Don't have more than one extension per repository.
 
