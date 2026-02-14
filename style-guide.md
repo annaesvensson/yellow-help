@@ -65,6 +65,7 @@ You should use the following guidelines for your extension:
 
 You should use the following technical terms, alphabetical order:
 
+* `Datenstrom Yellow` is the full product name - not "Yellow CMS".
 * An `extension` gives you additional features, languages and themes - not "plugin".
 * A `layout` is a HTML file, it can render a complete or a partial page - not "template".
 * A `navigation` is automatically generated from your content folders - not "menu bar".
