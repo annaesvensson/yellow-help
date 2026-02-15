@@ -6,6 +6,7 @@ Learn what has changed since last time.
 ! {.wikiblock}
 ! ## Datenstrom Yellow - latest product changes
 !
+! - Added style guide for experienced developers and writers
 ! - Updated API, changed getAvailable() to enumerate()
 ! - Updated API, changed content element type notice to general
 ! - Updated core extension, support for webmanifest files was added

@@ -9,6 +9,7 @@ You can help us with open tasks for Datenstrom Yellow:
 - [ ] Added support for dynamic loading of JS/CSS files in bundler. Better page loading time.
 - [ ] Added support for web forms in Markdown. Users can create email contact forms or a feedback/survey forms.
 - [ ] Added support for Wysiwyg editor for Markdown. Users can edit websites without much knowledge.
+- [x] Added style guide for experienced developers and writers. Consistent code and documentation.
 - [ ] Updated API, YellowPageCollection no longer derives from ArrayObject. ArrayObject interface is strange.
 - [x] Updated API, changed getAvailable() to enumerate(). Designers want to use non-flattened themes.
 - [x] Updated API, changed content element type notice to general. Make it more intuitive.
@@ -38,7 +39,7 @@ You can help us with open tasks for Datenstrom Yellow:
 
 ## How to improve code
 
-You can find core functionality in the [core](https://github.com/annaesvensson/yellow-core) and everything else in [extensions](https://datenstrom.se/yellow/extensions/). Good technology is made for people. Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features. For experienced developers there's a [style guide](https://github.com/annaesvensson/yellow-publish/blob/main/style-guide.md). Did you improve code? The first option is to send a pull request to the developer, it may or may not be accepted. The second option is to discuss your changes with the Datenstrom community. The third option is to make a new extension with the modified code.
+You can find core functionality in the [core](https://github.com/annaesvensson/yellow-core) and everything else in [extensions](https://datenstrom.se/yellow/extensions/). Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features. For experienced developers there's a [style guide](https://github.com/annaesvensson/yellow-publish/blob/main/style-guide.md). Did you improve code? The first option is to send a pull request to the developer, it may or may not be accepted. The second option is to discuss your changes with the Datenstrom community. The third option is to make a new extension with the modified code.
 
 ## How to improve documentation
 
