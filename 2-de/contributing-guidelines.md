@@ -8,7 +8,7 @@ Erfahre wie du Fragen stellen, Fehler melden und mit uns arbeiten kannst.
 * Schreibe die Frage in den Titel, es ist das Erste was alle sehen.
 * Beschreibe das Problem das du lösen möchtest.
 * Erkläre was du gemacht hast um das Problem zu lösen.
-* Wähle eine Antwort aus, wenn deine Frage beantwortet wurde.
+* Wähle eine Antwort aus, wenn die Frage beantwortet wurde.
 
 Falls du eine Frage stellen möchtest, [beginne eine neue Diskussion](https://github.com/datenstrom/community/discussions/categories/ask-a-question).
 
