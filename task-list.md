@@ -31,9 +31,10 @@ You can help us with open tasks for Datenstrom Yellow:
 - [x] Updated themes, CSS for coloured block elements has changed. Make it more intuitive.
 - [x] Updated website, more information about latest product changes. People want more information.
 - [ ] Updated website, Swedish translation for missing help pages. Better multi language documentation.
-- [ ] Published comment extension, no longer experimental. Due to public demand.
-- [ ] Published math extension, no longer experimental. Due to scientific demand.
-- [ ] Published maintenance extension, no longer experimental. Due to practical demand.
+- [ ] Published comment extension, it's no longer experimental. Due to public demand.
+- [x] Published include extension, it's no longer experimental. Give users more flexibility.
+- [ ] Published math extension, it's no longer experimental. Due to scientific demand.
+- [ ] Published maintenance extension, it's no longer experimental. Due to practical demand.
 - [ ] Published SMTP extension, send emails to remote server. Websites may not have a working mail system.
 - [ ] Tested performance with thousands of content files. For people who make large websites.
 

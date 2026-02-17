@@ -16,6 +16,7 @@ Learn what has changed since last time.
 ! - Updated Markdown extension, syntax for block elements has changed
 ! - Updated themes, CSS for coloured block elements has changed
 ! - Updated website, more information about latest product changes
+! - Published include extension, it's no longer experimental
 !
 ! [See code history](https://github.com/datenstrom/yellow/commits/main/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/).
 

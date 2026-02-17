@@ -16,6 +16,7 @@ Erfahre was sich seit letztem Mal geändert hat.
 ! - Markdown-Erweiterung aktualisiert, Syntax für Blockelemente wurde geändert
 ! - Themes aktualisiert, CSS für farbige Blockelemente wurde geändert 
 ! - Webseite aktualisiert, mehr Informationen über neuste Produktänderungen
+! - Include-Erweiterung veröffentlicht, sie ist nicht mehr experimentell
 ! 
 ! [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/main/) und [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/main/).
 
