@@ -7,7 +7,7 @@ Läs hur du ställer frågor, rapporterar fel och jobbar med oss.
 
 * Skriv frågan i rubriken, det är det första alla kommer att se.
 * Beskriv problemet du försöker lösa.
-* Förklara vad du har gjort.
+* Förklara vad du har gjort för att lösa problemet.
 * Välj ett svar när din fråga har besvarats.
 
 Om du vill ställa en fråga, [starta en ny diskussion](https://github.com/datenstrom/community/discussions/categories/ask-a-question).
@@ -26,7 +26,7 @@ Om du vill rapportera ett fel, [starta en ny diskussion](https://github.com/date
 * Föreställ dig vad användaren vill göra och vad som skulle göra deras liv enklare.
 * Fråga dig själv, behöver jag det här, vill jag det här, kan jag göra det här bättre?
 * Bekanta dig med filer, mappar och API:et för utvecklare.
-* Förbättra kod och dokumentation.
+* Gör ett tillägg, förbättra kod och dokumentation.
 
 Om du vill jobba med oss, [se tips för samarbete](https://github.com/datenstrom/community/discussions/760).
 

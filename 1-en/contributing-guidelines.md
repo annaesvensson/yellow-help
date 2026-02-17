@@ -7,7 +7,7 @@ Learn how to ask questions, report bugs and work with us.
 
 * Write the question in the title, it's the first thing everyone will see.
 * Describe the problem you are trying to solve.
-* Explain what you have done. 
+* Explain what you have done to solve the problem.
 * Select an answer, when your question has been answered.
 
 If you want to ask a question, [start a new discussion](https://github.com/datenstrom/community/discussions/categories/ask-a-question).
@@ -26,7 +26,7 @@ If you want to report a bug, [start a new discussion](https://github.com/datenst
 * Imagine what the user wants to do and what would make their life easier.
 * Ask yourself, do I need this, do I want this, can I make this better?
 * Get familiar with files, folders and the API for developers.
-* Improve code and documentation.
+* Make an extension, improve code and documentation.
 
 If you want to work with us, [see tips for working together](https://github.com/datenstrom/community/discussions/760).
 

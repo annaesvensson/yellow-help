@@ -2,7 +2,7 @@
 
 Documentation of the basics. Developed by Anna Svensson.
 
-<p align="center"><img src="screenshot.png" alt="Screenshot"></p>
+<p align="center"><img src="screenshot.png" alt="Screenshot" /></p>
 
 ## How to install an extension
 
