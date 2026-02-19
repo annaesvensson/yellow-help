@@ -6,6 +6,7 @@ Learn what has changed since last time.
 ! {.wikiblock}
 ! ## Datenstrom Yellow - latest product changes
 !
+! - Added include extension, allows to include pages in Markdown
 ! - Added style guide for experienced developers and writers
 ! - Updated API, changed getAvailable() to enumerate()
 ! - Updated API, changed content element type notice to general
@@ -16,7 +17,6 @@ Learn what has changed since last time.
 ! - Updated Markdown extension, syntax for block elements has changed
 ! - Updated themes, CSS for coloured block elements has changed
 ! - Updated website, more information about latest product changes
-! - Published include extension, it's no longer experimental
 !
 ! [See code history](https://github.com/datenstrom/yellow/commits/main/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/).
 

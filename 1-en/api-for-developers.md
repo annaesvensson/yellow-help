@@ -7,7 +7,7 @@ We <3 people who code.
 
 ## Folder structure
 
-You can edit your website in a text editor. The `content` folder contains the [content files](how-to-change-the-content) of the website. You can edit your website here. The `media` folder contains the [media files](how-to-change-the-media) of the website. You can store your images and files here. The `system` folder contains the [system files](how-to-change-the-system) of the website. You can find configuration files here.
+You can edit your website in a text editor. The `content` folder contains the content files of the website. You can edit your website here. The `media` folder contains the media files of the website. You can store your images and files here. The `system` folder contains the system files of the website. You can find configuration files here.
 
 ``` box-drawing {aria-hidden=true}
 ├── content               = content files
@@ -25,6 +25,12 @@ You can edit your website in a text editor. The `content` folder contains the [c
     └── workers           = files for developers, designers and translators
 ```
 
+The following folders are available:
+
+`content` = [content files of the website](how-to-change-the-content)  
+`media` = [media files of the website](how-to-change-the-media)  
+`system` = [system files of the website](how-to-change-the-system)  
+
 The following files are important for the functionality of the website:
 
 `system/extensions/yellow-system.ini` = [file with system settings](how-to-change-the-system#system-settings)  
@@ -34,7 +40,7 @@ The following files are important for the functionality of the website:
 
 ## Objects
 
-With the help of the API you have access to the files, settings and extensions. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings.
+With the help of the API you have access to the files, settings and extensions. The API is divided into several objects and reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. It's pretty straightforward to use. If you are curious and would like to know how the API works in detail, you can find the entire code in file `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────┐     ┌───────────────────────┐
@@ -940,28 +946,38 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Events
 
-A website consists of the core and other extensions. At the beginning, all extensions are loaded and `onLoad` will be called. There are various events that inform extensions when a request from the web browser is received, a command is executed or information is updated. You can handle the events you are interested in.
+A website consists of the core and other extensions. At the beginning, all extensions are loaded and initialised. There are various events that inform extensions when a request from the web browser is received, a command is executed or information is updated. This allow you to customise nearly every aspect of the website. You only need to handle the events you are interested in.
 
 ``` box-drawing {aria-hidden=true}
-onLoad                                                              Information
-    │                                                               is updated
-    ▼                                                                   │
-onStartup ───────────────────────────────────────────┐                  │
-    │                                                │                  │
-    ▼                                                │                  │
-onRequest ───────────────────┐                       │                  │
-    │                        │                       │                  │
-    ▼                        ▼                       ▼                  ▼
-onParseMetaData          onEditContentFile       onCommand          onUpdate
-onParseContentRaw        onEditMediaFile         onCommandHelp      onEnumerate
-onParseContentElement    onEditSystemFile            │              onMail
-onParseContentHtml       onEditUserAccount           │              onLog
-onParsePageLayout            │                       │
-onParsePageExtra             │                       │
-onParsePageOutput            │                       │
-    │                        │                       │
-    ▼                        │                       │
-onShutdown ◀─────────────────┴───────────────────────┘
+┌──────────────────────────────────────────────────┐
+│ Receive request from web browser or command line │
+└──────────────────────────────────────────────────┘
+      │
+      ▼                            
+  onLoad                                                            Information
+      │                                                             is updated
+      ▼                                                                 
+  onStartup ─────────────────────────────────────────┐                  │
+      │                                              │                  │
+      ▼                                              │                  │
+  onRequest ──────────────────┐                      │                  │
+      │                       │                      │                  │
+      ▼                       ▼                      ▼                  ▼
+  onParseMetaData         onEditContentFile      onCommand          onUpdate
+  onParseContentRaw       onEditMediaFile        onCommandHelp      onEnumerate
+  onParseContentElement   onEditSystemFile           │              onMail
+  onParseContentHtml      onEditUserAccount          │              onLog
+  onParsePageLayout           │                      │
+  onParsePageExtra            │                      │
+  onParsePageOutput           │                      │
+      │                       │                      │
+      ▼                       │                      │
+  onShutdown ◀────────────────┴──────────────────────┘
+      │                            
+      ▼                            
+┌───────────────┐
+│ Send response │
+└───────────────┘
 ```
 
 The following types of events are available:
@@ -1134,7 +1150,7 @@ class YellowExample {
         if ($action=="edit" && !$page->isError()) {
             $title = $page->get("title");
             $name = $this->yellow->user->getUser("name", $email);
-            $this->yellow->toolbox->log("info", "Edit page by user '".strtok($name, " ")."'");
+            $this->yellow->toolbox->log("info", "Edit page by $name");
         }
     }
 }
@@ -1186,7 +1202,7 @@ class YellowExample {
 
     // Handle command help
     public function onCommandHelp() {
-        return "example";
+        return "example [text]";
     }
 }
 ```
@@ -1255,23 +1271,27 @@ class YellowExample {
 
 ## Tools
 
+For developers there are tools to make your work easier in both a web browser and at the command line. Ideally the focus of technology should be on people and their workflows. Not on technical details and lots of features. The idea is that the standard installation includes the most important things. You can add more things later.
+
+The following tools are included in the standard installation:
+
+`Edit extension` = [small web editor, edit your website in a web browser](#small-web-editor)   
+`Serve extension` = [built-in web server, start a web server on your computer](#built-in-web-server)  
+`Generate extension` = [static generator, generate a static website at the command line](#static-generator)
+
 ### Small web editor
 
 You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The small web editor allows you to change content files, upload media files and configure settings. Text formatting with Markdown is supported. HTML is also supported. [Learn more about the small web editor](https://github.com/annaesvensson/yellow-edit).
 
-### Small layout system
-
-You can customise your website with HTML and CSS. Fortunately you don't have to learn a web framework, but can use normal HTML and CSS. For sophisticated layouts there's an API for developers. This allows you to access content files, create control structures and most of it will probably seem pretty familiar to you as a developer. We are using the same API everywhere, from layout files to extensions. [Learn more about layouts](how-to-customise-a-layout) and [themes](how-to-customise-a-theme).
-
 ### Built-in web server
 
-You can start a web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to change your website on your computer and upload it to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the built-in web server](https://github.com/annaesvensson/yellow-serve).
+You can start a web server on your computer at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to change your website on your computer and upload it to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the built-in web server](https://github.com/annaesvensson/yellow-serve).
 
 ### Static generator
 
 You can generate a static website at the command line. The static generator makes the entire website in advance, instead of waiting for a file to be requested. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php generate`, you can optionally add a folder and a location. This will generate a static website in the `public` folder. Upload the static website to your web server and generate a new one when needed. [Learn more about the static generator](https://github.com/annaesvensson/yellow-generate).
 
-## Debug mode
+## Debugging
 
 You can use the debug mode to investigate the cause of a problem or if you are curious about how Datenstrom Yellow works. To activate the debug mode on your website open file `system/extensions/yellow-system.ini` and change `CoreDebugMode: 1`. Additional information will be displayed on the screen and in the browser console. Depending on the debug mode, more or less information are shown.
 

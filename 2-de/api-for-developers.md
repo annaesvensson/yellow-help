@@ -7,7 +7,7 @@ Wir <3 Menschen die programmieren.
 
 ## Verzeichnisstruktur
 
-Du kannst deine Webseite im Texteditor bearbeiten. Das `content`-Verzeichnis enthält die [Inhaltsdateien](how-to-change-the-content) der Webseite. Hier bearbeitet man seine Webseite. Das `media`-Verzeichnis enthält die [Mediendateien](how-to-change-the-media) der Webseite. Hier speichert man seine Bilder und Dateien. Das `system`-Verzeichnis enthält die [Systemdateien](how-to-change-the-system) der Webseite. Hier findet man Konfigurationsdateien.
+Du kannst deine Webseite im Texteditor bearbeiten. Das `content`-Verzeichnis enthält die Inhaltsdateien der Webseite. Hier bearbeitet man seine Webseite. Das `media`-Verzeichnis enthält die Mediendateien der Webseite. Hier speichert man seine Bilder und Dateien. Das `system`-Verzeichnis enthält die Systemdateien der Webseite. Hier findet man Konfigurationsdateien.
 
 ``` box-drawing {aria-hidden=true}
 ├── content               = Inhaltsdateien
@@ -25,6 +25,12 @@ Du kannst deine Webseite im Texteditor bearbeiten. Das `content`-Verzeichnis ent
     └── workers           = Dateien für Entwickler, Designer und Übersetzer
 ```
 
+Die folgenden Verzeichnisse sind verfügbar:
+
+`content` = [Inhaltsdateien der Webseite](how-to-change-the-content)  
+`media` = [Mediendateien der Webseite](how-to-change-the-media)  
+`system` = [Systemdateien der Webseite](how-to-change-the-system)  
+
 Die folgenden Dateien sind wichtig für die Funktionsweise der Webseite:
 
 `system/extensions/yellow-system.ini` = [Datei mit Systemeinstellungen](how-to-change-the-system#systemeinstellungen)  
@@ -34,8 +40,7 @@ Die folgenden Dateien sind wichtig für die Funktionsweise der Webseite:
 
 ## Objekte
 
-Mit Hilfe der API hast du Zugriff auf Dateien, Einstellungen und Erweiterungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen.
-
+Mit Hilfe der API hast du Zugriff auf Dateien, Einstellungen und Erweiterungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Falls du neugierig bist und wissen möchtest wie die API im Detail funktioniert, den gesamten Code findest du in der Datei `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────┐     ┌───────────────────────┐
@@ -941,28 +946,38 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Ereignisse
 
-Eine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden alle Erweiterungen geladen und `onLoad` wird aufgerufen. Es gibt verschiedene Ereignisse die Erweiterung informieren wenn eine Anfrage vom Webbrowser empfangen wird, ein Befehl ausgeführt wird oder Informationen aktualisiert werden. Du kannst die Ereignisse verarbeiten an denen du interessiert bist.
+Eine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden alle Erweiterungen geladen und initialisiert. Es gibt verschiedene Ereignisse die Erweiterung informieren wenn eine Anfrage vom Webbrowser empfangen wird, ein Befehl ausgeführt wird oder Informationen aktualisiert werden. Das gibt dir die Möglichkeit nahezu jeden Aspekt der Webseite anzupassen. Du brauchst nur die Ereignisse verarbeiten an denen du interessiert bist.
 
 ``` box-drawing {aria-hidden=true}
-onLoad                                                             Informationen
-    │                                                           werden aktualisiert
-    ▼                                                                   │
-onStartup ───────────────────────────────────────────┐                  │
-    │                                                │                  │
-    ▼                                                │                  │
-onRequest ───────────────────┐                       │                  │
-    │                        │                       │                  │
-    ▼                        ▼                       ▼                  ▼
-onParseMetaData          onEditContentFile       onCommand          onUpdate
-onParseContentRaw        onEditMediaFile         onCommandHelp      onEnumerate
-onParseContentElement    onEditSystemFile            │              onMail
-onParseContentHtml       onEditUserAccount           │              onLog
-onParsePageLayout            │                       │
-onParsePageExtra             │                       │
-onParsePageOutput            │                       │
-    │                        │                       │
-    ▼                        │                       │
-onShutdown ◀─────────────────┴───────────────────────┘
+┌───────────────────────────────────────────────────┐
+│ Empfange Anfrage vom Webbrowser oder Befehlszeile │
+└───────────────────────────────────────────────────┘ 
+      │                          
+      ▼                            
+  onLoad                                                            Informationen
+      │                                                             aktualisieren
+      ▼                                                                 
+  onStartup ─────────────────────────────────────────┐                  │
+      │                                              │                  │
+      ▼                                              │                  │
+  onRequest ──────────────────┐                      │                  │
+      │                       │                      │                  │
+      ▼                       ▼                      ▼                  ▼
+  onParseMetaData         onEditContentFile      onCommand          onUpdate
+  onParseContentRaw       onEditMediaFile        onCommandHelp      onEnumerate
+  onParseContentElement   onEditSystemFile           │              onMail
+  onParseContentHtml      onEditUserAccount          │              onLog
+  onParsePageLayout           │                      │
+  onParsePageExtra            │                      │
+  onParsePageOutput           │                      │
+      │                       │                      │
+      ▼                       │                      │
+  onShutdown ◀────────────────┴──────────────────────┘
+      │                            
+      ▼                                            
+┌───────────────┐
+│ Sende Antwort │
+└───────────────┘
 ```
 
 Die folgenden Arten von Ereignissen sind verfügbar:
@@ -1137,7 +1152,7 @@ class YellowExample {
         if ($action=="edit" && !$page->isError()) {
             $title = $page->get("title");
             $name = $this->yellow->user->getUser("name", $email);
-            $this->yellow->toolbox->log("info", "Edit page by user '".strtok($name, " ")."'");
+            $this->yellow->toolbox->log("info", "Edit page by $name");
         }
     }
 }
@@ -1189,7 +1204,7 @@ class YellowExample {
 
     // Handle command help
     public function onCommandHelp() {
-        return "example";
+        return "example [text]";
     }
 }
 ```
@@ -1258,23 +1273,27 @@ class YellowExample {
 
 ## Werkzeuge
 
+Für Entwickler gibt es Werkzeuge, die dir die Arbeit sowohl im Webbrowser als auch in der Befehlszeile erleichtern. Der Fokus von Technologie sollte idealerweise auf Menschen und ihren Arbeitsabläufen liegen. Nicht auf technischen Details und vielen Funktionen. Die Idee dahinter ist, dass die Standardinstallation die wichtigsten Dinge mitbringt. Du kannst später weitere Dinge hinzufügen.
+
+Die folgenden Werkzeuge sind in der Standardinstallation enthalten:
+
+`Edit-Erweiterung` = [kleiner Webeditor, Webseite im Webbrowser bearbeiten](#kleiner-webeditor)   
+`Serve-Erweiterung` = [eingebauter Webserver, Webserver auf deinem Computer starten](#eingebauter-webserver)  
+`Generate-Erweiterung` = [statischer Generator, statische Webseite in der Befehlszeile generieren](#statischer-generator)
+
 ### Kleiner Webeditor
 
 Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der kleine Webeditor gibt dir die Möglichkeit Inhaltsdateien zu ändern, Mediendateien hochzuladen und Einstellungen zu konfigurieren. Textformatierung mit Markdown wird unterstützt. HTML wird auch unterstützt. [Weitere Informationen zum kleinen Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/readme-de.md).
 
-### Kleines Layout-System
-
-Du kannst deine Webseite mit HTML und CSS anpassen. Glücklicherweise musst du kein Web-Framework lernen, sondern kannst normales HTML und CSS verwenden. Für anspruchsvolle Layouts gibt es eine API für Entwickler. Das gibt dir die Möglichkeit auf Inhaltsdateien zuzugreifen, Kontrollstrukturen zu erstellen und das meiste wird dir als Entwickler wahrscheinlich ziemlich vertraut vorkommen. Wir verwenden überall die gleiche API, von Layoutdateien bis zu Erweiterungen. [Weitere Informationen zu Layouts](how-to-customise-a-layout) und [Themes](how-to-customise-a-theme).
-
 ### Eingebauter Webserver
 
-Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer zu ändern und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum eingebauten Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/readme-de.md).
+Du kannst einen Webserver auf deinem Computer in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer zu ändern und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum eingebauten Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/readme-de.md).
 
 ### Statischer Generator
 
 Du kannst eine statische Webseite in der Befehlszeile generieren. Der statische Generator macht die gesamte Webseite im Voraus, anstatt darauf zu warten dass eine Datei angefordert wird. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php generate`, du kannst wahlweise ein Verzeichnis und einen Ort angeben. Das generiert eine statische Webseite im `public`-Verzeichnis. Lade die statische Webseite auf deinen Webserver hoch und generiere bei Bedarf eine neue. [Weitere Informationen zum statischen Generator](https://github.com/annaesvensson/yellow-generate/tree/main/readme-de.md).
 
-## Debug-Modus
+## Debuggen
 
 Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Es werden dann zusätzliche Informationen auf dem Bildschirm und in der Browser-Konsole angezeigt. Abhängig vom Debug-Modus werden mehr oder weniger Informationen angezeigt.
 

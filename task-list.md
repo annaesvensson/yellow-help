@@ -4,12 +4,17 @@ You can help us with open tasks for Datenstrom Yellow:
 
 - [ ] Added support for installing extensions in web browser. Users want to install extensions in browser.
 - [ ] Added support for light and dark mode to all themes. Light and dark mode is expected on mobile devices.
+- [ ] Added support for web forms in Markdown. Users can create email contact forms or a feedback/survey forms.
 - [ ] Added support for page history in wiki extension. Users want to see/compare what has changed.
 - [ ] Added support for search in static website. Give users similar features in dynamic/static website.
 - [ ] Added support for dynamic loading of JS/CSS files in bundler. Better page loading time.
-- [ ] Added support for web forms in Markdown. Users can create email contact forms or a feedback/survey forms.
 - [ ] Added support for Wysiwyg editor for Markdown. Users can edit websites without much knowledge.
-- [x] Added style guide for experienced developers and writers. Consistent code and documentation.
+- [ ] Added comment extension, provides a convenient commenting system. Make it no longer experimental.
+- [x] Added include extension, allows to include shared pages in Markdown. Make it no longer experimental.
+- [ ] Added maintenance extension, puts website in maintenance mode. Make it no longer experimental.
+- [ ] Added math extension, mathematical expressions with TeX/LaTeX. Make it no longer experimental.
+- [ ] Added SMTP extension, send emails to a remote server. Websites may not have a working mail system.
+- [x] Added style guide for experienced developers and writers. Consistency for code and documentation.
 - [ ] Updated API, YellowPageCollection no longer derives from ArrayObject. ArrayObject interface is strange.
 - [x] Updated API, changed getAvailable() to enumerate(). Designers want to use non-flattened themes.
 - [x] Updated API, changed content element type notice to general. Make it more intuitive.
@@ -31,11 +36,6 @@ You can help us with open tasks for Datenstrom Yellow:
 - [x] Updated themes, CSS for coloured block elements has changed. Make it more intuitive.
 - [x] Updated website, more information about latest product changes. People want more information.
 - [ ] Updated website, Swedish translation for missing help pages. Better multi language documentation.
-- [ ] Published comment extension, it's no longer experimental. Due to public demand.
-- [x] Published include extension, it's no longer experimental. Give users more flexibility.
-- [ ] Published math extension, it's no longer experimental. Due to scientific demand.
-- [ ] Published maintenance extension, it's no longer experimental. Due to practical demand.
-- [ ] Published SMTP extension, send emails to remote server. Websites may not have a working mail system.
 - [ ] Tested performance with thousands of content files. For people who make large websites.
 
 ## How to improve code

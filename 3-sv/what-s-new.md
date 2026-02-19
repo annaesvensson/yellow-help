@@ -6,6 +6,7 @@ Läs vad som har förändrats sedan förra gången.
 ! {.wikiblock}
 ! ## Datenstrom Yellow - senaste produktändringar
 !
+! - Lade till include-tillägg, tillåter att inkludera sidor i Markdown
 ! - Lade till stilguide för erfarna utvecklare och författare
 ! - Uppdaterade API, ändrat getAvailable() till enumerate()
 ! - Uppdaterade API, ändrat content-element-typ notice till general
@@ -16,7 +17,6 @@ Läs vad som har förändrats sedan förra gången.
 ! - Uppdaterade Markdown-tillägg, syntax för blockelement har ändrats
 ! - Uppdaterade teman, CSS för färgade blockelement har ändrats
 ! - Uppdaterade webbplats, mer information om senaste produktändringar
-! - Publicerade include-tillägg, det är inte längre experimentellt
 !
 ! [Se kodhistorik](https://github.com/datenstrom/yellow/commits/main/) och [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/main/).
 

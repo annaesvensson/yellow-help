@@ -7,7 +7,7 @@ Vi <3 människor som kodar.
 
 ## Mappstruktur
 
-Du kan redigera din webbplats i textredigeraren. Mappen `content` innehåller webbplatsens [innehållsfilerna](how-to-change-the-content). Du kan redigera din webbplats här. Mappen `media` innehåller webbplatsens [mediefilerna](how-to-change-the-media). Du kan lagra dina bilder och filer här. Mappen `system` innehåller webbplatsens [systemfilerna](how-to-change-the-system). Du kan hitta konfigurationsfilar här.
+Du kan redigera din webbplats i textredigeraren. Mappen `content` innehåller webbplatsens innehållsfilerna. Du kan redigera din webbplats här. Mappen `media` innehåller webbplatsens mediefilerna. Du kan lagra dina bilder och filer här. Mappen `system` innehåller webbplatsens systemfilerna. Du kan hitta konfigurationsfilar här.
 
 ``` box-drawing {aria-hidden=true}
 ├── content               = innehållsfiler
@@ -25,6 +25,12 @@ Du kan redigera din webbplats i textredigeraren. Mappen `content` innehåller we
     └── workers           = filer for utvecklare, formgivare och översättare
 ```
 
+Följande obmappar är tillgängliga:
+
+`content` = [webbplatsens innehållsfilerna](how-to-change-the-content)  
+`media` = [webbplatsens mediefilerna](how-to-change-the-media)  
+`system` = [webbplatsens systemfilerna](how-to-change-the-system)  
+
 Följande filer är viktiga för webbplatsens funktion:
 
 `system/extensions/yellow-system.ini` = [fil med systeminställningar](how-to-change-the-system#systeminställningar)  
@@ -34,7 +40,7 @@ Följande filer är viktiga för webbplatsens funktion:
 
 ## Objekt
 
-Med hjälp av API:et har du tillgång till filer, inställningar och tillägg. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar.
+Med hjälp av API:et har du tillgång till filer, inställningar och tillägg. API:et är uppdelat i flera objekt och speglar filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Det är ganska enkelt att använda. Om du är nyfiken och vill veta hur API:et fungerar i detalj, hella koden hittar du i filen `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────┐     ┌───────────────────────┐
@@ -940,28 +946,38 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Händelser
 
-En webbplats består av kärnan och andra tillägg. I början laddas alla tillägg och `onLoad` kommer att anropas. Det finns olika händelser som informerar dig när en begäran från webbläsaren tas emot, ett kommando utförs eller information uppdateras. Du kan hantera de händelser som du är intresserad av.
+En webbplats består av kärnan och andra tillägg. I början laddas och initieras alla tillägg. Det finns olika händelser som informerar dig när en begäran från webbläsaren tas emot, ett kommando utförs eller information uppdateras. Detta ger dig möjlighet att anpassa nästan alla aspekter av webbplatsen. Du behöver bara hantera de händelser som du är intresserad av.
 
 ``` box-drawing {aria-hidden=true}
-onLoad                                                              Information
-    │                                                               uppdateras
-    ▼                                                                   │
-onStartup ───────────────────────────────────────────┐                  │
-    │                                                │                  │
-    ▼                                                │                  │
-onRequest ───────────────────┐                       │                  │
-    │                        │                       │                  │
-    ▼                        ▼                       ▼                  ▼
-onParseMetaData          onEditContentFile       onCommand          onUpdate
-onParseContentRaw        onEditMediaFile         onCommandHelp      onEnumerate
-onParseContentElement    onEditSystemFile            │              onMail
-onParseContentHtml       onEditUserAccount           │              onLog
-onParsePageLayout            │                       │
-onParsePageExtra             │                       │
-onParsePageOutput            │                       │
-    │                        │                       │
-    ▼                        │                       │
-onShutdown ◀─────────────────┴───────────────────────┘
+┌──────────────────────────────────────────────────────┐
+│ Ta emot begäran från webbläsaren eller kommandoraden │
+└──────────────────────────────────────────────────────┘
+      │                          
+      ▼                            
+  onLoad                                                            Information
+      │                                                             uppdateras
+      ▼                                                                 
+  onStartup ─────────────────────────────────────────┐                  │
+      │                                              │                  │
+      ▼                                              │                  │
+  onRequest ──────────────────┐                      │                  │
+      │                       │                      │                  │
+      ▼                       ▼                      ▼                  ▼
+  onParseMetaData         onEditContentFile      onCommand          onUpdate
+  onParseContentRaw       onEditMediaFile        onCommandHelp      onEnumerate
+  onParseContentElement   onEditSystemFile           │              onMail
+  onParseContentHtml      onEditUserAccount          │              onLog
+  onParsePageLayout           │                      │
+  onParsePageExtra            │                      │
+  onParsePageOutput           │                      │
+      │                       │                      │
+      ▼                       │                      │
+  onShutdown ◀────────────────┴──────────────────────┘
+      │                            
+      ▼                            
+┌─────────────┐
+│ Skicka svar │
+└─────────────┘
 ```
 
 Följande typer av händelser är tillgängliga:
@@ -1134,7 +1150,7 @@ class YellowExample {
         if ($action=="edit" && !$page->isError()) {
             $title = $page->get("title");
             $name = $this->yellow->user->getUser("name", $email);
-            $this->yellow->toolbox->log("info", "Edit page by user '".strtok($name, " ")."'");
+            $this->yellow->toolbox->log("info", "Edit page by $name");
         }
     }
 }
@@ -1186,7 +1202,7 @@ class YellowExample {
 
     // Handle command help
     public function onCommandHelp() {
-        return "example";
+        return "example [text]";
     }
 }
 ```
@@ -1255,23 +1271,27 @@ class YellowExample {
 
 ## Verktyg
 
+För utvecklare finns det verktyg som underlättar arbetet både i webbläsaren och i kommandoraden. Teknologiens fokus bör helst ligga på människor och deras arbetsflöden. Inte på tekniska detaljer och massor av funktioner. Tanken är att standardinstallationen inkluderar de viktigaste sakerna. Du kan lägga till fler saker senare.
+
+Följande verktyg ingår i standardinstallationen:
+
+`Edit-tillägg` = [liten webbredigerare, redigera din webbplats i en webbläsare](#liten-webbredigerare)  
+`Serve-tillägg` = [inbyggd webbserver, starta en webbserver på din dator](#inbyggd-webbserver)  
+`Generate-tillägg` = [statisk generator, generera en statisk webbplats på kommandoraden](#statisk-generator)  
+
 ### Liten webbredigerare
 
 Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Den lilla webbredigeraren ger dig möjlighet att ändra innehållsfiler, ladda upp mediefiler och konfigurera inställningar. Textformatering med Markdown stöds. HTML stöds också. [Läs mer om lilla webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/readme-sv.md).
 
-### Litet layoutsystem
-
-Du kan anpassa din webbplats med HTML och CSS. Lyckligtvis behöver du inte lära dig ett webbramverk, utan kan använda vanlig HTML och CSS. För sofistikerade layouter finns det ett API för utvecklare. Detta ger dig möjlighet att komma åt innehållsfiler, skapa kontrollstrukturer och det mesta kommer förmodligen att verka ganska bekant för dig som utvecklare. Vi använder samma API:et överallt, från layoutfiler till tillägg. [Läs mer om layouter](how-to-customise-a-layout) och [teman](how-to-customise-a-theme).
-
 ### Inbyggd webbserver
 
-Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att ändra din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/readme-sv.md).
+Du kan starta en webbserver på din dator på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att ändra din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/readme-sv.md).
 
 ### Statisk generator
 
 Du kan generera en statisk webbplats på kommandoraden. Den statiska generatorn skapar hella webbplatsen i förväg, istället för att vänta på att en fil ska begäras. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php generate`, du kan valfritt ange en mapp och en plats. Detta kommer att generera en statisk webbplats i `public` mappen. Ladda upp statiska webbplatsen till din webbserver och generera en ny när det behövs. [Läs mer om statiska generatorn](https://github.com/annaesvensson/yellow-generate/tree/main/readme-sv.md).
 
-## Felsökningsläge
+## Debugging
 
 Du kan använda felsökningsläget för att undersöka orsaken till ett problem eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Ytterligare information kommer att visas på skärmen och i webbläsarkonsolen. Beroende på felsökningsläget visas mer eller mindre information.
 
