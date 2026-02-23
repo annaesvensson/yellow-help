@@ -14,7 +14,8 @@ Läs vad som har förändrats sedan förra gången.
 ! - Uppdaterade edit-tillägg, uppladdning med olika JPEG-filändele
 ! - Uppdaterade gallery-tillägg, popup kan utlösas genom att klicka på en länk
 ! - Uppdaterade Markdown-tillägg, förbättrad e-posthantering för lång toppdomän
-! - Uppdaterade Markdown-tillägg, syntax för blockelement har ändrats
+! - Uppdaterade Markdown-tillägg, syntax för hopfällbara block har lagts till
+! - Uppdaterade Markdown-tillägg, syntax för allmänna block har ändrats
 ! - Uppdaterade teman, CSS för färgade blockelement har ändrats
 ! - Uppdaterade webbplats, mer information om senaste produktändringar
 !

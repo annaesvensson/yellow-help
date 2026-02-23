@@ -1038,9 +1038,10 @@ Yellow parse händelser meddelar när en sida genereras. Följande händelser ä
 Följande content-element-typer är tillgängliga:
 
 `inline` = förkortning för textelement  
-`block` = förkortning för blockelement, kan innehålla flera textrader  
-`general` = allmänt blockelement, kan innehålla flera textrader  
+`block` = förkortning för blockelement  
 `code` = kod blockelement, kan innehålla flera textrader  
+`collapsible` = hopfällbart blockelement, kan innehålla flera textrader  
+`general` = allmänt blockelement, kan innehålla flera textrader  
 `symbol` = symbol för textelement  
 
 ---

@@ -1038,9 +1038,10 @@ Yellow-Parse-Ereignisse unterrichten wenn eine Seite erzeugt wird. Die folgenden
 Die folgenden Content-Element-Typen sind verfügbar:
 
 `inline` = Abkürzung für Textelement  
-`block` = Abkürzung für Blockelement, kann mehrere Textzeilen enthalten  
-`general` = allgemeines Blockelement, kann mehrere Textzeilen enthalten  
+`block` = Abkürzung für Blockelement  
 `code` = Code-Blockelement, kann mehrere Textzeilen enthalten  
+`collapsible` = zusammenklappbares Blockelement, kann mehrere Textzeilen enthalten  
+`general` = allgemeines Blockelement, kann mehrere Textzeilen enthalten  
 `symbol` = Symbol für Textelement  
 
 ---

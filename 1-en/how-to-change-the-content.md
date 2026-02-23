@@ -84,7 +84,7 @@ Making tables:
     | Coffee     | Milk | Strength |
     |------------|------|----------|
     | Espresso   | no   | strong   |
-    | Macchiato  | yes  | medium   |
+    | Cortado    | yes  | medium   |
     | Cappuccino | yes  | weak     |
 
 Making footnotes:
@@ -94,15 +94,6 @@ Making footnotes:
     [^1]: Here's the first footnote
     [^2]: Here's the second footnote
     [^3]: Here's the third footnote
-
-Showing code blocks:
-
-    ```
-    Code will be shown unchanged.
-    function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-    ```
 
 Making paragraphs:
 
@@ -133,13 +124,33 @@ Using shortcuts:
     [gallery photo]   = adding an image gallery with popup
     [slider photo]    = adding an image gallery with slider
 
-Using block elements:
+Using code blocks:
+
+    ```
+    Code will be shown unchanged.
+    function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+    ```
+
+Using collapsible blocks:
+
+    ? Show details
+    ?
+    ? This is a collapsible block element. It's only
+    ? shown when you click on the first paragraph
+    ? and can contain Markdown text formatting.
+
+Using general blocks:
 
     ! Here's a general block element.
     ! Text can span over several lines
-    ! and contain Markdown text formatting.
+    ! and can contain Markdown text formatting.
 
     ! {.important}
     ! Here's information that needs attention.
+
+    ! {.example}
+    ! Here's a custom block element, can be customised with CSS.
 
 Do you have questions? [Get help](.).

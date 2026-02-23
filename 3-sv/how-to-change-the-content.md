@@ -84,7 +84,7 @@ Skapa tabeller:
     | Kaffe      | Mjölk | Styrka  |
     |------------|-------|---------|
     | Espresso   | nej   | stark   |
-    | Macchiato  | ja    | medium  |
+    | Cortado    | ja    | medium  |
     | Cappuccino | ja    | svag    |
 
 Skapa fotnoter:
@@ -94,15 +94,6 @@ Skapa fotnoter:
     [^1]: Här är den första fotnoten
     [^2]: Här är den andra fotnoten
     [^3]: Här är den tredje fotnoten
-
-Visa kodblock:
-
-    ```
-    Koden visas oförändrad.
-    function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-    ```
 
 Skapa paragraf:
 
@@ -127,19 +118,39 @@ Skapa citat:
     
     >>> Citat i citat i citat
 
-Använd förkortningar:
+Använda förkortningar:
 
     [image photo.jpg] = lägga till en bild eller miniatyrbild
     [gallery photo]   = lägga till ett bildgalleri med popup
     [slider photo]    = lägga till ett bildgalleri med reglaget
 
-Använd blockelement:
+Använda kodblock:
+
+    ```
+    Koden visas oförändrad.
+    function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+    ```
+
+Använda hopfällbara block:
+
+    ? Visa detaljer
+    ?
+    ? Detta är ett hopfällbart blockelement. Det visas
+    ? endast när du klickar på första paragrafen
+    ? och kan innehålla Markdown-textformatering.
+
+Använda allmänna block:
 
     ! Här är ett allmänt blockelement.
     ! Text kan sträcka sig över flera rader
-    ! och innehåller Markdown-textformatering.
+    ! och kan innehålla Markdown-textformatering.
 
     ! {.important}
     ! Här är information som kräver uppmärksamhet.
+
+    ! {.example}
+    ! Här är ett eget blockelement, kan anpassas med CSS.
 
 Har du några frågor? [Få hjälp](.).

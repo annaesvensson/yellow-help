@@ -14,7 +14,8 @@ Learn what has changed since last time.
 ! - Updated edit extension, upload with different JPEG file name extensions
 ! - Updated gallery extension, popup can be triggered by clicking on a link
 ! - Updated Markdown extension, improved email handling for long TLD
-! - Updated Markdown extension, syntax for block elements has changed
+! - Updated Markdown extension, syntax for collapsible blocks was added
+! - Updated Markdown extension, syntax for general blocks has changed
 ! - Updated themes, CSS for coloured block elements has changed
 ! - Updated website, more information about latest product changes
 !

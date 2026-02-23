@@ -84,7 +84,7 @@ Tabellen erstellen:
     | Kaffee     | Milch | Stärke  |
     |------------|-------|---------|
     | Espresso   | nein  | stark   |
-    | Macchiato  | ja    | mittel  |
+    | Cortado    | ja    | mittel  |
     | Cappuccino | ja    | schwach |
 
 Fußnoten erstellen:
@@ -94,15 +94,6 @@ Fußnoten erstellen:
     [^1]: Hier ist die erste Fußnote
     [^2]: Hier ist die zweite Fußnote
     [^3]: Hier ist die dritte Fußnote
-
-Codeblöcke anzeigen:
-
-    ```
-    Code wird unverändert angezeigt.
-    function onLoad($yellow) {
-        $this->yellow = $yellow;
-    }
-    ```
 
 Absätze erstellen:
 
@@ -133,13 +124,33 @@ Abkürzungen benutzen:
     [gallery photo]   = Bildergalerie mit Popup hinzufügen
     [slider photo]    = Bildergalerie mit Schieber hinzufügen
 
-Blockelemente benutzen:
+Codeblöcke benutzen:
+
+    ```
+    Code wird unverändert angezeigt.
+    function onLoad($yellow) {
+        $this->yellow = $yellow;
+    }
+    ```
+
+Zusammenklappbare Blöcke benutzen:
+
+    ? Details anzeigen
+    ?
+    ? Dies ist ein zusammenklappbares Blockelement. Es wird
+    ? nur angezeigt, wenn man auf den ersten Absatz klickt
+    ? und kann Markdown-Textformatierungen beinhalten.
+
+Allgemeine Blöcke benutzen:
 
     ! Hier ist ein allgemeines Blockelement.
     ! Der Text kann über mehrere Zeilen gehen
-    ! und Markdown-Textformatierung beinhalten.
+    ! und kann Markdown-Textformatierung beinhalten.
 
     ! {.important}
     ! Hier sind Informationen die Aufmerksamkeit erfordern.
+
+    ! {.example}
+    ! Hier ist ein eigenes Blockelement, kann mit CSS angepasst werden.
 
 Hast du Fragen? [Hilfe finden](.).

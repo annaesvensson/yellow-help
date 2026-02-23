@@ -1038,9 +1038,10 @@ Yellow parse events notify when a page is generated. The following events are av
 The following content element types are available:
 
 `inline` = shortcut for inline element  
-`block` = shortcut for block element, may contain multiple text lines  
-`general` = general block element, may contain multiple text lines  
+`block` = shortcut for block element  
 `code` = code block element, may contain multiple text lines  
+`collapsible` = collapsible block element, may contain multiple text lines  
+`general` = general block element, may contain multiple text lines  
 `symbol` = symbol for inline element  
 
 ---

@@ -30,7 +30,8 @@ You can help us with open tasks for Datenstrom Yellow:
 - [ ] Updated icon extension, SVG stack instead of WOFF font. Developers want consistent files formats.
 - [ ] Updated image extension, different media files for light and dark mode. Give users more control.
 - [x] Updated Markdown extension, improved email handling for long TLD. TLD with more than 3 characters.
-- [x] Updated Markdown extension, syntax for block elements has changed. Make it more intuitive.
+- [x] Updated Markdown extension, syntax for collapsible blocks was added. Users can show/hide details.
+- [x] Updated Markdown extension, syntax for general blocks has changed. Make it more intuitive.
 - [ ] Updated feed extension, short URL for the feed.xml. Users don't like the long URL, it's ugly. 
 - [ ] Updated sitemap extension, short URL for the sitemap.xml. Users don't like the long URL, it's ugly.
 - [x] Updated themes, CSS for coloured block elements has changed. Make it more intuitive.
