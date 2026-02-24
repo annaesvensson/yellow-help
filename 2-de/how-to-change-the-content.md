@@ -133,11 +133,11 @@ Codeblöcke benutzen:
     }
     ```
 
-Zusammenklappbare Blöcke benutzen:
+Ausklappbare Blöcke benutzen:
 
     ? Details anzeigen
     ?
-    ? Dies ist ein zusammenklappbares Blockelement. Es wird
+    ? Dies ist ein ausklappbares Blockelement. Es wird
     ? nur angezeigt, wenn man auf den ersten Absatz klickt
     ? und kann Markdown-Textformatierungen beinhalten.
 

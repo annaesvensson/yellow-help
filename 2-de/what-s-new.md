@@ -14,7 +14,7 @@ Erfahre was sich seit letztem Mal geändert hat.
 ! - Edit-Erweiterung aktualisiert, Upload mit verschiedenen JPEG-Dateinamenerweiterungen
 ! - Gallery-Erweiterung aktualisiert, Popup kann durch Klicken auf einen Link ausgelöst werden
 ! - Markdown-Erweiterung aktualisiert, E-Mail-Verarbeitung für lange TLD verbessert
-! - Markdown-Erweiterung aktualisiert, Syntax für zusammenklappbare Blöcke hinzugefügt
+! - Markdown-Erweiterung aktualisiert, Syntax für ausklappbare Blöcke hinzugefügt
 ! - Markdown-Erweiterung aktualisiert, Syntax für allgemeine Blöcke wurde geändert
 ! - Themes aktualisiert, CSS für farbige Blockelemente wurde geändert 
 ! - Webseite aktualisiert, mehr Informationen über neuste Produktänderungen
