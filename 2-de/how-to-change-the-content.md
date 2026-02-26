@@ -151,6 +151,6 @@ Allgemeine Blöcke benutzen:
     ! Hier sind Informationen die Aufmerksamkeit erfordern.
 
     ! {.example}
-    ! Hier ist ein eigenes Blockelement, kann mit CSS angepasst werden.
+    ! Hier ist ein eigenes Blockelement, es kann mit CSS angepasst werden.
 
 Hast du Fragen? [Hilfe finden](.).

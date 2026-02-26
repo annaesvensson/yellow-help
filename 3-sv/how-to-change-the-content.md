@@ -151,6 +151,6 @@ Använda allmänna block:
     ! Här är information som kräver uppmärksamhet.
 
     ! {.example}
-    ! Här är ett eget blockelement, kan anpassas med CSS.
+    ! Här är ett eget blockelement, det kan anpassas med CSS.
 
 Har du några frågor? [Få hjälp](.).

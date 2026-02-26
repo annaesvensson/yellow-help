@@ -151,6 +151,6 @@ Using general blocks:
     ! Here's information that needs attention.
 
     ! {.example}
-    ! Here's a custom block element, can be customised with CSS.
+    ! Here's a custom block element, it can be customised with CSS.
 
 Do you have questions? [Get help](.).
