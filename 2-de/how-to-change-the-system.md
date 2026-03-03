@@ -123,9 +123,6 @@ Die Logdatei findet man in der Datei `system/extensions/yellow-website.log`. Hie
 2024-04-28 14:13:07 info Install extension 'English 0.9.2'
 2024-04-28 14:13:07 info Install extension 'German 0.9.2'
 2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
-2024-04-28 14:23:10 info Install extension 'Fika 0.9.1'
-2024-04-28 14:33:13 info Update extension 'Fika 0.9.2'
-2024-04-28 14:33:14 error Process file 'system/workers/fika.php' with fatal error!
 ```
 
 Hast du Fragen? [Hilfe finden](.).

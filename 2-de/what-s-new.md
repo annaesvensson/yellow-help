@@ -1,10 +1,10 @@
 ---
 Title: Was ist neu
 ---
-Erfahre was sich seit letztem Mal geändert hat.
+Halte dich auf dem Laufenden über die neuesten Änderungen.
 
 ! {.wikiblock}
-! ## Datenstrom Yellow - neuste Produktänderungen
+! ## Datenstrom Yellow - neuste Änderungen
 !
 ! - Include-Erweiterung hinzugefügt, ermöglicht das Einbinden von Seiten in Markdown
 ! - Styleguide für erfahrene Entwickler und Autoren hinzugefügt

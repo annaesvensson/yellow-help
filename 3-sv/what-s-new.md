@@ -1,10 +1,10 @@
 ---
 Title: Vad är nytt
 ---
-Läs vad som har förändrats sedan förra gången.
+Håll dig uppdaterad om senaste ändringarna.
 
 ! {.wikiblock}
-! ## Datenstrom Yellow - senaste produktändringar
+! ## Datenstrom Yellow - senaste ändringar
 !
 ! - Lade till include-tillägg, tillåter att inkludera sidor i Markdown
 ! - Lade till stilguide för erfarna utvecklare och författare

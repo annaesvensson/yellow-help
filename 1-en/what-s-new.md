@@ -1,10 +1,10 @@
 ---
 Title: What's new
 ---
-Learn what has changed since last time.
+Stay up to date with the latest changes.
 
 ! {.wikiblock}
-! ## Datenstrom Yellow - latest product changes
+! ## Datenstrom Yellow - latest changes
 !
 ! - Added include extension, allows to include pages in Markdown
 ! - Added style guide for experienced developers and writers

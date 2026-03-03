@@ -36,7 +36,19 @@ Följande filer är viktiga för webbplatsens funktion:
 `system/extensions/yellow-system.ini` = [fil med systeminställningar](how-to-change-the-system#systeminställningar)  
 `system/extensions/yellow-language.ini` = [fil med språkinställningar](how-to-change-the-system#språkinställningar)  
 `system/extensions/yellow-user.ini` = [fil med användarinställningar](how-to-change-the-system#användarinställningar)  
-`system/extensions/yellow-website.log` = [webbplatsen loggfil](how-to-change-the-system#loggfilen)  
+`system/extensions/yellow-website.log` = [webbplatsen loggfil](#loggfilen)  
+
+<a id="loggfilen"></a>Loggfilen visar en översikt över vad som händer på webbplatsen. Här är ett exempel:
+
+```
+2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
+2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
+2024-04-28 14:13:07 info Install extension 'Edit 0.9.2'
+2024-04-28 14:13:07 info Install extension 'Markdown 0.9.2'
+2024-04-28 14:13:07 info Install extension 'English 0.9.2'
+2024-04-28 14:13:07 info Install extension 'German 0.9.2'
+2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
+```
 
 ## Objekt
 
@@ -1272,21 +1284,11 @@ class YellowExample {
 
 ## Verktyg
 
-För utvecklare finns det verktyg som underlättar arbetet både i webbläsaren och i kommandoraden. Teknologiens fokus bör helst ligga på människor och deras arbetsflöden. Inte på tekniska detaljer och massor av funktioner. Tanken är att standardinstallationen inkluderar de viktigaste sakerna. Du kan lägga till fler saker senare.
-
-Följande verktyg ingår i standardinstallationen:
-
-`Edit-tillägg` = [liten webbredigerare, redigera din webbplats i en webbläsare](#liten-webbredigerare)  
-`Serve-tillägg` = [inbyggd webbserver, starta en webbserver på din dator](#inbyggd-webbserver)  
-`Generate-tillägg` = [statisk generator, generera en statisk webbplats på kommandoraden](#statisk-generator)  
-
-### Liten webbredigerare
-
-Du kan redigera din webbplats i en webbläsare. Inloggningssidan är tillgänglig på din webbplats som `http://website/edit/`. Logga in med ditt användarkonto. Du kan använda vanliga navigeringen, göra ändringar och se resultatet omedelbart. Den lilla webbredigeraren ger dig möjlighet att ändra innehållsfiler, ladda upp mediefiler och konfigurera inställningar. Textformatering med Markdown stöds. HTML stöds också. [Läs mer om lilla webbredigeraren](https://github.com/annaesvensson/yellow-edit/tree/main/readme-sv.md).
+Det finns två verktyg för utvecklare som ingår i varje installation.
 
 ### Inbyggd webbserver
 
-Du kan starta en webbserver på din dator på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att ändra din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/readme-sv.md).
+Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att ändra din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/readme-sv.md).
 
 ### Statisk generator
 

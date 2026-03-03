@@ -36,7 +36,19 @@ Die folgenden Dateien sind wichtig für die Funktionsweise der Webseite:
 `system/extensions/yellow-system.ini` = [Datei mit Systemeinstellungen](how-to-change-the-system#systemeinstellungen)  
 `system/extensions/yellow-language.ini` = [Datei mit Spracheinstellungen](how-to-change-the-system#spracheinstellungen)  
 `system/extensions/yellow-user.ini` = [Datei mit Benutzereinstellungen](how-to-change-the-system#benutzereinstellungen)  
-`system/extensions/yellow-website.log` = [Logdatei der Webseite](how-to-change-the-system#logdatei)  
+`system/extensions/yellow-website.log` = [Logdatei der Webseite](#logdatei)  
+
+<a id="logdatei"></a>Die Logdatei gibt einen Überblick über das was auf der Webseite passiert. Hier ist ein Beispiel:
+
+```
+2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
+2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
+2024-04-28 14:13:07 info Install extension 'Edit 0.9.2'
+2024-04-28 14:13:07 info Install extension 'Markdown 0.9.2'
+2024-04-28 14:13:07 info Install extension 'English 0.9.2'
+2024-04-28 14:13:07 info Install extension 'German 0.9.2'
+2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
+```
 
 ## Objekte
 
@@ -1274,21 +1286,11 @@ class YellowExample {
 
 ## Werkzeuge
 
-Für Entwickler gibt es Werkzeuge, die dir die Arbeit sowohl im Webbrowser als auch in der Befehlszeile erleichtern. Der Fokus von Technologie sollte idealerweise auf Menschen und ihren Arbeitsabläufen liegen. Nicht auf technischen Details und vielen Funktionen. Die Idee dahinter ist, dass die Standardinstallation die wichtigsten Dinge mitbringt. Du kannst später weitere Dinge hinzufügen.
-
-Die folgenden Werkzeuge sind in der Standardinstallation enthalten:
-
-`Edit-Erweiterung` = [kleiner Webeditor, Webseite im Webbrowser bearbeiten](#kleiner-webeditor)   
-`Serve-Erweiterung` = [eingebauter Webserver, Webserver auf deinem Computer starten](#eingebauter-webserver)  
-`Generate-Erweiterung` = [statischer Generator, statische Webseite in der Befehlszeile generieren](#statischer-generator)
-
-### Kleiner Webeditor
-
-Du kannst deine Webseite im Webbrowser bearbeiten. Die Anmeldeseite ist auf deiner Webseite vorhanden als `http://website/edit/`. Melde dich mit deinem Benutzerkonto an. Du kannst die normale Navigation benutzen, Änderungen machen und das Ergebnis sofort sehen. Der kleine Webeditor gibt dir die Möglichkeit Inhaltsdateien zu ändern, Mediendateien hochzuladen und Einstellungen zu konfigurieren. Textformatierung mit Markdown wird unterstützt. HTML wird auch unterstützt. [Weitere Informationen zum kleinen Webeditor](https://github.com/annaesvensson/yellow-edit/tree/main/readme-de.md).
+Es gibt zwei Werkzeuge für Entwickler die in jeder Installation enthalten sind.
 
 ### Eingebauter Webserver
 
-Du kannst einen Webserver auf deinem Computer in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer zu ändern und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum eingebauten Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/readme-de.md).
+Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer zu ändern und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum eingebauten Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/readme-de.md).
 
 ### Statischer Generator
 

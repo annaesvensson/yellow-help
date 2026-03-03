@@ -36,7 +36,19 @@ The following files are important for the functionality of the website:
 `system/extensions/yellow-system.ini` = [file with system settings](how-to-change-the-system#system-settings)  
 `system/extensions/yellow-language.ini` = [file with language settings](how-to-change-the-system#language-settings)  
 `system/extensions/yellow-user.ini` = [file with user settings](how-to-change-the-system#user-settings)  
-`system/extensions/yellow-website.log` = [log file of the website](how-to-change-the-system#log-file)  
+`system/extensions/yellow-website.log` = [log file of the website](#log-file)  
+
+<a id="log-file"></a>The log file shows an overview of what is happening on the website. Here's an example:
+
+```
+2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
+2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
+2024-04-28 14:13:07 info Install extension 'Edit 0.9.2'
+2024-04-28 14:13:07 info Install extension 'Markdown 0.9.2'
+2024-04-28 14:13:07 info Install extension 'English 0.9.2'
+2024-04-28 14:13:07 info Install extension 'German 0.9.2'
+2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
+```
 
 ## Objects
 
@@ -1272,21 +1284,11 @@ class YellowExample {
 
 ## Tools
 
-For developers there are tools to make your work easier in both a web browser and at the command line. Ideally the focus of technology should be on people and their workflows. Not on technical details and lots of features. The idea is that the standard installation includes the most important things. You can add more things later.
-
-The following tools are included in the standard installation:
-
-`Edit extension` = [small web editor, edit your website in a web browser](#small-web-editor)   
-`Serve extension` = [built-in web server, start a web server on your computer](#built-in-web-server)  
-`Generate extension` = [static generator, generate a static website at the command line](#static-generator)
-
-### Small web editor
-
-You can edit your website in a web browser. The login page is available on your website as `http://website/edit/`. Log in with your user account. You can use the normal navigation, make some changes and see the result immediately. The small web editor allows you to change content files, upload media files and configure settings. Text formatting with Markdown is supported. HTML is also supported. [Learn more about the small web editor](https://github.com/annaesvensson/yellow-edit).
+There are two tools for developers that are included in every installation.
 
 ### Built-in web server
 
-You can start a web server on your computer at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to change your website on your computer and upload it to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the built-in web server](https://github.com/annaesvensson/yellow-serve).
+You can start a web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to change your website on your computer and upload it to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the built-in web server](https://github.com/annaesvensson/yellow-serve).
 
 ### Static generator
 
