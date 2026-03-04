@@ -1,8 +1,8 @@
-# Example server configuration
+# Example configuration
 
-The following example files are available for Datenstrom Yellow:
+You can use the following web server configuration for Datenstrom Yellow.
 
-`.htaccess` file for the Apache web server
+`.htaccess` file for the Apache web server:
 
 ```
 <IfModule mod_rewrite.c>
@@ -15,7 +15,7 @@ RewriteRule ^ yellow.php [L]
 </IfModule>
 ```
 
-`Caddyfile` file for the Caddy web server
+`Caddyfile` file for the Caddy web server:
 
 ```
 example.com {
@@ -32,7 +32,7 @@ example.com {
 }
 ```
 
-`nginx.conf` file for the Nginx web server
+`nginx.conf` file for the Nginx web server:
 
 ```
 server {
