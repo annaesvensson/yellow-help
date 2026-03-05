@@ -1,6 +1,6 @@
 # Example configuration
 
-You can use the following web server configuration for Datenstrom Yellow.
+You can use the following web server configurations for Datenstrom Yellow.
 
 `.htaccess` file for the Apache web server:
 

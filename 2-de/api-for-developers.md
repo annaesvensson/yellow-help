@@ -1331,9 +1331,9 @@ YellowSystem::load file:system/extensions/yellow-system.ini
 YellowSystem::load Sitename:Datenstrom Yellow
 YellowSystem::load Author:Datenstrom
 YellowSystem::load Email:webmaster
+YellowSystem::load From:noreply
 YellowSystem::load Language:de
 YellowSystem::load Layout:default
-YellowSystem::load Theme:stockholm
 ```
 
 Hast du Fragen? [Hilfe finden](.).

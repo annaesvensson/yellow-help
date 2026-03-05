@@ -16,6 +16,7 @@ Halte dich auf dem Laufenden über die neuesten Änderungen.
 ! - Markdown-Erweiterung aktualisiert, E-Mail-Verarbeitung für lange TLD verbessert
 ! - Markdown-Erweiterung aktualisiert, Syntax für ausklappbare Blöcke hinzugefügt
 ! - Markdown-Erweiterung aktualisiert, Syntax für allgemeine Blöcke wurde geändert
+! - Systemeinstellungen aktualisiert, ContactSiteEmail und EditSiteEmail wurden ersetzt
 ! - Themes aktualisiert, CSS für farbige Blockelemente wurde geändert 
 ! - Webseite aktualisiert, mehr Informationen über neuste Produktänderungen
 ! 

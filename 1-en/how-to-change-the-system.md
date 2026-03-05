@@ -22,6 +22,7 @@ The main configuration file is `system/extensions/yellow-system.ini`. Here's an 
     Sitename: Anna Svensson Design
     Author: Anna Svensson
     Email: anna@svensson.com
+    From: noreply@svensson.com
     Language: en
     Layout: default
     Theme: stockholm
@@ -33,6 +34,7 @@ You can use a [web browser](https://github.com/annaesvensson/yellow-edit) or you
 `Sitename` = name of the website  
 `Author` = name of the webmaster  
 `Email` = email of the webmaster  
+`From` = email for outgoing messages  
 `Language` = default language, e.g. `en`  
 `Layout` = default layout  
 `Theme` = default theme  

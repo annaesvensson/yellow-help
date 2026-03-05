@@ -16,6 +16,7 @@ Stay up to date with the latest changes.
 ! - Updated Markdown extension, improved email handling for long TLD
 ! - Updated Markdown extension, syntax for collapsible blocks was added
 ! - Updated Markdown extension, syntax for general blocks has changed
+! - Updated system settings, ContactSiteEmail and EditSiteEmail have been replaced
 ! - Updated themes, CSS for coloured block elements has changed
 ! - Updated website, more information about latest product changes
 !

@@ -22,6 +22,7 @@ Die zentrale Konfigurationsdatei ist `system/extensions/yellow-system.ini`. Hier
     Sitename: Anna Svensson Design
     Author: Anna Svensson
     Email: anna@svensson.com
+    From: noreply@svensson.com
     Language: de
     Layout: default
     Theme: berlin
@@ -33,6 +34,7 @@ Im [Webbrowser](https://github.com/annaesvensson/yellow-edit/tree/main/readme-de
 `Sitename` = Name der Webseite  
 `Author` = Name des Webmasters  
 `Email` = E-Mail des Webmasters  
+`From` = E-Mail für ausgehende Nachrichten  
 `Language` = Standard-Sprache, z.B. `de`  
 `Layout` = Standard-Layout  
 `Theme` = Standard-Theme  

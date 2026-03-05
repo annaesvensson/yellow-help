@@ -34,6 +34,7 @@ You can help us with open tasks for Datenstrom Yellow:
 - [x] Updated Markdown extension, syntax for general blocks has changed. Make it more intuitive.
 - [ ] Updated feed extension, short URL for the feed.xml. Users don't like the long URL, it's ugly. 
 - [ ] Updated sitemap extension, short URL for the sitemap.xml. Users don't like the long URL, it's ugly.
+- [x] Updated system settings, ContactSiteEmail and EditSiteEmail have been replaced. Less troubleshooting.
 - [x] Updated themes, CSS for coloured block elements has changed. Make it more intuitive.
 - [x] Updated website, more information about latest product changes. People want more information.
 - [ ] Updated website, Swedish translation for missing help pages. Better multi language documentation.

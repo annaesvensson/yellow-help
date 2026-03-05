@@ -16,6 +16,7 @@ Håll dig uppdaterad om senaste ändringarna.
 ! - Uppdaterade Markdown-tillägg, förbättrad e-posthantering för lång toppdomän
 ! - Uppdaterade Markdown-tillägg, syntax för hopfällbara block har lagts till
 ! - Uppdaterade Markdown-tillägg, syntax för allmänna block har ändrats
+! - Uppdaterade systeminställningar, ContactSiteEmail och EditSiteEmail har ersatts
 ! - Uppdaterade teman, CSS för färgade blockelement har ändrats
 ! - Uppdaterade webbplats, mer information om senaste produktändringar
 !

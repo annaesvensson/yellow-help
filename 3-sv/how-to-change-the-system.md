@@ -22,6 +22,7 @@ Den centrala konfigurationsfilen är `system/extensions/yellow-system.ini`. Här
     Sitename: Anna Svensson Design
     Author: Anna Svensson
     Email: anna@svensson.com
+    From: noreply@svensson.com
     Language: sv
     Layout: default
     Theme: stockholm
@@ -33,6 +34,7 @@ Du kan använda [webbläsaren](https://github.com/annaesvensson/yellow-edit/tree
 `Sitename` = webbplatsens namn  
 `Author` = webmasterns namn  
 `Email` = webmasterns email  
+`From` = email för utgående meddelanden  
 `Language` = standardspråk, t.ex. `sv`  
 `Layout` = standardlayout  
 `Theme` = standardtema  
