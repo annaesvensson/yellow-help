@@ -50,6 +50,10 @@ The following error messages can happen:
 ? 
 ? The page in question is not supported in a static website. There are some technical limitations to what the static generator can do, for example the static generator can't generate a contact form. Any page could theoretically be generated as a static page, but then you would need additional services to handle dynamic HTTP requests.
 
+? Can't send email message
+? 
+? The mail server can not send the message. Contact the webmaster if this error message is displayed continuously. You may have to configure the email for outgoing messages, so that the email address contains your domain name. Sometimes the default email address doesn't work or the mail server is miss-configured.
+
 ## Problems with web server
 
 You need a web server that forwards HTTP requests to Datenstrom Yellow. It's best to contact your web hosting provider and have them check the configuration of your web server. The web server has to do three things. First it has to forward requests for non existing files/folders to the `yellow.php`. Second it has to block direct access to the `content` folder with an error page. Third it has to block direct access to the `system` folder with an error page. [See examples for common web servers](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).

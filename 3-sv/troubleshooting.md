@@ -50,6 +50,10 @@ Följande felmeddelanden kan uppstå:
 ? 
 ? Den motsvarande sidan stöds inte i en statisk webbplats. Det finns vissa tekniska begränsningar för vad den statiska generatorn kan göra, till exempel kan den statiska generatorn inte generera ett kontaktformulär. Teoretiskt sett kan vilken sida som helst genereras som en statisk sida, men då behöver man ytterligare tjänster för att hantera dynamiska HTTP-förfrågningar.
 
+? Can't send email message
+? 
+? E-postservern kan inte skicka meddelandet. Kontakta webbmastern om detta felmeddelande visas hela tiden. Du kan behöva konfigurera email för utgående meddelanden så att e-postadressen innehåller ditt domännamn. Ibland fungerar inte standard-e-postadressen eller så är e-postservern felkonfigurerad.
+
 ## Problem med webbservern
 
 Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Det är bäst att kontakta din webbhotell och be dem kontrollera konfigurationen av din webbserver. Webbservern måste utföra tre uppgifter. För det första måste den vidarebefordra förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. [Se exempel för vanliga webbservrar](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).
