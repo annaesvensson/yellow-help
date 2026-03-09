@@ -60,7 +60,7 @@ Du benötigst einen Webserver der HTTP-Anfragen an Datenstrom Yellow weiterleite
 
 ## Probleme mit dem Mailserver 
 
-Du benötigst einen Mailserver um E-Mails verschicken zu können. Wende dich am besten an deinen Webhosting-Anbieter und frage nach ob Sendmail aktiviert ist. Nachdem du überprüft hast dass Sendmail aktiviert ist, besteht die nächste Möglichkeit darin die E-Mail für ausgehende Nachrichten zu konfigurieren. Öffne die Datei `system/extensions/yellow-system.ini` und ändere `From`. Konfiguriere eine E-Mail-Adresse mit deinem Domainnamen, beispielsweise `noreply@example.com`. Manchmal funktioniert die voreingestellte E-Mail-Adresse nicht oder der Mailserver ist falsch konfiguriert.
+Du benötigst einen Mailserver um E-Mails verschicken zu können. Wende dich am besten an deinen Webhosting-Anbieter und frage nach ob Sendmail aktiviert ist. Nachdem du überprüft hast dass Sendmail aktiviert ist, besteht die nächste Möglichkeit darin die E-Mail für ausgehende Nachrichten zu konfigurieren. Öffne die Datei `system/extensions/yellow-system.ini` und ändere `From`. Konfiguriere eine E-Mail-Adresse mit deinem Domainnamen, beispielsweise `noreply@example.com`. Manchmal funktioniert die voreingestellte E-Mail-Adresse nicht oder der Mailserver ist falsch konfiguriert. [Weitere Informationen zu Systemeinstellungen](how-to-change-the-system#systemeinstellungen).
 
 ## Probleme mit Erweiterungen
 

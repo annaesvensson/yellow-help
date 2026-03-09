@@ -60,7 +60,7 @@ You need a web server that forwards HTTP requests to Datenstrom Yellow. It's bes
 
 ## Problems with mail server
 
-You need a mail server to send emails. It's best to contact your web hosting provider and ask if sendmail is enabled. When you have confirmed that sendmail is enabled, your next option is to configure the email for outgoing messages. Open file `system/extensions/yellow-system.ini` and change `From`. Configure an email address with your domain name, for example `noreply@example.com`. Sometimes the default email address doesn't work or the mail server is miss-configured. 
+You need a mail server to send emails. It's best to contact your web hosting provider and ask if sendmail is enabled. When you have confirmed that sendmail is enabled, your next option is to configure the email for outgoing messages. Open file `system/extensions/yellow-system.ini` and change `From`. Configure an email address with your domain name, for example `noreply@example.com`. Sometimes the default email address doesn't work or the mail server is miss-configured. [Learn more about system settings](how-to-change-the-system#system-settings).
 
 ## Problems with extensions
 

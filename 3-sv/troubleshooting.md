@@ -60,7 +60,7 @@ Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstr
 
 ## Problem med e-postservern
 
-Du behöver en e-postserver för att kunna skicka e-post. Det är bäst att kontakta din webbhotell och fråga om sendmail är aktiverat. När du har bekräftat att sendmail är aktiverat är nästa steg att konfigurera email för utgående meddelanden. Öppna filen `system/extensions/yellow-system.ini` och ändra `From`. Konfigurera en e-postadress med ditt domännamn, till exempel `noreply@example.com.` Ibland fungerar inte standard-e-postadressen eller så är e-postservern felkonfigurerad.
+Du behöver en e-postserver för att kunna skicka e-post. Det är bäst att kontakta din webbhotell och fråga om sendmail är aktiverat. När du har bekräftat att sendmail är aktiverat är nästa steg att konfigurera email för utgående meddelanden. Öppna filen `system/extensions/yellow-system.ini` och ändra `From`. Konfigurera en e-postadress med ditt domännamn, till exempel `noreply@example.com.` Ibland fungerar inte standard-e-postadressen eller så är e-postservern felkonfigurerad. [Läs mer om systeminställningar](how-to-change-the-system#systeminställningar).
 
 ## Problem med tillägg
 

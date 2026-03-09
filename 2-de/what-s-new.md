@@ -7,7 +7,6 @@ Halte dich auf dem Laufenden über die neuesten Änderungen.
 ! ## Datenstrom Yellow - neuste Änderungen
 !
 ! - Include-Erweiterung hinzugefügt, ermöglicht das Einbinden von Seiten in Markdown
-! - Styleguide für erfahrene Entwickler und Autoren hinzugefügt
 ! - API aktualisiert, getAvailable() in enumerate() geändert
 ! - API aktualisiert, Content-Element-Typ notice in general geändert
 ! - Core-Erweiterung aktualisiert, Unterstützung für Webmanifest-Dateien hinzugefügt
@@ -16,11 +15,12 @@ Halte dich auf dem Laufenden über die neuesten Änderungen.
 ! - Markdown-Erweiterung aktualisiert, E-Mail-Verarbeitung für lange TLD verbessert
 ! - Markdown-Erweiterung aktualisiert, Syntax für ausklappbare Blöcke hinzugefügt
 ! - Markdown-Erweiterung aktualisiert, Syntax für allgemeine Blöcke wurde geändert
+! - Publish-Erweiterung, Styleguide für erfahrene Entwickler und Autoren
 ! - Systemeinstellungen aktualisiert, ContactSiteEmail und EditSiteEmail wurden ersetzt
 ! - Themes aktualisiert, CSS für farbige Blockelemente wurde geändert 
 ! - Webseite aktualisiert, mehr Informationen über neuste Produktänderungen
 ! 
-! [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/main/) und [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/main/).
+! [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/main/), [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/main/) und [gemeldete Fehler](https://github.com/datenstrom/community/discussions/categories/report-a-bug?discussions_q=category%3A%22Report+a+bug%22+sort%3Adate_created).
 
 ! {.wikiblock}
 ! ## Datenstrom Yellow 0.9 - veröffentlicht am 04.04.2024
@@ -42,6 +42,7 @@ Halte dich auf dem Laufenden über die neuesten Änderungen.
 ! - Publish-Erweiterung aktualisiert, neue Art zur Veröffentlichen von Erweiterungen
 ! - Webseite aktualisiert, mehr Informationen zu verfügbaren Erweiterungen
 !
-! [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/3f6cc2e/) und [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/b6877ff/).
+! [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/3f6cc2e/), [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/b6877ff/) und [gemeldete Fehler](https://github.com/datenstrom/community/discussions/categories/report-a-bug?discussions_q=category%3A%22Report+a+bug%22+sort%3Adate_created+created%3A%3C%3D2024-04-04).
+
 
 Hast du Fragen? [Hilfe finden](.).

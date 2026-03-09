@@ -961,15 +961,13 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 En webbplats består av kärnan och andra tillägg. I början laddas och initieras alla tillägg. Det finns olika händelser som informerar dig när en begäran från webbläsaren tas emot, ett kommando utförs eller information uppdateras. Detta ger dig möjlighet att anpassa nästan alla aspekter av webbplatsen. Du behöver bara hantera de händelser som du är intresserad av.
 
 ``` box-drawing {aria-hidden=true}
-┌──────────────────────────────────────────────────────┐
-│ Ta emot begäran från webbläsaren eller kommandoraden │
-└──────────────────────────────────────────────────────┘
-      │                          
-      ▼                            
-  onLoad                                                            Information
-      │                                                             uppdateras
-      ▼                                                                 
-  onStartup ─────────────────────────────────────────┐                  │
+  Ta emot begäran från webbläsaren eller kommandoraden       Information uppdateras
+      │                                                                 │
+      ▼                                                                 ▼
+  onLoad                                                            onLoad  
+      │                                                                 │
+      ▼                                                                 ▼                                    
+  onStartup ─────────────────────────────────────────┐              onStartup
       │                                              │                  │
       ▼                                              │                  │
   onRequest ──────────────────┐                      │                  │
@@ -979,17 +977,15 @@ En webbplats består av kärnan och andra tillägg. I början laddas och initier
   onParseContentRaw       onEditMediaFile        onCommandHelp      onEnumerate
   onParseContentElement   onEditSystemFile           │              onMail
   onParseContentHtml      onEditUserAccount          │              onLog
-  onParsePageLayout           │                      │
-  onParsePageExtra            │                      │
-  onParsePageOutput           │                      │
-      │                       │                      │
-      ▼                       │                      │
-  onShutdown ◀────────────────┴──────────────────────┘
+  onParsePageLayout           │                      │                  │
+  onParsePageExtra            │                      │                  │
+  onParsePageOutput           │                      │                  │
+      │                       │                      │                  │
+      ▼                       │                      │                  ▼
+  onShutdown ◀────────────────┴──────────────────────┘              onShutdown
       │                            
-      ▼                            
-┌─────────────┐
-│ Skicka svar │
-└─────────────┘
+      ▼                           
+  Skicka svar
 ```
 
 Följande typer av händelser är tillgängliga:

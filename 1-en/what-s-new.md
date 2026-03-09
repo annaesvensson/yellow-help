@@ -7,7 +7,6 @@ Stay up to date with the latest changes.
 ! ## Datenstrom Yellow - latest changes
 !
 ! - Added include extension, allows to include pages in Markdown
-! - Added style guide for experienced developers and writers
 ! - Updated API, changed getAvailable() to enumerate()
 ! - Updated API, changed content element type notice to general
 ! - Updated core extension, support for webmanifest files was added
@@ -16,11 +15,12 @@ Stay up to date with the latest changes.
 ! - Updated Markdown extension, improved email handling for long TLD
 ! - Updated Markdown extension, syntax for collapsible blocks was added
 ! - Updated Markdown extension, syntax for general blocks has changed
+! - Updated publish extension, style guide for experienced developers and writers
 ! - Updated system settings, ContactSiteEmail and EditSiteEmail have been replaced
 ! - Updated themes, CSS for coloured block elements has changed
 ! - Updated website, more information about latest product changes
 !
-! [See code history](https://github.com/datenstrom/yellow/commits/main/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/).
+! [See code history](https://github.com/datenstrom/yellow/commits/main/), [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/) and [reported bugs](https://github.com/datenstrom/community/discussions/categories/report-a-bug?discussions_q=category%3A%22Report+a+bug%22+sort%3Adate_created).
 
 ! {.wikiblock}
 ! ## Datenstrom Yellow 0.9 - published on 2024-04-04
@@ -42,6 +42,6 @@ Stay up to date with the latest changes.
 ! - Updated publish extension, new way of publishing extensions
 ! - Updated website, more information about available extensions
 !
-! [See code history](https://github.com/datenstrom/yellow/commits/3f6cc2e/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/b6877ff/).
+! [See code history](https://github.com/datenstrom/yellow/commits/3f6cc2e/), [documentation history](https://github.com/annaesvensson/yellow-help/commits/b6877ff/) and [reported bugs](https://github.com/datenstrom/community/discussions/categories/report-a-bug?discussions_q=category%3A%22Report+a+bug%22+sort%3Adate_created+created%3A%3C%3D2024-04-04).
 
 Do you have questions? [Get help](.).

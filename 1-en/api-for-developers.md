@@ -961,15 +961,13 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 A website consists of the core and other extensions. At the beginning, all extensions are loaded and initialised. There are various events that inform extensions when a request from the web browser is received, a command is executed or information is updated. This allow you to customise nearly every aspect of the website. You only need to handle the events you are interested in.
 
 ``` box-drawing {aria-hidden=true}
-┌──────────────────────────────────────────────────┐
-│ Receive request from web browser or command line │
-└──────────────────────────────────────────────────┘
-      │
-      ▼                            
-  onLoad                                                            Information
-      │                                                             is updated
-      ▼                                                                 
-  onStartup ─────────────────────────────────────────┐                  │
+  Receive request from web browser or command line           Information is updated
+      │                                                                 │
+      ▼                                                                 ▼
+  onLoad                                                            onLoad  
+      │                                                                 │
+      ▼                                                                 ▼                                    
+  onStartup ─────────────────────────────────────────┐              onStartup
       │                                              │                  │
       ▼                                              │                  │
   onRequest ──────────────────┐                      │                  │
@@ -979,17 +977,15 @@ A website consists of the core and other extensions. At the beginning, all exten
   onParseContentRaw       onEditMediaFile        onCommandHelp      onEnumerate
   onParseContentElement   onEditSystemFile           │              onMail
   onParseContentHtml      onEditUserAccount          │              onLog
-  onParsePageLayout           │                      │
-  onParsePageExtra            │                      │
-  onParsePageOutput           │                      │
-      │                       │                      │
-      ▼                       │                      │
-  onShutdown ◀────────────────┴──────────────────────┘
+  onParsePageLayout           │                      │                  │
+  onParsePageExtra            │                      │                  │
+  onParsePageOutput           │                      │                  │
+      │                       │                      │                  │
+      ▼                       │                      │                  ▼
+  onShutdown ◀────────────────┴──────────────────────┘              onShutdown
       │                            
-      ▼                            
-┌───────────────┐
-│ Send response │
-└───────────────┘
+      ▼                           
+  Send response
 ```
 
 The following types of events are available:

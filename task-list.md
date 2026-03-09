@@ -14,7 +14,6 @@ You can help us with open tasks for Datenstrom Yellow:
 - [ ] Added maintenance extension, puts website in maintenance mode. Make it no longer experimental.
 - [ ] Added math extension, mathematical expressions with TeX/LaTeX. Make it no longer experimental.
 - [ ] Added SMTP extension, send emails to a remote server. Websites may not have a working mail system.
-- [x] Added style guide for experienced developers and writers. Consistency for code and documentation.
 - [ ] Updated API, YellowPageCollection no longer derives from ArrayObject. ArrayObject interface is strange.
 - [x] Updated API, changed getAvailable() to enumerate(). Designers want to use non-flattened themes.
 - [x] Updated API, changed content element type notice to general. Make it more intuitive.
@@ -24,15 +23,17 @@ You can help us with open tasks for Datenstrom Yellow:
 - [ ] Updated edit extension, settings dialog with dropdown menus. Users want important system settings in browser.
 - [x] Updated edit extension, upload with different JPEG file name extensions. Mobile devices use different formats.
 - [ ] Updated edit extension toolbar, improved emoji and icon selection dialog. Give users more control.
+- [ ] Updated edit extension toolbar, dropdown menus with keyboard navigation Give users more control.
+- [ ] Updated edit extension toolbar, buttons accessible on small screens. Disappearing buttons.
 - [ ] Updated edit extension toolbar, improved link and file selection dialog. Give users more control.
-- [ ] Updated edit extension toolbar, menu for buttons on small screens. Disappearing buttons.
+- [ ] Updated feed extension, short URL for the feed.xml. Users don't like the long URL, it's ugly. 
 - [x] Updated gallery extension, popup can be triggered by clicking on a link. Give users more flexibility.
 - [ ] Updated icon extension, SVG stack instead of WOFF font. Developers want consistent files formats.
 - [ ] Updated image extension, different media files for light and dark mode. Give users more control.
 - [x] Updated Markdown extension, improved email handling for long TLD. TLD with more than 3 characters.
 - [x] Updated Markdown extension, syntax for collapsible blocks was added. Users can show/hide details.
 - [x] Updated Markdown extension, syntax for general blocks has changed. Make it more intuitive.
-- [ ] Updated feed extension, short URL for the feed.xml. Users don't like the long URL, it's ugly. 
+- [x] Updated publish extension, style guide for experienced developers and writers
 - [ ] Updated sitemap extension, short URL for the sitemap.xml. Users don't like the long URL, it's ugly.
 - [x] Updated system settings, ContactSiteEmail and EditSiteEmail have been replaced. Less troubleshooting.
 - [x] Updated themes, CSS for coloured block elements has changed. Make it more intuitive.

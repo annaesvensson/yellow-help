@@ -7,7 +7,6 @@ Håll dig uppdaterad om senaste ändringarna.
 ! ## Datenstrom Yellow - senaste ändringar
 !
 ! - Lade till include-tillägg, tillåter att inkludera sidor i Markdown
-! - Lade till stilguide för erfarna utvecklare och författare
 ! - Uppdaterade API, ändrat getAvailable() till enumerate()
 ! - Uppdaterade API, ändrat content-element-typ notice till general
 ! - Uppdaterade core-tillägg, stöd för webmanifest-filer har lagts till
@@ -16,11 +15,12 @@ Håll dig uppdaterad om senaste ändringarna.
 ! - Uppdaterade Markdown-tillägg, förbättrad e-posthantering för lång toppdomän
 ! - Uppdaterade Markdown-tillägg, syntax för hopfällbara block har lagts till
 ! - Uppdaterade Markdown-tillägg, syntax för allmänna block har ändrats
+! - Uppdaterade publish-tillägg, stilguide för erfarna utvecklare och författare
 ! - Uppdaterade systeminställningar, ContactSiteEmail och EditSiteEmail har ersatts
 ! - Uppdaterade teman, CSS för färgade blockelement har ändrats
 ! - Uppdaterade webbplats, mer information om senaste produktändringar
 !
-! [Se kodhistorik](https://github.com/datenstrom/yellow/commits/main/) och [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/main/).
+! [Se kodhistorik](https://github.com/datenstrom/yellow/commits/main/), [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/main/) och [rapporterade fel](https://github.com/datenstrom/community/discussions/categories/report-a-bug?discussions_q=category%3A%22Report+a+bug%22+sort%3Adate_created).
 
 ! {.wikiblock}
 ! ## Datenstrom Yellow 0.9 - publicerad den 2024-04-04
@@ -42,6 +42,6 @@ Håll dig uppdaterad om senaste ändringarna.
 ! - Uppdaterade publish-tillägg, nytt sätt att publicera tillägg
 ! - Uppdaterade webbplats, mer information om tillgängliga tillägg
 !
-! [Se kodhistorik](https://github.com/datenstrom/yellow/commits/3f6cc2e/) och [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/b6877ff/).
+! [Se kodhistorik](https://github.com/datenstrom/yellow/commits/3f6cc2e/), [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/b6877ff/) och [rapporterade fel](https://github.com/datenstrom/community/discussions/categories/report-a-bug?discussions_q=category%3A%22Report+a+bug%22+sort%3Adate_created+created%3A%3C%3D2024-04-04).
 
 Har du några frågor? [Få hjälp](.).

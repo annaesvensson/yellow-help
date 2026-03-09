@@ -961,15 +961,13 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 Eine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden alle Erweiterungen geladen und initialisiert. Es gibt verschiedene Ereignisse die Erweiterung informieren wenn eine Anfrage vom Webbrowser empfangen wird, ein Befehl ausgeführt wird oder Informationen aktualisiert werden. Das gibt dir die Möglichkeit nahezu jeden Aspekt der Webseite anzupassen. Du brauchst nur die Ereignisse verarbeiten an denen du interessiert bist.
 
 ``` box-drawing {aria-hidden=true}
-┌───────────────────────────────────────────────────┐
-│ Empfange Anfrage vom Webbrowser oder Befehlszeile │
-└───────────────────────────────────────────────────┘ 
-      │                          
-      ▼                            
-  onLoad                                                            Informationen
-      │                                                             aktualisieren
-      ▼                                                                 
-  onStartup ─────────────────────────────────────────┐                  │
+  Empfange Anfrage vom Webbrowser oder Befehlszeile      Informationen werden aktualisiert 
+      │                                                                 │
+      ▼                                                                 ▼
+  onLoad                                                            onLoad  
+      │                                                                 │
+      ▼                                                                 ▼                                    
+  onStartup ─────────────────────────────────────────┐              onStartup
       │                                              │                  │
       ▼                                              │                  │
   onRequest ──────────────────┐                      │                  │
@@ -979,17 +977,15 @@ Eine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden a
   onParseContentRaw       onEditMediaFile        onCommandHelp      onEnumerate
   onParseContentElement   onEditSystemFile           │              onMail
   onParseContentHtml      onEditUserAccount          │              onLog
-  onParsePageLayout           │                      │
-  onParsePageExtra            │                      │
-  onParsePageOutput           │                      │
-      │                       │                      │
-      ▼                       │                      │
-  onShutdown ◀────────────────┴──────────────────────┘
+  onParsePageLayout           │                      │                  │
+  onParsePageExtra            │                      │                  │
+  onParsePageOutput           │                      │                  │
+      │                       │                      │                  │
+      ▼                       │                      │                  ▼
+  onShutdown ◀────────────────┴──────────────────────┘              onShutdown
       │                            
-      ▼                                            
-┌───────────────┐
-│ Sende Antwort │
-└───────────────┘
+      ▼     
+  Sende Antwort                 
 ```
 
 Die folgenden Arten von Ereignissen sind verfügbar:
