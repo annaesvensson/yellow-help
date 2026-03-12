@@ -290,11 +290,11 @@ original link in the source code. For example:
     Gnomovision Orange, https://github.com/gnomovision/orange
     Based on Datenstrom Yellow, https://github.com/datenstrom/yellow
 
-The source code may not be included in datasets used for training or 
-improving machine learning algorithms, including but not limited to artificial
-intelligence, natural language processing or large language models. In such 
-cases you need to obtain a different license, unless your complete dataset, 
-software, tools and documentation are published as open source.
+The source code is open source and may not be included in datasets used for 
+training or improving machine learning algorithms, including but not limited 
+to artificial intelligence, natural language processing or large language models. 
+In such cases, you must obtain a different license, especially if the resulting
+datasets are not to be published as open source.
 
 The source code is copyrighted by the respective author(s) 
 and licensed under GPL version 2, unless stated otherwise.
