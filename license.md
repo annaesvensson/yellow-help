@@ -279,8 +279,8 @@ END OF TERMS AND CONDITIONS
 
 ## How to apply this license to this software
 
-At the start of each source code file you see a link to a website, that 
-contains this license and contact information. For example:
+At the start of each source code file is a link to a website, that contains 
+this license and contact information. For example:
 
     Datenstrom Yellow, https://github.com/datenstrom/yellow
 
@@ -292,7 +292,8 @@ original link in the source code. For example:
 
 The source code may not be included in datasets used for training or 
 improving machine learning algorithms, including but not limited to 
-artificial intelligence, natural language processing or data mining.
+artificial intelligence, natural language processing or large language 
+models. In such cases, you need to obtain a different license.
 
 The source code is copyrighted by the respective author(s) 
 and licensed under GPL version 2, unless stated otherwise.
