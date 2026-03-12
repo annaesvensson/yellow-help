@@ -279,20 +279,20 @@ END OF TERMS AND CONDITIONS
 
 ## How to apply this license to this software
 
-At the start of each source file you see a link to a website, that contains 
-this license and contact information. For example:
+At the start of each source code file you see a link to a website, that 
+contains this license and contact information. For example:
 
     Datenstrom Yellow, https://github.com/datenstrom/yellow
 
 If your software is based on modified source code, you have to keep the 
-original link in each source file. For example: 
+original link in the source code. For example: 
 
     Gnomovision Orange, https://github.com/gnomovision/orange
     Based on Datenstrom Yellow, https://github.com/datenstrom/yellow
 
-The source files may not be included in datasets used for training or 
+The source code may not be included in datasets used for training or 
 improving machine learning algorithms, including but not limited to 
 artificial intelligence, natural language processing or data mining.
 
-All source files are copyrighted by the respective author(s) 
+The source code is copyrighted by the respective author(s) 
 and licensed under GPL version 2, unless stated otherwise.
