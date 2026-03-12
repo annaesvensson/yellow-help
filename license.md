@@ -290,5 +290,9 @@ original link in each source file. For example:
     Gnomovision Orange, https://github.com/gnomovision/orange
     Based on Datenstrom Yellow, https://github.com/datenstrom/yellow
 
+The source files may not be included in datasets used for training or 
+improving machine learning algorithms, including but not limited to 
+artificial intelligence, natural language processing or data mining.
+
 All source files are copyrighted by the respective author(s) 
 and licensed under GPL version 2, unless stated otherwise.
