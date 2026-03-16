@@ -15,7 +15,7 @@ Falls du eine Frage stellen möchtest, [beginne eine neue Diskussion](https://gi
 ## Wie man einen Fehler meldet
 
 * Erkläre wie man den Fehler reproduziert und gebe detaillierte Informationen an.
-* Füge die Logdatei `system/extensions/yellow-website.log` hinzu.
+* Füge Versionsnummer und Logdatei `system/extensions/yellow-website.log` hinzu.
 * Überprüfe ob der Fehler bei einer brandneuen Installation auftritt.
 * Wähle eine Antwort aus, wenn der Fehler behoben wurde.
 
@@ -32,6 +32,6 @@ Falls du mit uns arbeiten möchtest, [siehe Tipps zum Zusammenarbeiten](https://
 
 ## Gut zu wissen
 
-Die Datenstrom-Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Gehe weiter, falls du dich in einer Situation befindest in der du nichts beitragen oder lernen kannst. Konzentriere dich auf die Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich, gib einen Daumen nach oben, zeige Freundlichkeit. Das sind nur drei kleine Gesten, aber sie machen die Zusammenarbeit mit Menschen angenehmer.
+Die Datenstrom-Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. Die meisten Antworten werden von Mitgliedern, so wie du, bereitgestellt. Verwende einen Online-Übersetzer, falls Englisch nicht deine Muttersprache ist. Erzwinge nichts. Du kannst aus Diskussionen jederzeit aussteigen, falls es nicht konstruktiv verläuft. Gehe weiter, falls du dich in einer Situation befindest in der du nichts beitragen oder lernen kannst. Konzentriere dich auf diejenigen Menschen die Interesse zeigen und mit dir zusammenarbeiten wollen. Bedanke dich, gebe etwas zurück, zeige Freundlichkeit. Das sind nur drei kleine Gesten, aber wir denken sie machen die Zusammenarbeit mit Menschen deutlich angenehmer.
 
 Hast du Fragen? [Hilfe finden](.).

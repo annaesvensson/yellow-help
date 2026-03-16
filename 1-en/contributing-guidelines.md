@@ -15,7 +15,7 @@ If you want to ask a question, [start a new discussion](https://github.com/daten
 ## How to report a bug
 
 * Explain how to reproduce the bug and provide detailed information.
-* Add the log file `system/extensions/yellow-website.log`.
+* Add version number and log file `system/extensions/yellow-website.log`.
 * Check if the bug occurs in a brand new installation.
 * Select an answer, when the bug has been fixed.
 
@@ -32,6 +32,6 @@ If you want to work with us, [see tips for working together](https://github.com/
 
 ## Good to know
 
-The Datenstrom community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Use a translator if English is not your first language. Don't force anything. You can step out of discussions at any time if they are not constructive. Move on if you find yourself in a situation where you have nothing to contribute or learn. Focus on the people who show interest and want to work together with you. Say thank you, give a thumbs up, show kindness. These are only three small gestures, but they make working together with people more enjoyable.
+The Datenstrom community is a place to help each other. Where you can ask and answer questions. Most answers are provided by members, just like you. Use an online translator if English is not your first language. Don't force anything. You can step out of discussions at any time if they are not constructive. Move on if you find yourself in a situation where you have nothing to contribute or learn. Focus on the people who show interest and want to work together with you. Say thank you, give something back, show kindness. These are only three small gestures, but we think they make working together with people much more enjoyable.
 
 Do you have questions? [Get help](.).

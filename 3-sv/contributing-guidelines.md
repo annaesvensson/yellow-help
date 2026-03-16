@@ -15,7 +15,7 @@ Om du vill ställa en fråga, [starta en ny diskussion](https://github.com/daten
 ## Hur man rapporterar ett fel
 
 * Förklara hur man återskapar felet och ge detaljerad information.
-* Lägg till loggfilen `system/extensions/yellow-website.log`.
+* Lägg till versionsnummer och loggfilen `system/extensions/yellow-website.log`.
 * Kontrollera om felet uppstår i en helt ny installation.
 * Välj ett svar när felet har åtgärdats.
 
@@ -32,6 +32,6 @@ Om du vill jobba med oss, [se tips för samarbete](https://github.com/datenstrom
 
 ## Bra att veta
 
-Datenstroms nätgemenskapen är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du. Använd en översättare om engelska inte är ditt modersmål. Tvinga ingenting. Du kan lämna diskussioner när som helst om de inte är konstruktiva. Gå vidare om du hamnar i en situation där du inte har något att bidra eller lära dig. Fokusera på de människor som visa intresse och vill sammarbeta med dig. Säg tack, ge tummen upp, visa vänlighet. Det är bara tre små gester, men de gör samarbetet med människor trevligare.
+Datenstroms nätgemenskapen är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av medlemmar, precis som du.  Använd en onlineöversättare om engelska inte är ditt modersmål. Tvinga ingenting. Du kan lämna diskussioner när som helst om de inte är konstruktiva. Gå vidare om du hamnar i en situation där du inte har något att bidra eller lära dig. Fokusera på de människor som visa intresse och vill sammarbeta med dig. Säg tack, ge något tillbaka, visa vänlighet. Det är bara tre små gester, men vi tycker att de gör samarbetet med människor betydligt trevligare.
 
 Har du några frågor? [Få hjälp](.).
