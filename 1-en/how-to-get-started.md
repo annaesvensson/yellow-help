@@ -21,6 +21,6 @@ If you want to learn more about your website, [see help for your website](.).
 4. Open a terminal window, go to the folder and type `php yellow.php serve`.
 5. Follow the instructions on screen and click `Install`.
 
-If you want to know more about the installation requirements, [see troubleshooting](troubleshooting).
+If you want to know more about this software, [see troubleshooting](troubleshooting) and [privacy](privacy).
 
 Do you have questions? [Get help](.).

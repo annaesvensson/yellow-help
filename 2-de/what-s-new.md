@@ -19,6 +19,7 @@ Halte dich auf dem Laufenden über die neuesten Änderungen.
 ! - Systemeinstellungen aktualisiert, ContactSiteEmail und EditSiteEmail wurden ersetzt
 ! - Themes aktualisiert, CSS für farbige Blockelemente wurde geändert 
 ! - Webseite aktualisiert, mehr Informationen über neuste Produktänderungen
+! - Webseite aktualisiert, mehr Informationen über Schutz von personenbezogenen Daten
 ! 
 ! [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/main/), [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/main/) und [gemeldete Fehler](https://github.com/datenstrom/community/discussions/categories/report-a-bug?discussions_q=category%3A%22Report+a+bug%22+sort%3Adate_created).
 
