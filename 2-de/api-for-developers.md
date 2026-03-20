@@ -1302,8 +1302,8 @@ Grundlegende Informationen mit der Einstellung `CoreDebugMode: 1`:
 YellowCore::sendPage Cache-Control: max-age=60
 YellowCore::sendPage Content-Type: text/html; charset=utf-8
 YellowCore::sendPage Last-Modified: Thu, 9 May 2024 15:43:40 GMT
-YellowCore::processRequest file:content/2-de/2-wiki/page.md
-YellowCore::processRequest layout:wiki-start theme:stockholm
+YellowCore::sendPage file:content/2-de/2-wiki/page.md
+YellowCore::sendPage layout:wiki-start theme:stockholm
 YellowCore::request status:200 time:19 ms
 ```
 
