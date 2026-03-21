@@ -54,11 +54,11 @@ Följande felmeddelanden kan uppstå:
 ? 
 ? E-postservern kan inte skicka meddelandet. Kontakta webbmastern om detta felmeddelande visas hela tiden. Du kan behöva konfigurera email för utgående meddelanden så att e-postadressen innehåller ditt domännamn. Ibland fungerar inte standard-e-postadressen eller så är e-postservern felkonfigurerad.
 
-## Problem med webbservern
+## Problem med din webbserver
 
-Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Det är bäst att kontakta din webbhotell och be dem kontrollera konfigurationen av din webbserver. Webbservern måste utföra tre uppgifter. För det första måste den vidarebefordra förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. [Se exempel för vanliga webbservrar](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).
+Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Det är bäst att kontakta din webbhotell och be dem kontrollera konfigurationen av din webbserver. Webbservern måste utföra tre uppgifter. För det första måste den vidarebefordra HTTP-förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. [Se integritet](privacy) och [exempel för vanliga webbservrar](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).
 
-## Problem med e-postservern
+## Problem med din e-postserver
 
 Du behöver en e-postserver för att kunna skicka e-post. Det är bäst att kontakta din webbhotell och fråga om sendmail är aktiverat. När du har bekräftat att sendmail är aktiverat är nästa steg att konfigurera email för utgående meddelanden. Öppna filen `system/extensions/yellow-system.ini` och ändra `From`. Konfigurera en e-postadress med ditt domännamn, till exempel `noreply@example.com.` Ibland fungerar inte standard-e-postadressen eller så är e-postservern felkonfigurerad. [Läs mer om systeminställningar](how-to-change-the-system#systeminställningar).
 

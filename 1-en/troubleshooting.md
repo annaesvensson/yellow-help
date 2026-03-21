@@ -54,11 +54,11 @@ The following error messages can happen:
 ? 
 ? The mail server can not send the message. Contact the webmaster if this error message is displayed continuously. You may have to configure the email for outgoing messages, so that the email address contains your domain name. Sometimes the default email address doesn't work or the mail server is miss-configured.
 
-## Problems with web server
+## Problems with your web server
 
-You need a web server that forwards HTTP requests to Datenstrom Yellow. It's best to contact your web hosting provider and have them check the configuration of your web server. The web server has to do three things. First it has to forward requests for non existing files/folders to the `yellow.php`. Second it has to block direct access to the `content` folder with an error page. Third it has to block direct access to the `system` folder with an error page. [See examples for common web servers](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).
+You need a web server that forwards HTTP requests to Datenstrom Yellow. It's best to contact your web hosting provider and have them check the configuration of your web server. The web server has to do three things. First it has to forward HTTP requests for non existing files/folders to the `yellow.php`. Second it has to block direct access to the `content` folder with an error page. Third it has to block direct access to the `system` folder with an error page. [See privacy](privacy) and [examples for common web servers](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).
 
-## Problems with mail server
+## Problems with your mail server
 
 You need a mail server to send emails. It's best to contact your web hosting provider and ask if sendmail is enabled. When you have confirmed that sendmail is enabled, your next option is to configure the email for outgoing messages. Open file `system/extensions/yellow-system.ini` and change `From`. Configure an email address with your domain name, for example `noreply@example.com`. Sometimes the default email address doesn't work or the mail server is miss-configured. [Learn more about system settings](how-to-change-the-system#system-settings).
 

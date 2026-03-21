@@ -54,11 +54,11 @@ Die folgenden Fehlermeldungen können auftreten:
 ? 
 ? Der Mailserver kann die Nachricht nicht senden. Wende dich an den Webmaster, falls diese Fehlermeldung ständig angezeigt wird. Möglicherweise musst du die E-Mail für ausgehende Nachrichten so konfigurieren, dass die E-Mail-Adresse deinen Domainnamen enthält. Manchmal funktioniert die voreingestellte E-Mail-Adresse nicht oder der Mailserver ist falsch konfiguriert.
 
-## Probleme mit dem Webserver
+## Probleme mit deinem Webserver
 
-Du benötigst einen Webserver der HTTP-Anfragen an Datenstrom Yellow weiterleitet. Wende dich am besten an deinen Webhosting-Anbieter und lasse die Konfiguration deines Webservers überprüfen. Der Webserver muss drei Dinge erledigen. Erstens muss er Anfragen für nicht existierende Dateien/Verzeichnisse an die `yellow.php` weiterleiten. Zweitens muss er den direkten Zugriff auf das `content`-Verzeichnis mit einer Fehlerseite blockieren. Drittens muss er den direkten Zugriff auf das `system`-Verzeichnis mit einer Fehlerseite blockieren. [Siehe Beispiele für verbreitete Webserver](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).
+Du benötigst einen Webserver der HTTP-Anfragen an Datenstrom Yellow weiterleitet. Wende dich am besten an deinen Webhosting-Anbieter und lasse die Konfiguration deines Webservers überprüfen. Der Webserver muss drei Dinge erledigen. Erstens muss er HTTP-Anfragen für nicht existierende Dateien/Verzeichnisse an die `yellow.php` weiterleiten. Zweitens muss er den direkten Zugriff auf das `content`-Verzeichnis mit einer Fehlerseite blockieren. Drittens muss er den direkten Zugriff auf das `system`-Verzeichnis mit einer Fehlerseite blockieren. [Siehe Datenschutz](privacy) und [Beispiele für verbreitete Webserver](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).
 
-## Probleme mit dem Mailserver 
+## Probleme mit deinem Mailserver 
 
 Du benötigst einen Mailserver um E-Mails verschicken zu können. Wende dich am besten an deinen Webhosting-Anbieter und frage nach ob Sendmail aktiviert ist. Nachdem du überprüft hast dass Sendmail aktiviert ist, besteht die nächste Möglichkeit darin die E-Mail für ausgehende Nachrichten zu konfigurieren. Öffne die Datei `system/extensions/yellow-system.ini` und ändere `From`. Konfiguriere eine E-Mail-Adresse mit deinem Domainnamen, beispielsweise `noreply@example.com`. Manchmal funktioniert die voreingestellte E-Mail-Adresse nicht oder der Mailserver ist falsch konfiguriert. [Weitere Informationen zu Systemeinstellungen](how-to-change-the-system#systemeinstellungen).
 
