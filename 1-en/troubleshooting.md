@@ -38,25 +38,33 @@ The following error messages can happen:
 
 The following error messages can happen:
 
-? Datenstrom Yellow stopped with fatal error
+? Login failed
 ? 
-? The software has crashed. Activate the [debug mode](api-for-developers#debugging) for more information. Contact the webmaster if this error message is displayed continuously. Very likely an extension is not working properly or is not up to date. As soon as the relevant extension has been updated or removed, the problem should be resolved.
+? The email or password is incorrect. This error message usually means that the password is incorrect. If you forgot your password, you can reset it. You can also create a new user account in a web browser and at the command line. Contact the webmaster if you keep having problems with your user account.
 
-? Can't connect to the update server
+? Can't write file
 ? 
-? The software update is currently not possible. This error message usually means that there is no internet connection or that the internet access is blocked on your web server. If you have a web server with SSH access, you can check this yourself. Execute the command `curl https://datenstrom.se` on the web server.
-
-? Can't generate static page
-? 
-? The page in question is not supported in a static website. There are some technical limitations to what the static generator can do, for example the static generator can't generate a contact form. Any page could theoretically be generated as a static page, but then you would need additional services to handle dynamic HTTP requests.
+? The file can not be written to the file system. Execute the command `chmod -R a+rw *` in the installation folder. You can also use your FTP application to give write permissions to all files. Sometimes a file syncing application is miss-configured. Contact the webmaster if you keep having problems with the file system.
 
 ? Can't send email message
 ? 
-? The mail server can not send the message. Contact the webmaster if this error message is displayed continuously. You may have to configure the email for outgoing messages, so that the email address contains your domain name. Sometimes the default email address doesn't work or the mail server is miss-configured.
+? The email message can not be sent. You may have to configure the email address for outgoing messages, so that the email address contains your domain name. Sometimes the default email address doesn't work or the mail server is miss-configured. Contact the webmaster if this error message is displayed continuously.
+
+? Can't generate static page
+? 
+? The page in question is not supported in a static website. There are some technical limitations to what the static generator can do, for example the static generator can't generate an email contact form. Any page could theoretically be generated as a static page, but then you would need additional services to handle dynamic HTTP requests.
+
+? Can't connect to the update server
+? 
+? The software update is not possible. This error message usually means that there is no internet connection or that the internet access is blocked on the web server. If you have a web server with SSH access, you can check the internet connection. Execute the command `curl -I https://datenstrom.se` on the web server.
+
+? Datenstrom Yellow stopped with fatal error
+? 
+? The software has crashed. Activate the debug mode for more information. Very likely an extension is not working properly or is not up to date. As soon as the relevant extension has been updated, the problem should be resolved. Contact the webmaster if this error message is displayed continuously.
 
 ## Problems with your web server
 
-You need a web server that forwards HTTP requests to Datenstrom Yellow. It's best to contact your web hosting provider and have them check the configuration of your web server. The web server has to do three things. First it has to forward HTTP requests for non existing files/folders to the `yellow.php`. Second it has to block direct access to the `content` folder with an error page. Third it has to block direct access to the `system` folder with an error page. [See privacy](privacy) and [examples for common web servers](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).
+You need a web server that forwards HTTP requests to Datenstrom Yellow. It's best to contact your web hosting provider and have them check the configuration of your web server. The web server has to do three things. First it has to forward HTTP requests for non existing files/folders to the `yellow.php`. Second it has to block direct access to the `content` folder with an error page. Third it has to block direct access to the `system` folder with an error page. [See privacy](privacy) and [example configuration](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).
 
 ## Problems with your mail server
 

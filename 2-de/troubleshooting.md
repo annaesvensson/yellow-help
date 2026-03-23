@@ -38,25 +38,33 @@ Die folgenden Fehlermeldungen können auftreten:
 
 Die folgenden Fehlermeldungen können auftreten:
 
-? Datenstrom Yellow stopped with fatal error 
+? Anmeldung fehlgeschlagen
 ? 
-? Die Software ist abgestürzt. Aktiviere den [Debug-Modus](api-for-developers#debuggen) um weitere Informationen zu erhalten. Wende dich an den Webmaster, falls diese Fehlermeldung ständig angezeigt wird. Sehr wahrscheinlich funktioniert eine Erweiterung nicht richtig oder ist nicht auf dem neusten Stand. Sobald die entsprechende Erweiterung aktualisiert oder entfernt wurde, sollte das Problem behoben sein.
+? Die E-Mail oder das Kennwort ist falsch. Diese Fehlermeldung bedeutet in der Regel, dass das Kennwort falsch ist. Falls du dein Kennwort vergessen hast, kannst du es zurücksetzen. Du kannst auch ein neues Benutzerkonto im Webbrowser oder in der Befehlszeile erstellen. Wende dich an den Webmaster, falls du weiterhin Probleme mit deinem Benutzerkonto hast.
 
-? Can't connect to the update server
+? Can't write file
 ? 
-? Die Software-Aktualisierung ist derzeit nicht möglich. Diese Fehlermeldung bedeutet in der Regel, dass keine Internetverbindung besteht oder dass der Internetzugang auf deinem Webserver blockiert ist. Falls du einen Webserver mit SSH-Zugang hast, kannst du das selbst überprüfen. Führe den Befehl `curl https://datenstrom.se` auf dem Webserver aus.
-
-? Can't generate static page
-? 
-? Die entsprechende Seite wird in einer statischen Webseite nicht unterstützt. Der statische Generator hat gewisse technische Beschränkungen, beispielsweise kann kein Kontaktformular generiert werden. Theoretisch könnte jede Seite als statische Seite generiert werden, jedoch wären dann zusätzliche Dienste erforderlich, um dynamische HTTP-Anfragen zu verarbeiten.
+? Die Datei kann nicht ins Dateisystem geschrieben werde. Führe den Befehl `chmod -R a+rw *` im Installations-Verzeichnis aus. Du kannst auch deine FTP-Anwendung verwenden, um allen Dateien Schreibrechte zu geben. Manchmal ist eine Anwendung für Datei-Synchronisation nicht richtig konfiguriert. Wende dich an den Webmaster, falls du weiterhin Probleme mit dem Dateisystem hast.
 
 ? Can't send email message
 ? 
-? Der Mailserver kann die Nachricht nicht senden. Wende dich an den Webmaster, falls diese Fehlermeldung ständig angezeigt wird. Möglicherweise musst du die E-Mail für ausgehende Nachrichten so konfigurieren, dass die E-Mail-Adresse deinen Domainnamen enthält. Manchmal funktioniert die voreingestellte E-Mail-Adresse nicht oder der Mailserver ist falsch konfiguriert.
+? Die E-Mail-Nachricht kann nicht versendet werden. Möglicherweise musst du die E-Mail-Adresse für ausgehende Nachrichten so konfigurieren, dass die E-Mail-Adresse deinen Domainnamen enthält. Manchmal funktioniert die voreingestellte E-Mail-Adresse nicht oder der Mailserver ist falsch konfiguriert. Wende dich an den Webmaster, falls diese Fehlermeldung ständig angezeigt wird. 
+
+? Can't generate static page
+? 
+? Die entsprechende Seite wird in einer statischen Webseite nicht unterstützt. Der statische Generator hat gewisse technische Beschränkungen, beispielsweise kann kein E-Mail-Kontaktformular generiert werden. Theoretisch könnte jede Seite als statische Seite generiert werden, jedoch wären dann zusätzliche Dienste erforderlich, um dynamische HTTP-Anfragen zu verarbeiten.
+
+? Can't connect to the update server
+? 
+? Die Software-Aktualisierung ist nicht möglich. Diese Fehlermeldung bedeutet in der Regel, dass keine Internetverbindung besteht oder dass der Internetzugang auf dem Webserver blockiert ist. Falls du einen Webserver mit SSH-Zugang hast, kannst du die Internetverbindung überprüfen. Führe den Befehl `curl -I https://datenstrom.se` auf dem Webserver aus.
+
+? Datenstrom Yellow stopped with fatal error 
+? 
+? Die Software ist abgestürzt. Aktiviere den Debug-Modus um weitere Informationen zu erhalten. Sehr wahrscheinlich funktioniert eine Erweiterung nicht richtig oder ist nicht auf dem neusten Stand. Sobald die entsprechende Erweiterung aktualisiert wurde, sollte das Problem behoben sein. Wende dich an den Webmaster, falls diese Fehlermeldung ständig angezeigt wird.
 
 ## Probleme mit deinem Webserver
 
-Du benötigst einen Webserver der HTTP-Anfragen an Datenstrom Yellow weiterleitet. Wende dich am besten an deinen Webhosting-Anbieter und lasse die Konfiguration deines Webservers überprüfen. Der Webserver muss drei Dinge erledigen. Erstens muss er HTTP-Anfragen für nicht existierende Dateien/Verzeichnisse an die `yellow.php` weiterleiten. Zweitens muss er den direkten Zugriff auf das `content`-Verzeichnis mit einer Fehlerseite blockieren. Drittens muss er den direkten Zugriff auf das `system`-Verzeichnis mit einer Fehlerseite blockieren. [Siehe Datenschutz](privacy) und [Beispiele für verbreitete Webserver](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).
+Du benötigst einen Webserver der HTTP-Anfragen an Datenstrom Yellow weiterleitet. Wende dich am besten an deinen Webhosting-Anbieter und lasse die Konfiguration deines Webservers überprüfen. Der Webserver muss drei Dinge erledigen. Erstens muss er HTTP-Anfragen für nicht existierende Dateien/Verzeichnisse an die `yellow.php` weiterleiten. Zweitens muss er den direkten Zugriff auf das `content`-Verzeichnis mit einer Fehlerseite blockieren. Drittens muss er den direkten Zugriff auf das `system`-Verzeichnis mit einer Fehlerseite blockieren. [Siehe Datenschutz](privacy) und [Beispiel-Konfiguration](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).
 
 ## Probleme mit deinem Mailserver 
 

@@ -38,25 +38,33 @@ Följande felmeddelanden kan uppstå:
 
 Följande felmeddelanden kan uppstå:
 
-? Datenstrom Yellow stopped with fatal error
+? Inloggningen misslyckades
 ? 
-? Programvaran har kraschat. Aktivera [felsökningsläget](api-for-developers#debugging) för att få mer information. Kontakta webbmastern om detta felmeddelande visas hela tiden. Troligtvis fungerar ett tillägg inte korrekt eller är inte uppdaterad. Så snart det relevanta tillägget har uppdaterats eller tagits bort bör problemet lösas.
+? Emailen eller lösenordet är felaktigt. Det här felmeddelandet innebär oftast att lösenordet är felaktigt. Om du har glömt ditt lösenord kan du återställa det. Du kan också skapa ett nytt användarkonto i en webbläsare eller på kommandoraden. Kontakta webbmastern om du fortfarande har problem med ditt användarkonto.
 
-? Can't connect to the update server
+? Can't write file
 ? 
-? Programuppdateringen är för närvarande inte möjlig. Detta felmeddelande betyder vanligtvis att det inte finns någon internetanslutning eller att internetåtkomsten är blockerad på din webbserver. Om du har en webbserver med SSH-åtkomst kan du kontrollera detta själv. Kör kommandot `curl https://datenstrom.se` på webbservern.
-
-? Can't generate static page
-? 
-? Den motsvarande sidan stöds inte i en statisk webbplats. Det finns vissa tekniska begränsningar för vad den statiska generatorn kan göra, till exempel kan den statiska generatorn inte generera ett kontaktformulär. Teoretiskt sett kan vilken sida som helst genereras som en statisk sida, men då behöver man ytterligare tjänster för att hantera dynamiska HTTP-förfrågningar.
+? Filen kan inte skrivas till filsystemet. Kör kommandot `chmod -R a+rw *` i installationsmappen. Du kan också använda din FTP-applikation för att ge skrivbehörighet till alla filer. Ibland är en applikation för filsynkronisering felaktigt konfigurerat. Kontakta webbmastern om du fortfarande har problem med filsystemet.
 
 ? Can't send email message
 ? 
-? E-postservern kan inte skicka meddelandet. Kontakta webbmastern om detta felmeddelande visas hela tiden. Du kan behöva konfigurera email för utgående meddelanden så att e-postadressen innehåller ditt domännamn. Ibland fungerar inte standard-e-postadressen eller så är e-postservern felkonfigurerad.
+? E-postmeddelandet kan inte skickas. Du kan behöva konfigurera e-postadressen för utgående meddelanden så att e-postadressen innehåller ditt domännamn. Ibland fungerar inte standard-e-postadressen eller så är e-postservern felkonfigurerad. Kontakta webbmastern om detta felmeddelande visas hela tiden.
+
+? Can't generate static page
+? 
+? Den motsvarande sidan stöds inte i en statisk webbplats. Det finns vissa tekniska begränsningar för vad den statiska generatorn kan göra, till exempel kan den statiska generatorn inte generera ett e-postkontaktformulär. Teoretiskt sett kan vilken sida som helst genereras som en statisk sida, men då behöver man ytterligare tjänster för att hantera dynamiska HTTP-förfrågningar.
+
+? Can't connect to the update server
+? 
+? Programuppdateringen är inte möjlig. Detta felmeddelande betyder vanligtvis att det inte finns någon internetanslutning eller att internetåtkomsten är blockerad på webbservern. Om du har en webbserver med SSH-åtkomst kan du kontrollera internetanslutningen. Kör kommandot `curl -I https://datenstrom.se` på webbservern.
+
+? Datenstrom Yellow stopped with fatal error
+? 
+? Programvaran har kraschat. Aktivera felsökningsläget för att få mer information. Troligtvis fungerar ett tillägg inte som det ska eller är inte uppdaterat. Så snart det relevanta tillägget har uppdaterats bör problemet lösas. Kontakta webbmastern om detta felmeddelande visas hela tiden.
 
 ## Problem med din webbserver
 
-Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Det är bäst att kontakta din webbhotell och be dem kontrollera konfigurationen av din webbserver. Webbservern måste utföra tre uppgifter. För det första måste den vidarebefordra HTTP-förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. [Se integritet](privacy) och [exempel för vanliga webbservrar](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).
+Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Det är bäst att kontakta din webbhotell och be dem kontrollera konfigurationen av din webbserver. Webbservern måste utföra tre uppgifter. För det första måste den vidarebefordra HTTP-förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. [Se integritet](privacy) och [exempel-konfiguration](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).
 
 ## Problem med din e-postserver
 
