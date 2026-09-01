@@ -21,7 +21,7 @@ Stay up to date with the latest changes.
 ! - Updated website, more information about latest product changes
 ! - Updated website, more information about protection of personal data
 !
-! [See code history](https://github.com/datenstrom/yellow/commits/main/), [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/) and [reported bugs](https://github.com/datenstrom/community/discussions/categories/report-a-bug?discussions_q=category%3A%22Report+a+bug%22+sort%3Adate_created).
+! [See code history](https://github.com/datenstrom/yellow/commits/main/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/).
 
 ! {.wikiblock}
 ! ## Datenstrom Yellow 0.9 - published on 2024-04-04
@@ -43,6 +43,6 @@ Stay up to date with the latest changes.
 ! - Updated publish extension, new way of publishing extensions
 ! - Updated website, more information about available extensions
 !
-! [See code history](https://github.com/datenstrom/yellow/commits/3f6cc2e/), [documentation history](https://github.com/annaesvensson/yellow-help/commits/b6877ff/) and [reported bugs](https://github.com/datenstrom/community/discussions/categories/report-a-bug?discussions_q=category%3A%22Report+a+bug%22+sort%3Adate_created+created%3A%3C%3D2024-04-04).
+! [See code history](https://github.com/datenstrom/yellow/commits/3f6cc2e/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/b6877ff/).
 
 Do you have questions? [Get help](.).
