@@ -23,4 +23,4 @@ TitleSlug: help
 ! * [Troubleshooting](troubleshooting)
 ! * [What's new](what-s-new)
 
-Do you need additional help? [Contact support](https://datenstrom.se/support/).
+Do you need further help? [Contact support](https://datenstrom.se/support/).
