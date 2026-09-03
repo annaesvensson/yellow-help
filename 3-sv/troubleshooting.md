@@ -74,4 +74,6 @@ Du behöver en e-postserver för att kunna skicka e-post. Det är bäst att kont
 
 Du kan använda felsökningsläget för att undersöka orsaken till ett problem eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Ytterligare information kommer att visas på skärmen och i webbläsarkonsolen. Beroende på felsökningsläget visas mer eller mindre information. [Läs mer om debugging](api-for-developers#debugging).
 
+Du kan [rapportera ett fel och lämna synpunkter på produkten](https://datenstrom.se/sv/support/) om något inte fungerar som förväntat. Förklara hur man återskapar felet, ange detaljerad information och bifoga filen `system/extensions/yellow-website.log`. Kontrollera om felet uppstår i en helt ny installation. Undvik att rapportera fel som inte går att återskapa i en ny installation. Förklara alltid hur man kan återskapa felet, annars kommer din felrapport att ignoreras.
+
 Har du några frågor? [Få hjälp](.).
