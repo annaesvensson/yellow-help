@@ -44,7 +44,7 @@ You can help us with open tasks for Datenstrom Yellow:
 
 ## How to improve code
 
-You can find core functionality in the [core](https://github.com/annaesvensson/yellow-core) and everything else in [extensions](https://datenstrom.se/yellow/extensions/). Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features. For experienced developers there's a [style guide](https://github.com/annaesvensson/yellow-publish/blob/main/style-guide.md). Did you improve code? The first option is to send a pull request to the developer, it may or may not be accepted. The second option is to discuss your changes with the Datenstrom community. The third option is to make a new extension with the modified code.
+You can find core functionality in the [core](https://github.com/annaesvensson/yellow-core) and everything else in [extensions](https://datenstrom.se/yellow/extensions/). Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features. For experienced developers there's a [style guide](https://github.com/annaesvensson/yellow-publish/blob/main/style-guide.md). Did you improve code? The first option is to send a pull request to the responsible developer, it may or may not be accepted. The second option is to send a product feedback to the technical support. The third option is to make a new extension with the modified code.
 
 ## How to improve documentation
 
