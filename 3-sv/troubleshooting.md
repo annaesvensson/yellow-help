@@ -64,7 +64,7 @@ Följande felmeddelanden kan uppstå:
 
 ## Problem med din webbserver
 
-Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Det är bäst att kontakta din webbhotell och be dem kontrollera konfigurationen av din webbserver. Webbservern måste utföra tre uppgifter. För det första måste den vidarebefordra HTTP-förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. [Se integritet](privacy) och [exempel-konfiguration](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).
+Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Det är bäst att kontakta din webbhotell och be dem kontrollera konfigurationen av din webbserver. Webbservern måste utföra tre uppgifter. För det första måste den vidarebefordra HTTP-förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. [Se webbserver exempel-konfiguration](https://github.com/annaesvensson/yellow-help/blob/main/example-configuration.md).
 
 ## Problem med din e-postserver
 

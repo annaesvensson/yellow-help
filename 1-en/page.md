@@ -19,9 +19,8 @@ TitleSlug: help
 ! * [How to customise languages](how-to-customise-languages)
 ! * [How to customise HTML and CSS](how-to-customise-html-and-css)
 ! * [API for developers](api-for-developers)
+! * [Product information](product-information)
 ! * [Troubleshooting](troubleshooting)
 ! * [What's new](what-s-new)
 
-## Want to ask questions?
-
-Something doesn't work as expected? Encountered a problem? Looking for information? There's a good chance that your question has already been answered. The Datenstrom community is a place to help each other. Where you can ask and answer questions. Most answers are provided by people, just like you. [Learn more about contributing](contributing-guidelines). 
+Do you need additional help? [Contact support](https://datenstrom.se/support/).

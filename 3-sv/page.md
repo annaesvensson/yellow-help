@@ -19,9 +19,8 @@ TitleSlug: help
 ! * [Hur man anpassar språk](how-to-customise-languages)
 ! * [Hur man anpassar HTML och CSS](how-to-customise-html-and-css)
 ! * [API för utvecklare](api-for-developers)
+! * [Produktinformation](product-information)
 ! * [Felsökning](troubleshooting)
 ! * [Vad är nytt](what-s-new)
 
-## Vill du ställa frågor?
-
-Är det något som inte fungerar som förväntat? Har du stött på ett problem? Letar du efter information? Det finns en stor chans att din fråga redan har besvarats. Datenstroms nätgemenskap är en plats att hjälpa varandra. Där du kan ställa och svara på frågor. De flesta av svaren tillhandahålls av människor, precis som du. [Läs mer om samarbete](contributing-guidelines).
+Behöver du mer hjälp? [Kontakta supporten](https://datenstrom.se/sv/support/).

@@ -19,9 +19,8 @@ TitleSlug: help
 ! * [Wie man Sprachen anpasst](how-to-customise-languages)
 ! * [Wie man HTML und CSS anpasst](how-to-customise-html-and-css)
 ! * [API für Entwickler](api-for-developers)
+! * [Produktinformationen](product-information)
 ! * [Fehlerbehebung](troubleshooting)
 ! * [Was ist neu](what-s-new)
 
-## Möchtest du Fragen stellen?
-
-Funktioniert etwas nicht wie erwartet? Bist du auf ein Problem gestoßen? Suchst du Informationen? Es besteht eine gute Chance, dass deine Frage bereits beantwortet wurde. Die Datenstrom-Netzgemeinschaft ist ein Ort um sich gegenseitig zu helfen. Wo man Fragen stellen und beantworten kann. [Weitere Informationen zum Zusammenarbeiten](contributing-guidelines).
+Benötigst du zusätzliche Hilfe? [Kontaktiere den Support](https://datenstrom.se/de/support/).
