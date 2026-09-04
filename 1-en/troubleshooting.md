@@ -2,7 +2,7 @@
 Title: Troubleshooting
 ShowLanguageSelection: 1
 ---
-Learn how to resolve common problems.
+Learn how to resolve problems on your website.
 
 ## Error messages
 
@@ -52,7 +52,7 @@ Learn how to resolve common problems.
 
 ## Problems with your web server
 
-You need a web server that forwards HTTP requests to Datenstrom Yellow. It's best to contact your web hosting provider and have them check the configuration of your web server. The web server has to do three things. First it has to forward HTTP requests for non existing files/folders to the `yellow.php`. Second it has to block direct access to the `content` folder with an error page. Third it has to block direct access to the `system` folder with an error page. [See web server configurations](https://github.com/annaesvensson/yellow-help/blob/main/yellow-web-server-configurations.md).
+You need a web server that forwards HTTP requests to Datenstrom Yellow. It's best to contact your web hosting provider and have them check the configuration of your web server. The web server has to do three things. First it has to forward HTTP requests for non existing files/folders to the `yellow.php`. Second it has to block direct access to the `content` folder with an error page. Third it has to block direct access to the `system` folder with an error page. [See configurations for common web servers](https://github.com/annaesvensson/yellow-help/blob/main/yellow-web-server-configurations.md).
 
 ## Problems with your mail server
 

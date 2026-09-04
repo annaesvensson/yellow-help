@@ -2,7 +2,7 @@
 Title: Fehlerbehebung
 ShowLanguageSelection: 1
 ---
-Erfahre wie man häufige Probleme löst.
+Erfahre wie man Probleme auf seiner Webseite behebt.
 
 ## Fehlermeldungen
 
@@ -52,7 +52,7 @@ Erfahre wie man häufige Probleme löst.
 
 ## Probleme mit deinem Webserver
 
-Du benötigst einen Webserver der HTTP-Anfragen an Datenstrom Yellow weiterleitet. Wende dich am besten an deinen Webhosting-Anbieter und lasse die Konfiguration deines Webservers überprüfen. Der Webserver muss drei Dinge erledigen. Erstens muss er HTTP-Anfragen für nicht existierende Dateien/Verzeichnisse an die `yellow.php` weiterleiten. Zweitens muss er den direkten Zugriff auf das `content`-Verzeichnis mit einer Fehlerseite blockieren. Drittens muss er den direkten Zugriff auf das `system`-Verzeichnis mit einer Fehlerseite blockieren. [Siehe Webserver-Konfigurationen](https://github.com/annaesvensson/yellow-help/blob/main/yellow-web-server-configurations.md).
+Du benötigst einen Webserver der HTTP-Anfragen an Datenstrom Yellow weiterleitet. Wende dich am besten an deinen Webhosting-Anbieter und lasse die Konfiguration deines Webservers überprüfen. Der Webserver muss drei Dinge erledigen. Erstens muss er HTTP-Anfragen für nicht existierende Dateien/Verzeichnisse an die `yellow.php` weiterleiten. Zweitens muss er den direkten Zugriff auf das `content`-Verzeichnis mit einer Fehlerseite blockieren. Drittens muss er den direkten Zugriff auf das `system`-Verzeichnis mit einer Fehlerseite blockieren. [Siehe Konfigurationen für verbreitete Webserver](https://github.com/annaesvensson/yellow-help/blob/main/yellow-web-server-configurations.md).
 
 ## Probleme mit deinem Mailserver 
 

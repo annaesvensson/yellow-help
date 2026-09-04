@@ -2,7 +2,7 @@
 Title: Felsökning
 ShowLanguageSelection: 1
 ---
-Läs hur man löser vanliga problem.
+Läs hur man löser problem på sin webbplats.
 
 ## Felmeddelanden
 
@@ -52,7 +52,7 @@ Läs hur man löser vanliga problem.
 
 ## Problem med din webbserver
 
-Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Det är bäst att kontakta din webbhotell och be dem kontrollera konfigurationen av din webbserver. Webbservern måste utföra tre uppgifter. För det första måste den vidarebefordra HTTP-förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. [Se webbserver-konfigurationer](https://github.com/annaesvensson/yellow-help/blob/main/yellow-web-server-configurations.md).
+Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Det är bäst att kontakta din webbhotell och be dem kontrollera konfigurationen av din webbserver. Webbservern måste utföra tre uppgifter. För det första måste den vidarebefordra HTTP-förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. [Se konfigurationer för vanliga webbservrar](https://github.com/annaesvensson/yellow-help/blob/main/yellow-web-server-configurations.md).
 
 ## Problem med din e-postserver
 
