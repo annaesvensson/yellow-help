@@ -18,7 +18,7 @@ Halte dich auf dem Laufenden über die neuesten Änderungen.
 ! - Publish-Erweiterung, Styleguide für erfahrene Entwickler und Autoren
 ! - Systemeinstellungen aktualisiert, ContactSiteEmail und EditSiteEmail wurden ersetzt
 ! - Themes aktualisiert, CSS für farbige Blockelemente wurde geändert 
-! - Webseite aktualisiert, mehr Informationen über neuste Produktänderungen
+! - Webseite aktualisiert, mehr Informationen über Produktinformationen und Änderungen
 ! - Webseite aktualisiert, mehr Informationen über Schutz von personenbezogenen Daten
 ! 
 ! [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/main/) und [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/main/).

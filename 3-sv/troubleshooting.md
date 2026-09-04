@@ -4,11 +4,11 @@ ShowLanguageSelection: 1
 ---
 Läs hur man löser vanliga problem.
 
-[toc]
+## Felmeddelanden
 
-## Problem under installationen av en webbsida
-
-Följande felmeddelanden kan uppstå:
+? Datenstrom Yellow stopped with fatal error
+? 
+? Programvaran har kraschat. Aktivera felsökningsläget för att få mer information. Troligtvis fungerar ett tillägg inte som det ska eller är inte uppdaterat. Så snart det relevanta tillägget har uppdaterats bör problemet lösas. Kontakta webbmastern om detta felmeddelande visas hela tiden.
 
 ? Datenstrom Yellow requires PHP 7.0 or higher
 ? 
@@ -34,14 +34,6 @@ Följande felmeddelanden kan uppstå:
 ? 
 ? Kopiera igen alla medföljande filer till installationsmappen. Kontrollera om din FTP-applikation visar ett felmeddelande under uppladdningen. Ibland händer det att dataöverföringen avbröts under uppladdningen. Efter att alla filer har kopierats till installationsmappen bör problemet lösas.
 
-## Problem efter installationen av en webbsida
-
-Följande felmeddelanden kan uppstå:
-
-? Inloggningen misslyckades
-? 
-? Emailen eller lösenordet är felaktigt. Det här felmeddelandet innebär oftast att lösenordet är felaktigt. Om du har glömt ditt lösenord kan du återställa det. Du kan också skapa ett nytt användarkonto i en webbläsare eller på kommandoraden. Kontakta webbmastern om du fortfarande har problem med ditt användarkonto.
-
 ? Can't write file
 ? 
 ? Filen kan inte skrivas till filsystemet. Kör kommandot `chmod -R a+rw *` i installationsmappen. Du kan också använda din FTP-applikation för att ge skrivbehörighet till alla filer. Ibland är en applikation för filsynkronisering felaktigt konfigurerat. Kontakta webbmastern om du fortfarande har problem med filsystemet.
@@ -58,10 +50,6 @@ Följande felmeddelanden kan uppstå:
 ? 
 ? Programuppdateringen är inte möjlig. Detta felmeddelande betyder vanligtvis att det inte finns någon internetanslutning eller att internetåtkomsten är blockerad på webbservern. Om du har en webbserver med SSH-åtkomst kan du kontrollera internetanslutningen. Kör kommandot `curl -I https://datenstrom.se` på webbservern.
 
-? Datenstrom Yellow stopped with fatal error
-? 
-? Programvaran har kraschat. Aktivera felsökningsläget för att få mer information. Troligtvis fungerar ett tillägg inte som det ska eller är inte uppdaterat. Så snart det relevanta tillägget har uppdaterats bör problemet lösas. Kontakta webbmastern om detta felmeddelande visas hela tiden.
-
 ## Problem med din webbserver
 
 Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Det är bäst att kontakta din webbhotell och be dem kontrollera konfigurationen av din webbserver. Webbservern måste utföra tre uppgifter. För det första måste den vidarebefordra HTTP-förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. [Se webbserver-konfigurationer](https://github.com/annaesvensson/yellow-help/blob/main/yellow-web-server-configurations.md).
@@ -70,10 +58,10 @@ Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstr
 
 Du behöver en e-postserver för att kunna skicka e-post. Det är bäst att kontakta din webbhotell och fråga om sendmail är aktiverat. När du har bekräftat att sendmail är aktiverat är nästa steg att konfigurera email för utgående meddelanden. Öppna filen `system/extensions/yellow-system.ini` och ändra `From`. Konfigurera en e-postadress med ditt domännamn, till exempel `noreply@example.com.` Ibland fungerar inte standard-e-postadressen eller så är e-postservern felkonfigurerad. [Läs mer om systeminställningar](how-to-change-the-system#systeminställningar).
 
-## Problem med tillägg
+## Problem med installerade tillägg
+
+[Du kan rapportera ett fel eller lämna synpunkter på produkten](https://datenstrom.se/sv/support/) om något inte fungerar som förväntat. Förklara hur man återskapar felet, ange detaljerad information och bifoga filen `system/extensions/yellow-website.log`. Kontrollera om felet uppstår i en helt ny installation. Undvik att rapportera fel som inte går att återskapa i en ny installation. Förklara alltid hur man återskapar felet, annars kommer din felrapport att ignoreras.
 
 Du kan använda felsökningsläget för att undersöka orsaken till ett problem eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Ytterligare information kommer att visas på skärmen och i webbläsarkonsolen. Beroende på felsökningsläget visas mer eller mindre information. [Läs mer om debugging](api-for-developers#debugging).
-
-Du kan [rapportera ett fel eller lämna synpunkter på produkten](https://datenstrom.se/sv/support/) om något inte fungerar som förväntat. Förklara hur man återskapar felet, ange detaljerad information och bifoga filen `system/extensions/yellow-website.log`. Kontrollera om felet uppstår i en helt ny installation. Undvik att rapportera fel som inte går att återskapa i en ny installation. Förklara alltid hur man kan återskapa felet, annars kommer din felrapport att ignoreras.
 
 Har du några frågor? [Få hjälp](.).

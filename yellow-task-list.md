@@ -37,7 +37,7 @@ You can help us with the following tasks:
 - [ ] Updated sitemap extension, short URL for the sitemap.xml. Users don't like the long URL, it's ugly.
 - [x] Updated system settings, ContactSiteEmail and EditSiteEmail have been replaced. Less troubleshooting.
 - [x] Updated themes, CSS for coloured block elements has changed. Make it more intuitive.
-- [x] Updated website, more information about latest product changes. People need more information.
+- [x] Updated website, more information about product information and changes. People need more information.
 - [x] Updated website, more information about protection of personal data. People need more information.
 - [ ] Updated website, Swedish translation for missing help pages. Better multi language documentation.
 - [ ] Tested performance with thousands of content files. For people who make large websites.

@@ -2,13 +2,13 @@
 Title: Troubleshooting
 ShowLanguageSelection: 1
 ---
-Learn how to solve common problems.
+Learn how to resolve common problems.
 
-[toc]
+## Error messages
 
-## Problems during installation of a website
-
-The following error messages can happen:
+? Datenstrom Yellow stopped with fatal error
+? 
+? The software has crashed. Activate the debug mode for more information. Very likely an extension is not working properly or is not up to date. As soon as the relevant extension has been updated, the problem should be resolved. Contact the webmaster if this error message is displayed continuously.
 
 ? Datenstrom Yellow requires PHP 7.0 or higher
 ? 
@@ -34,14 +34,6 @@ The following error messages can happen:
 ? 
 ? Copy again all of the supplied files into the installation folder. Check if your FTP application shows an error message during upload. It sometimes happens that the data transfer was interrupted during upload. After all files have been copied into the installation folder, the problem should be resolved.
 
-## Problems after installation of a website
-
-The following error messages can happen:
-
-? Login failed
-? 
-? The email or password is incorrect. This error message usually means that the password is incorrect. If you forgot your password, you can reset it. You can also create a new user account in a web browser and at the command line. Contact the webmaster if you keep having problems with your user account.
-
 ? Can't write file
 ? 
 ? The file can not be written to the file system. Execute the command `chmod -R a+rw *` in the installation folder. You can also use your FTP application to give write permissions to all files. Sometimes a file syncing application is miss-configured. Contact the webmaster if you keep having problems with the file system.
@@ -58,10 +50,6 @@ The following error messages can happen:
 ? 
 ? The software update is not possible. This error message usually means that there is no internet connection or that the internet access is blocked on the web server. If you have a web server with SSH access, you can check the internet connection. Execute the command `curl -I https://datenstrom.se` on the web server.
 
-? Datenstrom Yellow stopped with fatal error
-? 
-? The software has crashed. Activate the debug mode for more information. Very likely an extension is not working properly or is not up to date. As soon as the relevant extension has been updated, the problem should be resolved. Contact the webmaster if this error message is displayed continuously.
-
 ## Problems with your web server
 
 You need a web server that forwards HTTP requests to Datenstrom Yellow. It's best to contact your web hosting provider and have them check the configuration of your web server. The web server has to do three things. First it has to forward HTTP requests for non existing files/folders to the `yellow.php`. Second it has to block direct access to the `content` folder with an error page. Third it has to block direct access to the `system` folder with an error page. [See web server configurations](https://github.com/annaesvensson/yellow-help/blob/main/yellow-web-server-configurations.md).
@@ -70,10 +58,10 @@ You need a web server that forwards HTTP requests to Datenstrom Yellow. It's bes
 
 You need a mail server to send emails. It's best to contact your web hosting provider and ask if sendmail is enabled. When you have confirmed that sendmail is enabled, your next option is to configure the email for outgoing messages. Open file `system/extensions/yellow-system.ini` and change `From`. Configure an email address with your domain name, for example `noreply@example.com`. Sometimes the default email address doesn't work or the mail server is miss-configured. [Learn more about system settings](how-to-change-the-system#system-settings).
 
-## Problems with extensions
+## Problems with installed extensions
+
+[You can report a bug or give product feedback](https://datenstrom.se/support/) if something isn't working as expected. Explain how to reproduce the bug, provide detailed information and add file `system/extensions/yellow-website.log`. Check if the bug occurs in a brand new installation. Avoid reporting bugs that cannot be reproduced in a new installation. Make sure to explain how to reproduce the bug, as your bug report will otherwise be ignored.
 
 You can use the debug mode to investigate the cause of a problem or if you are curious about how Datenstrom Yellow works. To activate the debug mode on your website open file `system/extensions/yellow-system.ini` and change `CoreDebugMode: 1`. Additional information will be displayed on the screen and in the browser console. Depending on the debug mode, more or less information are shown. [Learn more about debugging](api-for-developers#debugging).
-
-You can [report a bug or give product feedback](https://datenstrom.se/support/) if something isn't working as expected. Explain how to reproduce the bug, provide detailed information and add file `system/extensions/yellow-website.log`. Check if the bug occurs in a brand new installation. Avoid reporting bugs that cannot be reproduced in a new installation. Make sure to explain how to reproduce the bug, as your bug report will otherwise be ignored.
 
 Do you have questions? [Get help](.).
