@@ -1,6 +1,6 @@
-# Task list
+# Datenstrom Yellow task list
 
-You can help us with open tasks for Datenstrom Yellow:
+You can help us with the following tasks:
 
 - [ ] Added support for installing extensions in web browser. Users want to install extensions in browser.
 - [ ] Added support for light and dark mode to all themes. Light and dark mode is expected on mobile devices.
@@ -44,10 +44,10 @@ You can help us with open tasks for Datenstrom Yellow:
 
 ## How to improve code
 
-You can find core functionality in the [core](https://github.com/annaesvensson/yellow-core) and everything else in [extensions](https://datenstrom.se/yellow/extensions/). Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features. For experienced developers there's a [style guide](https://github.com/annaesvensson/yellow-publish/blob/main/style-guide.md). Did you improve code? The first option is to send a pull request to the responsible developer, it may or may not be accepted. The second option is to send a product feedback to the technical support. The third option is to make a new extension with the modified code.
+You can find core functionality in the [core](https://github.com/annaesvensson/yellow-core) and everything else in [extensions](https://datenstrom.se/yellow/extensions/). Imagine what the user wants to do and what would make their life easier. Remember to focus on people. Not on technical details and lots of features. For experienced developers there's a [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). Did you improve code? The first option is to send a pull request to the responsible developer, it may or may not be accepted. The second option is to give product feedback on the official website. The third option is to make a new extension with the modified code.
 
 ## How to improve documentation
 
-You can find basic documentation in the [help](https://github.com/annaesvensson/yellow-help) and more detailed documentation in [extensions](https://datenstrom.se/yellow/extensions/). Typically the documentation of an extension consists of multiple sections, with examples to copy/paste and settings you can customise. Review the entire documentation from the perspective of the user. Imagine what the user wants to do and what would make their life easier. For experienced writers there's a [style guide](https://github.com/annaesvensson/yellow-publish/blob/main/style-guide.md). Did you improve documentation? Fork the relevant repository. Upload your changes and send a pull request to the developer.
+You can find basic documentation in the [help](https://github.com/annaesvensson/yellow-help) and more detailed documentation in [extensions](https://datenstrom.se/yellow/extensions/). Typically the documentation of an extension consists of multiple sections, with examples to copy/paste and settings you can customise. Review the entire documentation from the perspective of the user. Imagine what the user wants to do and what would make their life easier. For experienced writers there's a [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). Did you improve documentation? Fork the relevant repository. Upload your changes and send a pull request to the developer.
 
 Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
