@@ -50,17 +50,17 @@ Läs hur man löser problem på sin webbplats.
 ? 
 ? Programuppdateringen är inte möjlig. Detta felmeddelande betyder vanligtvis att det inte finns någon internetanslutning eller att internetåtkomsten är blockerad på webbservern. Om du har en webbserver med SSH-åtkomst kan du kontrollera internetanslutningen. Kör kommandot `curl -I https://datenstrom.se` på webbservern.
 
-## Problem med din webbserver
+## Problem på din webbserver
 
 Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Det är bäst att kontakta din webbhotell och be dem kontrollera konfigurationen av din webbserver. Webbservern måste utföra tre uppgifter. För det första måste den vidarebefordra HTTP-förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. [Se konfigurationer för vanliga webbservrar](https://github.com/annaesvensson/yellow-help/blob/main/yellow-web-server-configurations.md).
 
-## Problem med din e-postserver
+## Problem på din e-postserver
 
 Du behöver en e-postserver för att kunna skicka e-post. Det är bäst att kontakta din webbhotell och fråga om sendmail är aktiverat. När du har bekräftat att sendmail är aktiverat är nästa steg att konfigurera email för utgående meddelanden. Öppna filen `system/extensions/yellow-system.ini` och ändra `From`. Konfigurera en e-postadress med ditt domännamn, till exempel `noreply@example.com.` Ibland fungerar inte standard-e-postadressen eller så är e-postservern felkonfigurerad. [Läs mer om systeminställningar](how-to-change-the-system#systeminställningar).
 
 ## Problem med installerade tillägg
 
-[Du kan rapportera ett fel eller lämna synpunkter på produkten](https://datenstrom.se/sv/support/) om något inte fungerar som förväntat. Förklara hur man återskapar felet, ange detaljerad information och bifoga filen `system/extensions/yellow-website.log`. Kontrollera om felet uppstår i en helt ny installation. Undvik att rapportera fel som inte går att återskapa i en ny installation. Förklara alltid hur man återskapar felet, annars kommer din felrapport att ignoreras.
+[Du kan rapportera ett fel eller lämna synpunkter på produkten](https://datenstrom.se/sv/support/) om något inte fungerar som förväntat. Förklara hur man återskapar felet, ange detaljerad information och bifoga filen `system/extensions/yellow-website.log`. Kontrollera dessutom om problemet uppstår i en helt ny installation, för att undvika att rapportera ett fel som redan har åtgärdats. Förklara alltid hur man återskapar felet, annars kommer din felrapport att ignoreras.
 
 Du kan använda felsökningsläget för att undersöka orsaken till ett problem eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Ytterligare information kommer att visas på skärmen och i webbläsarkonsolen. Beroende på felsökningsläget visas mer eller mindre information. [Läs mer om debugging](api-for-developers#debugging).
 

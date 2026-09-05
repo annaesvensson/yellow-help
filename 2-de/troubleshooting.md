@@ -50,17 +50,17 @@ Erfahre wie man Probleme auf seiner Webseite behebt.
 ? 
 ? Die Software-Aktualisierung ist nicht möglich. Diese Fehlermeldung bedeutet in der Regel, dass keine Internetverbindung besteht oder dass der Internetzugang auf dem Webserver blockiert ist. Falls du einen Webserver mit SSH-Zugang hast, kannst du die Internetverbindung überprüfen. Führe den Befehl `curl -I https://datenstrom.se` auf dem Webserver aus.
 
-## Probleme mit deinem Webserver
+## Probleme auf deinem Webserver
 
 Du benötigst einen Webserver der HTTP-Anfragen an Datenstrom Yellow weiterleitet. Wende dich am besten an deinen Webhosting-Anbieter und lasse die Konfiguration deines Webservers überprüfen. Der Webserver muss drei Dinge erledigen. Erstens muss er HTTP-Anfragen für nicht existierende Dateien/Verzeichnisse an die `yellow.php` weiterleiten. Zweitens muss er den direkten Zugriff auf das `content`-Verzeichnis mit einer Fehlerseite blockieren. Drittens muss er den direkten Zugriff auf das `system`-Verzeichnis mit einer Fehlerseite blockieren. [Siehe Konfigurationen für verbreitete Webserver](https://github.com/annaesvensson/yellow-help/blob/main/yellow-web-server-configurations.md).
 
-## Probleme mit deinem Mailserver 
+## Probleme auf deinem Mailserver 
 
 Du benötigst einen Mailserver um E-Mails verschicken zu können. Wende dich am besten an deinen Webhosting-Anbieter und frage nach ob Sendmail aktiviert ist. Nachdem du überprüft hast dass Sendmail aktiviert ist, besteht die nächste Möglichkeit darin die E-Mail für ausgehende Nachrichten zu konfigurieren. Öffne die Datei `system/extensions/yellow-system.ini` und ändere `From`. Konfiguriere eine E-Mail-Adresse mit deinem Domainnamen, beispielsweise `noreply@example.com`. Manchmal funktioniert die voreingestellte E-Mail-Adresse nicht oder der Mailserver ist falsch konfiguriert. [Weitere Informationen zu Systemeinstellungen](how-to-change-the-system#systemeinstellungen).
 
 ## Probleme mit installierten Erweiterungen
 
-[Du kannst einen Fehler melden oder Produktfeedback geben](https://datenstrom.se/de/support/) falls etwas nicht wie erwartet funktionieren sollte. Erkläre wie man den Fehler reproduziert, gebe detaillierte Informationen an und füge die Datei `system/extensions/yellow-website.log` hinzu. Überprüfe ob der Fehler in einer brandneuen Installation auftritt. Vermeide es Fehler zu melden die sich nicht in einer Neuinstallation reproduzieren lassen. Erkläre unbedingt wie man den Fehler reproduziert, da dein Fehlerbericht andernfalls ignoriert wird.
+[Du kannst einen Fehler melden oder Produktfeedback geben](https://datenstrom.se/de/support/) falls etwas nicht wie erwartet funktionieren sollte. Erkläre wie man den Fehler reproduziert, gebe detaillierte Informationen an und füge die Datei `system/extensions/yellow-website.log` hinzu. Überprüfe ausserdem ob das Problem in einer brandneuen Installation auftritt, um zu vermeiden einen Fehler zu melden der bereits behoben wurde. Erkläre unbedingt wie man den Fehler reproduziert, da dein Fehlerbericht andernfalls ignoriert wird.
 
 Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Es werden dann zusätzliche Informationen auf dem Bildschirm und in der Browser-Konsole angezeigt. Abhängig vom Debug-Modus werden mehr oder weniger Informationen angezeigt. [Weitere Informationen zum Debuggen](api-for-developers#debuggen).
 
