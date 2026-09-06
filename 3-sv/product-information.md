@@ -24,6 +24,7 @@ Datenstrom Yellow är för människor som skapar små webbsidor.
 | Registrering krävs          | Nej 
 | Kommersiell användning      | Ja
 | Privat användning           | Ja
+| Tillverkad i Europa         | Ja
 | Support                     | Ingår inte, support kan köpas separat
 
 Har du några frågor? [Få hjälp](.).

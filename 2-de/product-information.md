@@ -24,6 +24,7 @@ Datenstrom Yellow ist für Menschen die kleine Webseiten machen.
 | Registrierung erforderlich  | Nein
 | Kommerzielle Nutzung        | Ja
 | Private Nutzung             | Ja
+| Hergestellt in Europa       | Ja
 | Support                     | Nicht enthalten, Support kann separat erworben werden
 
 Hast du Fragen? [Hilfe finden](.).
