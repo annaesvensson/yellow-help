@@ -16,7 +16,7 @@ You can help us with the following tasks:
 - [ ] Added SMTP extension, send emails to a remote server. Websites may not have a working mail system.
 - [ ] Updated API, YellowPageCollection no longer derives from ArrayObject. ArrayObject interface is strange.
 - [x] Updated API, changed getAvailable() to enumerate(). Designers want to use non-flattened themes.
-- [x] Updated API, changed content element type notice to general. Make it more intuitive.
+- [x] Updated API, changed content element type from notice to general. Make it more intuitive.
 - [x] Updated core extension, support for webmanifest files was added. Websites and web applications use it.
 - [ ] Updated contact extension, message delivery with brute force protection. Spammers gonna spam.
 - [ ] Updated edit extension, autocomplete for links and tags. Users do less, software does more.
@@ -28,12 +28,14 @@ You can help us with the following tasks:
 - [ ] Updated edit extension toolbar, improved link and file selection dialog. Give users more control.
 - [ ] Updated feed extension, short URL for the feed.xml. Users don't like the long URL, it's ugly. 
 - [x] Updated gallery extension, popup can be triggered by clicking on a link. Give users more flexibility.
+- [x] Updated help extension, style guide for experienced developers and writers. For more consistency.
 - [ ] Updated icon extension, SVG stack instead of WOFF font. Developers want consistent files formats.
 - [ ] Updated image extension, different media files for light and dark mode. Give users more control.
+- [x] Updated maintain extension, new way of maintaining extensions. For more consistency.
+- [x] Updated maintain extension, changed status value from available to maintained. For more consistency.
 - [x] Updated Markdown extension, improved email handling for long TLD. TLD with more than 3 characters.
 - [x] Updated Markdown extension, syntax for collapsible blocks was added. Users can show/hide details.
 - [x] Updated Markdown extension, syntax for general blocks has changed. Make it more intuitive.
-- [x] Updated publish extension, style guide for experienced developers and writers
 - [ ] Updated sitemap extension, short URL for the sitemap.xml. Users don't like the long URL, it's ugly.
 - [x] Updated system settings, ContactSiteEmail and EditSiteEmail have been replaced. Less troubleshooting.
 - [x] Updated themes, CSS for coloured block elements has changed. Make it more intuitive.

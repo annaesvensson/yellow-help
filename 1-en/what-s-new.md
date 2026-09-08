@@ -8,14 +8,16 @@ Stay up to date with the latest changes.
 !
 ! - Added include extension, allows to include pages in Markdown
 ! - Updated API, changed getAvailable() to enumerate()
-! - Updated API, changed content element type notice to general
+! - Updated API, changed content element type from notice to general
 ! - Updated core extension, support for webmanifest files was added
 ! - Updated edit extension, upload with different JPEG file name extensions
 ! - Updated gallery extension, popup can be triggered by clicking on a link
+! - Updated help extension, style guide for experienced developers and writers
+! - Updated maintain extension, new way of maintaining extensions
+! - Updated maintain extension, changed status value from available to maintained
 ! - Updated Markdown extension, improved email handling for long TLD
 ! - Updated Markdown extension, syntax for collapsible blocks was added
 ! - Updated Markdown extension, syntax for general blocks has changed
-! - Updated publish extension, style guide for experienced developers and writers
 ! - Updated system settings, ContactSiteEmail and EditSiteEmail have been replaced
 ! - Updated themes, CSS for coloured block elements has changed
 ! - Updated website, more information about product information and changes

@@ -8,14 +8,16 @@ Håll dig uppdaterad om senaste ändringarna.
 !
 ! - Lade till include-tillägg, tillåter att inkludera sidor i Markdown
 ! - Uppdaterade API, ändrat getAvailable() till enumerate()
-! - Uppdaterade API, ändrat content-element-typ notice till general
+! - Uppdaterade API, ändrat content-element-typ från notice till general
 ! - Uppdaterade core-tillägg, stöd för webmanifest-filer har lagts till
 ! - Uppdaterade edit-tillägg, uppladdning med olika JPEG-filändele
 ! - Uppdaterade gallery-tillägg, popup kan utlösas genom att klicka på en länk
+! - Uppdaterade help-tillägg, stilguide för erfarna utvecklare och författare
+! - Uppdaterade maintain-tillägg, nytt sätt att underhålla tillägg
+! - Uppdaterade maintain-tillägg, ändrat statusvärd från available till maintained
 ! - Uppdaterade Markdown-tillägg, förbättrad e-posthantering för lång toppdomän
 ! - Uppdaterade Markdown-tillägg, syntax för hopfällbara block har lagts till
 ! - Uppdaterade Markdown-tillägg, syntax för allmänna block har ändrats
-! - Uppdaterade publish-tillägg, stilguide för erfarna utvecklare och författare
 ! - Uppdaterade systeminställningar, ContactSiteEmail och EditSiteEmail har ersatts
 ! - Uppdaterade teman, CSS för färgade blockelement har ändrats
 ! - Uppdaterade webbplats, mer information om produktinformation och ändringar

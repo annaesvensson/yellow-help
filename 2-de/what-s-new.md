@@ -8,14 +8,16 @@ Halte dich auf dem Laufenden über die neuesten Änderungen.
 !
 ! - Include-Erweiterung hinzugefügt, ermöglicht das Einbinden von Seiten in Markdown
 ! - API aktualisiert, getAvailable() in enumerate() geändert
-! - API aktualisiert, Content-Element-Typ notice in general geändert
+! - API aktualisiert, Content-Element-Typ von notice zu general geändert
 ! - Core-Erweiterung aktualisiert, Unterstützung für Webmanifest-Dateien hinzugefügt
 ! - Edit-Erweiterung aktualisiert, Upload mit verschiedenen JPEG-Dateinamenerweiterungen
 ! - Gallery-Erweiterung aktualisiert, Popup kann durch Klicken auf einen Link ausgelöst werden
+! - Help-Erweiterung, Styleguide für erfahrene Entwickler und Autoren
+! - Maintain-Erweiterung aktualisiert, neue Art zum Pflegen von Erweiterungen
+! - Maintain-Erweiterung aktualisiert, Statuswert von available zu maintained geändert
 ! - Markdown-Erweiterung aktualisiert, E-Mail-Verarbeitung für lange TLD verbessert
 ! - Markdown-Erweiterung aktualisiert, Syntax für ausklappbare Blöcke hinzugefügt
 ! - Markdown-Erweiterung aktualisiert, Syntax für allgemeine Blöcke wurde geändert
-! - Publish-Erweiterung, Styleguide für erfahrene Entwickler und Autoren
 ! - Systemeinstellungen aktualisiert, ContactSiteEmail und EditSiteEmail wurden ersetzt
 ! - Themes aktualisiert, CSS für farbige Blockelemente wurde geändert 
 ! - Webseite aktualisiert, mehr Informationen über Produktinformationen und Änderungen
