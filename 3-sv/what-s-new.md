@@ -13,7 +13,7 @@ Håll dig uppdaterad om senaste ändringarna.
 ! - Uppdaterade edit-tillägg, uppladdning med olika JPEG-filändele
 ! - Uppdaterade gallery-tillägg, popup kan utlösas genom att klicka på en länk
 ! - Uppdaterade help-tillägg, stilguide för erfarna utvecklare och författare
-! - Uppdaterade maintain-tillägg, nytt sätt att underhålla tillägg
+! - Uppdaterade maintain-tillägg, nytt sätt att göra och underhålla tillägg
 ! - Uppdaterade maintain-tillägg, ändrat statusvärd från available till maintained
 ! - Uppdaterade Markdown-tillägg, förbättrad e-posthantering för lång toppdomän
 ! - Uppdaterade Markdown-tillägg, syntax för hopfällbara block har lagts till
@@ -42,7 +42,6 @@ Håll dig uppdaterad om senaste ändringarna.
 ! - Uppdaterade core-tillägg, stöd för sourcemap-filer har lagts till
 ! - Uppdaterade feed-tillägg, stöd för fler filter har lagts till
 ! - Uppdaterade Markdown-tillägg, bättre händelsehantering
-! - Uppdaterade publish-tillägg, nytt sätt att publicera tillägg
 ! - Uppdaterade webbplats, mer information om tillgängliga tillägg
 !
 ! [Se kodhistorik](https://github.com/datenstrom/yellow/commits/3f6cc2e/) och [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/b6877ff/).

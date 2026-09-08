@@ -31,7 +31,7 @@ You can help us with the following tasks:
 - [x] Updated help extension, style guide for experienced developers and writers. For more consistency.
 - [ ] Updated icon extension, SVG stack instead of WOFF font. Developers want consistent files formats.
 - [ ] Updated image extension, different media files for light and dark mode. Give users more control.
-- [x] Updated maintain extension, new way of maintaining extensions. For more consistency.
+- [x] Updated maintain extension, new way of making and maintaining extensions. For more consistency.
 - [x] Updated maintain extension, changed status value from available to maintained. For more consistency.
 - [x] Updated Markdown extension, improved email handling for long TLD. TLD with more than 3 characters.
 - [x] Updated Markdown extension, syntax for collapsible blocks was added. Users can show/hide details.

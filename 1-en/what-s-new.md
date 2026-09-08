@@ -13,7 +13,7 @@ Stay up to date with the latest changes.
 ! - Updated edit extension, upload with different JPEG file name extensions
 ! - Updated gallery extension, popup can be triggered by clicking on a link
 ! - Updated help extension, style guide for experienced developers and writers
-! - Updated maintain extension, new way of maintaining extensions
+! - Updated maintain extension, new way of making and maintaining extensions
 ! - Updated maintain extension, changed status value from available to maintained
 ! - Updated Markdown extension, improved email handling for long TLD
 ! - Updated Markdown extension, syntax for collapsible blocks was added
@@ -42,7 +42,6 @@ Stay up to date with the latest changes.
 ! - Updated core extension, support for sourcemap files was added
 ! - Updated feed extension, support for more filters was added
 ! - Updated Markdown extension, better event handling
-! - Updated publish extension, new way of publishing extensions
 ! - Updated website, more information about available extensions
 !
 ! [See code history](https://github.com/datenstrom/yellow/commits/3f6cc2e/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/b6877ff/).

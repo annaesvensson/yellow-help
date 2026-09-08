@@ -13,7 +13,7 @@ Halte dich auf dem Laufenden über die neuesten Änderungen.
 ! - Edit-Erweiterung aktualisiert, Upload mit verschiedenen JPEG-Dateinamenerweiterungen
 ! - Gallery-Erweiterung aktualisiert, Popup kann durch Klicken auf einen Link ausgelöst werden
 ! - Help-Erweiterung, Styleguide für erfahrene Entwickler und Autoren
-! - Maintain-Erweiterung aktualisiert, neue Art zum Pflegen von Erweiterungen
+! - Maintain-Erweiterung aktualisiert, neue Art zum Erstellen und Pflegen von Erweiterungen
 ! - Maintain-Erweiterung aktualisiert, Statuswert von available zu maintained geändert
 ! - Markdown-Erweiterung aktualisiert, E-Mail-Verarbeitung für lange TLD verbessert
 ! - Markdown-Erweiterung aktualisiert, Syntax für ausklappbare Blöcke hinzugefügt
@@ -42,7 +42,6 @@ Halte dich auf dem Laufenden über die neuesten Änderungen.
 ! - Core-Erweiterung aktualisiert, Unterstützung für Sourcemap-Dateien hinzugefügt
 ! - Feed-Erweiterung aktualisiert, Unterstützung für weitere Filter hinzugefügt
 ! - Markdown-Erweiterung aktualisiert, bessere Ereignisbehandlung
-! - Publish-Erweiterung aktualisiert, neue Art zur Veröffentlichen von Erweiterungen
 ! - Webseite aktualisiert, mehr Informationen zu verfügbaren Erweiterungen
 !
 ! [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/3f6cc2e/) und [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/b6877ff/).
