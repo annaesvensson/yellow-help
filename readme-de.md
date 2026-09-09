@@ -18,7 +18,7 @@ Du kannst die Hilfe verbessern falls etwas nicht stimmt oder fehlt. Installiere 
 
 ## Wie man die Dokumentation verbessert
 
-Du findest grundlegende Dokumentation in der Hilfe und ausführlichere Dokumentation in den [Erweiterungen](https://datenstrom.se/de/yellow/extensions/). Normalerweise besteht die Dokumentation einer Erweiterung aus mehreren Abschnitten, mit Beispielen zum Kopieren/Einfügen und Einstellungen zum Anpassen. Überprüfe die gesamte Dokumentation aus der Perspektive des Benutzers. Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Für erfahrene Autoren gibt es einen [Styleguide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). Hast du die Dokumentation verbessert? Mache ein Fork vom entsprechenden Repository und sende einen Pull-Request an den Entwickler.
+Du findest grundlegende Dokumentation in der Hilfe und ausführlichere Dokumentation in den [Erweiterungen](https://datenstrom.se/de/yellow/extensions/). Stell dir vor was der Benutzer machen möchte und was dessen Leben einfacher machen würde. Überprüfe die Dokumentation aus der Perspektive des Benutzers. Grundsätzlich sollte die Dokumentation aus mehreren Abschnitten bestehen, Beispiele enthalten welche die Benutzer kopieren/einfügen können und in einer leicht verständlichen Sprache geschrieben sein. Für erfahrene Autoren gibt es einen [Styleguide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). Hast du die Dokumentation verbessert? Mache ein Fork vom entsprechenden Repository und sende einen Pull-Request an den Entwickler.
 
 ## Danksagung
 
