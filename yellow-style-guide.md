@@ -19,7 +19,7 @@ You should use the following guidelines for your own code:
   e.g. `// Datenstrom Yellow, https://datenstrom.se/yellow/`.
 * Use a single-line comment to describe classes, methods and properties,  
   e.g. `// Return request information`.
-* Spend time on maintainability and refactoring, neglected design is expensive design.
+* Invest time in maintainability and refactoring, neglected design is expensive design.
 * Use the same patterns throughout your own code, if unsure strive for consistency.
 * Keep methods relatively small, sweet and focused on one thing, if unsure do less.
 * Don't keep features/settings/files that are leftovers from experimentation.
@@ -53,6 +53,7 @@ You should use the following guidelines for your own documentation:
   e.g. `<a id="settings-files"></a>`.
 * Use the PNG image format for screenshots and thumbnails.
 * Check the spelling, British English is the reference language.
+* Review the documentation from the perspective of the user.
 * Give examples that users can copy/paste, if unsure add more examples.
 * Don't have more than one extension per repository.
 
