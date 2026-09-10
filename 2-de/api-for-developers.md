@@ -1282,7 +1282,7 @@ class YellowExample {
 
 ## Werkzeuge
 
-Es gibt zwei Werkzeuge für Entwickler die in jeder Installation enthalten sind.
+Zusätzlich zur API sind in jeder Installation zwei Entwicklungswerkzeuge enthalten.
 
 ### Eingebauter Webserver
 

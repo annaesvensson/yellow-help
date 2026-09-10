@@ -1280,7 +1280,7 @@ class YellowExample {
 
 ## Verktyg
 
-Det finns två verktyg för utvecklare som ingår i varje installation.
+Utöver API:et finns två utvecklingsverktyg som ingår i varje installation.
 
 ### Inbyggd webbserver
 

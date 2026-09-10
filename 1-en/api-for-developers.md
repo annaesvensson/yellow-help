@@ -1280,7 +1280,7 @@ class YellowExample {
 
 ## Tools
 
-There are two tools for developers that are included in every installation.
+In addition to the API, there are two development tools included in every installation.
 
 ### Built-in web server
 

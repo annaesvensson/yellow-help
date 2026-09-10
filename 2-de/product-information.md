@@ -16,8 +16,8 @@ Datenstrom Yellow ist für Menschen die kleine Webseiten machen.
 | Textformatierung            | Markdown
 | Bildformate                 | GIF, JPEG, PNG und SVG
 | Programmiersprachen         | HTML, CSS, JavaScript und PHP
-| Webserverunterstützung      | Apache, Caddy, Nginx und kompatible Webserver
-| Werkzeuge für Entwickler    | Eingebauter Webserver und statischer Generator
+| Entwicklungswerkzeuge       | Eingebauter Webserver, statischer Generator und API für Entwickler
+| Webserver                   | Apache, Caddy, Nginx und kompatible Webserver
 | Personenbezogene Daten      | Erhebung von personenbezogenen Daten wird vermieden, [siehe Datenschutz](https://datenstrom.se/de/privacy)
 | App erforderlich            | Nein
 | Datenbank erforderlich      | Nein
