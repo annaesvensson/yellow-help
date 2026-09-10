@@ -20,7 +20,7 @@ You should use the following guidelines for your own code:
 * Use a single-line comment to describe classes, methods and properties,  
   e.g. `// Return request information`.
 * Spend time on maintainability and refactoring, neglected design is expensive design.
-* Use the same patterns throughout your code, if unsure strive for consistency.
+* Use the same patterns throughout your own code, if unsure strive for consistency.
 * Keep methods relatively small, sweet and focused on one thing, if unsure do less.
 * Don't keep features/settings/files that are leftovers from experimentation.
 * Don't have features/settings/files just in case someone needs them later.
@@ -52,7 +52,7 @@ You should use the following guidelines for your own documentation:
 * Use HTML at the beginning of a line to add an additional link target to a page,  
   e.g. `<a id="settings-files"></a>`.
 * Use the PNG image format for screenshots and thumbnails.
-* Check the spelling, British English is the reference language for documentation.
+* Check the spelling, British English is the reference language.
 * Give examples that users can copy/paste, if unsure add more examples.
 * Don't have more than one extension per repository.
 
