@@ -1,11 +1,11 @@
 # Datenstrom Yellow review checklist
 
-You should always review your own extension first:
+You should always review your own changes first:
 
-- [ ] You checked that everything works as expected in a [brand new installation](https://github.com/datenstrom/yellow).
-- [ ] You checked that your repository has the topic `datenstrom-yellow`.
-- [ ] You checked that your extension settings use either `Status: experimental` or `Status: maintained`.
-- [ ] You checked that your extension follows the [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md) to a reasonable extend.
+- [ ] You have checked that everything is working as expected in a [brand new installation](https://github.com/datenstrom/yellow).
+- [ ] You have checked that extension settings use either `Status: experimental` or `Status: maintained`.
+- [ ] You have checked that the repository has the topic `datenstrom-yellow`.
+- [ ] You have checked that the repository follows the [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md) to a reasonable extend.
 - [ ] Don't keep features/settings/files that are leftovers from experimentation.
 - [ ] Don't have features/settings/files just in case someone needs them later.
 - [ ] Don't have code comments inside methods and functions.
