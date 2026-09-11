@@ -44,16 +44,16 @@ You can help us with the following tasks:
 - [ ] Updated website, Swedish translation for missing help pages. Better multi language documentation.
 - [ ] Tested performance with thousands of content files. For people who make large websites.
 
+## How to contribute 
+
+We appreciate contributions by developers, designers and translators. We organise our work around talented and motivated people who have a genuine interest in working together with us. Datenstrom Yellow is open source. At the heart of open source is the idea that we make better software together. Do you want to contribute? Improve code and documentation.
+
 ## How to improve code
 
-You can find core functionality in the [core](https://github.com/annaesvensson/yellow-core) and everything else in [extensions](https://datenstrom.se/yellow/extensions/). Imagine what the user wants to do and what would make their life easier. Ask yourself, do I need this, do I want this, can I make this better? Remember to focus on people. Not on technical details and lots of features. For experienced developers there's a [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). Did you improve code? You have three options. The first option is to fork the relevant repository and send a pull request to the developer, it may or may not be accepted. The second option is to give product feedback on the official website. The third option is to [make a new extension](https://github.com/annaesvensson/yellow-maintain) with the modified code.
+You can find core functionality in the [core](https://github.com/annaesvensson/yellow-core) and everything else in [extensions](https://datenstrom.se/yellow/extensions/). Imagine what the user wants to do and what would make their life easier. Ask yourself, do I need this, do I want this, can I make this better? Remember to focus on people. Not on technical details and lots of features. For experienced developers there's a [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). Did you improve code? You have three options. The first option is to fork the relevant repository and send a pull request to the developer, it may or may not be accepted. The second option is to [give product feedback on the official website](https://datenstrom.se/support/). The third option is to [make a new extension with the modified code](https://github.com/annaesvensson/yellow-maintain).
 
 ## How to improve documentation
 
-You can find basic documentation in the [help](https://github.com/annaesvensson/yellow-help) and more detailed documentation in [extensions](https://datenstrom.se/yellow/extensions/). Imagine what the user wants to do and what would make their life easier. Review the documentation from the perspective of the user. As a general rule, the documentation should consist of several sections, include examples that users can copy/paste and be written in an easy-to-understand language. For experienced writers there's a [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). Did you improve documentation? Fork the relevant repository send a pull request to the developer.
-
-## How to contribute 
-
-We appreciate contributions by developers, designers and translators. We organise our work around talented and motivated people who have a genuine interest in working together with us. Datenstrom Yellow is open source. At the heart of open source is the idea that we make better software together. Do you want to contribute? Make a small website, improve code and documentation.
+You can find basic documentation in the [help](https://github.com/annaesvensson/yellow-help) and more detailed documentation in [extensions](https://datenstrom.se/yellow/extensions/). Imagine what the user wants to do and what would make their life easier. Review the documentation from the perspective of the user. As a general rule, the documentation should consist of several sections, include examples that users can copy/paste, explain settings that users can customise and be written in an easy-to-understand language. For experienced writers there's a [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). Did you improve documentation? Fork the relevant repository send a pull request to the developer.
 
 Do you have questions? [Get help](https://datenstrom.se/yellow/help/).

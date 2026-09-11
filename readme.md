@@ -18,7 +18,7 @@ You can improve the help if something is wrong or missing. Install the help on y
 
 ## How to improve documentation
 
-You can find basic documentation in the help and more detailed documentation in [extensions](https://datenstrom.se/yellow/extensions/). Imagine what the user wants to do and what would make their life easier. Review the documentation from the perspective of the user. As a general rule, the documentation should consist of several sections, include examples that users can copy/paste and be written in an easy-to-understand language. For experienced writers there's a [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). Did you improve documentation? Fork the relevant repository and send a pull request to the developer.
+You can find basic documentation in the help and more detailed documentation in [extensions](https://datenstrom.se/yellow/extensions/). Imagine what the user wants to do and what would make their life easier. Review the documentation from the perspective of the user. As a general rule, the documentation should consist of several sections, include examples that users can copy/paste, explain settings that users can customise and be written in an easy-to-understand language. For experienced writers there's a [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). Did you improve documentation? Fork the relevant repository and send a pull request to the developer.
 
 ## Acknowledgements
 
