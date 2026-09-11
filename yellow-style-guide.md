@@ -47,17 +47,17 @@ You should use the following guidelines for your own documentation:
   `system/extensions/yellow-user.ini` = file with user settings
 * File names  use kebab-case and do not contain any capital letters,  
   e.g. `readme.md`, `how-to-make-a-small-website.md`, `ten-principles-for-good-design.md`
-* Use HTML to add a screenshot suitable for Codeberg, GitHub and other platforms,  
-  e.g. `<p align="center"><img src="screenshot.png" alt="Screenshot" /></p>`.
 * Use HTML at the beginning of a line to add an additional link target to a page,  
   e.g. `<a id="settings-files"></a>`.
+* Use HTML to add a screenshot suitable for Codeberg, GitHub and other platforms,  
+  e.g. `<p align="center"><img src="screenshot.png" alt="Screenshot" /></p>`.
 * Use the PNG image format for screenshots and thumbnails.
 * Check the spelling, British English is the reference language.
 * Review the documentation from the perspective of the user.
 * Give examples that users can copy/paste, if unsure add more examples.
 * Don't have more than one extension per repository.
 
-You should use the following technical terms, alphabetical order:
+You should use the following technical terms when writing about Datenstrom Yellow:
 
 * `Datenstrom Yellow` is the full product name of this software - not "Yellow CMS".
 * An `extension` gives you additional features, languages and themes - not "plugin".
@@ -65,7 +65,7 @@ You should use the following technical terms, alphabetical order:
 * A `navigation` is automatically generated from content folders - not "menu bar".
 * The `page settings` can be configured at the top of each page - not "front matter".
 * A `shortcut` is a way to extend Markdown with additional features - not "shortcode".
-* A `static generator` makes the entire website in advance, instead of waiting for the request. 
+* A `static generator` makes the entire website in advance, instead of waiting for a request. 
 * The `system settings` contain the settings of the website and of all installed extensions.
 * A `theme` is a CSS file, it may come with additional images, fonts, JavaScript and so on.
 * A `web editor` allows you to edit a website in a `web browser` - not "admin panel".
