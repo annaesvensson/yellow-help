@@ -46,7 +46,7 @@ You can help us with the following tasks:
 
 ## How to improve code
 
-You can find core functionality in the [core](https://github.com/annaesvensson/yellow-core) and everything else in [extensions](https://datenstrom.se/yellow/extensions/). Imagine what the user wants to do and what would make their life easier. Ask yourself, do I need this, do I want this, can I make this better? Remember to focus on people. Not on technical details and lots of features. For experienced developers there's a [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). Did you improve code? The first option is to fork the relevant repository and send a pull request to the developer, it may or may not be accepted. The second option is to give product feedback on the official website. The third option is to make a new extension with the modified code.
+You can find core functionality in the [core](https://github.com/annaesvensson/yellow-core) and everything else in [extensions](https://datenstrom.se/yellow/extensions/). Imagine what the user wants to do and what would make their life easier. Ask yourself, do I need this, do I want this, can I make this better? Remember to focus on people. Not on technical details and lots of features. For experienced developers there's a [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). Did you improve code? The first option is to fork the relevant repository and send a pull request to the developer, it may or may not be accepted. The second option is to give product feedback on the official website. The third option is to [make a new extension](https://github.com/annaesvensson/yellow-maintain) with the modified code.
 
 ## How to improve documentation
 
