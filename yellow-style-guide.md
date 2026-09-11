@@ -55,9 +55,10 @@ You should use the following guidelines for your own documentation:
 * Check the spelling, British English is the reference language.
 * Review the documentation from the perspective of the user.
 * Give examples that users can copy/paste, if unsure add more examples.
+* Explain settings that users can customise, if necessary add more examples. 
 * Don't have more than one extension per repository.
 
-You should use the following technical terms when writing about Datenstrom Yellow:
+You should use the following terms when writing about Datenstrom Yellow:
 
 * `Datenstrom Yellow` is the full product name of this software - not "Yellow CMS".
 * An `extension` gives you additional features, languages and themes - not "plugin".
