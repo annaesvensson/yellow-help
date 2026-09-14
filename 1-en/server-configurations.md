@@ -1,8 +1,9 @@
-# Datenstrom Yellow web server configurations
+---
+Title: Server configurations
+---
+Learn which server configurations are available.
 
-You can use the following configurations:
-
-`.htaccess` file for the Apache web server:
+`.htaccess` file for the Apache and LiteSpeed web server:
 
 ```
 <IfModule mod_rewrite.c>
@@ -66,4 +67,4 @@ server {
 }
 ```
 
-Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
+Do you have questions? [Get help](.).

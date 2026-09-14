@@ -52,7 +52,7 @@ Die folgenden Dateien sind wichtig für die Funktionsweise der Webseite:
 
 ## Objekte
 
-Mit Hilfe der API hast du Zugriff auf Dateien, Einstellungen und Erweiterungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Falls du neugierig bist und wissen möchtest wie die API im Detail funktioniert, den gesamten Code findest du in der Datei `system/workers/core.php`.
+Mit Hilfe der API hast du Zugriff auf Dateien, Einstellungen und Erweiterungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Es gibt noch einige weitere Objekte, beispielsweise um auf die aktuelle Seite zuzugreifen. Falls du wissen möchtest wie Objekte im Detail funktioniert, den Code der API findest du in der Datei `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────┐     ┌───────────────────────┐
@@ -958,7 +958,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Ereignisse
 
-Eine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden alle Erweiterungen geladen und initialisiert. Es gibt verschiedene Ereignisse die Erweiterung informieren wenn eine Anfrage vom Webbrowser empfangen wird, ein Befehl ausgeführt wird oder Informationen aktualisiert werden. Das gibt dir die Möglichkeit nahezu jeden Aspekt der Webseite anzupassen. Du brauchst nur die Ereignisse verarbeiten an denen du interessiert bist.
+Eine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden alle Erweiterungen geladen und mit `onLoad` informiert. Es gibt verschiedene Ereignisse die Erweiterungen darüber informieren wenn eine Anfrage vom Webbrowser empfangen wird, ein Befehl ausgeführt wird oder Informationen aktualisiert werden. Das gibt dir die Möglichkeit nahezu jeden Aspekt der Webseite anzupassen. Du brauchst nur die Ereignisse verarbeiten an denen du interessiert bist.  Falls du wissen möchtest wie Ereignisse im Detail funktioniert, den Code der API findest du in der Datei `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
   Empfange Anfrage vom Webbrowser oder Befehlszeile      Informationen werden aktualisiert 

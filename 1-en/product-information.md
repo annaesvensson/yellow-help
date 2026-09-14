@@ -17,8 +17,8 @@ Datenstrom Yellow is for people who make small websites.
 | Image formats               | GIF, JPEG, PNG and SVG
 | Programming languages       | HTML, CSS, JavaScript and PHP
 | Development tools           | Built-in web server, static generator and API for developers
-| Web servers                 | Apache, Caddy, Nginx and compatible web servers 
-| Personal data               | Collection of personal data is avoided, [see privacy](https://datenstrom.se/privacy)
+| Web servers                 | Apache, Caddy, LiteSpeed, Nginx and compatible web servers 
+| Personal data               | Emails and passwords are protected, [see privacy](https://datenstrom.se/privacy)
 | App required                | No
 | Database required           | No
 | Registration required       | No

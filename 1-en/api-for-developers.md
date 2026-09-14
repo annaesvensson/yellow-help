@@ -52,7 +52,7 @@ The following files are important for the functionality of the website:
 
 ## Objects
 
-With the help of the API you have access to the files, settings and extensions. The API is divided into several objects and reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. It's pretty straightforward to use. If you are curious and would like to know how the API works in detail, you can find the entire code in file `system/workers/core.php`.
+With the help of the API you have access to the files, settings and extensions. The API is divided into several objects and reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. There are a few other objects, for example to access the current page. If you would like to know how objects work in detail, you can find the code of the API in file `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────┐     ┌───────────────────────┐
@@ -958,7 +958,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Events
 
-A website consists of the core and other extensions. At the beginning, all extensions are loaded and initialised. There are various events that inform extensions when a request from the web browser is received, a command is executed or information is updated. This allow you to customise nearly every aspect of the website. You only need to handle the events you are interested in.
+A website consists of the core and other extensions. At the beginning, all extensions are loaded and informed via `onLoad()`. There are various events that inform extensions when a request from the web browser is received, a command is executed or information is updated. This allows you to customise nearly every aspect of the website. You only need to handle the events you are interested in. If you would like to know how events work in detail, you can find the code of the API in file `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
   Receive request from web browser or command line           Information is updated
@@ -1167,7 +1167,7 @@ class YellowExample {
 
 ### Yellow command events
 
-Yellow core events notify when a command is executed. The following events are available:
+Yellow command events notify when a command is executed. The following events are available:
 
 `onCommand` `onCommandHelp`
 

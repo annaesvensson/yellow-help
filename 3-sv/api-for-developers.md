@@ -52,7 +52,7 @@ Följande filer är viktiga för webbplatsens funktion:
 
 ## Objekt
 
-Med hjälp av API:et har du tillgång till filer, inställningar och tillägg. API:et är uppdelat i flera objekt och speglar filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Det är ganska enkelt att använda. Om du är nyfiken och vill veta hur API:et fungerar i detalj, hella koden hittar du i filen `system/workers/core.php`.
+Med hjälp av API:et har du tillgång till filer, inställningar och tillägg. API:et är uppdelat i flera objekt och speglar filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Det finns några andra objekt, till exempel för att komma åt den aktuella sidan. Om du vill veta mer om hur objekten fungerar i detalj hittar du API-koden i filen `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────┐     ┌───────────────────────┐
@@ -958,7 +958,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Händelser
 
-En webbplats består av kärnan och andra tillägg. I början laddas och initieras alla tillägg. Det finns olika händelser som informerar dig när en begäran från webbläsaren tas emot, ett kommando utförs eller information uppdateras. Detta ger dig möjlighet att anpassa nästan alla aspekter av webbplatsen. Du behöver bara hantera de händelser som du är intresserad av.
+En webbplats består av kärnan och andra tillägg. I början laddas alla tillägg och informeras via `onLoad`. Det finns olika händelser som informerar tilläggen när en begäran från webbläsaren tas emot, ett kommando utförs eller information uppdateras. Detta ger dig möjlighet att anpassa nästan alla aspekter av webbplatsen. Du behöver bara hantera de händelser som du är intresserad av. Om du vill veta mer om hur händelser fungerar i detalj hittar du API-koden i filen `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
   Ta emot begäran från webbläsaren eller kommandoraden       Information uppdateras

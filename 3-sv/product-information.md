@@ -17,8 +17,8 @@ Datenstrom Yellow är för människor som skapar små webbsidor.
 | Bildformat                  | GIF, JPEG, PNG och SVG
 | Programmeringsspråk         | HTML, CSS, JavaScript och PHP
 | Utvecklingsverktyg          | Inbyggd webbserver, statisk generator och API för utvecklare
-| Webbservrar                 | Apache, Caddy, Nginx och kompatibla webbservrar
-| Personuppgifter             | Insamling av personuppgifter undviks, [se integritet](https://datenstrom.se/sv/privacy)
+| Webbservrar                 | Apache, Caddy, LiteSpeed, Nginx och kompatibla webbservrar
+| Personuppgifter             | Email och lösenord skyddas, [se integritet](https://datenstrom.se/sv/privacy)
 | App krävs                   | Nej
 | Databas krävs               | Nej
 | Registrering krävs          | Nej 
