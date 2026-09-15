@@ -52,7 +52,7 @@ Die folgenden Dateien sind wichtig für die Funktionsweise der Webseite:
 
 ## Objekte
 
-Mit Hilfe der API hast du Zugriff auf Dateien, Einstellungen und Erweiterungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Es gibt noch einige weitere Objekte, beispielsweise um auf die aktuelle Seite zuzugreifen. Falls du wissen möchtest wie Objekte im Detail funktioniert, den Code der API findest du in der Datei `system/workers/core.php`.
+Mit Hilfe der API hast du Zugriff auf Dateien, Einstellungen und Erweiterungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Es gibt noch einige weitere Objekte, beispielsweise um auf die aktuelle Seite zuzugreifen. Falls du wissen möchtest wie Objekte im Detail funktionieren, den Code der API findest du in der Datei `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────┐     ┌───────────────────────┐
@@ -531,7 +531,7 @@ Layoutdatei um Bildpfade anzuzeigen:
 
 ### Yellow-Toolbox
 
-Die Klasse `YellowToolbox` gibt Zugang zur Werkzeugkiste mit Hilfsmethoden. Die folgenden Methoden sind verfügbar:
+Die Klasse `YellowToolbox` gibt Zugang zu einer Werkzeugkiste mit Hilfsmethoden. Die folgenden Methoden sind verfügbar:
 
 `appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `enumerate` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileSize` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
 
@@ -958,10 +958,10 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 
 ## Ereignisse
 
-Eine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden alle Erweiterungen geladen und mit `onLoad` informiert. Es gibt verschiedene Ereignisse die Erweiterungen darüber informieren wenn eine Anfrage vom Webbrowser empfangen wird, ein Befehl ausgeführt wird oder Informationen aktualisiert werden. Das gibt dir die Möglichkeit nahezu jeden Aspekt der Webseite anzupassen. Du brauchst nur die Ereignisse verarbeiten an denen du interessiert bist.  Falls du wissen möchtest wie Ereignisse im Detail funktioniert, den Code der API findest du in der Datei `system/workers/core.php`.
+Eine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden alle Erweiterungen geladen und mit `onLoad` informiert. Es gibt verschiedene Ereignisse die Erweiterungen darüber informieren wenn eine Anfrage vom Webbrowser empfangen wird, ein Befehl ausgeführt wird oder Informationen aktualisiert werden. Das gibt dir die Möglichkeit nahezu jeden Aspekt der Webseite anzupassen. Du brauchst nur die Ereignisse verarbeiten an denen du interessiert bist. Falls du wissen möchtest wie Ereignisse im Detail funktionieren, den Code der API findest du in der Datei `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-  Empfange Anfrage vom Webbrowser oder Befehlszeile      Informationen werden aktualisiert 
+  Anfrage vom Webbrowser oder Befehlszeile               Informationen werden aktualisiert 
       │                                                                 │
       ▼                                                                 ▼
   onLoad                                                            onLoad  
@@ -983,9 +983,6 @@ Eine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden a
       │                       │                      │                  │
       ▼                       │                      │                  ▼
   onShutdown ◀────────────────┴──────────────────────┘              onShutdown
-      │                            
-      ▼     
-  Sende Antwort                 
 ```
 
 Die folgenden Arten von Ereignissen sind verfügbar:
@@ -1282,7 +1279,7 @@ class YellowExample {
 
 ## Werkzeuge
 
-Zusätzlich zur API sind in jeder Installation zwei Entwicklungswerkzeuge enthalten.
+Für Entwickler stehen verschiedene Werkzeuge in der Befehlszeile zur Verfügung. Das gibt dir beispielsweise die Möglichkeit einen Webserver zu starten, eine statische Webseite zu generieren und Routineaufgaben zu automatisieren. Die verfügbaren Befehle hängen von den installierten Erweiterungen ab. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php`, um die verfügbaren Befehle anzuzeigen.
 
 ### Eingebauter Webserver
 

@@ -4,7 +4,7 @@ Title: Was ist neu
 Halte dich auf dem Laufenden über die neuesten Änderungen.
 
 ! {.wikiblock}
-! ## Datenstrom Yellow - neuste Änderungen
+! ## Datenstrom Yellow - neuste Änderungen aus 2026
 !
 ! - Include-Erweiterung hinzugefügt, ermöglicht das Einbinden von Seiten in Markdown
 ! - API aktualisiert, getAvailable() in enumerate() geändert

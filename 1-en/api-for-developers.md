@@ -531,7 +531,7 @@ Layout file for showing image paths:
 
 ### Yellow toolbox
 
-The class `YellowToolbox` gives access to toolbox with helper methods. The following methods are available:
+The class `YellowToolbox` gives access to a toolbox with helper methods. The following methods are available:
 
 `appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `enumerate` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileSize` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
 
@@ -961,7 +961,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 A website consists of the core and other extensions. At the beginning, all extensions are loaded and informed via `onLoad()`. There are various events that inform extensions when a request from the web browser is received, a command is executed or information is updated. This allows you to customise nearly every aspect of the website. You only need to handle the events you are interested in. If you would like to know how events work in detail, you can find the code of the API in file `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-  Receive request from web browser or command line           Information is updated
+  Request from web browser or command line                   Information is updated
       │                                                                 │
       ▼                                                                 ▼
   onLoad                                                            onLoad  
@@ -983,9 +983,6 @@ A website consists of the core and other extensions. At the beginning, all exten
       │                       │                      │                  │
       ▼                       │                      │                  ▼
   onShutdown ◀────────────────┴──────────────────────┘              onShutdown
-      │                            
-      ▼                           
-  Send response
 ```
 
 The following types of events are available:
@@ -1280,7 +1277,7 @@ class YellowExample {
 
 ## Tools
 
-In addition to the API, there are two development tools included in every installation.
+For developers there are various tools available at the command line. This allows you, for example, to start a web server, generate a static website and automate routine tasks. The available commands depend on extensions installed. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php` to show available commands.
 
 ### Built-in web server
 

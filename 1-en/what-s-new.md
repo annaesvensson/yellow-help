@@ -4,7 +4,7 @@ Title: What's new
 Stay up to date with the latest changes.
 
 ! {.wikiblock}
-! ## Datenstrom Yellow - latest changes
+! ## Datenstrom Yellow - latest changes from 2026
 !
 ! - Added include extension, allows to include pages in Markdown
 ! - Updated API, changed getAvailable() to enumerate()

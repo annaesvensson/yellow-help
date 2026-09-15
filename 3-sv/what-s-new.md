@@ -4,7 +4,7 @@ Title: Vad är nytt
 Håll dig uppdaterad om senaste ändringarna.
 
 ! {.wikiblock}
-! ## Datenstrom Yellow - senaste ändringar
+! ## Datenstrom Yellow - senaste ändringar från 2026
 !
 ! - Lade till include-tillägg, tillåter att inkludera sidor i Markdown
 ! - Uppdaterade API, ändrat getAvailable() till enumerate()

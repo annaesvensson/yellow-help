@@ -531,7 +531,7 @@ Layoutfil för att visa bildsökvägar:
 
 ### Yellow toolbox
 
-Klassen `YellowToolbox` ger tillgång till verktygslådan med hjälpmetoder. Följande metoder är tillgängliga:
+Klassen `YellowToolbox` ger tillgång till en verktygslåda med hjälpmetoder. Följande metoder är tillgängliga:
 
 `appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `enumerate` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileSize` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
 
@@ -961,7 +961,7 @@ var_dump(is_array_empty(array("entry")));    // bool(false)
 En webbplats består av kärnan och andra tillägg. I början laddas alla tillägg och informeras via `onLoad`. Det finns olika händelser som informerar tilläggen när en begäran från webbläsaren tas emot, ett kommando utförs eller information uppdateras. Detta ger dig möjlighet att anpassa nästan alla aspekter av webbplatsen. Du behöver bara hantera de händelser som du är intresserad av. Om du vill veta mer om hur händelser fungerar i detalj hittar du API-koden i filen `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
-  Ta emot begäran från webbläsaren eller kommandoraden       Information uppdateras
+  Begäran från webbläsaren eller kommandoraden               Information uppdateras
       │                                                                 │
       ▼                                                                 ▼
   onLoad                                                            onLoad  
@@ -983,9 +983,6 @@ En webbplats består av kärnan och andra tillägg. I början laddas alla tillä
       │                       │                      │                  │
       ▼                       │                      │                  ▼
   onShutdown ◀────────────────┴──────────────────────┘              onShutdown
-      │                            
-      ▼                           
-  Skicka svar
 ```
 
 Följande typer av händelser är tillgängliga:
@@ -1280,7 +1277,7 @@ class YellowExample {
 
 ## Verktyg
 
-Utöver API:et finns två utvecklingsverktyg som ingår i varje installation.
+För utvecklare finns olika verktyg tillgängliga i kommandoraden. Detta ger dig möjlighet att till exempel starta en webbserver, generera en statisk webbplats och automatisera rutinuppgifter. De tillgängliga kommandona beror på installerade tillägg. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php` för att visa tillgängliga kommandona.
 
 ### Inbyggd webbserver
 
