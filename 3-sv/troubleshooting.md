@@ -20,7 +20,7 @@ Läs hur man löser problem på sin webbplats.
 
 ? Datenstrom Yellow requires complete upload
 ? 
-? Kopiera igen alla medföljande filer till installationsmappen. Kontrollera om din FTP-applikation visar ett felmeddelande under uppladdningen. Ibland händer det att dataöverföringen avbröts under uppladdningen. Efter att alla filer har kopierats till installationsmappen bör problemet lösas.
+? Kopiera igen alla medföljande filer till installationsmappen. Inklusive filen `.htaccess`. Kontrollera om din FTP-applikation visar ett felmeddelande under uppladdningen. Ibland händer det att dataöverföringen avbröts under uppladdningen. Efter att alla filer har kopierats till installationsmappen bör problemet lösas.
 
 ? Datenstrom Yellow requires rewrite rules
 ? 

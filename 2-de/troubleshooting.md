@@ -20,7 +20,7 @@ Erfahre wie man Probleme auf seiner Webseite behebt.
 
 ? Datenstrom Yellow requires complete upload
 ? 
-? Kopiere nochmal alle mitgelieferten Dateien ins Installations-Verzeichnis. Überprüfe ob deine FTP-Anwendung beim Hochladen eine Fehlermeldung anzeigt. Es passiert manchmal dass die Datenübertragung beim Hochladen unterbrochen wurde. Nachdem alle Dateien ins Installations-Verzeichnis kopiert wurden, sollte das Problem behoben sein.
+? Kopiere nochmal alle mitgelieferten Dateien ins Installations-Verzeichnis. Einschliesslich der `.htaccess`-Datei. Überprüfe ob deine FTP-Anwendung beim Hochladen eine Fehlermeldung anzeigt. Es passiert manchmal dass die Datenübertragung beim Hochladen unterbrochen wurde. Nachdem alle Dateien ins Installations-Verzeichnis kopiert wurden, sollte das Problem behoben sein.
 
 ? Datenstrom Yellow requires rewrite rules
 ? 

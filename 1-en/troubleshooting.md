@@ -20,7 +20,7 @@ Learn how to resolve problems on your website.
 
 ? Datenstrom Yellow requires complete upload
 ? 
-? Copy again all of the supplied files into the installation folder. Check if your FTP application shows an error message during upload. It sometimes happens that the data transfer was interrupted during upload. After all files have been copied into the installation folder, the problem should be resolved.
+? Copy again all of the supplied files into the installation folder. Including the `.htaccess` file. Check if your FTP application shows an error message during upload. It sometimes happens that the data transfer was interrupted during upload. After all files have been copied into the installation folder, the problem should be resolved.
 
 ? Datenstrom Yellow requires rewrite rules
 ? 
