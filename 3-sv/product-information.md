@@ -11,7 +11,6 @@ Datenstrom Yellow är för människor som skapar små webbsidor.
 | Installationsspråk          | 19 språk
 | Tillägg                     | Mer än 100 funktioner, språk och teman
 | Systemkrav                  | PHP 7.0 eller senare
-| Programvarulicens           | Öppen källkod under GPL version 2
 | Textredigerare              | Valfri textredigerare
 | Textformatering             | Markdown
 | Bildformat                  | GIF, JPEG, PNG och SVG
@@ -19,6 +18,7 @@ Datenstrom Yellow är för människor som skapar små webbsidor.
 | Utvecklingsverktyg          | Inbyggd webbserver, statisk generator och API för utvecklare
 | Webbservrar                 | Apache, Caddy, LiteSpeed, Nginx och kompatibla webbservrar
 | Personuppgifter             | Email och lösenord skyddas, [se integritet](https://datenstrom.se/sv/privacy)
+| Programvarulicens           | Öppen källkod under GPL, [se licens](https://github.com/datenstrom/yellow/tree/main/license.md)
 | App krävs                   | Nej
 | Databas krävs               | Nej
 | Registrering krävs          | Nej 

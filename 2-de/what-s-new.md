@@ -13,7 +13,7 @@ Halte dich auf dem Laufenden über die neuesten Änderungen.
 ! - Edit-Erweiterung aktualisiert, Upload mit verschiedenen JPEG-Dateinamenerweiterungen
 ! - Gallery-Erweiterung aktualisiert, Popup kann durch Klicken auf einen Link ausgelöst werden
 ! - Help-Erweiterung, Styleguide für erfahrene Entwickler und Autoren
-! - Maintain-Erweiterung aktualisiert, neue Art zum Erstellen und Pflegen von Erweiterungen
+! - Maintain-Erweiterung aktualisiert, besserer Prozess für experimentelle und gepflegte Erweiterungen
 ! - Maintain-Erweiterung aktualisiert, Statuswert von available zu maintained geändert
 ! - Markdown-Erweiterung aktualisiert, E-Mail-Verarbeitung für lange TLD verbessert
 ! - Markdown-Erweiterung aktualisiert, Syntax für ausklappbare Blöcke hinzugefügt

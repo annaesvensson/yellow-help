@@ -11,7 +11,6 @@ Datenstrom Yellow is for people who make small websites.
 | Installation languages      | 19 languages
 | Extensions                  | More than 100 features, languages and themes
 | System requirements         | PHP 7.0 or higher
-| Software license            | Open source under GPL version 2
 | Text editors                | Any text editor
 | Text formatting             | Markdown
 | Image formats               | GIF, JPEG, PNG and SVG
@@ -19,6 +18,7 @@ Datenstrom Yellow is for people who make small websites.
 | Development tools           | Built-in web server, static generator and API for developers
 | Web servers                 | Apache, Caddy, LiteSpeed, Nginx and compatible web servers 
 | Personal data               | Emails and passwords are protected, [see privacy](https://datenstrom.se/privacy)
+| Software license            | Open source under GPL, [see license](https://github.com/datenstrom/yellow/tree/main/license.md)
 | App required                | No
 | Database required           | No
 | Registration required       | No

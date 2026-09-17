@@ -11,7 +11,6 @@ Datenstrom Yellow ist für Menschen die kleine Webseiten machen.
 | Installationssprachen       | 19 Sprachen
 | Erweiterungen               | Mehr als 100 Funktionen, Sprachen und Themes
 | Systemanforderungen         | PHP 7.0 oder höher
-| Softwarelizenz              | Open-Source unter GPL Version 2
 | Texteditoren                | Beliebiger Texteditor
 | Textformatierung            | Markdown
 | Bildformate                 | GIF, JPEG, PNG und SVG
@@ -19,6 +18,7 @@ Datenstrom Yellow ist für Menschen die kleine Webseiten machen.
 | Entwicklungswerkzeuge       | Eingebauter Webserver, statischer Generator und API für Entwickler
 | Webserver                   | Apache, Caddy, LiteSpeed, Nginx und kompatible Webserver
 | Personenbezogene Daten      | E-Mails und Kennwörter werden geschützt, [siehe Datenschutz](https://datenstrom.se/de/privacy)
+| Softwarelizenz              | Open-Source unter GPL, [siehe Lizenz](https://github.com/datenstrom/yellow/tree/main/license.md)
 | App erforderlich            | Nein
 | Datenbank erforderlich      | Nein
 | Registrierung erforderlich  | Nein

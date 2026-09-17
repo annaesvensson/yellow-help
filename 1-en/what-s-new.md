@@ -13,7 +13,7 @@ Stay up to date with the latest changes.
 ! - Updated edit extension, upload with different JPEG file name extensions
 ! - Updated gallery extension, popup can be triggered by clicking on a link
 ! - Updated help extension, style guide for experienced developers and writers
-! - Updated maintain extension, new way of making and maintaining extensions
+! - Updated maintain extension, better process for experimental and maintained extensions
 ! - Updated maintain extension, changed status value from available to maintained
 ! - Updated Markdown extension, improved email handling for long TLD
 ! - Updated Markdown extension, syntax for collapsible blocks was added

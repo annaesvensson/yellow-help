@@ -13,7 +13,7 @@ Håll dig uppdaterad om senaste ändringarna.
 ! - Uppdaterade edit-tillägg, uppladdning med olika JPEG-filändele
 ! - Uppdaterade gallery-tillägg, popup kan utlösas genom att klicka på en länk
 ! - Uppdaterade help-tillägg, stilguide för erfarna utvecklare och författare
-! - Uppdaterade maintain-tillägg, nytt sätt att göra och underhålla tillägg
+! - Uppdaterade maintain-tillägg, bättre process för experimentella och underhållna tillägg
 ! - Uppdaterade maintain-tillägg, ändrat statusvärd från available till maintained
 ! - Uppdaterade Markdown-tillägg, förbättrad e-posthantering för lång toppdomän
 ! - Uppdaterade Markdown-tillägg, syntax för hopfällbara block har lagts till
