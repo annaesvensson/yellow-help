@@ -7,6 +7,7 @@ You can help us with open tasks:
 - [ ] Added support for web forms in Markdown. Users can create email contact forms or a feedback/survey forms.
 - [ ] Added support for page history in wiki extension. Users want to see/compare what has changed.
 - [ ] Added support for search in static website. Give users similar features in dynamic/static website.
+- [ ] Added support for configurable icon generator/bundler/stacker. Better page loading time.
 - [ ] Added support for dynamic loading of JS/CSS files in bundler. Better page loading time.
 - [ ] Added support for Wysiwyg editor for Markdown. Users can edit websites without much knowledge.
 - [ ] Added comment extension, provides a convenient commenting system. Make it no longer experimental.
@@ -43,10 +44,6 @@ You can help us with open tasks:
 - [x] Updated website, more information about protection of personal data. People need more information.
 - [ ] Updated website, Swedish translation for missing help pages. Better multi language documentation.
 - [ ] Tested performance with thousands of content files. For people who make large websites.
-
-## How to contribute 
-
-We appreciate contributions by developers, designers and translators. Datenstrom Yellow is open source. At the heart of open source is the idea that we make better software together.  We organise our work around talented and motivated people who have a genuine interest in working together. Do you want to contribute? Improve code and documentation.
 
 ## How to improve code
 
