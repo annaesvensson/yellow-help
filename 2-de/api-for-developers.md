@@ -22,7 +22,7 @@ Du kannst deine Webseite im Texteditor bearbeiten. Das `content`-Verzeichnis ent
     ├── extensions        = konfigurierbare Erweiterungsdateien, beispielsweise INI
     ├── layouts           = konfigurierbare Layoutdateien, beispielsweise HTML
     ├── themes            = konfigurierbare Themedateien, beispielsweise CSS
-    └── workers           = Dateien für Entwickler, Designer und Übersetzer
+    └── workers           = Dateien für Entwickler und Designer
 ```
 
 Die folgenden Verzeichnisse sind verfügbar:
@@ -322,8 +322,7 @@ Layoutdatei um Spracheinstellungen anzuzeigen:
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
 <?php foreach ($this->yellow->toolbox->enumerate("language") as $language): ?>
-<?php echo $this->yellow->language->getTextHtml("languageDescription", $language) ?> - 
-<?php echo $this->yellow->language->getTextHtml("languageTranslator", $language) ?><br />
+<?php echo $this->yellow->language->getTextHtml("languageDescription", $language) ?><br />
 <?php endforeach ?>
 </p>
 </div>
@@ -1283,7 +1282,7 @@ Für Entwickler stehen verschiedene Werkzeuge in der Befehlszeile zur Verfügung
 
 ### Eingebauter Webserver
 
-Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler, Designer und Übersetzer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer zu ändern und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum eingebauten Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/readme-de.md).
+Du kannst einen Webserver in der Befehlszeile starten. Der eingebaute Webserver ist praktisch für Entwickler und Designer. Das gibt dir die Möglichkeit deine Webseite auf deinem Computer zu bearbeiten und sie später auf den deinen Webserver hochzuladen. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php serve`, du kannst wahlweise eine URL angeben. Öffne einen Webbrowser und gehe zur angezeigten URL. [Weitere Informationen zum eingebauten Webserver](https://github.com/annaesvensson/yellow-serve/tree/main/readme-de.md).
 
 ### Statischer Generator
 

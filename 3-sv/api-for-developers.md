@@ -22,7 +22,7 @@ Du kan redigera din webbplats i textredigeraren. Mappen `content` innehåller we
     ├── extensions        = konfigurerbara tilläggsfiler, till exempel INI
     ├── layouts           = konfigurerbara layoutfiler, till exempel HTML
     ├── themes            = konfigurerbara temafiler, till exempel CSS
-    └── workers           = filer for utvecklare, formgivare och översättare
+    └── workers           = filer for utvecklare och formgivare
 ```
 
 Följande obmappar är tillgängliga:
@@ -322,8 +322,7 @@ Layoutfil för att visa språkinställningar:
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
 <?php foreach ($this->yellow->toolbox->enumerate("language") as $language): ?>
-<?php echo $this->yellow->language->getTextHtml("languageDescription", $language) ?> - 
-<?php echo $this->yellow->language->getTextHtml("languageTranslator", $language) ?><br />
+<?php echo $this->yellow->language->getTextHtml("languageDescription", $language) ?><br />
 <?php endforeach ?>
 </p>
 </div>
@@ -1281,7 +1280,7 @@ För utvecklare finns olika verktyg tillgängliga i kommandoraden. Detta ger dig
 
 ### Inbyggd webbserver
 
-Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare, formgivare och översättare. Detta ger dig möjlighet att ändra din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/readme-sv.md).
+Du kan starta en webbserver på kommandoraden. Den inbyggda webbservern är praktisk för utvecklare och formgivare. Detta ger dig möjlighet att redigera din webbplats på din dator och ladda upp den till din webbserver senare. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php serve`, du kan valfritt ange en URL. Öppna en webbläsare och gå till URL:en som visas. [Läs mer om inbyggda webbservern](https://github.com/annaesvensson/yellow-serve/tree/main/readme-sv.md).
 
 ### Statisk generator
 

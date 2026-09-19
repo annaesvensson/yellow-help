@@ -22,7 +22,7 @@ You can edit your website in a text editor. The `content` folder contains the co
     ├── extensions        = configurable extension files, for example INI
     ├── layouts           = configurable layout files, for example HTML
     ├── themes            = configurable theme files, for example CSS
-    └── workers           = files for developers, designers and translators
+    └── workers           = files for developers and designers
 ```
 
 The following folders are available:
@@ -322,8 +322,7 @@ Layout file for showing language settings:
 <h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1>
 <p>
 <?php foreach ($this->yellow->toolbox->enumerate("language") as $language): ?>
-<?php echo $this->yellow->language->getTextHtml("languageDescription", $language) ?> - 
-<?php echo $this->yellow->language->getTextHtml("languageTranslator", $language) ?><br />
+<?php echo $this->yellow->language->getTextHtml("languageDescription", $language) ?><br />
 <?php endforeach ?>
 </p>
 </div>
@@ -1281,7 +1280,7 @@ For developers there are various tools available at the command line. This allow
 
 ### Built-in web server
 
-You can start a web server at the command line. The built-in web server is convenient for developers, designers and translators. This allows you to change your website on your computer and upload it to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the built-in web server](https://github.com/annaesvensson/yellow-serve).
+You can start a web server at the command line. The built-in web server is convenient for developers and designers. This allows you to edit your website on your computer and upload it to your web server later. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php serve`, you can optionally add a URL. Open a web browser and go to the URL shown. [Learn more about the built-in web server](https://github.com/annaesvensson/yellow-serve).
 
 ### Static generator
 
