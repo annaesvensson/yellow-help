@@ -18,7 +18,7 @@ Datenstrom Yellow ist für Menschen die kleine Webseiten machen.
 | Entwicklungswerkzeuge       | Eingebauter Webserver, statischer Generator und API für Entwickler
 | Webserver                   | Apache, Caddy, LiteSpeed, Nginx und kompatible Webserver
 | Personenbezogene Daten      | E-Mails und Kennwörter werden geschützt, [siehe Datenschutz](https://datenstrom.se/de/privacy)
-| Softwarelizenz              | Open-Source unter GPL, [siehe Lizenz](https://github.com/datenstrom/yellow/tree/main/license.md)
+| Softwarelizenz              | Open-Source, [siehe Lizenzbedingungen](license-terms)
 | App erforderlich            | Nein
 | Datenbank erforderlich      | Nein
 | Registrierung erforderlich  | Nein

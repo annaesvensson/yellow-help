@@ -18,7 +18,7 @@ Datenstrom Yellow is for people who make small websites.
 | Development tools           | Built-in web server, static generator and API for developers
 | Web servers                 | Apache, Caddy, LiteSpeed, Nginx and compatible web servers 
 | Personal data               | Emails and passwords are protected, [see privacy](https://datenstrom.se/privacy)
-| Software license            | Open source under GPL, [see license](https://github.com/datenstrom/yellow/tree/main/license.md)
+| Software license            | Open source, [see license terms](license-terms)
 | App required                | No
 | Database required           | No
 | Registration required       | No
