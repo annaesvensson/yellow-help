@@ -29,7 +29,7 @@ You can help us with open tasks:
 - [ ] Updated edit extension toolbar, improved link and file selection dialog. Give users more control.
 - [ ] Updated feed extension, short URL for the feed.xml. Users don't like the long URL, it's ugly. 
 - [x] Updated gallery extension, popup can be triggered by clicking on a link. Give users more flexibility.
-- [x] Updated help extension, style guide for experienced developers and writers. For more consistency.
+- [x] Updated help extension, style guide for experienced developers and designers. For more consistency.
 - [ ] Updated icon extension, SVG stack instead of WOFF font. Developers want consistent files formats.
 - [ ] Updated image extension, different media files for light and dark mode. Give users more control.
 - [x] Updated maintain extension, better process for experimental and maintained extensions. Less confusing.
@@ -47,7 +47,7 @@ You can help us with open tasks:
 
 ## How to improve code
 
-You can find core functionality of websites in the [core](https://github.com/annaesvensson/yellow-core) and everything else in [extensions](https://datenstrom.se/yellow/extensions/). Imagine what the user wants to do and what would make their life easier. Ask yourself, do I need this, do I want this, can I make this better? Remember to focus on people. Not on technical details and lots of features. For experienced developers there's a [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). Did you improve code? You have three options. The first option is to fork the relevant repository and send a pull request to the developer, it may or may not be accepted. The second option is to [give product feedback](https://datenstrom.se/support/). The third option is to [make an extension](https://github.com/annaesvensson/yellow-maintain).
+You can find core functionality of websites in the [core](https://github.com/annaesvensson/yellow-core) and everything else in [extensions](https://datenstrom.se/yellow/extensions/). Imagine what the user wants to do and what would make their life easier. Ask yourself, do I need this, do I want this, can I make this better? Remember to focus on people. Not on technical details and lots of features. For experienced developers and designers there's a [style guide](https://github.com/annaesvensson/yellow-help/blob/main/yellow-style-guide.md). Did you improve code? You have three options. The first option is to fork the relevant repository and send a pull request to the developer, it may or may not be accepted. The second option is to [give product feedback](https://datenstrom.se/support/). The third option is to [make an extension](https://github.com/annaesvensson/yellow-maintain).
 
 ## How to improve documentation
 

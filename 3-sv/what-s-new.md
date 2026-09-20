@@ -12,7 +12,7 @@ Håll dig uppdaterad om senaste ändringarna.
 ! - Uppdaterade core-tillägg, stöd för webmanifest-filer har lagts till
 ! - Uppdaterade edit-tillägg, uppladdning med olika JPEG-filändele
 ! - Uppdaterade gallery-tillägg, popup kan utlösas genom att klicka på en länk
-! - Uppdaterade help-tillägg, stilguide för erfarna utvecklare och författare
+! - Uppdaterade help-tillägg, stilguide för erfarna utvecklare och formgivare
 ! - Uppdaterade maintain-tillägg, bättre process för experimentella och underhållna tillägg
 ! - Uppdaterade maintain-tillägg, ändrat statusvärd från available till maintained
 ! - Uppdaterade Markdown-tillägg, förbättrad e-posthantering för lång toppdomän

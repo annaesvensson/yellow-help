@@ -12,7 +12,7 @@ Stay up to date with the latest changes.
 ! - Updated core extension, support for webmanifest files was added
 ! - Updated edit extension, upload with different JPEG file name extensions
 ! - Updated gallery extension, popup can be triggered by clicking on a link
-! - Updated help extension, style guide for experienced developers and writers
+! - Updated help extension, style guide for experienced developers and designers
 ! - Updated maintain extension, better process for experimental and maintained extensions
 ! - Updated maintain extension, changed status value from available to maintained
 ! - Updated Markdown extension, improved email handling for long TLD

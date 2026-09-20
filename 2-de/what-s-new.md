@@ -12,7 +12,7 @@ Halte dich auf dem Laufenden über die neuesten Änderungen.
 ! - Core-Erweiterung aktualisiert, Unterstützung für Webmanifest-Dateien hinzugefügt
 ! - Edit-Erweiterung aktualisiert, Upload mit verschiedenen JPEG-Dateinamenerweiterungen
 ! - Gallery-Erweiterung aktualisiert, Popup kann durch Klicken auf einen Link ausgelöst werden
-! - Help-Erweiterung, Styleguide für erfahrene Entwickler und Autoren
+! - Help-Erweiterung, Styleguide für erfahrene Entwickler und Designer
 ! - Maintain-Erweiterung aktualisiert, besserer Prozess für experimentelle und gepflegte Erweiterungen
 ! - Maintain-Erweiterung aktualisiert, Statuswert von available zu maintained geändert
 ! - Markdown-Erweiterung aktualisiert, E-Mail-Verarbeitung für lange TLD verbessert
