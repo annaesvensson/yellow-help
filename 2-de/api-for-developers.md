@@ -38,6 +38,11 @@ Die folgenden Dateien sind wichtig für die Funktionsweise der Webseite:
 `system/extensions/yellow-user.ini` = [Datei mit Benutzereinstellungen](how-to-change-the-system#benutzereinstellungen)  
 `system/extensions/yellow-website.log` = [Logdatei der Webseite](#logdatei)  
 
+Die folgenden Einstellungen sind Teil des Aktualisieriungsmechanismus:
+
+`system/extensions/yellow-update-installed.ini` = Datei mit Aktualisierungseinstellungen für installierte Erweiterungen  
+`system/extensions/yellow-update-maintained.ini` = Datei mit Aktualisierungseinstellungen für gepflegte Erweiterungen  
+
 <a id="logdatei"></a>Die Logdatei gibt einen Überblick über das was auf der Webseite passiert. Hier ist ein Beispiel:
 
 ```
@@ -1278,7 +1283,7 @@ class YellowExample {
 
 ## Werkzeuge
 
-Für Entwickler und Designer stehen verschiedene Werkzeuge in der Befehlszeile zur Verfügung. Das gibt dir beispielsweise die Möglichkeit einen Webserver zu starten, eine statische Webseite zu generieren und Routineaufgaben zu automatisieren. Die verfügbaren Befehle hängen von den installierten Erweiterungen ab. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php`, um die verfügbaren Befehle anzuzeigen.
+Für Entwickler und Designer stehen verschiedene Werkzeuge in der Befehlszeile zur Verfügung. Das gibt dir beispielsweise die Möglichkeit einen Webserver zu starten und eine statische Webseite zu generieren. Die verfügbaren Befehle hängen von den installierten Erweiterungen ab. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php`, um die verfügbaren Befehle anzuzeigen.
 
 ### Eingebauter Webserver
 

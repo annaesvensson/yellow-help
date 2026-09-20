@@ -38,6 +38,11 @@ The following files are important for the functionality of the website:
 `system/extensions/yellow-user.ini` = [file with user settings](how-to-change-the-system#user-settings)  
 `system/extensions/yellow-website.log` = [log file of the website](#log-file)  
 
+The following files are part of the update mechanism:
+
+`system/extensions/yellow-update-installed.ini` = file with update settings for installed extensions  
+`system/extensions/yellow-update-maintained.ini` = file with update settings for maintained extensions  
+
 <a id="log-file"></a>The log file shows an overview of what is happening on the website. Here's an example:
 
 ```
@@ -1276,7 +1281,7 @@ class YellowExample {
 
 ## Tools
 
-For developers and designers there are various tools available at the command line. This allows you, for example, to start a web server, generate a static website and automate routine tasks. The available commands depend on extensions installed. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php` to show available commands.
+For developers and designers there are various tools available at the command line. This allows you, for example, to start a web server and generate a static website. The available commands depend on extensions installed. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php` to show available commands.
 
 ### Built-in web server
 

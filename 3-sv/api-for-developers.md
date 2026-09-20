@@ -38,6 +38,11 @@ Följande filer är viktiga för webbplatsens funktion:
 `system/extensions/yellow-user.ini` = [fil med användarinställningar](how-to-change-the-system#användarinställningar)  
 `system/extensions/yellow-website.log` = [webbplatsen loggfil](#loggfilen)  
 
+Följande filer är del av uppdateringsmekanismen:
+
+`system/extensions/yellow-update-installed.ini` = fil med uppdateringsinställningar för installerade tillägg  
+`system/extensions/yellow-update-maintained.ini` = fil med uppdateringsinställningar för underhållna tillägg  
+
 <a id="loggfilen"></a>Loggfilen visar en översikt över vad som händer på webbplatsen. Här är ett exempel:
 
 ```
@@ -1276,7 +1281,7 @@ class YellowExample {
 
 ## Verktyg
 
-För utvecklare och formgivare finns olika verktyg tillgängliga i kommandoraden. Detta ger dig möjlighet att till exempel starta en webbserver, generera en statisk webbplats och automatisera rutinuppgifter. De tillgängliga kommandona beror på installerade tillägg. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php` för att visa tillgängliga kommandona.
+För utvecklare och formgivare finns olika verktyg tillgängliga i kommandoraden. Detta ger dig möjlighet att till exempel starta en webbserver och generera en statisk webbplats. De tillgängliga kommandona beror på installerade tillägg. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php` för att visa tillgängliga kommandona.
 
 ### Inbyggd webbserver
 
