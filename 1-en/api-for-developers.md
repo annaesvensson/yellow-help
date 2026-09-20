@@ -13,7 +13,7 @@ You can edit your website in a text editor. The `content` folder contains the co
 ├── content               = content files
 │   ├── 1-home            = home page
 │   ├── 9-about           = information page
-│   └── shared            = shared files
+│   └── shared            = shared pages
 ├── media                 = media files
 │   ├── downloads         = files for download
 │   ├── images            = image files for content
@@ -1276,7 +1276,7 @@ class YellowExample {
 
 ## Tools
 
-For developers there are various tools available at the command line. This allows you, for example, to start a web server, generate a static website and automate routine tasks. The available commands depend on extensions installed. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php` to show available commands.
+For developers and designers there are various tools available at the command line. This allows you, for example, to start a web server, generate a static website and automate routine tasks. The available commands depend on extensions installed. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php` to show available commands.
 
 ### Built-in web server
 

@@ -13,7 +13,7 @@ Du kannst deine Webseite im Texteditor bearbeiten. Das `content`-Verzeichnis ent
 ├── content               = Inhaltsdateien
 │   ├── 1-home            = Startseite
 │   ├── 9-about           = Informationsseite
-│   └── shared            = geteilte Dateien
+│   └── shared            = geteilte Seiten
 ├── media                 = Mediendateien
 │   ├── downloads         = Dateien zum Herunterladen
 │   ├── images            = Bilder für den Inhalt
@@ -1278,7 +1278,7 @@ class YellowExample {
 
 ## Werkzeuge
 
-Für Entwickler stehen verschiedene Werkzeuge in der Befehlszeile zur Verfügung. Das gibt dir beispielsweise die Möglichkeit einen Webserver zu starten, eine statische Webseite zu generieren und Routineaufgaben zu automatisieren. Die verfügbaren Befehle hängen von den installierten Erweiterungen ab. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php`, um die verfügbaren Befehle anzuzeigen.
+Für Entwickler und Designer stehen verschiedene Werkzeuge in der Befehlszeile zur Verfügung. Das gibt dir beispielsweise die Möglichkeit einen Webserver zu starten, eine statische Webseite zu generieren und Routineaufgaben zu automatisieren. Die verfügbaren Befehle hängen von den installierten Erweiterungen ab. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php`, um die verfügbaren Befehle anzuzeigen.
 
 ### Eingebauter Webserver
 

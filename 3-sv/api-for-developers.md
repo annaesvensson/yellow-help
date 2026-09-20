@@ -13,7 +13,7 @@ Du kan redigera din webbplats i textredigeraren. Mappen `content` innehåller we
 ├── content               = innehållsfiler
 │   ├── 1-home            = hemsida
 │   ├── 9-about           = informationssida
-│   └── shared            = delade filer
+│   └── shared            = delade sidor
 ├── media                 = mediefiler
 │   ├── downloads         = filer för nedladdning
 │   ├── images            = bildfiler för innehåll
@@ -1276,7 +1276,7 @@ class YellowExample {
 
 ## Verktyg
 
-För utvecklare finns olika verktyg tillgängliga i kommandoraden. Detta ger dig möjlighet att till exempel starta en webbserver, generera en statisk webbplats och automatisera rutinuppgifter. De tillgängliga kommandona beror på installerade tillägg. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php` för att visa tillgängliga kommandona.
+För utvecklare och formgivare finns olika verktyg tillgängliga i kommandoraden. Detta ger dig möjlighet att till exempel starta en webbserver, generera en statisk webbplats och automatisera rutinuppgifter. De tillgängliga kommandona beror på installerade tillägg. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php` för att visa tillgängliga kommandona.
 
 ### Inbyggd webbserver
 
