@@ -34,9 +34,10 @@ You can help us with open tasks:
 - [ ] Updated image extension, different media files for light and dark mode. Give users more control.
 - [x] Updated maintain extension, better process for experimental and maintained extensions. Less confusing.
 - [x] Updated maintain extension, changed status value from available to maintained. For more consistency.
-- [x] Updated Markdown extension, improved email handling for long TLD. TLD with more than 3 characters.
 - [x] Updated Markdown extension, syntax for collapsible blocks was added. Users can show/hide details.
 - [x] Updated Markdown extension, syntax for general blocks has changed. Make it more intuitive.
+- [x] Updated Markdown extension, improved handling for empty table headers. Give designers more options for themes. 
+- [x] Updated Markdown extension, improved handling for long top domains. TLDs can have more than 3 characters.
 - [ ] Updated sitemap extension, short URL for the sitemap.xml. Users don't like the long URL, it's ugly.
 - [x] Updated system settings, ContactSiteEmail and EditSiteEmail have been replaced. Less troubleshooting.
 - [x] Updated themes, CSS for coloured block elements has changed. Make it more intuitive.
