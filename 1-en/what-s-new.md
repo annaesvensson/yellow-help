@@ -20,7 +20,8 @@ Stay up to date with the latest changes.
 ! - Updated Markdown extension, syntax for general blocks has changed
 ! - Updated system settings, ContactSiteEmail and EditSiteEmail have been replaced
 ! - Updated themes, CSS for coloured block elements has changed
-! - Updated website, more information about product information and changes
+! - Updated website, more information about what's new
+! - Updated website, more information about product information
 ! - Updated website, more information about protection of personal data
 !
 ! [See code history](https://github.com/datenstrom/yellow/commits/main/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/).

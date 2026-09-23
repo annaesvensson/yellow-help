@@ -20,7 +20,8 @@ Håll dig uppdaterad om senaste ändringarna.
 ! - Uppdaterade Markdown-tillägg, syntax för allmänna block har ändrats
 ! - Uppdaterade systeminställningar, ContactSiteEmail och EditSiteEmail har ersatts
 ! - Uppdaterade teman, CSS för färgade blockelement har ändrats
-! - Uppdaterade webbplats, mer information om produktinformation och ändringar
+! - Uppdaterade webbplats, mer information om vad som är nytt
+! - Uppdaterade webbplats, mer information om produktinformation
 ! - Uppdaterade webbplats, mer information om skydd av personuppgifter
 !
 ! [Se kodhistorik](https://github.com/datenstrom/yellow/commits/main/) och [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/main/).
