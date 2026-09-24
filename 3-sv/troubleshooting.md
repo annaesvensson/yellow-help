@@ -2,7 +2,7 @@
 Title: Felsökning
 ShowLanguageSelection: 1
 ---
-Läs hur man löser problem på sin webbplats.
+Läs hur man löser problem på en webbplats.
 
 ? Datenstrom Yellow stopped with fatal error
 ? 
@@ -44,17 +44,17 @@ Läs hur man löser problem på sin webbplats.
 ? 
 ? Den motsvarande sidan stöds inte i en statisk webbplats. Det finns vissa tekniska begränsningar för vad den statiska generatorn kan göra, till exempel kan den statiska generatorn inte generera ett e-postkontaktformulär. Teoretiskt sett kan vilken sida som helst genereras som en statisk sida, men då behöver man ytterligare tjänster för att hantera dynamiska HTTP-förfrågningar.
 
-## Problem på din webbserver
+## Problem med din webbserver
 
 Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Det är bäst att kontakta din webbhotell och be dem kontrollera konfigurationen av din webbserver. Webbservern måste utföra tre uppgifter. För det första måste den vidarebefordra HTTP-förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. [Läs mer om serverkonfigurationer](server-configurations).
 
-## Problem på din e-postserver
+## Problem med din e-postserver
 
 Du behöver en e-postserver för att kunna skicka e-post. Det är bäst att kontakta din webbhotell och fråga om sendmail är aktiverat. När du har bekräftat att sendmail är aktiverat är nästa steg att konfigurera email för utgående meddelanden. Öppna filen `system/extensions/yellow-system.ini` och ändra `From`. Konfigurera en e-postadress med ditt domännamn, till exempel `noreply@example.com.` Ibland fungerar inte standard-e-postadressen eller så är e-postservern felkonfigurerad. [Läs mer om systeminställningar](how-to-change-the-system#systeminställningar).
 
 ## Problem med installerade tillägg
 
-[Du kan rapportera ett fel eller lämna synpunkter på produkten](https://datenstrom.se/sv/support/) om något inte fungerar som förväntat. Förklara hur man återskapar felet, skriv ner steg-för-steg-instruktioner hur man återskapar felet, ange detaljerad information och bifoga filen `system/extensions/yellow-website.log`. Kontrollera dessutom om felet uppstår i en helt ny installation, för att undvika att rapportera ett fel som redan har åtgärdats.
+[Du kan rapportera ett fel eller skriva produktfeedback](https://datenstrom.se/sv/support/) om något inte fungerar som förväntat. Förklara hur man återskapar felet. Skriv ner steg-för-steg-instruktioner hur man återskapar felet, ange detaljerad information och bifoga filen `system/extensions/yellow-website.log`. Kontrollera dessutom om felet uppstår i senaste versionen, för att undvika att rapportera ett fel som redan har åtgärdats.
 
 Du kan använda felsökningsläget för att undersöka orsaken till ett problem eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Ytterligare information kommer att visas på skärmen och i webbläsarkonsolen. Beroende på felsökningsläget visas mer eller mindre information. [Läs mer om debugging](api-for-developers#debugging).
 

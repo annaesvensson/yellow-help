@@ -2,7 +2,7 @@
 Title: Troubleshooting
 ShowLanguageSelection: 1
 ---
-Learn how to resolve problems on your website.
+Learn how to resolve problems on a website.
 
 ? Datenstrom Yellow stopped with fatal error
 ? 
@@ -44,17 +44,17 @@ Learn how to resolve problems on your website.
 ? 
 ? The page in question is not supported in a static website. There are some technical limitations to what the static generator can do, for example the static generator can't generate an email contact form. Any page could theoretically be generated as a static page, but then you would need additional services to handle dynamic HTTP requests.
 
-## Problems on your web server
+## Problems with your web server
 
 You need a web server that forwards HTTP requests to Datenstrom Yellow. It's best to contact your web hosting provider and have them check the configuration of your web server. The web server has to do three things. First it has to forward HTTP requests for non existing files/folders to the `yellow.php`. Second it has to block direct access to the `content` folder with an error page. Third it has to block direct access to the `system` folder with an error page. [Learn more about server configurations](server-configurations).
 
-## Problems on your mail server
+## Problems with your mail server
 
 You need a mail server to send emails. It's best to contact your web hosting provider and ask if sendmail is enabled. When you have confirmed that sendmail is enabled, your next option is to configure the email for outgoing messages. Open file `system/extensions/yellow-system.ini` and change `From`. Configure an email address with your domain name, for example `noreply@example.com`. Sometimes the default email address doesn't work or the mail server is miss-configured. [Learn more about system settings](how-to-change-the-system#system-settings).
 
 ## Problems with installed extensions
 
-[You can report a bug or give product feedback](https://datenstrom.se/support/) if something isn't working as expected. Explain how to reproduce the bug, write down step-by-step instructions on how to reproduce the bug, provide detailed information and add file `system/extensions/yellow-website.log`. Check also if the bug occurs in a brand new installation, to avoid reporting a bug that has already been fixed.
+[You can report a bug or write product feedback](https://datenstrom.se/support/) if something isn't working as expected. Explain how to reproduce the bug. Write down step-by-step instructions on how to reproduce the bug, provide detailed information and add file `system/extensions/yellow-website.log`. Check also if the bug occurs in the latest version, to avoid reporting a bug that has already been fixed.
 
 You can use the debug mode to investigate the cause of a problem or if you are curious about how Datenstrom Yellow works. To activate the debug mode on your website open file `system/extensions/yellow-system.ini` and change `CoreDebugMode: 1`. Additional information will be displayed on the screen and in the browser console. Depending on the debug mode, more or less information are shown. [Learn more about debugging](api-for-developers#debugging).
 

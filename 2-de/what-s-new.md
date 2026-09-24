@@ -12,7 +12,7 @@ Erfahre alles über die neusten Änderungen.
 ? - Core-Erweiterung aktualisiert, Unterstützung für Webmanifest-Dateien hinzugefügt
 ? - Edit-Erweiterung aktualisiert, Upload mit verschiedenen JPEG-Dateinamenerweiterungen
 ? - Gallery-Erweiterung aktualisiert, Popup kann durch Klicken auf einen Link ausgelöst werden
-? - Help-Erweiterung, Styleguide für erfahrene Entwickler und Designer
+? - Help-Erweiterung aktualisiert, Styleguide für erfahrene Entwickler und Designer
 ? - Maintain-Erweiterung aktualisiert, besserer Prozess für experimentelle und gepflegte Erweiterungen
 ? - Maintain-Erweiterung aktualisiert, Statuswert von available zu maintained geändert
 ? - Markdown-Erweiterung aktualisiert, Syntax für ausklappbare Blöcke hinzugefügt
