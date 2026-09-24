@@ -4,8 +4,6 @@ ShowLanguageSelection: 1
 ---
 Learn how to resolve problems on your website.
 
-## Error messages
-
 ? Datenstrom Yellow stopped with fatal error
 ? 
 ? The software has crashed. Activate the debug mode for more information. Very likely an extension is not working properly or is not up to date. As soon as the relevant extension has been updated, the problem should be resolved. Contact the webmaster if this error message is displayed continuously.

@@ -1,10 +1,10 @@
 ---
 Title: Was ist neu
 ---
-Halte dich auf dem Laufenden über die neuesten Änderungen.
+Erfahre alles über die neusten Änderungen.
 
 ? {.wikiblock open=open}
-? Datenstrom Yellow neuste Änderungen
+? Datenstrom Yellow neuste Änderungen und Produktfunktionen
 ?
 ? - Include-Erweiterung hinzugefügt, ermöglicht das Einbinden von Seiten in Markdown
 ? - API aktualisiert, getAvailable() in enumerate() geändert
@@ -51,7 +51,7 @@ Halte dich auf dem Laufenden über die neuesten Änderungen.
 ? {.wikiblock}
 ? Datenstrom Yellow 0.8 - veröffentlicht am 10.10.2023
 ?
-? - Webseite, Code und Dokumentation verbessert
+? - Code und Dokumentation aktualisiert
 ?
 ? [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/e41bb9b/) und [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/94211dd/).
 

@@ -4,8 +4,6 @@ ShowLanguageSelection: 1
 ---
 Läs hur man löser problem på sin webbplats.
 
-## Felmeddelanden
-
 ? Datenstrom Yellow stopped with fatal error
 ? 
 ? Programvaran har kraschat. Aktivera felsökningsläget för att få mer information. Troligtvis fungerar ett tillägg inte som det ska eller är inte uppdaterat. Så snart det relevanta tillägget har uppdaterats bör problemet lösas. Kontakta webbmastern om detta felmeddelande visas hela tiden.

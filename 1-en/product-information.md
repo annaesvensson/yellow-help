@@ -1,7 +1,7 @@
 ---
 Title: Product information
 ---
-Datenstrom Yellow is for people who make small websites.
+Learn the most important product information at a glance.
 
 |                             |                             |
 |-----------------------------|-----------------------------|

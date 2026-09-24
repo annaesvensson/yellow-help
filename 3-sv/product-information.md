@@ -1,7 +1,7 @@
 ---
 Title: Produktinformation
 ---
-Datenstrom Yellow är för människor som skapar små webbsidor.
+Läs den viktigaste produktinformationen på en snabb blick.
 
 |                             |                             |
 |-----------------------------|-----------------------------|

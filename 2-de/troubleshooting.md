@@ -4,8 +4,6 @@ ShowLanguageSelection: 1
 ---
 Erfahre wie man Probleme auf seiner Webseite behebt.
 
-## Fehlermeldungen
-
 ? Datenstrom Yellow stopped with fatal error 
 ? 
 ? Die Software ist abgestürzt. Aktiviere den Debug-Modus um weitere Informationen zu erhalten. Sehr wahrscheinlich funktioniert eine Erweiterung nicht richtig oder ist nicht auf dem neusten Stand. Sobald die entsprechende Erweiterung aktualisiert wurde, sollte das Problem behoben sein. Wende dich an den Webmaster, falls diese Fehlermeldung ständig angezeigt wird.

@@ -1,10 +1,10 @@
 ---
 Title: What's new
 ---
-Stay up to date with the latest changes.
+Learn everything about the latest changes.
 
 ? {.wikiblock open=open}
-? Datenstrom Yellow latest changes
+? Datenstrom Yellow latest changes and product features.
 ?
 ? - Added include extension, allows to include pages in Markdown
 ? - Updated API, changed getAvailable() to enumerate()
@@ -51,7 +51,7 @@ Stay up to date with the latest changes.
 ? {.wikiblock}
 ? Datenstrom Yellow 0.8 - published on 2023-10-10
 ?
-? - Improved website, code and documentation
+? - Updated code and documentation
 ?
 ? [See code history](https://github.com/datenstrom/yellow/commits/e41bb9b/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/94211dd/).
 

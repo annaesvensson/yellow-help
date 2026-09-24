@@ -1,10 +1,10 @@
 ---
 Title: Vad är nytt
 ---
-Håll dig uppdaterad om senaste ändringarna.
+Läs allt om de senaste ändringarna.
 
 ? {.wikiblock open=open}
-? Datenstrom Yellow senaste ändringarna
+? Datenstrom Yellow senaste ändringar och produktfunktioner
 ?
 ? - Lade till include-tillägg, tillåter att inkludera sidor i Markdown
 ? - Uppdaterade API, ändrat getAvailable() till enumerate()
@@ -51,7 +51,7 @@ Håll dig uppdaterad om senaste ändringarna.
 ? {.wikiblock}
 ? Datenstrom Yellow 0.8 - publicerad den 2023-10-10
 ?
-? - Förbättrade webbplats, kod och dokumentation
+? - Uppdaterade kod och dokumentation
 ?
 ? [Se kodhistorik](https://github.com/datenstrom/yellow/commits/e41bb9b/) och [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/94211dd/).
 

@@ -1,7 +1,7 @@
 ---
 Title: Produktinformationen
 ---
-Datenstrom Yellow ist für Menschen die kleine Webseiten machen.
+Erfahre die wichtigsten Produktinformationen auf einen Blick.
 
 |                             |                             |
 |-----------------------------|-----------------------------|
