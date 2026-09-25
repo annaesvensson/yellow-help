@@ -54,7 +54,7 @@ Du behöver en e-postserver för att kunna skicka e-post. Det är bäst att kont
 
 ## Problem med installerade tillägg
 
-[Du kan rapportera ett fel eller skriva produktfeedback](https://datenstrom.se/sv/support/) om något inte fungerar som förväntat. Förklara hur man återskapar felet. Skriv ner steg-för-steg-instruktioner hur man återskapar felet, ange detaljerad information och bifoga filen `system/extensions/yellow-website.log`. Kontrollera dessutom om felet uppstår i senaste versionen, för att undvika att rapportera ett fel som redan har åtgärdats.
+[Du kan rapportera ett fel eller skriva produktfeedback](https://datenstrom.se/sv/support/) om något inte fungerar. Förklara hur man återskapar felet. Skriv ner steg-för-steg-instruktioner hur man återskapar felet, ange detaljerad information och bifoga aktuella loggfilen. Det rekommenderas att använda den senaste produktversionen, för att undvika att rapportera ett fel som redan har åtgärdats.
 
 Du kan använda felsökningsläget för att undersöka orsaken till ett problem eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Ytterligare information kommer att visas på skärmen och i webbläsarkonsolen. Beroende på felsökningsläget visas mer eller mindre information. [Läs mer om debugging](api-for-developers#debugging).
 

@@ -54,7 +54,7 @@ You need a mail server to send emails. It's best to contact your web hosting pro
 
 ## Problems with installed extensions
 
-[You can report a bug or write product feedback](https://datenstrom.se/support/) if something isn't working as expected. Explain how to reproduce the bug. Write down step-by-step instructions on how to reproduce the bug, provide detailed information and add file `system/extensions/yellow-website.log`. Check also if the bug occurs in the latest version, to avoid reporting a bug that has already been fixed.
+[You can report a bug or write product feedback](https://datenstrom.se/support/) if something isn't working. Explain how to reproduce the bug. Write down step-by-step instructions on how to reproduce the bug, provide detailed information and add the current log file. It's recommended to use the latest product version, to avoid reporting a bug that has already been fixed.
 
 You can use the debug mode to investigate the cause of a problem or if you are curious about how Datenstrom Yellow works. To activate the debug mode on your website open file `system/extensions/yellow-system.ini` and change `CoreDebugMode: 1`. Additional information will be displayed on the screen and in the browser console. Depending on the debug mode, more or less information are shown. [Learn more about debugging](api-for-developers#debugging).
 

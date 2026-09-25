@@ -54,7 +54,7 @@ Du benötigst einen Mailserver um E-Mails verschicken zu können. Wende dich am 
 
 ## Probleme mit installierten Erweiterungen
 
-[Du kannst einen Fehler melden oder Produktfeedback geben](https://datenstrom.se/de/support/) falls etwas nicht wie erwartet funktionieren sollte. Erkläre wie man den Fehler reproduziert. Schreibe eine Schritt-für-Schritt-Anleitung auf wie man den Fehler reproduziert, gebe detaillierte Informationen an und füge die Datei `system/extensions/yellow-website.log` hinzu. Überprüfe ausserdem ob der Fehler in der neusten Version auftritt, um zu vermeiden einen Fehler zu melden der bereits behoben wurde.
+[Du kannst einen Fehler melden oder Produktfeedback geben](https://datenstrom.se/de/support/) falls etwas nicht funktionieren sollte. Erkläre wie man den Fehler reproduziert. Schreibe eine Schritt-für-Schritt-Anleitung auf wie man den Fehler reproduziert, gebe detaillierte Informationen an und füge die aktuelle Logdatei hinzu. Es wird empfohlen die neuste Produktversion zu verwenden, um zu vermeiden einen Fehler zu melden der bereits behoben wurde.
 
 Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Es werden dann zusätzliche Informationen auf dem Bildschirm und in der Browser-Konsole angezeigt. Abhängig vom Debug-Modus werden mehr oder weniger Informationen angezeigt. [Weitere Informationen zum Debuggen](api-for-developers#debuggen).
 
