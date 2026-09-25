@@ -1,4 +1,4 @@
-# Help 0.9.10
+# Help 1.0.1
 
 Documentation of the basics. Developed by Anna Svensson.
 
