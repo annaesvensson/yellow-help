@@ -4,7 +4,14 @@ Title: What's new
 Learn everything about the latest changes.
 
 ? {.wikiblock open=open}
-? Datenstrom Yellow latest changes and product features.
+? Datenstrom Yellow latest product features.
+?
+? - Updated website
+?
+? [See code history](https://github.com/datenstrom/yellow/commits/main/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/).
+
+? {.wikiblock}
+? Datenstrom Yellow 1.0 - published on 2026-09-25
 ?
 ? - Added include extension, allows to include pages in Markdown
 ? - Updated API, changed getAvailable() to enumerate()
@@ -25,7 +32,7 @@ Learn everything about the latest changes.
 ? - Updated website, more information about product information
 ? - Updated website, more information about protection of personal data
 ?
-? [See code history](https://github.com/datenstrom/yellow/commits/main/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/).
+? [See code history](https://github.com/datenstrom/yellow/commits/c0aa022/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/4b3f70c/).
 
 ? {.wikiblock}
 ? Datenstrom Yellow 0.9 - published on 2024-04-04

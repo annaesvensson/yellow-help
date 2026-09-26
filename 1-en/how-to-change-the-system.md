@@ -118,13 +118,13 @@ The following settings can be configured at the top of a page:
 The log file can be found in file `system/extensions/yellow-website.log`. Here's an example:
 
 ```
-2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
-2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
-2024-04-28 14:13:07 info Install extension 'Edit 0.9.2'
-2024-04-28 14:13:07 info Install extension 'Markdown 0.9.2'
-2024-04-28 14:13:07 info Install extension 'English 0.9.2'
-2024-04-28 14:13:07 info Install extension 'German 0.9.2'
-2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
+2026-09-28 14:13:07 info Install Datenstrom Yellow 1.0, PHP 8.4.26, Apache 2.4.68, Linux
+2026-09-28 14:13:07 info Install extension 'Core 1.0.1'
+2026-09-28 14:13:07 info Install extension 'Edit 1.0.2'
+2026-09-28 14:13:07 info Install extension 'Markdown 1.0.2'
+2026-09-28 14:13:07 info Install extension 'English 1.0.2'
+2026-09-28 14:13:07 info Install extension 'German 1.0.2'
+2026-09-28 14:13:07 info Install extension 'Swedish 1.0.2'
 ```
 
 Do you have questions? [Get help](.).

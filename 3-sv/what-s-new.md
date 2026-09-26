@@ -4,7 +4,14 @@ Title: Vad är nytt
 Läs allt om de senaste ändringarna.
 
 ? {.wikiblock open=open}
-? Datenstrom Yellow senaste ändringar och produktfunktioner
+? Datenstrom Yellow senaste produktfunktioner
+?
+? - Uppdaterade webbplats
+?
+? [Se kodhistorik](https://github.com/datenstrom/yellow/commits/main/) och [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/main/).
+
+? {.wikiblock}
+? Datenstrom Yellow 1.0 - publicerad den 2026-09-25
 ?
 ? - Lade till include-tillägg, tillåter att inkludera sidor i Markdown
 ? - Uppdaterade API, ändrat getAvailable() till enumerate()
@@ -25,7 +32,7 @@ Läs allt om de senaste ändringarna.
 ? - Uppdaterade webbplats, mer information om produktinformation
 ? - Uppdaterade webbplats, mer information om skydd av personuppgifter
 ?
-? [Se kodhistorik](https://github.com/datenstrom/yellow/commits/main/) och [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/main/).
+? [Se kodhistorik](https://github.com/datenstrom/yellow/commits/c0aa022/) och [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/4b3f70c/).
 
 ? {.wikiblock}
 ? Datenstrom Yellow 0.9 - publicerad den 2024-04-04

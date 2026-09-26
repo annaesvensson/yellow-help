@@ -46,13 +46,13 @@ Följande filer är del av uppdateringsmekanismen:
 <a id="loggfilen"></a>Loggfilen visar en översikt över vad som händer på webbplatsen. Här är ett exempel:
 
 ```
-2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
-2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
-2024-04-28 14:13:07 info Install extension 'Edit 0.9.2'
-2024-04-28 14:13:07 info Install extension 'Markdown 0.9.2'
-2024-04-28 14:13:07 info Install extension 'English 0.9.2'
-2024-04-28 14:13:07 info Install extension 'German 0.9.2'
-2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
+2026-09-28 14:13:07 info Install Datenstrom Yellow 1.0, PHP 8.4.26, Apache 2.4.68, Linux
+2026-09-28 14:13:07 info Install extension 'Core 1.0.1'
+2026-09-28 14:13:07 info Install extension 'Edit 1.0.2'
+2026-09-28 14:13:07 info Install extension 'Markdown 1.0.2'
+2026-09-28 14:13:07 info Install extension 'English 1.0.2'
+2026-09-28 14:13:07 info Install extension 'German 1.0.2'
+2026-09-28 14:13:07 info Install extension 'Swedish 1.0.2'
 ```
 
 ## Objekt
@@ -1028,7 +1028,7 @@ Tilläggsfil för att hantera initieringen:
 // Example extension, https://github.com/annaesvenson/yellow-example
 
 class YellowExample {
-    const VERSION = "0.9.1";
+    const VERSION = "1.0.1";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1087,7 +1087,7 @@ Tilläggsfil för att hantera en förkortning:
 // Example extension, https://github.com/annaesvenson/yellow-example
 
 class YellowExample {
-    const VERSION = "0.9.2";
+    const VERSION = "1.0.2";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1147,7 +1147,7 @@ Tilläggsfil för att hantera innehållsfiländringar:
 // Example extension, https://github.com/annaesvenson/yellow-example
 
 class YellowExample {
-    const VERSION = "0.9.3";
+    const VERSION = "1.0.3";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1191,7 +1191,7 @@ Tilläggsfil för att hantera ett kommando:
 // Example extension, https://github.com/annaesvenson/yellow-example
 
 class YellowExample {
-    const VERSION = "0.9.4";
+    const VERSION = "1.0.4";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1262,7 +1262,7 @@ Tilläggsfil för att hantera en daglig händelse:
 // Example extension, https://github.com/annaesvenson/yellow-example
 
 class YellowExample {
-    const VERSION = "0.9.5";
+    const VERSION = "1.0.5";
     public $yellow;         // access to API
     
     // Handle initialisation

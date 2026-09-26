@@ -46,13 +46,13 @@ Die folgenden Einstellungen sind Teil des Aktualisieriungsmechanismus:
 <a id="logdatei"></a>Die Logdatei gibt einen Überblick über das was auf der Webseite passiert. Hier ist ein Beispiel:
 
 ```
-2024-04-28 14:13:07 info Install Datenstrom Yellow 0.9, PHP 8.1.27, Apache 2.4.33, Linux
-2024-04-28 14:13:07 info Install extension 'Core 0.9.9'
-2024-04-28 14:13:07 info Install extension 'Edit 0.9.2'
-2024-04-28 14:13:07 info Install extension 'Markdown 0.9.2'
-2024-04-28 14:13:07 info Install extension 'English 0.9.2'
-2024-04-28 14:13:07 info Install extension 'German 0.9.2'
-2024-04-28 14:13:07 info Install extension 'Swedish 0.9.2'
+2026-09-28 14:13:07 info Install Datenstrom Yellow 1.0, PHP 8.4.26, Apache 2.4.68, Linux
+2026-09-28 14:13:07 info Install extension 'Core 1.0.1'
+2026-09-28 14:13:07 info Install extension 'Edit 1.0.2'
+2026-09-28 14:13:07 info Install extension 'Markdown 1.0.2'
+2026-09-28 14:13:07 info Install extension 'English 1.0.2'
+2026-09-28 14:13:07 info Install extension 'German 1.0.2'
+2026-09-28 14:13:07 info Install extension 'Swedish 1.0.2'
 ```
 
 ## Objekte
@@ -1028,7 +1028,7 @@ Erweiterungsdatei um Initialisierung zu verarbeiten:
 // Example extension, https://github.com/annaesvenson/yellow-example
 
 class YellowExample {
-    const VERSION = "0.9.1";
+    const VERSION = "1.0.1";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1088,7 +1088,7 @@ Erweiterungsdatei um eine Abkürzung zu verarbeiten:
 // Example extension, https://github.com/annaesvenson/yellow-example
 
 class YellowExample {
-    const VERSION = "0.9.2";
+    const VERSION = "1.0.2";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1149,7 +1149,7 @@ Erweiterungsdatei um Änderungen an Inhaltsdatei zu verarbeiten:
 // Example extension, https://github.com/annaesvenson/yellow-example
 
 class YellowExample {
-    const VERSION = "0.9.3";
+    const VERSION = "1.0.3";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1193,7 +1193,7 @@ Erweiterungsdatei um einen Befehl zu verarbeiten:
 // Example extension, https://github.com/annaesvenson/yellow-example
 
 class YellowExample {
-    const VERSION = "0.9.4";
+    const VERSION = "1.0.4";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -1264,7 +1264,7 @@ Erweiterungsdatei um ein tägliches Ereignis zu verarbeiten:
 // Example extension, https://github.com/annaesvenson/yellow-example
 
 class YellowExample {
-    const VERSION = "0.9.5";
+    const VERSION = "1.0.5";
     public $yellow;         // access to API
     
     // Handle initialisation

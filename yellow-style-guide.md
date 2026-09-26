@@ -30,7 +30,7 @@ You should use the following guidelines for your own documentation:
 
 * Use Markdown for text formatting, use spaces instead of tabs.
 * Use appropriate titles, e.g. `How to make a small website`, `Ten principles for good design`
-* Extension documentation use titles with a version number, e.g.  `Core 0.9.1`.
+* Extension documentation use titles with a version number, e.g.  `Core 1.0.1`.
 * Extension documentation have version numbers that begin with the product release number.
 * Extension documentation arrange headings in the following order, all are optional:  
   `How to...`  

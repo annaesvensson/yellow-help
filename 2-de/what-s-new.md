@@ -4,7 +4,14 @@ Title: Was ist neu
 Erfahre alles über die neusten Änderungen.
 
 ? {.wikiblock open=open}
-? Datenstrom Yellow neuste Änderungen und Produktfunktionen
+? Datenstrom Yellow neuste Produktfunktionen
+?
+? - Webseite aktualisiert
+? 
+? [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/main/) und [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/main/).
+
+? {.wikiblock}
+? Datenstrom Yellow 1.0 - veröffentlicht am 25.09.2026
 ?
 ? - Include-Erweiterung hinzugefügt, ermöglicht das Einbinden von Seiten in Markdown
 ? - API aktualisiert, getAvailable() in enumerate() geändert
@@ -22,10 +29,10 @@ Erfahre alles über die neusten Änderungen.
 ? - Systemeinstellungen aktualisiert, ContactSiteEmail und EditSiteEmail wurden ersetzt
 ? - Themes aktualisiert, CSS für farbige Blockelemente wurde geändert 
 ? - Webseite aktualisiert, mehr Informationen darüber was es neues gibt
-? - Webseite aktualisiert, mehr Informationen über Produktinformationen
-? - Webseite aktualisiert, mehr Informationen über Schutz von personenbezogenen Daten
+? - Webseite aktualisiert, mehr Informationen zu Produktinformationen
+? - Webseite aktualisiert, mehr Informationen zum Schutz von personenbezogenen Daten
 ? 
-? [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/main/) und [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/main/).
+? [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/c0aa022/) und [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/4b3f70c/).
 
 ? {.wikiblock}
 ? Datenstrom Yellow 0.9 - veröffentlicht am 04.04.2024
