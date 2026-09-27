@@ -16,7 +16,7 @@ You should use the following guidelines for your own code:
 * One space is used around parentheses and compound logical operations,  
   e.g. `if ($name=="example" && ($type=="block" || $type=="inline"))`.
 * One space plus trailing slash is used for HTML void elements and SVG self-closing elements,  
-  e.g.  `<br />`, `<hr />`, `<link rel=\"stylesheet\" href="/assets/fika.css" />`
+  e.g.  `<br />`, `<hr />`, `<link rel="stylesheet" href="/assets/fika.css" />`
 * Start each source code file with a link to a website where the licence can be found,  
   e.g. `// Datenstrom Yellow, https://datenstrom.se/yellow/`.
 * Use a single-line comment to describe classes, methods and properties,  
