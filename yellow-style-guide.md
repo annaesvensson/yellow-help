@@ -15,7 +15,9 @@ You should use the following guidelines for your own code:
   e.g. `switch ($statusCode)`, `for ($i=0; $i<$length; ++$i)`, `return $statusCode`.
 * One space is used around parentheses and compound logical operations,  
   e.g. `if ($name=="example" && ($type=="block" || $type=="inline"))`.
-* Start each source file with link to a website, that contains license and contact information,  
+* One space plus trailing slash is used for HTML void elements and SVG self-closing elements,  
+  e.g.  `<br />`, `<hr />`, `<link rel=\"stylesheet\" href="/assets/fika.css" />`
+* Start each source code file with a link to a website where the licence can be found,  
   e.g. `// Datenstrom Yellow, https://datenstrom.se/yellow/`.
 * Use a single-line comment to describe classes, methods and properties,  
   e.g. `// Return request information`.
