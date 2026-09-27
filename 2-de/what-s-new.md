@@ -1,10 +1,10 @@
 ---
 Title: Was ist neu
 ---
-Erfahre alles über die neusten Änderungen.
+Erfahre alles über die neusten Änderungen und Veröffentlichungen.
 
 ? {.wikiblock open=open}
-? Datenstrom Yellow neuste Produktfunktionen
+? Neuste Änderungen
 ?
 ? - Webseite aktualisiert
 ? 

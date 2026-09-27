@@ -1,10 +1,10 @@
 ---
 Title: Vad är nytt
 ---
-Läs allt om de senaste ändringarna.
+Läs allt om de senaste ändringarna och publikationerna.
 
 ? {.wikiblock open=open}
-? Datenstrom Yellow senaste produktfunktioner
+? Senaste ändringar
 ?
 ? - Uppdaterade webbplats
 ?

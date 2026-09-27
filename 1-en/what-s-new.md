@@ -1,10 +1,10 @@
 ---
 Title: What's new
 ---
-Learn everything about the latest changes.
+Learn everything about the latest changes and publications.
 
 ? {.wikiblock open=open}
-? Datenstrom Yellow latest product features.
+? Latest changes
 ?
 ? - Updated website
 ?
