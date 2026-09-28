@@ -74,6 +74,6 @@ You should use the following terms when writing about Datenstrom Yellow:
 * A `web editor` allows you to edit a website in a `web browser` - not "admin panel".
 * A `web server` is a computer software/hardware required to run a website.
 
-In summary, there are many styles, the point of a style guide is that we are consitent.
+In summary, there are many styles, the point of a style guide is that we are consistent.
 
 Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
