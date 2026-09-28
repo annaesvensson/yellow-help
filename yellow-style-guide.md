@@ -22,7 +22,7 @@ You should use the following guidelines for your own code:
 * Use a single-line comment to describe classes, methods and properties,  
   e.g. `// Return request information`.
 * Invest time in maintainability and refactoring, neglected design is expensive design.
-* Use the same patterns throughout your own code, if unsure be consistent.
+* Use the same styles and patterns throughout your own code, if unsure be consistent.
 * Keep methods relatively small, sweet and focused on one thing, if unsure do less.
 * Don't keep features/settings/files that are leftovers from experimentation.
 * Don't have features/settings/files just in case someone needs them later.
@@ -74,6 +74,6 @@ You should use the following terms when writing about Datenstrom Yellow:
 * A `web editor` allows you to edit a website in a `web browser` - not "admin panel".
 * A `web server` is a computer software/hardware required to run a website.
 
-In summary, there are many styles, the point of a style guide is that we have chosen one.
+In summary, there are many styles, the point of a style guide is that we are consitent.
 
 Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
