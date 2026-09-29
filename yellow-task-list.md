@@ -15,6 +15,7 @@ You can help us with open tasks:
 - [ ] Added maintenance extension, puts website in maintenance mode. Make it no longer experimental.
 - [ ] Added math extension, mathematical expressions with TeX/LaTeX. Make it no longer experimental.
 - [ ] Added SMTP extension, send emails to a remote server. Websites may not have a working mail system.
+- [ ] Updated API, added method onGenerate() for static websites. Post processing of static files.
 - [ ] Updated API, YellowPageCollection no longer derives from ArrayObject. ArrayObject interface is strange.
 - [x] Updated API, changed getAvailable() to enumerate(). Designers want to use non-flattened themes.
 - [x] Updated API, changed content element type from notice to general. Make it more intuitive.
@@ -27,7 +28,7 @@ You can help us with open tasks:
 - [ ] Updated edit extension toolbar, dropdown menus with keyboard navigation Give users more control.
 - [ ] Updated edit extension toolbar, buttons accessible on small screens. Disappearing buttons.
 - [ ] Updated edit extension toolbar, improved link and file selection dialog. Give users more control.
-- [ ] Updated feed extension, short URL for the feed.xml. Users don't like the long URL, it's ugly. 
+- [ ] Updated feed extension, short URL for a machine readable feed.xml. Some find long URL ugly. 
 - [x] Updated gallery extension, popup can be triggered by clicking on a link. Give users more flexibility.
 - [x] Updated help extension, style guide for experienced developers and designers. For more consistency.
 - [ ] Updated icon extension, SVG stack instead of WOFF font. Developers want consistent files formats.
@@ -38,7 +39,7 @@ You can help us with open tasks:
 - [x] Updated Markdown extension, syntax for general blocks has changed. Make it more intuitive.
 - [x] Updated Markdown extension, improved handling for empty table headers. Give designers more options for themes. 
 - [x] Updated Markdown extension, improved handling for long top domains. TLDs can have more than 3 characters.
-- [ ] Updated sitemap extension, short URL for the sitemap.xml. Users don't like the long URL, it's ugly.
+- [ ] Updated sitemap extension, short URL for a machine readable sitemap.xml. Some find long URL ugly.
 - [x] Updated system settings, ContactSiteEmail and EditSiteEmail have been replaced. Less troubleshooting.
 - [x] Updated themes, CSS for coloured block elements has changed. Make it more intuitive.
 - [x] Updated website, more information about what's new. Make it easy to find the latest changes.
