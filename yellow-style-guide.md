@@ -4,10 +4,11 @@ You should use the following guidelines for your own code:
 
 * Use consistent indentation with 4 spaces, no tabs.
 * Use double quotes for strings, not single quotes, e.g. `"Coffee is good for you"`.
+* Extension names are one word, singular, e.g. `Core`, `Edit`, `Fika`.
 * Class names use PascalCase, e.g. `YellowCore`, `YellowEdit`, `YellowFika`.
 * Method/function names use camelCase, e.g. `getRequestInformation`, `onLoad`.
 * Property/variable names use camelCase, e.g. `$yellow`, `$statusCode`, `$fileName`.
-* HTML/CSS related names use kebab-case, e.g. `yellow`, `edit-toolbar`, `fika-logo`.
+* HTML/CSS related names use kebab-case, e.g. `yellow`, `edit-toolbar`, `--link-active`.
 * File names use kebab-case, with the extension name used as a prefix,  
   e.g. `fika.php`, `fika.css`, `fika.js`, `fika-library.min.js`, `fika-stack.svg`.
 * Opening braces `{` are on the same line, closing braces `}` are placed on their own line.
@@ -20,7 +21,7 @@ You should use the following guidelines for your own code:
 * Start each source code file with a link to a website where the licence can be found,  
   e.g. `// Datenstrom Yellow, https://datenstrom.se/yellow/`.
 * Use a single-line comment to describe classes, methods and properties,  
-  e.g. `// Return request information`.
+  e.g. `// Handle initialisation`.
 * Invest time in maintainability and refactoring, neglected design is expensive design.
 * Use the same styles and patterns throughout your own code, if unsure be consistent.
 * Keep methods relatively small, sweet and focused on one thing, if unsure do less.
@@ -31,8 +32,8 @@ You should use the following guidelines for your own code:
 You should use the following guidelines for your own documentation:
 
 * Use Markdown for text formatting, use spaces instead of tabs.
-* Use appropriate titles, e.g. `How to make a small website`, `Ten principles for good design`
-* Extension documentation use titles with a version number, e.g.  `Core 1.0.1`.
+* Use appropriate titles, e.g. `How to make a small website`, `Ten principles for good design`.
+* Extension documentation have titles with extension name and version number, e.g.  `Core 1.0.1`.
 * Extension documentation have version numbers that begin with the product release number.
 * Extension documentation arrange headings in the following order, all are optional:  
   `How to...`  
@@ -48,7 +49,7 @@ You should use the following guidelines for your own documentation:
   `system/extensions/yellow-language.ini` = file with language settings  
   `system/extensions/yellow-user.ini` = file with user settings
 * File names  use kebab-case and do not contain any capital letters,  
-  e.g. `readme.md`, `how-to-make-a-small-website.md`, `ten-principles-for-good-design.md`
+  e.g. `readme.md`, `license.md`, `ten-principles-for-good-design.md`.
 * Use HTML at the beginning of a line to add an additional link target to a page,  
   e.g. `<a id="settings-files"></a>`.
 * Use HTML to add a screenshot suitable for Codeberg, GitHub and other platforms,  
