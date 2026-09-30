@@ -5,6 +5,7 @@ You should use the following guidelines for your own code:
 * Use consistent indentation with 4 spaces, no tabs.
 * Use double quotes for strings, not single quotes, e.g. `"Coffee is good for you"`.
 * Extension names are one word, singular, e.g. `Core`, `Edit`, `Fika`.
+* Version numbers start with the product release, e.g. `1.0.1`, `1.0.2`, `1.0.3`.
 * Class names use PascalCase, e.g. `YellowCore`, `YellowEdit`, `YellowFika`.
 * Method/function names use camelCase, e.g. `getRequestInformation`, `onLoad`.
 * Property/variable names use camelCase, e.g. `$yellow`, `$statusCode`, `$fileName`.
@@ -34,7 +35,6 @@ You should use the following guidelines for your own documentation:
 * Use Markdown for text formatting, use spaces instead of tabs.
 * Use appropriate titles, e.g. `How to make a small website`, `Ten principles for good design`.
 * Extension documentation have titles with extension name and version number, e.g.  `Core 1.0.1`.
-* Extension documentation have version numbers that begin with the product release number.
 * Extension documentation arrange headings in the following order, all are optional:  
   `How to...`  
   `Examples`  
