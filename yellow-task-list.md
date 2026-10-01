@@ -14,7 +14,8 @@ You can help us with open tasks:
 - [ ] Added maintenance extension, puts website in maintenance mode. Make it no longer experimental.
 - [ ] Added math extension, mathematical expressions with TeX/LaTeX. Make it no longer experimental.
 - [ ] Added SMTP extension, send emails to a remote server. Websites may not have a working mail system.
-- [ ] Updated API, added method onGenerate() for static websites. Developers need an event for static generation.
+- [x] Updated API, added method onGenerate() for static websites. Generate unusual files and URLs.
+- [x] Updated API, changed page->getBase() to page->getHomeLocation(). API should be understandable.
 - [ ] Updated API, YellowPageCollection no longer derives from ArrayObject. ArrayObject interface is strange.
 - [ ] Updated contact extension, message delivery with brute force protection. Spammers gonna spam.
 - [ ] Updated edit extension, autocomplete for links and tags. Users do less, software does more.
@@ -23,10 +24,11 @@ You can help us with open tasks:
 - [ ] Updated edit extension toolbar, dropdown menus with keyboard navigation Give users more control.
 - [ ] Updated edit extension toolbar, buttons accessible on small screens. Disappearing buttons.
 - [ ] Updated edit extension toolbar, improved link and file selection dialog. Give users more control.
-- [ ] Updated feed extension, short URL for a machine readable feed.xml. Some find long URL ugly. 
+- [x] Updated feed extension, short URL for a machine readable feed.xml. Some find long URL ugly. 
 - [ ] Updated icon extension, SVG stack instead of WOFF font. Developers want consistent files formats.
 - [ ] Updated image extension, different media files for light and dark mode. Give users more control.
-- [ ] Updated sitemap extension, short URL for a machine readable sitemap.xml. Some find long URL ugly.
+- [x] Updated sitemap extension, short URL for a machine readable sitemap.xml. Some find long URL ugly.
+- [x] Updated website, more information about product feedback. A new way of working together.
 - [ ] Updated website, Swedish translation for missing help pages. Better multi language documentation.
 - [ ] Tested performance with thousands of content files. For people who make large websites.
 
