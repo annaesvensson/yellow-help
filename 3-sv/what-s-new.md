@@ -6,7 +6,11 @@ Läs allt om de senaste ändringarna och publikationerna.
 ? {.wikiblock open=open}
 ? Senaste ändringar
 ?
-? - Uppdaterade webbplats
+? - Uppdaterade API, tillagt metod onGenerate() för statiska webbplatser
+? - Uppdaterade API, ändrat page->getBase() till page->getHomeLocation()
+? - Uppdaterade feed-tillägg, kort URL för en maskinläsbar feed.xml
+? - Uppdaterade sitemap-tillägg, kort URL för en maskinläsbar sitemap.xml
+? - Uppdaterade webbplats, mer information om produktfeedback
 ?
 ? [Se kodhistorik](https://github.com/datenstrom/yellow/commits/main/) och [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/main/).
 
@@ -51,7 +55,7 @@ Läs allt om de senaste ändringarna och publikationerna.
 ? - Uppdaterade core-tillägg, stöd för sourcemap-filer har lagts till
 ? - Uppdaterade feed-tillägg, stöd för fler filter har lagts till
 ? - Uppdaterade Markdown-tillägg, bättre händelsehantering
-? - Uppdaterade webbplats, mer information om tillgängliga tillägg
+? - Uppdaterade webbplats, mer information om tillägg
 ?
 ? [Se kodhistorik](https://github.com/datenstrom/yellow/commits/3f6cc2e/) och [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/b6877ff/).
 

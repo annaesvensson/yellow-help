@@ -6,7 +6,11 @@ Erfahre alles über die neusten Änderungen und Veröffentlichungen.
 ? {.wikiblock open=open}
 ? Neuste Änderungen
 ?
-? - Webseite aktualisiert
+? - API aktualisiert, Methode onGenerate() für statische Webseiten hinzugefügt
+? - API aktualisiert, page->getBase() zu page->getHomeLocation() geändert
+? - Feed-Erweiterung aktualisiert, kurze URL für eine maschinenlesbare feed.xml
+? - Sitemap-Erweiterung aktualisiert, kurze URL für eine maschinenlesbare sitemap.xml
+? - Webseite aktualisiert, mehr Informationen zu Produktfeedback
 ? 
 ? [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/main/) und [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/main/).
 
@@ -14,7 +18,7 @@ Erfahre alles über die neusten Änderungen und Veröffentlichungen.
 ? Datenstrom Yellow 1.0 - veröffentlicht am 25.09.2026
 ?
 ? - Include-Erweiterung hinzugefügt, ermöglicht das Einbinden von Seiten in Markdown
-? - API aktualisiert, getAvailable() in enumerate() geändert
+? - API aktualisiert, getAvailable() zu enumerate() geändert
 ? - API aktualisiert, Content-Element-Typ von notice zu general geändert
 ? - Core-Erweiterung aktualisiert, Unterstützung für Webmanifest-Dateien hinzugefügt
 ? - Edit-Erweiterung aktualisiert, Upload mit verschiedenen JPEG-Dateinamenerweiterungen
@@ -44,14 +48,14 @@ Erfahre alles über die neusten Änderungen und Veröffentlichungen.
 ? - API aktualisiert, coreAssetLocation für virtuell zugeordnete Systemdateien hinzugefügt
 ? - API aktualisiert, coreThemeLocation durch coreAssetLocation ersetzt
 ? - API aktualisiert, coreExtensionLocation durch coreAssetLocation ersetzt
-? - API aktualisiert, onParseContentShortcut() in onParseContentElement() geändert
-? - API aktualisiert, parseContentShortcut() in parseContentElement() geändert
+? - API aktualisiert, onParseContentShortcut() zu onParseContentElement() geändert
+? - API aktualisiert, parseContentShortcut() zu parseContentElement() geändert
 ? - API aktualisiert, Abwärtskompatibilität mit der alten API wird demnächst entfernt
 ? - Core-Erweiterung aktualisiert, virtueller Speicherort für Layouts/Themes/Workers geändert
 ? - Core-Erweiterung aktualisiert, Unterstützung für Sourcemap-Dateien hinzugefügt
 ? - Feed-Erweiterung aktualisiert, Unterstützung für weitere Filter hinzugefügt
 ? - Markdown-Erweiterung aktualisiert, bessere Ereignisbehandlung
-? - Webseite aktualisiert, mehr Informationen zu verfügbaren Erweiterungen
+? - Webseite aktualisiert, mehr Informationen zu Erweiterungen
 ?
 ? [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/3f6cc2e/) und [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/b6877ff/).
 

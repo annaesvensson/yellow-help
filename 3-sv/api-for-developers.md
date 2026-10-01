@@ -645,7 +645,7 @@ Layoutfil for att visa katalog:
 
 Klassen `YellowPage` ger tillgång till en sidan och dess [sidinställningar](how-to-change-the-system#sidinställningar). Följande metoder är tillgängliga:
 
-`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContentHtml` `getContentRaw` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtraHtml` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
+`error` `get` `getChildren` `getChildrenRecursive` `getContentHtml` `getContentRaw` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtraHtml` `getHeader` `getHomeLocation` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
 
 ---
 
@@ -711,11 +711,11 @@ Returnera delad sida
 `page->getUrl($canonicalUrl = false): string`  
 Returnera sidans URL
 
-`page->getBase($multiLanguage = false): string`  
-Returnera sidans bas
-
 `page->getLocation($absoluteLocation = false): string`  
 Returnera sidans plats
+
+`page->getHomeLocation($absoluteLocation = false): string`  
+Returnera hemsidans plats
 
 `page->getRequest($key): string`  
 Returnera requestargument av sidan
@@ -979,9 +979,9 @@ En webbplats består av kärnan och andra tillägg. I början laddas alla tillä
       ▼                       ▼                      ▼                  ▼
   onParseMetaData         onEditContentFile      onCommand          onUpdate
   onParseContentRaw       onEditMediaFile        onCommandHelp      onEnumerate
-  onParseContentElement   onEditSystemFile           │              onMail
-  onParseContentHtml      onEditUserAccount          │              onLog
-  onParsePageLayout           │                      │                  │
+  onParseContentElement   onEditSystemFile           │              onGenerate
+  onParseContentHtml      onEditUserAccount          │              onMail
+  onParsePageLayout           │                      │              onLog
   onParsePageExtra            │                      │                  │
   onParsePageOutput           │                      │                  │
       │                       │                      │                  │
@@ -1221,21 +1221,27 @@ class YellowExample {
 
 Yellow update händelser meddelar när information uppdateras. Följande händelser är tillgängliga:
 
-`onEnumerate` `onLog` `onMail` `onUpdate`
+`onEnumerate` `onGenerate` `onLog` `onMail` `onUpdate`
 
 Följande uppdateringsåtgärder är tillgängliga:
 
-`clean` = städa upp filer för statisk webbplats  
+`clean` = rensningshändelse för alla tillägg  
 `daily` = daglig händelse för alla tillägg  
 `install` = tillägget är installerat  
 `uninstall` = tillägget är avinstallerat  
 `update` = tillägget är uppdaterat  
+`patch` = patchar appliceras efter en uppdatering  
 
 Följande uppräkningsåtgärder är tillgängliga:
 
 `email` = tillgängliga värden för en email i användarinställningar  
 `language` = tillgängliga värden för ett språk i språkinställningar  
 `theme` = tillgängliga värden för ett tema i systeminställningar  
+
+Följande genereringsåtgärder är tillgängliga:
+
+`generate` = statisk webbplats eller statisk cache genereras  
+`check` = länkar kontrolleras  
 
 ---
 
@@ -1246,6 +1252,9 @@ Hantera uppdatering
 
 `public function onEnumerate($action, $context)`  
 Hantera uppräkning
+
+`public function onGenerate($action, $path)`  
+Hantera statisk generering
 
 `public function onMail($action, $headers, $message)`  
 Hantera email

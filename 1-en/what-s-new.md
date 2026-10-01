@@ -6,7 +6,11 @@ Learn everything about the latest changes and publications.
 ? {.wikiblock open=open}
 ? Latest changes
 ?
-? - Updated website
+? - Updated API, added method onGenerate() for static websites
+? - Updated API, changed page->getBase() to page->getHomeLocation()
+? - Updated feed extension, short URL for a machine readable feed.xml
+? - Updated sitemap extension, short URL for a machine readable sitemap.xml
+? - Updated website, more information about product feedback
 ?
 ? [See code history](https://github.com/datenstrom/yellow/commits/main/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/).
 
@@ -51,7 +55,7 @@ Learn everything about the latest changes and publications.
 ? - Updated core extension, support for sourcemap files was added
 ? - Updated feed extension, support for more filters was added
 ? - Updated Markdown extension, better event handling
-? - Updated website, more information about available extensions
+? - Updated website, more information about extensions
 ?
 ? [See code history](https://github.com/datenstrom/yellow/commits/3f6cc2e/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/b6877ff/).
 

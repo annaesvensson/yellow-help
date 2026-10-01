@@ -645,7 +645,7 @@ Layoutdatei um Verzeichnis anzuzeigen:
 
 Die Klasse `YellowPage` gibt Zugang zur einer Seite und ihren [Seiteneinstellungen](how-to-change-the-system#seiteneinstellungen). Die folgenden Methoden sind verfügbar:
 
-`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContentHtml` `getContentRaw` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtraHtml` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
+`error` `get` `getChildren` `getChildrenRecursive` `getContentHtml` `getContentRaw` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtraHtml` `getHeader` `getHomeLocation` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
 
 ---
 
@@ -711,11 +711,11 @@ Hole eine geteilte Seite
 `page->getUrl($canonicalUrl = false): string`  
 Hole die URL der Seite 
 
-`page->getBase($multiLanguage = false): string`  
-Hole die Basis der Seite
-
 `page->getLocation($absoluteLocation = false): string`  
 Hole den Ort der Seite
+
+`page->getHomeLocation($absoluteLocation = false): string`  
+Hole den Ort der Startseite
 
 `page->getRequest($key): string`  
 Hole das angefragte Argument der Seite
@@ -979,9 +979,9 @@ Eine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden a
       ▼                       ▼                      ▼                  ▼
   onParseMetaData         onEditContentFile      onCommand          onUpdate
   onParseContentRaw       onEditMediaFile        onCommandHelp      onEnumerate
-  onParseContentElement   onEditSystemFile           │              onMail
-  onParseContentHtml      onEditUserAccount          │              onLog
-  onParsePageLayout           │                      │                  │
+  onParseContentElement   onEditSystemFile           │              onGenerate
+  onParseContentHtml      onEditUserAccount          │              onMail
+  onParsePageLayout           │                      │              onLog
   onParsePageExtra            │                      │                  │
   onParsePageOutput           │                      │                  │
       │                       │                      │                  │
@@ -1223,21 +1223,27 @@ class YellowExample {
 
 Yellow-Update-Ereignisse unterrichten wenn Informationen aktualisiert werden. Die folgenden Ereignisse sind verfügbar:
 
-`onEnumerate` `onLog` `onMail` `onUpdate`
+`onEnumerate` `onGenerate` `onLog` `onMail` `onUpdate`
 
 Die folgenden Aktualisierungs-Aktionen sind verfügbar:
 
-`clean` = Dateien für statische Webseite aufräumen  
+`clean` = Aufräum-Ereignis für alle Erweiterungen  
 `daily` = tägliches Ereignis für alle Erweiterungen  
 `install` = Erweiterung wird installiert  
 `uninstall` = Erweiterung wird deinstalliert  
 `update` = Erweiterung wird aktualisiert  
+`patch` = Patch wird angewendet  
 
 Die folgenden Auflistungs-Aktionen sind verfügbar:
 
 `email` = mögliche Werte für eine Email in Benutzereinstellungen  
 `language` = mögliche Werte für eine Sprache in Spracheinstellungen  
 `theme` = mögliche Werte für ein Theme in Systemeinstellungen  
+
+Die folgenden Generierungs-Aktionen sind verfügbar:
+
+`generate` = statische Webseite oder statischer Zwischenspeicher wird erstellt  
+`check` = statische Webseite wird erstellt um Links zu überprüfen  
 
 ---
 
@@ -1248,6 +1254,9 @@ Verarbeite Aktualisierung
 
 `public function onEnumerate($action, $context)`  
 Verarbeite Auflistung
+
+`public function onGenerate($action, $path)`  
+Verarbeite statische Generierung
 
 `public function onMail($action, $headers, $message)`  
 Verarbeite E-Mail

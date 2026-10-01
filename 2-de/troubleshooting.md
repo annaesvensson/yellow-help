@@ -16,7 +16,7 @@ Erfahre wie man Probleme auf einer Webseite behebt.
 ? 
 ? Installiere die fehlende PHP-Erweiterung auf deinem Webserver. Du benötigst `curl gd mbstring zip`. Denke daran dass der Webserver und die Befehlszeile möglicherweise unterschiedliche PHP-Versionen verwenden. Es wird empfohlen die gleiche PHP-Version zu verwenden. Sobald die Webseite die notwendigen PHP-Erweiterungen findet, sollte das Problem behoben sein.
 
-? Datenstrom Yellow requires complete upload
+? Datenstrom Yellow requires complete installation
 ? 
 ? Kopiere nochmal alle mitgelieferten Dateien ins Installations-Verzeichnis. Einschliesslich der `.htaccess`-Datei. Überprüfe ob deine FTP-Anwendung beim Hochladen eine Fehlermeldung anzeigt. Es passiert manchmal dass die Datenübertragung beim Hochladen unterbrochen wurde. Nachdem alle Dateien ins Installations-Verzeichnis kopiert wurden, sollte das Problem behoben sein.
 
@@ -31,6 +31,10 @@ Erfahre wie man Probleme auf einer Webseite behebt.
 ? Can't write file
 ? 
 ? Die Datei kann nicht ins Dateisystem geschrieben werde. Führe den Befehl `chmod -R a+rw *` im Installations-Verzeichnis aus. Du kannst auch deine FTP-Anwendung verwenden, um allen Dateien Schreibrechte zu geben. Manchmal ist eine Anwendung für Datei-Synchronisation nicht richtig konfiguriert. Wende dich an den Webmaster, falls du weiterhin Probleme mit dem Dateisystem hast.
+
+? Can't upload file
+? 
+? Die Datei kann nicht hochgeladen werden. Das passiert in der Regel wenn eine Datei zu gross ist, ein Dateiformat nicht unterstützt wird oder du nicht die notwendigen Benutzer-Zugriffsrechte besitzt. Die Fehlermeldung sagt dir den genauen Grund, warum die Datei nicht hochgeladen werden kann. Wende dich an den Webmaster, falls diese Fehlermeldung ständig angezeigt wird.
 
 ? Can't download file
 ?
@@ -52,9 +56,9 @@ Du benötigst einen Webserver der HTTP-Anfragen an Datenstrom Yellow weiterleite
 
 Du benötigst einen Mailserver um E-Mails verschicken zu können. Wende dich am besten an deinen Webhosting-Anbieter und frage nach ob Sendmail aktiviert ist. Nachdem du überprüft hast dass Sendmail aktiviert ist, besteht die nächste Möglichkeit darin die E-Mail für ausgehende Nachrichten zu konfigurieren. Öffne die Datei `system/extensions/yellow-system.ini` und ändere `From`. Konfiguriere eine E-Mail-Adresse mit deinem Domainnamen, beispielsweise `noreply@example.com`. Manchmal funktioniert die voreingestellte E-Mail-Adresse nicht oder der Mailserver ist falsch konfiguriert. [Weitere Informationen zu Systemeinstellungen](how-to-change-the-system#systemeinstellungen).
 
-## Probleme mit installierten Erweiterungen
+## Probleme mit Erweiterungen
 
-[Du kannst einen Fehler melden oder Produktfeedback geben](https://datenstrom.se/de/support/) falls etwas nicht funktionieren sollte. Erkläre wie man den Fehler reproduziert. Schreibe eine Schritt-für-Schritt-Anleitung auf wie man den Fehler reproduziert, gebe detaillierte Informationen an und füge die aktuelle Logdatei hinzu. Es wird empfohlen die neuste Produktversion zu verwenden, um zu vermeiden einen Fehler zu melden der bereits behoben wurde.
+[Du kannst Produktfeedback geben oder einen Fehler melden](https://datenstrom.se/de/support/), falls etwas nicht wie erwartet funktionieren sollte. Erkläre wie man den Fehler reproduziert. Schreibe eine Schritt-für-Schritt-Anleitung auf wie man den Fehler reproduziert, gebe detaillierte Informationen an und füge die vollständige Logdatei hinzu. Es wird empfohlen die neuste Produktversion zu verwenden, um zu vermeiden einen Fehler zu melden der bereits behoben wurde. Denke daran dass nur Erweiterungen die auf der offiziellen Webseite verfügbar sind in den Aktualisierungsmechanismus einbezogen werden.
 
 Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Es werden dann zusätzliche Informationen auf dem Bildschirm und in der Browser-Konsole angezeigt. Abhängig vom Debug-Modus werden mehr oder weniger Informationen angezeigt. [Weitere Informationen zum Debuggen](api-for-developers#debuggen).
 

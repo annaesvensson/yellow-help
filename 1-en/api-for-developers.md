@@ -645,7 +645,7 @@ Layout file for showing directory:
 
 The class `YellowPage` gives access to a page and its [page settings](how-to-change-the-system#page-settings). The following methods are available:
 
-`error` `get` `getBase` `getChildren` `getChildrenRecursive` `getContentHtml` `getContentRaw` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtraHtml` `getHeader` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
+`error` `get` `getChildren` `getChildrenRecursive` `getContentHtml` `getContentRaw` `getDate` `getDateFormatted` `getDateFormattedHtml` `getDateHtml` `getDateRelative` `getDateRelativeHtml` `getExtraHtml` `getHeader` `getHomeLocation` `getHtml` `getLastModified` `getLocation` `getModified` `getPage` `getPages` `getParent` `getParentTop` `getRequest` `getRequestHtml` `getSiblings` `getStatusCode` `getUrl` `isActive` `isAvailable` `isCacheable` `isError` `isExisting` `isHeader` `isPage` `isRequest` `isVisible` `set` `status`
 
 ---
 
@@ -711,11 +711,11 @@ Return shared page
 `page->getUrl($canonicalUrl = false): string`  
 Return page URL
 
-`page->getBase($multiLanguage = false): string`  
-Return page base
-
 `page->getLocation($absoluteLocation = false): string`  
 Return page location
+
+`page->getHomeLocation($absoluteLocation = false): string`  
+Return home page location
 
 `page->getRequest($key): string`  
 Return page request argument
@@ -979,9 +979,9 @@ A website consists of the core and other extensions. At the beginning, all exten
       ▼                       ▼                      ▼                  ▼
   onParseMetaData         onEditContentFile      onCommand          onUpdate
   onParseContentRaw       onEditMediaFile        onCommandHelp      onEnumerate
-  onParseContentElement   onEditSystemFile           │              onMail
-  onParseContentHtml      onEditUserAccount          │              onLog
-  onParsePageLayout           │                      │                  │
+  onParseContentElement   onEditSystemFile           │              onGenerate
+  onParseContentHtml      onEditUserAccount          │              onMail
+  onParsePageLayout           │                      │              onLog
   onParsePageExtra            │                      │                  │
   onParsePageOutput           │                      │                  │
       │                       │                      │                  │
@@ -1221,21 +1221,27 @@ class YellowExample {
 
 Yellow update events notify when information is updated. The following events are available:
 
-`onEnumerate` `onLog` `onMail` `onUpdate`
+`onEnumerate` `onGenerate` `onLog` `onMail` `onUpdate`
 
 The following update actions are available:
 
-`clean` = clean up files for static website  
+`clean` = clean up event for all extensions  
 `daily` = daily event for all extensions  
 `install` = extension is installed  
 `uninstall` = extension is uninstalled  
 `update` = extension is updated  
+`patch` = patch is applied  
 
 The following enumerate actions are available:
 
 `email` = possible values for an email in user settings  
 `language` = possible values for a language in language settings  
 `theme` = possible values for a theme in system settings  
+
+The following generate actions are available:
+
+`generate` = static website or static cache is generated  
+`check` = static website is generated to check links
 
 ---
 
@@ -1246,6 +1252,9 @@ Handle update
 
 `public function onEnumerate($action, $context)`  
 Handle enumeration
+
+`public function onGenerate($action, $path)`  
+Handle static generation
 
 `public function onMail($action, $headers, $message)`  
 Handle email

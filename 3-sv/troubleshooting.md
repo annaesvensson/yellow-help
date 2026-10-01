@@ -16,7 +16,7 @@ Läs hur man löser problem på en webbplats.
 ? 
 ? Installera saknade PHP-tillägget på din webbserver. Du behöver `curl gd mbstring zip`. Tänk på att webbservern och kommandoraden kan använda olika PHP-versioner. Det rekommenderas att använda samma PHP-versionen. Så snart webbplatsen hittar de nödvändiga PHP-tilläggen bör problemet lösas.
 
-? Datenstrom Yellow requires complete upload
+? Datenstrom Yellow requires complete installation
 ? 
 ? Kopiera igen alla medföljande filer till installationsmappen. Inklusive filen `.htaccess`. Kontrollera om din FTP-applikation visar ett felmeddelande under uppladdningen. Ibland händer det att dataöverföringen avbröts under uppladdningen. Efter att alla filer har kopierats till installationsmappen bör problemet lösas.
 
@@ -31,6 +31,10 @@ Läs hur man löser problem på en webbplats.
 ? Can't write file
 ? 
 ? Filen kan inte skrivas till filsystemet. Kör kommandot `chmod -R a+rw *` i installationsmappen. Du kan också använda din FTP-applikation för att ge skrivbehörighet till alla filer. Ibland är en applikation för filsynkronisering felaktigt konfigurerat. Kontakta webbmastern om du fortfarande har problem med filsystemet.
+
+? Can't upload file
+? 
+? Filen kan inte laddas upp. Detta händer vanligtvis när en fil är för stor, ett filformat inte stöds eller du inte har nödvändiga användarrättigheter. Felmeddelandet berättar exakt varför filen inte kan laddas upp. Kontakta webbmastern om detta felmeddelande visas hela tiden.
 
 ? Can't download file
 ? 
@@ -52,9 +56,9 @@ Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstr
 
 Du behöver en e-postserver för att kunna skicka e-post. Det är bäst att kontakta din webbhotell och fråga om sendmail är aktiverat. När du har bekräftat att sendmail är aktiverat är nästa steg att konfigurera email för utgående meddelanden. Öppna filen `system/extensions/yellow-system.ini` och ändra `From`. Konfigurera en e-postadress med ditt domännamn, till exempel `noreply@example.com.` Ibland fungerar inte standard-e-postadressen eller så är e-postservern felkonfigurerad. [Läs mer om systeminställningar](how-to-change-the-system#systeminställningar).
 
-## Problem med installerade tillägg
+## Problem med tillägg
 
-[Du kan rapportera ett fel eller skriva produktfeedback](https://datenstrom.se/sv/support/) om något inte fungerar. Förklara hur man återskapar felet. Skriv ner steg-för-steg-instruktioner hur man återskapar felet, ange detaljerad information och bifoga aktuella loggfilen. Det rekommenderas att använda den senaste produktversionen, för att undvika att rapportera ett fel som redan har åtgärdats.
+[Du kan skriva produktfeedback eller rapportera ett fel](https://datenstrom.se/sv/support/), om något inte fungerar som förväntat. Förklara hur man återskapar felet. Skriv ner steg-för-steg-instruktioner hur man återskapar felet, ange detaljerad information och bifoga hela loggfilen. Det rekommenderas att använda den senaste produktversionen, för att undvika att rapportera ett fel som redan har åtgärdats. Tänk på att endast tillägg som är tillgängliga på den officiella webbplatsen kommer att ingå i uppdateringsmekanismen.
 
 Du kan använda felsökningsläget för att undersöka orsaken till ett problem eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Ytterligare information kommer att visas på skärmen och i webbläsarkonsolen. Beroende på felsökningsläget visas mer eller mindre information. [Läs mer om debugging](api-for-developers#debugging).
 
