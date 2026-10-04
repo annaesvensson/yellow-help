@@ -615,7 +615,7 @@ Erstelle eine Textbeschreibung, mit oder ohne HTML
 `toolbox->enumerate($action, $context = ""): array`  
 Hole mögliche Werte
 
-`toolbox->validate($action, $status, $data): string`  
+`toolbox->validate($action, $data): string`  
 Validiere Eingabedaten
 
 `toolbox->mail($action, $headers, $message): bool`  
@@ -1258,7 +1258,7 @@ Verarbeite statische Generierung
 `onEnumerate($action, $context): array|string|null`  
 Verarbeite Auflistung
 
-`onValidate($action, $status, $data): string|null`  
+`onValidate($action, $data): string|null`  
 Verarbeite Validierung
 
 `onMail($action, $headers, $message): int`  

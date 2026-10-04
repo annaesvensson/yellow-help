@@ -615,7 +615,7 @@ Skapa textbeskrivning, med eller utan HTML
 `toolbox->enumerate($action, $context = ""): array`  
 Returnera tillgängliga värden
 
-`toolbox->validate($action, $status, $data): string`  
+`toolbox->validate($action, $data): string`  
 Validera indata
 
 `toolbox->mail($action, $headers, $message): bool`  
@@ -1256,7 +1256,7 @@ Hantera statisk generering
 `onEnumerate($action, $context): array|string|null`  
 Hantera uppräkning
 
-`onValidate($action, $status, $data): string|null`  
+`onValidate($action, $data): string|null`  
 Hantera validering
 
 `onMail($action, $headers, $message): int`  

@@ -615,7 +615,7 @@ Create text description, with or without HTML
 `toolbox->enumerate($action, $context = ""): array`  
 Return possible values
 
-`toolbox->validate($action, $status, $data): string`  
+`toolbox->validate($action, $data): string`  
 Validate input data
 
 `toolbox->mail($action, $headers, $message): bool`  
@@ -1256,7 +1256,7 @@ Handle static generation
 `onEnumerate($action, $context): array|string|null`  
 Handle enumeration
 
-`onValidate($action, $status, $data): string|null`  
+`onValidate($action, $data): string|null`  
 Handle validation
 
 `onMail($action, $headers, $message): int`  
