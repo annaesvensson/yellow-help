@@ -615,6 +615,9 @@ Skapa textbeskrivning, med eller utan HTML
 `toolbox->enumerate($action, $context = ""): array`  
 Returnera tillgängliga värden
 
+`toolbox->validate($action, $status, $data): string`  
+Validera indata
+
 `toolbox->mail($action, $headers, $message): bool`  
 Skicka emailmeddelande
 
@@ -978,11 +981,11 @@ En webbplats består av kärnan och andra tillägg. I början laddas alla tillä
       │                       │                      │                  │
       ▼                       ▼                      ▼                  ▼
   onParseMetaData         onEditContentFile      onCommand          onUpdate
-  onParseContentRaw       onEditMediaFile        onCommandHelp      onEnumerate
-  onParseContentElement   onEditSystemFile           │              onGenerate
-  onParseContentHtml      onEditUserAccount          │              onMail
-  onParsePageLayout           │                      │              onLog
-  onParsePageExtra            │                      │                  │
+  onParseContentRaw       onEditMediaFile        onCommandHelp      onGenerate
+  onParseContentElement   onEditSystemFile           │              onEnumerate
+  onParseContentHtml          │                      │              onValidate
+  onParsePageLayout           │                      │              onMail
+  onParsePageExtra            │                      │              onLog
   onParsePageOutput           │                      │                  │
       │                       │                      │                  │
       ▼                       │                      │                  ▼
@@ -1007,16 +1010,16 @@ Yellow core händelser meddelar när ett tillstånd ändras. Följande händelse
 
 Beskrivning av händelser och argument:
 
-`public function onLoad($yellow)`  
+`onLoad($yellow): void`  
 Hantera initialisering
 
-`public function onStartup()`  
+`onStartup(): void`  
 Hantera start
 
-`public function onRequest($scheme, $address, $base, $location, $fileName)`  
+`onRequest($scheme, $address, $base, $location, $fileName): int`  
 Hantera begäran
 
-`public function onShutdown()`  
+`onShutdown(): void`  
 Hantera avstängningen
 
 ---
@@ -1057,25 +1060,25 @@ Följande content-element-typer är tillgängliga:
 
 Beskrivning av händelser och argument:
 
-`public function onParseMetaData($page)`  
+`onParseMetaData($page): void`  
 Hantera metadata av en sida
 
-`public function onParseContentRaw($page, $text)`  
+`onParseContentRaw($page, $text): string`  
 Hantera sidinnehåll i råformat
 
-`public function onParseContentElement($page, $name, $text, $attributes, $type)`  
+`onParseContentElement($page, $name, $text, $attributes, $type): string|null`  
 Hantera sidinnehåll för ett element
 
-`public function onParseContentHtml($page, $text)`  
+`onParseContentHtml($page, $text): string|null`  
 Hantera sidinnehåll i HTML-format
 
-`public function onParsePageLayout($page, $name)`  
+`onParsePageLayout($page, $name): void`  
 Hantera sidlayout
 
-`public function onParsePageExtra($page, $name)`  
+`onParsePageExtra($page, $name): string|null`  
 Hantera extra data för sidan
 
-`public function onParsePageOutput($page, $text)`  
+`onParsePageOutput($page, $text): string|null`  
 Hantera output data för sidan
 
 ---
@@ -1111,7 +1114,7 @@ class YellowExample {
 
 Yellow edit händelser meddelar när en fil redigeras. Följande händelser är tillgängliga:
 
-`onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount`
+`onEditContentFile` `onEditMediaFile` `onEditSystemFile`
 
 Följande innehållsåtgärder är tillgängliga:
 
@@ -1126,17 +1129,14 @@ Följande innehållsåtgärder är tillgängliga:
 
 Beskrivning av händelser och argument:
 
-`public function onEditContentFile($page, $action, $email)`  
+`onEditContentFile($page, $action, $email): void`  
 Hantera innehållsfiländringar
 
-`public function onEditMediaFile($file, $action, $email)`  
+`onEditMediaFile($file, $action, $email): void`  
 Hantera mediefiländringar
 
-`public function onEditSystemFile($file, $action, $email)`  
+`onEditSystemFile($file, $action, $email): void`  
 Hantera systemfiländringar
-
-`public function onEditUserAccount($action, $email, $password)`  
-Hantera ändringar av användarkonton
 
 ---
 
@@ -1176,10 +1176,10 @@ Yellow command händelser meddelar när ett kommando utförs. Följande händels
 
 Beskrivning av händelser och argument:
 
-`public function onCommand($command, $text)`  
+`onCommand($command, $text): int`  
 Hantera kommandon
 
-`public function onCommandHelp()`  
+`onCommandHelp(): array|string|null`  
 Hantera hjälp för kommandon
 
 ---
@@ -1221,7 +1221,7 @@ class YellowExample {
 
 Yellow update händelser meddelar när information uppdateras. Följande händelser är tillgängliga:
 
-`onEnumerate` `onGenerate` `onLog` `onMail` `onUpdate`
+`onEnumerate` `onGenerate` `onLog` `onMail` `onUpdate` `onValidate`
 
 Följande uppdateringsåtgärder är tillgängliga:
 
@@ -1232,34 +1232,37 @@ Följande uppdateringsåtgärder är tillgängliga:
 `update` = tillägget är uppdaterat  
 `patch` = patchar appliceras efter en uppdatering  
 
+Följande genereringsåtgärder är tillgängliga:
+
+`generate` = statisk webbplats eller statisk cache genereras  
+`check` = länkar kontrolleras  
+
 Följande uppräkningsåtgärder är tillgängliga:
 
 `email` = tillgängliga värden för en email i användarinställningar  
 `language` = tillgängliga värden för ett språk i språkinställningar  
 `theme` = tillgängliga värden för ett tema i systeminställningar  
 
-Följande genereringsåtgärder är tillgängliga:
-
-`generate` = statisk webbplats eller statisk cache genereras  
-`check` = länkar kontrolleras  
-
 ---
 
 Beskrivning av händelser och argument:
 
-`public function onUpdate($action)`  
+`onUpdate($action): void`  
 Hantera uppdatering
 
-`public function onEnumerate($action, $context)`  
-Hantera uppräkning
-
-`public function onGenerate($action, $path)`  
+`onGenerate($action, $path, $location): int`  
 Hantera statisk generering
 
-`public function onMail($action, $headers, $message)`  
+`onEnumerate($action, $context): array|string|null`  
+Hantera uppräkning
+
+`onValidate($action, $status, $data): string|null`  
+Hantera validering
+
+`onMail($action, $headers, $message): int`  
 Hantera email
 
-`public function onLog($action, $message)`  
+`onLog($action, $message): int`  
 Hantera loggning
 
 ---

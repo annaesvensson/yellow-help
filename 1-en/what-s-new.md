@@ -7,6 +7,7 @@ Learn everything about the latest changes and publications.
 ? Latest changes
 ?
 ? - Updated API, added method onGenerate() for static websites
+? - Updated API, added method onValidate() for input validation
 ? - Updated API, changed page->getBase() to page->getHomeLocation()
 ? - Updated feed extension, short URL for a machine readable feed.xml
 ? - Updated sitemap extension, short URL for a machine readable sitemap.xml

@@ -615,6 +615,9 @@ Create text description, with or without HTML
 `toolbox->enumerate($action, $context = ""): array`  
 Return possible values
 
+`toolbox->validate($action, $status, $data): string`  
+Validate input data
+
 `toolbox->mail($action, $headers, $message): bool`  
 Send email message
 
@@ -978,11 +981,11 @@ A website consists of the core and other extensions. At the beginning, all exten
       │                       │                      │                  │
       ▼                       ▼                      ▼                  ▼
   onParseMetaData         onEditContentFile      onCommand          onUpdate
-  onParseContentRaw       onEditMediaFile        onCommandHelp      onEnumerate
-  onParseContentElement   onEditSystemFile           │              onGenerate
-  onParseContentHtml      onEditUserAccount          │              onMail
-  onParsePageLayout           │                      │              onLog
-  onParsePageExtra            │                      │                  │
+  onParseContentRaw       onEditMediaFile        onCommandHelp      onGenerate
+  onParseContentElement   onEditSystemFile           │              onEnumerate
+  onParseContentHtml          │                      │              onValidate
+  onParsePageLayout           │                      │              onMail
+  onParsePageExtra            │                      │              onLog
   onParsePageOutput           │                      │                  │
       │                       │                      │                  │
       ▼                       │                      │                  ▼
@@ -1007,16 +1010,16 @@ Yellow core events notify when a state has changed. The following events are ava
 
 Description of events and arguments:
 
-`public function onLoad($yellow)`  
+`onLoad($yellow): void`  
 Handle initialisation
 
-`public function onStartup()`  
+`onStartup(): void`  
 Handle startup
 
-`public function onRequest($scheme, $address, $base, $location, $fileName)`  
+`onRequest($scheme, $address, $base, $location, $fileName): int`  
 Handle request
 
-`public function onShutdown()`  
+`onShutdown(): void`  
 Handle shutdown
 
 ---
@@ -1057,25 +1060,25 @@ The following content element types are available:
 
 Description of events and arguments:
 
-`public function onParseMetaData($page)`  
+`onParseMetaData($page): void`  
 Handle page meta data
 
-`public function onParseContentRaw($page, $text)`  
+`onParseContentRaw($page, $text): string`  
 Handle page content in raw format
 
-`public function onParseContentElement($page, $name, $text, $attributes, $type)`  
+`onParseContentElement($page, $name, $text, $attributes, $type): string|null`  
 Handle page content element
 
-`public function onParseContentHtml($page, $text)`  
+`onParseContentHtml($page, $text): string|null`  
 Handle page content in HTML format
 
-`public function onParsePageLayout($page, $name)`  
+`onParsePageLayout($page, $name): void`  
 Handle page layout
 
-`public function onParsePageExtra($page, $name)`  
+`onParsePageExtra($page, $name): string|null`  
 Handle page extra data
 
-`public function onParsePageOutput($page, $text)`  
+`onParsePageOutput($page, $text): string|null`  
 Handle page output data
 
 ---
@@ -1111,7 +1114,7 @@ class YellowExample {
 
 Yellow edit events notify when a file is edited. The following events are available:
 
-`onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount`
+`onEditContentFile` `onEditMediaFile` `onEditSystemFile`
 
 The following content actions are available:
 
@@ -1126,17 +1129,14 @@ The following content actions are available:
 
 Description of events and arguments:
 
-`public function onEditContentFile($page, $action, $email)`  
+`onEditContentFile($page, $action, $email): void`  
 Handle content file changes
 
-`public function onEditMediaFile($file, $action, $email)`  
+`onEditMediaFile($file, $action, $email): void`  
 Handle media file changes
 
-`public function onEditSystemFile($file, $action, $email)`  
+`onEditSystemFile($file, $action, $email): void`  
 Handle system file changes
-
-`public function onEditUserAccount($action, $email, $password)`  
-Handle user account changes
 
 ---
 
@@ -1176,10 +1176,10 @@ Yellow command events notify when a command is executed. The following events ar
 
 Description of events and arguments:
 
-`public function onCommand($command, $text)`  
+`onCommand($command, $text): int`  
 Handle command
 
-`public function onCommandHelp()`  
+`onCommandHelp(): array|string|null`  
 Handle command help
 
 ---
@@ -1221,7 +1221,7 @@ class YellowExample {
 
 Yellow update events notify when information is updated. The following events are available:
 
-`onEnumerate` `onGenerate` `onLog` `onMail` `onUpdate`
+`onEnumerate` `onGenerate` `onLog` `onMail` `onUpdate` `onValidate`
 
 The following update actions are available:
 
@@ -1232,34 +1232,37 @@ The following update actions are available:
 `update` = extension is updated  
 `patch` = patch is applied  
 
+The following generate actions are available:
+
+`generate` = static website or static cache is generated  
+`check` = static website is generated to check links  
+
 The following enumerate actions are available:
 
 `email` = possible values for an email in user settings  
 `language` = possible values for a language in language settings  
 `theme` = possible values for a theme in system settings  
 
-The following generate actions are available:
-
-`generate` = static website or static cache is generated  
-`check` = static website is generated to check links
-
 ---
 
 Description of events and arguments:
 
-`public function onUpdate($action)`  
+`onUpdate($action): void`  
 Handle update
 
-`public function onEnumerate($action, $context)`  
-Handle enumeration
-
-`public function onGenerate($action, $path)`  
+`onGenerate($action, $path, $location): int`  
 Handle static generation
 
-`public function onMail($action, $headers, $message)`  
+`onEnumerate($action, $context): array|string|null`  
+Handle enumeration
+
+`onValidate($action, $status, $data): string|null`  
+Handle validation
+
+`onMail($action, $headers, $message): int`  
 Handle email
 
-`public function onLog($action, $message)`  
+`onLog($action, $message): int`  
 Handle logging
 
 ---

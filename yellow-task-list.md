@@ -15,6 +15,7 @@ You can help us with open tasks:
 - [ ] Added math extension, mathematical expressions with TeX/LaTeX. Make it no longer experimental.
 - [ ] Added SMTP extension, send emails to a remote server. Websites may not have a working mail system.
 - [x] Updated API, added method onGenerate() for static websites. Generate unusual files and URLs.
+- [x] Updated API, added method onValidate() for input validation. Developers want to validate HTML forms.
 - [x] Updated API, changed page->getBase() to page->getHomeLocation(). API should be understandable.
 - [ ] Updated API, YellowPageCollection no longer derives from ArrayObject. ArrayObject interface is strange.
 - [ ] Updated contact extension, message delivery with brute force protection. Spammers gonna spam.

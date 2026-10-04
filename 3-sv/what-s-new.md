@@ -7,6 +7,7 @@ Läs allt om de senaste ändringarna och publikationerna.
 ? Senaste ändringar
 ?
 ? - Uppdaterade API, tillagt metod onGenerate() för statiska webbplatser
+? - Uppdaterade API, tillagt metod onValidate() för inmatningsvalidering
 ? - Uppdaterade API, ändrat page->getBase() till page->getHomeLocation()
 ? - Uppdaterade feed-tillägg, kort URL för en maskinläsbar feed.xml
 ? - Uppdaterade sitemap-tillägg, kort URL för en maskinläsbar sitemap.xml

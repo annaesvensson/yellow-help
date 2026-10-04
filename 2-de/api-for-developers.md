@@ -615,6 +615,9 @@ Erstelle eine Textbeschreibung, mit oder ohne HTML
 `toolbox->enumerate($action, $context = ""): array`  
 Hole mögliche Werte
 
+`toolbox->validate($action, $status, $data): string`  
+Validiere Eingabedaten
+
 `toolbox->mail($action, $headers, $message): bool`  
 Sende E-Mail-Nachricht
 
@@ -978,11 +981,11 @@ Eine Webseite besteht aus dem Core und anderen Erweiterungen. Am Anfang werden a
       │                       │                      │                  │
       ▼                       ▼                      ▼                  ▼
   onParseMetaData         onEditContentFile      onCommand          onUpdate
-  onParseContentRaw       onEditMediaFile        onCommandHelp      onEnumerate
-  onParseContentElement   onEditSystemFile           │              onGenerate
-  onParseContentHtml      onEditUserAccount          │              onMail
-  onParsePageLayout           │                      │              onLog
-  onParsePageExtra            │                      │                  │
+  onParseContentRaw       onEditMediaFile        onCommandHelp      onGenerate
+  onParseContentElement   onEditSystemFile           │              onEnumerate
+  onParseContentHtml          │                      │              onValidate
+  onParsePageLayout           │                      │              onMail
+  onParsePageExtra            │                      │              onLog
   onParsePageOutput           │                      │                  │
       │                       │                      │                  │
       ▼                       │                      │                  ▼
@@ -1007,16 +1010,16 @@ Yellow-Core-Ereignisse unterrichten wenn sich ein Zustand ändert. Die folgenden
 
 Beschreibung der Ereignisse und Argumente:
 
-`public function onLoad($yellow)`  
+`onLoad($yellow): void`  
 Verarbeite die Initialisierung
 
-`public function onStartup()`  
+`onStartup(): void`  
 Verarbeite das Hochfahren
 
-`public function onRequest($scheme, $address, $base, $location, $fileName)`  
+`onRequest($scheme, $address, $base, $location, $fileName): int`  
 Verarbeite die Anfrage
 
-`public function onShutdown()`  
+`onShutdown(): void`  
 Verarbeite das Runterfahren
 
 ---
@@ -1058,25 +1061,25 @@ Die folgenden Content-Element-Typen sind verfügbar:
 Beschreibung der Ereignisse und Argumente:
 
 
-`public function onParseMetaData($page)`  
+`onParseMetaData($page): void`  
 Verarbeite die Metadaten einer Seite
 
-`public function onParseContentRaw($page, $text)`  
+`onParseContentRaw($page, $text): string`  
 Verarbeite den Seiteninhalt im Rohformat
 
-`public function onParseContentElement($page, $name, $text, $attributes, $type)`  
+`onParseContentElement($page, $name, $text, $attributes, $type): string|null`  
 Verarbeite den Seiteninhalt eines Elements
 
-`public function onParseContentHtml($page, $text)`  
+`onParseContentHtml($page, $text): string|null`  
 Verarbeite den Seiteninhalt im HTML-Format
 
-`public function onParsePageLayout($page, $name)`  
+`onParsePageLayout($page, $name): void`  
 Verarbeite das Layout einer Seite
 
-`public function onParsePageExtra($page, $name)`  
+`onParsePageExtra($page, $name): string|null`  
 Verarbeite die Extradaten einer Seite
 
-`public function onParsePageOutput($page, $text)`  
+`onParsePageOutput($page, $text): string|null`  
 Verarbeite die Ausgabedaten einer Seite
 
 ---
@@ -1112,7 +1115,7 @@ class YellowExample {
 
 Yellow-Edit-Ereignisse unterrichten wenn eine Datei bearbeitet wird. Die folgenden Ereignisse sind verfügbar:
 
-`onEditContentFile` `onEditMediaFile` `onEditSystemFile` `onEditUserAccount`
+`onEditContentFile` `onEditMediaFile` `onEditSystemFile`
 
 Die folgenden Inhalts-Aktionen sind verfügbar:
 
@@ -1128,17 +1131,14 @@ Die folgenden Inhalts-Aktionen sind verfügbar:
 Beschreibung der Ereignisse und Argumente:
 
 
-`public function onEditContentFile($page, $action, $email)`  
+`onEditContentFile($page, $action, $email): void`  
 Verarbeite Änderungen an Inhaltsdatei
 
-`public function onEditMediaFile($file, $action, $email)`  
+`onEditMediaFile($file, $action, $email): void`  
 Verarbeite Änderungen an Mediendatei
 
-`public function onEditSystemFile($file, $action, $email)`  
+`onEditSystemFile($file, $action, $email): void`  
 Verarbeite Änderungen an Systemdatei
-
-`public function onEditUserAccount($action, $email, $password)`  
-Verarbeite Änderungen am Benutzerkonto
 
 ---
 
@@ -1178,10 +1178,10 @@ Yellow-Command-Ereignisse unterrichten wenn ein Befehl ausgeführt wird. Die fol
 
 Beschreibung der Ereignisse und Argumente:
 
-`public function onCommand($command, $text)`  
+`onCommand($command, $text): int`  
 Verarbeite Befehle
 
-`public function onCommandHelp()`  
+`onCommandHelp(): array|string|null`  
 Verarbeite Hilfe für Befehle
 
 ---
@@ -1223,7 +1223,7 @@ class YellowExample {
 
 Yellow-Update-Ereignisse unterrichten wenn Informationen aktualisiert werden. Die folgenden Ereignisse sind verfügbar:
 
-`onEnumerate` `onGenerate` `onLog` `onMail` `onUpdate`
+`onEnumerate` `onGenerate` `onLog` `onMail` `onUpdate` `onValidate`
 
 Die folgenden Aktualisierungs-Aktionen sind verfügbar:
 
@@ -1234,34 +1234,37 @@ Die folgenden Aktualisierungs-Aktionen sind verfügbar:
 `update` = Erweiterung wird aktualisiert  
 `patch` = Patch wird angewendet  
 
+Die folgenden Generierungs-Aktionen sind verfügbar:
+
+`generate` = statische Webseite oder statischer Zwischenspeicher wird erstellt  
+`check` = statische Webseite wird erstellt um Links zu überprüfen  
+
 Die folgenden Auflistungs-Aktionen sind verfügbar:
 
 `email` = mögliche Werte für eine Email in Benutzereinstellungen  
 `language` = mögliche Werte für eine Sprache in Spracheinstellungen  
 `theme` = mögliche Werte für ein Theme in Systemeinstellungen  
 
-Die folgenden Generierungs-Aktionen sind verfügbar:
-
-`generate` = statische Webseite oder statischer Zwischenspeicher wird erstellt  
-`check` = statische Webseite wird erstellt um Links zu überprüfen  
-
 ---
 
 Beschreibung der Ereignisse und Argumente:
 
-`public function onUpdate($action)`  
+`onUpdate($action): void`  
 Verarbeite Aktualisierung
 
-`public function onEnumerate($action, $context)`  
-Verarbeite Auflistung
-
-`public function onGenerate($action, $path)`  
+`onGenerate($action, $path, $location): int`  
 Verarbeite statische Generierung
 
-`public function onMail($action, $headers, $message)`  
+`onEnumerate($action, $context): array|string|null`  
+Verarbeite Auflistung
+
+`onValidate($action, $status, $data): string|null`  
+Verarbeite Validierung
+
+`onMail($action, $headers, $message): int`  
 Verarbeite E-Mail
 
-`public function onLog($action, $message)`  
+`onLog($action, $message): int`  
 Verarbeite Logging
 
 ---

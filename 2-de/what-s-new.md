@@ -7,6 +7,7 @@ Erfahre alles über die neusten Änderungen und Veröffentlichungen.
 ? Neuste Änderungen
 ?
 ? - API aktualisiert, Methode onGenerate() für statische Webseiten hinzugefügt
+? - API aktualisiert, Methode onValidate() zur Eingabevalidierung hinzugefügt
 ? - API aktualisiert, page->getBase() zu page->getHomeLocation() geändert
 ? - Feed-Erweiterung aktualisiert, kurze URL für eine maschinenlesbare feed.xml
 ? - Sitemap-Erweiterung aktualisiert, kurze URL für eine maschinenlesbare sitemap.xml
