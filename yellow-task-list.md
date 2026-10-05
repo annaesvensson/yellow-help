@@ -18,7 +18,7 @@ You can help us with open tasks:
 - [x] Updated API, added method onValidate() for input validation. Developers want to validate HTML forms.
 - [x] Updated API, changed page->getBase() to page->getHomeLocation(). API should be understandable.
 - [ ] Updated API, YellowPageCollection no longer derives from ArrayObject. ArrayObject interface is strange.
-- [ ] Updated contact extension, message delivery with brute force protection. Spammers gonna spam.
+- [ ] Updated contact extension, contact form with better protection. Spammers gonna spam.
 - [ ] Updated edit extension, autocomplete for links and tags. Users do less, software does more.
 - [ ] Updated edit extension, settings dialog with dropdown menus. Users want important system settings in browser.
 - [ ] Updated edit extension toolbar, improved emoji and icon selection dialog. Give users more control.
