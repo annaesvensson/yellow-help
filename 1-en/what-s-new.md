@@ -9,8 +9,10 @@ Learn everything about the latest changes and publications.
 ? - Updated API, added method onGenerate() for static websites
 ? - Updated API, added method onValidate() for input validation
 ? - Updated API, changed page->getBase() to page->getHomeLocation()
+? - Updated contact extension, contact form with better protection
 ? - Updated feed extension, short URL for a machine readable feed.xml
 ? - Updated sitemap extension, short URL for a machine readable sitemap.xml
+? - Updated system settings, renamed ContactLinkRestriction to ContactLinkProtection
 ? - Updated website, more information about product feedback
 ?
 ? [See code history](https://github.com/datenstrom/yellow/commits/main/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/).

@@ -9,8 +9,10 @@ Läs allt om de senaste ändringarna och publikationerna.
 ? - Uppdaterade API, tillagt metod onGenerate() för statiska webbplatser
 ? - Uppdaterade API, tillagt metod onValidate() för inmatningsvalidering
 ? - Uppdaterade API, ändrat page->getBase() till page->getHomeLocation()
+? - Uppdaterade contact-tillägg, kontaktformulär med bättre skydd
 ? - Uppdaterade feed-tillägg, kort URL för en maskinläsbar feed.xml
 ? - Uppdaterade sitemap-tillägg, kort URL för en maskinläsbar sitemap.xml
+? - Uppdaterade systeminställningar, ändrat ContactLinkRestriction till ContactLinkProtection
 ? - Uppdaterade webbplats, mer information om produktfeedback
 ?
 ? [Se kodhistorik](https://github.com/datenstrom/yellow/commits/main/) och [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/main/).

@@ -9,8 +9,10 @@ Erfahre alles über die neusten Änderungen und Veröffentlichungen.
 ? - API aktualisiert, Methode onGenerate() für statische Webseiten hinzugefügt
 ? - API aktualisiert, Methode onValidate() zur Eingabevalidierung hinzugefügt
 ? - API aktualisiert, page->getBase() zu page->getHomeLocation() geändert
+? - Contact-Erweiterung aktualisiert, Kontaktformular mit besserem Schutz
 ? - Feed-Erweiterung aktualisiert, kurze URL für eine maschinenlesbare feed.xml
 ? - Sitemap-Erweiterung aktualisiert, kurze URL für eine maschinenlesbare sitemap.xml
+? - Systemeinstellungen aktualisiert, ContactLinkRestriction zu ContactLinkProtection geändert
 ? - Webseite aktualisiert, mehr Informationen zu Produktfeedback
 ? 
 ? [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/main/) und [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/main/).
