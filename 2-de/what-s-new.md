@@ -12,6 +12,7 @@ Erfahre alles über die neusten Änderungen und Veröffentlichungen.
 ? - Contact-Erweiterung aktualisiert, Kontaktformular mit besserem Schutz
 ? - Feed-Erweiterung aktualisiert, kurze URL für maschinenlesbares XML-Format
 ? - Sitemap-Erweiterung aktualisiert, kurze URL für als maschinenlesbares XML-Format
+? - Systemeinstellungen aktualisiert, ContactEmailRestriction zu ContactFormRestriction geändert
 ? - Systemeinstellungen aktualisiert, ContactLinkRestriction zu ContactLinkProtection geändert
 ? - Webseite aktualisiert, mehr Informationen zu Produktfeedback
 ? 

@@ -12,6 +12,7 @@ Läs allt om de senaste ändringarna och publikationerna.
 ? - Uppdaterade contact-tillägg, kontaktformulär med bättre skydd
 ? - Uppdaterade feed-tillägg, kort URL för maskinläsbart XML format
 ? - Uppdaterade sitemap-tillägg, kort URL för maskinläsbart XML format
+? - Uppdaterade systeminställningar, ändrat ContactEmailRestriction till ContactFormRestriction
 ? - Uppdaterade systeminställningar, ändrat ContactLinkRestriction till ContactLinkProtection
 ? - Uppdaterade webbplats, mer information om produktfeedback
 ?

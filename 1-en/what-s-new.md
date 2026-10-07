@@ -12,6 +12,7 @@ Learn everything about the latest changes and publications.
 ? - Updated contact extension, contact form with better protection
 ? - Updated feed extension, short URL for machine readable XML format
 ? - Updated sitemap extension, short URL for machine readable XML format
+? - Updated system settings, renamed ContactEmailRestriction to ContactFormRestriction
 ? - Updated system settings, renamed ContactLinkRestriction to ContactLinkProtection
 ? - Updated website, more information about product feedback
 ?

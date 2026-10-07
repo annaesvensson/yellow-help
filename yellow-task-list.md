@@ -29,7 +29,8 @@ You can help us with open tasks:
 - [ ] Updated icon extension, SVG stack instead of WOFF font. Developers want consistent files formats.
 - [ ] Updated image extension, different media files for light and dark mode. Give users more control.
 - [x] Updated sitemap extension, short URL for machine readable XML format. Some bloggers find long URL ugly.
-- [x] Updated system settings, renamed ContactLinkRestriction to ContactLinkProtection
+- [x] Updated system settings, renamed ContactEmailRestriction to ContactFormRestriction. Better naming.
+- [x] Updated system settings, renamed ContactLinkRestriction to ContactLinkProtection. Much better naming.
 - [x] Updated website, more information about product feedback. A new way of working together.
 - [ ] Updated website, Swedish translation for missing help pages. Better multi language documentation.
 - [ ] Tested performance with thousands of content files. For people who make large websites.
