@@ -10,8 +10,8 @@ Erfahre alles über die neusten Änderungen und Veröffentlichungen.
 ? - API aktualisiert, Methode onValidate() zur Eingabevalidierung hinzugefügt
 ? - API aktualisiert, page->getBase() zu page->getHomeLocation() geändert
 ? - Contact-Erweiterung aktualisiert, Kontaktformular mit besserem Schutz
-? - Feed-Erweiterung aktualisiert, kurze URL für eine maschinenlesbare feed.xml
-? - Sitemap-Erweiterung aktualisiert, kurze URL für eine maschinenlesbare sitemap.xml
+? - Feed-Erweiterung aktualisiert, kurze URL für maschinenlesbares XML-Format
+? - Sitemap-Erweiterung aktualisiert, kurze URL für als maschinenlesbares XML-Format
 ? - Systemeinstellungen aktualisiert, ContactLinkRestriction zu ContactLinkProtection geändert
 ? - Webseite aktualisiert, mehr Informationen zu Produktfeedback
 ? 

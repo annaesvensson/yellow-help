@@ -25,10 +25,10 @@ You can help us with open tasks:
 - [ ] Updated edit extension toolbar, dropdown menus with keyboard navigation Give users more control.
 - [ ] Updated edit extension toolbar, buttons accessible on small screens. Disappearing buttons.
 - [ ] Updated edit extension toolbar, improved link and file selection dialog. Give users more control.
-- [x] Updated feed extension, short URL for a machine readable feed.xml. Some find long URL ugly. 
+- [x] Updated feed extension, short URL for machine readable XML format. Some bloggers find long URL ugly. 
 - [ ] Updated icon extension, SVG stack instead of WOFF font. Developers want consistent files formats.
 - [ ] Updated image extension, different media files for light and dark mode. Give users more control.
-- [x] Updated sitemap extension, short URL for a machine readable sitemap.xml. Some find long URL ugly.
+- [x] Updated sitemap extension, short URL for machine readable XML format. Some bloggers find long URL ugly.
 - [x] Updated system settings, renamed ContactLinkRestriction to ContactLinkProtection
 - [x] Updated website, more information about product feedback. A new way of working together.
 - [ ] Updated website, Swedish translation for missing help pages. Better multi language documentation.

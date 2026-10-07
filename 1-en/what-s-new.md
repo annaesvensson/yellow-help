@@ -10,8 +10,8 @@ Learn everything about the latest changes and publications.
 ? - Updated API, added method onValidate() for input validation
 ? - Updated API, changed page->getBase() to page->getHomeLocation()
 ? - Updated contact extension, contact form with better protection
-? - Updated feed extension, short URL for a machine readable feed.xml
-? - Updated sitemap extension, short URL for a machine readable sitemap.xml
+? - Updated feed extension, short URL for machine readable XML format
+? - Updated sitemap extension, short URL for machine readable XML format
 ? - Updated system settings, renamed ContactLinkRestriction to ContactLinkProtection
 ? - Updated website, more information about product feedback
 ?

@@ -10,8 +10,8 @@ Läs allt om de senaste ändringarna och publikationerna.
 ? - Uppdaterade API, tillagt metod onValidate() för inmatningsvalidering
 ? - Uppdaterade API, ändrat page->getBase() till page->getHomeLocation()
 ? - Uppdaterade contact-tillägg, kontaktformulär med bättre skydd
-? - Uppdaterade feed-tillägg, kort URL för en maskinläsbar feed.xml
-? - Uppdaterade sitemap-tillägg, kort URL för en maskinläsbar sitemap.xml
+? - Uppdaterade feed-tillägg, kort URL för maskinläsbart XML format
+? - Uppdaterade sitemap-tillägg, kort URL för maskinläsbart XML format
 ? - Uppdaterade systeminställningar, ändrat ContactLinkRestriction till ContactLinkProtection
 ? - Uppdaterade webbplats, mer information om produktfeedback
 ?
