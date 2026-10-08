@@ -118,12 +118,6 @@ Making quotes:
     
     >>> Quote of a quote of a quote
 
-Using shortcuts:
-
-    [image photo.jpg] = adding an image or image thumbnail
-    [gallery photo]   = adding an image gallery with popup
-    [slider photo]    = adding an image gallery with slider
-
 Using code blocks:
 
     ```
@@ -151,5 +145,19 @@ Using general blocks:
 
     ! {.example}
     ! Here's a custom block element, it can be customised with CSS.
+
+CSS for custom block element:
+
+    .content .example {
+        padding: 0.15em;
+        background-color: #ffeeaa;
+        color: #333;
+    }
+
+Using shortcuts:
+
+    [image photo.jpg] = adding an image or image thumbnail
+    [gallery photo]   = adding an image gallery with popup
+    [slider photo]    = adding an image gallery with slider
 
 Do you have questions? [Get help](.).

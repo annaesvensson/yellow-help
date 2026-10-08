@@ -118,12 +118,6 @@ Zitate erstellen:
     
     >>> Zitat im Zitat im Zitat
 
-Abkürzungen benutzen:
-
-    [image photo.jpg] = Bild oder Miniaturbild hinzufügen
-    [gallery photo]   = Bildergalerie mit Popup hinzufügen
-    [slider photo]    = Bildergalerie mit Schieber hinzufügen
-
 Codeblöcke benutzen:
 
     ```
@@ -151,5 +145,19 @@ Allgemeine Blöcke benutzen:
 
     ! {.example}
     ! Hier ist ein eigenes Blockelement, es kann mit CSS angepasst werden.
+
+CSS für eigenes Blockelement:
+
+    .content .example {
+        padding: 0.15em;
+        background-color: #ffeeaa;
+        color: #333;
+    }
+
+Abkürzungen benutzen:
+
+    [image photo.jpg] = Bild oder Miniaturbild hinzufügen
+    [gallery photo]   = Bildergalerie mit Popup hinzufügen
+    [slider photo]    = Bildergalerie mit Schieber hinzufügen
 
 Hast du Fragen? [Hilfe finden](.).

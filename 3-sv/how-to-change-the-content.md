@@ -118,12 +118,6 @@ Skapa citat:
     
     >>> Citat i citat i citat
 
-Använda förkortningar:
-
-    [image photo.jpg] = lägga till en bild eller miniatyrbild
-    [gallery photo]   = lägga till ett bildgalleri med popup
-    [slider photo]    = lägga till ett bildgalleri med reglaget
-
 Använda kodblock:
 
     ```
@@ -151,5 +145,19 @@ Använda allmänna block:
 
     ! {.example}
     ! Här är ett eget blockelement, det kan anpassas med CSS.
+
+CSS för eget blockelement:
+
+    .content .example {
+        padding: 0.15em;
+        background-color: #ffeeaa;
+        color: #333;
+    }
+
+Använda förkortningar:
+
+    [image photo.jpg] = lägga till en bild eller miniatyrbild
+    [gallery photo]   = lägga till ett bildgalleri med popup
+    [slider photo]    = lägga till ett bildgalleri med reglaget
 
 Har du några frågor? [Få hjälp](.).
