@@ -3,6 +3,7 @@
 You can help us with open tasks:
 
 - [ ] Added support for installing extensions in web browser. Users want to install extensions in browser.
+- [ ] Added support for editing navigation in web browser. Users want to change navigation in browser.
 - [ ] Added support for light and dark mode to all themes. Light and dark mode is expected on mobile devices.
 - [ ] Added support for web forms in Markdown. Users can create email contact forms or a feedback/survey forms.
 - [ ] Added support for page history in wiki extension. Users want to see/compare what has changed.
