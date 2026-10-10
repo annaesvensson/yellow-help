@@ -34,6 +34,7 @@ You can help us with open tasks:
 - [x] Updated system settings, renamed ContactLinkRestriction to ContactLinkProtection. Much better naming.
 - [x] Updated website, more information about product feedback. A new way of working together.
 - [ ] Updated website, Swedish translation for missing help pages. Better multi language documentation.
+- [x] Removed previousnext extension, moved HTML to layout file. More customisation in layouts.
 - [ ] Tested performance with thousands of content files. For people who make large websites.
 
 ## How to improve code

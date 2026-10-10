@@ -1267,7 +1267,7 @@ Hantera loggning
 
 ---
 
-Tilläggsfil för att hantera en daglig händelse:
+Tilläggsfil för att hantera ett kontaktformulär:
 
 ``` php
 <?php
@@ -1281,12 +1281,14 @@ class YellowExample {
     public function onLoad($yellow) {
         $this->yellow = $yellow;
     }
-
-    // Handle update
-    public function onUpdate($action) {
-        if ($action=="daily") {
-            $this->yellow->toolbox->log("info", "Daily event has been handled");
+    
+    // Handle validation
+    public function onValidate($action, $data) {
+        $status = null;
+        if ($action=="contact" && $data["senderEmail"]=="spam@montypython.com") {
+            $status = "spam";
         }
+        return $status;
     }
 }
 ```

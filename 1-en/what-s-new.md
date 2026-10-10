@@ -15,6 +15,7 @@ Learn everything about the latest changes and publications.
 ? - Updated system settings, renamed ContactEmailRestriction to ContactFormRestriction
 ? - Updated system settings, renamed ContactLinkRestriction to ContactLinkProtection
 ? - Updated website, more information about product feedback
+? - Removed previousnext extension, moved HTML to layout file
 ?
 ? [See code history](https://github.com/datenstrom/yellow/commits/main/) and [documentation history](https://github.com/annaesvensson/yellow-help/commits/main/).
 

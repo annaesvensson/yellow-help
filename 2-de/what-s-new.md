@@ -15,6 +15,7 @@ Erfahre alles über die neusten Änderungen und Veröffentlichungen.
 ? - Systemeinstellungen aktualisiert, ContactEmailRestriction zu ContactFormRestriction geändert
 ? - Systemeinstellungen aktualisiert, ContactLinkRestriction zu ContactLinkProtection geändert
 ? - Webseite aktualisiert, mehr Informationen zu Produktfeedback
+? - Previousnext-Erweiterung entfernt, HTML in die Layoutdatei verschoben
 ? 
 ? [Siehe Codegeschichte](https://github.com/datenstrom/yellow/commits/main/) und [Dokumentationsgeschichte](https://github.com/annaesvensson/yellow-help/commits/main/).
 

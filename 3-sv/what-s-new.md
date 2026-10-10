@@ -15,6 +15,7 @@ Läs allt om de senaste ändringarna och publikationerna.
 ? - Uppdaterade systeminställningar, ändrat ContactEmailRestriction till ContactFormRestriction
 ? - Uppdaterade systeminställningar, ändrat ContactLinkRestriction till ContactLinkProtection
 ? - Uppdaterade webbplats, mer information om produktfeedback
+? - Tog bort previousnext-tillägg, flyttade HTML till layoutfilen
 ?
 ? [Se kodhistorik](https://github.com/datenstrom/yellow/commits/main/) och [dokumentationshistorik](https://github.com/annaesvensson/yellow-help/commits/main/).
 
