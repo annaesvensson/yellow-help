@@ -434,7 +434,7 @@ Layoutfil för att visa installerade tillägg:
 
 Klassen `YellowLookup` ger tillgång till uppslags och normaliseringsmetoder. Följande metoder är tillgängliga:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findFileFromSystemLocation` `findMediaDirectory` `findMediaLocationFromFile` `findSystemLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseClass` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findFileFromSystemLocation` `findMediaDirectory` `findMediaLocationFromFile` `findSystemLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseClass` `normaliseData` `normaliseHeaders` `normaliseInput` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -472,6 +472,9 @@ Normalisera namn och email för en enda adress
 
 `lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
 Normalisera fält i MIME-headers
+
+`lookup->normaliseInput($input, $type = "text"): string`  
+Normalisera indata från requestargument
 
 `lookup->normaliseClass($text): string`  
 Normalisera CSS-klass

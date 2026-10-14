@@ -434,7 +434,7 @@ Layout file for showing installed extensions:
 
 The class `YellowLookup` gives access to lookup and normalisation methods. The following methods are available:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findFileFromSystemLocation` `findMediaDirectory` `findMediaLocationFromFile` `findSystemLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseClass` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findFileFromSystemLocation` `findMediaDirectory` `findMediaLocationFromFile` `findSystemLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseClass` `normaliseData` `normaliseHeaders` `normaliseInput` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -472,6 +472,9 @@ Normalise name and email for a single address
 
 `lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
 Normalise fields in MIME headers
+
+`lookup->normaliseInput($input, $type = "text"): string`  
+Normalise input from request argument
 
 `lookup->normaliseClass($text): string`  
 Normalise CSS class

@@ -11,8 +11,8 @@ You can help us with open tasks:
 - [ ] Added support for configurable icon generator/bundler/stacker. Better page loading time.
 - [ ] Added support for dynamic loading of JS/CSS files in bundler. Better page loading time.
 - [ ] Added support for Wysiwyg editor for Markdown. Users can edit websites without much knowledge.
+- [x] Added HTTP status code 444 for bad bots. A way to detect unwanted traffic and automated requests. 
 - [ ] Added comment extension, provides a convenient commenting system. Make it no longer experimental.
-- [ ] Added maintenance extension, puts website in maintenance mode. Make it no longer experimental.
 - [ ] Added math extension, mathematical expressions with TeX/LaTeX. Make it no longer experimental.
 - [ ] Added SMTP extension, send emails to a remote server. Websites may not have a working mail system.
 - [x] Updated API, added method onGenerate() for static websites. Generate unusual files and URLs.

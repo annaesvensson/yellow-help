@@ -6,6 +6,7 @@ Learn everything about the latest changes and publications.
 ? {.wikiblock open=open}
 ? Latest changes
 ?
+? - Added HTTP status code 444 for bad bots
 ? - Updated API, added method onGenerate() for static websites
 ? - Updated API, added method onValidate() for input validation
 ? - Updated API, changed page->getBase() to page->getHomeLocation()

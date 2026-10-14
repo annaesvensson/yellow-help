@@ -434,7 +434,7 @@ Layoutdatei um installierte Erweiterungen anzuzeigen:
 
 Die Klasse `YellowLookup` gibt Zugang zu Nachschlags- und Normalisierungsmethoden. Die folgenden Methoden sind verfügbar:
 
-`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findFileFromSystemLocation` `findMediaDirectory` `findMediaLocationFromFile` `findSystemLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseClass` `normaliseData` `normaliseHeaders` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
+`findContentLocationFromFile` `findFileFromContentLocation` `findFileFromMediaLocation` `findFileFromSystemLocation` `findMediaDirectory` `findMediaLocationFromFile` `findSystemLocationFromFile` `getHtmlAttributes` `getUrlInformation` `isCommandLine` `isContentFile` `isFileLocation` `isMediaFile` `isSystemFile` `isValidFile` `normaliseAddress` `normaliseArguments` `normaliseClass` `normaliseData` `normaliseHeaders` `normaliseInput` `normaliseLocation` `normaliseName` `normalisePath` `normaliseUrl`
 
 ---
 
@@ -472,6 +472,9 @@ Normalisiere Name und E-Mail für eine einzelne Adresse
 
 `lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
 Normalisiere Felder in MIME-Headers
+
+`lookup->normaliseInput($input, $type = "text"): string`  
+Normalisiere Eingabe vom Anfrage-Argument
 
 `lookup->normaliseClass($text): string`  
 Normalisiere CSS-Klasse
@@ -721,10 +724,10 @@ Hole den Ort der Seite
 Hole den Ort der Startseite
 
 `page->getRequest($key): string`  
-Hole das angefragte Argument der Seite
+Hole das Anfrage-Argument der Seite
 
 `page->getRequestHtml($key): string`  
-Hole das angefragte Argument der Seite, HTML-kodiert
+Hole das Anfrage-Argument der Seite, HTML-kodiert
 
 `page->getHeader($key): string`  
 Hole den Antwort-Header der Seite

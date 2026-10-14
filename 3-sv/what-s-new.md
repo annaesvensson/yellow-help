@@ -6,6 +6,7 @@ Läs allt om de senaste ändringarna och publikationerna.
 ? {.wikiblock open=open}
 ? Senaste ändringar
 ?
+? - Lade till HTTP-statuskod 444 för dåliga botar
 ? - Uppdaterade API, tillagt metod onGenerate() för statiska webbplatser
 ? - Uppdaterade API, tillagt metod onValidate() för inmatningsvalidering
 ? - Uppdaterade API, ändrat page->getBase() till page->getHomeLocation()
