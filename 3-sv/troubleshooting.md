@@ -6,7 +6,7 @@ Läs hur man löser problem på en webbplats.
 
 ? Datenstrom Yellow stopped with fatal error
 ? 
-? Programvaran har kraschat. Aktivera felsökningsläget för att få mer information. Troligtvis fungerar ett tillägg inte som det ska eller är inte uppdaterat. Så snart det relevanta tillägget har uppdaterats bör problemet lösas. Kontakta webbmastern om detta felmeddelande visas hela tiden.
+? Programvaran har kraschat. Aktivera felsökningsläget för att få mer information. Troligtvis fungerar ett tillägg inte som det ska eller är inte uppdaterat. Tänk på att man måste uppdatera experimentella tillägg manuellt. Så snart det relevanta tillägget har uppdaterats bör problemet lösas. Kontakta webbmastern om detta felmeddelande visas hela tiden.
 
 ? Datenstrom Yellow requires PHP 7.0 or higher
 ? 
@@ -58,7 +58,7 @@ Du behöver en e-postserver för att kunna skicka e-post. Det är bäst att kont
 
 ## Problem med tillägg
 
-[Du kan skriva produktfeedback eller rapportera ett fel](https://datenstrom.se/sv/support/), om något inte fungerar som förväntat. Förklara hur man återskapar felet. Skriv ner steg-för-steg-instruktioner hur man återskapar felet, ange detaljerad information och bifoga hela loggfilen. Det rekommenderas att använda den senaste produktversionen, för att undvika att rapportera ett fel som redan har åtgärdats. Tänk på att endast tillägg som är tillgängliga på den officiella webbplatsen kommer att ingå i uppdateringsmekanismen.
+[Du kan skriva produktfeedback eller rapportera ett fel](https://datenstrom.se/sv/support/), om något inte fungerar som förväntat. Du kan göra detta anonymt om du vill. Förklara hur man återskapar felet. Skriv ner steg-för-steg-instruktioner hur man återskapar felet, ange detaljerad information och bifoga hela loggfilen. Det rekommenderas att använda den senaste produktversionen, för att undvika att rapportera ett fel som redan har åtgärdats. Rapportera buggar endast till oss eller till en betrodd europeisk organisation.
 
 Du kan använda felsökningsläget för att undersöka orsaken till ett problem eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Ytterligare information kommer att visas på skärmen och i webbläsarkonsolen. Beroende på felsökningsläget visas mer eller mindre information. [Läs mer om debugging](api-for-developers#debugging).
 

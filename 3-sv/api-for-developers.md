@@ -540,7 +540,7 @@ Layoutfil för att visa bildsökvägar:
 
 Klassen `YellowToolbox` ger tillgång till en verktygslåda med hjälpmetoder. Följande metoder är tillgängliga:
 
-`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `enumerate` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileSize` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
+`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `enumerate` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileSize` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `validate` `writeFile`
 
 ---
 

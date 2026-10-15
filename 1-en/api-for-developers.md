@@ -540,7 +540,7 @@ Layout file for showing image paths:
 
 The class `YellowToolbox` gives access to a toolbox with helper methods. The following methods are available:
 
-`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `enumerate` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileSize` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `writeFile`
+`appendFile` `copyFile` `createTextDescription` `deleteDirectory` `deleteFile` `enumerate` `getCookie` `getDirectoryEntries` `getDirectoryEntriesRecursive` `getDirectoryInformation` `getDirectoryInformationRecursive` `getFileModified` `getFileSize` `getFileType` `getLocationArguments` `getServer` `getTextArguments` `getTextLines` `getTextList` `log` `mail` `modifyFile` `readFile` `renameDirectory` `renameFile` `validate` `writeFile`
 
 ---
 

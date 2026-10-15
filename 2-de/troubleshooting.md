@@ -6,7 +6,7 @@ Erfahre wie man Probleme auf einer Webseite behebt.
 
 ? Datenstrom Yellow stopped with fatal error 
 ? 
-? Die Software ist abgestürzt. Aktiviere den Debug-Modus um weitere Informationen zu erhalten. Sehr wahrscheinlich funktioniert eine Erweiterung nicht richtig oder ist nicht auf dem neusten Stand. Sobald die entsprechende Erweiterung aktualisiert wurde, sollte das Problem behoben sein. Wende dich an den Webmaster, falls diese Fehlermeldung ständig angezeigt wird.
+? Die Software ist abgestürzt. Aktiviere den Debug-Modus um weitere Informationen zu erhalten. Sehr wahrscheinlich funktioniert eine Erweiterung nicht richtig oder ist nicht auf dem neusten Stand. Denke daran dass experimentelle Erweiterungen per Hand aktualisiert werden müssen. Sobald die entsprechende Erweiterung aktualisiert wurde, sollte das Problem behoben sein. Wende dich an den Webmaster, falls diese Fehlermeldung ständig angezeigt wird.
 
 ? Datenstrom Yellow requires PHP 7.0 or higher
 ? 
@@ -58,7 +58,7 @@ Du benötigst einen Mailserver um E-Mails verschicken zu können. Wende dich am 
 
 ## Probleme mit Erweiterungen
 
-[Du kannst Produktfeedback geben oder einen Fehler melden](https://datenstrom.se/de/support/), falls etwas nicht wie erwartet funktionieren sollte. Erkläre wie man den Fehler reproduziert. Schreibe eine Schritt-für-Schritt-Anleitung auf wie man den Fehler reproduziert, gebe detaillierte Informationen an und füge die vollständige Logdatei hinzu. Es wird empfohlen die neuste Produktversion zu verwenden, um zu vermeiden einen Fehler zu melden der bereits behoben wurde. Denke daran dass nur Erweiterungen die auf der offiziellen Webseite verfügbar sind in den Aktualisierungsmechanismus einbezogen werden.
+[Du kannst Produktfeedback geben oder einen Fehler melden](https://datenstrom.se/de/support/), falls etwas nicht wie erwartet funktionieren sollte. Das kannst du auch anonym machen, falls du möchtest. Erkläre wie man den Fehler reproduziert. Schreibe eine Schritt-für-Schritt-Anleitung auf wie man den Fehler reproduziert, gebe detaillierte Informationen an und füge die vollständige Logdatei hinzu. Es wird empfohlen die neuste Produktversion zu verwenden, um zu vermeiden einen Fehler zu melden der bereits behoben wurde. Melde Fehler nur bei uns oder einer vertrauenswürdigen europäischen Organisation. 
 
 Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Es werden dann zusätzliche Informationen auf dem Bildschirm und in der Browser-Konsole angezeigt. Abhängig vom Debug-Modus werden mehr oder weniger Informationen angezeigt. [Weitere Informationen zum Debuggen](api-for-developers#debuggen).
 

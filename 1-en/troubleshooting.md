@@ -6,7 +6,7 @@ Learn how to resolve problems on a website.
 
 ? Datenstrom Yellow stopped with fatal error
 ? 
-? The software has crashed. Activate the debug mode for more information. Very likely an extension is not working properly or is not up to date. As soon as the relevant extension has been updated, the problem should be resolved. Contact the webmaster if this error message is displayed continuously.
+? The software has crashed. Activate the debug mode for more information. Very likely an extension is not working properly or is not up to date. Keep in mind that you have to update experimental extensions manually. As soon as the relevant extension has been updated, the problem should be resolved. Contact the webmaster if this error message is displayed continuously.
 
 ? Datenstrom Yellow requires PHP 7.0 or higher
 ? 
@@ -58,7 +58,7 @@ You need a mail server to send emails. It's best to contact your web hosting pro
 
 ## Problems with extensions
 
-[You can write product feedback or report a bug](https://datenstrom.se/support/), if something isn't working as expected. Explain how to reproduce the bug. Write down step-by-step instructions on how to reproduce the bug, provide detailed information and add the complete log file. It's recommended to use the latest product version, to avoid reporting a bug that has already been fixed. Keep in mind that only extensions available on the official website will be included in the update mechanism.
+[You can write product feedback or report a bug](https://datenstrom.se/support/), if something isn't working as expected. You can do this anonymously if you want. Explain how to reproduce the bug. Write down step-by-step instructions on how to reproduce the bug, provide detailed information and add the complete log file. It's recommended to use the latest product version, to avoid reporting a bug that has already been fixed. Report bugs only to us or a trustworthy European organisation.
 
 You can use the debug mode to investigate the cause of a problem or if you are curious about how Datenstrom Yellow works. To activate the debug mode on your website open file `system/extensions/yellow-system.ini` and change `CoreDebugMode: 1`. Additional information will be displayed on the screen and in the browser console. Depending on the debug mode, more or less information are shown. [Learn more about debugging](api-for-developers#debugging).
 
