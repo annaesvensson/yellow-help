@@ -5,10 +5,10 @@ You can help us with open tasks:
 - [ ] Added support for installing extensions in web browser. Users want to install extensions in browser.
 - [ ] Added support for editing navigation in web browser. Users want to change navigation in browser.
 - [ ] Added support for light and dark mode to all themes. Light and dark mode is expected on mobile devices.
-- [ ] Added support for web forms in Markdown. Users can create email contact forms or a feedback/survey forms.
+- [ ] Added support for web forms in Markdown. Users can create different contact/feedback/survey forms.
 - [ ] Added support for page history in wiki extension. Users want to see/compare what has changed.
 - [ ] Added support for search in static website. Give users similar features in dynamic/static website.
-- [ ] Added support for configurable icon generator/bundler/stacker. Better page loading time.
+- [ ] Added support for configurable icon generator/packer/stacker. Better page loading time.
 - [ ] Added support for dynamic loading of JS/CSS files in bundler. Better page loading time.
 - [ ] Added support for Wysiwyg editor for Markdown. Users can edit websites without much knowledge.
 - [x] Added HTTP status code 444 for bad bots. A way to detect unwanted traffic and automated requests. 
@@ -21,7 +21,7 @@ You can help us with open tasks:
 - [ ] Updated API, YellowPageCollection no longer derives from ArrayObject. ArrayObject interface is strange.
 - [x] Updated contact extension, contact form with better protection. Spammers gonna spam.
 - [ ] Updated edit extension, autocomplete for links and tags. Users do less, software does more.
-- [ ] Updated edit extension, settings dialog with dropdown menus. Users want important system settings in browser.
+- [ ] Updated edit extension, settings dialog with dropdown menus. Give users more control.
 - [ ] Updated edit extension toolbar, improved emoji and icon selection dialog. Give users more control.
 - [ ] Updated edit extension toolbar, dropdown menus with keyboard navigation Give users more control.
 - [ ] Updated edit extension toolbar, buttons accessible on small screens. Disappearing buttons.
@@ -32,6 +32,7 @@ You can help us with open tasks:
 - [x] Updated sitemap extension, short URL for machine readable XML format. Some bloggers find long URL ugly.
 - [x] Updated system settings, renamed ContactEmailRestriction to ContactFormRestriction. Better naming.
 - [x] Updated system settings, renamed ContactLinkRestriction to ContactLinkProtection. Much better naming.
+- [ ] Updated traffic extension, added bot traffic analytics. For a world full of bots/crawlers/scrapers.
 - [x] Updated website, more information about product feedback. A new way of working together.
 - [ ] Updated website, Swedish translation for missing help pages. Better multi language documentation.
 - [x] Removed previousnext extension, moved HTML to layout file. More customisation in layouts.
