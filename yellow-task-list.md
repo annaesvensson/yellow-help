@@ -8,7 +8,7 @@ You can help us with open tasks:
 - [ ] Added support for web forms in Markdown. Users can create different contact/feedback/survey forms.
 - [ ] Added support for page history in wiki extension. Users want to see/compare what has changed.
 - [ ] Added support for search in static website. Give users similar features in dynamic/static website.
-- [ ] Added support for configurable icon generator/packer/stacker. Better page loading time.
+- [ ] Added support for configurable icon packer/stacker. Better page loading time.
 - [ ] Added support for dynamic loading of JS/CSS files in bundler. Better page loading time.
 - [ ] Added support for Wysiwyg editor for Markdown. Users can edit websites without much knowledge.
 - [x] Added HTTP status code 444 for bad bots. A way to detect unwanted traffic and automated requests. 
