@@ -9,7 +9,8 @@ Läs den viktigaste produktinformationen på en snabb blick.
 | Användningsområde           | Små webbsidor
 | Installationsstorlek        | 2 MB
 | Installationsspråk          | 19 språk
-| Tillägg                     | Mer än 100 funktioner, språk och teman
+| Dokumentationsspråk         | Svenska, Engelska och Tyska
+| Tillägg                     | Funktioner, språk och teman, [see tillägg](https://datenstrom.se/sv/yellow/extensions/)
 | Systemkrav                  | PHP 7.0 eller senare
 | Textredigerare              | Valfri textredigerare
 | Textformatering             | Markdown
@@ -17,7 +18,7 @@ Läs den viktigaste produktinformationen på en snabb blick.
 | Programmeringsspråk         | HTML, CSS, JavaScript och PHP
 | Utvecklingsverktyg          | Inbyggd webbserver, statisk generator och API för utvecklare
 | Webbservrar                 | Apache, Caddy, LiteSpeed, Nginx och kompatibla webbservrar
-| Personuppgifter             | Email och lösenord skyddas, [se integritet](https://datenstrom.se/sv/privacy)
+| Personuppgifter             | Endast nödvändig data lagras, [se integritet](https://datenstrom.se/sv/privacy)
 | Programvarulicens           | Öppen källkod, [se licensvillkoren](license-terms)
 | App krävs                   | Nej
 | Databas krävs               | Nej

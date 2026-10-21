@@ -109,12 +109,12 @@ Here's an example CSS for a custom block element with bigger font:
 }
 ```
 
-## Customising JavaScript
+## Customising assets
 
-A theme may have JavaScript for dynamic features that are not possible with CSS alone. You can save JavaScript into a file which has a similar name as the CSS file. Then it will be automatically included in the website. For example the corresponding file for the Stockholm theme would be the file `system/themes/stockholm.js`.
+A theme may have HTML, CSS, JavaScript and other files, which are commonly referred to as assets. You can change these files as you like or delete them if you don't need them. Direct access to the `system` folder is not allowed. That's why assets are available via the virtual location `/assets/`. The file formats CSS, GIF, ICO, JS, JPEG, JPG, JSON, MAP, PNG, SCSS, SVG, WEBMANIFEST, WOFF and WOFF2 are supported. For example the CSS file for the Stockholm theme would be file `system/themes/stockholm.css`, available on your website as `http://website/assets/stockholm.css`.
 
-## Customising images
+A JavaScript file with a name similar to that of the CSS file is automatically included in your website. For example the corresponding JavaScript file for the Stockholm theme would be the file `system/themes/stockholm.js`, available on your website as `http://website/assets/stockholm.js`.
 
-A theme may have additional images that are used in the stylesheet. You can change these images as you like and also add your own images. Each website has a small icon, sometimes called a favicon. The web browser displays this icon in bookmarks and the address bar. For example the icon for the Stockholm theme is file `system/themes/stockholm.png`.
+Your website usually has a small icon, sometimes called a favicon, which is automatically included. Your web browser displays this icon in bookmarks and the address bar. For example the icon for the Stockholm theme would be file `system/themes/stockholm.png`, available on your website as `http://website/assets/stockholm.png`.
 
 Do you have questions? [Get help](.).

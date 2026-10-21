@@ -18,6 +18,7 @@ TitleSlug: help
 ! * [Hur man ändrar systemet](how-to-change-the-system)
 ! * [Hur man anpassar språk](how-to-customise-languages)
 ! * [Hur man anpassar HTML och CSS](how-to-customise-html-and-css)
+! * [Hur man uppdaterar](how-to-update)
 ! * [API för utvecklare](api-for-developers)
 ! * [Produktinformation](product-information)
 ! * [Felsökning](troubleshooting)

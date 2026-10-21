@@ -112,7 +112,7 @@ Följande inställningar kan konfigureras högst upp på en sida:
 `unlisted` = sidan är inte synlig, men kan nås med rätt länk  
 `shared` = sidan är inte synlig, men kan ingå i andra sidor  
 
-## Loggfilen
+## Loggfil
 
 Loggfilen finns i filen `system/extensions/yellow-website.log`. Här är ett exempel:
 

@@ -36,14 +36,14 @@ Följande filer är viktiga för webbplatsens funktion:
 `system/extensions/yellow-system.ini` = [fil med systeminställningar](how-to-change-the-system#systeminställningar)  
 `system/extensions/yellow-language.ini` = [fil med språkinställningar](how-to-change-the-system#språkinställningar)  
 `system/extensions/yellow-user.ini` = [fil med användarinställningar](how-to-change-the-system#användarinställningar)  
-`system/extensions/yellow-website.log` = [webbplatsen loggfil](#loggfilen)  
+`system/extensions/yellow-website.log` = [webbplatsen loggfil](#loggfil)  
 
 Följande filer är del av uppdateringsmekanismen:
 
 `system/extensions/yellow-update-installed.ini` = fil med uppdateringsinställningar för installerade tillägg  
 `system/extensions/yellow-update-maintained.ini` = fil med uppdateringsinställningar för underhållna tillägg  
 
-<a id="loggfilen"></a>Loggfilen visar en översikt över vad som händer på webbplatsen. Här är ett exempel:
+<a id="loggfil"></a>Loggfilen visar en översikt över vad som händer på webbplatsen. Här är ett exempel:
 
 ```
 2026-09-28 14:13:07 info Install Datenstrom Yellow 1.0, PHP 8.4.26, Apache 2.4.68, Linux
@@ -57,7 +57,7 @@ Följande filer är del av uppdateringsmekanismen:
 
 ## Objekt
 
-Med hjälp av API:et har du tillgång till filer, inställningar och tillägg. API:et är uppdelat i flera objekt och speglar filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Det finns några andra objekt, till exempel för att komma åt den aktuella sidan. Om du vill veta mer om hur objekten fungerar i detalj hittar du API-koden i filen `system/workers/core.php`.
+Med hjälp av API:et har du tillgång till filer, inställningar och tillägg. API:et är uppdelat i flera objekt och speglar i princip filsystemet. Det finns `$this->yellow->content` för att komma åt innehållsfiler, `$this->yellow->media` för att komma åt mediafiler och `$this->yellow->system` för att komma åt systeminställningar. Det finns några andra objekt, till exempel för att komma åt den aktuella sidan. Om du vill veta mer om hur objekten fungerar i detalj hittar du API-koden i filen `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────┐     ┌───────────────────────┐
@@ -471,7 +471,7 @@ Normalisera element och attribut i HTML/SVG-data
 Normalisera namn och email för en enda adress
 
 `lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
-Normalisera fält i MIME-headers
+Normalisera fält i MIME-header
 
 `lookup->normaliseInput($input, $type = "text"): string`  
 Normalisera indata från requestargument
@@ -1298,7 +1298,7 @@ class YellowExample {
 
 ## Verktyg
 
-För utvecklare och formgivare finns olika verktyg tillgängliga i kommandoraden. Detta ger dig möjlighet att till exempel starta en webbserver och generera en statisk webbplats. De tillgängliga kommandona beror på installerade tillägg. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php` för att visa tillgängliga kommandona.
+För utvecklare och formgivare finns olika utvecklingsverktyg tillgängliga i kommandoraden. Detta ger dig möjlighet att till exempel starta en webbserver och generera en statisk webbplats. De tillgängliga kommandona beror på installerade tillägg. Öppna ett terminalfönster. Gå till installationsmappen där filen `yellow.php` finns. Skriv `php yellow.php` för att visa tillgängliga kommandona.
 
 ### Inbyggd webbserver
 
@@ -1334,7 +1334,7 @@ YellowContent::scanLocation location:/sv/shared/
 YellowLookup::findContentLocationFromFile /sv/shared/page-new-default <- content/3-sv/shared/page-new-default.md
 ```
 
-Maximal information med inställningen `CoreDebugMode: 3`:
+Mycket detaljerad information med inställningen `CoreDebugMode: 3`:
 
 ```
 YellowSystem::load file:system/extensions/yellow-system.ini
@@ -1344,5 +1344,11 @@ YellowSystem::load Email:webmaster@example.com
 YellowSystem::load From:noreply@example.com
 YellowSystem::load Language:sv
 ```
+
+Använd `echo ”Debug-utdata<br />\n”;` eller en [liknande PHP-funktion](https://www.php.net/manual/en/function.var-dump.php). På så sätt kan du visa variabler på skärmen. Vi gör det alla då och då. Det går supersnabbt och är ett bra verktyg för det dagliga arbetet, eftersom du kan formatera debug-utdata och göra den människovänlig. När du arbetar med en ny algoritm eller med stora mängder indata kan du snabbt upptäcka avvikelser.
+
+Använd `$this->yellow->toolbox->log(”debug”, ”Debug-utdata”);`. Du kan skriva debug-utdata till en [loggfil](#loggfil). Ibland är detta det bättre alternativet, eftersom debug-utdata kan störa den normala utdata av mjukvaran. Om du arbetar nära protokollnivån, till exempel mitt i genereringen av HTTP-responseheader, är det bättre att hålla debug-utdata separat.
+
+Använd en debugger. Om du kommer från ett programmeringsspråk som C eller C++ är du förmodligen van vid att arbeta med en debugger. Du kan sätta brytpunkter i koden, programvaran stannar när den når en brytpunkt och visar de aktuella variablerna. Du kan gå igenom koden rad för rad och se vad som händer. Det är super smidigt, så snart du har konfigurerat en debugger.
 
 Har du några frågor? [Få hjälp](.).

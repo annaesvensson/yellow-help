@@ -28,9 +28,13 @@ Erfahre wie man Probleme auf einer Webseite behebt.
 ? 
 ? Führe den Befehl `chmod -R a+rw *` im Installations-Verzeichnis aus. Du kannst auch deine FTP-Anwendung verwenden, um allen Dateien Schreibrechte zu geben. Es wird empfohlen allen Dateien und Verzeichnissen im Installations-Verzeichnis Schreibrechte zu geben. Sobald die Webseite ausreichende Schreibrechte im `system`-Verzeichnis hat, sollte das Problem behoben sein.
 
+? Can't read file
+? 
+? Die Datei kann nicht vom Dateisystem gelesen werden. Das passiert in der Regel wenn eine Datei beschädigt wurde, ein Dateiformat nicht erkannt wurde oder eine Versionsnummer inkompatibel ist. Manchmal wurde die Internetverbindung beim Aktualisieren unterbrochen. Wende dich an den Webmaster, falls du weiterhin Probleme mit dem Dateisystem hast.
+
 ? Can't write file
 ? 
-? Die Datei kann nicht ins Dateisystem geschrieben werde. Führe den Befehl `chmod -R a+rw *` im Installations-Verzeichnis aus. Du kannst auch deine FTP-Anwendung verwenden, um allen Dateien Schreibrechte zu geben. Manchmal ist eine Anwendung für Datei-Synchronisation nicht richtig konfiguriert. Wende dich an den Webmaster, falls du weiterhin Probleme mit dem Dateisystem hast.
+? Die Datei kann nicht ins Dateisystem geschrieben werden. Führe den Befehl `chmod -R a+rw *` im Installations-Verzeichnis aus. Du kannst auch deine FTP-Anwendung verwenden, um allen Dateien Schreibrechte zu geben. Manchmal ist eine Anwendung für Datei-Synchronisation nicht richtig konfiguriert. Wende dich an den Webmaster, falls du weiterhin Probleme mit dem Dateisystem hast.
 
 ? Can't upload file
 ? 
@@ -46,20 +50,20 @@ Erfahre wie man Probleme auf einer Webseite behebt.
 
 ? Can't generate static page
 ? 
-? Die entsprechende Seite wird in einer statischen Webseite nicht unterstützt. Der statische Generator hat gewisse technische Beschränkungen, beispielsweise kann kein E-Mail-Kontaktformular generiert werden. Theoretisch könnte jede Seite als statische Seite generiert werden, jedoch wären dann zusätzliche Dienste erforderlich, um dynamische HTTP-Anfragen zu verarbeiten.
+? Die entsprechende Seite wird in einer statischen Webseite nicht unterstützt. Der statische Generator hat gewisse technische Beschränkungen, beispielsweise kann kein E-Mail-Kontaktformular generiert werden. Theoretisch könnte jede Seite als statische Seite generiert werden, jedoch wären dann zusätzliche Dienste erforderlich, um HTTP-Anfragen zu verarbeiten.
+
+## Probleme mit Datenstrom Yellow
+
+[Du kannst Produktfeedback geben oder einen Fehler melden](https://datenstrom.se/de/support/), falls etwas nicht wie erwartet funktionieren sollte. Erkläre wie man den Fehler reproduziert. Schreibe eine Schritt-für-Schritt-Anleitung auf wie man den Fehler reproduziert, gebe detaillierte Informationen an und füge die vollständige Logdatei hinzu. Es wird empfohlen die neuste Produktversion zu verwenden, um zu vermeiden einen Fehler zu melden der bereits behoben wurde. Du solltest Probleme mit Datenstrom Yellow nur auf der offiziellen Webseite oder bei einer vertrauenswürdigen europäischen Organisation melden. 
+
+Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Es werden dann zusätzliche Informationen auf dem Bildschirm und in der Browser-Konsole angezeigt. Abhängig vom Debug-Modus werden mehr oder weniger Informationen angezeigt. [Weitere Informationen zum Debuggen](api-for-developers#debuggen).
 
 ## Probleme mit deinem Webserver
 
-Du benötigst einen Webserver der HTTP-Anfragen an Datenstrom Yellow weiterleitet. Wende dich am besten an deinen Webhosting-Anbieter und lasse die Konfiguration deines Webservers überprüfen. Der Webserver muss drei Dinge erledigen. Erstens muss er HTTP-Anfragen für nicht existierende Dateien/Verzeichnisse an die `yellow.php` weiterleiten. Zweitens muss er den direkten Zugriff auf das `content`-Verzeichnis mit einer Fehlerseite blockieren. Drittens muss er den direkten Zugriff auf das `system`-Verzeichnis mit einer Fehlerseite blockieren. [Weitere Informationen zu Serverkonfigurationen](server-configurations).
+Du benötigst einen Webserver der HTTP-Anfragen an Datenstrom Yellow weiterleitet. Wende dich am besten an deinen Webhosting-Anbieter und lasse die Konfiguration deines Webservers überprüfen. Der Webserver muss drei Dinge erledigen. Erstens muss er HTTP-Anfragen für nicht existierende Dateien/Verzeichnisse an die `yellow.php` weiterleiten. Zweitens muss er den direkten Zugriff auf das `content`-Verzeichnis mit einer Fehlerseite blockieren. Drittens muss er den direkten Zugriff auf das `system`-Verzeichnis mit einer Fehlerseite blockieren. [Weitere Informationen zu Serverkonfigurationen](server-configurations) und [Entwicklungswerkzeuge](api-for-developers#werkzeuge).
 
 ## Probleme mit deinem Mailserver 
 
 Du benötigst einen Mailserver um E-Mails verschicken zu können. Wende dich am besten an deinen Webhosting-Anbieter und frage nach ob Sendmail aktiviert ist. Nachdem du überprüft hast dass Sendmail aktiviert ist, besteht die nächste Möglichkeit darin die E-Mail für ausgehende Nachrichten zu konfigurieren. Öffne die Datei `system/extensions/yellow-system.ini` und ändere `From`. Konfiguriere eine E-Mail-Adresse mit deinem Domainnamen, beispielsweise `noreply@example.com`. Manchmal funktioniert die voreingestellte E-Mail-Adresse nicht oder der Mailserver ist falsch konfiguriert. [Weitere Informationen zu Systemeinstellungen](how-to-change-the-system#systemeinstellungen).
-
-## Probleme mit Erweiterungen
-
-[Du kannst Produktfeedback geben oder einen Fehler melden](https://datenstrom.se/de/support/), falls etwas nicht wie erwartet funktionieren sollte. Das kannst du auch anonym machen, falls du möchtest. Erkläre wie man den Fehler reproduziert. Schreibe eine Schritt-für-Schritt-Anleitung auf wie man den Fehler reproduziert, gebe detaillierte Informationen an und füge die vollständige Logdatei hinzu. Es wird empfohlen die neuste Produktversion zu verwenden, um zu vermeiden einen Fehler zu melden der bereits behoben wurde. Melde Fehler nur bei uns oder einer vertrauenswürdigen europäischen Organisation. 
-
-Du kannst den Debug-Modus benutzen um die Ursache eines Problems genauer zu untersuchen oder falls du neugierig bist wie Datenstrom Yellow funktioniert. Um den Debug-Modus zu aktivieren, öffne die Datei `system/extensions/yellow-system.ini` und ändere `CoreDebugMode: 1`. Es werden dann zusätzliche Informationen auf dem Bildschirm und in der Browser-Konsole angezeigt. Abhängig vom Debug-Modus werden mehr oder weniger Informationen angezeigt. [Weitere Informationen zum Debuggen](api-for-developers#debuggen).
 
 Hast du Fragen? [Hilfe finden](.).

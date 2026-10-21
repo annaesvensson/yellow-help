@@ -9,7 +9,8 @@ Erfahre die wichtigsten Produktinformationen auf einen Blick.
 | Anwendungsbereich           | Kleine Webseiten
 | Installationsgröße          | 2 MB
 | Installationssprachen       | 19 Sprachen
-| Erweiterungen               | Mehr als 100 Funktionen, Sprachen und Themes
+| Dokumentationssprachen      | Deutsch, Englisch und Schwedisch
+| Erweiterungen               | Funktionen, Sprachen und Themes, [siehe Erweiterungen](https://datenstrom.se/de/yellow/extensions/)
 | Systemanforderungen         | PHP 7.0 oder höher
 | Texteditoren                | Beliebiger Texteditor
 | Textformatierung            | Markdown
@@ -17,7 +18,7 @@ Erfahre die wichtigsten Produktinformationen auf einen Blick.
 | Programmiersprachen         | HTML, CSS, JavaScript und PHP
 | Entwicklungswerkzeuge       | Eingebauter Webserver, statischer Generator und API für Entwickler
 | Webserver                   | Apache, Caddy, LiteSpeed, Nginx und kompatible Webserver
-| Personenbezogene Daten      | E-Mails und Kennwörter werden geschützt, [siehe Datenschutz](https://datenstrom.se/de/privacy)
+| Personenbezogene Daten      | Nur notwendige Daten werden gespeichert, [siehe Datenschutz](https://datenstrom.se/de/privacy)
 | Softwarelizenz              | Open-Source, [siehe Lizenzbedingungen](license-terms)
 | App erforderlich            | Nein
 | Datenbank erforderlich      | Nein

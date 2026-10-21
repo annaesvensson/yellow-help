@@ -109,12 +109,12 @@ Här är en exempel-CSS för ett eget blockelement med större teckensnitt:
 }
 ```
 
-## Anpassa JavaScript
+## Anpassa assets
 
-Ett tema kan ha JavaScript för dynamiska funktioner som inte är möjliga med enbart CSS. Du kan spara JavaScript i en fil som har ett liknande namn som CSS-filen. Då ingår det automatiskt i webbplatsen. Till exempel skulle motsvarande fil för Stockholm-temat vara filen `system/themes/stockholm.js`.
+Ett tema kan innehålla HTML, CSS, JavaScript och andra filer, som ofta kallas assets. Du kan ändra dessa filer som du vill eller ta bort dem om du inte behöver dem. Direkt åtkomst till `system` mappen är inte tillåten. Därför är assets tillgängliga via den virtuella platsen `/assets/`. Filformaten CSS, GIF, ICO, JS, JPEG, JPG, JSON, MAP, PNG, SCSS, SVG, WEBMANIFEST, WOFF och WOFF2 stöds. Till exempel skulle CSS-filen för Stockholm-temat vara filen `system/themes/stockholm.css`, som finns tillgänglig på din webbplats som `http://website/assets/stockholm.css`.
 
-## Anpassa bilder
+En JavaScript-fil med ett namn som liknar namnet på CSS-filen inkluderas automatiskt på din webbplats. Till exempel skulle motsvarande JavaScript-fil för Stockholm-temat vara filen `system/themes/stockholm.js`, som finns tillgänglig på din webbplats som `http://website/assets/stockholm.js`.
 
-Ett tema kan ha ytterligare bilder som används i stilmallen. Du kan ändra dessa bilder som du vill och även lägga till dina egna bilder. Varje webbplats har en liten ikon, ibland kallad en favicon. Webbläsaren visar den här ikonen i bokmärken och adressfältet. Till exempel är ikonen för Stockholm-temat filen `system/themes/stockholm.png`.
+Din webbplats har vanligtvis en liten ikon, ibland kallad en favicon, som inkluderas automatiskt. Din webbläsare visar den här ikonen i bokmärken och adressfältet. Till exempel skulle ikonen för Stockholm-temat vara filen `system/themes/stockholm.png`, som finns tillgänglig på din webbplats som `http://website/assets/stockholm.png`.
 
 Har du några frågor? [Få hjälp](.).

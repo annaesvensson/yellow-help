@@ -109,12 +109,12 @@ Hier ist ein Beispiel-CSS für ein eigenes Blockelement mit größerer Schriftar
 }
 ```
 
-## JavaScript anpassen
+## Assets anpassen
 
-Ein Theme kann JavaScript für dynamische Funktionen enthalten, die mit CSS allein nicht möglich sind. Du kannst JavaScript in eine Datei speichern die einen ähnlichen Namen hat wie die CSS-Datei. Sie wird dann automatisch in die Webseite eingebunden. Zum Beispiel wäre die entsprechende Datei für das Stockholm-Theme die Datei `system/themes/stockholm.js`.
+Ein Theme kann HTML, CSS, JavaScript und weitere Dateien enthalten, die allgemein als Assets bezeichnet werden. Du kannst diese Dateien beliebig ändern oder löschen falls du sie nicht benötigst. Ein direkter Zugriff auf das `system`-Verzeichnis ist nicht erlaubt. Daher werden Assets über den virtuellen Standort `/assets/` verfügbar gemacht. Die Dateiformate CSS, GIF, ICO, JS, JPEG, JPG, JSON, MAP, PNG, SCSS, SVG, WEBMANIFEST, WOFF und WOFF2 werden unterstützt. Zum Beispiel wäre die CSS-Datei für das Stockholm-Theme die Datei `system/themes/stockholm.css`, vorhanden  auf deiner Webseite als `http://website/assets/stockholm.css`.
 
-## Bilder anpassen
+Eine JavaScript-Datei, deren Name dem der CSS-Datei ähnelt, wird automatisch in deine Webseite eingebunden. Zum Beispiel wäre die entsprechende JavaScript-Datei für das Stockholm-Theme die Datei `system/themes/stockholm.js`, vorhanden auf deiner Webseite als `http://website/assets/stockholm.js`.
 
-Ein Theme kann zusätzliche Bilder enthalten, die im Stylesheet verwendet werden. Du kannst diese Bilder beliebig ändern und auch deine eigene Bilder hinzufügen. Jede Webseite hat ein kleines Icon, auch Favicon genannt. Der Webbrowser zeigt dieses Icon in Lesezeichen und der Adressleiste an. Zum Beispiel ist das Icon für das Stockholm-Theme die Datei `system/themes/stockholm.png`.
+Deine Webseite hat in der Regel ein kleines Icon, auch Favicon genannt, welches automatisch eingebunden wird. Dein Webbrowser zeigt dieses Icon in Lesezeichen und der Adressleiste an. Zum Beispiel wäre das Icon für das Stockholm-Theme die Datei `system/themes/stockholm.png`, vorhanden  auf deiner Webseite als `http://website/assets/stockholm.png`.
 
 Hast du Fragen? [Hilfe finden](.).

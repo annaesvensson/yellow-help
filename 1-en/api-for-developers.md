@@ -57,7 +57,7 @@ The following files are part of the update mechanism:
 
 ## Objects
 
-With the help of the API you have access to the files, settings and extensions. The API is divided into several objects and reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. There are a few other objects, for example to access the current page. If you would like to know how objects work in detail, you can find the code of the API in file `system/workers/core.php`.
+With the help of the API you have access to the files, settings and extensions. The API is divided into several objects and basically reflects the file system. There's `$this->yellow->content` to access content files, `$this->yellow->media` to access media files and `$this->yellow->system` to access system settings. There are a few other objects, for example to access the current page. If you would like to know how objects work in detail, you can find the code of the API in file `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────┐     ┌───────────────────────┐
@@ -1298,7 +1298,7 @@ class YellowExample {
 
 ## Tools
 
-For developers and designers there are various tools available at the command line. This allows you, for example, to start a web server and generate a static website. The available commands depend on extensions installed. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php` to show available commands.
+For developers and designers there are various development tools available at the command line. This allows you, for example, to start a web server and generate a static website. The available commands depend on extensions installed. Open a terminal window. Go to your installation folder, where the file `yellow.php` is. Type `php yellow.php` to show available commands.
 
 ### Built-in web server
 
@@ -1334,7 +1334,7 @@ YellowContent::scanLocation location:/shared/
 YellowLookup::findContentLocationFromFile /shared/page-new-default <- content/1-en/shared/page-new-default.md
 ```
 
-Maximum information with the setting `CoreDebugMode: 3`:
+Very detailed information with the setting `CoreDebugMode: 3`:
 
 ```
 YellowSystem::load file:system/extensions/yellow-system.ini
@@ -1344,5 +1344,11 @@ YellowSystem::load Email:webmaster@example.com
 YellowSystem::load From:noreply@example.com
 YellowSystem::load Language:en
 ```
+
+Use `echo "Debug output<br />\n";` or a [similar PHP function](https://www.php.net/manual/en/function.var-dump.php). This way you can show variables on screen. We all do it from time to time. It's super quick and a decent tool for every day work, because you can format the debug output and make it human friendly. When you are working on a new algorithm or with a lot of input data, this allows you to quickly spot anomalies.
+
+Use `$this->yellow->toolbox->log("debug", "Debug output");`. You can write the debug output to the [log file](#log-file). Sometimes this is the better option, because the debug output can interfere with the normal output of the software. When you're working close to protocol level, for example in the middle of generating HTTP response headers, then it's better to keep the debug output separate.
+
+Use a debugger. You are probably used to work with a debugger if you are coming from a programming language like C and C++. You can set break points in your code, the software stops when it reaches a break point and shows the current variables. You can step trough you code, line by line and see what happens. It's super comfortable, once you have a debugger set up.
 
 Do you have questions? [Get help](.).

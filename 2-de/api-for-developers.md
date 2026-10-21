@@ -57,7 +57,7 @@ Die folgenden Einstellungen sind Teil des Aktualisieriungsmechanismus:
 
 ## Objekte
 
-Mit Hilfe der API hast du Zugriff auf Dateien, Einstellungen und Erweiterungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt das Dateisystem wieder. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Es gibt noch einige weitere Objekte, beispielsweise um auf die aktuelle Seite zuzugreifen. Falls du wissen möchtest wie Objekte im Detail funktionieren, den Code der API findest du in der Datei `system/workers/core.php`.
+Mit Hilfe der API hast du Zugriff auf Dateien, Einstellungen und Erweiterungen. Die API ist in mehrere Objekte aufgeteilt und spiegelt im Grunde das Dateisystem wider. Es gibt `$this->yellow->content` um auf Inhaltsdateien zuzugreifen, `$this->yellow->media` um auf Mediendateien zuzugreifen und `$this->yellow->system` um auf Systemeinstellungen zuzugreifen. Es gibt noch einige weitere Objekte, beispielsweise um auf die aktuelle Seite zuzugreifen. Falls du wissen möchtest wie Objekte im Detail funktionieren, den Code der API findest du in der Datei `system/workers/core.php`.
 
 ``` box-drawing {aria-hidden=true}
 ┌────────────────────┐     ┌───────────────────────┐
@@ -471,7 +471,7 @@ Normalisiere Elemente und Attribute in HTML/SVG-Daten
 Normalisiere Name und E-Mail für eine einzelne Adresse
 
 `lookup->normaliseHeaders($input, $type = "mime", $filterStrict = true): string`  
-Normalisiere Felder in MIME-Headers
+Normalisiere Felder in MIME-Header
 
 `lookup->normaliseInput($input, $type = "text"): string`  
 Normalisiere Eingabe vom Anfrage-Argument
@@ -1300,7 +1300,7 @@ class YellowExample {
 
 ## Werkzeuge
 
-Für Entwickler und Designer stehen verschiedene Werkzeuge in der Befehlszeile zur Verfügung. Das gibt dir beispielsweise die Möglichkeit einen Webserver zu starten und eine statische Webseite zu generieren. Die verfügbaren Befehle hängen von den installierten Erweiterungen ab. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php`, um die verfügbaren Befehle anzuzeigen.
+Für Entwickler und Designer stehen verschiedene Entwicklungswerkzeuge in der Befehlszeile zur Verfügung. Das gibt dir beispielsweise die Möglichkeit einen Webserver zu starten und eine statische Webseite zu generieren. Die verfügbaren Befehle hängen von den installierten Erweiterungen ab. Öffne ein Terminalfenster. Gehe ins Installations-Verzeichnis, dort wo sich die Datei `yellow.php` befindet. Gib ein `php yellow.php`, um die verfügbaren Befehle anzuzeigen.
 
 ### Eingebauter Webserver
 
@@ -1325,7 +1325,7 @@ YellowCore::sendPage layout:wiki-start theme:stockholm
 YellowCore::request status:200 time:19 ms
 ```
 
-Dateisysteminformationen mit der Einstellung `CoreDebugMode: 2`:
+Dateisystem-Informationen mit der Einstellung `CoreDebugMode: 2`:
 
 ```
 YellowSystem::load file:system/extensions/yellow-system.ini
@@ -1336,7 +1336,7 @@ YellowContent::scanLocation location:/de/shared/
 YellowLookup::findContentLocationFromFile /de/shared/page-new-default <- content/2-de/shared/page-new-default.md
 ```
 
-Maximum Informationen mit der Einstellung `CoreDebugMode: 3`:
+Sehr detaillierte Informationen mit der Einstellung `CoreDebugMode: 3`:
 
 ```
 YellowSystem::load file:system/extensions/yellow-system.ini
@@ -1346,5 +1346,11 @@ YellowSystem::load Email:webmaster@example.com
 YellowSystem::load From:noreply@example.com
 YellowSystem::load Language:de
 ```
+
+Verwende `echo "Debug-Ausgabe<br />\n";` oder eine [ähnliche PHP-Funktion](https://www.php.net/manual/de/function.var-dump.php). Auf dieses Weise kannst du Variablen auf dem Bildschirm anzeigen. Wir machen das alle hin und wieder. Das geht superschnell und ist ein praktisches Werkzeug für die tägliche Arbeit, da man die Debug-Ausgabe dadurch formatieren und menschenfreundlich gestalten kann. Wenn du an einem neuen Algorithmus oder mit vielen Eingabedaten arbeitest, kannst du Abweichungen schnell erkennen.
+
+Verwende `$this->yellow->toolbox->log("debug", "Debug-Ausgabe");`. Du kannst die Debug-Ausgabe in die [Logdatei](#logdatei) schreiben. Manchmal ist das die bessere Option, da die Debug-Ausgabe die normale Ausgabe der Software stören kann. Wenn du nahe an der Protokollebene arbeitest, zum Beispiel mitten in der Generierung von HTTP-Antwort-Header, dann ist es besser die Debug-Ausgabe separat zu halten.
+
+Verwende einen Debugger. Wenn du aus einer Programmiersprache wie C oder C++ kommst, bist du es wahrscheinlich gewöhnt mit einem Debugger zu arbeiten. Du kannst Haltepunkte im Code setzen, die Software hält an sobald sie einen Haltepunkt erreicht hat und zeigt die aktuellen Variablen an. Du kannst Zeile für Zeile durch den Code schreiten und sehen was passiert. Das ist superkomfortabel, sobald du einen Debugger eingerichtet hast.
 
 Hast du Fragen? [Hilfe finden](.).

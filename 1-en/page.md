@@ -18,6 +18,7 @@ TitleSlug: help
 ! * [How to change the system](how-to-change-the-system)
 ! * [How to customise languages](how-to-customise-languages)
 ! * [How to customise HTML and CSS](how-to-customise-html-and-css)
+! * [How to update](how-to-update)
 ! * [API for developers](api-for-developers)
 ! * [Product information](product-information)
 ! * [Troubleshooting](troubleshooting)

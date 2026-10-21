@@ -22,7 +22,7 @@ Deine Webseite wird automatisch aus dem `content`-Verzeichnis erstellt:
 2. Dateien können ein numerisches Präfix zum Sortieren haben, z.B. `2020-04-07-blog-example.md`
 3. Dateien und Verzeichnisse ohne Präfix haben keine besondere Bedeutung, z.B. `wiki-example.md`
 
-Präfixe und Suffixe werden aus der Adresse entfernt, damit es besser aussieht. Zum Beispiel ist das Verzeichnis `content/1-home` vorhanden als `http://website/`. Das Verzeichnis `content/9-about` ist vorhanden als `http://website/about/`. Die Datei `content/2-wiki/wiki-example.md` ist vorhanden als `http://website/wiki/wiki-example`.
+Präfixe und Suffixe werden aus der Adresse entfernt, damit es besser aussieht. Zum Beispiel ist das Verzeichnis `content/1-home` auf deiner Webseite vorhanden als `http://website/`. Das Verzeichnis `content/9-about` ist vorhanden als `http://website/about/`. Die Datei `content/2-wiki/wiki-example.md` ist vorhanden als `http://website/wiki/wiki-example`.
 
 Während die meisten Verzeichnisse auf deiner Website verfügbar sind, gibt es zwei Ausnahmen. Das `content/1-home`-Verzeichnis darf keine Unterverzeichnisse besitzen. Das `content/shared`-Verzeichnis darf nur in andere Verzeichnisse eingebunden werden, es steht auf deiner Webseite nicht direkt zur Verfügung.
 

@@ -28,6 +28,10 @@ Läs hur man löser problem på en webbplats.
 ? 
 ? Kör kommandot `chmod -R a+rw *` i installationsmappen. Du kan också använda din FTP-applikation för att ge skrivbehörighet till alla filer. Det rekommenderas att ge skrivbehörighet till alla filer och mappar i installationsmappen. Så snart webbplatsen har tillräcklig skrivåtkomst i `system`-mappen bör problemet lösas.
 
+? Can't read file
+? 
+? Filen kan inte läsas från filsystemet. Detta händer vanligtvis när en fil har blivit korrupt, ett filformat inte har identifierats eller ett versionsnummer är inkompatibelt. Ibland blev internetanslutningen avbruten under aktualisieringen. Kontakta webbmastern om du fortfarande har problem med filsystemet.
+
 ? Can't write file
 ? 
 ? Filen kan inte skrivas till filsystemet. Kör kommandot `chmod -R a+rw *` i installationsmappen. Du kan också använda din FTP-applikation för att ge skrivbehörighet till alla filer. Ibland är en applikation för filsynkronisering felaktigt konfigurerat. Kontakta webbmastern om du fortfarande har problem med filsystemet.
@@ -46,20 +50,20 @@ Läs hur man löser problem på en webbplats.
 
 ? Can't generate static page
 ? 
-? Den motsvarande sidan stöds inte i en statisk webbplats. Det finns vissa tekniska begränsningar för vad den statiska generatorn kan göra, till exempel kan den statiska generatorn inte generera ett e-postkontaktformulär. Teoretiskt sett kan vilken sida som helst genereras som en statisk sida, men då behöver man ytterligare tjänster för att hantera dynamiska HTTP-förfrågningar.
+? Den motsvarande sidan stöds inte i en statisk webbplats. Det finns vissa tekniska begränsningar för vad den statiska generatorn kan göra, till exempel kan den statiska generatorn inte generera ett e-postkontaktformulär. Teoretiskt sett kan vilken sida som helst genereras som en statisk sida, men då behöver man ytterligare tjänster för att hantera HTTP-förfrågningar.
+
+## Problem med Datenstrom Yellow
+
+[Du kan skriva produktfeedback eller rapportera ett fel](https://datenstrom.se/sv/support/), om något inte fungerar som förväntat. Förklara hur man återskapar felet. Skriv ner steg-för-steg-instruktioner hur man återskapar felet, ange detaljerad information och bifoga hela loggfilen. Det rekommenderas att använda den senaste produktversionen, för att undvika att rapportera ett fel som redan har åtgärdats. Du bör endast rapportera problem med Datenstrom Yellow på den officiella webbplatsen eller till en pålitlig europeisk organisation.
+
+Du kan använda felsökningsläget för att undersöka orsaken till ett problem eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Ytterligare information kommer att visas på skärmen och i webbläsarkonsolen. Beroende på felsökningsläget visas mer eller mindre information. [Läs mer om debugging](api-for-developers#debugging).
 
 ## Problem med din webbserver
 
-Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Det är bäst att kontakta din webbhotell och be dem kontrollera konfigurationen av din webbserver. Webbservern måste utföra tre uppgifter. För det första måste den vidarebefordra HTTP-förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. [Läs mer om serverkonfigurationer](server-configurations).
+Du behöver en webbserver som vidarebefordrar HTTP-förfrågningar till Datenstrom Yellow. Det är bäst att kontakta din webbhotell och be dem kontrollera konfigurationen av din webbserver. Webbservern måste utföra tre uppgifter. För det första måste den vidarebefordra HTTP-förfrågningar om icke-existerande filer/mappar till `yellow.php`. För det andra måste den blockera direkt åtkomst till `content`-mappen med en felsida. För det tredje måste den blockera direkt åtkomst till `system`-mappen med en felsida. [Läs mer om serverkonfigurationer](server-configurations) och [utvecklingsverktyg](api-for-developers#verktyg).
 
 ## Problem med din e-postserver
 
 Du behöver en e-postserver för att kunna skicka e-post. Det är bäst att kontakta din webbhotell och fråga om sendmail är aktiverat. När du har bekräftat att sendmail är aktiverat är nästa steg att konfigurera email för utgående meddelanden. Öppna filen `system/extensions/yellow-system.ini` och ändra `From`. Konfigurera en e-postadress med ditt domännamn, till exempel `noreply@example.com.` Ibland fungerar inte standard-e-postadressen eller så är e-postservern felkonfigurerad. [Läs mer om systeminställningar](how-to-change-the-system#systeminställningar).
-
-## Problem med tillägg
-
-[Du kan skriva produktfeedback eller rapportera ett fel](https://datenstrom.se/sv/support/), om något inte fungerar som förväntat. Du kan göra detta anonymt om du vill. Förklara hur man återskapar felet. Skriv ner steg-för-steg-instruktioner hur man återskapar felet, ange detaljerad information och bifoga hela loggfilen. Det rekommenderas att använda den senaste produktversionen, för att undvika att rapportera ett fel som redan har åtgärdats. Rapportera buggar endast till oss eller till en betrodd europeisk organisation.
-
-Du kan använda felsökningsläget för att undersöka orsaken till ett problem eller om du är nyfiken på hur Datenstrom Yellow fungerar. För att aktivera felsökningsläget, öppna filen `system/extensions/yellow-system.ini` och ändra `CoreDebugMode: 1`. Ytterligare information kommer att visas på skärmen och i webbläsarkonsolen. Beroende på felsökningsläget visas mer eller mindre information. [Läs mer om debugging](api-for-developers#debugging).
 
 Har du några frågor? [Få hjälp](.).
