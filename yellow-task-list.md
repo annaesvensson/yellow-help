@@ -20,6 +20,7 @@ You can help us with open tasks:
 - [x] Updated API, changed page->getBase() to page->getHomeLocation(). API should be understandable.
 - [ ] Updated API, YellowPageCollection no longer derives from ArrayObject. ArrayObject interface is strange.
 - [x] Updated contact extension, contact form with better protection. Spammers gonna spam.
+- [ ] Updated contact extension, added static website handlers. For a world full of bots/crawlers/scrapers.
 - [ ] Updated edit extension, autocomplete for links and tags. Users do less, software does more.
 - [ ] Updated edit extension, settings dialog with dropdown menus. Give users more control.
 - [ ] Updated edit extension toolbar, improved emoji and icon selection dialog. Give users more control.
@@ -29,6 +30,7 @@ You can help us with open tasks:
 - [x] Updated feed extension, short URL for machine readable XML format. Some bloggers find long URL ugly. 
 - [ ] Updated icon extension, SVG stack instead of WOFF font. Developers want consistent files formats.
 - [ ] Updated image extension, different media files for light and dark mode. Give users more control.
+- [ ] Updated search extension, added static website handlers. For a world full of bots/crawlers/scrapers.
 - [x] Updated sitemap extension, short URL for machine readable XML format. Some bloggers find long URL ugly.
 - [x] Updated system settings, renamed ContactEmailRestriction to ContactFormRestriction. Better naming.
 - [x] Updated system settings, renamed ContactLinkRestriction to ContactLinkProtection. Much better naming.
